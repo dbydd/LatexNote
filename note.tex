@@ -25,13 +25,14 @@
 \newcommand{\myLimToInf}{\limNormal{x \to \infty}}
 \newcommand{\mathCombination}[2]{C_{#1}^{#2}}
 \newcommand{\mathPermutation}[2]{P_{#1}^{#2}}
+\newcommand{\UpDownSum}[2]{$\sum_{#1}^{#2}$}
 
 
 \begin{document}
 \pagestyle{empty}{
   \maketitle
   \paragraph{todos}{
-    倍角公式
+    标签：求导，泰勒公式
   }
   \tableofcontents
   \newpage
@@ -59,7 +60,13 @@
     \end{enumerate}
   }
 
+  \subsection{零散的思想}{
+    \begin{enumerate}
+      \item 正变换是数学的重要工具,三角变换是只变其形不变其质的。三角变换常常先寻找式子所包含的各个角之间的联系,并以此为依据选择可以联系它们的适当公式,通过换元法把三角恒等变换问题转化为代数恒等变换问题。
+    \end{enumerate}
+  }
  }
+
 \section{三角函数}{
 三角函数一般由单位圆引出,如下：
 
@@ -88,14 +95,20 @@
   $\cos{\alpha}-\cos{\beta} = -2\sin{\frac{\alpha + \beta}{2}}\cos{\frac{\alpha - \beta}{2}}$
 
   $\sin{\alpha}-\sin{\beta} = 2\sin{\frac{\alpha + \beta}{2}}\cos{\frac{\alpha - \beta}{2}}$
+
+  $\tan\alpha - \tan\beta = \tan(\alpha - \beta) \cdot (1 + \tan\alpha\tan\beta)$
 }
 
 \subsection{积化和差}{
-  $\cos{\alpha + \beta} = \cos{\alpha}\cos{\beta} - \sin{\alpha}\sin{\beta}$
+  $\cos(\alpha + \beta) = \cos{\alpha}\cos{\beta} - \sin{\alpha}\sin{\beta}$
 
-  $\cos{\alpha - \beta} = \cos{\alpha}\cos{\beta} + \sin{\alpha}\sin{\beta}$
+  $\cos(\alpha - \beta) = \cos{\alpha}\cos{\beta} + \sin{\alpha}\sin{\beta}$
 
-  $\sin{\alpha \pm \beta} = \sin{\alpha}\cos{\beta} \pm \cos{\alpha}\sin{\beta}$
+  $\sin(\alpha \pm \beta) = \sin{\alpha}\cos{\beta} \pm \cos{\alpha}\sin{\beta}$
+
+  $\tan(\alpha + \beta) = \frac{\tan\alpha + \tan\beta}{1 - \tan\alpha\tan\beta}$
+
+  $\tan(\alpha - \beta) = \frac{\tan\alpha - \tan\beta}{1 + \tan\alpha\tan\beta}$
 
   $\sin{\alpha}\cos{\beta} = \frac{1}{2}[\sin{(\alpha + \beta)} + \sin{(\alpha - \beta)}]$
 
@@ -168,16 +181,39 @@
 
   \subsubsection{杂项}{
     $a\sin\alpha + b\cos\alpha = \sqrt{a^2 + b^2}\sin(\alpha+\beta)$
+
+    $\cos\alpha = 2cos^2\frac{\alpha}{2} - 1 = 1-2\sin^2\frac{\alpha}{2}$
   }
 
 }
 
 \subsection{倍角公式}{
-  \subsubsection{半倍角公式}{
-    $\sin\frac{\alpha}{2} = \pm\sqrt{\frac{1 - \cos\alpha}{2}}$
+\subsubsection{半倍角公式}{
+  $\sin\frac{\alpha}{2} = \pm\sqrt{\frac{1 - \cos\alpha}{2}}$
 
-    $\cos\frac{\alpha}{2} = \pm\sqrt{\frac{1 + \cos\alpha}{2}}$
-  }
+  $\cos\frac{\alpha}{2} = \pm\sqrt{\frac{1 + \cos\alpha}{2}}$
+
+  $\tan\frac{\alpha}{2} = \pm\sqrt{\frac{1-\cos\alpha}{1+\cos\alpha}} = \frac{\sin\alpha}{1+\cos\alpha} = \frac{1-\cos\alpha}{\sin\alpha}$
+
+  $\cot\frac{\alpha}{2} = \frac{1+\cos\alpha}{\sin\alpha} = \frac{\sin\alpha}{1-\cos\alpha}$
+
+  $\sec\frac{\alpha}{2} = \frac{\pm\sqrt{\frac{\sec\alpha - 1}{2\sec\alpha}}2\sec\alpha}{\sec\alpha + 1} = \frac{\pm\sqrt{\frac{4\sec^3\alpha + \sec^2\alpha}{2\cos\alpha}}}{\sec\alpha + 1}$
+
+  $\csc\frac{\alpha}{2} = \frac{\pm\sqrt{\frac{\sec\alpha - 1}{2\sec\alpha}}2\sec\alpha}{\sec\alpha - 1} = \frac{\pm\sqrt{\frac{3\sec^3\alpha - \sec^2\alpha}{2\sec\alpha}}}{\sec\alpha - 1}$
+}
+
+\subsubsection{二倍角公式}{
+  $\sin2\alpha = 2\sin\alpha\cos\alpha$
+
+  $\cos2\alpha = \cos^2\alpha - \sin^\alpha = 2\cos^2\alpha - 1 = 1 - 2\sin^2\alpha$
+
+  $\tan2\alpha = \frac{2\tan\alpha}{1 - \tan^2\alpha}$
+}
+
+\subsubsection{n倍角公式}{
+$\cos{n\theta} = \sum_{i = 0}^{\frac{n}{2}}[(-1)^i\mathCombination{2i + 1}{n}\cos^{n - 2i}\theta\sin^{2i}\theta]$
+
+$\sin{n\theta} = \sum_{i = 0}^{\frac{n}{2}}[(-1)^i\mathCombination{2i + 1}{n}\cos^{n - 2i - 1}\theta\sin^{2i+1}\theta]$
 }
 
 \subsection{三角恒等式}{
@@ -188,20 +224,60 @@ $\sec^2x - tan^2x = 1$ %去你🐎的大括号
 $\sin^2x + \cos^2x = 1$
 
 $\tan{x} = \frac{\sin{x}}{\cos{x}}$
+}
 
 }
-\section{极限}{
 
-  \subsection{定理}{
-    \begin{enumerate}
-      \item 函数在一点极限存在的条件是左右极限存在且相等
-    \end{enumerate}
+\section{微积分}{
+
+  \subsection{极限}{
+
+    \subsubsection{定理}{
+      \begin{enumerate}
+        \item 函数在一点极限存在的条件是左右极限存在且相等
+        \item 洛必达法则：$当极限为\frac{0}{0}或者\frac{\infty}{\infty}时可上下同时求导，求导后极限不变，每一步都需要重新判断是否依然符合类型$
+      \end{enumerate}
+    }
+
+    \subsubsection{重要极限}{
+      \myLimToZero$\frac{\sin{x}}{x}=1$ $\to$ \limNormal{x \to 0}$\sin{x} \to x$
+
+      \myLimToInf$(1+\frac{1}{x})^x = e$
+    }
   }
 
-  \subsection{重要极限}{
-    {\myLimToZero$\frac{\sin{x}}{x}=1$} $\to$ {\limNormal{x \to 0}$\sin{x} \to x$}
+  \subsection{等价无穷小}{
+    \myLimToZero$a^x - 1 \approx x\ln{a}$
 
-      {\myLimToInf$(1+\frac{1}{x})^x = e$}
+    \myLimToZero$\arcsin(a)x \approx \sin(a)x \approx (a)x$
+
+    \myLimToZero$\arctan(a)x \approx \tan(a)x \approx (a)x$
+
+    \myLimToZero$\ln1+x \approx x$
+
+    \myLimToZero$e^x \approx 1+x$
+
+    \myLimToZero$\sqrt{1 + x} - \sqrt{1 - x} \approx x$
+
+    \myLimToZero$\tan{x} \approx x$
+
+    \myLimToZero$(1 + ax)^b - 1 \approx abx$
+
+    \myLimToZero$(1+x)^\alpha \approx 1+\alpha x$
+
+    \myLimToZero$1 - \cos x \approx \frac{x^2}{2}$
+
+    \myLimToZero$x - \ln(1 + x) \approx \frac{x^2}{2}$
+
+    \myLimToZero$\tan x - x \approx \frac{x^3}{3}$
+
+    \myLimToZero$x - \arctan x \approx \frac{x^3}{3}$
+
+    \myLimToZero$x - \sin x \approx \frac{x^3}{6}$
+
+    \myLimToZero$\arcsin x - x \approx \frac{x^3}{6}$
+
+    以上等价无穷小都可以由泰勒公式推出
   }
 
  }
