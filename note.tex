@@ -6,6 +6,7 @@
 \usepackage{indentfirst}
 \usepackage[center]{titlesec}
 \usepackage{graphicx}
+\usepackage{esint}
 
 \geometry{left=1cm,right=1cm,top=3cm,bottom=3cm}
 \title{db的日常笔记}
@@ -23,16 +24,20 @@
 \newcommand{\limNormal}[1]{$\lim\limits_{#1}$}
 \newcommand{\myLimToZero}{\limNormal{x \to 0}}
 \newcommand{\myLimToInf}{\limNormal{x \to \infty}}
+\newcommand{\derivative}{^\prime}
+\newcommand{\myLeftRightArrow}{$\Leftrightarrow$}
+\newcommand{\myRightArrow}{$\Rightarrow$}
 \newcommand{\mathCombination}[2]{C_{#1}^{#2}}
 \newcommand{\mathPermutation}[2]{P_{#1}^{#2}}
 \newcommand{\UpDownSum}[2]{$\sum_{#1}^{#2}$}
+\newcommand{\defFunc}[1]{$\fint(#1)$}
 
 
 \begin{document}
 \pagestyle{empty}{
   \maketitle
   \paragraph{todos}{
-    标签：求导，泰勒公式
+    标签：微分中值定理，泰勒公式
   }
   \tableofcontents
   \newpage
@@ -40,32 +45,56 @@
 \setcounter{page}{1}
 \chapter{数学}{
 \section{基本概念}{
-  \subsection{六大基本初等函数}{
-    常数函数，幂函数，指数函数，对数函数，三角函数
-  }
+\subsection{六大基本初等函数}{
+  常数函数，幂函数，指数函数，对数函数，三角函数
+}
 
-  \subsection{二项式定理}{
-    $(x + y)^n = x^n + \mathCombination{n - 1}{n}(x^{n-1} y) + \mathCombination{n - 2}{n}(x^{n-2} y^2) + \dots + y^n$
-  }
+\subsection{介值定理}{
+在数学分析中，介值定理（英语：intermediate value theorem，又称中间值定理）描述了连续函数在两点之间的连续性：
 
-  \subsection{排列组合}{
-    排列：$\mathPermutation{m}{n} = \frac{m!}{(m-n)!}$
+假设有一连续函数$\fint:[a,b]\rightarrow \mathbf{R}$, 且假设$\fint(a)<\fint(b)$, 若对任意数$u$满足$\fint(a)<u<\fint(b)$,则存在一点$c,a<c<b$,使得$\fint(c) = u$,当$\fint(a)>\fint(b)时也有类似叙述$
 
-    组合：$\mathCombination{m}{n} = \frac{\mathPermutation{m}{n}}{m!} = \frac{n!}{m!(n-m)!}$
-  }
+直观的比喻：这代表在$[a,b]$区间上可以画出一条连续曲线，而不让笔离开纸面。
+\newline
 
-  \subsection{零散的定义}{
-    \begin{enumerate}
-      \item 有界：$\exists\epsilon,f(x) < \epsilon\quad(-\infty < x < \infty )$
-    \end{enumerate}
-  }
+定理:
 
-  \subsection{零散的思想}{
-    \begin{enumerate}
-      \item 正变换是数学的重要工具,三角变换是只变其形不变其质的。三角变换常常先寻找式子所包含的各个角之间的联系,并以此为依据选择可以联系它们的适当公式,通过换元法把三角恒等变换问题转化为代数恒等变换问题。
-    \end{enumerate}
-  }
- }
+假设$I = [a,b]$是一个实数里的闭区间，而$f:I\rightarrow\mathbf{R}$是连续函数，那么其像集$\fint(I)$也是区间。他或者包含$[\fint(a),\fint(b)]$(如果$\fint(b)\leq\fint(a)$)。换言之：
+
+$\fint(I)\supseteq[\fint(a),\fint(b)]$。
+
+或:
+
+$\fint(I)\supseteq[\fint(b), \fint(a)]$。
+
+介质定理通常以下述等价的形式表述：假设$f:I\rightarrow\mathbf{R}$是连续函数，且实数$u$满足$\fint(a)<u<\fint(b)$或$\fint(a)>u>\fint(b)$，则存在$c\in(a,b)$使得$\fint(c) = u$
+
+图示：
+\includegraphics{resources/Intermediatevaluetheorem.png}
+}
+
+\subsection{二项式定理}{
+  $(x + y)^n = x^n + \mathCombination{n - 1}{n}(x^{n-1} y) + \mathCombination{n - 2}{n}(x^{n-2} y^2) + \dots + y^n$
+}
+
+\subsection{排列组合}{
+  排列：$\mathPermutation{m}{n} = \frac{m!}{(m-n)!}$
+
+  组合：$\mathCombination{m}{n} = \frac{\mathPermutation{m}{n}}{m!} = \frac{n!}{m!(n-m)!}$
+}
+
+\subsection{零散的定义}{
+  \begin{enumerate}
+    \item 有界：$\exists\epsilon,f(x) < \epsilon\quad(-\infty < x < \infty )$
+  \end{enumerate}
+}
+
+\subsection{零散的思想}{
+  \begin{enumerate}
+    \item 正变换是数学的重要工具,三角变换是只变其形不变其质的。三角变换常常先寻找式子所包含的各个角之间的联系,并以此为依据选择可以联系它们的适当公式,通过换元法把三角恒等变换问题转化为代数恒等变换问题。
+  \end{enumerate}
+}
+}
 
 \section{三角函数}{
 三角函数一般由单位圆引出,如下：
@@ -290,6 +319,110 @@ $\tan{x} = \frac{\sin{x}}{\cos{x}}$
     以上等价无穷小都可以由泰勒公式推出
   }
 
+  \subsection{导数}{
+    导数是什么？教科书上普遍给出的定义是指：函数图像的斜率变化率曲线，事实上某些观点表示导数也可以理解成是函数对于输入值的敏感程度，即：输入值的变化对应的输出值的变化的剧烈程度。
+
+    目前导数的标准定义是指\limNormal{x to x_0}$\frac{f(x) - f(x_0)}{x - x_0}$\ 或者\ \limNormal{\Delta x \to x_0}$\frac{f(x + \Delta x) - f(x)}{\Delta x}$
+
+    值得注意的是：求导是一种线性函数，它满足抽象向量空间的八条准则.
+
+    \subsubsection{求导法则}{
+      以下为求导的基本法则：
+      \begin{enumerate}
+        \item $(u + v)\derivative = u\derivative + v\derivative$
+        \item $(u - v)\derivative = u\derivative - v\derivative$
+        \item $(uv)\derivative = u\derivative v + uv\derivative$
+        \item $(uvw)\derivative = u\derivative vw + uv\derivative w + uvw\derivative$
+        \item $(\mathbf{c}v)\derivative = \mathbf{c}(v)\derivative$
+        \item $\frac{u}{v}\derivative = \frac{u\derivative v - uv\derivative}{v^2}$
+      \end{enumerate}
+      注：反函数的导数等于函数导数的倒数，即——互为倒数的导数相乘依然为1
+    }
+
+    \subsubsection{复合函数求导}{
+      对于复合函数求导，有以下方法：
+
+      $y = \fint(u), u = g(x); \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} = f\derivative(u) \cdot g\derivative(x)$
+    }
+
+    \subsubsection{求导公式表}{
+      以下为基本函数的求导公式表，类似线性组合，大多数函数的导数可以由以下公式组合得到。
+
+      $\fint(x) = C, \fint\derivative(x) = 0$
+
+      $\fint(x) = x^n, \fint\derivative(x) = nx^{n-1}$
+
+      $\fint(x) = x, \fint\derivative(x) = 1$
+
+      $\fint(x) = \sin x, \fint\derivative(x) = \cos x$
+
+      $\fint(x) = \cos x, \fint\derivative(x) = -\sin x$
+
+      $\fint(x) = \tan x, \fint\derivative(x) = \sec^2 x$
+
+      $\fint(x) = \sec x, \fint\derivative(x) = \sec x\tan x$
+
+      $\fint(x) = \cot x, \fint\derivative(x) = -\csc^2 x$
+
+      $\fint(x) = \csc x, \fint\derivative(x) = -\csc x\cot x$
+
+      $\fint(x) = \arcsin x, \fint\derivative(x) = \frac{1}{\sqrt{1 - x^2}}$
+
+      $\fint(x) = \arccos x, \fint\derivative(x) = -\frac{1}{\sqrt{1 - x^2}}$
+
+      $\fint(x) = \arctan x, \fint\derivative(x) = \frac{1}{1 + x^2}$
+
+      $\fint(x) = arccotx, \fint\derivative(x) = -\frac{1}{1 + x^2}$
+
+      $\fint(x) = a^x, \fint\derivative(x) = a^x\ln x$
+
+      $\fint(x) = \log_a x, \fint\derivative(x) = \frac{1}{x\ln a}$
+
+      $\fint(x) = \ln x, \fint\derivative(x)= \frac{1}{x}$
+
+      $\fint(x) = e^x, \fint\derivative(x) = e^x$
+    }
+    \newline
+
+    值得注意的是：
+    \begin{enumerate}
+      \item 在一维的情况下，可导\myLeftRightArrow 左右导数存在且相等
+
+      \item 可导\myRightArrow 连续
+
+      \item 连续则不一定可导
+    \end{enumerate}
+  }
+
+  \subsection{微分}{
+    那么微分(differential)又是什么？微分是一个函数在自变量做无穷小变化时函数值的变化。在形式上确实与导数类似，但不应该与导数混淆。
+
+    可以形象化理解，微分就是曲线的切线。给定一个横坐标，我们可以在切线上找到纵坐标。就是这样一个映射。而导数就是这条切线的斜率。
+
+    \subsubsection{微分公式}{
+      给出以下微分公式，与导数确实类似，但微分和导数是两个不同的映射。他们的定义域都是可微函数，微分的值域是1-form，导数的值域是函数。
+      \begin{enumerate}
+        \item $d(u \pm v) = du \pm dv$
+        \item $d(\mathbf{C}u) = \mathbf{c}du$
+        \item $d(uv) = vdu + udv$
+        \item $d(\frac{u}{v} = \frac{vdu + udv}{v^2})$
+      \end{enumerate}
+    }
+
+    \subsubsection{复合微分}{
+      与复合求导类似：
+
+      $y = \fint(u), u = g(x);$
+
+      $dy = y\derivative dx = \fint\derivative(u)du = \fint\derivative{u}g\derivative(x)dx$
+
+      即：$du = dg(x)$
+    }
+  }
+
+  \subsubsection{微分中值定理}
+
  }
+
 
 \end{document}
