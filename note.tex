@@ -478,5 +478,54 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
   柯西中值定理可以用来证明洛必达法则。拉格朗日中值定理是柯西中值定理当$g(t) = t$时的特殊情况。
 }
 }
+\section{高等代数/线性代数}{
+\subsection{定义、解释、前言}{
+\subsubsection{线性变换}{
+  什么是线性变换？线性变换是变换的一种，是操纵抽象的向量空间的手段，通过线性变换可以将空间进行放缩与变形。
+  所谓的“线性”意味着这类变换满足以下两个性质：
+
+  \begin{enumerate}
+    \item $L(\vec{u}+\vec{v}) = L(\vec{u})+L(\vec{v})$
+    \item $L(\mathbf{C}\vec{v}) = \mathbf{C}L(\vec{v})$
+  \end{enumerate}
+
+  所谓的线性通常指的就是这回事，而满足线性也通常暗示着某种可能-用矩阵表示对象的可能。
+  举个例子，求导就是一种线性运算，它符合以上的两个条件。事实上也并不是只有一次幂的函数可以用线性代数的方法表示。
+
+  正因大部分函数可以表示成矩阵与向量，事实上线性代数的很多概念都在函数中有直接类比,比如：
+
+  \begin{tabular}{c|c}
+    \hline
+    线性代数中的概念                & 应用于函数时的别名          \\
+    \hline
+    线性变换(Linear transformation) & 线性算子(Linear operatiors) \\
+    点积(Dot products)              & 内积(Inner products)        \\
+    特征向量(Eigen vectors)         & 特征函数(Eigen functions)
+  \end{tabular}
+
+  可以看出数学中还有很多类似向量的事物。只要所处理对象，具有合理的数乘和加和概念，不管是空间中的箭头、一组数还是函数集合，线性代数中所有关于向量、线性变换和其他的概念都应该适用于它。这些类似向量的事物，它们构成的集合被称为向量空间。这些内容将在“抽象向量空间”章节中讨论
+}
+
+\subsubsection{抽象向量空间}{
+如果要让已经建立好的线代理论和概念适用于一个空间，那么必须满足8条公理。这8条公理保证新定义的向量，其加法和数乘符合你一直接受的状态。
+
+向量加法和数乘的规则：
+\begin{enumerate}
+  \item $\vec{u} + (\vec{v} + \vec{w}) = (\vec{u} + \vec{v}) + \vec{w}$
+  \item $\vec{v} + \vec{w} = \vec{w} + \vec{v}$
+  \item 存在一个$\vec{0}$使得$\vec{0} + \vec{v} = \vec{v}$，这应该对于所有$\vec{v}$都成立。
+  \item 对于所有的$\vec{v}$,都存在$-\vec{v}$，使得$\vec{v} + (-\vec{v}) = \vec{0}$
+  \item $a(b\vec{v}) = (ab)\vec{v}$
+  \item $1\vec{v} = \vec{v}$
+  \item $a(\vec{v} + \vec{w}) = a\vec{v} + a\vec{w}$
+  \item $(a + b)\vec{v} = a\vec{v} + b\vec{v}$
+\end{enumerate}
+
+在新定义的向量空间中应用线性代数的结论之前，需要验证它的定义是否满足以上要求。
+
+为什么要定义这么麻烦的规则？在数学的表达中，我们倾向于得到用普适的概念，{\bfseries而普适的代价就是抽象}。
+}
+}
+}
 }
 \end{document}
