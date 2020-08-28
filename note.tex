@@ -1,12 +1,14 @@
 \documentclass[UTF8]{ctexbook}
 
 \usepackage[]{ctex}
+\usepackage{amsmath}
 \usepackage{geometry}
 \usepackage[colorlinks=true]{hyperref}
 \usepackage{indentfirst}
 \usepackage[center]{titlesec}
 \usepackage{graphicx}
 \usepackage{esint}
+\usepackage{cases}
 
 \geometry{left=1cm,right=1cm,top=3cm,bottom=3cm}
 \title{db的日常笔记}
@@ -30,8 +32,8 @@
 \newcommand{\mathCombination}[2]{C_{#1}^{#2}}
 \newcommand{\mathPermutation}[2]{P_{#1}^{#2}}
 \newcommand{\UpDownSum}[2]{$\sum_{#1}^{#2}$}
-\newcommand{\defFunc}[1]{$\fint(#1)$}
-
+\newcommand{\fDerivative}[1]{\fint\derivative(#1)}
+\newcommand{\defFunction}[1]{\fint(#1)}
 
 \begin{document}
 \pagestyle{empty}{
@@ -254,6 +256,7 @@ $\sin{n\theta} = \sum_{i = 0}^{\frac{n}{2}}[(-1)^i\mathCombination{2i + 1}{n}\co
 
   $\tan\alpha \frac{2\tan\frac{\alpha}{2}}{1 - \tan^2\frac{\alpha}{2}}$
 }
+}
 
 \subsection{三角恒等式}{
 $\csc^2{x} - cot^2{x} = 1$
@@ -264,165 +267,216 @@ $\sin^2x + \cos^2x = 1$
 
 $\tan{x} = \frac{\sin{x}}{\cos{x}}$
 }
-
 }
 
 \section{微积分}{
 
-  \subsection{极限}{
+\subsection{极限}{
 
-    \subsubsection{定理}{
-      \begin{enumerate}
-        \item 函数在一点极限存在的条件是左右极限存在且相等
-        \item 洛必达法则：当极限为$\frac{0}{0}$或者$\frac{\infty}{\infty}$时可上下同时求导，求导后极限不变，每一步都需要重新判断是否依然符合类型
-      \end{enumerate}
-    }
-
-    \subsubsection{重要极限}{
-      \myLimToZero$\frac{\sin{x}}{x}=1$ $\to$ \limNormal{x \to 0}$\sin{x} \to x$
-
-      \myLimToInf$(1+\frac{1}{x})^x = e$
-    }
-  }
-
-  \subsection{等价无穷小}{
-    \myLimToZero$a^x - 1 \approx x\ln{a}$
-
-    \myLimToZero$\arcsin(a)x \approx \sin(a)x \approx (a)x$
-
-    \myLimToZero$\arctan(a)x \approx \tan(a)x \approx (a)x$
-
-    \myLimToZero$\ln1+x \approx x$
-
-    \myLimToZero$e^x \approx 1+x$
-
-    \myLimToZero$\sqrt{1 + x} - \sqrt{1 - x} \approx x$
-
-    \myLimToZero$\tan{x} \approx x$
-
-    \myLimToZero$(1 + ax)^b - 1 \approx abx$
-
-    \myLimToZero$(1+x)^\alpha \approx 1+\alpha x$
-
-    \myLimToZero$1 - \cos x \approx \frac{x^2}{2}$
-
-    \myLimToZero$x - \ln(1 + x) \approx \frac{x^2}{2}$
-
-    \myLimToZero$\tan x - x \approx \frac{x^3}{3}$
-
-    \myLimToZero$x - \arctan x \approx \frac{x^3}{3}$
-
-    \myLimToZero$x - \sin x \approx \frac{x^3}{6}$
-
-    \myLimToZero$\arcsin x - x \approx \frac{x^3}{6}$
-
-    以上等价无穷小都可以由泰勒公式推出
-  }
-
-  \subsection{导数}{
-    导数是什么？教科书上普遍给出的定义是指：函数图像的斜率变化率曲线，事实上某些观点表示导数也可以理解成是函数对于输入值的敏感程度，即：输入值的变化对应的输出值的变化的剧烈程度。
-
-    目前导数的标准定义是指\limNormal{x to x_0}$\frac{f(x) - f(x_0)}{x - x_0}$\ 或者\ \limNormal{\Delta x \to x_0}$\frac{f(x + \Delta x) - f(x)}{\Delta x}$
-
-    值得注意的是：求导是一种线性函数，它满足抽象向量空间的八条准则.
-
-    \subsubsection{求导法则}{
-      以下为求导的基本法则：
-      \begin{enumerate}
-        \item $(u + v)\derivative = u\derivative + v\derivative$
-        \item $(u - v)\derivative = u\derivative - v\derivative$
-        \item $(uv)\derivative = u\derivative v + uv\derivative$
-        \item $(uvw)\derivative = u\derivative vw + uv\derivative w + uvw\derivative$
-        \item $(\mathbf{c}v)\derivative = \mathbf{c}(v)\derivative$
-        \item $\frac{u}{v}\derivative = \frac{u\derivative v - uv\derivative}{v^2}$
-      \end{enumerate}
-      注：反函数的导数等于函数导数的倒数，即——互为倒数的导数相乘依然为1
-    }
-
-    \subsubsection{复合函数求导}{
-      对于复合函数求导，有以下方法：
-
-      $y = \fint(u), u = g(x); \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} = f\derivative(u) \cdot g\derivative(x)$
-    }
-
-    \subsubsection{求导公式表}{
-      以下为基本函数的求导公式表，类似线性组合，大多数函数的导数可以由以下公式组合得到。
-
-      $\fint(x) = C, \fint\derivative(x) = 0$
-
-      $\fint(x) = x^n, \fint\derivative(x) = nx^{n-1}$
-
-      $\fint(x) = x, \fint\derivative(x) = 1$
-
-      $\fint(x) = \sin x, \fint\derivative(x) = \cos x$
-
-      $\fint(x) = \cos x, \fint\derivative(x) = -\sin x$
-
-      $\fint(x) = \tan x, \fint\derivative(x) = \sec^2 x$
-
-      $\fint(x) = \sec x, \fint\derivative(x) = \sec x\tan x$
-
-      $\fint(x) = \cot x, \fint\derivative(x) = -\csc^2 x$
-
-      $\fint(x) = \csc x, \fint\derivative(x) = -\csc x\cot x$
-
-      $\fint(x) = \arcsin x, \fint\derivative(x) = \frac{1}{\sqrt{1 - x^2}}$
-
-      $\fint(x) = \arccos x, \fint\derivative(x) = -\frac{1}{\sqrt{1 - x^2}}$
-
-      $\fint(x) = \arctan x, \fint\derivative(x) = \frac{1}{1 + x^2}$
-
-      $\fint(x) = arccotx, \fint\derivative(x) = -\frac{1}{1 + x^2}$
-
-      $\fint(x) = a^x, \fint\derivative(x) = a^x\ln x$
-
-      $\fint(x) = \log_a x, \fint\derivative(x) = \frac{1}{x\ln a}$
-
-      $\fint(x) = \ln x, \fint\derivative(x)= \frac{1}{x}$
-
-      $\fint(x) = e^x, \fint\derivative(x) = e^x$
-    }
-    \newline
-
-    值得注意的是：
+  \subsubsection{定理}{
     \begin{enumerate}
-      \item 在一维的情况下，可导\myLeftRightArrow 左右导数存在且相等
-
-      \item 可导\myRightArrow 连续
-
-      \item 连续则不一定可导
+      \item 函数在一点极限存在的条件是左右极限存在且相等
+      \item 洛必达法则：当极限为$\frac{0}{0}$或者$\frac{\infty}{\infty}$时可上下同时求导，求导后极限不变，每一步都需要重新判断是否依然符合类型
     \end{enumerate}
   }
 
-  \subsection{微分}{
-    那么微分(differential)又是什么？微分是一个函数在自变量做无穷小变化时函数值的变化。在形式上确实与导数类似，但不应该与导数混淆。
+  \subsubsection{重要极限}{
+    \myLimToZero$\frac{\sin{x}}{x}=1$ $\to$ \limNormal{x \to 0}$\sin{x} \to x$
 
-    可以形象化理解，微分就是曲线的切线。给定一个横坐标，我们可以在切线上找到纵坐标。就是这样一个映射。而导数就是这条切线的斜率。
+    \myLimToInf$(1+\frac{1}{x})^x = e$
+  }
+}
 
-    \subsubsection{微分公式}{
-      给出以下微分公式，与导数确实类似，但微分和导数是两个不同的映射。他们的定义域都是可微函数，微分的值域是1-form，导数的值域是函数。
-      \begin{enumerate}
-        \item $d(u \pm v) = du \pm dv$
-        \item $d(\mathbf{C}u) = \mathbf{c}du$
-        \item $d(uv) = vdu + udv$
-        \item $d(\frac{u}{v} = \frac{vdu + udv}{v^2})$
-      \end{enumerate}
-    }
+\subsection{等价无穷小}{
+  \myLimToZero$a^x - 1 \approx x\ln{a}$
 
-    \subsubsection{复合微分}{
-      与复合求导类似：
+  \myLimToZero$\arcsin(a)x \approx \sin(a)x \approx (a)x$
 
-      $y = \fint(u), u = g(x);$
+  \myLimToZero$\arctan(a)x \approx \tan(a)x \approx (a)x$
 
-      $dy = y\derivative dx = \fint\derivative(u)du = \fint\derivative{u}g\derivative(x)dx$
+  \myLimToZero$\ln1+x \approx x$
 
-      即：$du = dg(x)$
-    }
+  \myLimToZero$e^x \approx 1+x$
+
+  \myLimToZero$\sqrt{1 + x} - \sqrt{1 - x} \approx x$
+
+  \myLimToZero$\tan{x} \approx x$
+
+  \myLimToZero$(1 + ax)^b - 1 \approx abx$
+
+  \myLimToZero$(1+x)^\alpha \approx 1+\alpha x$
+
+  \myLimToZero$1 - \cos x \approx \frac{x^2}{2}$
+
+  \myLimToZero$x - \ln(1 + x) \approx \frac{x^2}{2}$
+
+  \myLimToZero$\tan x - x \approx \frac{x^3}{3}$
+
+  \myLimToZero$x - \arctan x \approx \frac{x^3}{3}$
+
+  \myLimToZero$x - \sin x \approx \frac{x^3}{6}$
+
+  \myLimToZero$\arcsin x - x \approx \frac{x^3}{6}$
+
+  以上等价无穷小都可以由泰勒公式推出
+}
+
+\subsection{导数}{
+  导数是什么？教科书上普遍给出的定义是指：函数图像的斜率变化率曲线，事实上某些观点表示导数也可以理解成是函数对于输入值的敏感程度，即：输入值的变化对应的输出值的变化的剧烈程度。
+
+  目前导数的标准定义是指\limNormal{x to x_0}$\frac{f(x) - f(x_0)}{x - x_0}$\ 或者\ \limNormal{\Delta x \to x_0}$\frac{f(x + \Delta x) - f(x)}{\Delta x}$
+
+  值得注意的是：求导是一种线性函数，它满足抽象向量空间的八条准则.
+
+  \subsubsection{求导法则}{
+    以下为求导的基本法则：
+    \begin{enumerate}
+      \item $(u + v)\derivative = u\derivative + v\derivative$
+      \item $(u - v)\derivative = u\derivative - v\derivative$
+      \item $(uv)\derivative = u\derivative v + uv\derivative$
+      \item $(uvw)\derivative = u\derivative vw + uv\derivative w + uvw\derivative$
+      \item $(\mathbf{c}v)\derivative = \mathbf{c}(v)\derivative$
+      \item $\frac{u}{v}\derivative = \frac{u\derivative v - uv\derivative}{v^2}$
+    \end{enumerate}
+    注：反函数的导数等于函数导数的倒数，即——互为倒数的导数相乘依然为1
   }
 
-  \subsubsection{微分中值定理}
+  \subsubsection{复合函数求导}{
+    对于复合函数求导，有以下方法：
 
- }
+    $y = \fint(u), u = g(x); \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} = f\derivative(u) \cdot g\derivative(x)$
+  }
 
+  \subsubsection{求导公式表}{
+    以下为基本函数的求导公式表，类似线性组合，大多数函数的导数可以由以下公式组合得到。
 
+    $\fint(x) = C, \fint\derivative(x) = 0$
+
+    $\fint(x) = x^n, \fint\derivative(x) = nx^{n-1}$
+
+    $\fint(x) = x, \fint\derivative(x) = 1$
+
+    $\fint(x) = \sin x, \fint\derivative(x) = \cos x$
+
+    $\fint(x) = \cos x, \fint\derivative(x) = -\sin x$
+
+    $\fint(x) = \tan x, \fint\derivative(x) = \sec^2 x$
+
+    $\fint(x) = \sec x, \fint\derivative(x) = \sec x\tan x$
+
+    $\fint(x) = \cot x, \fint\derivative(x) = -\csc^2 x$
+
+    $\fint(x) = \csc x, \fint\derivative(x) = -\csc x\cot x$
+
+    $\fint(x) = \arcsin x, \fint\derivative(x) = \frac{1}{\sqrt{1 - x^2}}$
+
+    $\fint(x) = \arccos x, \fint\derivative(x) = -\frac{1}{\sqrt{1 - x^2}}$
+
+    $\fint(x) = \arctan x, \fint\derivative(x) = \frac{1}{1 + x^2}$
+
+    $\fint(x) = arccotx, \fint\derivative(x) = -\frac{1}{1 + x^2}$
+
+    $\fint(x) = a^x, \fint\derivative(x) = a^x\ln x$
+
+    $\fint(x) = \log_a x, \fint\derivative(x) = \frac{1}{x\ln a}$
+
+    $\fint(x) = \ln x, \fint\derivative(x)= \frac{1}{x}$
+
+    $\fint(x) = e^x, \fint\derivative(x) = e^x$
+  }
+  \newline
+
+  值得注意的是：
+  \begin{enumerate}
+    \item 在一维的情况下，可导\myLeftRightArrow 左右导数存在且相等
+
+    \item 可导\myRightArrow 连续
+
+    \item 连续则不一定可导
+  \end{enumerate}
+}
+
+\subsection{微分}{
+那么微分(differential)又是什么？微分是一个函数在自变量做无穷小变化时函数值的变化。在形式上确实与导数类似，但不应该与导数混淆。
+
+可以形象化理解，微分就是曲线的切线。给定一个横坐标，我们可以在切线上找到纵坐标。就是这样一个映射。而导数就是这条切线的斜率。
+
+\subsubsection{微分公式}{
+  给出以下微分公式，与导数确实类似，但微分和导数是两个不同的映射。他们的定义域都是可微函数，微分的值域是1-form，导数的值域是函数。
+  \begin{enumerate}
+    \item $d(u \pm v) = du \pm dv$
+    \item $d(\mathbf{C}u) = \mathbf{c}du$
+    \item $d(uv) = vdu + udv$
+    \item $d(\frac{u}{v} = \frac{vdu + udv}{v^2})$
+  \end{enumerate}
+}
+
+\subsubsection{复合微分}{
+  与复合求导类似：
+
+  $y = \fint(u), u = g(x);$
+
+  $dy = y\derivative dx = \fint\derivative(u)du = \fint\derivative{u}g\derivative(x)dx$
+
+  即：$du = dg(x)$
+}
+
+\subsubsection{罗尔中值定理}{
+  \includegraphics{resources/Rolle's_mean_value_theorem.jpg}
+
+  如果函数$\fint(x)$满足：
+
+  \begin{enumerate}
+    \item 在闭区间$[a,b]$上连续；
+    \item 在开区间$(a,b)$上可导；
+    \item 在区间端点处的函数值相等，即$\fint(a) = \fint(b)$,
+  \end{enumerate}
+
+  那么在$(a,b)$内至少有一点$\xi, (a<\xi<b)$,使得$\fint\derivative(\xi) = 0$。这个定理称为罗尔定理
+}
+
+\subsubsection{拉格朗日中值定理}{
+\includegraphics{resources/Lagrange's_mean_value_theorem.png}
+
+令$\fint : [a,b] \to \mathbf{R}$为闭区间$[a,b]$上的一个函数,且在开区间
+$(a,b)$内对任意一点$x$,极限\limNormal{h \to 0}$\frac{\fint(x + h) - \fint(x)}{h}$存在，
+为一个有限数字或者等于$+\infty$或$-\infty$.如果有限，则极限等于$\fDerivative{x}$。
+
+此定理称为{\bfseries拉格朗日中值定理}，也简称中值定理，是罗尔中值定理的更一般的形式，同时也是柯西中值定理的特殊情形
+
+这个定理再可以稍微推广一点。只需假设$\fint : [a,b] \to \mathbf{R}$在$[a,b]$连续，且在开区间$(a,b)$内对任意一点$x$,极限\limNormal{h \to 0}
+$\frac{\defFunction{x + h} - \defFunction{x}}{b - a}$存在，为一个有限数字或者等于$+\infty$或者$-\infty$.如果有限，则极限等于$\fDerivative{x}$。
+这版本定理应用的一个例子是函数$x \to x^{\frac{1}{3}}$，实值三次方根函数，其导数在原点趋于无穷。
+
+注意若一个可微函数的值域是复数而不是实数，则上面这定理就未必正确。例如，对实数$x$定义$\defFunction{x} = e^{ix}$。那么
+
+$\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
+
+因$|\fDerivative{x}| = 1 \neq 0$时，$c$为开区间$(0,2\pi)$中任意一点。
+}
+\subsubsection{柯西中值定理}{
+  柯西中值定理，也叫拓展中值定理，是中值定理的一般形式。它叙述为：如果函数$f$和$g$都在闭区间$[a,b]$上连续，且在开区间$(a,b)$上可微，那么存在某个$c \in (a,b)$,
+  使得$(\defFunction{b} - \defFunction{a})g\derivative(c) = (g(b)-g(a))\fDerivative{c}$
+
+  当然，如果$g(a) \neq g(b)$且$g\derivative(c) \neq 0$，则可表示成：$\frac{\fDerivative{c}}{g\derivative(c)} = \frac{\defFunction{b} - \defFunction{a}}{g(b) - g(a)}$
+
+  在几何上，这表示曲线
+
+  $$
+    \begin{cases}
+      [a,b] \to \mathbf{R}^2 \\
+      t \mapsto (f(t), g(t))
+    \end{cases}
+  $$
+  上存在一点其切线平行于由两点$(\defFunction{a}, g(a))$和$(\defFunction{b}, g(b))$所连接的直线。但柯西定理不能表明在任何情况下这种切线都存在，因为可能存在一些c值使$\defFunction{c} = g(c) = 0$, 所以在这些点曲线根本没有切线。
+  下面是这种情况的一个例子
+
+  $t \mapsto (t^3, 1-t^2)$
+
+  在区间$[-1,1]$上，曲线由$(-1, 0)$到$(1,0)$,却并无一个水平切线，然而他在$t = 0$出有一个驻点(实际上是一个尖点)。
+
+  柯西中值定理可以用来证明洛必达法则。拉格朗日中值定理是柯西中值定理当$g(t) = t$时的特殊情况。
+}
+}
+}
 \end{document}
