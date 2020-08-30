@@ -40,7 +40,7 @@
 \pagestyle{empty}{
   \maketitle
   \paragraph{todos}{
-    标签：微分中值定理，泰勒公式
+    泰勒公式
   }
   \tableofcontents
   \newpage
@@ -220,7 +220,20 @@ $\fint(I)\supseteq[\fint(b), \fint(a)]$。
 }
 
 \subsection{倍角公式}{
+
+\subsubsection{二倍角公式}{
+  二倍角公式：由两角和公式推出
+
+  $\sin2\alpha = 2\sin\alpha\cos\alpha$
+
+  $\cos2\alpha = \cos^2\alpha - \sin^\alpha = 2\cos^2\alpha - 1 = 1 - 2\sin^2\alpha$
+
+  $\tan2\alpha = \frac{2\tan\alpha}{1 - \tan^2\alpha}$
+}
+
 \subsubsection{半倍角公式}{
+  半倍角公式：将二倍角公式中的角$2\alpha$看作整体$\beta$，经过变形推出:
+
   $\sin\frac{\alpha}{2} = \pm\sqrt{\frac{1 - \cos\alpha}{2}}$
 
   $\cos\frac{\alpha}{2} = \pm\sqrt{\frac{1 + \cos\alpha}{2}}$
@@ -234,14 +247,6 @@ $\fint(I)\supseteq[\fint(b), \fint(a)]$。
   $\csc\frac{\alpha}{2} = \frac{\pm\sqrt{\frac{\sec\alpha - 1}{2\sec\alpha}}2\sec\alpha}{\sec\alpha - 1} = \frac{\pm\sqrt{\frac{3\sec^3\alpha - \sec^2\alpha}{2\sec\alpha}}}{\sec\alpha - 1}$
 }
 
-\subsubsection{二倍角公式}{
-  $\sin2\alpha = 2\sin\alpha\cos\alpha$
-
-  $\cos2\alpha = \cos^2\alpha - \sin^\alpha = 2\cos^2\alpha - 1 = 1 - 2\sin^2\alpha$
-
-  $\tan2\alpha = \frac{2\tan\alpha}{1 - \tan^2\alpha}$
-}
-
 \subsubsection{n倍角公式}{
 $\cos{n\theta} = \sum_{i = 0}^{\frac{n}{2}}[(-1)^i\mathCombination{2i + 1}{n}\cos^{n - 2i}\theta\sin^{2i}\theta]$
 
@@ -249,6 +254,8 @@ $\sin{n\theta} = \sum_{i = 0}^{\frac{n}{2}}[(-1)^i\mathCombination{2i + 1}{n}\co
 }
 
 \subsubsection{万能替换公式}{
+  万能替换公式：尝试将正常的三角函数用半角公式表示时经过变形推出：
+
   角$\alpha(\alpha \neq 2k\pi + \pi ,k \in \mathbf{z})$的所有三角比都可以用 $\tan\frac{\alpha}{2}$表示.这组公式叫做万能替换公式
 
   $\sin\alpha = \frac{2\tan\frac{\alpha}{2}}{1+\tan^2\frac{\alpha}{2}}$
@@ -260,14 +267,71 @@ $\sin{n\theta} = \sum_{i = 0}^{\frac{n}{2}}[(-1)^i\mathCombination{2i + 1}{n}\co
 }
 
 \subsection{三角恒等式}{
-$\csc^2{x} - cot^2{x} = 1$
 
-$\sec^2x - tan^2x = 1$ %去你🐎的大括号
+  倒数关系：
 
-$\sin^2x + \cos^2x = 1$
+  $\sin\alpha \cdot \csc\alpha = 1$
 
-$\tan{x} = \frac{\sin{x}}{\cos{x}}$
+  $\cos\alpha \cdot \sec\alpha = 1$
+
+  $\tan\alpha \cdot \cot\alpha = 1$
+
+  商数关系：
+
+  $\tan{x} = \frac{\sin{x}}{\cos{x}}$
+
+  $\cot\alpha = \frac{\cos x}{\sin x}$
+
+  平方关系：
+
+  $\sin^2\alpha + \cos^2\alpha = 1$
+
+  $1 + \tan^2\alpha = \sec^2\alpha$
+
+  $1 + \cot^2\alpha = \csc^2\alpha$
+
 }
+
+\subsection{解斜三角形}{
+设三角形$\triangle ABC$,角A、B、C的对边为abc，以A为原点$O$建系,总有以下公式：
+
+$\mathbf{S}\triangle_{ABC} = \frac{1}{2}AB \cdot CD = \frac{1}{2}cb\sin A$，即$\mathbf{S}\triangle_{ABC} = \frac{1}{2}bc\sin A$
+
+同理得：$\mathbf{S}\triangle_{ABC} = \frac{1}{2}\sin B, \mathbf{S}\triangle_{ABC} = \frac{1}{2}ab\sin C$.
+
+这就是说，三角形的面积等于任意两边与他们夹角正弦值的一半。
+
+\subsubsection{正弦定理}
+将$\frac{1}{2}bc\sin A = \frac{1}{2}ac\sin B = \frac{1}{2}ab\sin C$三个公式同除$\frac{1}{2}abc$,得：
+
+$\frac{\sin A}{a} = \frac{\sin B}{b} = \frac{\sin C}{c}$, 也可表示为：$\frac{1}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C}$
+
+此式表明：在三角形中，各{\bfseries边}与它所对{\bfseries角的正弦}的比相等
+}
+
+\subsubsection{余弦定理}{
+  由两点间距离公式，得$a = |BC| = \sqrt{(b\cos A - c)^2 + (b\sin A - 0)^2}$
+
+  两边平方并化简得：
+
+  $a^2 = b^2 - 2b\cos A + c^2$
+
+  $b^2 = a^2 + c^2 - 2ac\cos B$
+
+  $c^2 = a^2 + b^2 - 2ab\cos C$
+
+  也可变形化为：
+
+  $\cos A = \frac{b^2 + c^2 - a^2}{2bc}$
+
+  $\cos B = \frac{a^2 + c^2 - b^2}{2ac}$
+
+  $\cos C = \frac{b^2 + a^2 - c^2}{2ab}$
+}
+\\
+
+\indent这些关系在直角三角形中也成立。
+
 }
 
 \section{微积分}{
