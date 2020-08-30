@@ -21,9 +21,9 @@
 \titleformat{\subsubsection}[block]{\large\itshape\mdseries}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}{1em}{}[]
 \titleformat{\paragraph}[block]{\small\bfseries}{[\arabic{paragraph}]}{1em}{}[]
 \setcounter{secnumdepth}{3}
-\setcounter{tocdepth}{2}
+\setcounter{tocdepth}{3}
 
-\newcommand{\limNormal}[1]{$\lim\limits_{#1}$}
+\newcommand{\limNormal}[1]{\lim\limits_{#1}}
 \newcommand{\myLimToZero}{\limNormal{x \to 0}}
 \newcommand{\myLimToInf}{\limNormal{x \to \infty}}
 \newcommand{\derivative}{^\prime}
@@ -34,6 +34,7 @@
 \newcommand{\UpDownSum}[2]{$\sum_{#1}^{#2}$}
 \newcommand{\fDerivative}[1]{\fint\derivative(#1)}
 \newcommand{\defFunction}[1]{\fint(#1)}
+\newcommand{\definiteIntegral}[2]{\int^{#1}_{#2}}
 
 \begin{document}
 \pagestyle{empty}{
@@ -54,7 +55,7 @@
 \subsection{介值定理}{
 在数学分析中，介值定理（英语：intermediate value theorem，又称中间值定理）描述了连续函数在两点之间的连续性：
 
-假设有一连续函数$\fint:[a,b]\rightarrow \mathbf{R}$, 且假设$\fint(a)<\fint(b)$, 若对任意数$u$满足$\fint(a)<u<\fint(b)$,则存在一点$c,a<c<b$,使得$\fint(c) = u$,当$\fint(a)>\fint(b)时也有类似叙述$
+假设有一连续函数$\fint:[a,b]\rightarrow \mathbf{R}$, 且假设$\fint(a)<\fint(b)$, 若对任意数$u$满足$\fint(a)<u<\fint(b)$,则存在一点$c,a<c<b$,使得$\fint(c) = u$,当$\fint(a)>\fint(b)$时也有类似叙述
 
 直观的比喻：这代表在$[a,b]$区间上可以画出一条连续曲线，而不让笔离开纸面。
 \newline
@@ -278,53 +279,54 @@ $\tan{x} = \frac{\sin{x}}{\cos{x}}$
       \item 函数在一点极限存在的条件是左右极限存在且相等
       \item 洛必达法则：当极限为$\frac{0}{0}$或者$\frac{\infty}{\infty}$时可上下同时求导，求导后极限不变，每一步都需要重新判断是否依然符合类型
     \end{enumerate}
-  }
+  }%极限定理结尾
 
   \subsubsection{重要极限}{
-    \myLimToZero$\frac{\sin{x}}{x}=1$ $\to$ \limNormal{x \to 0}$\sin{x} \to x$
+    $\myLimToZero\frac{\sin{x}}{x}=1 \to \limNormal{x \to 0}\sin{x} \to x$
 
-    \myLimToInf$(1+\frac{1}{x})^x = e$
-  }
-}
+    $\myLimToInf(1+\frac{1}{x})^x = e$
+  }%重要极限结尾  
 
-\subsection{等价无穷小}{
-  \myLimToZero$a^x - 1 \approx x\ln{a}$
+  \subsubsection{等价无穷小}{
+    $\myLimToZero a^x - 1 \approx x\ln{a}$
 
-  \myLimToZero$\arcsin(a)x \approx \sin(a)x \approx (a)x$
+    $\myLimToZero \arcsin(a)x \approx \sin(a)x \approx (a)x$
 
-  \myLimToZero$\arctan(a)x \approx \tan(a)x \approx (a)x$
+    $\myLimToZero \arctan(a)x \approx \tan(a)x \approx (a)x$
 
-  \myLimToZero$\ln1+x \approx x$
+    $\myLimToZero \ln1+x \approx x$
 
-  \myLimToZero$e^x \approx 1+x$
+    $\myLimToZero e^x \approx 1+x$
 
-  \myLimToZero$\sqrt{1 + x} - \sqrt{1 - x} \approx x$
+    $\myLimToZero \sqrt{1 + x} - \sqrt{1 - x} \approx x$
 
-  \myLimToZero$\tan{x} \approx x$
+    $\myLimToZero \tan{x} \approx x$
 
-  \myLimToZero$(1 + ax)^b - 1 \approx abx$
+    $\myLimToZero (1 + ax)^b - 1 \approx abx$
 
-  \myLimToZero$(1+x)^\alpha \approx 1+\alpha x$
+    $\myLimToZero (1+x)^\alpha \approx 1+\alpha x$
 
-  \myLimToZero$1 - \cos x \approx \frac{x^2}{2}$
+    $\myLimToZero 1 - \cos x \approx \frac{x^2}{2}$
 
-  \myLimToZero$x - \ln(1 + x) \approx \frac{x^2}{2}$
+    $\myLimToZero x - \ln(1 + x) \approx \frac{x^2}{2}$
 
-  \myLimToZero$\tan x - x \approx \frac{x^3}{3}$
+    $\myLimToZero \tan x - x \approx \frac{x^3}{3}$
 
-  \myLimToZero$x - \arctan x \approx \frac{x^3}{3}$
+    $\myLimToZero x - \arctan x \approx \frac{x^3}{3}$
 
-  \myLimToZero$x - \sin x \approx \frac{x^3}{6}$
+    $\myLimToZero x - \sin x \approx \frac{x^3}{6}$
 
-  \myLimToZero$\arcsin x - x \approx \frac{x^3}{6}$
+    $\myLimToZero \arcsin x - x \approx \frac{x^3}{6}$
 
-  以上等价无穷小都可以由泰勒公式推出
-}
+    以上等价无穷小都可以由泰勒公式推出
+  }%等价无穷小结尾
+
+}%极限结尾
 
 \subsection{导数}{
   导数是什么？教科书上普遍给出的定义是指：函数图像的斜率变化率曲线，事实上某些观点表示导数也可以理解成是函数对于输入值的敏感程度，即：输入值的变化对应的输出值的变化的剧烈程度。
 
-  目前导数的标准定义是指\limNormal{x to x_0}$\frac{f(x) - f(x_0)}{x - x_0}$\ 或者\ \limNormal{\Delta x \to x_0}$\frac{f(x + \Delta x) - f(x)}{\Delta x}$
+  导数的标准定义是指$\limNormal{x to x_0}\frac{f(x) - f(x_0)}{x - x_0}$\ 或者\ $\limNormal{\Delta x \to x_0}\frac{f(x + \Delta x) - f(x)}{\Delta x}$
 
   值得注意的是：求导是一种线性函数，它满足抽象向量空间的八条准则.
 
@@ -339,13 +341,13 @@ $\tan{x} = \frac{\sin{x}}{\cos{x}}$
       \item $\frac{u}{v}\derivative = \frac{u\derivative v - uv\derivative}{v^2}$
     \end{enumerate}
     注：反函数的导数等于函数导数的倒数，即——互为倒数的导数相乘依然为1
-  }
+  }%求导法则结尾
 
   \subsubsection{复合函数求导}{
     对于复合函数求导，有以下方法：
 
     $y = \fint(u), u = g(x); \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} = f\derivative(u) \cdot g\derivative(x)$
-  }
+  }%复合函数求导结尾
 
   \subsubsection{求导公式表}{
     以下为基本函数的求导公式表，类似线性组合，大多数函数的导数可以由以下公式组合得到。
@@ -383,7 +385,7 @@ $\tan{x} = \frac{\sin{x}}{\cos{x}}$
     $\fint(x) = \ln x, \fint\derivative(x)= \frac{1}{x}$
 
     $\fint(x) = e^x, \fint\derivative(x) = e^x$
-  }
+  }%求导公式表结尾
   \newline
 
   值得注意的是：
@@ -394,7 +396,20 @@ $\tan{x} = \frac{\sin{x}}{\cos{x}}$
 
     \item 连续则不一定可导
   \end{enumerate}
-}
+
+  \subsubsection{线性近似/牛顿法近似函数/求方程解}{
+    由导数的另一种定义：$\fDerivative{x} = \limNormal{x \to a}\frac{\defFunction{x} - \defFunction{a}}{x - a}$
+
+    当不再取极限的时候等号变成约等于，即：$\fDerivative{x} \approx \frac{\defFunction{x} - \defFunction{a}}{x - a}$, 两边移项，可得
+
+    $\defFunction{x} \approx \defFunction{a} + (x-a)\fDerivative{a}$或者$x - a \approx -\frac{\defFunction{a}}{\fDerivative{a}}$
+
+    前者被称为线性近似，后者就是牛顿法，其实本质上是同一个公式的不同变形。
+
+    当x和a取值越接近，近似也就越精确，这种方法本质上是取级数展开形式的前两位。
+
+  }%线性近似/牛顿法近似函数/方程解结尾
+}%导数结尾
 
 \subsection{微分}{
 那么微分(differential)又是什么？微分是一个函数在自变量做无穷小变化时函数值的变化。在形式上确实与导数类似，但不应该与导数混淆。
@@ -409,7 +424,7 @@ $\tan{x} = \frac{\sin{x}}{\cos{x}}$
     \item $d(uv) = vdu + udv$
     \item $d(\frac{u}{v} = \frac{vdu + udv}{v^2})$
   \end{enumerate}
-}
+}%微分公式结尾
 
 \subsubsection{复合微分}{
   与复合求导类似：
@@ -419,7 +434,7 @@ $\tan{x} = \frac{\sin{x}}{\cos{x}}$
   $dy = y\derivative dx = \fint\derivative(u)du = \fint\derivative{u}g\derivative(x)dx$
 
   即：$du = dg(x)$
-}
+}%复合微分结尾
 
 \subsubsection{罗尔中值定理}{
   \includegraphics{resources/Rolle's_mean_value_theorem.jpg}
@@ -433,19 +448,19 @@ $\tan{x} = \frac{\sin{x}}{\cos{x}}$
   \end{enumerate}
 
   那么在$(a,b)$内至少有一点$\xi, (a<\xi<b)$,使得$\fint\derivative(\xi) = 0$。这个定理称为罗尔定理
-}
+}%罗尔中值定理结尾
 
 \subsubsection{拉格朗日中值定理}{
 \includegraphics{resources/Lagrange's_mean_value_theorem.png}
 
 令$\fint : [a,b] \to \mathbf{R}$为闭区间$[a,b]$上的一个函数,且在开区间
-$(a,b)$内对任意一点$x$,极限\limNormal{h \to 0}$\frac{\fint(x + h) - \fint(x)}{h}$存在，
+$(a,b)$内对任意一点$x$,极限$\limNormal{h \to 0}\frac{\fint(x + h) - \fint(x)}{h}$存在，
 为一个有限数字或者等于$+\infty$或$-\infty$.如果有限，则极限等于$\fDerivative{x}$。
 
 此定理称为{\bfseries拉格朗日中值定理}，也简称中值定理，是罗尔中值定理的更一般的形式，同时也是柯西中值定理的特殊情形
 
-这个定理再可以稍微推广一点。只需假设$\fint : [a,b] \to \mathbf{R}$在$[a,b]$连续，且在开区间$(a,b)$内对任意一点$x$,极限\limNormal{h \to 0}
-$\frac{\defFunction{x + h} - \defFunction{x}}{b - a}$存在，为一个有限数字或者等于$+\infty$或者$-\infty$.如果有限，则极限等于$\fDerivative{x}$。
+这个定理再可以稍微推广一点。只需假设$\fint : [a,b] \to \mathbf{R}$在$[a,b]$连续，且在开区间$(a,b)$内对任意一点$x$,极限$\limNormal{h \to 0}
+  \frac{\defFunction{x + h} - \defFunction{x}}{b - a}$存在，为一个有限数字或者等于$+\infty$或者$-\infty$.如果有限，则极限等于$\fDerivative{x}$。
 这版本定理应用的一个例子是函数$x \to x^{\frac{1}{3}}$，实值三次方根函数，其导数在原点趋于无穷。
 
 注意若一个可微函数的值域是复数而不是实数，则上面这定理就未必正确。例如，对实数$x$定义$\defFunction{x} = e^{ix}$。那么
@@ -453,7 +468,8 @@ $\frac{\defFunction{x + h} - \defFunction{x}}{b - a}$存在，为一个有限数
 $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
 
 因$|\fDerivative{x}| = 1 \neq 0$时，$c$为开区间$(0,2\pi)$中任意一点。
-}
+}%拉格朗日中值定理结尾
+
 \subsubsection{柯西中值定理}{
   柯西中值定理，也叫拓展中值定理，是中值定理的一般形式。它叙述为：如果函数$f$和$g$都在闭区间$[a,b]$上连续，且在开区间$(a,b)$上可微，那么存在某个$c \in (a,b)$,
   使得$(\defFunction{b} - \defFunction{a})g\derivative(c) = (g(b)-g(a))\fDerivative{c}$
@@ -476,11 +492,30 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
   在区间$[-1,1]$上，曲线由$(-1, 0)$到$(1,0)$,却并无一个水平切线，然而他在$t = 0$出有一个驻点(实际上是一个尖点)。
 
   柯西中值定理可以用来证明洛必达法则。拉格朗日中值定理是柯西中值定理当$g(t) = t$时的特殊情况。
-}
-}
+}%柯西中值定理结尾
+
+}%微分结尾
+
+
+\subsection{定积分}{
+
+  \subsubsection{区间再现公式}{
+    设$\defFunction{x} = \definiteIntegral{a}{b}g(x)dx$，令$x = a + b - t$,当$x = a$时，$t = b$,当$x = b$时，$t = a$,$dx$变成$-dt$。即：
+
+    $\defFunction{x} = \definiteIntegral{a}{b}g(x)dx = -\definiteIntegral{b}{a}g(a+b-t)dt = \definiteIntegral{a}{b}g(a + b - t)dt$
+
+    由于定积分与被积变量无关，所以将上式结果中的t换成x，与原函数相加，得：
+
+    $\defFunction{x} = \frac{1}{2}\definiteIntegral{a}{b}[g(x) + g(a + b - x)]dx$
+  }%区间在线公式结尾
+
+}%定积分结尾
+
+}%微积分结尾
+
 \section{高等代数/线性代数}{
 \subsection{定义、解释、前言}{
-\subsubsection{线性变换}{
+\subsubsection{什么是线性变换}{
   什么是线性变换？线性变换是变换的一种，是操纵抽象的向量空间的手段，通过线性变换可以将空间进行放缩与变形。
   所谓的“线性”意味着这类变换满足以下两个性质：
 
@@ -504,12 +539,12 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
   \end{tabular}
 
   可以看出数学中还有很多类似向量的事物。只要所处理对象，具有合理的数乘和加和概念，不管是空间中的箭头、一组数还是函数集合，线性代数中所有关于向量、线性变换和其他的概念都应该适用于它。这些类似向量的事物，它们构成的集合被称为向量空间。这些内容将在“抽象向量空间”章节中讨论
-}
+}%线性变换结尾
 
-\subsubsection{抽象向量空间}{
-如果要让已经建立好的线代理论和概念适用于一个空间，那么必须满足8条公理。这8条公理保证新定义的向量，其加法和数乘符合你一直接受的状态。
+\subsubsection{关于抽象向量空间}{
+为什么要定义这么麻烦的规则？在数学的表达中，我们倾向于得到用普适的概念，{\bfseries而普适的代价就是抽象}。在日常生活中不难发现很多东西都给人一种线性的错觉，事实上那不是错觉，向量也不一定得是箭头或坐标什么的，因此为了规范向量的定义，得到所期望的普适性，抽象出以下规则，这意味着：如果要将一类对象称为向量并且对其运用线性代数的知识，则必须满足以下条件。
 
-向量加法和数乘的规则：
+（也可以称这堆玩意为向量加法和数乘的规则）：
 \begin{enumerate}
   \item $\vec{u} + (\vec{v} + \vec{w}) = (\vec{u} + \vec{v}) + \vec{w}$
   \item $\vec{v} + \vec{w} = \vec{w} + \vec{v}$
@@ -523,11 +558,14 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
 
 在新定义的向量空间中应用线性代数的结论之前，需要验证它的定义是否满足以上要求。
 
-为什么要定义这么麻烦的规则？在数学的表达中，我们倾向于得到用普适的概念，{\bfseries而普适的代价就是抽象}。
+如果要让已经建立好的线代理论和概念适用于一个空间，那么必须满足这8条公理。这8条公理保证新定义的向量，其加法和数乘符合你一直接受的状态。
 
-那么，有了这些明确的规则，我们就可以在任何{\bfseries符合这些规则}的抽象的向量空间中使用线性代数了。
-}
-}
-}
-}
+那么，有了这些明确的规则，就可以在任何{\bfseries符合这些规则}的抽象的向量空间中使用线性代数了。
+}%关于抽象向量空间结尾
+
+}%定义、解释、前言结尾
+
+}%高等代数/线性代数结尾
+
+}%数学篇结尾
 \end{document}
