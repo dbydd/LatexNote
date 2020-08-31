@@ -27,6 +27,9 @@
 \newcommand{\myLimToZero}{\limNormal{x \to 0}}
 \newcommand{\myLimToInf}{\limNormal{x \to \infty}}
 \newcommand{\derivative}{^\prime}
+\newcommand{\doubleDerivative}{^{\prime\prime}}
+\newcommand{\tripleDerivative}{^{\prime\prime\prime}}
+\newcommand{\aLotDerivative}[1]{^{[#1]}}
 \newcommand{\myLeftRightArrow}{$\Leftrightarrow$}
 \newcommand{\myRightArrow}{$\Rightarrow$}
 \newcommand{\mathCombination}[2]{C_{#1}^{#2}}
@@ -560,7 +563,6 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
 
 }%微分结尾
 
-
 \subsection{定积分}{
 
   \subsubsection{区间再现公式}{
@@ -574,6 +576,99 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
   }%区间在线公式结尾
 
 }%定积分结尾
+
+\subsection{微分方程}{
+微分方程是一种描述世界的好手段，当描述某个东西随时间的微小变化比起他整体的变化更方便的时候就会使用微分方程。
+
+\subsubsection{关于运动的微分方程/线性常系数微分方程}{
+开门见山，先提出此公式再进行分析。
+
+$m\frac{d^2y}{dt^2} + 2r\frac{dy}{dt} + ky = 0$
+
+很明显，这是个二阶常系数线性微分方程，二阶指的是它最多求了2次导，线性、这意味着他可以是个抽象的向量，他能被线性代数的方式所表示（见4.1.2-关于抽象向量空间）。至于“常系数”，这在之后会进行分析。
+
+先分析这个方程的退化形式。
+
+1、设$m = 0, r = 1/2, \frac{dy}{dt} = ay$
+
+很明显：这意味着函数求导后是它自身的倍数，这暗示着原函数是个指数函数。不难猜到：原函数可以为$y = e^{at}$。但这样还不够。仔细想想：如果e的前面有系数，求导后也依然还是原函数的倍数，所以通解应该是$y = ce^{at}$。
+
+2、设 $r = 0, \frac{d^2y}{dt^2} = -\omega^2y$,其中$\omega$是$\frac{k}{m}$。
+
+这又意味着什么？这意味着：原函数求二次导后是负数倍的他自己，在实数范围内(毕竟一涉及$i$事情就麻烦了起来，不过如果包含虚数的范围倒也是一件合理的事情，设$y=e^{kx},y\doubleDerivative = k^{2}e^{kx}$,如果要使这个二阶导符合条件很明显$k$应该是$i$,而欧拉公式的完整写法是：$e^{ix} = \cos x + i\sin x$)符合这个条件的就这两个函数：$\sin\omega t$和$\cos\omega t$，那么这两个函数就是解集的“基向量/基础解系”，通过这两个函数的线性组合就可以得出所有符合条件的原函数，因此通解写作$y = C\cos\omega t + D\sin\omega t$
+
+3、设$m = 0, r = 0, \frac{dy}{dt} = 0$
+
+这更明显，$y = C + Dt$。
+
+那么回到那个方程：这个方程在很多领域都是很常见的。这个方程能表示一切振动。（比如弹簧，钟表，摆动...）通过选择不同的系数，可以建立各种最简洁的基础模型。
+
+那么以弹簧为例来讲解。例子中$t$表示时间（这就是为什么不用x）:
+
+实际上，在这种模型中，常有$r = 0$。那么取$ r = 0$的情况。
+
+有牛顿定律：$F = ma$，m就是质量，a则是加速度，也就是二阶导，因此改写成二阶导形式:$F = m\frac{d^2y}{dt^2}$（不考虑质量损失）
+
+弹簧是悬空拉着一个小滑块的。y的正方向是向下，他表示弹簧的位移，当y是正的时候，弹簧有向上拉的力，而弹簧的力与$y$成正比，比例则是常数$k$。当y很大的时候弹簧被拉的很长，向上拉的力在往上拉，写作$F = -ky = m\frac{d^2y}{dt^2}$其中F表示拉力，负号是因为力的方向与y相反（胡克定理）。经过变形得到：$m\frac{d^2y}{dt^2} + ky = 0$。非常眼熟。
+
+$r = 0$，$r$表示的是阻力，可以是空气阻力也可以是磁力等等，但他就是我们没法制作永动机的原因，不过现在是假想环境，所以设他为0，那么弹簧就会是一根永不停息的、上下振动的弹簧。就如同上面分析的结果，他沿着{\bfseries 正弦和余弦}振动。而常数$C$与$D$则取决于初始状态。
+
+回想一下，$-ky = m\frac{d^2y}{dt^2}$,将两边同除以$m$,负号移走，于是得到$\omega^2$而$\omega^2 = \frac{k}{m}$。
+
+这种情况很简单，只有$\sin , \cos$。接下来，来一点阻力。
+
+$my\doubleDerivative + 2ry\derivative + ky = 0$
+
+现在，对于任意$m,r,k$。想要求解此方程，很棒的是指数函数可以求出正确答案。
+
+核心思想是尝试指数函数$y = e^{\lambda t}$,$\lambda$指的是特征函数。（用$\lambda$而不用$C$的原因可以看4.1.1-什么是线性变换。）将这个代入方程，并求出合适的$\lambda$。何不先从常数项开始？
+
+很容易看出常数项是$ke^{\lambda t}$
+
+而一阶导呢？有$2r$乘以$y = e^{\lambda t}$的导数，只需要将导数代入方程。
+
+一阶项是$2r\lambda e^{\lambda t}$
+
+到二阶导，同理。
+
+二阶项就是$m\lambda^2e^{\lambda t}$
+
+写出完整的形态：$m\lambda^2e^{\lambda t} + 2r\lambda e^{\lambda t} + ke^{\lambda t} = 0$
+
+消掉公因式$e^{\lambda t}$,他显然不是0，可以消掉。结果就是$m\lambda^2 + \lambda + k= 0$
+
+这个方程只不过是个普通的二次方程，随随便便就能解出来。二次方程理应有两个解。因此$e^{\lambda_1 t}$和$e^{\lambda_2 t}$都是方程的解
+
+回忆一下公式，$\lambda = \frac{-r \pm \sqrt{r^2 - km}}{m}$
+
+引入一些数字，$1y\doubleDerivative + 6y\derivative + 8y = 0$。计算$\lambda$
+
+$\lambda^2 + 6\lambda + 8 = 0$
+
+$\lambda_1 = -2, \lambda_2 = -4$
+
+解是多少呢？$y(t) = Ce^{-2t} + De^{-4t}$
+
+两个$\lambda$都在指数中，然后得解
+
+注意：$\lambda$可能解出复数，可以照样用，但也可以写成另一种形式——利用欧拉公式的美妙性质。
+
+$e^{it} = \cos t + i\sin t$
+
+(欧拉第二天意识到$-i$也有公式)
+
+$e^{-it} = \cos t -i\sin t$
+
+让我们直接跳到结果：
+
+$e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
+
+另外，当两个$\lambda$相同（出现重根）的时候,方程的解一个是$e^{\lambda t}$另一个是$te^{\lambda t}$，经过验算会发现最后消掉了一部分，得到的是正常的结果。
+
+所以结论就是：线性常系数微分方程只要通过$e^{\lambda t}$就能解决。
+}%关于运动的微分方程结尾
+
+}%微分方程结尾
 
 }%微积分结尾
 
