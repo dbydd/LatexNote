@@ -29,12 +29,12 @@
 \newcommand{\derivative}{^\prime}
 \newcommand{\doubleDerivative}{^{\prime\prime}}
 \newcommand{\tripleDerivative}{^{\prime\prime\prime}}
-\newcommand{\aLotDerivative}[1]{^{[#1]}}
+\newcommand{\aLotDerivative}[1]{^{(#1)}}
 \newcommand{\myLeftRightArrow}{$\Leftrightarrow$}
 \newcommand{\myRightArrow}{$\Rightarrow$}
 \newcommand{\mathCombination}[2]{C_{#1}^{#2}}
 \newcommand{\mathPermutation}[2]{P_{#1}^{#2}}
-\newcommand{\UpDownSum}[2]{$\sum_{#1}^{#2}$}
+\newcommand{\UpDownSum}[2]{\sum\limits_{#1}^{#2}}
 \newcommand{\fDerivative}[1]{\fint\derivative(#1)}
 \newcommand{\defFunction}[1]{\fint(#1)}
 \newcommand{\definiteIntegral}[2]{\int^{#1}_{#2}}
@@ -43,7 +43,7 @@
 \pagestyle{empty}{
   \maketitle
   \paragraph{todos}{
-    泰勒公式
+    誊录纸质笔记。
   }
   \tableofcontents
   \newpage
@@ -563,6 +563,10 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
 
 }%微分结尾
 
+\subsection{积分}{
+
+}%积分结尾
+
 \subsection{定积分}{
 
   \subsubsection{区间再现公式}{
@@ -576,6 +580,35 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
   }%区间在线公式结尾
 
 }%定积分结尾
+
+\subsection{无穷级数}{
+
+\subsubsection{泰勒公式/泰勒级数/展开}{
+泰勒级数表示：当知道某点$x = a$的情况时，就能知道$a$点附近的函数是怎样的。
+
+$x$在$a$点附近,最为粗略的估计就是$\defFunction{x} \approx \defFunction{a}$
+
+然后才是修正项：$\fDerivative{a}(x - a)$，这是斜率乘以距离，最终得到的就是高度。相当于沿切线前进。
+
+还有一项表示弯曲：$\frac{1}{2}\fint\doubleDerivative(a)(x - a)^2$，他是斜率的斜率，变化率的变化率。
+
+但后面还有更多项，直接写出通项公式如何？
+
+泰勒级数通项公式：$\defFunction{x} = \UpDownSum{n = 1}{\infty}\frac{1}{n!}\fint\aLotDerivative{n - 1}(x - a)^{n - 1}$，0阶导指的是原函数，a是x附近的点。
+
+还有泰勒公式：表示的不是一个函数的幂级数形式而是对于某个函数的近似，形式与泰勒级数通项公式类似。
+
+泰勒公式：$\defFunction{x} = \defFunction{a} + \fDerivative{a}(x - a) + \frac{1}{2!}\fint\doubleDerivative(a)(x - a)^2 + ... + \frac{1}{n!}\fint\aLotDerivative{n}(x - a)^n + R_n(x)$。
+
+$R_n(x)$是余项，表示误差，是$(x - a)^n$的高阶无穷小$O((x - a)^n)$。根据中值定理可得$R_n(x) = \frac{1}{(n + 1)!}\fint\aLotDerivative{n + 1}(\xi)(x - a)^{n+1}$，其中$a \leq \xi \leq x$，意思是$\xi$介于$a$和$x$之间。
+
+当泰勒公式在$a = 0$处展开时就称为麦克劳林公式。
+
+麦克劳林公式：当$a = 0, \defFunction{x} = \defFunction{0} + \frac{1}{1!}\fDerivative{0}x + \frac{1}{2!}\fint\doubleDerivative(0)x^2 + ... + \frac{1}{(n + 1)!}\fint\aLotDerivative{n + 1}(\theta x)x^{n+1}$，其中$0 < \theta < 1$
+
+}%泰勒公式/泰勒级数/展开结尾
+
+}%无穷级数结尾
 
 \subsection{微分方程}{
 微分方程是一种描述世界的好手段，当描述某个东西随时间的微小变化比起他整体的变化更方便的时候就会使用微分方程。
