@@ -54,7 +54,7 @@
 \section{基本概念}{
 \subsection{六大基本初等函数}{
   常数函数，幂函数，指数函数，对数函数，三角函数
-}
+}%溜达基本初等函数结尾
 
 \subsection{介值定理}{
 在数学分析中，介值定理（英语：intermediate value theorem，又称中间值定理）描述了连续函数在两点之间的连续性：
@@ -78,30 +78,31 @@ $\fint(I)\supseteq[\fint(b), \fint(a)]$。
 
 图示：
 \includegraphics{resources/Intermediatevaluetheorem.png}
-}
+}%介值定理结尾
 
 \subsection{二项式定理}{
   $(x + y)^n = x^n + \mathCombination{n - 1}{n}(x^{n-1} y) + \mathCombination{n - 2}{n}(x^{n-2} y^2) + \dots + y^n$
-}
+}%二项式定理结尾
 
 \subsection{排列组合}{
   排列：$\mathPermutation{m}{n} = \frac{m!}{(m-n)!}$
 
   组合：$\mathCombination{m}{n} = \frac{\mathPermutation{m}{n}}{m!} = \frac{n!}{m!(n-m)!}$
-}
+}%排列组合结尾
 
 \subsection{零散的定义}{
   \begin{enumerate}
     \item 有界：$\exists\epsilon,f(x) < \epsilon\quad(-\infty < x < \infty )$
   \end{enumerate}
-}
+}%零散的定义结尾
 
 \subsection{零散的思想}{
   \begin{enumerate}
     \item 正变换是数学的重要工具,三角变换是只变其形不变其质的。三角变换常常先寻找式子所包含的各个角之间的联系,并以此为依据选择可以联系它们的适当公式,通过换元法把三角恒等变换问题转化为代数恒等变换问题。
   \end{enumerate}
-}
-}
+}%零散的思想结尾
+
+}%基本概念结尾
 
 \section{三角函数}{
 三角函数一般由单位圆引出,如下：
@@ -114,14 +115,15 @@ $\fint(I)\supseteq[\fint(b), \fint(a)]$。
   $\cos{\alpha} = \frac{x}{r}$
 
   $\tan{\alpha} = \frac{y}{x}$
-}
+}%正三角函数结尾
+
 \subsection{反三角函数}{
   $\cot{\alpha} = \frac{1}{\tan{\alpha}}$
 
   $\sec{\alpha} = \frac{1}{\cos{\alpha}}$
 
   $\csc{\alpha} = \frac{1}{\sin{\alpha}}$
-}
+}%反三角函数结尾
 
 \subsection{和差化积}{
   $\sin{\alpha}+\sin{\beta} = 2\sin{\frac{\alpha + \beta}{2}}\cos{\frac{\alpha - \beta}{2}}$
@@ -133,7 +135,7 @@ $\fint(I)\supseteq[\fint(b), \fint(a)]$。
   $\sin{\alpha}-\sin{\beta} = 2\sin{\frac{\alpha + \beta}{2}}\cos{\frac{\alpha - \beta}{2}}$
 
   $\tan\alpha - \tan\beta = \tan(\alpha - \beta) \cdot (1 + \tan\alpha\tan\beta)$
-}
+}%和差化积结尾
 
 \subsection{积化和差}{
   $\cos(\alpha + \beta) = \cos{\alpha}\cos{\beta} - \sin{\alpha}\sin{\beta}$
@@ -151,7 +153,7 @@ $\fint(I)\supseteq[\fint(b), \fint(a)]$。
   $\cos{\alpha}\cos{\beta} = \frac{1}{2}[\cos{(\alpha + \beta)} + \cos{(\alpha - \beta)}]$
 
   $\sin{\alpha}\sin{\beta} = -\frac{1}{2}[\cos{(\alpha + \beta)} - \cos{(\alpha - \beta)}]$
-}
+}%积化和差结尾
 
 \subsection{诱导公式}{
   \indent 奇变偶不变，符号看象限。
@@ -163,7 +165,7 @@ $\fint(I)\supseteq[\fint(b), \fint(a)]$。
     $\tan(2k\pi + \alpha) = \tan\alpha$
 
     $\cot(2k\pi + \alpha) = \cot\alpha$
-  }
+  }%第一组诱导公式结尾
 
   \subsubsection{第二组诱导公式}{
     $\sin(-\alpha) = -\sin\alpha$
@@ -173,7 +175,7 @@ $\fint(I)\supseteq[\fint(b), \fint(a)]$。
     $\tan(-\alpha) = -\tan\alpha$
 
     $\cot(-\alpha) = -\cot\alpha$
-  }
+  }%第二组诱导公式结尾
 
   \subsubsection{第三组诱导公式}{
     $\sin(\pi + \alpha) = -\sin\alpha$
@@ -183,7 +185,7 @@ $\fint(I)\supseteq[\fint(b), \fint(a)]$。
     $\tan(\pi + \alpha) = \tan\alpha$
 
     $\cot(\pi + \alpha) = \cot\alpha$
-  }
+  }%第三组诱导公式结尾
 
   \subsubsection{第四组诱导公式}{
     $\sin(\pi - \alpha) = \sin\alpha$
@@ -193,7 +195,7 @@ $\fint(I)\supseteq[\fint(b), \fint(a)]$。
     $\tan(\pi - \alpha) = -\tan\alpha$
 
     $\cot(\pi - \alpha) = -\cot\alpha$
-  }
+  }%第四组诱导公式结尾
 
   \subsubsection{第五组诱导公式}{
     $\sin(\frac{\pi}{2} - \alpha) = \cos\alpha$
@@ -203,7 +205,7 @@ $\fint(I)\supseteq[\fint(b), \fint(a)]$。
     $\tan(\frac{\pi}{2} - \alpha) = \cot\alpha$
 
     $\cot(\frac{\pi}{2} - \alpha) = \tan\alpha$
-  }
+  }%第五组诱导公式结尾
 
   \subsubsection{第六组诱导公式}{
     $\sin(\frac{\pi}{2} + \alpha) = \cos\alpha$
@@ -213,15 +215,15 @@ $\fint(I)\supseteq[\fint(b), \fint(a)]$。
     $\tan(\frac{\pi}{2} + \alpha) = -\cot\alpha$
 
     $\cot(\frac{\pi}{2} + \alpha) = -\tan\alpha$
-  }
+  }%第六组诱导公式结尾
 
   \subsubsection{杂项}{
     $a\sin\alpha + b\cos\alpha = \sqrt{a^2 + b^2}\sin(\alpha+\beta)$
 
     $\cos\alpha = 2cos^2\frac{\alpha}{2} - 1 = 1-2\sin^2\frac{\alpha}{2}$
-  }
+  }%杂项结尾
 
-}
+}%诱导公式结尾
 
 \subsection{倍角公式}{
 
@@ -233,7 +235,7 @@ $\fint(I)\supseteq[\fint(b), \fint(a)]$。
   $\cos2\alpha = \cos^2\alpha - \sin^\alpha = 2\cos^2\alpha - 1 = 1 - 2\sin^2\alpha$
 
   $\tan2\alpha = \frac{2\tan\alpha}{1 - \tan^2\alpha}$
-}
+}%二倍角公式结尾
 
 \subsubsection{半倍角公式}{
   半倍角公式：将二倍角公式中的角$2\alpha$看作整体$\beta$，经过变形推出:
@@ -249,13 +251,13 @@ $\fint(I)\supseteq[\fint(b), \fint(a)]$。
   $\sec\frac{\alpha}{2} = \frac{\pm\sqrt{\frac{\sec\alpha - 1}{2\sec\alpha}}2\sec\alpha}{\sec\alpha + 1} = \frac{\pm\sqrt{\frac{4\sec^3\alpha + \sec^2\alpha}{2\cos\alpha}}}{\sec\alpha + 1}$
 
   $\csc\frac{\alpha}{2} = \frac{\pm\sqrt{\frac{\sec\alpha - 1}{2\sec\alpha}}2\sec\alpha}{\sec\alpha - 1} = \frac{\pm\sqrt{\frac{3\sec^3\alpha - \sec^2\alpha}{2\sec\alpha}}}{\sec\alpha - 1}$
-}
+}%半倍角公式结尾
 
 \subsubsection{n倍角公式}{
 $\cos{n\theta} = \sum_{i = 0}^{\frac{n}{2}}[(-1)^i\mathCombination{2i + 1}{n}\cos^{n - 2i}\theta\sin^{2i}\theta]$
 
 $\sin{n\theta} = \sum_{i = 0}^{\frac{n}{2}}[(-1)^i\mathCombination{2i + 1}{n}\cos^{n - 2i - 1}\theta\sin^{2i+1}\theta]$
-}
+}%n倍角公式结尾
 
 \subsubsection{万能替换公式}{
   万能替换公式：尝试将正常的三角函数用半角公式表示时经过变形推出：
@@ -267,8 +269,9 @@ $\sin{n\theta} = \sum_{i = 0}^{\frac{n}{2}}[(-1)^i\mathCombination{2i + 1}{n}\co
   $\cos\alpha = \frac{1 - \tan^2\frac{\alpha}{2}}{1 + \tan^2\frac{\alpha}{2}}$
 
   $\tan\alpha \frac{2\tan\frac{\alpha}{2}}{1 - \tan^2\frac{\alpha}{2}}$
-}
-}
+}%万能替换公式结尾
+
+}%倍角公式结尾
 
 \subsection{三角恒等式}{
 
@@ -294,7 +297,7 @@ $\sin{n\theta} = \sum_{i = 0}^{\frac{n}{2}}[(-1)^i\mathCombination{2i + 1}{n}\co
 
   $1 + \cot^2\alpha = \csc^2\alpha$
 
-}
+}%三角恒等式结尾
 
 \subsection{解斜三角形}{
 设三角形$\triangle ABC$,角A、B、C的对边为abc，以A为原点$O$建系,总有以下公式：
@@ -311,7 +314,7 @@ $\mathbf{S}\triangle_{ABC} = \frac{1}{2}AB \cdot CD = \frac{1}{2}cb\sin A$，即
 $\frac{\sin A}{a} = \frac{\sin B}{b} = \frac{\sin C}{c}$, 也可表示为：$\frac{1}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C}$
 
 此式表明：在三角形中，各{\bfseries边}与它所对{\bfseries角的正弦}的比相等
-}
+}%解斜三角形结尾
 
 \subsubsection{余弦定理}{
   由两点间距离公式，得$a = |BC| = \sqrt{(b\cos A - c)^2 + (b\sin A - 0)^2}$
@@ -331,12 +334,18 @@ $\frac{\sin A}{a} = \frac{\sin B}{b} = \frac{\sin C}{c}$, 也可表示为：$\fr
   $\cos B = \frac{a^2 + c^2 - b^2}{2ac}$
 
   $\cos C = \frac{b^2 + a^2 - c^2}{2ab}$
-}
+}%余弦定理结尾
 \\
 
 \indent这些关系在直角三角形中也成立。
 
-}
+}%三角函数结尾
+
+\section{空间解析几何}{
+  不容小觑且难以理解的部分，加油。
+
+
+ }%空间解析几何结尾
 
 \section{微积分}{
 
@@ -832,5 +841,88 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
 
 }%高等代数/线性代数结尾
 
+\section{数论}{
+
+ }%数论结尾
+
+\section{场论}{
+
+ }%场论结尾
+
+\section{群论}{
+
+ }%群论结尾
+
+\section{矩阵论}{
+
+ }%矩阵论结尾
+
 }%数学篇结尾
+
+\chapter{计算机科学}{
+
+  \section{编程}{
+
+
+   }%编程结尾
+
+  \section{网络安全}{
+
+
+   }%网络安全结尾
+
+  \section{重要技术}{
+
+    \subsection{计算机图形学}{
+
+      \subsubsection{对于线性代数部分的补充与扩展}{
+        在计算机图形学中线性代数的主要作用是操纵与计算空间中对象的变化。由此衍生出了一些特殊的东西。
+
+        同时有一部分重要的常用基础内容放在了数学篇中的空间解析几何部分。
+
+        \begin{enumerate}
+          \item {向量叉乘的对偶矩阵：
+                $$\vec{a} \times \vec{b}
+                  =
+                  \left(\begin{matrix}
+                      y_az_b - y_bz_a \\
+                      z_ax_b - x_az_b \\
+                      x_ay_b - y_ax_b
+                    \end{matrix}\right)
+                  =
+                  A * \vec{b}
+                  =
+                  \left(\begin{matrix}
+                      0    & -z_a & y_a  \\
+                      z_a  & 0    & -x_a \\
+                      -y_a & x_a  & 0
+                    \end{matrix}\right)
+                  \left(\begin{array}{c}
+                      x_b \\
+                      y_b \\
+                      z_b
+                    \end{array}
+                  \right)
+                $$
+                }
+        \end{enumerate}
+      }
+
+    }%计算机图形学结尾
+
+   }%重要技术结尾
+
+  \section{硬件}{
+
+   }%硬件结尾
+
+  \section{网络通信}{
+
+   }%网络通信结尾
+
+  \section{科研辅助}{
+
+   }
+
+ }%计算机科学篇结尾
 \end{document}

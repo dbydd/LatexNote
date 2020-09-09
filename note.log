@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7 Portable) (preloaded format=pdflatex 2020.8.12)  8 SEP 2020 19:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7 Portable) (preloaded format=pdflatex 2020.8.12)  9 SEP 2020 20:33
 entering extended mode
 **c:/Users/19920/Desktop/LatexNote/note.tex
 (c:/Users/19920/Desktop/LatexNote/note.tex
@@ -587,11 +587,11 @@ LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
 
 [3
 
-])
+] [4])
 \tf@toc=\write4
 \openout4 = `note.toc'.
 
- [4]
+ [5]
 Á¨¨‰∏ÄÁ´†
 
 Underfull \hbox (badness 10000) in paragraph at lines 64--66
@@ -603,7 +603,7 @@ Overfull \hbox (1.97466pt too wide) in paragraph at lines 69--70
 []\C70/rm/m/n/10.53937/50 G \C70/rm/m/n/10.53937/8b æ$\OML/cmm/m/it/10.53937 I \OT1/cmr/m/n/10.53937 = [\OML/cmm/m/it/10.53937 a; b\OT1/cmr/m/n/10.53937 ]$\C70/rm/m/n/10.53937/66 / \C70/rm/m/n/10.53937/4e   * \C70/rm/m/n/10.53937/5b û \C70/rm/m/n/10.53937/65 p \C70/rm/m/n/10.53937/91 Ã \C70/rm/m/n/10.53937/76 Ñ \C70/rm/m/n/10.53937/95 Ì \C70/rm/m/n/10.53937/53 : \C70/rm/m/n/10.53937/95 Ù|\C70/rm/m/n/10.53937/ff | \C70/rm/m/n/10.53937/80 $\OML/cmm/m/it/10.53937 f \OT1/cmr/m/n/10.53937 : \OML/cmm/m/it/10.53937 I \OMS/cmsy/m/n/10.53937 ! \OT1/cmr/bx/n/10.53937 R$\C70/rm/m/n/10.53937/66 / \C70/rm/m/n/10.53937/8f ﬁ \C70/rm/m/n/10.53937/7e Ì \C70/rm/m/n/10.53937/51 ˝ \C70/rm/m/n/10.53937/65 p|\C70/rm/m/n/10.53937/ff | \C70/rm/m/n/10.53937/90 £ \C70/rm/m/n/10.53937/4e H \C70/rm/m/n/10.53937/51 v \C70/rm/m/n/10.53937/50 œ \C70/rm/m/n/10.53937/96 ∆$[]\OT1/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937 I\OT1/cmr/m/n/10.53937 )$\C70/rm/m/n/10.53937/4e _ \C70/rm/m/n/10.53937/66 / \C70/rm/m/n/10.53937/53 : \C70/rm/m/n/10.53937/95 Ù|\C70/rm/m/n/10.53937/30 | \C70/rm/m/n/10.53937/4e ÷ \C70/rm/m/n/10.53937/62  \C70/rm/m/n/10.53937/80  \C70/rm/m/n/10.53937/53  \C70/rm/m/n/10.53937/54 +$\OT1/cmr/m/n/10.53937 [[](\OML/cmm/m/it/10.53937 a\OT1/cmr/m/n/10.53937 )\OML/cmm/m/it/10.53937 ; []\OT1/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937 b\OT1/cmr/m/n/10.53937 )]$(\C70/rm/m/n/10.53937/59 Ç
  []
 
-<resources/Intermediatevaluetheorem.png, id=436, 281.05pt x 281.05pt>
+<resources/Intermediatevaluetheorem.png, id=517, 281.05pt x 281.05pt>
 File: resources/Intermediatevaluetheorem.png Graphic file (type png)
 <use resources/Intermediatevaluetheorem.png>
 Package pdftex.def Info: resources/Intermediatevaluetheorem.png  used on input line 80.
@@ -620,83 +620,90 @@ l.83 \subsection{‰∫åÈ°πÂºèÂÆöÁêÜ}
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.109 \includegraphics
+l.110 \includegraphics
                       {resources/UnitCircle.png} [2 <./resources/Intermediatevaluetheorem.png>]
-<resources/UnitCircle.png, id=481, 170.88844pt x 167.12437pt>
+<resources/UnitCircle.png, id=563, 170.88844pt x 167.12437pt>
 File: resources/UnitCircle.png Graphic file (type png)
 <use resources/UnitCircle.png>
-Package pdftex.def Info: resources/UnitCircle.png  used on input line 109.
+Package pdftex.def Info: resources/UnitCircle.png  used on input line 110.
 (pdftex.def)             Requested size: 170.88802pt x 167.12395pt.
 pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.145   $
+l.147   $
          \tan(\alpha + \beta) = \frac{\tan\alpha + \tan\beta}{1 - \tan\alpha... [3 <./resources/UnitCircle.png>]pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.201     $
-           \cos(\frac{\pi}{2} - \alpha) = \sin\alpha$ [4] [5] [6]
-Underfull \hbox (badness 10000) in paragraph at lines 333--336
+l.203     $
+           \cos(\frac{\pi}{2} - \alpha) = \sin\alpha$ [4]pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.259 $
+       \sin{n\theta} = \sum_{i = 0}^{\frac{n}{2}}[(-1)^i\mathCombination{2i ... [5] [6]
+Underfull \hbox (badness 10000) in paragraph at lines 336--339
 
  []
 
 [7] [8]
-Underfull \hbox (badness 10000) in paragraph at lines 455--458
+Underfull \hbox (badness 10000) in paragraph at lines 464--467
 
  []
 
 [9]
-<resources/Rolle's_mean_value_theorem.jpg, id=560, 165.61874pt x 126.4725pt>
+<resources/Rolle's_mean_value_theorem.jpg, id=636, 165.61874pt x 126.4725pt>
 File: resources/Rolle's_mean_value_theorem.jpg Graphic file (type jpg)
 <use resources/Rolle's_mean_value_theorem.jpg>
-Package pdftex.def Info: resources/Rolle's_mean_value_theorem.jpg  used on input line 508.
+Package pdftex.def Info: resources/Rolle's_mean_value_theorem.jpg  used on input line 517.
 (pdftex.def)             Requested size: 165.61833pt x 126.47218pt.
-<resources/Lagrange's_mean_value_theorem.png, id=561, 301.125pt x 191.71625pt>
+<resources/Lagrange's_mean_value_theorem.png, id=637, 301.125pt x 191.71625pt>
 File: resources/Lagrange's_mean_value_theorem.png Graphic file (type png)
 <use resources/Lagrange's_mean_value_theorem.png>
-Package pdftex.def Info: resources/Lagrange's_mean_value_theorem.png  used on input line 522.
+Package pdftex.def Info: resources/Lagrange's_mean_value_theorem.png  used on input line 531.
 (pdftex.def)             Requested size: 301.12425pt x 191.71577pt.
  [10 <./resources/Rolle's_mean_value_theorem.jpg>]
-Overfull \hbox (24.25583pt too wide) in paragraph at lines 530--533
+Overfull \hbox (24.25583pt too wide) in paragraph at lines 539--542
 []\C70/rm/m/n/10.53937/8f Ÿ \C70/rm/m/n/10.53937/4e * \C70/rm/m/n/10.53937/5b ö \C70/rm/m/n/10.53937/74  \C70/rm/m/n/10.53937/51 ç \C70/rm/m/n/10.53937/53 Ô \C70/rm/m/n/10.53937/4e Â \C70/rm/m/n/10.53937/7a  \C70/rm/m/n/10.53937/5f Æ \C70/rm/m/n/10.53937/63 ® \C70/rm/m/n/10.53937/5e  \C70/rm/m/n/10.53937/4e   \C70/rm/m/n/10.53937/70 π|\C70/rm/m/n/10.53937/30 | \C70/rm/m/n/10.53937/53 Í \C70/rm/m/n/10.53937/97   \C70/rm/m/n/10.53937/50 G \C70/rm/m/n/10.53937/8b æ$[] \OT1/cmr/m/n/10.53937 : [\OML/cmm/m/it/10.53937 a; b\OT1/cmr/m/n/10.53937 ] \OMS/cmsy/m/n/10.53937 ! \OT1/cmr/bx/n/10.53937 R$\C70/rm/m/n/10.53937/57 ($\OT1/cmr/m/n/10.53937 [\OML/cmm/m/it/10.53937 a; b\OT1/cmr/m/n/10.53937 ]$\C70/rm/m/n/10.53937/8f ﬁ \C70/rm/m/n/10.53937/7e Ì|\C70/rm/m/n/10.53937/ff | \C70/rm/m/n/10.53937/4e  \C70/rm/m/n/10.53937/57 ( \C70/rm/m/n/10.53937/5f   \C70/rm/m/n/10.53937/53 : \C70/rm/m/n/10.53937/95 Ù$\OT1/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937 a; b\OT1/cmr/m/n/10.53937 )$\C70/rm/m/n/10.53937/51 Ö \C70/rm/m/n/10.53937/5b ˘ \C70/rm/m/n/10.53937/4e ˚ \C70/rm/m/n/10.53937/61  \C70/rm/m/n/10.53937/4e   \C70/rm/m/n/10.53937/70 π$\OML/cmm/m/it/10.53937 x$\OT1/cmr/m/n/10.53937 ,\C70/rm/m/n/10.53937/67 Å \C70/rm/m/n/10.53937/96 P$[] []$\C70/rm/m/n/10.53937/5b X
  []
 
 [11 <./resources/Lagrange's_mean_value_theorem.png>] [12] [13] [14]
-<resources/nonLinearDifferencialEquation_HumanGrow.png, id=623, 96.36pt x 96.36pt>
+<resources/nonLinearDifferencialEquation_HumanGrow.png, id=699, 96.36pt x 96.36pt>
 File: resources/nonLinearDifferencialEquation_HumanGrow.png Graphic file (type png)
 <use resources/nonLinearDifferencialEquation_HumanGrow.png>
-Package pdftex.def Info: resources/nonLinearDifferencialEquation_HumanGrow.png  used on input line 745.
+Package pdftex.def Info: resources/nonLinearDifferencialEquation_HumanGrow.png  used on input line 754.
 (pdftex.def)             Requested size: 96.35974pt x 96.35974pt.
  [15 <./resources/nonLinearDifferencialEquation_HumanGrow.png>]
-Package CJKpunct Info: use punctuation spaces for family 'zhkai' with punctstyle (quanjiao) on input line 782.
- [16]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 836.
- [17]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 836.
+Package CJKpunct Info: use punctuation spaces for family 'zhkai' with punctstyle (quanjiao) on input line 791.
+ [16] [17] [18
+
+]
+Á¨¨‰∫åÁ´†
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 928.
+[19]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 928.
  (note.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 836.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 836.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 928.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 928.
 Package rerunfilecheck Info: File `note.out' has not changed.
-(rerunfilecheck)             Checksum: DC7E0E4F7C1D506817A24ACB20A9FAF9;6520.
+(rerunfilecheck)             Checksum: 181ABF54D07B7FBB4E245C6287E148ED;7783.
 
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.41063pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 836.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 928.
  ) 
 Here is how much of TeX's memory you used:
- 16601 strings out of 481212
- 279983 string characters out of 2901265
- 496483 words of memory out of 3000000
- 31428 multiletter control sequences out of 15000+200000
- 598851 words of font info for 267 fonts, out of 3000000 for 9000
+ 16755 strings out of 481212
+ 282479 string characters out of 2901265
+ 497492 words of memory out of 3000000
+ 31541 multiletter control sequences out of 15000+200000
+ 604251 words of font info for 287 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 49i,7n,67p,752b,905s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/esint-type1/esint10.pfb>
-Output written on note.pdf (21 pages, 1072105 bytes).
+ 49i,7n,67p,752b,909s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/esint-type1/esint10.pfb>
+Output written on note.pdf (24 pages, 1115977 bytes).
 PDF statistics:
- 1182 PDF objects out of 1200 (max. 8388607)
- 107 named destinations out of 1000 (max. 500000)
- 786 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1284 PDF objects out of 1440 (max. 8388607)
+ 124 named destinations out of 1000 (max. 500000)
+ 898 words of extra memory for PDF output out of 10000 (max. 10000000)
 
