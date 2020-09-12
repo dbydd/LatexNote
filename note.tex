@@ -38,12 +38,14 @@
 \newcommand{\fDerivative}[1]{\fint\derivative(#1)}
 \newcommand{\defFunction}[1]{\fint(#1)}
 \newcommand{\definiteIntegral}[2]{\int^{#1}_{#2}}
+\newcommand{\mathConstant}{\mathbf{C}}
 
 \begin{document}
 \pagestyle{empty}{
   \maketitle
   \paragraph{todos}{
     \begin{enumerate}
+      \item 换元积分法，定积分换元积分法。
       \item 誊录纸质笔记
       \item 给线性代数部分引入线性映射的观点。
       \item 补充多个section,计算机图形学，场论等
@@ -351,6 +353,7 @@ $\frac{\sin A}{a} = \frac{\sin B}{b} = \frac{\sin C}{c}$, 也可表示为：$\fr
  }%空间解析几何结尾
 
 \section{微积分}{
+注：本章中的“可积”如果没有特别说明则通常指的是传统意义下的“黎曼可积”。勒贝格积分将放在另一章中。（或者这里也可能）
 
 \subsection{极限}{
 
@@ -577,20 +580,163 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
 }%微分结尾
 
 \subsection{积分}{
+  在微积分中，函数$\fint$的不定积分（或称反导函数或原函数）是一个可微函数$\mathbf{F}$且其导数等于原来的函数$\fint$,即$F\prime = \fint$。不定积分和定积分的关系由微积分基本定理联系起来。透过微积分基本定理，函数的定积分的计算就可以简单的通过求不定积分来进行。
+
+  \subsubsection{不定积分公式}{
+    下面给出不定积分公式：
+
+    \begin{enumerate}
+      \item $\int x^adx = \frac{x^{a+1}}{a+1} + \mathConstant$
+      \item $\int kdx = kx + \mathConstant$
+      \item $\int \frac{1}{x}dx = \ln(x) + \mathConstant$
+      \item $\int \frac{dx}{1+x^2}dx = \arctan x + \mathConstant$
+      \item $\int \cos xdx = \sin x + \mathConstant$
+      \item $\int \sin xdx = -\cos x + \mathConstant$
+      \item $\int \frac{dx}{\cos^2x} = \int \sec^2xdx = \tan x + \mathConstant$
+      \item $\int \frac{dx}{\sin^2x} = \int\csc^2xdx = -\cot x + \mathConstant$
+      \item $\int \sec x\tan xdx = \sec x + \mathConstant$
+      \item $\int \csc x\cot xdx = -\csc x + \mathConstant$
+      \item $\int e^xdx = e^x + \mathConstant$
+      \item $\int a^xdx = \frac{a^x}{\ln a} + \mathConstant$
+    \end{enumerate}
+
+  }%不定积分公式结尾
+
+  \subsubsection{分部积分法}{
+    分部积分的公式为：
+
+    $\int udv = uv - \int v du$
+
+    推荐按以下顺序考虑优先代入：
+
+    指数函数、三角函数、幂函数、对数函数、反函数
+  }%分部积分法结尾
 
 }%积分结尾
 
 \subsection{定积分}{
 
-  \subsubsection{区间再现公式}{
-    设$\defFunction{x} = \definiteIntegral{a}{b}g(x)dx$，令$x = a + b - t$,当$x = a$时，$t = b$,当$x = b$时，$t = a$,$dx$变成$-dt$。即：
+\subsubsection{定义}{
+  $\limNormal{\lambda \to 0}\UpDownSum{\infty}{i = 1}\defFunction{\xi_i}\cdot\Delta x_i$
 
-    $\defFunction{x} = \definiteIntegral{a}{b}g(x)dx = -\definiteIntegral{b}{a}g(a+b-t)dt = \definiteIntegral{a}{b}g(a + b - t)dt$
+  以上为定义，实际中写法为$\definiteIntegral{a}{b}\defFunction{x}dx$。
 
-    由于定积分与被积变量无关，所以将上式结果中的t换成x，与原函数相加，得：
+  其中$a$为积分区域上限，$b$为积分区域下限。
+}%定义结尾
 
-    $\defFunction{x} = \frac{1}{2}\definiteIntegral{a}{b}[g(x) + g(a + b - x)]dx$
-  }%区间在线公式结尾
+\subsubsection{性质}{
+  定积分有以下性质：
+  \begin{enumerate}
+    \item $\definiteIntegral{a}{b}\defFunction{x}dx = -\definiteIntegral{b}{a}\defFunction{x}dx$即：交换上下限积分结果正负改变。
+    \item $a < b < c; \definiteIntegral{b}{a}\defFunction{x}dx = \definiteIntegral{b}{a}\defFunction{x}dx + \definiteIntegral{c}{b}\defFunction{x}dx$，且$\definiteIntegral{b}{a}\defFunction{x}dx = \definiteIntegral{c}{a}\defFunction{x}dx - \definiteIntegral{c}{b}\defFunction{x}dx = \definiteIntegral{c}{a}\defFunction{x}dx + \definiteIntegral{b}{c}\defFunction{x}dx$
+    \item $\defFunction{x} \leq g(x); \definiteIntegral{b}{a}\defFunction{x}dx \leq \definiteIntegral{b}{a}g(x)dx$
+    \item $|\definiteIntegral{b}{a}\defFunction{x}dx|\leq\definiteIntegral{b}{a}|\defFunction{x}|dx$
+  \end{enumerate}
+}%性质结尾
+
+\subsubsection{积分上限函数}{
+  $I(x) = \definiteIntegral{x}{a}\defFunction{t}dt$
+
+  如果$\defFunction{x}连续$，$I(x)$可导，则$I\prime(x) = \frac{d\definiteIntegral{x}{a}f(t)dt}{dx} = f(x)$
+
+  $\defFunction{x}$连续，$I(x)$是$f(x)$的一个原函数。
+
+  有以下几种变体：
+
+  \begin{enumerate}
+    \item $(\definiteIntegral{a}{x}\defFunction{t}dt)\prime = -\defFunction{x}$
+    \item $(\definiteIntegral{\Phi(x)}{a}\defFunction{t}dt)\prime = \defFunction{\Phi(x)}\Phi\prime(x)$
+    \item $[\definiteIntegral{\phi}{\Phi}\defFunction{t}dt]\prime = \defFunction{\phi(x)}\phi\prime(x) - \defFunction{\Phi(x)}\Phi\prime(x)$
+  \end{enumerate}
+
+}%积分上限函数结尾
+
+\subsubsection{牛顿-莱布尼兹公式/微积分基本定理}{
+  $\definiteIntegral{b}{a}\defFunction{x}dx = F(x)|^b_a = F(b) - F(a)$
+}%牛顿-莱布尼兹公式/微积分基本定理结尾
+
+\subsubsection{积分介值定理}{
+
+  在区间$[a,b]$上$m$和$M$分别是$\defFunction{x}$的最小值和最大值。
+
+  $m(b - a) \leq \definiteIntegral{b}{a}\defFunction{x}dx \leq M(b - a)$
+
+}%积分介值定理结尾
+
+\subsubsection{区间再现公式}{
+  设$\defFunction{x} = \definiteIntegral{a}{b}g(x)dx$，令$x = a + b - t$,当$x = a$时，$t = b$,当$x = b$时，$t = a$,$dx$变成$-dt$。即：
+
+  $\defFunction{x} = \definiteIntegral{a}{b}g(x)dx = -\definiteIntegral{b}{a}g(a+b-t)dt = \definiteIntegral{a}{b}g(a + b - t)dt$
+
+  由于定积分与被积变量无关，所以将上式结果中的t换成x，与原函数相加，得：
+
+  $\defFunction{x} = \frac{1}{2}\definiteIntegral{a}{b}[g(x) + g(a + b - x)]dx$
+}%区间再现公式结尾
+
+\subsubsection{积分第一中值定理}{
+设$\fint:[a,b] \to \mathbf{R}$为一连续函数，$g:[a,b] \to \mathbf{R}$要求$g(x)$是可积函数且在积分区间不变号，那么存在一点$\xi\in[a,b]$使得：
+
+$\definiteIntegral{b}{a}\defFunction{x}g(x)dx = \defFunction{\xi}\definiteIntegral{b}{a}g(x)dx$
+他的几何意义为：
+
+\includegraphics{resources/Geometric_explanation_of_the_mean_value_theorem_for_integration.jpg}
+\\\\
+以下为证明：
+
+在不失去一般性的条件下，设对所有的$x$，有$g(x) \geq 0$;因为$\fint$是闭区间上的连续函数，$\fint$取得最大值$M$和最小值$m$。于是得出不等式：
+
+$mg(x) \leq \defFunction{x}g(x) \leq Mg(x)$
+
+对不等式求积分，得出：
+
+$m\definiteIntegral{b}{a}g(x)dx \leq \definiteIntegral{b}{a}\defFunction{x}g(x)dx \leq M\definiteIntegral{b}{a}g(x)dx$
+
+如果$\definiteIntegral{b}{a}g(x)dx = 0$，则$\definiteIntegral{b}{a}\defFunction{x}g(x)dx = 0$。$\xi$可以取$[a,b]$上任意一点。
+
+如果不等于$0$，那么$\definiteIntegral{b}{a}g(x)dx>0$,对不等式变形可得:
+
+$m \leq \frac{\definiteIntegral{b}{a}\defFunction{x}g(x)dx}{\definiteIntegral{b}{a}g(x)dx} \leq M$
+
+因为$f(x)$是连续函数，所以上面这玩意是个连续函数，所以必定存在一点$\xi\in[a,b]$，使得
+
+$\defFunction{\xi} = \frac{\definiteIntegral{b}{a}\defFunction{x}g(x)dx}{\definiteIntegral{b}{a}g(x)dx}$
+
+($g<0$时也可以按这个步骤推出)
+\\\\
+推论：拉格朗日中值定理的积分形式
+
+在上式中令$g(x) = 1$，则可得出：
+
+设$\fint : [a,b] \to \mathbf{R}$为一连续函数，则$\exists\xi\in[a,b]$，使得
+
+$\defFunction{\xi} = \frac{\definiteIntegral{b}{a}\defFunction{x}dx}{b - a}$
+
+也可以由拉格朗日中值定理推出：
+
+设$F(x)$在$[a,b]$上可导，$\defFunction{x} = F\prime(x)$，则$\exists\xi\in[a,b]$，使
+
+$\defFunction{\xi} = F\prime(\xi) = \frac{F(b) - F(a)}{b - a} = \frac{\definiteIntegral{b}{a}\defFunction{x}dx}{b - a}$
+
+}%积分第一中值定理结尾
+
+\subsubsection{积分第二中值定理}{
+
+积分第二中值定理与积分第一中值定理相互独立，却又是更精细的积分中值定理。
+
+若$f,g$在$[a,b]$上可积且$f(x)$在$[a,b]$上单调，则存在$[a,b]$上的点$\xi$使
+
+$\definiteIntegral{b}{a}\defFunction{x}dx = \defFunction{a}(\xi - a) + \defFunction{b}(b - \xi)$
+
+进而导出：
+
+$\definiteIntegral{\xi}{a}\defFunction{x}dx -\defFunction{a}(\xi - a) = \defFunction{b}(b - \xi) - \definiteIntegral{b}{\xi}\defFunction{x}dx$
+
+他的几何意义很明显为：能找到$\xi\in[a,b]$，使得红色区域的面积和蓝色区域的面积相加等于阴影区域的面积，即S[\uppercase\expandafter{\romannumeral1}] = S[\uppercase\expandafter{\romannumeral2}]
+
+\includegraphics{resources/Geometric_explanation_of_the_second_mean_value_theorem_for_integration.jpg}
+
+}%积分第二中值定理结尾
+
 
 }%定积分结尾
 
