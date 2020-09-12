@@ -1023,8 +1023,10 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
   \section{重要技术}{
 
     \subsection{计算机图形学}{
+      注：本章中向量默认为列向量。
 
       \subsubsection{对于线性代数部分的补充与扩展}{
+
         在计算机图形学中线性代数的主要作用是操纵与计算空间中对象的变化。由此衍生出了一些特殊的东西。
 
         同时有一部分重要的常用基础内容放在了数学篇中的空间解析几何部分。
@@ -1033,28 +1035,299 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
           \item {向量叉乘的对偶矩阵：
                 $$\vec{a} \times \vec{b}
                   =
-                  \left(\begin{matrix}
+                  \left[\begin{matrix}
                       y_az_b - y_bz_a \\
                       z_ax_b - x_az_b \\
                       x_ay_b - y_ax_b
-                    \end{matrix}\right)
+                    \end{matrix}\right]
                   =
                   A * \vec{b}
                   =
-                  \left(\begin{matrix}
+                  \left[\begin{matrix}
                       0    & -z_a & y_a  \\
                       z_a  & 0    & -x_a \\
                       -y_a & x_a  & 0
-                    \end{matrix}\right)
-                  \left(\begin{array}{c}
+                    \end{matrix}\right]
+                  \left[\begin{array}{c}
                       x_b \\
                       y_b \\
                       z_b
                     \end{array}
-                  \right)
+                    \right]
                 $$
                 }
+          \item 非满秩矩阵意味着将空间变换到了更低的维度。
+          \item 特征向量是指在进行了矩阵所代表的线性变换后方向没改变向量，特征值则是指特征向量的缩放倍数。
+          \item 逆矩阵所代表的变换成为逆变换，是原矩阵所代表的变换的反向操作，一个矩阵乘以他的逆矩阵是单位阵，这从几何上的直观理解就是什么都没做，两次操作互相抵消了。
         \end{enumerate}
+      }
+
+      \subsubsection{变换}{
+        变换按照作用对象可以分为:
+        \begin{enumerate}
+          \item Modeling 模型变换
+          \item Viewing 视角变换
+        \end{enumerate}
+
+        按照作用效果可以分为:
+        \begin{enumerate}
+          \item scale 缩放变换
+          \item rotate 旋转变换
+          \item shear 剪切变换
+        \end{enumerate}
+
+        如同3b1b的观点，将目标空间看作矩阵的列空间。而矩阵每一列都对应了列空间中的一个基向量,拿2维空间举例：
+        $$\left[\begin{matrix}
+              1 & 0 \\
+              0 & 1
+            \end{matrix}\right]$$
+
+        假设第一列代表了$x$轴的单位向量$i$，则第二列代表了$y$轴的单位向量$j$
+
+        因此，对矩阵进行操作就相当于对矩阵所代表的空间进行操作。
+
+        例如:$$\left[\begin{matrix}
+              2 & 1 \\
+              1 & 2
+            \end{matrix}\right]$$
+
+        这个矩阵就代表着将单位向量$i$移动到了坐标$(2,1)$，将单位向量$j$移动到了坐标$(1,2)$。整个二维空间都是由这两个单位向量所张成的。随着单位向量的移动，整个空间也就随之而变形。这种操作被称为变换。
+        其中一类最简单的变换称为线性变换，在线性代数篇中已有了详细解释。
+
+        旋转矩阵的表示原理如下:
+
+        先看看二维：
+
+        \includegraphics[scale=0.25]{resources/rotateMatrixGraphics.png}
+
+        因此二维的旋转矩阵$$R_\theta = \left[\begin{matrix}
+              \cos\theta & -\sin\theta \\
+              \sin\theta & \cos\theta
+            \end{matrix}\right]$$
+
+      }%变换结尾
+
+      \subsubsection{齐次坐标}{
+        由于单纯的线性变换并不能让对象动起来，依然只能在原点操作，所以需要齐次坐标表示空间上的位移。
+
+        如下图：
+
+        \includegraphics[scale=0.25]{resources/homogeneous_coordinates.png}
+
+        用$x\prime$和$y\prime$来表示变换后的坐标，公式为:
+
+        $x\prime = x + t_x$
+
+        $y\prime = y + t_y$
+
+        仔细思考一下发现似乎并不能写成矩阵$A\vec{x} = \vec{b}$的形式。
+
+        事实上应该写成这样：
+        $$
+          \left[\begin{array}{c}
+              x\prime \\
+              y\prime
+            \end{array}\right]
+          =
+          \left[\begin{matrix}
+              a & b \\
+              c & d
+            \end{matrix}\right]
+          \left[\begin{array}{c}
+              x \\
+              y
+            \end{array}\right]
+          +
+          \left[\begin{array}{c}
+              t_x \\
+              t_y
+            \end{array}\right]
+        $$
+
+        因此平移变换不属于线性变换。但是人们不想要特殊情况，于是引入了齐次坐标：
+
+        还是拿二维的情况举例，增加一个维度，将二维的点表示为：
+        $$\left[\begin{array}{ccc}
+              x & y & 1
+            \end{array}\right]^T$$
+
+        将二维向量表示为：
+        $$\left[\begin{array}{ccc}
+              x & y & 0
+            \end{array}\right]^T$$
+
+        也就是说：再多增加一个维度用于说明表示的是一个点还是一个向量，这是因为向量具有平移不变性，不管怎么移动表示的始终是一个方向。
+
+        齐次坐标的好处就在这里，它是这么用的:
+
+        $$\left[\begin{array}{c}
+              x\prime \\
+              y\prime \\
+              w\prime
+            \end{array}\right]
+          =
+          \left[\begin{matrix}
+              1 & 0 & t_x \\
+              0 & 1 & t_y \\
+              0 & 0 & 1
+            \end{matrix}\right]
+          \cdot
+          \left[\begin{array}{c}
+              x \\
+              y \\
+              1
+            \end{array}\right]
+          =
+          \left[\begin{array}{c}
+              x + t_x \\
+              y + t_y \\
+              1
+            \end{array}\right]
+        $$
+
+        更直观一点：可以这么理解:
+        \begin{itemize}
+          \item vector + vector = vector 向量相加还是向量 $0 + 0 = 0$
+          \item point - point = vector 两点相减得到向量 $1 - 1 = 0$
+          \item point + vector = point 一个点加一个向量结果是一个点 $0 + 1 = 1$
+          \item point + point = 两个点的中点 $1 + 1 = 2$，原因见扩充定义。
+        \end{itemize}
+        扩充定义如下：
+        $$\left[\begin{array}{c}
+              x \\
+              y \\
+              w
+            \end{array}\right]$$是二维的点，可化简为：$$\left[\begin{array}{c}
+              x \\
+              y \\
+              w
+            \end{array}\right]\cdot\frac{1}{w} = \left[\begin{array}{c}
+              \frac{x}{w} \\
+              \frac{y}{w} \\
+              1
+            \end{array}\right]$$
+
+        {\bfseries于是总结，给出以下下定义：}\\\\\indent
+        仿射变换(Affine transformation) = 线性变换(Linear transformation) + 位移(transformation)
+
+        即：
+        $$\left[\begin{array}{c}
+              x\prime \\
+              y\prime
+            \end{array}\right]
+          =
+          \left[\begin{matrix}
+              a & b \\
+              c & d
+            \end{matrix}\right]
+          \cdot
+          \left[\begin{array}{c}
+              x \\
+              y
+            \end{array}\right]
+          +
+          \left[\begin{array}{c}
+              t_x \\
+              t_y
+            \end{array}\right]$$
+
+        都可以写成齐次坐标(homogeneous coordinates)的形式
+
+        即：
+        $$\left[\begin{array}{c}
+              x\prime \\
+              y\prime \\
+              1
+            \end{array}\right]
+          =
+          \left[\begin{matrix}
+              a & b & t_x \\
+              c & d & t_y \\
+              0 & 0 & 1
+            \end{matrix}\right]
+          \cdot
+          \left[\begin{array}{c}
+              x \\
+              y \\
+              1
+            \end{array}\right]$$
+
+        {\bfseries不如直接将其他操作的齐次坐标形式补全吧？}
+        \begin{itemize}
+          \item 缩放(scale) : $$S(s_x, s_y) = \left[\begin{matrix}
+                      s_x & 0   & 0 \\
+                      0   & s_y & 0 \\
+                      0   & 0   & 0
+                    \end{matrix}\right]$$
+          \item 旋转(rotation) : $$R(\alpha) = \left[\begin{matrix}
+                      \cos\alpha & -\sin\alpha & 0 \\
+                      \sin\alpha & \cos\alpha  & 0 \\
+                      0          & 0           & 1
+                    \end{matrix}\right]$$
+          \item 平移(translation) : $$T(t_x, t_y) = \left[\begin{matrix}
+                      1 & 0 & t_x \\
+                      0 & 1 & t_y \\
+                      0 & 0 & 1
+                    \end{matrix}\right]$$
+        \end{itemize}
+
+      }%齐次坐标结尾
+
+      \subsubsection{组合变换}{
+        可以通过组合各个基础变换以形成复杂的变换效果。
+
+        组合方法为对应矩阵按照顺序从右向左做乘法。
+
+        大部分时候组合顺序至关重要。
+
+      }%组合变换结尾
+
+      \subsubsection{三维变换}{
+        以上结论都可以用于三维，推而广之：\\
+
+        齐次坐标：\begin{itemize}
+          \item 三维点：$$\left[\begin{array}{c}
+                      x \\
+                      y \\
+                      z \\
+                      1
+                    \end{array}\right]$$
+          \item 三维向量：$$\left[\begin{array}{c}
+                      x \\
+                      y \\
+                      z \\
+                      0
+                    \end{array}\right]$$
+        \end{itemize}
+
+        $\left[x\ y\ z\ w\right]^T$，当$w$不等于$1$他所表示的三维的点其实是（第四个维度已略去）：
+        $$\left[\begin{array}{c}
+              \frac{x}{w} \\
+              \frac{y}{w} \\
+              \frac{z}{w} \\
+            \end{array}\right]$$
+
+        同样的，三维空间中齐次坐标描述的仿射变换的矩阵是$4 \times 4$的：
+        $$\left[\begin{array}{c}
+              x\prime \\
+              y\prime \\
+              z\prime \\
+              1
+            \end{array}\right]
+          =
+          \left[\begin{matrix}
+              a & b & c & t_x \\
+              d & e & f & t_y \\
+              g & h & i & t_z \\
+              0 & 0 & 0 & 1
+            \end{matrix}\right]
+          \cdot
+          \left[\begin{array}{c}
+              x \\
+              y \\
+              z \\
+              1
+            \end{array}\right]$$
       }
 
     }%计算机图形学结尾
