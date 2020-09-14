@@ -45,7 +45,6 @@
   \maketitle
   \paragraph{todos}{
     \begin{enumerate}
-      \item 换元积分法，定积分换元积分法。
       \item 誊录纸质笔记
       \item 给线性代数部分引入线性映射的观点。
       \item 补充多个section,计算机图形学，场论等
@@ -579,7 +578,7 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
 
 }%微分结尾
 
-\subsection{积分}{
+\subsection{不定积分}{
   在微积分中，函数$\fint$的不定积分（或称反导函数或原函数）是一个可微函数$\mathbf{F}$且其导数等于原来的函数$\fint$,即$F\prime = \fint$。不定积分和定积分的关系由微积分基本定理联系起来。透过微积分基本定理，函数的定积分的计算就可以简单的通过求不定积分来进行。
 
   \subsubsection{不定积分公式}{
@@ -602,6 +601,22 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
 
   }%不定积分公式结尾
 
+  \subsubsection{不定积分第一类换元积分法}{
+    设$\defFunction{x}$为可积函数，$g = g(x)$是连续可导函数，则有：
+
+    $\int \defFunction{g}g\derivative dx = \int \defFunction{g}dg$
+
+    第一类换元积分法基本就是配凑的思想。
+
+  }%不定积分第一类换元积分法结尾
+
+  \subsubsection{不定积分第二类换元积分法}{
+    设$\defFunction{x}$为可积函数，$x = x(g)$为连续可导函数，则有：
+
+    $\int \defFunction{x}dx = \int \defFunction{x(g)x\derivative dx}$
+
+  }%不定积分第一类换元积分法结尾。
+
   \subsubsection{分部积分法}{
     分部积分的公式为：
 
@@ -612,7 +627,7 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
     指数函数、三角函数、幂函数、对数函数、反函数
   }%分部积分法结尾
 
-}%积分结尾
+}%不定积分结尾
 
 \subsection{定积分}{
 
@@ -633,6 +648,24 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
     \item $|\definiteIntegral{b}{a}\defFunction{x}dx|\leq\definiteIntegral{b}{a}|\defFunction{x}|dx$
   \end{enumerate}
 }%性质结尾
+
+\subsubsection{定积分第一类换元积分法}{
+  设$\defFunction{x}$为可积函数，$g = g(x)$是连续可导函数，则有：
+
+  $\definiteIntegral{\beta}{\alpha} \defFunction{g}g\derivative dx = \definiteIntegral{g(\beta)}{g(\alpha)} \defFunction{g}dg$
+}%定积分第一类换元积分法结尾
+
+\subsubsection{定积分第二类换元积分法}{
+  设$\defFunction{x}$为可积函数，$x = x(g)$为连续可导函数，则有：
+
+  $\definiteIntegral{\beta}{\alpha} \defFunction{x}dx = \definiteIntegral{x^{-1}(\beta)}{x^{-1}(\alpha)}\defFunction{x}x\derivative dx$
+
+  简而言之：定积分的第二类换元积分法有两个要点
+  \begin{enumerate}
+    \item 引入换元函数
+    \item 上下限也要变（将原函数上下限代入换元函数）
+  \end{enumerate}
+}%定积分第二类换元积分法结尾。
 
 \subsubsection{积分上限函数}{
   $I(x) = \definiteIntegral{x}{a}\defFunction{t}dt$
