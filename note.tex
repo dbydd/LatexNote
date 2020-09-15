@@ -58,7 +58,7 @@
 \section{基本概念}{
 \subsection{六大基本初等函数}{
   常数函数，幂函数，指数函数，对数函数，三角函数
-}%溜达基本初等函数结尾
+}%六大基本初等函数结尾
 
 \subsection{介值定理}{
 在数学分析中，介值定理（英语：intermediate value theorem，又称中间值定理）描述了连续函数在两点之间的连续性：
@@ -94,17 +94,43 @@ $\fint(I)\supseteq[\fint(b), \fint(a)]$。
   组合：$\mathCombination{m}{n} = \frac{\mathPermutation{m}{n}}{m!} = \frac{n!}{m!(n-m)!}$
 }%排列组合结尾
 
-\subsection{零散的定义}{
-  \begin{enumerate}
-    \item 有界：$\exists\epsilon,f(x) < \epsilon\quad(-\infty < x < \infty )$
-  \end{enumerate}
-}%零散的定义结尾
+\subsection{极坐标}{
+  极坐标是不同于笛卡尔坐标系（直角坐标系）的另一种函数图像平面。
 
-\subsection{零散的思想}{
-  \begin{enumerate}
-    \item 正变换是数学的重要工具,三角变换是只变其形不变其质的。三角变换常常先寻找式子所包含的各个角之间的联系,并以此为依据选择可以联系它们的适当公式,通过换元法把三角恒等变换问题转化为代数恒等变换问题。
-  \end{enumerate}
-}%零散的思想结尾
+  极坐标不同于笛卡尔坐标系，他没有x和y轴，而是用基准轴和角度表示一个点。
+
+  \subsubsection{极坐标系下的面积}{
+    \includegraphics{resources/polar_coordness.png}
+
+    公式为$\frac{1}{2}\definiteIntegral{\beta}{\alpha}(p(\theta))^2d\theta$
+
+    p是形成曲线的函数。
+    }%极坐标下的面积结尾
+
+    \subsubsection{转换公式}{
+      从笛卡尔坐标系到极坐标有一套转换公式。
+
+      $$
+        \begin{cases}
+          x = \rho\cos\theta \\
+          y = \rho\sin\theta
+        \end{cases}
+      $$
+    }%转换公式结尾
+
+  }%极坐标结尾
+
+  \subsection{零散的定义}{
+    \begin{enumerate}
+      \item 有界：$\exists\epsilon,f(x) < \epsilon\quad(-\infty < x < \infty )$
+    \end{enumerate}
+  }%零散的定义结尾
+
+  \subsection{零散的思想}{
+    \begin{enumerate}
+      \item 正变换是数学的重要工具,三角变换是只变其形不变其质的。三角变换常常先寻找式子所包含的各个角之间的联系,并以此为依据选择可以联系它们的适当公式,通过换元法把三角恒等变换问题转化为代数恒等变换问题。
+    \end{enumerate}
+  }%零散的思想结尾
 
 }%基本概念结尾
 
@@ -770,8 +796,95 @@ $\definiteIntegral{\xi}{a}\defFunction{x}dx -\defFunction{a}(\xi - a) = \defFunc
 
 }%积分第二中值定理结尾
 
+\subsubsection{定积分求平面函数曲线弧长}{
+
+  $$
+    \begin{cases}
+      x = \phi(t) \\
+      y = \Phi(t)
+    \end{cases}
+    \alpha \leq t \leq \beta
+    \qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad
+    \begin{cases}
+      x = x \\
+      y = \defFunction{x}
+    \end{cases}
+    \alpha \leq t \leq \beta
+  $$
+
+  $S = \definiteIntegral{\beta}{\alpha}\sqrt{\phi^{\prime 2}(t) + \Phi^{\prime 2}(t) dt}\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad S = \definiteIntegral{\beta}{\alpha}\sqrt{1 + y^{\prime 2}}$
+
+  极坐标的情况：
+
+  $$
+    \begin{cases}
+      x = \rho(\theta)\cos\theta \\
+      y = \rho(\theta)\sin\theta
+    \end{cases}
+  $$
+
+  $S = \definiteIntegral{\beta}{\alpha}\sqrt{\rho^{\prime 2}(\theta) + \rho^2(\theta)d\theta}$\qquad（注意求导符号）
+}%定积分求平面函数曲线弧长
 
 }%定积分结尾
+
+\subsection{反常积分}{
+通常来说只需要极限存在，则此反常积分收敛。
+
+\subsubsection{无穷限反常积分}{
+
+  有以下几种情况：
+
+  \begin{enumerate}
+    \item $\definiteIntegral{+\infty}{a}\defFunction{x}dx = \limNormal{b \to +\infty}\definiteIntegral{b}{a}\defFunction{x}dx$
+    \item $\definiteIntegral{b}{-\infty}\defFunction{x}dx = \limNormal{t \to -\infty}\definiteIntegral{b}{t}\defFunction{x}dx$
+    \item $\definiteIntegral{+\infty}{-\infty}\defFunction{x}dx = \definiteIntegral{0}{-\infty}\defFunction{x}dx + \definiteIntegral{+\infty}{0}\defFunction{x}dx$
+  \end{enumerate}
+}%无穷限反常积分结尾
+
+
+\subsubsection{无界函数反常积分}{
+
+  设b为瑕点：
+
+  \includegraphics[scale=0.5]{resources/infityFunctionUnormalIntegral.png}
+
+  $\definiteIntegral{b}{a}\defFunction{x}dx = \limNormal{t \to b^-}\definiteIntegral{t}{a}\defFunction{x}dx$
+
+  或者是设a为瑕点：
+
+  \includegraphics[scale=0.5]{resources/infityFunctionUnormalIntegral2.png}
+
+  $\definiteIntegral{b}{a}\defFunction{x}dx = \limNormal{t \to a^+}\definiteIntegral{b}{t}\defFunction{x}dx$
+
+  或者以上两者情况合一，设c为瑕点将其拆分：
+
+  \includegraphics{resources/infityFunctionUnormalIntegral3.png}
+
+  $\definiteIntegral{b}{a}\defFunction{x}dx = \definiteIntegral{c}{a}\defFunction{x}dx + \definiteIntegral{b}{c}\defFunction{x}dx$
+
+  然后按照上方两个情况分别求解。
+
+  依然可以使用牛-莱公式。
+
+  瑕积分换元需要为单调函数，不论增减性。
+
+}%无界函数反常积分
+
+\subsubsection{gamma函数}{
+$\varGamma(s) = \definiteIntegral{+\infty}{0}e^{-x}x^{s-1}dx, (s > 0)$
+
+gamma函数的特点就是：
+
+$\varGamma(s + 1) = s\varGamma(s), \varGamma(1) = 1$
+
+因此：
+
+$\varGamma(n+1) = n!$
+
+}%gamma函数结尾
+
+}%反常积分结尾
 
 \subsection{无穷级数}{
 
