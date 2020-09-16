@@ -30,6 +30,7 @@
 \newcommand{\doubleDerivative}{^{\prime\prime}}
 \newcommand{\tripleDerivative}{^{\prime\prime\prime}}
 \newcommand{\aLotDerivative}[1]{^{(#1)}}
+\newcommand{\partialDerivative}[1]{^\prime_{#1}}
 \newcommand{\myLeftRightArrow}{$\Leftrightarrow$}
 \newcommand{\myRightArrow}{$\Rightarrow$}
 \newcommand{\mathCombination}[2]{C_{#1}^{#2}}
@@ -39,6 +40,7 @@
 \newcommand{\defFunction}[1]{\fint(#1)}
 \newcommand{\definiteIntegral}[2]{\int^{#1}_{#2}}
 \newcommand{\mathConstant}{\mathbf{C}}
+
 
 \begin{document}
 \pagestyle{empty}{
@@ -382,6 +384,20 @@ $\frac{\sin A}{a} = \frac{\sin B}{b} = \frac{\sin C}{c}$, 也可表示为：$\fr
 
 \subsection{极限}{
 
+  在一元的情况下，可微、可导与连续的关系如下
+
+  \begin{itemize}
+    \item 可微是可导的充要条件，即：可微$\Leftrightarrow$可导
+    \item 可微和可导都连续的必要条件，即：可微$\Leftrightarrow$连续、可导$\Leftrightarrow$连续
+  \end{itemize}
+
+  而在多元的情况下，可微、可导与连续的关系如下：
+
+  \begin{itemize}
+    \item 可微（全微分）是可导和连续的必要条件，即：可微$\Rightarrow$可导、可微$\Rightarrow$连续。
+    \item 可导推不出连续。
+  \end{itemize}
+
   \subsubsection{定理}{
     \begin{enumerate}
       \item 函数在一点极限存在的条件是左右极限存在且相等
@@ -517,7 +533,38 @@ $\frac{\sin A}{a} = \frac{\sin B}{b} = \frac{\sin C}{c}$, 也可表示为：$\fr
     当x和a取值越接近，近似也就越精确，这种方法本质上是取级数展开形式的前两位。
 
   }%线性近似/牛顿法近似函数/方程解结尾
+
 }%导数结尾
+
+\subsection{偏导数}{
+
+  设$\defFunction{x,y,z} = ax + by + cy + d$
+
+  $\fint\partialDerivative{x}(x,y,z) = a$
+
+  $\fint\partialDerivative{y}(x,y,z) = b$
+
+  $\fint\partialDerivative{z}(x,y,z) = c$
+
+  换言之，偏导就是只把要求偏导的变量看作变量，其他变量看作常量再求导。
+
+  \subsubsection{全微分}{
+
+    $\Delta z = \defFunction{x + \Delta x,y + \Delta y} - \defFunction{x,y}\qquad\Delta z : $ 近似求得
+
+    定义:$\defFunction{x,y}$在定义域内有定义，产生$\Delta x$和$\Delta y$，$\Delta z = \defFunction{x + \Delta x,y + \Delta y} - \defFunction{x,y} = A\Delta x + B\Delta y + O(\rho)$
+
+    其中$A = f\partialDerivative{x}, B = f\partialDerivative{y}, \rho = \sqrt{(\Delta x)^2 + (\Delta y)^2}$
+
+    并且$A，B$是$x$和$y$的函数（此处$x,y$为常量），与$\Delta x$和$\Delta y$（此处$\Delta x, \Delta y$是变量）无关。
+
+    如果能写成此形式，则成此函数在这点可微，且$A\Delta x + B\Delta y$叫做他的全微分。
+
+    记作：$dz$(近似值)$= A\Delta x + B\Delta y \approx \Delta z$（精确值）
+
+  }
+
+}%偏导数结尾
 
 \subsection{微分}{
 那么微分(differential)又是什么？微分是一个函数在自变量做无穷小变化时函数值的变化。在形式上确实与导数类似，但不应该与导数混淆。
