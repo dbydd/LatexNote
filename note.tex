@@ -48,6 +48,7 @@
   \paragraph{todos}{
     \begin{enumerate}
       \item 誊录纸质笔记
+      \item 空间解析几何
       \item 给线性代数部分引入线性映射的观点。
       \item 补充多个section,计算机图形学，场论等
     \end{enumerate}
@@ -963,7 +964,57 @@ $R_n(x)$是余项，表示误差，是$(x - a)^n$的高阶无穷小$O((x - a)^n)
 }%无穷级数结尾
 
 \subsection{微分方程}{
-微分方程是一种描述世界的好手段，当描述某个东西随时间的微小变化比起他整体的变化更方便的时候就会使用微分方程。
+微分方程是一种描述世界的好手段，当描述某个东西随时间的微小变化比起描述这个物体整体的变化更方便的时候就会使用微分方程。
+
+\subsubsection{一阶线性微分方程}{
+  形式$\frac{dy}{dx} + p(x)y = Q(x)$
+
+  有以下几种情况：
+  \begin{enumerate}
+    \item $Q(x) = 0\ \to$齐次方程，则$\frac{dy}{dx} = -p(x)y\ \to \ \frac{dy}{y} = -p(x)dx$,然后两边求积分，从而得出：$y = e^{-\int p(x)dx}e^{\mathConstant_1} = C \cdot e^{-\int p(x)dx}$
+    \item $\frac{dy}{dx} + p(x)y = Q(x), Q(x) \neq 0$,也就是非齐次方程。设$y = ue^{-\int p(x)dx, u}$是未知量。然后把$y$代入：\\ $u\derivative e^{-\int p(x)dx} - ue^{-\int p(x)dx} + p(x)u^{e}-\int p(x)dx = Q(x)$，从而推出：$u\derivative e^{-\int p(x)dx} = Q(x)$,并且由$u\derivative = Q(X)e^{\int p(x)dx}$从而推出：$\int Q(x)e^{\int p(x)dx}dx + \mathConstant$。将以上带入，得出：$y = e^{-\int p(x)dx}\cdot(\int Q(x)e^{\int p(x)dx}dx + \mathConstant)$
+  \end{enumerate}
+
+  注：一个非齐次线性微分方程的通解等于对应的齐次微分方程的通解与非齐次微分方程的一个特解之和。
+
+}%一阶线性微分方程结尾
+
+\subsubsection{*有疑惑/错误\ 伯努利方程}{
+  $\frac{dy}{dx} + p(x)y = Q(x)y^n$。当$n = 0$时，此式为齐次方程，当$n = 1$，为一阶线性微分方程。当$n$不等于0也不等于1时：$y^{-n}\frac{dy}{dx} + p(x)y^{1-n} = Q(x)$。将$y^{1-n}$记作$z$，于是得到$\frac{dz}{dx} = (1-n)y^{-n}\frac{dy}{dx},\frac{1}{1-n}\frac{dz}{dx} + p(x)z = Q(x)$，再变形得到：$\frac{dz}{dx} + (1-n)p(x)z = (1-n)Q(x)$。然后两边求$y$,左边不要带入。
+
+}%伯努利方程结尾
+
+\subsubsection{可降阶高阶微分方程}{
+  有以下几种情况：
+
+  \begin{enumerate}
+    \item $y^{(n)} = \defFunction{x}$，于是两边不断求积分进行降阶：$y^{n-1} = \int \defFunction{x}dx + \mathConstant$
+    \item $y\doubleDerivative = \defFunction{x,y\derivative}$，设$y\derivative = p,y\doubleDerivative = p\derivative$，则$p\derivative = \defFunction{x,p}$。然后再进行回代。
+    \item $y\doubleDerivative = \defFunction{y,y\derivative}$，同样的，令$y\derivative = p, y\doubleDerivative = \frac{dp}{dx} = \frac{dp}{dy}\cdot\frac{dy}{dx} = p\frac{dp}{dy}$，于是$p\frac{dp}{dy} = \defFunction{y,p}$
+  \end{enumerate}
+
+}%可降阶高阶微分方程结尾
+
+\subsubsection{常系数齐次线性微分方程}{
+  例：$y\doubleDerivative + py\derivative + qy = 0$
+
+  先找出特征方程：$r^2 + pr + q = 0$,即：设$r = p\derivative,r^2 = \doubleDerivative$。
+
+  有以下三种情况：
+  \begin{enumerate}
+    \item $\Delta = b^2 - 4ac = p^2 - 4q > 0,r_1 = \frac{-p + \sqrt{p^2 - 4q}}{2}, r_2 = \frac{-p - \sqrt{p^2 - 4q}}{2}$
+    \item $\Delta = b^2 - 4ac = p^2 - 4q = 0,r_1 = r_2 = \frac{-p}{2}$
+    \item {$\Delta = b^2 - 4ac = p^2 - 4q < 0,r_1 = \alpha + \beta_i, r_2 = \alpha - \beta_i$，可扩写成以下三种形式：
+
+          \begin{enumerate}
+            \item $y = \mathConstant_1e^{r_1x} + \mathConstant_2e^{r_2x}$($\mathConstant_1,\mathConstant_2$为任意常数)
+            \item $y = (\mathConstant_1 + \mathConstant_2)e^{r_1x}$
+            \item $y = e^{\alpha x}(\mathConstant_1\cos\beta + \mathConstant_2\sin\beta)$
+          \end{enumerate}
+          }
+  \end{enumerate}
+
+}%常系数其次线性微分方程结尾
 
 \subsubsection{关于运动的微分方程/线性常系数微分方程}{
 开门见山，先提出此公式再进行分析。
