@@ -40,6 +40,7 @@
 \newcommand{\defFunction}[1]{\fint(#1)}
 \newcommand{\definiteIntegral}[2]{\int^{#1}_{#2}}
 \newcommand{\mathConstant}{\mathbf{C}}
+\newcommand{\degree}{^\circ}
 
 
 \begin{document}
@@ -122,6 +123,16 @@ $\fint(I)\supseteq[\fint(b), \fint(a)]$。
     }%转换公式结尾
 
   }%极坐标结尾
+
+  \subsection{不等式}{
+    \subsubsection{基本不等式}{
+      有两个基本不等式：
+      \begin{enumerate}
+        \item 对于任意实数$a$和$b$，有$a^2 + b^2 \geq 2ab$，仅当$a = b$时等号成立
+        \item 对任意正数a、b，有$\frac{a + b}{2} \geq \sqrt{ab}$，当且仅当$a = b$时等号成立
+      \end{enumerate}
+    }%基本不等式结尾
+  }%不等式结尾
 
   \subsection{零散的定义}{
     \begin{enumerate}
@@ -332,6 +343,8 @@ $\sin{n\theta} = \sum_{i = 0}^{\frac{n}{2}}[(-1)^i\mathCombination{2i + 1}{n}\co
 
 }%三角恒等式结尾
 
+三角形的边角、面积、和外接圆半径之间有着密切的联系
+
 \subsection{解斜三角形}{
 设三角形$\triangle ABC$,角A、B、C的对边为abc，以A为原点$O$建系,总有以下公式：
 
@@ -344,9 +357,31 @@ $\mathbf{S}\triangle_{ABC} = \frac{1}{2}AB \cdot CD = \frac{1}{2}cb\sin A$，即
 \subsubsection{正弦定理}
 将$\frac{1}{2}bc\sin A = \frac{1}{2}ac\sin B = \frac{1}{2}ab\sin C$三个公式同除$\frac{1}{2}abc$,得：
 
-$\frac{\sin A}{a} = \frac{\sin B}{b} = \frac{\sin C}{c}$, 也可表示为：$\frac{1}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C}$
+$\frac{\sin A}{a} = \frac{\sin B}{b} = \frac{\sin C}{c}$, 也可表示为：$\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C}$
 
 此式表明：在三角形中，各{\bfseries边}与它所对{\bfseries角的正弦}的比相等
+
+当$\angle C = 90\degree$时，由正弦定理可得：$\frac{\sin A}{a} = \frac{\sin B}{b} = \frac{1}{c}$,即$a = c\sin A,B = C\sin B$
+
+并且，做三角形外接圆：
+
+\includegraphics[scale=0.5]{resources/insideTriangleAndCircleOutSide.png}
+
+由圆周角定理可知$\angle D = \angle A,BD = 2R,bc = a$。于是$a = BC = BD\sin A = 2R\sin A$,即：
+
+$\frac{a}{\sin A} = 2R$
+
+由正弦定理，可得：$\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C}$
+
+所以，$a = 2R\sin A,b = 2R\sin B,c = 2R\sin C$
+
+变形也可得到：
+
+$\sin C = \frac{c}{2R},\sin B = \frac{b}{2R},\sin A = \frac{a}{2R}$
+
+以及：
+
+$a^2\sin2B + b^2\sin2A = 2ab\sin C$
 }%解斜三角形结尾
 
 \subsubsection{余弦定理}{
@@ -376,7 +411,6 @@ $\frac{\sin A}{a} = \frac{\sin B}{b} = \frac{\sin C}{c}$, 也可表示为：$\fr
 
 \section{空间解析几何}{
   不容小觑且难以理解的部分，加油。
-
 
  }%空间解析几何结尾
 
