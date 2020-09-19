@@ -35,13 +35,15 @@
 \newcommand{\myRightArrow}{$\Rightarrow$}
 \newcommand{\mathCombination}[2]{C_{#1}^{#2}}
 \newcommand{\mathPermutation}[2]{P_{#1}^{#2}}
-\newcommand{\UpDownSum}[2]{\sum\limits_{#1}^{#2}}
+\newcommand{\upDownSum}[2]{\sum\limits_{#2}^{#1}}
+\newcommand{\upDownProd}[2]{\prod\limits_{#2}^{#1}}
 \newcommand{\fDerivative}[1]{\fint\derivative(#1)}
 \newcommand{\defFunction}[1]{\fint(#1)}
 \newcommand{\definiteIntegral}[2]{\int^{#1}_{#2}}
 \newcommand{\mathConstant}{\mathbf{C}}
 \newcommand{\degree}{^\circ}
 \newcommand{\projection}[1]{Prj_{#1}}
+\newcommand{\mathRealNumberCollection}{\mathbf{R}}
 
 
 \begin{document}
@@ -100,52 +102,112 @@ $\fint(I)\supseteq[\fint(b), \fint(a)]$。
 }%排列组合结尾
 
 \subsection{极坐标}{
-  极坐标是不同于笛卡尔坐标系（直角坐标系）的另一种函数图像平面。
+极坐标是不同于笛卡尔坐标系（直角坐标系）的另一种函数图像平面。
 
-  极坐标不同于笛卡尔坐标系，他没有x和y轴，而是用基准轴和角度表示一个点。
+极坐标不同于笛卡尔坐标系，他没有x和y轴，而是用基准轴和角度表示一个点。
 
-  \subsubsection{极坐标系下的面积}{
-    \includegraphics{resources/polar_coordness.png}
+\subsubsection{极坐标系下的面积}{
+  \includegraphics{resources/polar_coordness.png}
 
-    公式为$\frac{1}{2}\definiteIntegral{\beta}{\alpha}(p(\theta))^2d\theta$
+  公式为$\frac{1}{2}\definiteIntegral{\beta}{\alpha}(p(\theta))^2d\theta$
 
-    p是形成曲线的函数。
-    }%极坐标下的面积结尾
+  p是形成曲线的函数。
+  }%极坐标下的面积结尾
 
-    \subsubsection{转换公式}{
-      从笛卡尔坐标系到极坐标有一套转换公式。
+  \subsubsection{转换公式}{
+    从笛卡尔坐标系到极坐标有一套转换公式。
 
-      $$
-        \begin{cases}
-          x = \rho\cos\theta \\
-          y = \rho\sin\theta
-        \end{cases}
-      $$
-    }%转换公式结尾
+    $$
+      \begin{cases}
+        x = \rho\cos\theta \\
+        y = \rho\sin\theta
+      \end{cases}
+    $$
+  }%转换公式结尾
 
-  }%极坐标结尾
+}%极坐标结尾
 
-  \subsection{不等式}{
-    \subsubsection{基本不等式}{
-      有两个基本不等式：
-      \begin{enumerate}
-        \item 对于任意实数$a$和$b$，有$a^2 + b^2 \geq 2ab$，仅当$a = b$时等号成立
-        \item 对任意正数a、b，有$\frac{a + b}{2} \geq \sqrt{ab}$，当且仅当$a = b$时等号成立
-      \end{enumerate}
-    }%基本不等式结尾
-  }%不等式结尾
+\subsection{不等式}{
 
-  \subsection{零散的定义}{
-    \begin{enumerate}
-      \item 有界：$\exists\epsilon,f(x) < \epsilon\quad(-\infty < x < \infty )$
-    \end{enumerate}
-  }%零散的定义结尾
+\subsubsection{基本不等式}{
+  $\frac{a + b}{2} \geq \sqrt{ab}$
 
-  \subsection{零散的思想}{
-    \begin{enumerate}
-      \item 正变换是数学的重要工具,三角变换是只变其形不变其质的。三角变换常常先寻找式子所包含的各个角之间的联系,并以此为依据选择可以联系它们的适当公式,通过换元法把三角恒等变换问题转化为代数恒等变换问题。
-    \end{enumerate}
-  }%零散的思想结尾
+  注：当且仅当$a = b$时取等号
+
+  其中$\frac{a+b}{2}$称为$a,b$的算数平均数，$\sqrt{ab}$称为$a,b$的几何平均数。
+
+  将其变形，可得：
+  \begin{enumerate}
+    \item $a + b \geq 2\sqrt{ab}$（当且仅当$a = b$时取等号）
+    \item $\frac{b}{a} + \frac{a}{b} \geq 2$（$a,b$同号）
+    \item $ab \leq (\frac{a + b}{2})^2$（$a,b\in\mathRealNumberCollection$）
+    \item $(\frac{a + b}{2})^2 \leq \frac{a^2 + b^2}{2}$（$a,b\in\mathRealNumberCollection$）
+  \end{enumerate}
+}%基本不等式结尾
+
+\subsubsection{均值不等式}{
+平均数不等式，或称平均值不等式、均值不等式，是数学上的一组不等式，也是基本不等式的推广。它是说：
+
+如果$x_{1},x_{2},\dotsm,x_{n}$是正数，则：
+
+$\mathbf{H}_n \leq \mathbf{G}_n \leq \mathbf{A}_n \leq \mathbf{Q}_n$
+
+其中：
+
+$\mathbf{H}_n = \frac{n}{\upDownSum{n}{i = 1}\frac{1}{x_i}} = \frac{n}{\frac{1}{x_1} + \frac{1}{x_2} + \dotsm + \frac{1}{x_n}}$
+
+$\mathbf{G}_n = \sqrt[n]{\upDownProd{n}{i = 1}x_i} = \sqrt[n]{x_1x_2\dotsm x_n}$
+
+$\mathbf{A}_n = \frac{\upDownSum{n}{i = 1}x_i}{n} = \frac{x_1 + x_2 + x_n}{n}$
+
+$\mathbf{Q}_n = \sqrt{\frac{\upDownSum{n}{i = 1}x^2_i}{n}} = \sqrt{\frac{x^2_1 + x^2_2 + \dotsm + x^2_n}{n}}$
+
+当且仅当$x_1 = x_2 = \dotsm = x_n$，等号成立。
+
+当$n = 2$时：
+
+$\frac{2}{\frac{1}{x_1} + \frac{1}{x_2}} = \frac{2x_1x_2}{x_1 + x_2}\leq\sqrt{x_1x_2}\leq\frac{x_1 + x_2}{2}\leq\sqrt{\frac{x_1^2 + x_2^2}{2}}$
+
+即对这些正数：调和平均数$\leq$几何平均数$\leq$算数平均数$\leq$平方平均数（方均根）
+
+可简记为：“{\bfseries 算几调方}”
+}%二元均值不等式结尾  
+
+\subsubsection{算术-几何均值不等式}{
+  算术-几何平均值不等式，简称算几不等式，是一个常见而基本的不等式，表现算术平均数和几何平均数之间恒定的不等关系。设$x_1,x_2,\dots,x_n$为$n$个正实数，他们的算数平均数是$\mathbf{A}_n = \frac{x_1 + x_2 + \dotsm + x_n}{n}$，他们的几何平均数是$\mathbf{G}_n = \sqrt[n]{x_1\cdot x_2 \dotsm x_n}$。算术-几何平均值不等式表明，对任意的正实数$x_1,\dotsm,x_n$，总有：
+
+  \begin{center}
+    $\mathbf{A}_n\geq\mathbf{G}_n$
+  \end{center}
+
+  等号当且仅当$x_1 = x_2 = \dotsm = x_n$时成立。
+
+}%算术-几何均值不等式结尾
+
+\subsubsection{常用不等式}{
+  \begin{itemize}
+    \item $a^2 + b^2 \geq \frac{1}{2}(a + b)^2$
+    \item $a^2 + b^2 \geq 2ab$
+    \item $ab \leq \frac{a^2 + b^2}{2}$
+    \item $ab \leq (\frac{a + b}{2})^2$
+    \item $a + b \geq 2\sqrt{ab}$
+    \item $a + b \leq \sqrt{2(a^2 + b^2)}$
+  \end{itemize}
+}%常用不等式结尾
+
+}%不等式结尾
+
+\subsection{零散的定义}{
+  \begin{enumerate}
+    \item 有界：$\exists\epsilon,f(x) < \epsilon\quad(-\infty < x < \infty )$
+  \end{enumerate}
+}%零散的定义结尾
+
+\subsection{零散的思想}{
+  \begin{enumerate}
+    \item 正变换是数学的重要工具,三角变换是只变其形不变其质的。三角变换常常先寻找式子所包含的各个角之间的联系,并以此为依据选择可以联系它们的适当公式,通过换元法把三角恒等变换问题转化为代数恒等变换问题。
+  \end{enumerate}
+}%零散的思想结尾
 
 }%基本概念结尾
 
@@ -272,49 +334,49 @@ $\fint(I)\supseteq[\fint(b), \fint(a)]$。
 
 \subsection{倍角公式}{
 
-\subsubsection{二倍角公式}{
-  二倍角公式：由两角和公式推出
+  \subsubsection{二倍角公式}{
+    二倍角公式：由两角和公式推出
 
-  $\sin2\alpha = 2\sin\alpha\cos\alpha$
+    $\sin2\alpha = 2\sin\alpha\cos\alpha$
 
-  $\cos2\alpha = \cos^2\alpha - \sin^\alpha = 2\cos^2\alpha - 1 = 1 - 2\sin^2\alpha$
+    $\cos2\alpha = \cos^2\alpha - \sin^\alpha = 2\cos^2\alpha - 1 = 1 - 2\sin^2\alpha$
 
-  $\tan2\alpha = \frac{2\tan\alpha}{1 - \tan^2\alpha}$
-}%二倍角公式结尾
+    $\tan2\alpha = \frac{2\tan\alpha}{1 - \tan^2\alpha}$
+  }%二倍角公式结尾
 
-\subsubsection{半倍角公式}{
-  半倍角公式：将二倍角公式中的角$2\alpha$看作整体$\beta$，经过变形推出:
+  \subsubsection{半倍角公式}{
+    半倍角公式：将二倍角公式中的角$2\alpha$看作整体$\beta$，经过变形推出:
 
-  $\sin\frac{\alpha}{2} = \pm\sqrt{\frac{1 - \cos\alpha}{2}}$
+    $\sin\frac{\alpha}{2} = \pm\sqrt{\frac{1 - \cos\alpha}{2}}$
 
-  $\cos\frac{\alpha}{2} = \pm\sqrt{\frac{1 + \cos\alpha}{2}}$
+    $\cos\frac{\alpha}{2} = \pm\sqrt{\frac{1 + \cos\alpha}{2}}$
 
-  $\tan\frac{\alpha}{2} = \pm\sqrt{\frac{1-\cos\alpha}{1+\cos\alpha}} = \frac{\sin\alpha}{1+\cos\alpha} = \frac{1-\cos\alpha}{\sin\alpha}$
+    $\tan\frac{\alpha}{2} = \pm\sqrt{\frac{1-\cos\alpha}{1+\cos\alpha}} = \frac{\sin\alpha}{1+\cos\alpha} = \frac{1-\cos\alpha}{\sin\alpha}$
 
-  $\cot\frac{\alpha}{2} = \frac{1+\cos\alpha}{\sin\alpha} = \frac{\sin\alpha}{1-\cos\alpha}$
+    $\cot\frac{\alpha}{2} = \frac{1+\cos\alpha}{\sin\alpha} = \frac{\sin\alpha}{1-\cos\alpha}$
 
-  $\sec\frac{\alpha}{2} = \frac{\pm\sqrt{\frac{\sec\alpha - 1}{2\sec\alpha}}2\sec\alpha}{\sec\alpha + 1} = \frac{\pm\sqrt{\frac{4\sec^3\alpha + \sec^2\alpha}{2\cos\alpha}}}{\sec\alpha + 1}$
+    $\sec\frac{\alpha}{2} = \frac{\pm\sqrt{\frac{\sec\alpha - 1}{2\sec\alpha}}2\sec\alpha}{\sec\alpha + 1} = \frac{\pm\sqrt{\frac{4\sec^3\alpha + \sec^2\alpha}{2\cos\alpha}}}{\sec\alpha + 1}$
 
-  $\csc\frac{\alpha}{2} = \frac{\pm\sqrt{\frac{\sec\alpha - 1}{2\sec\alpha}}2\sec\alpha}{\sec\alpha - 1} = \frac{\pm\sqrt{\frac{3\sec^3\alpha - \sec^2\alpha}{2\sec\alpha}}}{\sec\alpha - 1}$
-}%半倍角公式结尾
+    $\csc\frac{\alpha}{2} = \frac{\pm\sqrt{\frac{\sec\alpha - 1}{2\sec\alpha}}2\sec\alpha}{\sec\alpha - 1} = \frac{\pm\sqrt{\frac{3\sec^3\alpha - \sec^2\alpha}{2\sec\alpha}}}{\sec\alpha - 1}$
+  }%半倍角公式结尾
 
-\subsubsection{n倍角公式}{
-$\cos{n\theta} = \sum_{i = 0}^{\frac{n}{2}}[(-1)^i\mathCombination{2i + 1}{n}\cos^{n - 2i}\theta\sin^{2i}\theta]$
+  \subsubsection{n倍角公式}{
+    $\cos{n\theta} = \upDownSum{\frac{n}{2}}{i = 0}[(-1)^i\mathCombination{2i + 1}{n}\cos^{n - 2i}\theta\sin^{2i}\theta]$
 
-$\sin{n\theta} = \sum_{i = 0}^{\frac{n}{2}}[(-1)^i\mathCombination{2i + 1}{n}\cos^{n - 2i - 1}\theta\sin^{2i+1}\theta]$
-}%n倍角公式结尾
+    $\sin{n\theta} = \upDownSum{\frac{n}{2}}{i = 0}[(-1)^i\mathCombination{2i + 1}{n}\cos^{n - 2i - 1}\theta\sin^{2i+1}\theta]$
+  }%n倍角公式结尾
 
-\subsubsection{万能替换公式}{
-  万能替换公式：尝试将正常的三角函数用半角公式表示时经过变形推出：
+  \subsubsection{万能替换公式}{
+    万能替换公式：尝试将正常的三角函数用半角公式表示时经过变形推出：
 
-  角$\alpha(\alpha \neq 2k\pi + \pi ,k \in \mathbf{z})$的所有三角比都可以用 $\tan\frac{\alpha}{2}$表示.这组公式叫做万能替换公式
+    角$\alpha(\alpha \neq 2k\pi + \pi ,k \in \mathbf{z})$的所有三角比都可以用 $\tan\frac{\alpha}{2}$表示.这组公式叫做万能替换公式
 
-  $\sin\alpha = \frac{2\tan\frac{\alpha}{2}}{1+\tan^2\frac{\alpha}{2}}$
+    $\sin\alpha = \frac{2\tan\frac{\alpha}{2}}{1+\tan^2\frac{\alpha}{2}}$
 
-  $\cos\alpha = \frac{1 - \tan^2\frac{\alpha}{2}}{1 + \tan^2\frac{\alpha}{2}}$
+    $\cos\alpha = \frac{1 - \tan^2\frac{\alpha}{2}}{1 + \tan^2\frac{\alpha}{2}}$
 
-  $\tan\alpha \frac{2\tan\frac{\alpha}{2}}{1 - \tan^2\frac{\alpha}{2}}$
-}%万能替换公式结尾
+    $\tan\alpha \frac{2\tan\frac{\alpha}{2}}{1 - \tan^2\frac{\alpha}{2}}$
+  }%万能替换公式结尾
 
 }%倍角公式结尾
 
@@ -821,7 +883,7 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
 \subsection{定积分}{
 
 \subsubsection{定义}{
-  $\limNormal{\lambda \to 0}\UpDownSum{\infty}{i = 1}\defFunction{\xi_i}\cdot\Delta x_i$
+  $\limNormal{\lambda \to 0}\upDownSum{\infty}{i = 1}\defFunction{\xi_i}\cdot\Delta x_i$
 
   以上为定义，实际中写法为$\definiteIntegral{a}{b}\defFunction{x}dx$。
 
@@ -1062,7 +1124,7 @@ $x$在$a$点附近,最为粗略的估计就是$\defFunction{x} \approx \defFunct
 
 但后面还有更多项，直接写出通项公式如何？
 
-泰勒级数通项公式：$\defFunction{x} = \UpDownSum{n = 1}{\infty}\frac{1}{n!}\fint\aLotDerivative{n - 1}(x - a)^{n - 1}$，0阶导指的是原函数，a是x附近的点。
+泰勒级数通项公式：$\defFunction{x} = \upDownSum{\infty}{n = 1}\frac{1}{n!}\fint\aLotDerivative{n - 1}(x - a)^{n - 1}$，0阶导指的是原函数，a是x附近的点。
 
 还有泰勒公式：表示的不是一个函数的幂级数形式而是对于某个函数的近似，形式与泰勒级数通项公式类似。
 
