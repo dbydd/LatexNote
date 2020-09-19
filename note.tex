@@ -41,6 +41,7 @@
 \newcommand{\definiteIntegral}[2]{\int^{#1}_{#2}}
 \newcommand{\mathConstant}{\mathbf{C}}
 \newcommand{\degree}{^\circ}
+\newcommand{\projection}[1]{Prj_{#1}}
 
 
 \begin{document}
@@ -49,7 +50,7 @@
   \paragraph{todos}{
     \begin{enumerate}
       \item 誊录纸质笔记
-      \item 空间解析几何
+      \item 空间解析几何\ 叉乘
       \item 给线性代数部分引入线性映射的观点。
       \item 补充多个section,计算机图形学，场论等
     \end{enumerate}
@@ -411,6 +412,86 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
 
 \section{空间解析几何}{
   不容小觑且难以理解的部分，加油。
+
+  \subsection{关于向量}{
+    在空间解析几何部分不会引入过多有关线性代数的知识（比如向量空间）。定理与定义将会互相交织。
+
+    \subsubsection{关于向量的基本概念}{
+      有以下概念：
+      \begin{itemize}
+        \item 数乘：$\lambda \vec{\alpha}$，即$\lambda$倍长度的$\vec{\alpha}$，当$\lambda > 0$时，方向与原向量相同。当$\lambda < 0$时，方向相反。数乘前后向量的起点一致。
+        \item 取模：$|\lambda\vec{\alpha}| = |\lambda||\vec{\alpha}|$，前一个“$||$”为绝对值，后一个“$||$”为取模。最后得出的结果为$|\lambda\vec{\alpha}|$的长度。
+        \item 单位化：$|\frac{\vec{\alpha}}{|\vec{\alpha}|}| = 1$，即将一个向量除以他的长度得到的是单位向量（长度为1的向量）
+        \item 在三维标准正交坐标系中存在三个单位向量：$\vec{i},\vec{j},\vec{k}$。他们互相垂直，长度为1。坐标系中任意一点$(x,y,z)$都可以表示为一个向量$\vec{r},\vec{r} = x\vec{i} + y\vec{j} + z\vec{k}$。
+        \item 设$\vec{a} = (ax,ay,az),\vec{b} = (bx,by,bz)$。则：$\vec{a} \pm \vec{b} = (ax \pm bx,ay \pm by,az \pm bz)$、$\lambda\vec{a} = (\lambda ax,\lambda ay,\lambda az)$。其中$ax,ay,az,bx,by,bz$称为分量。
+        \item 平行：$\vec{b} = \lambda\vec{a},\frac{ax}{bx} = \frac{ay}{by} = \frac{az}{bz}$即：对应分量之比相同。
+        \item 向量长度（取模）公式：$\vec{r} = (x,y,z),|\vec{r}| = \sqrt{x^2 + y^2 + z^2}$。注：对于任意维度的向量，取模都是各分量平方和开根号。
+        \item 两点之间距离公式：$A:(x_1,y_1,z_1),B:(x_2,y_2,z_2),|\vec{AB}| = \sqrt{(x_1 - x_2)^2 + (y_1 -y_2)^2 + (z_1 - z_2)^2}$。注：在任意维度中，两点之间的距离公式都是对应分量作差的平方和开根号。
+      \end{itemize}
+    }%关于向量的基本概念结尾
+
+    \subsubsection{方向角与方向余弦}{
+      \includegraphics[scale = 0.5]{resources/directionAngle.png}
+
+      $\vec{OM} = \vec{r} = (x,y,z)$
+
+      $\cos\alpha = \frac{x}{|\vec{OM}|} = \frac{x}{|\vec{r}|}$
+
+      $\cos\beta = \frac{y}{|\vec{OM}|} = \frac{y}{|\vec{r}|}$
+
+      $\cos\gamma = \frac{z}{|\vec{OM}|} = \frac{z}{|\vec{r}|}$
+
+      其中$\alpha,\beta,\gamma$称为$\vec{OM}$的方向角。
+
+      有恒等式：$\cos^2\alpha + \cos^2\beta + \cos^2\gamma = 1$
+
+      方向余弦是指在解析几何里，一个向量的三个方向余弦分别是这向量与三个坐标轴之间的角度的余弦。两个向量之间的方向余弦指的是这两个向量之间的角度的余弦。在此处指的是前者，也就是：$\cos\alpha,\cos\beta,\cos\gamma$。
+
+      将方向余弦作为三个分量，即：$(\cos\alpha,\cos\beta,\cos\gamma) = (\frac{x}{|\vec{r}|}, \frac{y}{|\vec{r}|}, \frac{z}{|\vec{r}|}) = \frac{1}{|\vec{r}|}\vec{r} = e_r$
+
+      其中$e_r$是个单位向量，表示以向量$\vec{r}$的方向余弦为坐标的向量。
+
+    }%方向角与方向余弦结尾
+
+    \subsubsection{向量投影}{
+      \includegraphics{resources/vector_axis_projection.png}
+
+      直接写出来：
+      \begin{enumerate}
+        \item $\projection{u}\vec{a} = |\vec{a}|\cdot\cos\alpha$
+        \item $\projection{u}(\vec{a} + \vec{b}) = \projection{u}\vec{a} + \projection{u}\vec{b}$
+        \item $\projection{u}\lambda\vec{a} = \lambda\projection{u}a$
+      \end{enumerate}
+
+      $u$：任意轴\qquad$\vec{a}$：向量\qquad$\projection{u}$:投影到u轴
+
+    }%向量投影结尾
+
+    \subsubsection{数量积/点乘}{
+      点乘算出来的是数
+
+      $\vec{a} \cdot \vec{b} = |a|\cdot|b|\cdot\cos\theta = |a|\cdot\projection{a}b = |b|\cdot\projection{b}a$
+
+      $\theta$：夹角\\
+
+      \indent点乘有以下性质:
+      \begin{enumerate}
+        \item $\vec{a}\cdot\vec{a} = |a|\cdot|a|\cdot\cos0 = |a|^2$
+        \item $\vec{a}\cdot\vec{b} = 0,\theta = 90\degree,\vec{a} \perp \vec{b}$\qquad 即：$\vec{a}\cdot\vec{b} = 0 \Leftrightarrow \vec{a} \perp \vec{b}$
+        \item $\vec{a}\cdot\vec{b} = \vec{b}\cdot\vec{a}$
+        \item $(\vec{a}+\vec{b})\cdot\vec{c} = \vec{a}\cdot\vec{c} + \vec{b}\cdot\vec{c}$
+        \item $(\lambda\vec{a})\cdot\vec{b} = \lambda(\vec{a}\cdot\vec{b})$
+        \item $\vec{a} = (a_x,a_y,a_z),\vec{b} = (b_x,b_y,b_z),\vec{a}\cdot\vec{b} = a_xb_x + a_yb_y + a_zb_z$
+        \item $\cos\theta = \frac{\vec{a}\cdot\vec{b}}{|\vec{a}|\cdot|\vec{b}|} = \frac{a_xb_x + a_yb_y + a_zb_z}{\sqrt{a_x^2 + a_y^2 + a_z^2}\cdot\sqrt{b_x^2 + b_y^2 + b_z^2}}$
+      \end{enumerate}
+
+    }%数量积/点乘结尾
+
+    \subsubsection{向量积/叉乘}{
+
+    }%向量积/叉乘结尾
+
+  }%关于向量结尾
 
  }%空间解析几何结尾
 
