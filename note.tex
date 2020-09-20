@@ -38,12 +38,14 @@
 \newcommand{\upDownSum}[2]{\sum\limits_{#2}^{#1}}
 \newcommand{\upDownProd}[2]{\prod\limits_{#2}^{#1}}
 \newcommand{\fDerivative}[1]{\fint\derivative(#1)}
-\newcommand{\defFunction}[1]{\fint(#1)}
+\newcommand{\defFunction}[1]{f(#1)}
 \newcommand{\definiteIntegral}[2]{\int^{#1}_{#2}}
 \newcommand{\mathConstant}{\mathbf{C}}
 \newcommand{\degree}{^\circ}
 \newcommand{\projection}[1]{Prj_{#1}}
 \newcommand{\mathRealNumberCollection}{\mathbf{R}}
+\newcommand{\bigCase}[1]{\left(#1\right)}
+\newcommand{\innerProduct}[2]{\langle#1,#2\rangle}
 
 
 \begin{document}
@@ -52,7 +54,7 @@
   \paragraph{todos}{
     \begin{enumerate}
       \item 誊录纸质笔记
-      \item 空间解析几何\ 叉乘 、柯西不等式
+      \item 空间解析几何\ 叉乘
       \item 给线性代数部分引入线性映射的观点。
       \item 补充多个section,计算机图形学，场论等
     \end{enumerate}
@@ -147,7 +149,64 @@ $\fint(I)\supseteq[\fint(b), \fint(a)]$。
 
 
 \subsubsection{柯西不等式}{
+  柯西不等式有很多种形式：
+  \begin{itemize}
+    \item {
+          二维形式：
 
+          由$(a^2 + b^2)(c^2 + d^2)\geq(ac + bd)^2$变形：$ac + bd \leq \sqrt{(a^2 + b^2)(c^2 + d^2)}$
+
+          当且仅当$ab = cd$（即$\frac{a}{c} = \frac{b}{d}$）时。
+
+          一般形式为$\upDownSum{n}{i = 1}a_i^2\upDownSum{n}{i = 1}b_i^2\geq\bigCase{\upDownSum{n}{i = 1}a_ib_i)}^2$
+
+          当$\frac{a_1}{b_1} = \frac{a_2}{b_2} = \dots = \frac{a_n}{b_n}$或$a_i,b_i,i = 1,2,3,\dots,n$中至少有一方全为$0$时等号成立。
+
+          一般形式推广：$(x_1 + y_1 + \dots)(x_2 + y_2 + \dots)\dots(x_n + y_n + \dots) \geq \left[\bigCase{\upDownProd{n}{i = 1}x_i}^\frac{1}{n} + \bigCase{\upDownProd{n}{i = 1}y_i}^\frac{1}{n} + \dots\right]^n$
+
+          此推广形式又称卡尔松不等式，其表述是：在m×n矩阵中，各列元素之和的几何平均不小于各行元素的几何平均之和。二维形式是卡尔松不等式n=2时的特殊情况。
+          }
+    \item {
+          向量形式：
+
+          对于内积空间中的向量$\vec{x}$和$\vec{y}$，有
+
+          $|\innerProduct{\vec{x}}{\vec{y}}^2| \leq \innerProduct{\vec{x}}{\vec{x}} \times \innerProduct{\vec{y}}{\vec{y}}$
+
+          其中$\innerProduct{\cdot}{\cdot}$表示内积。等价地，将两边开方，等式右边即可以写为两向量范数乘积的形式。
+
+          $|\innerProduct{\vec{x}}{\vec{y}}| \leq ||\vec{x}||\cdot||\vec{y}||$。
+
+          另外，当且仅当$x$和$y$线性相关时，等号成立（仅两个向量而言，线性相关等同于平行）。
+
+          若$x_1,\dotsm,x_n \in \mathConstant$和$y_1,\dotsm,y_n \in mathConstant$有虚部，内积即为标注内积。如果用上划线标记共轭复数，这个不等式可以更明确的表述为：
+
+          $|\vec{x_1}\bar{\vec{y_1}} + \dotsm + \vec{x_n}\bar{\vec{y_n}}|^2\leq (|\vec{x_1}|^2 + \dotsm + |\vec{x_n}|^2)(|\vec{y_1}|^2 + \dotsm + |\vec{y_n}|^2)$。
+          }
+    \item {
+          三角形式：
+
+          在三角形$ABC$中，这个式子可以写作：$||\vec{AB}|| + ||\vec{BC}|| \geq ||\vec{AC}||$
+
+          也就是说：$\sqrt{a^2 + b^2} + \sqrt{c^2 + d^2} \geq \sqrt{(a - c)^2 + (b - d)^2}$
+
+          等号成立的条件为:$ad = bc,且ac + bc \geq 0$（即$\frac{a}{c} = \frac{b}{d}$）。
+          }
+    \item {
+          积分形式：
+
+          $\bigCase{\int\defFunction{x}g(x)dx}^2 \leq \int\fint^2(x)dx \int g^2(x)dx$
+          }
+    \item {
+          一般形式：
+
+          设$V$是一线性空间，定义内积，记作$\innerProduct{\alpha}{\beta}$,则：
+
+          $|\innerProduct{\alpha}{\beta}| \leq |\alpha||\beta|$。
+
+          其中$\alpha,\beta$为$V$中的向量。
+          }
+  \end{itemize}
 }%柯西不等式结尾
 
 \subsubsection{均值不等式}{
