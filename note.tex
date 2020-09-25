@@ -9,6 +9,7 @@
 \usepackage{graphicx}
 \usepackage{esint}
 \usepackage{cases}
+\usepackage{tikz}
 
 \geometry{left=1cm,right=1cm,top=3cm,bottom=3cm}
 \title{db的日常笔记}
@@ -54,10 +55,11 @@
   \paragraph{todos}{
     \begin{enumerate}
       \item 誊录纸质笔记
-      \item 空间解析几何\ 叉乘
+      \item 空间解析几何\ 直线与平面夹角
       \item 给线性代数部分引入线性映射的观点。
       \item 补充多个section,计算机图形学，场论等
     \end{enumerate}
+
   }
   \tableofcontents
   \newpage
@@ -542,6 +544,8 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
   \subsection{关于向量}{
     在空间解析几何部分不会引入过多有关线性代数的知识（比如向量空间）。定理与定义将会互相交织。
 
+    注：本章中的向量默认为三维向量。
+
     \subsubsection{关于向量的基本概念}{
       有以下概念：
       \begin{itemize}
@@ -553,6 +557,17 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
         \item 平行：$\vec{b} = \lambda\vec{a},\frac{ax}{bx} = \frac{ay}{by} = \frac{az}{bz}$即：对应分量之比相同。
         \item 向量长度（取模）公式：$\vec{r} = (x,y,z),|\vec{r}| = \sqrt{x^2 + y^2 + z^2}$。注：对于任意维度的向量，取模都是各分量平方和开根号。
         \item 两点之间距离公式：$A:(x_1,y_1,z_1),B:(x_2,y_2,z_2),|\vec{AB}| = \sqrt{(x_1 - x_2)^2 + (y_1 -y_2)^2 + (z_1 - z_2)^2}$。注：在任意维度中，两点之间的距离公式都是对应分量作差的平方和开根号。
+        \item {
+              两向量夹角：（取锐角）设$\vec{a} = (a_1, a_2, a_3),\vec{b} = (b_1,b_2,b_3)$，设夹角为$\theta$，则：$\cos\theta = \frac{|a_1b_1 + a_2b_2 + a_3b_3|}{\sqrt{a_1^2 + a_2^2 + a_3^2}\sqrt{b_1^2 + b_2^2 + b_3^2}}$
+
+              有以下几种情况：
+              \begin{enumerate}
+                \item 垂直：$a_1b_1 + a_2b_2 + a_3b_3 = 0$
+                \item 平行：$\frac{a_1}{b_1} = \frac{a_2}{b_2} = \frac{a_3}{b_3}$
+              \end{enumerate}
+
+              求两直线夹角也同理。
+              }
       \end{itemize}
     }%关于向量的基本概念结尾
 
@@ -614,10 +629,131 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
     }%数量积/点乘结尾
 
     \subsubsection{向量积/叉乘}{
+      叉乘算出来的是向量，这个向量垂直于其他两个向量。右手法则：食指为$\vec{a}$，中指为$\vec{b}$，拇指为$\vec{c}$
 
+      $\vec{a}\times\vec{b} = \vec{c}$
+
+      其中：$\vec{c}\perp\vec{a},\vec{c}\perp\vec{b}$\\
+
+      \indent有以下性质：
+      \begin{itemize}
+        \item $\vec{a}\times\vec{a} = 0$
+        \item 有非零向量$\vec{a},\vec{b},\vec{a}\times\vec{b} = 0\ \Rightarrow \vec{a} // \vec{b}$。即：$\vec{a} // \vec{b} \Leftrightarrow \vec{a} \times \vec{b} = 0$
+        \item $\vec{b}\times\vec{a} = -\vec{b}\times\vec{a}$
+        \item $(\vec{a} + \vec{b})\times\vec{c} = \vec{a} \times \vec{c} + \vec{b} \times \vec{c}$
+        \item $(\lambda\vec{a})\times\vec{b} = \vec{a} \times (\lambda\vec{b}) = \lambda(\vec{a}\times\vec{b})$
+      \end{itemize}
+
+      有两种计算方法：
+
+      首先，设$\vec{a} = (a_1,a_2,a_3),\vec{b} = (b_1,b_2,b_3)$，并将结果向量记作$\vec{s}$:
+
+      \begin{itemize}
+        \item {
+              坐标形式:
+
+              $$
+                \vec{s}
+                =
+                \vec{a}\times\vec{b}
+                =
+                \left[\begin{array}{c}
+                    s_1 \\
+                    s_2 \\
+                    s_3
+                  \end{array}\right]
+                =
+                \left[\begin{matrix}
+                    a_2b_3 - a_3b_2 \\
+                    a_3b_1 - a_1b_3 \\
+                    a_1b_2 - a_2b_1
+                  \end{matrix}\right]
+              $$
+              }
+        \item {
+              行列式形式：
+
+              $$
+                \vec{s}
+                =
+                \vec{a}\times\vec{b}
+                =
+                \left|\begin{array}{ccc}
+                  \vec{i} & \vec{j} & \vec{k} \\
+                  a_1     & a_2     & a_3     \\
+                  b_1     & b_2     & b_3
+                \end{array}\right|
+              $$
+              }
+      \end{itemize}
     }%向量积/叉乘结尾
 
   }%关于向量结尾
+
+  \subsection{关于空间曲面}{
+    首先明确一点：平面是一种特殊的曲面。
+
+    \subsubsection{空间平面公式}{
+      法线向量与平面垂直。\\
+
+      \indent空间平面有以下表示方法:
+      \begin{itemize}
+        \item {
+              点法式：知道一点与法线向量。
+
+              设一点$M_0:(x_0,y_0,z_0)$,法线向量：$\vec{n} = (A,B,C)$
+
+              设$M(x,y,z),\vec{M_0M}=(x - x_0,y - y_0,z - z_0),\vec{n} \cdot \vec{M_0M} = 0$
+
+              平面的点法式方程为：$A(x - x_0) + B(y - y_0) + C(z - z_0) = 0$
+              }
+        \item {
+              一般式：三点确定一个向量。以实例演示：
+
+              设$M_1(2,-1,4),M_2(-1,3,-2),M_3(0,2,3)$代入：
+
+              $Ax + By + Cz + D = 0$
+
+              $$
+                \begin{cases}
+                  2A - B + 4C = -D \\
+                  -A + 3B -2C = -D \\
+                  2B + 3C = -D
+                \end{cases}
+              $$
+
+              也有$Ax + By + Cz + (-Ay_0 - By_0 - Cz_0) = 0$
+
+              （由点法式推出）\\
+
+              \indent有以下情况：
+              \begin{enumerate}
+                \item $D = 0,Ax + By + Cz = 0$：平面过原点。
+                \item $A = 0,By + Cz + D = 0$：平面法线垂直与$x$轴且平行于$x$轴，类似情况同理
+                \item $A = B = 0,CZ + D = 0$：平面过$z = -\frac{D}{C}$，平行于$xy$轴。
+              \end{enumerate}
+              }
+        \item 截距式：$\frac{x}{a} + \frac{y}{b} + \frac{z}{c} = 1$
+      \end{itemize}
+    }%空间平面公式结尾
+
+    \subsubsection{求两平面夹角}{
+      其实是求两平面法线的夹角（取锐角）
+
+      因此只要设两平面法线向量为$n_1(A_1,B_1,C_1),n_2(A_2,B_2,C_2)$，然后套向量夹角公式就行了。
+
+      其中$\theta = (\hat{n_1\ n_2})$或$(\hat{-n_1\ n_2}) = (\pi - (\hat{n_1\ n_2}))$
+
+      其中当向量平行时意味着平面重合（因为取的是锐角）、
+    }%求两平面夹角结尾
+
+    \subsubsection{点到平面距离公式}{
+      设点$P_0(x_0,y_0,z_0),Ax + By + Cz + D = 0$
+
+      $d = \frac{|Ax_0 + By_0 + Cz_0 + D|}{\sqrt{A^2 + B^2 + C^2}}$
+    }%点到平面距离公式结尾
+
+  }%关于空间曲面结尾
 
  }%空间解析几何结尾
 
