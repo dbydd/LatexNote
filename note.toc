@@ -106,14 +106,11 @@
 \contentsline {subsubsection}{\numberline {1.4.9.4}常系数齐次线性微分方程}{31}{subsubsection.1.4.9.4}%
 \contentsline {subsubsection}{\numberline {1.4.9.5}关于运动的微分方程/线性常系数微分方程}{31}{subsubsection.1.4.9.5}%
 \contentsline {subsubsection}{\numberline {1.4.9.6}关于增长的微分方程/非线性微分方程/偏微分方程剧透}{33}{subsubsection.1.4.9.6}%
-\contentsline {section}{\numberline {1.5}高等代数/线性代数}{34}{section.1.5}%
-\contentsline {subsection}{\numberline {1.5.1}定义、解释、前言}{34}{subsection.1.5.1}%
-\contentsline {subsubsection}{\numberline {1.5.1.1}什么是线性变换}{34}{subsubsection.1.5.1.1}%
-\contentsline {subsubsection}{\numberline {1.5.1.2}关于抽象向量空间}{35}{subsubsection.1.5.1.2}%
-\contentsline {section}{\numberline {1.6}数论}{36}{section.1.6}%
-\contentsline {section}{\numberline {1.7}场论}{36}{section.1.7}%
-\contentsline {section}{\numberline {1.8}群论}{36}{section.1.8}%
-\contentsline {section}{\numberline {1.9}矩阵论}{36}{section.1.9}%
+\contentsline {section}{\numberline {1.5}高等代数/线性代数}{35}{section.1.5}%
+\contentsline {section}{\numberline {1.6}数论}{35}{section.1.6}%
+\contentsline {section}{\numberline {1.7}场论}{35}{section.1.7}%
+\contentsline {section}{\numberline {1.8}群论}{35}{section.1.8}%
+\contentsline {section}{\numberline {1.9}矩阵论}{35}{section.1.9}%
 \contentsline {chapter}{\numberline {第二章\hspace {.3em}}计算机科学}{37}{chapter.2}%
 \contentsline {section}{\numberline {2.1}编程}{37}{section.2.1}%
 \contentsline {section}{\numberline {2.2}网络安全}{37}{section.2.2}%
