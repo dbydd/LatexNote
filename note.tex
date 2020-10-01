@@ -47,6 +47,7 @@
 \newcommand{\mathRealNumberCollection}{\mathbf{R}}
 \newcommand{\bigCase}[1]{\left(#1\right)}
 \newcommand{\innerProduct}[2]{\langle#1,#2\rangle}
+\newcommand{\transpose}{^T}
 
 
 \begin{document}
@@ -914,8 +915,48 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
               二次曲面有以下12种:
               \begin{itemize}
                 \item {
-                      圆柱面:
+                      椭球面:
 
+                      在笛卡尔坐标系中的方程为:
+
+                      $\frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} = 1$
+
+                      其中a和b是赤道半径(沿着x和y轴),c是极半径,(沿着z轴)。这三个数都是固定的正实数，决定了椭球的形状。
+
+                      如果三个半径都是相等的,那么就是一个球;如果有两个半径是相等的,则是一个类球面。
+
+                      \begin{itemize}
+                        \item $a = b = c$:球
+                        \item $a = b > c$:扁球面
+                        \item $a = b < c$:长球面
+                        \item $a \neq b,b \neq c,c \neq a$:不等边椭球(三条边都不相等)
+                      \end{itemize}
+
+                      点(a,0,0)、(0,b,0)和(0,0,c)都在曲面上。从原点到这三个点的线段,称为椭球的半主轴。它们与椭圆的半长轴和半短轴相对应。
+
+                      体积公式为:$\frac{4}{3}\pi abc$。
+
+                      注意,当三个半径都相等时,这个公式便化为球的体积;两个半径相等时,便化为扁球面或长球面的体积。
+                      }
+                \item {
+                      椭圆抛物面:
+
+                      椭圆抛物面在笛卡尔坐标系中的方程为:$z = \frac{x^2}{a^2} + \frac{y^2}{b^2}$
+                      }
+                \item {
+                      双曲抛物面：
+
+                      双曲抛物面在笛卡尔坐标系中的方程为:$z = \frac{x^2}{a^2} - \frac{y^2}{b^2}$
+                      }
+                \item {
+                      单叶双曲面:
+
+                      单叶双曲面在笛卡尔坐标系中的方程为:$\frac{x^2}{a^2} + \frac{y^2}{b^2} - \frac{z^2}{c^2} = 1$
+                      }
+                \item {
+                      双叶双曲面:
+                      //todo 全有毛病，重写
+                      双叶抛物面在笛卡尔坐标系中的方程为:$\frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} = 1$
                       }
               \end{itemize}
               }
@@ -1760,92 +1801,89 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
 
    }%网络安全结尾
 
-  \section{重要技术}{
+  \section{计算机图形学}{
+    注:本章中向量默认为列向量。
 
-    \subsection{计算机图形学}{
-      注:本章中向量默认为列向量。
+    \subsection{对于线性代数部分的补充与扩展}{
 
-      \subsubsection{对于线性代数部分的补充与扩展}{
+      在计算机图形学中线性代数的主要作用是操纵与计算空间中对象的变化。由此衍生出了一些特殊的东西。
 
-        在计算机图形学中线性代数的主要作用是操纵与计算空间中对象的变化。由此衍生出了一些特殊的东西。
+      同时有一部分重要的常用基础内容放在了数学篇中的空间解析几何部分。
 
-        同时有一部分重要的常用基础内容放在了数学篇中的空间解析几何部分。
+      \begin{enumerate}
+        \item {向量叉乘的对偶矩阵:
+              $$\vec{a} \times \vec{b}
+                =
+                \left[\begin{matrix}
+                    y_az_b - y_bz_a \\
+                    z_ax_b - x_az_b \\
+                    x_ay_b - y_ax_b
+                  \end{matrix}\right]
+                =
+                A * \vec{b}
+                =
+                \left[\begin{matrix}
+                    0    & -z_a & y_a  \\
+                    z_a  & 0    & -x_a \\
+                    -y_a & x_a  & 0
+                  \end{matrix}\right]
+                \left[\begin{array}{c}
+                    x_b \\
+                    y_b \\
+                    z_b
+                  \end{array}
+                  \right]
+              $$
+              }
+        \item 非满秩矩阵意味着将空间变换到了更低的维度。
+        \item 特征向量是指在进行了矩阵所代表的线性变换后方向没改变向量,特征值则是指特征向量的缩放倍数。
+        \item 逆矩阵所代表的变换成为逆变换,是原矩阵所代表的变换的反向操作,一个矩阵乘以他的逆矩阵是单位阵,这从几何上的直观理解就是什么都没做,两次操作互相抵消了。
+      \end{enumerate}
+    }
 
-        \begin{enumerate}
-          \item {向量叉乘的对偶矩阵:
-                $$\vec{a} \times \vec{b}
-                  =
-                  \left[\begin{matrix}
-                      y_az_b - y_bz_a \\
-                      z_ax_b - x_az_b \\
-                      x_ay_b - y_ax_b
-                    \end{matrix}\right]
-                  =
-                  A * \vec{b}
-                  =
-                  \left[\begin{matrix}
-                      0    & -z_a & y_a  \\
-                      z_a  & 0    & -x_a \\
-                      -y_a & x_a  & 0
-                    \end{matrix}\right]
-                  \left[\begin{array}{c}
-                      x_b \\
-                      y_b \\
-                      z_b
-                    \end{array}
-                    \right]
-                $$
-                }
-          \item 非满秩矩阵意味着将空间变换到了更低的维度。
-          \item 特征向量是指在进行了矩阵所代表的线性变换后方向没改变向量,特征值则是指特征向量的缩放倍数。
-          \item 逆矩阵所代表的变换成为逆变换,是原矩阵所代表的变换的反向操作,一个矩阵乘以他的逆矩阵是单位阵,这从几何上的直观理解就是什么都没做,两次操作互相抵消了。
-        \end{enumerate}
-      }
+    \subsection{变换}{
+      变换按照作用对象可以分为:
+      \begin{enumerate}
+        \item Modeling 模型变换
+        \item Viewing 视角变换
+      \end{enumerate}
 
-      \subsubsection{变换}{
-        变换按照作用对象可以分为:
-        \begin{enumerate}
-          \item Modeling 模型变换
-          \item Viewing 视角变换
-        \end{enumerate}
+      按照作用效果可以分为:
+      \begin{enumerate}
+        \item scale 缩放变换
+        \item rotate 旋转变换
+        \item shear 剪切变换
+      \end{enumerate}
 
-        按照作用效果可以分为:
-        \begin{enumerate}
-          \item scale 缩放变换
-          \item rotate 旋转变换
-          \item shear 剪切变换
-        \end{enumerate}
+      如同3b1b的观点,将目标空间看作矩阵的列空间。而矩阵每一列都对应了列空间中的一个基向量,拿2维空间举例:
+      $$\left[\begin{matrix}
+            1 & 0 \\
+            0 & 1
+          \end{matrix}\right]$$
 
-        如同3b1b的观点,将目标空间看作矩阵的列空间。而矩阵每一列都对应了列空间中的一个基向量,拿2维空间举例:
-        $$\left[\begin{matrix}
-              1 & 0 \\
-              0 & 1
-            \end{matrix}\right]$$
+      假设第一列代表了$x$轴的单位向量$i$,则第二列代表了$y$轴的单位向量$j$
 
-        假设第一列代表了$x$轴的单位向量$i$,则第二列代表了$y$轴的单位向量$j$
+      因此,对矩阵进行操作就相当于对矩阵所代表的空间进行操作。
 
-        因此,对矩阵进行操作就相当于对矩阵所代表的空间进行操作。
+      例如:$$\left[\begin{matrix}
+            2 & 1 \\
+            1 & 2
+          \end{matrix}\right]$$
 
-        例如:$$\left[\begin{matrix}
-              2 & 1 \\
-              1 & 2
-            \end{matrix}\right]$$
+      这个矩阵就代表着将单位向量$i$移动到了坐标$(2,1)$,将单位向量$j$移动到了坐标$(1,2)$。整个二维空间都是由这两个单位向量所张成的。随着单位向量的移动,整个空间也就随之而变形。这种操作被称为变换。
+      其中一类最简单的变换称为线性变换,在线性代数篇中已有了详细解释。
 
-        这个矩阵就代表着将单位向量$i$移动到了坐标$(2,1)$,将单位向量$j$移动到了坐标$(1,2)$。整个二维空间都是由这两个单位向量所张成的。随着单位向量的移动,整个空间也就随之而变形。这种操作被称为变换。
-        其中一类最简单的变换称为线性变换,在线性代数篇中已有了详细解释。
+      旋转矩阵的表示原理如下:
 
-        旋转矩阵的表示原理如下:
+      先看看二维:
 
-        先看看二维:
+      \includegraphics[scale=0.25]{resources/rotateMatrixGraphics.png}
 
-        \includegraphics[scale=0.25]{resources/rotateMatrixGraphics.png}
+      因此二维的旋转矩阵$$R_\theta = \left[\begin{matrix}
+            \cos\theta & -\sin\theta \\
+            \sin\theta & \cos\theta
+          \end{matrix}\right]$$
 
-        因此二维的旋转矩阵$$R_\theta = \left[\begin{matrix}
-              \cos\theta & -\sin\theta \\
-              \sin\theta & \cos\theta
-            \end{matrix}\right]$$
-
-      }%变换结尾
 
       \subsubsection{齐次坐标}{
         由于单纯的线性变换并不能让对象动起来,依然只能在原点操作,所以需要齐次坐标表示空间上的位移。
@@ -1927,17 +1965,17 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
 
         更直观一点:可以这么理解:
         \begin{itemize}
-          \item vector + vector = vector 向量相加还是向量 $0 + 0 = 0$
-          \item point - point = vector 两点相减得到向量 $1 - 1 = 0$
-          \item point + vector = point 一个点加一个向量结果是一个点 $0 + 1 = 1$
-          \item point + point = 两个点的中点 $1 + 1 = 2$,原因见扩充定义。
+          \item 向量 + 向量 = 向量, 向量相加还是向量 $0 + 0 = 0$
+          \item 点 - 点 = 向量, 两点相减得到向量 $1 - 1 = 0$
+          \item 点 + 向量 = 点, 一个点加一个向量结果是一个点 $0 + 1 = 1$
+          \item 点 + 点 = 两个点的中点, $1 + 1 = 2$,原因见扩充定义。
         \end{itemize}
         扩充定义如下:
         $$\left[\begin{array}{c}
               x \\
               y \\
               w
-            \end{array}\right]$$是二维的点,可化简为:$$\left[\begin{array}{c}
+            \end{array}\right] = \left[\begin{array}{c}
               x \\
               y \\
               w
@@ -2068,11 +2106,323 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
               z \\
               1
             \end{array}\right]$$
-      }
 
-    }%计算机图形学结尾
+        将二维操作类比过来:
 
-   }%重要技术结尾
+        \begin{itemize}
+          \item 缩放 : $$
+                  S(s_x,s_y,s_z) =\left[\begin{matrix}
+                      s_x & 0   & 0   & 0 \\
+                      0   & s_y & 0   & 0 \\
+                      0   & 0   & s_z & 0 \\
+                      0   & 0   & 0   & 1
+                    \end{matrix}\right]
+                $$
+          \item 平移 : $$
+                  T(t_x,t_y,t_z) = \left[\begin{matrix}
+                      1 & 0 & 0 & t_x \\
+                      0 & 1 & 0 & t_y \\
+                      0 & 0 & 1 & t_z \\
+                      0 & 0 & 0 & 1
+                    \end{matrix}\right]
+                $$
+          \item 三维旋转(绕某个轴逆时针旋转) :
+                $$
+                  R_x(\alpha) = \left[\begin{matrix}
+                      1 & 0          & 0           & 0 \\
+                      0 & \cos\alpha & -\sin\alpha & 0 \\
+                      0 & \sin\alpha & \cos\alpha  & 0 \\
+                      0 & 0          & 0           & 1
+                    \end{matrix}\right]
+                $$
+
+                $$
+                  R_y(\alpha) = \left[\begin{matrix}
+                      \cos\alpha  & 0 & \sin\alpha & 0 \\
+                      0           & 1 & 0          & 0 \\
+                      -\sin\alpha & 0 & \cos\alpha & 0 \\
+                      0           & 0 & 0          & 1
+                    \end{matrix}\right]
+                $$
+
+                $$
+                  R_z(\alpha) = \left[\begin{matrix}
+                      \cos\alpha & -\sin\alpha & 0 & 0 \\
+                      \sin\alpha & \cos\alpha  & 0 & 0 \\
+                      0          & 0           & 1 & 0 \\
+                      0          & 0           & 0 & 1
+                    \end{matrix}\right]
+                $$
+          \item 三维旋转(欧拉角) : $R_{xyz}(\alpha,\beta,\gamma) = R_x(\alpha)R_y(\beta)R_z(\gamma)$
+          \item 三维旋转($\vec{I}$绕任意轴n旋转角度$\alpha$)(罗德里格斯旋转公式) : $$
+                  R(n,\alpha) = \cos(\alpha)\vec{I} + (1 - \cos(\alpha))\vec{n}\vec{n}\transpose + \sin(\alpha)\left[\begin{matrix}
+                      0    & -n_z & n_y  \\
+                      n_z  & 0    & -n_x \\
+                      -n_y & n_x  & 0
+                    \end{matrix}\right]
+                $$
+                (其中$\vec{n}$为旋转轴的单位向量)
+        \end{itemize}
+      }%三维变换结尾
+
+      \subsubsection{观测变换}{
+        一般来说拍一张照片的步骤如下 :
+
+        \begin{enumerate}
+          \item 找到一个好的位置摆放人物(模型变换,model transformation)
+          \item 找到一个好的"角度"来放下相机(视图变换,view transformation)
+          \item 按下快门(投影变换,projection transformation)
+        \end{enumerate}
+
+        \begin{itemize}
+          \item {
+                视图变换(view transformation) :
+
+                首先定义相机：
+                \begin{itemize}
+                  \item 位置(Position) : $\vec{e}$
+                  \item 视线方向(Look-at/gaze direction) : $\hat{\vec{g}}$
+                  \item 向上方向(UP direction) : $\hat{\vec{t}}$ (注:这个表示的是相机自身的旋转,此向量垂直于上面两个向量张成的平面)
+                \end{itemize}
+
+                \includegraphics[scale=0.9]{resources/viewTransformation.png}
+
+                值得注意的是: 定义相机永远在原点,视线朝向-z方向,以y轴作为向上方向(约定俗成,这么做有很多好处)
+
+                所以在实际情况中,需要将相机和被观测的对象视作一个整体，进行如下操作:
+                \begin{enumerate}
+                  \item 将$\vec{e}$平移到原点。
+                  \item 将$\hat{\vec{g}}$旋转到-z方向
+                  \item 将$\hat{\vec{t}}$旋转到y方向
+                  \item 将$\hat{\vec{g}} \times \hat{\vec{t}}$旋转到x方向
+                \end{enumerate}
+
+                这一系列的矩阵操作记作$M_{view}$,如下:
+
+                \begin{itemize}
+                  \item 令$M_{view} = R_{view}T_{view}$
+                  \item 将$\vec{e}$平移到原点 : $$
+                          T_{view} = \left[\begin{matrix}
+                              1 & 0 & 0 & -x_e \\
+                              0 & 1 & 0 & -y_e \\
+                              0 & 0 & 1 & -z_e \\
+                              0 & 0 & 0 & 1
+                            \end{matrix}\right]
+                        $$
+                  \item 将$\hat{\vec{g}}$旋转到-z方向,将$\hat{\vec{t}}$旋转到y方向,($\hat{\vec{g}} \times \hat{\vec{t}}$)旋转到x方向 : $$
+                          R_{view} = \left[\begin{matrix}
+                              x_{\hat{\vec{g}} \times \hat{\vec{t}}} & y_{\hat{\vec{g}} \times \hat{\vec{t}}} & z_{\hat{\vec{g}} \times \hat{\vec{t}}} & 0 \\
+                              x_{\hat{\vec{t}}}                      & y_{\hat{\vec{t}}}                      & z_{\hat{\vec{t}}}                      & 0 \\
+                              x_{-\hat{\vec{g}}}                     & y_{-\hat{\vec{g}}}                     & z_{-\hat{\vec{g}}}                     & 0 \\
+                              0                                      & 0                                      & 0                                      & 1
+                            \end{matrix}\right]
+                        $$
+                  \item 仔细思考,发现上面想要直接计算出来过于繁琐,应当反向思考—求出将坐标系变换到相机的位置的矩阵再求逆 : $$
+                          R^{-1}_{view} = \left[\begin{matrix}
+                              x_{\hat{\vec{g}} \times \hat{\vec{t}}} & x_{\hat{\vec{t}}} & x_{-\hat{\vec{g}}} & 0 \\
+                              y_{\hat{\vec{g}} \times \hat{\vec{t}}} & y_{\hat{\vec{t}}} & y_{-\hat{\vec{g}}} & 0 \\
+                              z_{\hat{\vec{g}} \times \hat{\vec{t}}} & z_{\hat{\vec{t}}} & z_{-\hat{\vec{g}}} & 0 \\
+                              0                                      & 0                 & 0                  & 1
+                            \end{matrix}\right]
+                        $$
+                        由于旋转矩阵是正交矩阵,所以求逆等于求转置。
+                \end{itemize}
+                随着相机的变换,其他所有物体也应当跟着变换,这样才能保证拍出来的是同样的照片。
+                }
+
+          \item {
+                投影变换(projection transformation) :
+
+                投影分为两种 : 正交投影(Perspective projection)和透视投影(Orthographic projection):
+
+                \includegraphics[scale=0.5]{resources/twoProjectionTransformation.png}
+
+                两种投影的本质区别就在于是否有近大远小的现象。
+
+                \begin{itemize}
+                  \item {
+                        正交投影(Orthographic projection) :
+
+                        先定义一个空间中的立方体, 给出三个轴的范围$[l,r]\times[b,t]\times[f,n]$,平移并缩放到标准立方体$[-1,1]^3$
+
+                        \includegraphics[scale=0.5]{resources/OrthographicProjection.png}
+
+                        矩阵形式为:$$
+                          M_{ortho} = \left[\begin{matrix}
+                              \frac{2}{r - l} & 0               & 0               & 0 \\
+                              0               & \frac{2}{t - b} & 0               & 0 \\
+                              0               & 0               & \frac{2}{n - f} & 0 \\
+                              0               & 0               & 0               & 1
+                            \end{matrix}\right]
+                          \left[\begin{matrix}
+                              1 & 0 & 0 & -\frac{r + l}{2} \\
+                              0 & 1 & 0 & -\frac{t + b}{2} \\
+                              0 & 0 & 1 & -\frac{n + f}{2} \\
+                              0 & 0 & 0 & 1
+                            \end{matrix}\right]
+                        $$
+
+                        \begin{itemize}
+                          \item 注意:由于视线方向沿着-z,所以$n>f$
+                          \item 这就是为啥OpenGL用的是左手系
+                        \end{itemize}
+                        }
+                  \item {
+                        透视变换(Perspective projection) :
+
+                        首先把视锥压缩成长方体。(近平面永远不变,远处平面z值不发生变化,中心点不发生变化)$(n \to n,f \to f,M_{persp \to ortho})$
+
+                        \includegraphics[scale=0.5]{resources/perspectiveProjection.png}
+
+                        关键就在于:要找到中点和被投影对象之间的联系。
+
+                        \includegraphics[scale=0.5]{resources/perspectiveProjection_middle.png}
+
+                        $y^\prime = \frac{n}{z}y$,由这个公式就可以算出来压缩后的y,并且结果是满足要求的。
+
+                        类似的,还有$x^\prime = \frac{n}{z}x$
+
+                        于是得出结论：$$
+                          \left[\begin{array}{c}
+                              x \\
+                              y \\
+                              z \\
+                              1
+                            \end{array}\right]
+                          \Rightarrow
+                          \left[\begin{array}{c}
+                              \frac{nx}{z} \\
+                              \frac{ny}{z} \\
+                              unknow       \\
+                              1            \\
+                            \end{array}\right]
+                          ==
+                          \left[\begin{array}{c}
+                              nx           \\
+                              ny           \\
+                              still unknow \\
+                              z
+                            \end{array}\right]
+                        $$
+                        因此，透视变换的本质就是由目标平面和被投影平面构造一个直角三角形
+
+                        由此写出未完成的投影矩阵 : $$
+                          M_{persp \to ortho}
+                          =
+                          \left[\begin{matrix}
+                              n & 0 & 0 & 0 \\
+                              0 & n & 0 & 0 \\
+                              ? & ? & ? & ? \\
+                              0 & 0 & 1 & 0
+                            \end{matrix}\right]
+                        $$
+
+                        而这一行未知的也一定与z有关系。
+
+                        另外，任何在目标平面上的点被投影后一定在原地，也就是说:$$
+                          \left[\begin{array}{c}
+                              x \\
+                              y \\
+                              n \\
+                              1
+                            \end{array}\right]
+                          \Rightarrow
+                          \left[\begin{array}{c}
+                              x \\
+                              y \\
+                              n \\
+                              1
+                            \end{array}\right]
+                          ==
+                          \left[\begin{array}{c}
+                              nx  \\
+                              ny  \\
+                              n^2 \\
+                              n
+                            \end{array}\right]
+                        $$
+
+                        仔细思考可以得出:矩阵第三行前两个未知数一定为0:$$
+                          \left[\begin{array}{cccc}
+                              0 & 0 & A & B
+                            \end{array}\right]
+                          \left[\begin{array}{c}
+                              x \\
+                              y \\
+                              n \\
+                              1
+                            \end{array}\right]
+                          =
+                          n^2
+                        $$
+
+                        结合另一件事 : 被投影平面上的中心点投影后位置不变,可得出:$$
+                          \begin{cases}
+                            \left[\begin{array}{cccc}
+                                0 & 0 & A & B
+                              \end{array}\right]
+                            \left[\begin{array}{c}
+                                x \\
+                                y \\
+                                n \\
+                                1
+                              \end{array}\right]
+                            =
+                            n^2
+                            \rightarrow
+                            An + B = n^2 \\
+                            \left[\begin{array}{c}
+                                0 \\
+                                0 \\
+                                f \\
+                                1
+                              \end{array}\right]
+                            \Rightarrow
+                            \left[\begin{array}{c}
+                                0 \\
+                                0 \\
+                                f \\
+                                1
+                              \end{array}\right]
+                            ==
+                            \left[\begin{array}{c}
+                                0   \\
+                                0   \\
+                                f^2 \\
+                                f
+                              \end{array}\right]
+                            \rightarrow
+                            Af + B = f^2
+                          \end{cases}
+                          \rightarrow
+                          \begin{cases}
+                            A = n + f \\
+                            B = -nf
+                          \end{cases}
+                        $$
+                        所以 : $$
+                          M_{persp \to ortho}
+                          =
+                          \left[\begin{matrix}
+                              n & 0 & 0     & 0   \\
+                              0 & n & 0     & 0   \\
+                              0 & 0 & n + f & -nf \\
+                              0 & 0 & 1     & 0
+                            \end{matrix}\right]
+                        $$
+
+                        最后将正交投影和此式结合起来使矩阵变得完整 : $M_{persp} = M_{ortho}M_{persp \to ortho}$
+                        }
+                \end{itemize}
+                }
+        \end{itemize}
+
+
+      }%观测变换结尾
+
+    }%变换结尾
+
+   }%计算机图形学结尾
 
   \section{硬件}{
 
@@ -2084,7 +2434,7 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
 
   \section{科研辅助}{
 
-   }
+   }%科研辅助
 
  }%计算机科学篇结尾
 \end{document}
