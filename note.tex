@@ -105,6 +105,44 @@ $\fint(I)\supseteq[\fint(b), \fint(a)]$。
   组合:$\mathCombination{m}{n} = \frac{\mathPermutation{m}{n}}{m!} = \frac{n!}{m!(n-m)!}$
 }%排列组合结尾
 
+\subsection{韦达定理}{
+\subsubsection{韦达定理的普遍情况}{
+设$P(x) = a_nx^n + a_{n-1}x^{n-1} + \dotsm + a_1x + a_0$是一个一元n次实(或复)系数多项式,首项系数$a_n \neq 0$,令P的n个根为$x_1,x_2,\dots,x_n$,则根$\{x_i\}$和系数$\{a_j\}$之间满足关系式 :
+
+$$
+  \begin{cases}
+    x_1 + x_2 + \dotsm + x_{n-1} + x_n = -\frac{a_{n-1}}{a_n}                                                           \\
+    (x_1x_2 + x_1x_3 + \dotsm + x_1x_n) + (x_2x_3 + x_2x_4 + \dotsm + x_2x_n) + \dotsm + x_{n-1}x = \frac{a_{n-2}}{a_n} \\
+    \vdots                                                                                                              \\                                                                                                               \\
+    x_1x_2 \dotsm x_n = (-1)^n\frac{a_n}{a_n}
+  \end{cases}
+$$
+
+等价的说,对任何$k = 1,2,\dots,n$,系数比$\frac{a_{n-k}}{a_n}$是所有任取k个根的乘积的和的$(-1)^k$倍，即 :
+
+$\sum\limits_{1 \leq i_1 < i_2 < \dotsm < i_k \leq n}x_{i_{1}}x_{i_{2}} \dotsm x_{i_{k}} = (-1)^k\frac{a_{n-k}}{a_n}$
+
+其中$i_1 < i_2 < \dotsm < i_k$是要让所有根的组合都恰好出现一次。
+
+(等号的左边被称作是初等对称多项式)
+}%韦达定理的普遍情况结尾
+
+\subsubsection{n = 2的情况(二次)}{
+  设$x_1,x_2$是一元二次多项式$ax^2 + bx + c$的两根,则由$ax^2 +bx + c = a(x - x_1)(x - x_2) = ax^2 - a(x_1 + x_2)x + ax_1x_2$有 :
+
+  $x_1 + x_2 = -\frac{b}{a},\qquad x_1x_2 = \frac{c}{a}$
+
+  在这个情况下，韦达定理的逆定理同样成立 : 给定一个一元二次多项式$ax^2 + bx + c$,如果有两个数$x_1,x_2$,满足$x_1 + x_2 = -\frac{b}{a}$和$x_1x_2 = \frac{c}{a}$,则$x_1,x_2$就是多项式$ax^2 + bx + c$的两根。
+}%n = 2的情况(二次)结尾
+
+\subsubsection{n = 3的情况(三次)}{
+  设$x_1,x_2,x_3$是一元三次多项式$ax^3 + bx^2 + cx + d$的三根，则
+
+  $x_1 + x_2 + x_3 = -\frac{b}{a}, x_1x_2 + x_1x_3 + x_2x_3 = \frac{c}{a},x_1x_2x_3 = -\frac{d}{a}$
+}%n = 3的情况(三次)结尾
+
+}%韦达定理结尾
+
 \subsection{极坐标}{
 极坐标是不同于笛卡尔坐标系(直角坐标系)的另一种函数图像平面。
 
