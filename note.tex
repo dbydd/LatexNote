@@ -1908,6 +1908,94 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
 
 \section{场论}{
 
+  \subsection{场论基本内容}{
+    注:矢量 = 向量,有时候会混着用，一般是那个顺口用哪个。
+
+    \subsubsection{矢量函数/向量函数}{
+      向量值函数，有时也称为向量函数，是一个单变量或多变量的、值域是多维向量或者无穷维向量的集合的函数。向量值函数的输入可以是一个标量或者一个向量（定义域的维度可以是1或大于1);定义域的维度不取决于值域的维度。
+
+      即:设有数性变量t和变矢量$\vec{A}$。若对于t在某个范围内的每一个数值,$\vec{A}$都有一个确定的矢量和它对应,则称$\vec{A}$为数性变量t的矢量函数。记为:$\vec{A} = A(t)$,也可以写作$\vec{A} = A_x(t)i + A_y(t)j + A_z(t)k$
+
+      矢量函数$A(t)$的起点取在坐标原点，其终点随变量t变化描绘出了一条曲线，该曲线叫做$A(t)$的矢端曲线。也就是$A(t)$的图像。
+    }%矢量函数/向量函数结尾
+
+    \subsubsection{矢量向量函数的极限}{
+      用$\delta-\epsilon$语言来说:
+
+      设矢量函数$A(t)$在点$t_0$的某个邻域内有定义(在$t_0$点可以没有),$\vec{A}_0$为常矢量。若对于任意给定$\epsilon > 0$,都存在一个$\delta > 0$,当$0 < |t - t_0| < \delta$时，就有$|A(t) - \vec{A}_0|$成立，则称当$t \to t_0$时,$A(t)$有极限$\vec{A}_0$,记作:
+
+      \begin{center}
+        $\limNormal{t \to t_0}A(t) = \vec{A}_0$
+      \end{center}
+
+      注:在直角坐标系中有:
+
+      \begin{center}
+        $\limNormal{t \to t_0}A_x(t) = A_{0x}$ \\
+        $\limNormal{t \to t_0}A_y(t) = A_{0y}$ \\
+        $\limNormal{t \to t_0}A_z(t) = A_{0z}$
+      \end{center}
+
+      其中$\vec{A}_0 = A_{0x}\vec{i} + A_{0y}\vec{j} + A_{0z}\vec{k}$
+    }%矢量函数的极限结尾
+
+    \subsubsection{矢量函数的连续}{
+      设$A(t)$在$t_0$的某领域内有定义,且 :
+
+      \begin{center}
+        $\limNormal{t \to t_0}A(t) = A(t_0)$
+      \end{center}
+
+      即 :
+
+      \begin{center}
+        $\limNormal{t \to t_0}A_x(t) = A_x(t_0)$ \\
+        $\limNormal{t \to t_0}A_y(t) = A_y(t_0)$ \\
+        $\limNormal{t \to t_0}A_y(t) = A_y(t_0)$
+      \end{center}
+
+      就称$A(t)$在$t_0$点连续。
+    }%矢量函数的连续结尾
+
+    \subsubsection{矢量函数的导数}{
+      设矢量函数$A(t)$在点t处有增量$\Delta A = A(t + \Delta t) - A(t)$
+
+      当$\Delta t \to 0$时,$\frac{\Delta A}{\Delta t} = \frac{A(t + \Delta t) - A(t)}{\Delta t}$的极限存在,则称此极限值为$A(t)$在点t处的导向量/导矢。即 :
+
+      \begin{center}
+        $A\derivative(t) = \frac{dA(t)}{dt} = \limNormal{\Delta t \to 0}\frac{\Delta A}{\Delta t} = \limNormal{\Delta t \to 0}\frac{A(t + \Delta t) - A(t)}{\Delta t}$
+      \end{center}
+
+      以下为导数公式 :
+
+      \begin{itemize}
+        \item $\frac{d}{dt}(\vec{\mathConstant}) = 0$ ($\vec{\mathConstant}$为常矢量)
+        \item $\frac{d}{dt}(\vec{A} \pm \vec{B}) = \frac{d}{dt}\vec{A} \pm \frac{d}{dt}\vec{B}$
+        \item $\frac{d}{dt}(u\vec{A}) = \frac{du}{dt}\vec{A} + u\frac{d\vec{A}}{dt}$\ 当u是常数k时,$\frac{d}{dt}(kA) = k\frac{d\vec{A}}{dt}$
+        \item $\frac{d}{dt}(\vec{A}\cdot\vec{B}) = \vec{A}\cdot\frac{d\vec{B}}{dt} + \vec{B}\cdot\frac{d\vec{A}}{dt}$
+        \item $\frac{d}{dt}(\vec{A}\times\vec{B}) = \vec{A}\times\frac{d\vec{B}}{dt} + \vec{B}\times\frac{d\vec{A}}{dt}$
+        \item 若$\vec{A} = A(u),u = u(t)$,则$\frac{d\vec{A}}{dt} = \frac{d\vec{A}}{du}\cdot\frac{du}{dt}$
+      \end{itemize}
+
+      这些公式与函数的导数公式类似。只是在乘法上向量有点乘和叉乘两种乘法,而且没有除法,所以没有除法法则。
+
+      向量导数在几何上的直观图像为:
+
+      \includegraphics{resources/derivativeOfVectorFunction.png}
+    }%矢量函数的导数
+
+    \subsubsection{矢量函数的微分}{
+      称$dA(t) = A\derivative(t)dt\ (\Delta t = dt)$为$A(t)$在$t$处的微分。在直角坐标系中有:
+
+      $\frac{d\vec{A}}{dt} = A\derivative_x(t)\vec{i} + A\derivative_y(t)\vec{j} + A\derivative_z(t)\vec{k}$
+
+      即 :
+
+      $d\vec{A} = dA_x(t)\vec{i} + dA_y(t)\vec{j} + dA_z(t)\vec{k} = (A\derivative_x(t)\vec{i} + A\derivative_y(t)\vec{j} + A\derivative_z(t)\vec{k})dt$
+    }%矢量函数的微分结尾
+
+  }%场论基本内容结尾
+
  }%场论结尾
 
 \section{群论}{
