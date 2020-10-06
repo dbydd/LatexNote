@@ -1,7 +1,7 @@
-\documentclass[UTF8]{ctexbook}
+\documentclass[UTF8,12pt]{ctexbook}
 
 \usepackage[]{ctex}
-\usepackage{amsmath}
+\usepackage{amsmath,amsthm,amsfonts,amssymb}
 \usepackage{geometry}
 \usepackage[colorlinks=true]{hyperref}
 \usepackage{indentfirst}
@@ -32,8 +32,6 @@
 \newcommand{\tripleDerivative}{^{\prime\prime\prime}}
 \newcommand{\aLotDerivative}[1]{^{(#1)}}
 \newcommand{\partialDerivative}[1]{^\prime_{#1}}
-\newcommand{\myLeftRightArrow}{$\Leftrightarrow$}
-\newcommand{\myRightArrow}{$\Rightarrow$}
 \newcommand{\mathCombination}[2]{C_{#1}^{#2}}
 \newcommand{\mathPermutation}[2]{P_{#1}^{#2}}
 \newcommand{\upDownSum}[2]{\sum\limits_{#2}^{#1}}
@@ -41,10 +39,10 @@
 \newcommand{\fDerivative}[1]{\fint\derivative(#1)}
 \newcommand{\defFunction}[1]{f(#1)}
 \newcommand{\definiteIntegral}[2]{\int^{#1}_{#2}}
-\newcommand{\mathConstant}{\mathbf{C}}
+\newcommand{\mathConstant}{\mathbb{C}}
 \newcommand{\degree}{^\circ}
 \newcommand{\projection}[1]{Prj_{#1}}
-\newcommand{\mathRealNumberCollection}{\mathbf{R}}
+\newcommand{\mathRealNumberCollection}{\mathbb{R}}
 \newcommand{\bigCase}[1]{\left(#1\right)}
 \newcommand{\innerProduct}[2]{\langle#1,#2\rangle}
 \newcommand{\transpose}{^T}
@@ -62,12 +60,16 @@
       \item 补充多个section,计算机图形学,场论等
     \end{enumerate}
   }
+
+  \thispagestyle{empty}
   \tableofcontents
-  \newpage
 }
 \setcounter{page}{1}
+
 \chapter{数学}{
+
 \section{基本概念}{
+
 \subsection{六大基本初等函数}{
   常数函数,幂函数,指数函数,对数函数,三角函数
 }%六大基本初等函数结尾
@@ -90,7 +92,7 @@ $\fint(I)\supseteq[\fint(a),\fint(b)]$。
 
 $\fint(I)\supseteq[\fint(b), \fint(a)]$。
 
-介质定理通常以下述等价的形式表述:假设$f:I\rightarrow\mathbf{R}$是连续函数,且实数$u$满足$\fint(a)<u<\fint(b)$或$\fint(a)>u>\fint(b)$,则存在$c\in(a,b)$使得$\fint(c) = u$
+介值定理通常以下述等价的形式表述:假设$f:I\rightarrow\mathbf{R}$是连续函数,且实数$u$满足$\fint(a)<u<\fint(b)$或$\fint(a)>u>\fint(b)$,则存在$c\in(a,b)$使得$\fint(c) = u$
 
 图示:
 \includegraphics{resources/Intermediatevaluetheorem.png}
@@ -101,9 +103,9 @@ $\fint(I)\supseteq[\fint(b), \fint(a)]$。
 }%二项式定理结尾
 
 \subsection{排列组合}{
-  排列:$\mathPermutation{m}{n} = \frac{m!}{(m-n)!}$
+  排列:$\mathPermutation{m}{n} = \cfrac{m!}{(m-n)!}$
 
-  组合:$\mathCombination{m}{n} = \frac{\mathPermutation{m}{n}}{m!} = \frac{n!}{m!(n-m)!}$
+  组合:$\mathCombination{m}{n} = \cfrac{\mathPermutation{m}{n}}{m!} = \cfrac{n!}{m!(n-m)!}$
 }%排列组合结尾
 
 \subsection{韦达定理}{
@@ -112,16 +114,16 @@ $\fint(I)\supseteq[\fint(b), \fint(a)]$。
 
 $$
   \begin{cases}
-    x_1 + x_2 + \dotsm + x_{n-1} + x_n = -\frac{a_{n-1}}{a_n}                                                           \\
-    (x_1x_2 + x_1x_3 + \dotsm + x_1x_n) + (x_2x_3 + x_2x_4 + \dotsm + x_2x_n) + \dotsm + x_{n-1}x = \frac{a_{n-2}}{a_n} \\
-    \vdots                                                                                                              \\                                                                                                               \\
-    x_1x_2 \dotsm x_n = (-1)^n\frac{a_n}{a_n}
+    x_1 + x_2 + \dotsm + x_{n-1} + x_n = -\cfrac{a_{n-1}}{a_n}                                                           \\
+    (x_1x_2 + x_1x_3 + \dotsm + x_1x_n) + (x_2x_3 + x_2x_4 + \dotsm + x_2x_n) + \dotsm + x_{n-1}x = \cfrac{a_{n-2}}{a_n} \\
+    \vdots                                                                                                               \\                                                                                                               \\
+    x_1x_2 \dotsm x_n = (-1)^n\cfrac{a_n}{a_n}
   \end{cases}
 $$
 
-等价的说,对任何$k = 1,2,\dots,n$,系数比$\frac{a_{n-k}}{a_n}$是所有任取k个根的乘积的和的$(-1)^k$倍，即 :
+等价的说,对任何$k = 1,2,\dots,n$,系数比$\cfrac{a_{n-k}}{a_n}$是所有任取k个根的乘积的和的$(-1)^k$倍，即 :
 
-$\sum\limits_{1 \leq i_1 < i_2 < \dotsm < i_k \leq n}x_{i_{1}}x_{i_{2}} \dotsm x_{i_{k}} = (-1)^k\frac{a_{n-k}}{a_n}$
+$\sum\limits_{1 \leq i_1 < i_2 < \dotsm < i_k \leq n}x_{i_{1}}x_{i_{2}} \dotsm x_{i_{k}} = (-1)^k\cfrac{a_{n-k}}{a_n}$
 
 其中$i_1 < i_2 < \dotsm < i_k$是要让所有根的组合都恰好出现一次。
 
@@ -131,15 +133,15 @@ $\sum\limits_{1 \leq i_1 < i_2 < \dotsm < i_k \leq n}x_{i_{1}}x_{i_{2}} \dotsm x
 \subsubsection{n = 2的情况(二次)}{
   设$x_1,x_2$是一元二次多项式$ax^2 + bx + c$的两根,则由$ax^2 +bx + c = a(x - x_1)(x - x_2) = ax^2 - a(x_1 + x_2)x + ax_1x_2$有 :
 
-  $x_1 + x_2 = -\frac{b}{a},\qquad x_1x_2 = \frac{c}{a}$
+  $x_1 + x_2 = -\cfrac{b}{a},\qquad x_1x_2 = \cfrac{c}{a}$
 
-  在这个情况下，韦达定理的逆定理同样成立 : 给定一个一元二次多项式$ax^2 + bx + c$,如果有两个数$x_1,x_2$,满足$x_1 + x_2 = -\frac{b}{a}$和$x_1x_2 = \frac{c}{a}$,则$x_1,x_2$就是多项式$ax^2 + bx + c$的两根。
+  在这个情况下，韦达定理的逆定理同样成立 : 给定一个一元二次多项式$ax^2 + bx + c$,如果有两个数$x_1,x_2$,满足$x_1 + x_2 = -\cfrac{b}{a}$和$x_1x_2 = \cfrac{c}{a}$,则$x_1,x_2$就是多项式$ax^2 + bx + c$的两根。
 }%n = 2的情况(二次)结尾
 
 \subsubsection{n = 3的情况(三次)}{
   设$x_1,x_2,x_3$是一元三次多项式$ax^3 + bx^2 + cx + d$的三根，则
 
-  $x_1 + x_2 + x_3 = -\frac{b}{a}, x_1x_2 + x_1x_3 + x_2x_3 = \frac{c}{a},x_1x_2x_3 = -\frac{d}{a}$
+  $x_1 + x_2 + x_3 = -\cfrac{b}{a}, x_1x_2 + x_1x_3 + x_2x_3 = \cfrac{c}{a},x_1x_2x_3 = -\cfrac{d}{a}$
 }%n = 3的情况(三次)结尾
 
 }%韦达定理结尾
@@ -152,7 +154,7 @@ $\sum\limits_{1 \leq i_1 < i_2 < \dotsm < i_k \leq n}x_{i_{1}}x_{i_{2}} \dotsm x
 \subsubsection{极坐标系下的面积}{
   \includegraphics{resources/polar_coordness.png}
 
-  公式为$\frac{1}{2}\definiteIntegral{\beta}{\alpha}(p(\theta))^2d\theta$
+  公式为$\cfrac{1}{2}\definiteIntegral{\beta}{\alpha}(p(\theta))^2d\theta$
 
   p是形成曲线的函数。
   }%极坐标下的面积结尾
@@ -173,18 +175,18 @@ $\sum\limits_{1 \leq i_1 < i_2 < \dotsm < i_k \leq n}x_{i_{1}}x_{i_{2}} \dotsm x
 \subsection{不等式}{
 
 \subsubsection{基本不等式}{
-  $\frac{a + b}{2} \geq \sqrt{ab}$
+  $\cfrac{a + b}{2} \geq \sqrt{ab}$
 
   注:当且仅当$a = b$时取等号
 
-  其中$\frac{a+b}{2}$称为$a,b$的算数平均数,$\sqrt{ab}$称为$a,b$的几何平均数。
+  其中$\cfrac{a+b}{2}$称为$a,b$的算数平均数,$\sqrt{ab}$称为$a,b$的几何平均数。
 
   将其变形,可得:
   \begin{enumerate}
     \item $a + b \geq 2\sqrt{ab}$(当且仅当$a = b$时取等号)
-    \item $\frac{b}{a} + \frac{a}{b} \geq 2$($a,b$同号)
-    \item $ab \leq (\frac{a + b}{2})^2$($a,b\in\mathRealNumberCollection$)
-    \item $(\frac{a + b}{2})^2 \leq \frac{a^2 + b^2}{2}$($a,b\in\mathRealNumberCollection$)
+    \item $\cfrac{b}{a} + \cfrac{a}{b} \geq 2$($a,b$同号)
+    \item $ab \leq (\cfrac{a + b}{2})^2$($a,b\in\mathRealNumberCollection$)
+    \item $(\cfrac{a + b}{2})^2 \leq \cfrac{a^2 + b^2}{2}$($a,b\in\mathRealNumberCollection$)
   \end{enumerate}
 }%基本不等式结尾
 
@@ -197,13 +199,13 @@ $\sum\limits_{1 \leq i_1 < i_2 < \dotsm < i_k \leq n}x_{i_{1}}x_{i_{2}} \dotsm x
 
           由$(a^2 + b^2)(c^2 + d^2)\geq(ac + bd)^2$变形:$ac + bd \leq \sqrt{(a^2 + b^2)(c^2 + d^2)}$
 
-          当且仅当$ab = cd$(即$\frac{a}{c} = \frac{b}{d}$)时。
+          当且仅当$ab = cd$(即$\cfrac{a}{c} = \cfrac{b}{d}$)时。
 
           一般形式为$\upDownSum{n}{i = 1}a_i^2\upDownSum{n}{i = 1}b_i^2\geq\bigCase{\upDownSum{n}{i = 1}a_ib_i)}^2$
 
-          当$\frac{a_1}{b_1} = \frac{a_2}{b_2} = \dots = \frac{a_n}{b_n}$或$a_i,b_i,i = 1,2,3,\dots,n$中至少有一方全为$0$时等号成立。
+          当$\cfrac{a_1}{b_1} = \cfrac{a_2}{b_2} = \dots = \cfrac{a_n}{b_n}$或$a_i,b_i,i = 1,2,3,\dots,n$中至少有一方全为$0$时等号成立。
 
-          一般形式推广:$(x_1 + y_1 + \dots)(x_2 + y_2 + \dots)\dots(x_n + y_n + \dots) \geq \left[\bigCase{\upDownProd{n}{i = 1}x_i}^\frac{1}{n} + \bigCase{\upDownProd{n}{i = 1}y_i}^\frac{1}{n} + \dots\right]^n$
+          一般形式推广:$(x_1 + y_1 + \dots)(x_2 + y_2 + \dots)\dots(x_n + y_n + \dots) \geq \left[\bigCase{\upDownProd{n}{i = 1}x_i}^{\cfrac{1}{n}} + \bigCase{\upDownProd{n}{i = 1}y_i}^{\cfrac{1}{n}} + \dots\right]^n$
 
           此推广形式又称卡尔松不等式,其表述是:在m×n矩阵中,各列元素之和的几何平均不小于各行元素的几何平均之和。二维形式是卡尔松不等式n=2时的特殊情况。
           }
@@ -231,7 +233,7 @@ $\sum\limits_{1 \leq i_1 < i_2 < \dotsm < i_k \leq n}x_{i_{1}}x_{i_{2}} \dotsm x
 
           也就是说:$\sqrt{a^2 + b^2} + \sqrt{c^2 + d^2} \geq \sqrt{(a - c)^2 + (b - d)^2}$
 
-          等号成立的条件为:$ad = bc,且ac + bc \geq 0$(即$\frac{a}{c} = \frac{b}{d}$)。
+          等号成立的条件为:$ad = bc,且ac + bc \geq 0$(即$\cfrac{a}{c} = \cfrac{b}{d}$)。
           }
     \item {
           积分形式:
@@ -259,19 +261,19 @@ $\mathbf{H}_n \leq \mathbf{G}_n \leq \mathbf{A}_n \leq \mathbf{Q}_n$
 
 其中:
 
-$\mathbf{H}_n = \frac{n}{\upDownSum{n}{i = 1}\frac{1}{x_i}} = \frac{n}{\frac{1}{x_1} + \frac{1}{x_2} + \dotsm + \frac{1}{x_n}}$
+$\mathbf{H}_n = \cfrac{n}{\upDownSum{n}{i = 1}\cfrac{1}{x_i}} = \cfrac{n}{\cfrac{1}{x_1} + \cfrac{1}{x_2} + \dotsm + \cfrac{1}{x_n}}$
 
 $\mathbf{G}_n = \sqrt[n]{\upDownProd{n}{i = 1}x_i} = \sqrt[n]{x_1x_2\dotsm x_n}$
 
-$\mathbf{A}_n = \frac{\upDownSum{n}{i = 1}x_i}{n} = \frac{x_1 + x_2 + x_n}{n}$
+$\mathbf{A}_n = \cfrac{\upDownSum{n}{i = 1}x_i}{n} = \cfrac{x_1 + x_2 + x_n}{n}$
 
-$\mathbf{Q}_n = \sqrt{\frac{\upDownSum{n}{i = 1}x^2_i}{n}} = \sqrt{\frac{x^2_1 + x^2_2 + \dotsm + x^2_n}{n}}$
+$\mathbf{Q}_n = \sqrt{\cfrac{\upDownSum{n}{i = 1}x^2_i}{n}} = \sqrt{\cfrac{x^2_1 + x^2_2 + \dotsm + x^2_n}{n}}$
 
 当且仅当$x_1 = x_2 = \dotsm = x_n$,等号成立。
 
 当$n = 2$时:
 
-$\frac{2}{\frac{1}{x_1} + \frac{1}{x_2}} = \frac{2x_1x_2}{x_1 + x_2}\leq\sqrt{x_1x_2}\leq\frac{x_1 + x_2}{2}\leq\sqrt{\frac{x_1^2 + x_2^2}{2}}$
+$\cfrac{2}{\cfrac{1}{x_1} + \cfrac{1}{x_2}} = \cfrac{2x_1x_2}{x_1 + x_2}\leq\sqrt{x_1x_2}\leq\cfrac{x_1 + x_2}{2}\leq\sqrt{\cfrac{x_1^2 + x_2^2}{2}}$
 
 即对这些正数:调和平均数$\leq$几何平均数$\leq$算数平均数$\leq$平方平均数(方均根)
 
@@ -279,7 +281,7 @@ $\frac{2}{\frac{1}{x_1} + \frac{1}{x_2}} = \frac{2x_1x_2}{x_1 + x_2}\leq\sqrt{x_
 }%二元均值不等式结尾  
 
 \subsubsection{算术-几何均值不等式}{
-  算术-几何平均值不等式,简称算几不等式,是一个常见而基本的不等式,表现算术平均数和几何平均数之间恒定的不等关系。设$x_1,x_2,\dots,x_n$为$n$个正实数,他们的算数平均数是$\mathbf{A}_n = \frac{x_1 + x_2 + \dotsm + x_n}{n}$,他们的几何平均数是$\mathbf{G}_n = \sqrt[n]{x_1\cdot x_2 \dotsm x_n}$。算术-几何平均值不等式表明,对任意的正实数$x_1,\dotsm,x_n$,总有:
+  算术-几何平均值不等式,简称算几不等式,是一个常见而基本的不等式,表现算术平均数和几何平均数之间恒定的不等关系。设$x_1,x_2,\dots,x_n$为$n$个正实数,他们的算数平均数是$\mathbf{A}_n = \cfrac{x_1 + x_2 + \dotsm + x_n}{n}$,他们的几何平均数是$\mathbf{G}_n = \sqrt[n]{x_1\cdot x_2 \dotsm x_n}$。算术-几何平均值不等式表明,对任意的正实数$x_1,\dotsm,x_n$,总有:
 
   \begin{center}
     $\mathbf{A}_n\geq\mathbf{G}_n$
@@ -291,10 +293,10 @@ $\frac{2}{\frac{1}{x_1} + \frac{1}{x_2}} = \frac{2x_1x_2}{x_1 + x_2}\leq\sqrt{x_
 
 \subsubsection{常用不等式}{
   \begin{itemize}
-    \item $a^2 + b^2 \geq \frac{1}{2}(a + b)^2$
+    \item $a^2 + b^2 \geq \cfrac{1}{2}(a + b)^2$
     \item $a^2 + b^2 \geq 2ab$
-    \item $ab \leq \frac{a^2 + b^2}{2}$
-    \item $ab \leq (\frac{a + b}{2})^2$
+    \item $ab \leq \cfrac{a^2 + b^2}{2}$
+    \item $ab \leq (\cfrac{a + b}{2})^2$
     \item $a + b \geq 2\sqrt{ab}$
     \item $a + b \leq \sqrt{2(a^2 + b^2)}$
   \end{itemize}
@@ -322,29 +324,29 @@ $\frac{2}{\frac{1}{x_1} + \frac{1}{x_2}} = \frac{2x_1x_2}{x_1 + x_2}\leq\sqrt{x_
 \includegraphics{resources/UnitCircle.png}
 
 \subsection{正三角函数}{
-  $\sin{\alpha} = \frac{y}{r}$
+  $\sin{\alpha} = \cfrac{y}{r}$
 
-  $\cos{\alpha} = \frac{x}{r}$
+  $\cos{\alpha} = \cfrac{x}{r}$
 
-  $\tan{\alpha} = \frac{y}{x}$
+  $\tan{\alpha} = \cfrac{y}{x}$
 }%正三角函数结尾
 
 \subsection{反三角函数}{
-  $\cot{\alpha} = \frac{1}{\tan{\alpha}}$
+  $\cot{\alpha} = \cfrac{1}{\tan{\alpha}}$
 
-  $\sec{\alpha} = \frac{1}{\cos{\alpha}}$
+  $\sec{\alpha} = \cfrac{1}{\cos{\alpha}}$
 
-  $\csc{\alpha} = \frac{1}{\sin{\alpha}}$
+  $\csc{\alpha} = \cfrac{1}{\sin{\alpha}}$
 }%反三角函数结尾
 
 \subsection{和差化积}{
-  $\sin{\alpha}+\sin{\beta} = 2\sin{\frac{\alpha + \beta}{2}}\cos{\frac{\alpha - \beta}{2}}$
+  $\sin{\alpha}+\sin{\beta} = 2\sin{\cfrac{\alpha + \beta}{2}}\cos{\cfrac{\alpha - \beta}{2}}$
 
-  $\cos{\alpha}+\cos{\beta} = 2\cos{\frac{\alpha + \beta}{2}\cos{\frac{\alpha-\beta}{2}}}$
+  $\cos{\alpha}+\cos{\beta} = 2\cos{\cfrac{\alpha + \beta}{2}\cos{\cfrac{\alpha-\beta}{2}}}$
 
-  $\cos{\alpha}-\cos{\beta} = -2\sin{\frac{\alpha + \beta}{2}}\cos{\frac{\alpha - \beta}{2}}$
+  $\cos{\alpha}-\cos{\beta} = -2\sin{\cfrac{\alpha + \beta}{2}}\cos{\cfrac{\alpha - \beta}{2}}$
 
-  $\sin{\alpha}-\sin{\beta} = 2\sin{\frac{\alpha + \beta}{2}}\cos{\frac{\alpha - \beta}{2}}$
+  $\sin{\alpha}-\sin{\beta} = 2\sin{\cfrac{\alpha + \beta}{2}}\cos{\cfrac{\alpha - \beta}{2}}$
 
   $\tan\alpha - \tan\beta = \tan(\alpha - \beta) \cdot (1 + \tan\alpha\tan\beta)$
 }%和差化积结尾
@@ -356,15 +358,15 @@ $\frac{2}{\frac{1}{x_1} + \frac{1}{x_2}} = \frac{2x_1x_2}{x_1 + x_2}\leq\sqrt{x_
 
   $\sin(\alpha \pm \beta) = \sin{\alpha}\cos{\beta} \pm \cos{\alpha}\sin{\beta}$
 
-  $\tan(\alpha + \beta) = \frac{\tan\alpha + \tan\beta}{1 - \tan\alpha\tan\beta}$
+  $\tan(\alpha + \beta) = \cfrac{\tan\alpha + \tan\beta}{1 - \tan\alpha\tan\beta}$
 
-  $\tan(\alpha - \beta) = \frac{\tan\alpha - \tan\beta}{1 + \tan\alpha\tan\beta}$
+  $\tan(\alpha - \beta) = \cfrac{\tan\alpha - \tan\beta}{1 + \tan\alpha\tan\beta}$
 
-  $\sin{\alpha}\cos{\beta} = \frac{1}{2}[\sin{(\alpha + \beta)} + \sin{(\alpha - \beta)}]$
+  $\sin{\alpha}\cos{\beta} = \cfrac{1}{2}[\sin{(\alpha + \beta)} + \sin{(\alpha - \beta)}]$
 
-  $\cos{\alpha}\cos{\beta} = \frac{1}{2}[\cos{(\alpha + \beta)} + \cos{(\alpha - \beta)}]$
+  $\cos{\alpha}\cos{\beta} = \cfrac{1}{2}[\cos{(\alpha + \beta)} + \cos{(\alpha - \beta)}]$
 
-  $\sin{\alpha}\sin{\beta} = -\frac{1}{2}[\cos{(\alpha + \beta)} - \cos{(\alpha - \beta)}]$
+  $\sin{\alpha}\sin{\beta} = -\cfrac{1}{2}[\cos{(\alpha + \beta)} - \cos{(\alpha - \beta)}]$
 }%积化和差结尾
 
 \subsection{诱导公式}{
@@ -410,29 +412,29 @@ $\frac{2}{\frac{1}{x_1} + \frac{1}{x_2}} = \frac{2x_1x_2}{x_1 + x_2}\leq\sqrt{x_
   }%第四组诱导公式结尾
 
   \subsubsection{第五组诱导公式}{
-    $\sin(\frac{\pi}{2} - \alpha) = \cos\alpha$
+    $\sin(\cfrac{\pi}{2} - \alpha) = \cos\alpha$
 
-    $\cos(\frac{\pi}{2} - \alpha) = \sin\alpha$
+    $\cos(\cfrac{\pi}{2} - \alpha) = \sin\alpha$
 
-    $\tan(\frac{\pi}{2} - \alpha) = \cot\alpha$
+    $\tan(\cfrac{\pi}{2} - \alpha) = \cot\alpha$
 
-    $\cot(\frac{\pi}{2} - \alpha) = \tan\alpha$
+    $\cot(\cfrac{\pi}{2} - \alpha) = \tan\alpha$
   }%第五组诱导公式结尾
 
   \subsubsection{第六组诱导公式}{
-    $\sin(\frac{\pi}{2} + \alpha) = \cos\alpha$
+    $\sin(\cfrac{\pi}{2} + \alpha) = \cos\alpha$
 
-    $\cos(\frac{\pi}{2} + \alpha) = -\sin\alpha$
+    $\cos(\cfrac{\pi}{2} + \alpha) = -\sin\alpha$
 
-    $\tan(\frac{\pi}{2} + \alpha) = -\cot\alpha$
+    $\tan(\cfrac{\pi}{2} + \alpha) = -\cot\alpha$
 
-    $\cot(\frac{\pi}{2} + \alpha) = -\tan\alpha$
+    $\cot(\cfrac{\pi}{2} + \alpha) = -\tan\alpha$
   }%第六组诱导公式结尾
 
   \subsubsection{杂项}{
     $a\sin\alpha + b\cos\alpha = \sqrt{a^2 + b^2}\sin(\alpha+\beta)$
 
-    $\cos\alpha = 2cos^2\frac{\alpha}{2} - 1 = 1-2\sin^2\frac{\alpha}{2}$
+    $\cos\alpha = 2cos^2\cfrac{\alpha}{2} - 1 = 1-2\sin^2\cfrac{\alpha}{2}$
   }%杂项结尾
 
 }%诱导公式结尾
@@ -446,41 +448,41 @@ $\frac{2}{\frac{1}{x_1} + \frac{1}{x_2}} = \frac{2x_1x_2}{x_1 + x_2}\leq\sqrt{x_
 
     $\cos2\alpha = \cos^2\alpha - \sin^\alpha = 2\cos^2\alpha - 1 = 1 - 2\sin^2\alpha$
 
-    $\tan2\alpha = \frac{2\tan\alpha}{1 - \tan^2\alpha}$
+    $\tan2\alpha = \cfrac{2\tan\alpha}{1 - \tan^2\alpha}$
   }%二倍角公式结尾
 
   \subsubsection{半倍角公式}{
     半倍角公式:将二倍角公式中的角$2\alpha$看作整体$\beta$,经过变形推出:
 
-    $\sin\frac{\alpha}{2} = \pm\sqrt{\frac{1 - \cos\alpha}{2}}$
+    $\sin\cfrac{\alpha}{2} = \pm\sqrt{\cfrac{1 - \cos\alpha}{2}}$
 
-    $\cos\frac{\alpha}{2} = \pm\sqrt{\frac{1 + \cos\alpha}{2}}$
+    $\cos\cfrac{\alpha}{2} = \pm\sqrt{\cfrac{1 + \cos\alpha}{2}}$
 
-    $\tan\frac{\alpha}{2} = \pm\sqrt{\frac{1-\cos\alpha}{1+\cos\alpha}} = \frac{\sin\alpha}{1+\cos\alpha} = \frac{1-\cos\alpha}{\sin\alpha}$
+    $\tan\cfrac{\alpha}{2} = \pm\sqrt{\cfrac{1-\cos\alpha}{1+\cos\alpha}} = \cfrac{\sin\alpha}{1+\cos\alpha} = \cfrac{1-\cos\alpha}{\sin\alpha}$
 
-    $\cot\frac{\alpha}{2} = \frac{1+\cos\alpha}{\sin\alpha} = \frac{\sin\alpha}{1-\cos\alpha}$
+    $\cot\cfrac{\alpha}{2} = \cfrac{1+\cos\alpha}{\sin\alpha} = \cfrac{\sin\alpha}{1-\cos\alpha}$
 
-    $\sec\frac{\alpha}{2} = \frac{\pm\sqrt{\frac{\sec\alpha - 1}{2\sec\alpha}}2\sec\alpha}{\sec\alpha + 1} = \frac{\pm\sqrt{\frac{4\sec^3\alpha + \sec^2\alpha}{2\cos\alpha}}}{\sec\alpha + 1}$
+    $\sec\cfrac{\alpha}{2} = \cfrac{\pm\sqrt{\cfrac{\sec\alpha - 1}{2\sec\alpha}}2\sec\alpha}{\sec\alpha + 1} = \cfrac{\pm\sqrt{\cfrac{4\sec^3\alpha + \sec^2\alpha}{2\cos\alpha}}}{\sec\alpha + 1}$
 
-    $\csc\frac{\alpha}{2} = \frac{\pm\sqrt{\frac{\sec\alpha - 1}{2\sec\alpha}}2\sec\alpha}{\sec\alpha - 1} = \frac{\pm\sqrt{\frac{3\sec^3\alpha - \sec^2\alpha}{2\sec\alpha}}}{\sec\alpha - 1}$
+    $\csc\cfrac{\alpha}{2} = \cfrac{\pm\sqrt{\cfrac{\sec\alpha - 1}{2\sec\alpha}}2\sec\alpha}{\sec\alpha - 1} = \cfrac{\pm\sqrt{\cfrac{3\sec^3\alpha - \sec^2\alpha}{2\sec\alpha}}}{\sec\alpha - 1}$
   }%半倍角公式结尾
 
   \subsubsection{n倍角公式}{
-    $\cos{n\theta} = \upDownSum{\frac{n}{2}}{i = 0}[(-1)^i\mathCombination{2i + 1}{n}\cos^{n - 2i}\theta\sin^{2i}\theta]$
+    $\cos{n\theta} = \upDownSum{\cfrac{n}{2}}{i = 0}[(-1)^i\mathCombination{2i + 1}{n}\cos^{n - 2i}\theta\sin^{2i}\theta]$
 
-    $\sin{n\theta} = \upDownSum{\frac{n}{2}}{i = 0}[(-1)^i\mathCombination{2i + 1}{n}\cos^{n - 2i - 1}\theta\sin^{2i+1}\theta]$
+    $\sin{n\theta} = \upDownSum{\cfrac{n}{2}}{i = 0}[(-1)^i\mathCombination{2i + 1}{n}\cos^{n - 2i - 1}\theta\sin^{2i+1}\theta]$
   }%n倍角公式结尾
 
   \subsubsection{万能替换公式}{
     万能替换公式:尝试将正常的三角函数用半角公式表示时经过变形推出:
 
-    角$\alpha(\alpha \neq 2k\pi + \pi ,k \in \mathbf{z})$的所有三角比都可以用 $\tan\frac{\alpha}{2}$表示.这组公式叫做万能替换公式
+    角$\alpha(\alpha \neq 2k\pi + \pi ,k \in \mathbf{z})$的所有三角比都可以用 $\tan\cfrac{\alpha}{2}$表示.这组公式叫做万能替换公式
 
-    $\sin\alpha = \frac{2\tan\frac{\alpha}{2}}{1+\tan^2\frac{\alpha}{2}}$
+    $\sin\alpha = \cfrac{2\tan\cfrac{\alpha}{2}}{1+\tan^2\cfrac{\alpha}{2}}$
 
-    $\cos\alpha = \frac{1 - \tan^2\frac{\alpha}{2}}{1 + \tan^2\frac{\alpha}{2}}$
+    $\cos\alpha = \cfrac{1 - \tan^2\cfrac{\alpha}{2}}{1 + \tan^2\cfrac{\alpha}{2}}$
 
-    $\tan\alpha \frac{2\tan\frac{\alpha}{2}}{1 - \tan^2\frac{\alpha}{2}}$
+    $\tan\alpha \cfrac{2\tan\cfrac{\alpha}{2}}{1 - \tan^2\cfrac{\alpha}{2}}$
   }%万能替换公式结尾
 
 }%倍角公式结尾
@@ -497,9 +499,9 @@ $\frac{2}{\frac{1}{x_1} + \frac{1}{x_2}} = \frac{2x_1x_2}{x_1 + x_2}\leq\sqrt{x_
 
   商数关系:
 
-  $\tan{x} = \frac{\sin{x}}{\cos{x}}$
+  $\tan{x} = \cfrac{\sin{x}}{\cos{x}}$
 
-  $\cot\alpha = \frac{\cos x}{\sin x}$
+  $\cot\alpha = \cfrac{\cos x}{\sin x}$
 
   平方关系:
 
@@ -516,20 +518,20 @@ $\frac{2}{\frac{1}{x_1} + \frac{1}{x_2}} = \frac{2x_1x_2}{x_1 + x_2}\leq\sqrt{x_
 \subsection{解斜三角形}{
 设三角形$\triangle ABC$,角A、B、C的对边为abc,以A为原点$O$建系,总有以下公式:
 
-$\mathbf{S}\triangle_{ABC} = \frac{1}{2}AB \cdot CD = \frac{1}{2}cb\sin A$,即$\mathbf{S}\triangle_{ABC} = \frac{1}{2}bc\sin A$
+$\mathbf{S}\triangle_{ABC} = \cfrac{1}{2}AB \cdot CD = \cfrac{1}{2}cb\sin A$,即$\mathbf{S}\triangle_{ABC} = \cfrac{1}{2}bc\sin A$
 
-同理得:$\mathbf{S}\triangle_{ABC} = \frac{1}{2}\sin B, \mathbf{S}\triangle_{ABC} = \frac{1}{2}ab\sin C$.
+同理得:$\mathbf{S}\triangle_{ABC} = \cfrac{1}{2}\sin B, \mathbf{S}\triangle_{ABC} = \cfrac{1}{2}ab\sin C$.
 
 这就是说,三角形的面积等于任意两边与他们夹角正弦值的一半。
 
 \subsubsection{正弦定理}
-将$\frac{1}{2}bc\sin A = \frac{1}{2}ac\sin B = \frac{1}{2}ab\sin C$三个公式同除$\frac{1}{2}abc$,得:
+将$\cfrac{1}{2}bc\sin A = \cfrac{1}{2}ac\sin B = \cfrac{1}{2}ab\sin C$三个公式同除$\cfrac{1}{2}abc$,得:
 
-$\frac{\sin A}{a} = \frac{\sin B}{b} = \frac{\sin C}{c}$, 也可表示为:$\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C}$
+$\cfrac{\sin A}{a} = \cfrac{\sin B}{b} = \cfrac{\sin C}{c}$, 也可表示为:$\cfrac{a}{\sin A} = \cfrac{b}{\sin B} = \cfrac{c}{\sin C}$
 
 此式表明:在三角形中,各{\bfseries边}与它所对{\bfseries角的正弦}的比相等
 
-当$\angle C = 90\degree$时,由正弦定理可得:$\frac{\sin A}{a} = \frac{\sin B}{b} = \frac{1}{c}$,即$a = c\sin A,B = C\sin B$
+当$\angle C = 90\degree$时,由正弦定理可得:$\cfrac{\sin A}{a} = \cfrac{\sin B}{b} = \cfrac{1}{c}$,即$a = c\sin A,B = C\sin B$
 
 并且,做三角形外接圆:
 
@@ -537,15 +539,15 @@ $\frac{\sin A}{a} = \frac{\sin B}{b} = \frac{\sin C}{c}$, 也可表示为:$\frac
 
 由圆周角定理可知$\angle D = \angle A,BD = 2R,bc = a$。于是$a = BC = BD\sin A = 2R\sin A$,即:
 
-$\frac{a}{\sin A} = 2R$
+$\cfrac{a}{\sin A} = 2R$
 
-由正弦定理,可得:$\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C}$
+由正弦定理,可得:$\cfrac{a}{\sin A} = \cfrac{b}{\sin B} = \cfrac{c}{\sin C}$
 
 所以,$a = 2R\sin A,b = 2R\sin B,c = 2R\sin C$
 
 变形也可得到:
 
-$\sin C = \frac{c}{2R},\sin B = \frac{b}{2R},\sin A = \frac{a}{2R}$
+$\sin C = \cfrac{c}{2R},\sin B = \cfrac{b}{2R},\sin A = \cfrac{a}{2R}$
 
 以及:
 
@@ -565,11 +567,11 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
 
   也可变形化为:
 
-  $\cos A = \frac{b^2 + c^2 - a^2}{2bc}$
+  $\cos A = \cfrac{b^2 + c^2 - a^2}{2bc}$
 
-  $\cos B = \frac{a^2 + c^2 - b^2}{2ac}$
+  $\cos B = \cfrac{a^2 + c^2 - b^2}{2ac}$
 
-  $\cos C = \frac{b^2 + a^2 - c^2}{2ab}$
+  $\cos C = \cfrac{b^2 + a^2 - c^2}{2ab}$
 }%余弦定理结尾
 \\
 
@@ -590,19 +592,19 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
       \begin{itemize}
         \item 数乘:$\lambda \vec{\alpha}$,即$\lambda$倍长度的$\vec{\alpha}$,当$\lambda > 0$时,方向与原向量相同。当$\lambda < 0$时,方向相反。数乘前后向量的起点一致。
         \item 取模:$|\lambda\vec{\alpha}| = |\lambda||\vec{\alpha}|$,前一个“$||$”为绝对值,后一个“$||$”为取模。最后得出的结果为$|\lambda\vec{\alpha}|$的长度。
-        \item 单位化:$|\frac{\vec{\alpha}}{|\vec{\alpha}|}| = 1$,即将一个向量除以他的长度得到的是单位向量(长度为1的向量)
+        \item 单位化:$|\cfrac{\vec{\alpha}}{|\vec{\alpha}|}| = 1$,即将一个向量除以他的长度得到的是单位向量(长度为1的向量)
         \item 在三维标准正交坐标系中存在三个单位向量:$\vec{i},\vec{j},\vec{k}$。他们互相垂直,长度为1。坐标系中任意一点$(x,y,z)$都可以表示为一个向量$\vec{r},\vec{r} = x\vec{i} + y\vec{j} + z\vec{k}$。
         \item 设$\vec{a} = (ax,ay,az),\vec{b} = (bx,by,bz)$。则:$\vec{a} \pm \vec{b} = (ax \pm bx,ay \pm by,az \pm bz)$、$\lambda\vec{a} = (\lambda ax,\lambda ay,\lambda az)$。其中$ax,ay,az,bx,by,bz$称为分量。
-        \item 平行:$\vec{b} = \lambda\vec{a},\frac{ax}{bx} = \frac{ay}{by} = \frac{az}{bz}$即:对应分量之比相同。
+        \item 平行:$\vec{b} = \lambda\vec{a},\cfrac{ax}{bx} = \cfrac{ay}{by} = \cfrac{az}{bz}$即:对应分量之比相同。
         \item 向量长度(取模)公式:$\vec{r} = (x,y,z),|\vec{r}| = \sqrt{x^2 + y^2 + z^2}$。注:对于任意维度的向量,取模都是各分量平方和开根号。
         \item 两点之间距离公式:$A:(x_1,y_1,z_1),B:(x_2,y_2,z_2),|\vec{AB}| = \sqrt{(x_1 - x_2)^2 + (y_1 -y_2)^2 + (z_1 - z_2)^2}$。注:在任意维度中,两点之间的距离公式都是对应分量作差的平方和开根号。
         \item {
-              两向量夹角:(取锐角)设$\vec{a} = (a_1, a_2, a_3),\vec{b} = (b_1,b_2,b_3)$,设夹角为$\theta$,则:$\cos\theta = \frac{|a_1b_1 + a_2b_2 + a_3b_3|}{\sqrt{a_1^2 + a_2^2 + a_3^2}\sqrt{b_1^2 + b_2^2 + b_3^2}}$
+              两向量夹角:(取锐角)设$\vec{a} = (a_1, a_2, a_3),\vec{b} = (b_1,b_2,b_3)$,设夹角为$\theta$,则:$\cos\theta = \cfrac{|a_1b_1 + a_2b_2 + a_3b_3|}{\sqrt{a_1^2 + a_2^2 + a_3^2}\sqrt{b_1^2 + b_2^2 + b_3^2}}$
 
               有以下几种情况:
               \begin{enumerate}
                 \item 垂直:$a_1b_1 + a_2b_2 + a_3b_3 = 0$
-                \item 平行:$\frac{a_1}{b_1} = \frac{a_2}{b_2} = \frac{a_3}{b_3}$
+                \item 平行:$\cfrac{a_1}{b_1} = \cfrac{a_2}{b_2} = \cfrac{a_3}{b_3}$
               \end{enumerate}
 
               求两直线夹角也同理。
@@ -615,11 +617,11 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
 
       $\vec{OM} = \vec{r} = (x,y,z)$
 
-      $\cos\alpha = \frac{x}{|\vec{OM}|} = \frac{x}{|\vec{r}|}$
+      $\cos\alpha = \cfrac{x}{|\vec{OM}|} = \cfrac{x}{|\vec{r}|}$
 
-      $\cos\beta = \frac{y}{|\vec{OM}|} = \frac{y}{|\vec{r}|}$
+      $\cos\beta = \cfrac{y}{|\vec{OM}|} = \cfrac{y}{|\vec{r}|}$
 
-      $\cos\gamma = \frac{z}{|\vec{OM}|} = \frac{z}{|\vec{r}|}$
+      $\cos\gamma = \cfrac{z}{|\vec{OM}|} = \cfrac{z}{|\vec{r}|}$
 
       其中$\alpha,\beta,\gamma$称为$\vec{OM}$的方向角。
 
@@ -627,7 +629,7 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
 
       方向余弦是指在解析几何里,一个向量的三个方向余弦分别是这向量与三个坐标轴之间的角度的余弦。两个向量之间的方向余弦指的是这两个向量之间的角度的余弦。在此处指的是前者,也就是:$\cos\alpha,\cos\beta,\cos\gamma$。
 
-      将方向余弦作为三个分量,即:$(\cos\alpha,\cos\beta,\cos\gamma) = (\frac{x}{|\vec{r}|}, \frac{y}{|\vec{r}|}, \frac{z}{|\vec{r}|}) = \frac{1}{|\vec{r}|}\vec{r} = e_r$
+      将方向余弦作为三个分量,即:$(\cos\alpha,\cos\beta,\cos\gamma) = (\cfrac{x}{|\vec{r}|}, \cfrac{y}{|\vec{r}|}, \cfrac{z}{|\vec{r}|}) = \cfrac{1}{|\vec{r}|}\vec{r} = e_r$
 
       其中$e_r$是个单位向量,表示以向量$\vec{r}$的方向余弦为坐标的向量。
 
@@ -662,7 +664,7 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
         \item $(\vec{a}+\vec{b})\cdot\vec{c} = \vec{a}\cdot\vec{c} + \vec{b}\cdot\vec{c}$
         \item $(\lambda\vec{a})\cdot\vec{b} = \lambda(\vec{a}\cdot\vec{b})$
         \item $\vec{a} = (a_x,a_y,a_z),\vec{b} = (b_x,b_y,b_z),\vec{a}\cdot\vec{b} = a_xb_x + a_yb_y + a_zb_z$
-        \item $\cos\theta = \frac{\vec{a}\cdot\vec{b}}{|\vec{a}|\cdot|\vec{b}|} = \frac{a_xb_x + a_yb_y + a_zb_z}{\sqrt{a_x^2 + a_y^2 + a_z^2}\cdot\sqrt{b_x^2 + b_y^2 + b_z^2}}$
+        \item $\cos\theta = \cfrac{\vec{a}\cdot\vec{b}}{|\vec{a}|\cdot|\vec{b}|} = \cfrac{a_xb_x + a_yb_y + a_zb_z}{\sqrt{a_x^2 + a_y^2 + a_z^2}\cdot\sqrt{b_x^2 + b_y^2 + b_z^2}}$
       \end{enumerate}
 
     }%数量积/点乘结尾
@@ -696,17 +698,17 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
                 =
                 \vec{a}\times\vec{b}
                 =
-                \left[\begin{array}{c}
-                    s_1 \\
-                    s_2 \\
-                    s_3
-                  \end{array}\right]
+                \begin{bmatrix}
+                  s_1 \\
+                  s_2 \\
+                  s_3
+                \end{bmatrix}
                 =
-                \left[\begin{matrix}
-                    a_2b_3 - a_3b_2 \\
-                    a_3b_1 - a_1b_3 \\
-                    a_1b_2 - a_2b_1
-                  \end{matrix}\right]
+                \begin{bmatrix}
+                  a_2b_3 - a_3b_2 \\
+                  a_3b_1 - a_1b_3 \\
+                  a_1b_2 - a_2b_1
+                \end{bmatrix}
               $$
               }
         \item {
@@ -768,10 +770,10 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
               \begin{enumerate}
                 \item $D = 0,Ax + By + Cz = 0$:平面过原点。
                 \item $A = 0,By + Cz + D = 0$:平面法线垂直与$x$轴且平行于$x$轴,类似情况同理
-                \item $A = B = 0,CZ + D = 0$:平面过$z = -\frac{D}{C}$,平行于$xy$轴。
+                \item $A = B = 0,CZ + D = 0$:平面过$z = -\cfrac{D}{C}$,平行于$xy$轴。
               \end{enumerate}
               }
-        \item 截距式:$\frac{x}{a} + \frac{y}{b} + \frac{z}{c} = 1$
+        \item 截距式:$\cfrac{x}{a} + \cfrac{y}{b} + \cfrac{z}{c} = 1$
       \end{itemize}
     }%关于空间平面结尾
 
@@ -788,7 +790,7 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
     \subsubsection{点到平面距离公式}{
       设点$P_0(x_0,y_0,z_0),Ax + By + Cz + D = 0$
 
-      $d = \frac{|Ax_0 + By_0 + Cz_0 + D|}{\sqrt{A^2 + B^2 + C^2}}$
+      $d = \cfrac{|Ax_0 + By_0 + Cz_0 + D|}{\sqrt{A^2 + B^2 + C^2}}$
     }%点到平面距离公式结尾
 
     \subsubsection{直线与平面夹角}{
@@ -796,11 +798,11 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
 
       设与直线同方向的向量$L_1(M,N,P)$,夹角为$\theta$
 
-      $\sin\theta = \frac{|AM + BN + CP|}{\sqrt{A^2 + B^2 + C^2}\sqrt{M^2 + N^2 + P^2}}$\\
+      $\sin\theta = \cfrac{|AM + BN + CP|}{\sqrt{A^2 + B^2 + C^2}\sqrt{M^2 + N^2 + P^2}}$\\
 
       \indent有以下几种情况:
       \begin{enumerate}
-        \item 直线垂直于平面: $\frac{A}{M} = \frac{B}{N} = \frac{C}{P}$
+        \item 直线垂直于平面: $\cfrac{A}{M} = \cfrac{B}{N} = \cfrac{C}{P}$
         \item 直线平行于平面: $AM + BN + CP = 0$
       \end{enumerate}
     }%直线与平面夹角结尾
@@ -828,7 +830,7 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
 
               设点$M(x,y,z),M_0(x_0,y_0,z_0)$是直线$L$上的任意两点,那么存在向量$\vec{M_0M}$与直线$L$的方向向量$\vec{s}$平行。因此两向量的对应坐标成比例。$(\vec{M_0M} = (x - x_0, y - y_0, z - z_0), \vec{s} = (m,n,p))$，因此得出:
 
-              $\frac{x - x_0}{m} = \frac{y - y_0}{n} = \frac{z - z_0}{p} = t$
+              $\cfrac{x - x_0}{m} = \cfrac{y - y_0}{n} = \cfrac{z - z_0}{p} = t$
               }
         \item {
               参数式:将对称式变形
@@ -910,6 +912,47 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
       $$
     }%空间曲线在坐标系面上的投影结尾
 
+    \subsubsection{空间曲线的切线及法平面}{
+      先写出空间曲线的切线方程 :
+
+      $$
+        \begin{cases}
+          x = \phi(t) \\
+          y = \Phi(t) \\
+          z = \omega(t)
+        \end{cases}
+      $$
+
+      其中 $t \in [\alpha,\beta]$,设三个函数都可导且不同时为0。
+
+      则切向量$\vec{T} = \begin{bmatrix}
+          \phi\derivative(t_0) & \Phi\derivative(t_0) & \omega\derivative(t_0)
+        \end{bmatrix}$
+
+      切线方程为 : $\cfrac{x - x_0}{\phi\derivative(t_0)} = \cfrac{y - y_0}{\Phi\derivative(y_0)} = \cfrac{z - z_0}{\omega\derivative(t_0)}$
+
+      则法平面的点法式方程为 : $\phi\derivative(t_0)(x - x_0) + \Phi\derivative(t_0)(y - y_0) + \omega\derivative(z - z_0) = 0$
+    }%空间曲线的切线及法平面
+
+    \subsubsection{空间曲线的切平面及法线}{
+      有两种情况 :
+
+      \begin{enumerate}
+        \item {
+              $F(x,y,z) = 0$(即隐函数)
+
+              则切平面的方程为:$F\derivative_x(x_0,y_0,z_0)(x - x_0) + F\derivative_y(x_0,y_0,z_0)(y - y_0) + F\derivative_z(x_0,y_0,z_0)(z - z_0) = 0$
+
+              法线的方程为 : $\cfrac{x - x_0}{F\derivative_x(x_0,y_0,z_0)} = \cfrac{y - y_0}{F\derivative_y(x_0,y_0,z_0)} = \cfrac{z - z_0}{F\derivative_z(x_0,y_0,z_0)}$
+              }
+        \item {
+              $z = \defFunction{x,y}$,只需让$F = \defFunction{x,y} - z$,然后套公式1。
+
+              切平面解析式为 : $f\derivative_x(x_0,y_0)(x - x_0) + f\derivative_y(x_0,y_0)(y - y_0) - (z - z_0) = 0$
+              }
+      \end{enumerate}
+    }%空间曲线的切平面及法线
+
   }%关于空间曲线结尾
 
   \subsection{关于空间曲面}{
@@ -958,7 +1001,7 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
 
                       在直角坐标系中的方程为:
 
-                      $\frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} = 1$
+                      $\cfrac{x^2}{a^2} + \cfrac{y^2}{b^2} + \cfrac{z^2}{c^2} = 1$
 
                       其中a和b是赤道半径(沿着x和y轴),c是极半径,(沿着z轴)。这三个数都是固定的正实数，决定了椭球的形状。
 
@@ -973,7 +1016,7 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
 
                       点(a,0,0)、(0,b,0)和(0,0,c)都在曲面上。从原点到这三个点的线段,称为椭球的半主轴。它们与椭圆的半长轴和半短轴相对应。
 
-                      体积公式为:$\frac{4}{3}\pi abc$。
+                      体积公式为:$\cfrac{4}{3}\pi abc$。
 
                       注意,当三个半径都相等时,这个公式便化为球的体积;两个半径相等时,便化为扁球面或长球面的体积。
                       }
@@ -985,24 +1028,24 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
                 \item {
                       椭圆抛物面:
 
-                      椭圆抛物面在直角坐标系中的方程为:$z = \frac{x^2}{a^2} + \frac{y^2}{b^2}$
+                      椭圆抛物面在直角坐标系中的方程为:$z = \cfrac{x^2}{a^2} + \cfrac{y^2}{b^2}$
                       }
                 \item {
                       双曲抛物面：
 
-                      双曲抛物面在直角坐标系中的方程为:$z = \frac{x^2}{a^2} - \frac{y^2}{b^2}$
+                      双曲抛物面在直角坐标系中的方程为:$z = \cfrac{x^2}{a^2} - \cfrac{y^2}{b^2}$
                       }
                 \item {
                       单叶双曲面:
 
-                      单叶双曲面在直角坐标系中的方程为:$\frac{x^2}{a^2} + \frac{y^2}{b^2} - \frac{z^2}{c^2} = 1$
+                      单叶双曲面在直角坐标系中的方程为:$\cfrac{x^2}{a^2} + \cfrac{y^2}{b^2} - \cfrac{z^2}{c^2} = 1$
 
                       当a = b时双曲面就会变得比较圆
                       }
                 \item {
                       双叶双曲面:
 
-                      双叶抛物面在直角坐标系中的方程为:$\frac{x^2}{a^2} + \frac{y^2}{b^2} - \frac{z^2}{c^2} = -1$
+                      双叶抛物面在直角坐标系中的方程为:$\cfrac{x^2}{a^2} + \cfrac{y^2}{b^2} - \cfrac{z^2}{c^2} = -1$
 
                       当a = b时双曲面就会变得比较圆
                       }
@@ -1019,7 +1062,7 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
 
                       用另一种方法来描述,类球面是一种椭球面。而椭球面的公式已经给出,其中a与b分别是椭球面在x轴与y轴的赤道半径,c是椭球面在z轴的极半径,这三个正实数的半径决定了椭球面的形状。以z轴为旋转轴的类球面a = b,他的方程为:
 
-                      $\frac{x^2 + y^2}{a^2} + \frac{z^2}{c^2} = 1$
+                      $\cfrac{x^2 + y^2}{a^2} + \cfrac{z^2}{c^2} = 1$
 
                       \begin{itemize}
                         \item 如果三个半径都相等,则此椭球面是圆球面$(a = c)$
@@ -1047,21 +1090,21 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
                 \item {
                       椭圆锥面(二次锥面):
 
-                      椭圆锥面在直角坐标系中的方程为:$\frac{x^2}{a^2} + \frac{y^2}{b^2} - \frac{z^2}{c^2} = 0$
+                      椭圆锥面在直角坐标系中的方程为:$\cfrac{x^2}{a^2} + \cfrac{y^2}{b^2} - \cfrac{z^2}{c^2} = 0$
 
                       当a = b时就会变成圆锥面。
                       }
                 \item {
                       椭圆柱面:
 
-                      椭圆柱面在直角坐标系中的方程为:$\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$
+                      椭圆柱面在直角坐标系中的方程为:$\cfrac{x^2}{a^2} + \cfrac{y^2}{b^2} = 1$
 
                       当a = b时就会变成圆柱面。
                       }
                 \item {
                       双曲柱面:
 
-                      双曲柱面在直角坐标系中的方程为:$\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1$
+                      双曲柱面在直角坐标系中的方程为:$\cfrac{x^2}{a^2} - \cfrac{y^2}{b^2} = 1$
                       }
                 \item {
                       抛物柱面:
@@ -1076,11 +1119,11 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
     \subsubsection{伸缩法}{
       注:伸缩法不是放缩法!
 
-      举例:有$x^2 + y^2 = 1$,沿着y轴伸缩两倍,则伸缩后的方程为:$x^2 + \frac{y^2}{4} = 1$。
+      举例:有$x^2 + y^2 = 1$,沿着y轴伸缩两倍,则伸缩后的方程为:$x^2 + \cfrac{y^2}{4} = 1$。
 
       也就是说:沿着n轴伸缩,就对变量n进行替换。
 
-      伸缩t倍，就把原变量替换成$\frac{n}{t}$
+      伸缩t倍，就把原变量替换成$\cfrac{n}{t}$
     }%伸缩法结尾
   }%关于空间曲面结尾
 
@@ -1108,14 +1151,14 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
   \subsubsection{定理}{
     \begin{enumerate}
       \item 函数在一点极限存在的条件是左右极限存在且相等
-      \item 洛必达法则:当极限为$\frac{0}{0}$或者$\frac{\infty}{\infty}$时可上下同时求导,求导后极限不变,每一步都需要重新判断是否依然符合类型
+      \item 洛必达法则:当极限为$\cfrac{0}{0}$或者$\cfrac{\infty}{\infty}$时可上下同时求导,求导后极限不变,每一步都需要重新判断是否依然符合类型
     \end{enumerate}
   }%极限定理结尾
 
   \subsubsection{重要极限}{
-    $\myLimToZero\frac{\sin{x}}{x}=1 \to \limNormal{x \to 0}\sin{x} \to x$
+    $\myLimToZero\cfrac{\sin{x}}{x}=1 \to \limNormal{x \to 0}\sin{x} \to x$
 
-    $\myLimToInf(1+\frac{1}{x})^x = e$
+    $\myLimToInf(1+\cfrac{1}{x})^x = e$
   }%重要极限结尾  
 
   \subsubsection{等价无穷小}{
@@ -1137,17 +1180,17 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
 
     $\myLimToZero (1+x)^\alpha \approx 1+\alpha x$
 
-    $\myLimToZero 1 - \cos x \approx \frac{x^2}{2}$
+    $\myLimToZero 1 - \cos x \approx \cfrac{x^2}{2}$
 
-    $\myLimToZero x - \ln(1 + x) \approx \frac{x^2}{2}$
+    $\myLimToZero x - \ln(1 + x) \approx \cfrac{x^2}{2}$
 
-    $\myLimToZero \tan x - x \approx \frac{x^3}{3}$
+    $\myLimToZero \tan x - x \approx \cfrac{x^3}{3}$
 
-    $\myLimToZero x - \arctan x \approx \frac{x^3}{3}$
+    $\myLimToZero x - \arctan x \approx \cfrac{x^3}{3}$
 
-    $\myLimToZero x - \sin x \approx \frac{x^3}{6}$
+    $\myLimToZero x - \sin x \approx \cfrac{x^3}{6}$
 
-    $\myLimToZero \arcsin x - x \approx \frac{x^3}{6}$
+    $\myLimToZero \arcsin x - x \approx \cfrac{x^3}{6}$
 
     以上等价无穷小都可以由泰勒公式推出
   }%等价无穷小结尾
@@ -1157,7 +1200,7 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
 \subsection{导数}{
   导数是什么？教科书上普遍给出的定义是指:函数图像的斜率变化率曲线,事实上某些观点表示导数也可以理解成是函数对于输入值的敏感程度,即:输入值的变化对应的输出值的变化的剧烈程度。
 
-  导数的标准定义是指$\limNormal{x to x_0}\frac{f(x) - f(x_0)}{x - x_0}$\ 或者\ $\limNormal{\Delta x \to x_0}\frac{f(x + \Delta x) - f(x)}{\Delta x}$
+  导数的标准定义是指$\limNormal{x to x_0}\cfrac{f(x) - f(x_0)}{x - x_0}$\ 或者\ $\limNormal{\Delta x \to x_0}\cfrac{f(x + \Delta x) - f(x)}{\Delta x}$
 
   值得注意的是:求导是一种线性函数,它满足抽象向量空间的八条准则.
 
@@ -1169,7 +1212,7 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
       \item $(uv)\derivative = u\derivative v + uv\derivative$
       \item $(uvw)\derivative = u\derivative vw + uv\derivative w + uvw\derivative$
       \item $(\mathbf{c}v)\derivative = \mathbf{c}(v)\derivative$
-      \item $\frac{u}{v}\derivative = \frac{u\derivative v - uv\derivative}{v^2}$
+      \item $\cfrac{u}{v}\derivative = \cfrac{u\derivative v - uv\derivative}{v^2}$
     \end{enumerate}
     注:反函数的导数等于函数导数的倒数,即——互为倒数的导数相乘依然为1
   }%求导法则结尾
@@ -1177,7 +1220,7 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
   \subsubsection{复合函数求导}{
     对于复合函数求导,有以下方法:
 
-    $y = \fint(u), u = g(x); \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} = f\derivative(u) \cdot g\derivative(x)$
+    $y = \fint(u), u = g(x); \cfrac{dy}{dx} = \cfrac{dy}{du} \cdot \cfrac{du}{dx} = f\derivative(u) \cdot g\derivative(x)$
   }%复合函数求导结尾
 
   \subsubsection{求导公式表}{
@@ -1201,19 +1244,19 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
 
     $\fint(x) = \csc x, \fint\derivative(x) = -\csc x\cot x$
 
-    $\fint(x) = \arcsin x, \fint\derivative(x) = \frac{1}{\sqrt{1 - x^2}}$
+    $\fint(x) = \arcsin x, \fint\derivative(x) = \cfrac{1}{\sqrt{1 - x^2}}$
 
-    $\fint(x) = \arccos x, \fint\derivative(x) = -\frac{1}{\sqrt{1 - x^2}}$
+    $\fint(x) = \arccos x, \fint\derivative(x) = -\cfrac{1}{\sqrt{1 - x^2}}$
 
-    $\fint(x) = \arctan x, \fint\derivative(x) = \frac{1}{1 + x^2}$
+    $\fint(x) = \arctan x, \fint\derivative(x) = \cfrac{1}{1 + x^2}$
 
-    $\fint(x) = arccotx, \fint\derivative(x) = -\frac{1}{1 + x^2}$
+    $\fint(x) = arccotx, \fint\derivative(x) = -\cfrac{1}{1 + x^2}$
 
     $\fint(x) = a^x, \fint\derivative(x) = a^x\ln x$
 
-    $\fint(x) = \log_a x, \fint\derivative(x) = \frac{1}{x\ln a}$
+    $\fint(x) = \log_a x, \fint\derivative(x) = \cfrac{1}{x\ln a}$
 
-    $\fint(x) = \ln x, \fint\derivative(x)= \frac{1}{x}$
+    $\fint(x) = \ln x, \fint\derivative(x)= \cfrac{1}{x}$
 
     $\fint(x) = e^x, \fint\derivative(x) = e^x$
   }%求导公式表结尾
@@ -1221,19 +1264,19 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
 
   值得注意的是:
   \begin{enumerate}
-    \item 在一维的情况下,可导\myLeftRightArrow 左右导数存在且相等
+    \item 在一维的情况下,可导 $\Leftrightarrow$ 左右导数存在且相等
 
-    \item 可导\myRightArrow 连续
+    \item 可导 $\Rightarrow$ 连续
 
     \item 连续则不一定可导
   \end{enumerate}
 
   \subsubsection{线性近似/牛顿法近似函数/求方程解}{
-    由导数的另一种定义:$\fDerivative{x} = \limNormal{x \to a}\frac{\defFunction{x} - \defFunction{a}}{x - a}$
+    由导数的另一种定义:$\fDerivative{x} = \limNormal{x \to a}\cfrac{\defFunction{x} - \defFunction{a}}{x - a}$
 
-    当不再取极限的时候等号变成约等于,即:$\fDerivative{x} \approx \frac{\defFunction{x} - \defFunction{a}}{x - a}$, 两边移项,可得
+    当不再取极限的时候等号变成约等于,即:$\fDerivative{x} \approx \cfrac{\defFunction{x} - \defFunction{a}}{x - a}$, 两边移项,可得
 
-    $\defFunction{x} \approx \defFunction{a} + (x-a)\fDerivative{a}$或者$x - a \approx -\frac{\defFunction{a}}{\fDerivative{a}}$
+    $\defFunction{x} \approx \defFunction{a} + (x-a)\fDerivative{a}$或者$x - a \approx -\cfrac{\defFunction{a}}{\fDerivative{a}}$
 
     前者被称为线性近似,后者就是牛顿法,其实本质上是同一个公式的不同变形。
 
@@ -1284,7 +1327,7 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
     \item $d(u \pm v) = du \pm dv$
     \item $d(\mathbf{C}u) = \mathbf{c}du$
     \item $d(uv) = vdu + udv$
-    \item $d(\frac{u}{v} = \frac{vdu + udv}{v^2})$
+    \item $d(\cfrac{u}{v} = \cfrac{vdu + udv}{v^2})$
   \end{enumerate}
 }%微分公式结尾
 
@@ -1316,14 +1359,14 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
 \includegraphics{resources/Lagrange's_mean_value_theorem.png}
 
 令$\fint : [a,b] \to \mathbf{R}$为闭区间$[a,b]$上的一个函数,且在开区间
-$(a,b)$内对任意一点$x$,极限$\limNormal{h \to 0}\frac{\fint(x + h) - \fint(x)}{h}$存在,
+$(a,b)$内对任意一点$x$,极限$\limNormal{h \to 0}\cfrac{\fint(x + h) - \fint(x)}{h}$存在,
 为一个有限数字或者等于$+\infty$或$-\infty$.如果有限,则极限等于$\fDerivative{x}$。
 
 此定理称为{\bfseries拉格朗日中值定理},也简称中值定理,是罗尔中值定理的更一般的形式,同时也是柯西中值定理的特殊情形
 
 这个定理再可以稍微推广一点。只需假设$\fint : [a,b] \to \mathbf{R}$在$[a,b]$连续,且在开区间$(a,b)$内对任意一点$x$,极限$\limNormal{h \to 0}
-  \frac{\defFunction{x + h} - \defFunction{x}}{b - a}$存在,为一个有限数字或者等于$+\infty$或者$-\infty$.如果有限,则极限等于$\fDerivative{x}$。
-这版本定理应用的一个例子是函数$x \to x^{\frac{1}{3}}$,实值三次方根函数,其导数在原点趋于无穷。
+  \cfrac{\defFunction{x + h} - \defFunction{x}}{b - a}$存在,为一个有限数字或者等于$+\infty$或者$-\infty$.如果有限,则极限等于$\fDerivative{x}$。
+这版本定理应用的一个例子是函数$x \to x^{\cfrac{1}{3}}$,实值三次方根函数,其导数在原点趋于无穷。
 
 注意若一个可微函数的值域是复数而不是实数,则上面这定理就未必正确。例如,对实数$x$定义$\defFunction{x} = e^{ix}$。那么
 
@@ -1336,7 +1379,7 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
   柯西中值定理,也叫拓展中值定理,是中值定理的一般形式。它叙述为:如果函数$f$和$g$都在闭区间$[a,b]$上连续,且在开区间$(a,b)$上可微,那么存在某个$c \in (a,b)$,
   使得$(\defFunction{b} - \defFunction{a})g\derivative(c) = (g(b)-g(a))\fDerivative{c}$
 
-  当然,如果$g(a) \neq g(b)$且$g\derivative(c) \neq 0$,则可表示成:$\frac{\fDerivative{c}}{g\derivative(c)} = \frac{\defFunction{b} - \defFunction{a}}{g(b) - g(a)}$
+  当然,如果$g(a) \neq g(b)$且$g\derivative(c) \neq 0$,则可表示成:$\cfrac{\fDerivative{c}}{g\derivative(c)} = \cfrac{\defFunction{b} - \defFunction{a}}{g(b) - g(a)}$
 
   在几何上,这表示曲线
 
@@ -1365,18 +1408,18 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
     下面给出不定积分公式:
 
     \begin{enumerate}
-      \item $\int x^adx = \frac{x^{a+1}}{a+1} + \mathConstant$
+      \item $\int x^adx = \cfrac{x^{a+1}}{a+1} + \mathConstant$
       \item $\int kdx = kx + \mathConstant$
-      \item $\int \frac{1}{x}dx = \ln(x) + \mathConstant$
-      \item $\int \frac{dx}{1+x^2}dx = \arctan x + \mathConstant$
+      \item $\int \cfrac{1}{x}dx = \ln(x) + \mathConstant$
+      \item $\int \cfrac{dx}{1+x^2}dx = \arctan x + \mathConstant$
       \item $\int \cos xdx = \sin x + \mathConstant$
       \item $\int \sin xdx = -\cos x + \mathConstant$
-      \item $\int \frac{dx}{\cos^2x} = \int \sec^2xdx = \tan x + \mathConstant$
-      \item $\int \frac{dx}{\sin^2x} = \int\csc^2xdx = -\cot x + \mathConstant$
+      \item $\int \cfrac{dx}{\cos^2x} = \int \sec^2xdx = \tan x + \mathConstant$
+      \item $\int \cfrac{dx}{\sin^2x} = \int\csc^2xdx = -\cot x + \mathConstant$
       \item $\int \sec x\tan xdx = \sec x + \mathConstant$
       \item $\int \csc x\cot xdx = -\csc x + \mathConstant$
       \item $\int e^xdx = e^x + \mathConstant$
-      \item $\int a^xdx = \frac{a^x}{\ln a} + \mathConstant$
+      \item $\int a^xdx = \cfrac{a^x}{\ln a} + \mathConstant$
     \end{enumerate}
 
   }%不定积分公式结尾
@@ -1450,7 +1493,7 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
 \subsubsection{积分上限函数}{
   $I(x) = \definiteIntegral{x}{a}\defFunction{t}dt$
 
-  如果$\defFunction{x}连续$,$I(x)$可导,则$I\prime(x) = \frac{d\definiteIntegral{x}{a}f(t)dt}{dx} = f(x)$
+  如果$\defFunction{x}连续$,$I(x)$可导,则$I\prime(x) = \cfrac{d\definiteIntegral{x}{a}f(t)dt}{dx} = f(x)$
 
   $\defFunction{x}$连续,$I(x)$是$f(x)$的一个原函数。
 
@@ -1483,7 +1526,7 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
 
   由于定积分与被积变量无关,所以将上式结果中的t换成x,与原函数相加,得:
 
-  $\defFunction{x} = \frac{1}{2}\definiteIntegral{a}{b}[g(x) + g(a + b - x)]dx$
+  $\defFunction{x} = \cfrac{1}{2}\definiteIntegral{a}{b}[g(x) + g(a + b - x)]dx$
 }%区间再现公式结尾
 
 \subsubsection{积分第一中值定理}{
@@ -1508,11 +1551,11 @@ $m\definiteIntegral{b}{a}g(x)dx \leq \definiteIntegral{b}{a}\defFunction{x}g(x)d
 
 如果不等于$0$,那么$\definiteIntegral{b}{a}g(x)dx>0$,对不等式变形可得:
 
-$m \leq \frac{\definiteIntegral{b}{a}\defFunction{x}g(x)dx}{\definiteIntegral{b}{a}g(x)dx} \leq M$
+$m \leq \cfrac{\definiteIntegral{b}{a}\defFunction{x}g(x)dx}{\definiteIntegral{b}{a}g(x)dx} \leq M$
 
 因为$f(x)$是连续函数,所以上面这玩意是个连续函数,所以必定存在一点$\xi\in[a,b]$,使得
 
-$\defFunction{\xi} = \frac{\definiteIntegral{b}{a}\defFunction{x}g(x)dx}{\definiteIntegral{b}{a}g(x)dx}$
+$\defFunction{\xi} = \cfrac{\definiteIntegral{b}{a}\defFunction{x}g(x)dx}{\definiteIntegral{b}{a}g(x)dx}$
 
 ($g<0$时也可以按这个步骤推出)
 \\\\
@@ -1522,13 +1565,13 @@ $\defFunction{\xi} = \frac{\definiteIntegral{b}{a}\defFunction{x}g(x)dx}{\defini
 
 设$\fint : [a,b] \to \mathbf{R}$为一连续函数,则$\exists\xi\in[a,b]$,使得
 
-$\defFunction{\xi} = \frac{\definiteIntegral{b}{a}\defFunction{x}dx}{b - a}$
+$\defFunction{\xi} = \cfrac{\definiteIntegral{b}{a}\defFunction{x}dx}{b - a}$
 
 也可以由拉格朗日中值定理推出:
 
 设$F(x)$在$[a,b]$上可导,$\defFunction{x} = F\prime(x)$,则$\exists\xi\in[a,b]$,使
 
-$\defFunction{\xi} = F\prime(\xi) = \frac{F(b) - F(a)}{b - a} = \frac{\definiteIntegral{b}{a}\defFunction{x}dx}{b - a}$
+$\defFunction{\xi} = F\prime(\xi) = \cfrac{F(b) - F(a)}{b - a} = \cfrac{\definiteIntegral{b}{a}\defFunction{x}dx}{b - a}$
 
 }%积分第一中值定理结尾
 
@@ -1649,21 +1692,21 @@ $x$在$a$点附近,最为粗略的估计就是$\defFunction{x} \approx \defFunct
 
 然后才是修正项:$\fDerivative{a}(x - a)$,这是斜率乘以距离,最终得到的就是高度。相当于沿切线前进。
 
-还有一项表示弯曲:$\frac{1}{2}\fint\doubleDerivative(a)(x - a)^2$,他是斜率的斜率,变化率的变化率。
+还有一项表示弯曲:$\cfrac{1}{2}\fint\doubleDerivative(a)(x - a)^2$,他是斜率的斜率,变化率的变化率。
 
 但后面还有更多项,直接写出通项公式如何？
 
-泰勒级数通项公式:$\defFunction{x} = \upDownSum{\infty}{n = 1}\frac{1}{n!}\fint\aLotDerivative{n - 1}(x - a)^{n - 1}$,0阶导指的是原函数,a是x附近的点。
+泰勒级数通项公式:$\defFunction{x} = \upDownSum{\infty}{n = 1}\cfrac{1}{n!}\fint\aLotDerivative{n - 1}(x - a)^{n - 1}$,0阶导指的是原函数,a是x附近的点。
 
 还有泰勒公式:表示的不是一个函数的幂级数形式而是对于某个函数的近似,形式与泰勒级数通项公式类似。
 
-泰勒公式:$\defFunction{x} = \defFunction{a} + \fDerivative{a}(x - a) + \frac{1}{2!}\fint\doubleDerivative(a)(x - a)^2 + ... + \frac{1}{n!}\fint\aLotDerivative{n}(x - a)^n + R_n(x)$。
+泰勒公式:$\defFunction{x} = \defFunction{a} + \fDerivative{a}(x - a) + \cfrac{1}{2!}\fint\doubleDerivative(a)(x - a)^2 + ... + \cfrac{1}{n!}\fint\aLotDerivative{n}(x - a)^n + R_n(x)$。
 
-$R_n(x)$是余项,表示误差,是$(x - a)^n$的高阶无穷小$O((x - a)^n)$。根据中值定理可得$R_n(x) = \frac{1}{(n + 1)!}\fint\aLotDerivative{n + 1}(\xi)(x - a)^{n+1}$,其中$a \leq \xi \leq x$,意思是$\xi$介于$a$和$x$之间。
+$R_n(x)$是余项,表示误差,是$(x - a)^n$的高阶无穷小$O((x - a)^n)$。根据中值定理可得$R_n(x) = \cfrac{1}{(n + 1)!}\fint\aLotDerivative{n + 1}(\xi)(x - a)^{n+1}$,其中$a \leq \xi \leq x$,意思是$\xi$介于$a$和$x$之间。
 
 当泰勒公式在$a = 0$处展开时就称为麦克劳林公式。
 
-麦克劳林公式:当$a = 0, \defFunction{x} = \defFunction{0} + \frac{1}{1!}\fDerivative{0}x + \frac{1}{2!}\fint\doubleDerivative(0)x^2 + ... + \frac{1}{(n + 1)!}\fint\aLotDerivative{n + 1}(\theta x)x^{n+1}$,其中$0 < \theta < 1$
+麦克劳林公式:当$a = 0, \defFunction{x} = \defFunction{0} + \cfrac{1}{1!}\fDerivative{0}x + \cfrac{1}{2!}\fint\doubleDerivative(0)x^2 + ... + \cfrac{1}{(n + 1)!}\fint\aLotDerivative{n + 1}(\theta x)x^{n+1}$,其中$0 < \theta < 1$
 
 }%泰勒公式/泰勒级数/展开结尾
 
@@ -1673,12 +1716,12 @@ $R_n(x)$是余项,表示误差,是$(x - a)^n$的高阶无穷小$O((x - a)^n)$。
 微分方程是一种描述世界的好手段,当描述某个东西随时间的微小变化比起描述这个物体整体的变化更方便的时候就会使用微分方程。
 
 \subsubsection{一阶线性微分方程}{
-  形式$\frac{dy}{dx} + p(x)y = Q(x)$
+  形式$\cfrac{dy}{dx} + p(x)y = Q(x)$
 
   有以下几种情况:
   \begin{enumerate}
-    \item $Q(x) = 0\ \to$齐次方程,则$\frac{dy}{dx} = -p(x)y\ \to \ \frac{dy}{y} = -p(x)dx$,然后两边求积分,从而得出:$y = e^{-\int p(x)dx}e^{\mathConstant_1} = C \cdot e^{-\int p(x)dx}$
-    \item $\frac{dy}{dx} + p(x)y = Q(x), Q(x) \neq 0$,也就是非齐次方程。设$y = ue^{-\int p(x)dx, u}$是未知量。然后把$y$代入:\\ $u\derivative e^{-\int p(x)dx} - ue^{-\int p(x)dx} + p(x)u^{e}-\int p(x)dx = Q(x)$,从而推出:$u\derivative e^{-\int p(x)dx} = Q(x)$,并且由$u\derivative = Q(X)e^{\int p(x)dx}$从而推出:$\int Q(x)e^{\int p(x)dx}dx + \mathConstant$。将以上带入,得出:$y = e^{-\int p(x)dx}\cdot(\int Q(x)e^{\int p(x)dx}dx + \mathConstant)$
+    \item $Q(x) = 0\ \to$齐次方程,则$\cfrac{dy}{dx} = -p(x)y\ \to \ \cfrac{dy}{y} = -p(x)dx$,然后两边求积分,从而得出:$y = e^{-\int p(x)dx}e^{\mathConstant_1} = C \cdot e^{-\int p(x)dx}$
+    \item $\cfrac{dy}{dx} + p(x)y = Q(x), Q(x) \neq 0$,也就是非齐次方程。设$y = ue^{-\int p(x)dx, u}$是未知量。然后把$y$代入:\\ $u\derivative e^{-\int p(x)dx} - ue^{-\int p(x)dx} + p(x)u^{e}-\int p(x)dx = Q(x)$,从而推出:$u\derivative e^{-\int p(x)dx} = Q(x)$,并且由$u\derivative = Q(X)e^{\int p(x)dx}$从而推出:$\int Q(x)e^{\int p(x)dx}dx + \mathConstant$。将以上带入,得出:$y = e^{-\int p(x)dx}\cdot(\int Q(x)e^{\int p(x)dx}dx + \mathConstant)$
   \end{enumerate}
 
   注:一个非齐次线性微分方程的通解等于对应的齐次微分方程的通解与非齐次微分方程的一个特解之和。
@@ -1686,7 +1729,7 @@ $R_n(x)$是余项,表示误差,是$(x - a)^n$的高阶无穷小$O((x - a)^n)$。
 }%一阶线性微分方程结尾
 
 \subsubsection{*有疑惑/错误\ 伯努利方程}{
-  $\frac{dy}{dx} + p(x)y = Q(x)y^n$。当$n = 0$时,此式为齐次方程,当$n = 1$,为一阶线性微分方程。当$n$不等于0也不等于1时:$y^{-n}\frac{dy}{dx} + p(x)y^{1-n} = Q(x)$。将$y^{1-n}$记作$z$,于是得到$\frac{dz}{dx} = (1-n)y^{-n}\frac{dy}{dx},\frac{1}{1-n}\frac{dz}{dx} + p(x)z = Q(x)$,再变形得到:$\frac{dz}{dx} + (1-n)p(x)z = (1-n)Q(x)$。然后两边求$y$,左边不要带入。
+  $\cfrac{dy}{dx} + p(x)y = Q(x)y^n$。当$n = 0$时,此式为齐次方程,当$n = 1$,为一阶线性微分方程。当$n$不等于0也不等于1时:$y^{-n}\cfrac{dy}{dx} + p(x)y^{1-n} = Q(x)$。将$y^{1-n}$记作$z$,于是得到$\cfrac{dz}{dx} = (1-n)y^{-n}\cfrac{dy}{dx},\cfrac{1}{1-n}\cfrac{dz}{dx} + p(x)z = Q(x)$,再变形得到:$\cfrac{dz}{dx} + (1-n)p(x)z = (1-n)Q(x)$。然后两边求$y$,左边不要带入。
 
 }%伯努利方程结尾
 
@@ -1696,7 +1739,7 @@ $R_n(x)$是余项,表示误差,是$(x - a)^n$的高阶无穷小$O((x - a)^n)$。
   \begin{enumerate}
     \item $y^{(n)} = \defFunction{x}$,于是两边不断求积分进行降阶:$y^{n-1} = \int \defFunction{x}dx + \mathConstant$
     \item $y\doubleDerivative = \defFunction{x,y\derivative}$,设$y\derivative = p,y\doubleDerivative = p\derivative$,则$p\derivative = \defFunction{x,p}$。然后再进行回代。
-    \item $y\doubleDerivative = \defFunction{y,y\derivative}$,同样的,令$y\derivative = p, y\doubleDerivative = \frac{dp}{dx} = \frac{dp}{dy}\cdot\frac{dy}{dx} = p\frac{dp}{dy}$,于是$p\frac{dp}{dy} = \defFunction{y,p}$
+    \item $y\doubleDerivative = \defFunction{y,y\derivative}$,同样的,令$y\derivative = p, y\doubleDerivative = \cfrac{dp}{dx} = \cfrac{dp}{dy}\cdot\cfrac{dy}{dx} = p\cfrac{dp}{dy}$,于是$p\cfrac{dp}{dy} = \defFunction{y,p}$
   \end{enumerate}
 
 }%可降阶高阶微分方程结尾
@@ -1708,8 +1751,8 @@ $R_n(x)$是余项,表示误差,是$(x - a)^n$的高阶无穷小$O((x - a)^n)$。
 
   有以下三种情况:
   \begin{enumerate}
-    \item $\Delta = b^2 - 4ac = p^2 - 4q > 0,r_1 = \frac{-p + \sqrt{p^2 - 4q}}{2}, r_2 = \frac{-p - \sqrt{p^2 - 4q}}{2}$
-    \item $\Delta = b^2 - 4ac = p^2 - 4q = 0,r_1 = r_2 = \frac{-p}{2}$
+    \item $\Delta = b^2 - 4ac = p^2 - 4q > 0,r_1 = \cfrac{-p + \sqrt{p^2 - 4q}}{2}, r_2 = \cfrac{-p - \sqrt{p^2 - 4q}}{2}$
+    \item $\Delta = b^2 - 4ac = p^2 - 4q = 0,r_1 = r_2 = \cfrac{-p}{2}$
     \item {$\Delta = b^2 - 4ac = p^2 - 4q < 0,r_1 = \alpha + \beta_i, r_2 = \alpha - \beta_i$,可扩写成以下三种形式:
 
           \begin{enumerate}
@@ -1725,21 +1768,21 @@ $R_n(x)$是余项,表示误差,是$(x - a)^n$的高阶无穷小$O((x - a)^n)$。
 \subsubsection{关于运动的微分方程/线性常系数微分方程}{
 开门见山,先提出此公式再进行分析。
 
-$m\frac{d^2y}{dt^2} + 2r\frac{dy}{dt} + ky = 0$
+$m\cfrac{d^2y}{dt^2} + 2r\cfrac{dy}{dt} + ky = 0$
 
 很明显,这是个二阶常系数线性微分方程,二阶指的是它最多求了2次导。线性、这意味着他可以是个抽象的向量,他能被线性代数的方式所表示(见4.1.2-关于抽象向量空间)。至于“常系数”,这意味着它的系数都是常数。
 
 先分析这个方程的退化形式。
 
-1、设$m = 0, r = 1/2, \frac{dy}{dt} = ay$
+1、设$m = 0, r = 1/2, \cfrac{dy}{dt} = ay$
 
 很明显:这意味着函数求导后是它自身的倍数,这暗示着原函数是个指数函数。不难猜到:原函数可以为$y = e^{at}$。但这样还不够。仔细想想:如果e的前面有系数,求导后也依然还是原函数的倍数,所以通解应该是$y = ce^{at}$。
 
-2、设 $r = 0, \frac{d^2y}{dt^2} = -\omega^2y$,其中$\omega$是$\frac{k}{m}$。
+2、设 $r = 0, \cfrac{d^2y}{dt^2} = -\omega^2y$,其中$\omega$是$\cfrac{k}{m}$。
 
 这又意味着什么？这意味着:原函数求二次导后是负数倍的他自己,在实数范围内(毕竟一涉及$i$事情就麻烦了起来,不过如果包含虚数的范围倒也是一件合理的事情,设$y=e^{kx},y\doubleDerivative = k^{2}e^{kx}$,如果要使这个二阶导符合条件很明显$k$应该是$i$,而欧拉公式的完整写法是:$e^{ix} = \cos x + i\sin x$)符合这个条件的就这两个函数:$\sin\omega t$和$\cos\omega t$,那么这两个函数就是解集的“基向量/基础解系”,通过这两个函数的线性组合就可以得出所有符合条件的原函数,因此通解写作$y = C\cos\omega t + D\sin\omega t$
 
-3、设$m = 0, r = 0, \frac{dy}{dt} = 0$
+3、设$m = 0, r = 0, \cfrac{dy}{dt} = 0$
 
 这更明显,$y = C + Dt$。(y是个函数,表示位置)
 
@@ -1749,13 +1792,13 @@ $m\frac{d^2y}{dt^2} + 2r\frac{dy}{dt} + ky = 0$
 
 实际上,在这种模型中,常有$r = 0$。那么取$ r = 0$的情况。
 
-有牛顿定律:$F = ma$,m就是质量,a则是加速度,也就是二阶导,因此改写成二阶导形式:$F = m\frac{d^2y}{dt^2}$(不考虑质量损失)
+有牛顿定律:$F = ma$,m就是质量,a则是加速度,也就是二阶导,因此改写成二阶导形式:$F = m\cfrac{d^2y}{dt^2}$(不考虑质量损失)
 
-弹簧是悬空拉着一个小滑块的。y的正方向是向下,他表示弹簧的位移,当y是正的时候,弹簧有向上拉的力,而弹簧的力与$y$成正比,比例则是常数$k$。当y很大的时候弹簧被拉的很长,向上拉的力在往上拉,写作$F = -ky = m\frac{d^2y}{dt^2}$其中F表示拉力,负号是因为力的方向与y相反(胡克定理)。经过变形得到:$m\frac{d^2y}{dt^2} + ky = 0$。非常眼熟。
+弹簧是悬空拉着一个小滑块的。y的正方向是向下,他表示弹簧的位移,当y是正的时候,弹簧有向上拉的力,而弹簧的力与$y$成正比,比例则是常数$k$。当y很大的时候弹簧被拉的很长,向上拉的力在往上拉,写作$F = -ky = m\cfrac{d^2y}{dt^2}$其中F表示拉力,负号是因为力的方向与y相反(胡克定理)。经过变形得到:$m\cfrac{d^2y}{dt^2} + ky = 0$。非常眼熟。
 
 $r = 0$,$r$表示的是阻力,可以是空气阻力也可以是磁力等等,但他就是我们没法制作永动机的原因,不过现在是假想环境,所以设他为0,那么弹簧就会是一根永不停息的、上下振动的弹簧。就如同上面分析的结果,他沿着{\bfseries 正弦和余弦}振动。而常数$C$与$D$则取决于初始状态。
 
-回想一下,$-ky = m\frac{d^2y}{dt^2}$,将两边同除以$m$,负号移走,于是得到$\omega^2$而$\omega^2 = \frac{k}{m}$。
+回想一下,$-ky = m\cfrac{d^2y}{dt^2}$,将两边同除以$m$,负号移走,于是得到$\omega^2$而$\omega^2 = \cfrac{k}{m}$。
 
 这种情况很简单,只有$\sin , \cos$。接下来,来一点阻力。
 
@@ -1781,7 +1824,7 @@ $my\doubleDerivative + 2ry\derivative + ky = 0$
 
 这个方程只不过是个普通的二次方程,随随便便就能解出来。二次方程理应有两个解。因此$e^{\lambda_1 t}$和$e^{\lambda_2 t}$都是方程的解
 
-回忆一下公式,$\lambda = \frac{-r \pm \sqrt{r^2 - km}}{m}$
+回忆一下公式,$\lambda = \cfrac{-r \pm \sqrt{r^2 - km}}{m}$
 
 引入一些数字,$1y\doubleDerivative + 6y\derivative + 8y = 0$。计算$\lambda$
 
@@ -1813,30 +1856,30 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
 \subsubsection{关于增长的微分方程/非线性微分方程/偏微分方程剧透}{
   从线性的开始。
 
-  最简单的:$\frac{dy}{dt} = cy$, 给予了初始条件$y(0)$
+  最简单的:$\cfrac{dy}{dt} = cy$, 给予了初始条件$y(0)$
 
   即增长率与自身成正比。很明显的这是呈指数形式的增长,解应该是$y(t) = y(0)e^{ct}$
 
-  看下一个方程,依然是线性的:$\frac{dy}{dt} = cy + s$,$s$表示source,可以用银行存钱来描述:前一项是每天的利息,后一项的每天存入的金额。
-  这就是右侧带有常数项的线性微分方程了。事实上甚至能拿现有的知识来解决它:$\frac{dy}{dt} = cy + s = c(y + \frac{s}{c}) = \frac{d(y + \frac{s}{c})}{dt}$, 其中$\frac{s}{c}$是常数,所以可以任意加减而不影响求导结果。随后观察整体,会发现与第一个例子几乎相同,唯一不同的就是多了个$\frac{s}{c}$函数依然以增长率c增长。从0处的y值加上$\frac{s}{c}$开始。
+  看下一个方程,依然是线性的:$\cfrac{dy}{dt} = cy + s$,$s$表示source,可以用银行存钱来描述:前一项是每天的利息,后一项的每天存入的金额。
+  这就是右侧带有常数项的线性微分方程了。事实上甚至能拿现有的知识来解决它:$\cfrac{dy}{dt} = cy + s = c(y + \cfrac{s}{c}) = \cfrac{d(y + \cfrac{s}{c})}{dt}$, 其中$\cfrac{s}{c}$是常数,所以可以任意加减而不影响求导结果。随后观察整体,会发现与第一个例子几乎相同,唯一不同的就是多了个$\cfrac{s}{c}$函数依然以增长率c增长。从0处的y值加上$\cfrac{s}{c}$开始。
 
-  所以,结论是:$y(t) + \frac{s}{c} = (y(0) + \frac{s}{c})e^{ct}$。这就是该微分方程的快速版解答了。将常数丢到右边,就是一个标准的形式。
+  所以,结论是:$y(t) + \cfrac{s}{c} = (y(0) + \cfrac{s}{c})e^{ct}$。这就是该微分方程的快速版解答了。将常数丢到右边,就是一个标准的形式。
 
   所以线性方程(不只是线性微分方程)的解$y(t) = y_{particular}(t) + y_{another\ solution\ with\ a\ right\ side\ 0}(t)$。用人话说就是:线性方程的解总是自身的某个特解加上另一个右侧等于0的方程的解。
 
-  也就是说如果要求$\frac{dy}{dt} = cy + s$的解,那么首先求一个特解(也就是任一个满足方程的函数),能找到的最简单的函数就是常函数。想要常数满足方程,常熟的常数必然为0,而且c乘以此常数加s也应该为0。也就是$cy + s = 0,\ cy = -s, \ y = -\frac{s}{y}$。这就是一个特解了。
+  也就是说如果要求$\cfrac{dy}{dt} = cy + s$的解,那么首先求一个特解(也就是任一个满足方程的函数),能找到的最简单的函数就是常函数。想要常数满足方程,常熟的常数必然为0,而且c乘以此常数加s也应该为0。也就是$cy + s = 0,\ cy = -s, \ y = -\cfrac{s}{y}$。这就是一个特解了。
 
-  那么“一个右侧为0的方程的解”是什么意思？将s擦去,使得$\frac{dy}{dt} = cy$,保留含有y的,去掉常数项,使得右侧为0。也就是$y\derivative - cy = 0$。书本上喜欢称之为:齐次方程。也就是第一个例子。
+  那么“一个右侧为0的方程的解”是什么意思？将s擦去,使得$\cfrac{dy}{dt} = cy$,保留含有y的,去掉常数项,使得右侧为0。也就是$y\derivative - cy = 0$。书本上喜欢称之为:齐次方程。也就是第一个例子。
 
-  那么齐次方程的解是什么呢？$\frac{dy}{dt} = cy$的解含有$e^{ct}$以及任意常数$A$,也就是$Ae^{ct}$,任意$Ae^{ct}$都能满足这个简单的方程。
+  那么齐次方程的解是什么呢？$\cfrac{dy}{dt} = cy$的解含有$e^{ct}$以及任意常数$A$,也就是$Ae^{ct}$,任意$Ae^{ct}$都能满足这个简单的方程。
 
-  所以整个方程的解就是$-\frac{s}{c} + Ae^{ct}$A是任意常数。不过当然,如果有初始条件就能特定一个。只需要设$t = 0$,就能解出$A$,在这里$A = y(0) + \frac{s}{c}$。在上面也算出来了。
+  所以整个方程的解就是$-\cfrac{s}{c} + Ae^{ct}$A是任意常数。不过当然,如果有初始条件就能特定一个。只需要设$t = 0$,就能解出$A$,在这里$A = y(0) + \cfrac{s}{c}$。在上面也算出来了。
 
   不过线性的已经没啥意思了,来点线性的。非线性的微分方程很有趣,也可以表示很多东西,比如:人口的增长。
 
   关于人口增长函数$P(t)$,用什么微分方程描述比较合理？
 
-  $\frac{dP}{dt} = cP - sP^2$。其中c表示增长率。同样的,有出生也会有死亡,所以需要一个减速项,因为人口增长不可能这么快。也就是s。这在一定程度上反映了人口之间的相互作用。(事实上这种公式在其他领域也有很多用途)
+  $\cfrac{dP}{dt} = cP - sP^2$。其中c表示增长率。同样的,有出生也会有死亡,所以需要一个减速项,因为人口增长不可能这么快。也就是s。这在一定程度上反映了人口之间的相互作用。(事实上这种公式在其他领域也有很多用途)
 
   在这个公式中$p^2$表示人口之间的相互拥挤造成的影响,因此s是个很小的数,比如十亿分之一。
 
@@ -1846,21 +1889,21 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
 
   先展示解吧:首先,如果一开始一个人都没有,那么就始终为0。$P = 0$,常数解,很无趣。还有一种情况,很重要的情况,这种情况下导数也为0。
 
-  假设导数为0,将会得到一个特殊的特解,他不会变化。也就是当导数为0时,那么$cP = sP^2$。可以约掉一个P,也就是$P = \frac{C}{S}$。此时,增长和减少将会相互抵消,成为无法逾越的上限。
+  假设导数为0,将会得到一个特殊的特解,他不会变化。也就是当导数为0时,那么$cP = sP^2$。可以约掉一个P,也就是$P = \cfrac{C}{S}$。此时,增长和减少将会相互抵消,成为无法逾越的上限。
 
   那么来看看真实情况下的解,不过为何不先看看图呢？:
 
   \includegraphics{resources/nonLinearDifferencialEquation_HumanGrow.png}
 
-  其中$\frac{c}{s}$称为稳态,到了这里就会保持稳定,不会改变了。不过其实到不了哪里,只会一直接近而已。这就是这个式子所代表的人口曲线了。
+  其中$\cfrac{c}{s}$称为稳态,到了这里就会保持稳定,不会改变了。不过其实到不了哪里,只会一直接近而已。这就是这个式子所代表的人口曲线了。
 
-  那么就是解方程的环节了。有很多方法,先试试一个好使的:尝试$y = \frac{1}{P}$。然后尝试把整个方程写成y的形式。这是解这个方程的技巧,而解非线性方程常常需要一些技巧。
+  那么就是解方程的环节了。有很多方法,先试试一个好使的:尝试$y = \cfrac{1}{P}$。然后尝试把整个方程写成y的形式。这是解这个方程的技巧,而解非线性方程常常需要一些技巧。
 
-  看看这个方程长啥样子:$\frac{dy}{dt} = -\frac{\frac{dP}{dt}}{P^2}$而$\frac{dP}{dt}$是已知的,所以将他代进来,得到$-\frac{cP - sP^2}{P^2}$。将负号写进去,得到一个s:$s - \frac{c}{P}$。查看前面的推导能发现:$\frac{1}{p} = y$。所以得到$s - cy$。于是$\frac{dy}{dt}$变成了线性的,它还含有资源项s,而增长率项还含有一个-c。也许仔细想想为什么
+  看看这个方程长啥样子:$\cfrac{dy}{dt} = -\cfrac{\cfrac{dP}{dt}}{P^2}$而$\cfrac{dP}{dt}$是已知的,所以将他代进来,得到$-\cfrac{cP - sP^2}{P^2}$。将负号写进去,得到一个s:$s - \cfrac{c}{P}$。查看前面的推导能发现:$\cfrac{1}{p} = y$。所以得到$s - cy$。于是$\cfrac{dy}{dt}$变成了线性的,它还含有资源项s,而增长率项还含有一个-c。也许仔细想想为什么
 
-  那么写出y的解:$y(t) - \frac{s}{c} = (y(0) - \frac{s}{c})e^{-ct}$这就是y的解。$y = \frac{1}{P}$,接下来就是要回代了:
+  那么写出y的解:$y(t) - \cfrac{s}{c} = (y(0) - \cfrac{s}{c})e^{-ct}$这就是y的解。$y = \cfrac{1}{P}$,接下来就是要回代了:
 
-  $\frac{1}{P(t)} - \frac{s}{c} = (\frac{1}{P(0)} - \frac{s}{c})e^{-ct}$,接下来的一堆化简就不写了。
+  $\cfrac{1}{P(t)} - \cfrac{s}{c} = (\cfrac{1}{P(0)} - \cfrac{s}{c})e^{-ct}$,接下来的一堆化简就不写了。
 
   这种模型称为logistic方程(只是为了提一下)
 
@@ -1874,9 +1917,9 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
 
   但如果猎物存在,那么资源项就会正比于$uv$。
 
-  所以$\frac{du}{dt} = -cu + suv$
+  所以$\cfrac{du}{dt} = -cu + suv$
 
-  那么$\frac{dv}{dt}$呢？情况大不相同。他们被捕食,因此有$-Suv$,同时也有正的增长率$Cv$
+  那么$\cfrac{dv}{dt}$呢？情况大不相同。他们被捕食,因此有$-Suv$,同时也有正的增长率$Cv$
 
   那么这就是一个模型了。剧透一下:这玩意叫偏微分方程(Partical Differential Equation),简称PDE,他比常微分方程(Ordinary Differential Equation, ODE)包含了更多的信息。也更难解。
 
@@ -1888,12 +1931,13 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
 
 \section{多元微积分}{
   注:如果忘了什么是偏导数就去上一章回顾。
+  %# TODO: 重新学一遍
 
   \subsection{隐函数}{
-    在数学中,隐式方程时形同$\defFunction{x_1,x_2,x_3,\dots,x_n} = 0$的关系，其中$f$时多元函数。比如单位圆的隐式方程是$x^2 + y^2 - 1 = 0$。
 
-    隐函数是由隐式方程所隐含定义的函数，比如$y = \sqrt{1 - x^2}$是由$x^2 + y^2 - 1 = 0$确定的函数。而可以直接用含自变量的算是表示对函数称为显函数，也就是通常所说的函数，比如$y = \cos(x)$
+    \subsubsection{隐函数存在定理}{
 
+    }%隐函数存在定理结尾
 
   }%隐函数结尾
 
@@ -1961,21 +2005,21 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
     \subsubsection{矢量函数的导数}{
       设矢量函数$A(t)$在点t处有增量$\Delta A = A(t + \Delta t) - A(t)$
 
-      当$\Delta t \to 0$时,$\frac{\Delta A}{\Delta t} = \frac{A(t + \Delta t) - A(t)}{\Delta t}$的极限存在,则称此极限值为$A(t)$在点t处的导向量/导矢。即 :
+      当$\Delta t \to 0$时,$\cfrac{\Delta A}{\Delta t} = \cfrac{A(t + \Delta t) - A(t)}{\Delta t}$的极限存在,则称此极限值为$A(t)$在点t处的导向量/导矢。即 :
 
       \begin{center}
-        $A\derivative(t) = \frac{dA(t)}{dt} = \limNormal{\Delta t \to 0}\frac{\Delta A}{\Delta t} = \limNormal{\Delta t \to 0}\frac{A(t + \Delta t) - A(t)}{\Delta t}$
+        $A\derivative(t) = \cfrac{dA(t)}{dt} = \limNormal{\Delta t \to 0}\cfrac{\Delta A}{\Delta t} = \limNormal{\Delta t \to 0}\cfrac{A(t + \Delta t) - A(t)}{\Delta t}$
       \end{center}
 
       以下为导数公式 :
 
       \begin{itemize}
-        \item $\frac{d}{dt}(\vec{\mathConstant}) = 0$ ($\vec{\mathConstant}$为常矢量)
-        \item $\frac{d}{dt}(\vec{A} \pm \vec{B}) = \frac{d}{dt}\vec{A} \pm \frac{d}{dt}\vec{B}$
-        \item $\frac{d}{dt}(u\vec{A}) = \frac{du}{dt}\vec{A} + u\frac{d\vec{A}}{dt}$\ 当u是常数k时,$\frac{d}{dt}(kA) = k\frac{d\vec{A}}{dt}$
-        \item $\frac{d}{dt}(\vec{A}\cdot\vec{B}) = \vec{A}\cdot\frac{d\vec{B}}{dt} + \vec{B}\cdot\frac{d\vec{A}}{dt}$
-        \item $\frac{d}{dt}(\vec{A}\times\vec{B}) = \vec{A}\times\frac{d\vec{B}}{dt} + \vec{B}\times\frac{d\vec{A}}{dt}$
-        \item 若$\vec{A} = A(u),u = u(t)$,则$\frac{d\vec{A}}{dt} = \frac{d\vec{A}}{du}\cdot\frac{du}{dt}$
+        \item $\cfrac{d}{dt}(\vec{\mathConstant}) = 0$ ($\vec{\mathConstant}$为常矢量)
+        \item $\cfrac{d}{dt}(\vec{A} \pm \vec{B}) = \cfrac{d}{dt}\vec{A} \pm \cfrac{d}{dt}\vec{B}$
+        \item $\cfrac{d}{dt}(u\vec{A}) = \cfrac{du}{dt}\vec{A} + u\cfrac{d\vec{A}}{dt}$\ 当u是常数k时,$\cfrac{d}{dt}(kA) = k\cfrac{d\vec{A}}{dt}$
+        \item $\cfrac{d}{dt}(\vec{A}\cdot\vec{B}) = \vec{A}\cdot\cfrac{d\vec{B}}{dt} + \vec{B}\cdot\cfrac{d\vec{A}}{dt}$
+        \item $\cfrac{d}{dt}(\vec{A}\times\vec{B}) = \vec{A}\times\cfrac{d\vec{B}}{dt} + \vec{B}\times\cfrac{d\vec{A}}{dt}$
+        \item 若$\vec{A} = A(u),u = u(t)$,则$\cfrac{d\vec{A}}{dt} = \cfrac{d\vec{A}}{du}\cdot\cfrac{du}{dt}$
       \end{itemize}
 
       这些公式与函数的导数公式类似。只是在乘法上向量有点乘和叉乘两种乘法,而且没有除法,所以没有除法法则。
@@ -1983,12 +2027,14 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
       向量导数在几何上的直观图像为:
 
       \includegraphics{resources/derivativeOfVectorFunction.png}
+
+      即 : 矢径长度随时间的变化率
     }%矢量函数的导数
 
     \subsubsection{矢量函数的微分}{
       称$dA(t) = A\derivative(t)dt\ (\Delta t = dt)$为$A(t)$在$t$处的微分。在直角坐标系中有:
 
-      $\frac{d\vec{A}}{dt} = A\derivative_x(t)\vec{i} + A\derivative_y(t)\vec{j} + A\derivative_z(t)\vec{k}$
+      $\cfrac{d\vec{A}}{dt} = A\derivative_x(t)\vec{i} + A\derivative_y(t)\vec{j} + A\derivative_z(t)\vec{k}$
 
       即 :
 
@@ -2034,25 +2080,24 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
         \item {向量叉乘的对偶矩阵:
               $$\vec{a} \times \vec{b}
                 =
-                \left[\begin{matrix}
-                    y_az_b - y_bz_a \\
-                    z_ax_b - x_az_b \\
-                    x_ay_b - y_ax_b
-                  \end{matrix}\right]
+                \begin{bmatrix}
+                  y_az_b - y_bz_a \\
+                  z_ax_b - x_az_b \\
+                  x_ay_b - y_ax_b
+                \end{bmatrix}
                 =
                 A * \vec{b}
                 =
-                \left[\begin{matrix}
-                    0    & -z_a & y_a  \\
-                    z_a  & 0    & -x_a \\
-                    -y_a & x_a  & 0
-                  \end{matrix}\right]
-                \left[\begin{array}{c}
-                    x_b \\
-                    y_b \\
-                    z_b
-                  \end{array}
-                  \right]
+                \begin{bmatrix}
+                  0    & -z_a & y_a  \\
+                  z_a  & 0    & -x_a \\
+                  -y_a & x_a  & 0
+                \end{bmatrix}
+                \begin{bmatrix}
+                  x_b \\
+                  y_b \\
+                  z_b
+                \end{bmatrix}
               $$
               }
         \item 非满秩矩阵意味着将空间变换到了更低的维度。
@@ -2076,19 +2121,23 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
       \end{enumerate}
 
       如同3b1b的观点,将目标空间看作矩阵的列空间。而矩阵每一列都对应了列空间中的一个基向量,拿2维空间举例:
-      $$\left[\begin{matrix}
-            1 & 0 \\
-            0 & 1
-          \end{matrix}\right]$$
+      $$
+        \begin{bmatrix}
+          1 & 0 \\
+          0 & 1
+        \end{bmatrix}
+      $$
 
       假设第一列代表了$x$轴的单位向量$i$,则第二列代表了$y$轴的单位向量$j$
 
       因此,对矩阵进行操作就相当于对矩阵所代表的空间进行操作。
 
-      例如:$$\left[\begin{matrix}
-            2 & 1 \\
-            1 & 2
-          \end{matrix}\right]$$
+      例如:$$
+        \begin{bmatrix}
+          2 & 1 \\
+          1 & 2
+        \end{bmatrix}
+      $$
 
       这个矩阵就代表着将单位向量$i$移动到了坐标$(2,1)$,将单位向量$j$移动到了坐标$(1,2)$。整个二维空间都是由这两个单位向量所张成的。随着单位向量的移动,整个空间也就随之而变形。这种操作被称为变换。
       其中一类最简单的变换称为线性变换,在线性代数篇中已有了详细解释。
@@ -2099,10 +2148,12 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
 
       \includegraphics[scale=0.25]{resources/rotateMatrixGraphics.png}
 
-      因此二维的旋转矩阵$$R_\theta = \left[\begin{matrix}
-            \cos\theta & -\sin\theta \\
-            \sin\theta & \cos\theta
-          \end{matrix}\right]$$
+      因此二维的旋转矩阵$$
+        R_\theta = \begin{bmatrix}
+          \cos\theta & -\sin\theta \\
+          \sin\theta & \cos\theta
+        \end{bmatrix}
+      $$
 
 
       \subsubsection{齐次坐标}{
@@ -2122,65 +2173,65 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
 
         事实上应该写成这样:
         $$
-          \left[\begin{array}{c}
-              x\prime \\
-              y\prime
-            \end{array}\right]
+          \begin{bmatrix}
+            x\prime \\
+            y\prime
+          \end{bmatrix}
           =
-          \left[\begin{matrix}
-              a & b \\
-              c & d
-            \end{matrix}\right]
-          \left[\begin{array}{c}
-              x \\
-              y
-            \end{array}\right]
+          \begin{bmatrix}
+            a & b \\
+            c & d
+          \end{bmatrix}
+          \begin{bmatrix}
+            x \\
+            y
+          \end{bmatrix}
           +
-          \left[\begin{array}{c}
-              t_x \\
-              t_y
-            \end{array}\right]
+          \begin{bmatrix}
+            t_x \\
+            t_y
+          \end{bmatrix}
         $$
 
         因此平移变换不属于线性变换。但是人们不想要特殊情况,于是引入了齐次坐标:
 
         还是拿二维的情况举例,增加一个维度,将二维的点表示为:
-        $$\left[\begin{array}{ccc}
-              x & y & 1
-            \end{array}\right]^T$$
+        $$\begin{bmatrix}
+            x & y & 1
+          \end{bmatrix}^T$$
 
         将二维向量表示为:
-        $$\left[\begin{array}{ccc}
-              x & y & 0
-            \end{array}\right]^T$$
+        $$\begin{bmatrix}
+            x & y & 0
+          \end{bmatrix}^T$$
 
         也就是说:再多增加一个维度用于说明表示的是一个点还是一个向量,这是因为向量具有平移不变性,不管怎么移动表示的始终是一个方向。
 
         齐次坐标的好处就在这里,它是这么用的:
 
-        $$\left[\begin{array}{c}
-              x\prime \\
-              y\prime \\
-              w\prime
-            \end{array}\right]
+        $$\begin{bmatrix}
+            x\prime \\
+            y\prime \\
+            w\prime
+          \end{bmatrix}
           =
-          \left[\begin{matrix}
-              1 & 0 & t_x \\
-              0 & 1 & t_y \\
-              0 & 0 & 1
-            \end{matrix}\right]
+          \begin{bmatrix}
+            1 & 0 & t_x \\
+            0 & 1 & t_y \\
+            0 & 0 & 1
+          \end{bmatrix}
           \cdot
-          \left[\begin{array}{c}
-              x \\
-              y \\
-              1
-            \end{array}\right]
+          \begin{bmatrix}
+            x \\
+            y \\
+            1
+          \end{bmatrix}
           =
-          \left[\begin{array}{c}
-              x + t_x \\
-              y + t_y \\
-              1
-            \end{array}\right]
+          \begin{bmatrix}
+            x + t_x \\
+            y + t_y \\
+            1
+          \end{bmatrix}
         $$
 
         更直观一点:可以这么理解:
@@ -2191,82 +2242,82 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
           \item 点 + 点 = 两个点的中点, $1 + 1 = 2$,原因见扩充定义。
         \end{itemize}
         扩充定义如下:
-        $$\left[\begin{array}{c}
-              x \\
-              y \\
-              w
-            \end{array}\right] = \left[\begin{array}{c}
-              x \\
-              y \\
-              w
-            \end{array}\right]\cdot\frac{1}{w} = \left[\begin{array}{c}
-              \frac{x}{w} \\
-              \frac{y}{w} \\
-              1
-            \end{array}\right]$$
+        $$\begin{bmatrix}
+            x \\
+            y \\
+            w
+          \end{bmatrix} = \begin{bmatrix}
+            x \\
+            y \\
+            w
+          \end{bmatrix}\cdot\cfrac{1}{w} = \begin{bmatrix}
+            \cfrac{x}{w} \\
+            \cfrac{y}{w} \\
+            1
+          \end{bmatrix}$$
 
         {\bfseries于是总结,给出以下下定义:}\\\\\indent
         仿射变换(Affine transformation) = 线性变换(Linear transformation) + 位移(transformation)
 
         即:
-        $$\left[\begin{array}{c}
-              x\prime \\
-              y\prime
-            \end{array}\right]
+        $$\begin{bmatrix}
+            x\prime \\
+            y\prime
+          \end{bmatrix}
           =
-          \left[\begin{matrix}
-              a & b \\
-              c & d
-            \end{matrix}\right]
+          \begin{bmatrix}
+            a & b \\
+            c & d
+          \end{bmatrix}
           \cdot
-          \left[\begin{array}{c}
-              x \\
-              y
-            \end{array}\right]
+          \begin{bmatrix}
+            x \\
+            y
+          \end{bmatrix}
           +
-          \left[\begin{array}{c}
-              t_x \\
-              t_y
-            \end{array}\right]$$
+          \begin{bmatrix}
+            t_x \\
+            t_y
+          \end{bmatrix}$$
 
         都可以写成齐次坐标(homogeneous coordinates)的形式
 
         即:
-        $$\left[\begin{array}{c}
-              x\prime \\
-              y\prime \\
-              1
-            \end{array}\right]
+        $$\begin{bmatrix}
+            x\prime \\
+            y\prime \\
+            1
+          \end{bmatrix}
           =
-          \left[\begin{matrix}
-              a & b & t_x \\
-              c & d & t_y \\
-              0 & 0 & 1
-            \end{matrix}\right]
+          \begin{bmatrix}
+            a & b & t_x \\
+            c & d & t_y \\
+            0 & 0 & 1
+          \end{bmatrix}
           \cdot
-          \left[\begin{array}{c}
-              x \\
-              y \\
-              1
-            \end{array}\right]$$
+          \begin{bmatrix}
+            x \\
+            y \\
+            1
+          \end{bmatrix}$$
 
         {\bfseries不如直接将其他操作的齐次坐标形式补全吧？}
         \begin{itemize}
-          \item 缩放(scale) : $$S(s_x, s_y) = \left[\begin{matrix}
-                      s_x & 0   & 0 \\
-                      0   & s_y & 0 \\
-                      0   & 0   & 0
-                    \end{matrix}\right]$$
-          \item 旋转(rotation) : $$R(\alpha) = \left[\begin{matrix}
-                      \cos\alpha & -\sin\alpha & 0 \\
-                      \sin\alpha & \cos\alpha  & 0 \\
-                      0          & 0           & 1
-                    \end{matrix}\right]$$
-          \item 平移(translation) : $$T(t_x, t_y) = \left[\begin{matrix}
-                      1 & 0 & t_x \\
-                      0 & 1 & t_y \\
-                      0 & 0 & 1
-                    \end{matrix}\right]$$
+          \item 缩放(scale) : $$S(s_x, s_y) = \begin{bmatrix}
+                    s_x & 0   & 0 \\
+                    0   & s_y & 0 \\
+                    0   & 0   & 0
+                  \end{bmatrix}$$
+          \item 旋转(rotation) : $$R(\alpha) = \begin{bmatrix}
+                    \cos\alpha & -\sin\alpha & 0 \\
+                    \sin\alpha & \cos\alpha  & 0 \\
+                    0          & 0           & 1
+                  \end{bmatrix}$$
+          \item 平移(translation) : $$T(t_x, t_y) = \begin{bmatrix}
+                    1 & 0 & t_x \\
+                    0 & 1 & t_y \\
+                    0 & 0 & 1
+                  \end{bmatrix}$$
         \end{itemize}
 
       }%齐次坐标结尾
@@ -2284,102 +2335,102 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
         以上结论都可以用于三维,推而广之:\\
 
         齐次坐标:\begin{itemize}
-          \item 三维点:$$\left[\begin{array}{c}
-                      x \\
-                      y \\
-                      z \\
-                      1
-                    \end{array}\right]$$
-          \item 三维向量:$$\left[\begin{array}{c}
-                      x \\
-                      y \\
-                      z \\
-                      0
-                    \end{array}\right]$$
+          \item 三维点:$$\begin{bmatrix}
+                    x \\
+                    y \\
+                    z \\
+                    1
+                  \end{bmatrix}$$
+          \item 三维向量:$$\begin{bmatrix}
+                    x \\
+                    y \\
+                    z \\
+                    0
+                  \end{bmatrix}$$
         \end{itemize}
 
         $\left[x\ y\ z\ w\right]^T$,当$w$不等于$1$他所表示的三维的点其实是(第四个维度已略去):
-        $$\left[\begin{array}{c}
-              \frac{x}{w} \\
-              \frac{y}{w} \\
-              \frac{z}{w} \\
-            \end{array}\right]$$
+        $$\begin{bmatrix}
+            \cfrac{x}{w} \\
+            \cfrac{y}{w} \\
+            \cfrac{z}{w} \\
+          \end{bmatrix}$$
 
         同样的,三维空间中齐次坐标描述的仿射变换的矩阵是$4 \times 4$的:
-        $$\left[\begin{array}{c}
-              x\prime \\
-              y\prime \\
-              z\prime \\
-              1
-            \end{array}\right]
+        $$\begin{bmatrix}
+            x\prime \\
+            y\prime \\
+            z\prime \\
+            1
+          \end{bmatrix}
           =
-          \left[\begin{matrix}
-              a & b & c & t_x \\
-              d & e & f & t_y \\
-              g & h & i & t_z \\
-              0 & 0 & 0 & 1
-            \end{matrix}\right]
+          \begin{bmatrix}
+            a & b & c & t_x \\
+            d & e & f & t_y \\
+            g & h & i & t_z \\
+            0 & 0 & 0 & 1
+          \end{bmatrix}
           \cdot
-          \left[\begin{array}{c}
-              x \\
-              y \\
-              z \\
-              1
-            \end{array}\right]$$
+          \begin{bmatrix}
+            x \\
+            y \\
+            z \\
+            1
+          \end{bmatrix}$$
 
         将二维操作类比过来:
 
         \begin{itemize}
           \item 缩放 : $$
-                  S(s_x,s_y,s_z) =\left[\begin{matrix}
-                      s_x & 0   & 0   & 0 \\
-                      0   & s_y & 0   & 0 \\
-                      0   & 0   & s_z & 0 \\
-                      0   & 0   & 0   & 1
-                    \end{matrix}\right]
+                  S(s_x,s_y,s_z) =\begin{bmatrix}
+                    s_x & 0   & 0   & 0 \\
+                    0   & s_y & 0   & 0 \\
+                    0   & 0   & s_z & 0 \\
+                    0   & 0   & 0   & 1
+                  \end{bmatrix}
                 $$
           \item 平移 : $$
-                  T(t_x,t_y,t_z) = \left[\begin{matrix}
-                      1 & 0 & 0 & t_x \\
-                      0 & 1 & 0 & t_y \\
-                      0 & 0 & 1 & t_z \\
-                      0 & 0 & 0 & 1
-                    \end{matrix}\right]
+                  T(t_x,t_y,t_z) = \begin{bmatrix}
+                    1 & 0 & 0 & t_x \\
+                    0 & 1 & 0 & t_y \\
+                    0 & 0 & 1 & t_z \\
+                    0 & 0 & 0 & 1
+                  \end{bmatrix}
                 $$
           \item 三维旋转(绕某个轴逆时针旋转) :
                 $$
-                  R_x(\alpha) = \left[\begin{matrix}
-                      1 & 0          & 0           & 0 \\
-                      0 & \cos\alpha & -\sin\alpha & 0 \\
-                      0 & \sin\alpha & \cos\alpha  & 0 \\
-                      0 & 0          & 0           & 1
-                    \end{matrix}\right]
+                  R_x(\alpha) = \begin{bmatrix}
+                    1 & 0          & 0           & 0 \\
+                    0 & \cos\alpha & -\sin\alpha & 0 \\
+                    0 & \sin\alpha & \cos\alpha  & 0 \\
+                    0 & 0          & 0           & 1
+                  \end{bmatrix}
                 $$
 
                 $$
-                  R_y(\alpha) = \left[\begin{matrix}
-                      \cos\alpha  & 0 & \sin\alpha & 0 \\
-                      0           & 1 & 0          & 0 \\
-                      -\sin\alpha & 0 & \cos\alpha & 0 \\
-                      0           & 0 & 0          & 1
-                    \end{matrix}\right]
+                  R_y(\alpha) = \begin{bmatrix}
+                    \cos\alpha  & 0 & \sin\alpha & 0 \\
+                    0           & 1 & 0          & 0 \\
+                    -\sin\alpha & 0 & \cos\alpha & 0 \\
+                    0           & 0 & 0          & 1
+                  \end{bmatrix}
                 $$
 
                 $$
-                  R_z(\alpha) = \left[\begin{matrix}
-                      \cos\alpha & -\sin\alpha & 0 & 0 \\
-                      \sin\alpha & \cos\alpha  & 0 & 0 \\
-                      0          & 0           & 1 & 0 \\
-                      0          & 0           & 0 & 1
-                    \end{matrix}\right]
+                  R_z(\alpha) = \begin{bmatrix}
+                    \cos\alpha & -\sin\alpha & 0 & 0 \\
+                    \sin\alpha & \cos\alpha  & 0 & 0 \\
+                    0          & 0           & 1 & 0 \\
+                    0          & 0           & 0 & 1
+                  \end{bmatrix}
                 $$
           \item 三维旋转(欧拉角) : $R_{xyz}(\alpha,\beta,\gamma) = R_x(\alpha)R_y(\beta)R_z(\gamma)$
           \item 三维旋转($\vec{I}$绕任意轴n旋转角度$\alpha$)(罗德里格斯旋转公式) : $$
-                  R(n,\alpha) = \cos(\alpha)\vec{I} + (1 - \cos(\alpha))\vec{n}\vec{n}\transpose + \sin(\alpha)\left[\begin{matrix}
-                      0    & -n_z & n_y  \\
-                      n_z  & 0    & -n_x \\
-                      -n_y & n_x  & 0
-                    \end{matrix}\right]
+                  R(n,\alpha) = \cos(\alpha)\vec{I} + (1 - \cos(\alpha))\vec{n}\vec{n}\transpose + \sin(\alpha)\begin{bmatrix}
+                    0    & -n_z & n_y  \\
+                    n_z  & 0    & -n_x \\
+                    -n_y & n_x  & 0
+                  \end{bmatrix}
                 $$
                 (其中$\vec{n}$为旋转轴的单位向量)
         \end{itemize}
@@ -2422,28 +2473,28 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
                 \begin{itemize}
                   \item 令$M_{view} = R_{view}T_{view}$
                   \item 将$\vec{e}$平移到原点 : $$
-                          T_{view} = \left[\begin{matrix}
-                              1 & 0 & 0 & -x_e \\
-                              0 & 1 & 0 & -y_e \\
-                              0 & 0 & 1 & -z_e \\
-                              0 & 0 & 0 & 1
-                            \end{matrix}\right]
+                          T_{view} = \begin{bmatrix}
+                            1 & 0 & 0 & -x_e \\
+                            0 & 1 & 0 & -y_e \\
+                            0 & 0 & 1 & -z_e \\
+                            0 & 0 & 0 & 1
+                          \end{bmatrix}
                         $$
                   \item 将$\hat{\vec{g}}$旋转到-z方向,将$\hat{\vec{t}}$旋转到y方向,($\hat{\vec{g}} \times \hat{\vec{t}}$)旋转到x方向 : $$
-                          R_{view} = \left[\begin{matrix}
-                              x_{\hat{\vec{g}} \times \hat{\vec{t}}} & y_{\hat{\vec{g}} \times \hat{\vec{t}}} & z_{\hat{\vec{g}} \times \hat{\vec{t}}} & 0 \\
-                              x_{\hat{\vec{t}}}                      & y_{\hat{\vec{t}}}                      & z_{\hat{\vec{t}}}                      & 0 \\
-                              x_{-\hat{\vec{g}}}                     & y_{-\hat{\vec{g}}}                     & z_{-\hat{\vec{g}}}                     & 0 \\
-                              0                                      & 0                                      & 0                                      & 1
-                            \end{matrix}\right]
+                          R_{view} = \begin{bmatrix}
+                            x_{\hat{\vec{g}} \times \hat{\vec{t}}} & y_{\hat{\vec{g}} \times \hat{\vec{t}}} & z_{\hat{\vec{g}} \times \hat{\vec{t}}} & 0 \\
+                            x_{\hat{\vec{t}}}                      & y_{\hat{\vec{t}}}                      & z_{\hat{\vec{t}}}                      & 0 \\
+                            x_{-\hat{\vec{g}}}                     & y_{-\hat{\vec{g}}}                     & z_{-\hat{\vec{g}}}                     & 0 \\
+                            0                                      & 0                                      & 0                                      & 1
+                          \end{bmatrix}
                         $$
                   \item 仔细思考,发现上面想要直接计算出来过于繁琐,应当反向思考—求出将坐标系变换到相机的位置的矩阵再求逆 : $$
-                          R^{-1}_{view} = \left[\begin{matrix}
-                              x_{\hat{\vec{g}} \times \hat{\vec{t}}} & x_{\hat{\vec{t}}} & x_{-\hat{\vec{g}}} & 0 \\
-                              y_{\hat{\vec{g}} \times \hat{\vec{t}}} & y_{\hat{\vec{t}}} & y_{-\hat{\vec{g}}} & 0 \\
-                              z_{\hat{\vec{g}} \times \hat{\vec{t}}} & z_{\hat{\vec{t}}} & z_{-\hat{\vec{g}}} & 0 \\
-                              0                                      & 0                 & 0                  & 1
-                            \end{matrix}\right]
+                          R^{-1}_{view} = \begin{bmatrix}
+                            x_{\hat{\vec{g}} \times \hat{\vec{t}}} & x_{\hat{\vec{t}}} & x_{-\hat{\vec{g}}} & 0 \\
+                            y_{\hat{\vec{g}} \times \hat{\vec{t}}} & y_{\hat{\vec{t}}} & y_{-\hat{\vec{g}}} & 0 \\
+                            z_{\hat{\vec{g}} \times \hat{\vec{t}}} & z_{\hat{\vec{t}}} & z_{-\hat{\vec{g}}} & 0 \\
+                            0                                      & 0                 & 0                  & 1
+                          \end{bmatrix}
                         $$
                         由于旋转矩阵是正交矩阵,所以求逆等于求转置。
                 \end{itemize}
@@ -2468,18 +2519,18 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
                         \includegraphics[scale=0.5]{resources/OrthographicProjection.png}
 
                         矩阵形式为:$$
-                          M_{ortho} = \left[\begin{matrix}
-                              \frac{2}{r - l} & 0               & 0               & 0 \\
-                              0               & \frac{2}{t - b} & 0               & 0 \\
-                              0               & 0               & \frac{2}{n - f} & 0 \\
-                              0               & 0               & 0               & 1
-                            \end{matrix}\right]
-                          \left[\begin{matrix}
-                              1 & 0 & 0 & -\frac{r + l}{2} \\
-                              0 & 1 & 0 & -\frac{t + b}{2} \\
-                              0 & 0 & 1 & -\frac{n + f}{2} \\
-                              0 & 0 & 0 & 1
-                            \end{matrix}\right]
+                          M_{ortho} = \begin{bmatrix}
+                            \cfrac{2}{r - l} & 0                & 0                & 0 \\
+                            0                & \cfrac{2}{t - b} & 0                & 0 \\
+                            0                & 0                & \cfrac{2}{n - f} & 0 \\
+                            0                & 0                & 0                & 1
+                          \end{bmatrix}
+                          \begin{bmatrix}
+                            1 & 0 & 0 & -\cfrac{r + l}{2} \\
+                            0 & 1 & 0 & -\cfrac{t + b}{2} \\
+                            0 & 0 & 1 & -\cfrac{n + f}{2} \\
+                            0 & 0 & 0 & 1
+                          \end{bmatrix}
                         $$
 
                         \begin{itemize}
@@ -2498,119 +2549,119 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
 
                         \includegraphics[scale=0.5]{resources/perspectiveProjection_middle.png}
 
-                        $y^\prime = \frac{n}{z}y$,由这个公式就可以算出来压缩后的y,并且结果是满足要求的。
+                        $y^\prime = \cfrac{n}{z}y$,由这个公式就可以算出来压缩后的y,并且结果是满足要求的。
 
-                        类似的,还有$x^\prime = \frac{n}{z}x$
+                        类似的,还有$x^\prime = \cfrac{n}{z}x$
 
                         于是得出结论：$$
-                          \left[\begin{array}{c}
-                              x \\
-                              y \\
-                              z \\
-                              1
-                            \end{array}\right]
+                          \begin{bmatrix}
+                            x \\
+                            y \\
+                            z \\
+                            1
+                          \end{bmatrix}
                           \Rightarrow
-                          \left[\begin{array}{c}
-                              \frac{nx}{z} \\
-                              \frac{ny}{z} \\
-                              unknow       \\
-                              1            \\
-                            \end{array}\right]
+                          \begin{bmatrix}
+                            \cfrac{nx}{z} \\
+                            \cfrac{ny}{z} \\
+                            unknow        \\
+                            1             \\
+                          \end{bmatrix}
                           ==
-                          \left[\begin{array}{c}
-                              nx           \\
-                              ny           \\
-                              still unknow \\
-                              z
-                            \end{array}\right]
+                          \begin{bmatrix}
+                            nx           \\
+                            ny           \\
+                            still unknow \\
+                            z
+                          \end{bmatrix}
                         $$
                         因此，透视变换的本质就是由目标平面和被投影平面构造一个直角三角形
 
                         由此写出未完成的投影矩阵 : $$
                           M_{persp \to ortho}
                           =
-                          \left[\begin{matrix}
-                              n & 0 & 0 & 0 \\
-                              0 & n & 0 & 0 \\
-                              ? & ? & ? & ? \\
-                              0 & 0 & 1 & 0
-                            \end{matrix}\right]
+                          \begin{bmatrix}
+                            n & 0 & 0 & 0 \\
+                            0 & n & 0 & 0 \\
+                            ? & ? & ? & ? \\
+                            0 & 0 & 1 & 0
+                          \end{bmatrix}
                         $$
 
                         而这一行未知的也一定与z有关系。
 
                         另外，任何在目标平面上的点被投影后一定在原地，也就是说:$$
-                          \left[\begin{array}{c}
-                              x \\
-                              y \\
-                              n \\
-                              1
-                            \end{array}\right]
+                          \begin{bmatrix}
+                            x \\
+                            y \\
+                            n \\
+                            1
+                          \end{bmatrix}
                           \Rightarrow
-                          \left[\begin{array}{c}
-                              x \\
-                              y \\
-                              n \\
-                              1
-                            \end{array}\right]
+                          \begin{bmatrix}
+                            x \\
+                            y \\
+                            n \\
+                            1
+                          \end{bmatrix}
                           ==
-                          \left[\begin{array}{c}
-                              nx  \\
-                              ny  \\
-                              n^2 \\
-                              n
-                            \end{array}\right]
+                          \begin{bmatrix}
+                            nx  \\
+                            ny  \\
+                            n^2 \\
+                            n
+                          \end{bmatrix}
                         $$
 
                         仔细思考可以得出:矩阵第三行前两个未知数一定为0:$$
-                          \left[\begin{array}{cccc}
-                              0 & 0 & A & B
-                            \end{array}\right]
-                          \left[\begin{array}{c}
-                              x \\
-                              y \\
-                              n \\
-                              1
-                            \end{array}\right]
+                          \begin{bmatrix}
+                            0 & 0 & A & B
+                          \end{bmatrix}
+                          \begin{bmatrix}
+                            x \\
+                            y \\
+                            n \\
+                            1
+                          \end{bmatrix}
                           =
                           n^2
                         $$
 
                         结合另一件事 : 被投影平面上的中心点投影后位置不变,可得出:$$
                           \begin{cases}
-                            \left[\begin{array}{cccc}
-                                0 & 0 & A & B
-                              \end{array}\right]
-                            \left[\begin{array}{c}
-                                x \\
-                                y \\
-                                n \\
-                                1
-                              \end{array}\right]
+                            \begin{bmatrix}
+                              0 & 0 & A & B
+                            \end{bmatrix}
+                            \begin{bmatrix}
+                              x \\
+                              y \\
+                              n \\
+                              1
+                            \end{bmatrix}
                             =
                             n^2
                             \rightarrow
                             An + B = n^2 \\
-                            \left[\begin{array}{c}
-                                0 \\
-                                0 \\
-                                f \\
-                                1
-                              \end{array}\right]
+                            \begin{bmatrix}
+                              0 \\
+                              0 \\
+                              f \\
+                              1
+                            \end{bmatrix}
                             \Rightarrow
-                            \left[\begin{array}{c}
-                                0 \\
-                                0 \\
-                                f \\
-                                1
-                              \end{array}\right]
+                            \begin{bmatrix}
+                              0 \\
+                              0 \\
+                              f \\
+                              1
+                            \end{bmatrix}
                             ==
-                            \left[\begin{array}{c}
-                                0   \\
-                                0   \\
-                                f^2 \\
-                                f
-                              \end{array}\right]
+                            \begin{bmatrix}
+                              0   \\
+                              0   \\
+                              f^2 \\
+                              f
+                            \end{bmatrix}
                             \rightarrow
                             Af + B = f^2
                           \end{cases}
@@ -2623,12 +2674,12 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
                         所以 : $$
                           M_{persp \to ortho}
                           =
-                          \left[\begin{matrix}
-                              n & 0 & 0     & 0   \\
-                              0 & n & 0     & 0   \\
-                              0 & 0 & n + f & -nf \\
-                              0 & 0 & 1     & 0
-                            \end{matrix}\right]
+                          \begin{bmatrix}
+                            n & 0 & 0     & 0   \\
+                            0 & n & 0     & 0   \\
+                            0 & 0 & n + f & -nf \\
+                            0 & 0 & 1     & 0
+                          \end{bmatrix}
                         $$
 
                         最后将正交投影和此式结合起来使矩阵变得完整 : $M_{persp} = M_{ortho}M_{persp \to ortho}$
