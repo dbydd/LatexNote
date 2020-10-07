@@ -1,0 +1,14 @@
+{
+  "folders": [
+	{
+		"path": ".."
+	},
+	{
+		"path": "..\\..\\..\\scoop\\apps\\python\\current\\Lib\\site-packages\\manimlib"
+	},
+	{
+		"path": "..\\..\\languageTestBin"
+	}
+],
+  "settings": {}
+}

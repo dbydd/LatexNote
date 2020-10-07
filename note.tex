@@ -46,8 +46,29 @@
 \newcommand{\bigCase}[1]{\left(#1\right)}
 \newcommand{\innerProduct}[2]{\langle#1,#2\rangle}
 \newcommand{\transpose}{^T}
+\newcommand{\spaceline}{\\\indent}
+\newcommand{\directionDerivative}[3]{\left.\cfrac{\partial #1}{\partial #2}\right|_{#3}}
 
-
+% \newcommand{\drawBaseAxisInTikz}{
+%   \draw[->,color = red] (-5,0) -- (5,0) node[right]{x};
+%   \draw[->,color = blue] (0,-5) -- (0,5) node[above]{y};
+%   \filldraw(0,0) circle (0.05);
+%   \node (center) at (-0.25,-0.25){o};
+%   \foreach \x in {0,1,...,8}
+%   {
+%     \draw[xshift=\x cm] (-4,0) -- (-4,0.1);
+%     \draw[yshift=\x cm] (0,-4) -- (0.1,-4);
+%     };
+%     \foreach \x in {-4,...,-1}
+%     \node[below] at(\x,0){\x};
+%     \foreach \x in {1,...,4}
+%     \node[below] at(\x,0){\x};
+%     \foreach \y in {-4,...,-1}
+%     \node[left] at(0,\y){\y};
+%     \foreach \y in {1,...,4}
+%     \node[left] at(0,\y){\y};
+%     }
+    
 \begin{document}
 \pagestyle{empty}{
   \maketitle
@@ -56,7 +77,7 @@
       \item 誊录纸质笔记
       \item 隐函数存在定理
       \item 重写线性代数
-      \item 场论:p5
+      \item 场论:p8
       \item 补充多个section,计算机图形学,场论等
     \end{enumerate}
   }
@@ -79,18 +100,18 @@
 
 假设有一连续函数$\fint:[a,b]\rightarrow \mathbf{R}$, 且假设$\fint(a)<\fint(b)$, 若对任意数$u$满足$\fint(a)<u<\fint(b)$,则存在一点$c,a<c<b$,使得$\fint(c) = u$,当$\fint(a)>\fint(b)$时也有类似叙述
 
-直观的比喻:这代表在$[a,b]$区间上可以画出一条连续曲线,而不让笔离开纸面。
+直观的比喻:这代表在$[a,b]$区间上可以画出一条连续曲线,而不让笔离开纸面.
 \newline
 
 定理:
 
-假设$I = [a,b]$是一个实数里的闭区间,而$f:I\rightarrow\mathbf{R}$是连续函数,那么其像集$\fint(I)$也是区间。他或者包含$[\fint(a),\fint(b)]$(如果$\fint(b)\leq\fint(a)$)。换言之:
+假设$I = [a,b]$是一个实数里的闭区间,而$f:I\rightarrow\mathbf{R}$是连续函数,那么其像集$\fint(I)$也是区间.他或者包含$[\fint(a),\fint(b)]$(如果$\fint(b)\leq\fint(a)$).换言之:
 
-$\fint(I)\supseteq[\fint(a),\fint(b)]$。
+$\fint(I)\supseteq[\fint(a),\fint(b)]$.
 
 或:
 
-$\fint(I)\supseteq[\fint(b), \fint(a)]$。
+$\fint(I)\supseteq[\fint(b), \fint(a)]$.
 
 介值定理通常以下述等价的形式表述:假设$f:I\rightarrow\mathbf{R}$是连续函数,且实数$u$满足$\fint(a)<u<\fint(b)$或$\fint(a)>u>\fint(b)$,则存在$c\in(a,b)$使得$\fint(c) = u$
 
@@ -103,6 +124,7 @@ $\fint(I)\supseteq[\fint(b), \fint(a)]$。
 }%二项式定理结尾
 
 \subsection{排列组合}{
+
   排列:$\mathPermutation{m}{n} = \cfrac{m!}{(m-n)!}$
 
   组合:$\mathCombination{m}{n} = \cfrac{\mathPermutation{m}{n}}{m!} = \cfrac{n!}{m!(n-m)!}$
@@ -125,7 +147,7 @@ $$
 
 $\sum\limits_{1 \leq i_1 < i_2 < \dotsm < i_k \leq n}x_{i_{1}}x_{i_{2}} \dotsm x_{i_{k}} = (-1)^k\cfrac{a_{n-k}}{a_n}$
 
-其中$i_1 < i_2 < \dotsm < i_k$是要让所有根的组合都恰好出现一次。
+其中$i_1 < i_2 < \dotsm < i_k$是要让所有根的组合都恰好出现一次.
 
 (等号的左边被称作是初等对称多项式)
 }%韦达定理的普遍情况结尾
@@ -135,7 +157,7 @@ $\sum\limits_{1 \leq i_1 < i_2 < \dotsm < i_k \leq n}x_{i_{1}}x_{i_{2}} \dotsm x
 
   $x_1 + x_2 = -\cfrac{b}{a},\qquad x_1x_2 = \cfrac{c}{a}$
 
-  在这个情况下，韦达定理的逆定理同样成立 : 给定一个一元二次多项式$ax^2 + bx + c$,如果有两个数$x_1,x_2$,满足$x_1 + x_2 = -\cfrac{b}{a}$和$x_1x_2 = \cfrac{c}{a}$,则$x_1,x_2$就是多项式$ax^2 + bx + c$的两根。
+  在这个情况下，韦达定理的逆定理同样成立 : 给定一个一元二次多项式$ax^2 + bx + c$,如果有两个数$x_1,x_2$,满足$x_1 + x_2 = -\cfrac{b}{a}$和$x_1x_2 = \cfrac{c}{a}$,则$x_1,x_2$就是多项式$ax^2 + bx + c$的两根.
 }%n = 2的情况(二次)结尾
 
 \subsubsection{n = 3的情况(三次)}{
@@ -147,20 +169,20 @@ $\sum\limits_{1 \leq i_1 < i_2 < \dotsm < i_k \leq n}x_{i_{1}}x_{i_{2}} \dotsm x
 }%韦达定理结尾
 
 \subsection{极坐标}{
-极坐标是不同于笛卡尔坐标系(直角坐标系)的另一种函数图像平面。
+极坐标是不同于笛卡尔坐标系(直角坐标系)的另一种函数图像平面.
 
-极坐标不同于笛卡尔坐标系,他没有x和y轴,而是用基准轴和角度表示一个点。
+极坐标不同于笛卡尔坐标系,他没有x和y轴,而是用基准轴和角度表示一个点.
 
 \subsubsection{极坐标系下的面积}{
   \includegraphics{resources/polar_coordness.png}
 
   公式为$\cfrac{1}{2}\definiteIntegral{\beta}{\alpha}(p(\theta))^2d\theta$
 
-  p是形成曲线的函数。
+  p是形成曲线的函数.
   }%极坐标下的面积结尾
 
   \subsubsection{转换公式}{
-    从笛卡尔坐标系到极坐标有一套转换公式。
+    从笛卡尔坐标系到极坐标有一套转换公式.
 
     $$
       \begin{cases}
@@ -179,7 +201,7 @@ $\sum\limits_{1 \leq i_1 < i_2 < \dotsm < i_k \leq n}x_{i_{1}}x_{i_{2}} \dotsm x
 
   注:当且仅当$a = b$时取等号
 
-  其中$\cfrac{a+b}{2}$称为$a,b$的算数平均数,$\sqrt{ab}$称为$a,b$的几何平均数。
+  其中$\cfrac{a+b}{2}$称为$a,b$的算数平均数,$\sqrt{ab}$称为$a,b$的几何平均数.
 
   将其变形,可得:
   \begin{enumerate}
@@ -199,15 +221,15 @@ $\sum\limits_{1 \leq i_1 < i_2 < \dotsm < i_k \leq n}x_{i_{1}}x_{i_{2}} \dotsm x
 
           由$(a^2 + b^2)(c^2 + d^2)\geq(ac + bd)^2$变形:$ac + bd \leq \sqrt{(a^2 + b^2)(c^2 + d^2)}$
 
-          当且仅当$ab = cd$(即$\cfrac{a}{c} = \cfrac{b}{d}$)时。
+          当且仅当$ab = cd$(即$\cfrac{a}{c} = \cfrac{b}{d}$)时.
 
           一般形式为$\upDownSum{n}{i = 1}a_i^2\upDownSum{n}{i = 1}b_i^2\geq\bigCase{\upDownSum{n}{i = 1}a_ib_i)}^2$
 
-          当$\cfrac{a_1}{b_1} = \cfrac{a_2}{b_2} = \dots = \cfrac{a_n}{b_n}$或$a_i,b_i,i = 1,2,3,\dots,n$中至少有一方全为$0$时等号成立。
+          当$\cfrac{a_1}{b_1} = \cfrac{a_2}{b_2} = \dots = \cfrac{a_n}{b_n}$或$a_i,b_i,i = 1,2,3,\dots,n$中至少有一方全为$0$时等号成立.
 
           一般形式推广:$(x_1 + y_1 + \dots)(x_2 + y_2 + \dots)\dots(x_n + y_n + \dots) \geq \left[\bigCase{\upDownProd{n}{i = 1}x_i}^{\cfrac{1}{n}} + \bigCase{\upDownProd{n}{i = 1}y_i}^{\cfrac{1}{n}} + \dots\right]^n$
 
-          此推广形式又称卡尔松不等式,其表述是:在m×n矩阵中,各列元素之和的几何平均不小于各行元素的几何平均之和。二维形式是卡尔松不等式n=2时的特殊情况。
+          此推广形式又称卡尔松不等式,其表述是:在m×n矩阵中,各列元素之和的几何平均不小于各行元素的几何平均之和.二维形式是卡尔松不等式n=2时的特殊情况.
           }
     \item {
           向量形式:
@@ -216,15 +238,15 @@ $\sum\limits_{1 \leq i_1 < i_2 < \dotsm < i_k \leq n}x_{i_{1}}x_{i_{2}} \dotsm x
 
           $|\innerProduct{\vec{x}}{\vec{y}}^2| \leq \innerProduct{\vec{x}}{\vec{x}} \times \innerProduct{\vec{y}}{\vec{y}}$
 
-          其中$\innerProduct{\cdot}{\cdot}$表示内积。等价地,将两边开方,等式右边即可以写为两向量范数乘积的形式。
+          其中$\innerProduct{\cdot}{\cdot}$表示内积.等价地,将两边开方,等式右边即可以写为两向量范数乘积的形式.
 
-          $|\innerProduct{\vec{x}}{\vec{y}}| \leq ||\vec{x}||\cdot||\vec{y}||$。
+          $|\innerProduct{\vec{x}}{\vec{y}}| \leq ||\vec{x}||\cdot||\vec{y}||$.
 
-          另外,当且仅当$x$和$y$线性相关时,等号成立(仅两个向量而言,线性相关等同于平行)。
+          另外,当且仅当$x$和$y$线性相关时,等号成立(仅两个向量而言,线性相关等同于平行).
 
-          若$x_1,\dotsm,x_n \in \mathConstant$和$y_1,\dotsm,y_n \in mathConstant$有虚部,内积即为标注内积。如果用上划线标记共轭复数,这个不等式可以更明确的表述为:
+          若$x_1,\dotsm,x_n \in \mathConstant$和$y_1,\dotsm,y_n \in mathConstant$有虚部,内积即为标注内积.如果用上划线标记共轭复数,这个不等式可以更明确的表述为:
 
-          $|\vec{x_1}\bar{\vec{y_1}} + \dotsm + \vec{x_n}\bar{\vec{y_n}}|^2\leq (|\vec{x_1}|^2 + \dotsm + |\vec{x_n}|^2)(|\vec{y_1}|^2 + \dotsm + |\vec{y_n}|^2)$。
+          $|\vec{x_1}\bar{\vec{y_1}} + \dotsm + \vec{x_n}\bar{\vec{y_n}}|^2\leq (|\vec{x_1}|^2 + \dotsm + |\vec{x_n}|^2)(|\vec{y_1}|^2 + \dotsm + |\vec{y_n}|^2)$.
           }
     \item {
           三角形式:
@@ -233,7 +255,7 @@ $\sum\limits_{1 \leq i_1 < i_2 < \dotsm < i_k \leq n}x_{i_{1}}x_{i_{2}} \dotsm x
 
           也就是说:$\sqrt{a^2 + b^2} + \sqrt{c^2 + d^2} \geq \sqrt{(a - c)^2 + (b - d)^2}$
 
-          等号成立的条件为:$ad = bc,且ac + bc \geq 0$(即$\cfrac{a}{c} = \cfrac{b}{d}$)。
+          等号成立的条件为:$ad = bc,且ac + bc \geq 0$(即$\cfrac{a}{c} = \cfrac{b}{d}$).
           }
     \item {
           积分形式:
@@ -245,15 +267,15 @@ $\sum\limits_{1 \leq i_1 < i_2 < \dotsm < i_k \leq n}x_{i_{1}}x_{i_{2}} \dotsm x
 
           设$V$是一线性空间,定义内积,记作$\innerProduct{\alpha}{\beta}$,则:
 
-          $|\innerProduct{\alpha}{\beta}| \leq |\alpha||\beta|$。
+          $|\innerProduct{\alpha}{\beta}| \leq |\alpha||\beta|$.
 
-          其中$\alpha,\beta$为$V$中的向量。
+          其中$\alpha,\beta$为$V$中的向量.
           }
   \end{itemize}
 }%柯西不等式结尾
 
 \subsubsection{均值不等式}{
-平均数不等式,或称平均值不等式、均值不等式,是数学上的一组不等式,也是基本不等式的推广。它是说:
+平均数不等式,或称平均值不等式、均值不等式,是数学上的一组不等式,也是基本不等式的推广.它是说:
 
 如果$x_{1},x_{2},\dotsm,x_{n}$是正数,则:
 
@@ -269,7 +291,7 @@ $\mathbf{A}_n = \cfrac{\upDownSum{n}{i = 1}x_i}{n} = \cfrac{x_1 + x_2 + x_n}{n}$
 
 $\mathbf{Q}_n = \sqrt{\cfrac{\upDownSum{n}{i = 1}x^2_i}{n}} = \sqrt{\cfrac{x^2_1 + x^2_2 + \dotsm + x^2_n}{n}}$
 
-当且仅当$x_1 = x_2 = \dotsm = x_n$,等号成立。
+当且仅当$x_1 = x_2 = \dotsm = x_n$,等号成立.
 
 当$n = 2$时:
 
@@ -281,13 +303,13 @@ $\cfrac{2}{\cfrac{1}{x_1} + \cfrac{1}{x_2}} = \cfrac{2x_1x_2}{x_1 + x_2}\leq\sqr
 }%二元均值不等式结尾  
 
 \subsubsection{算术-几何均值不等式}{
-  算术-几何平均值不等式,简称算几不等式,是一个常见而基本的不等式,表现算术平均数和几何平均数之间恒定的不等关系。设$x_1,x_2,\dots,x_n$为$n$个正实数,他们的算数平均数是$\mathbf{A}_n = \cfrac{x_1 + x_2 + \dotsm + x_n}{n}$,他们的几何平均数是$\mathbf{G}_n = \sqrt[n]{x_1\cdot x_2 \dotsm x_n}$。算术-几何平均值不等式表明,对任意的正实数$x_1,\dotsm,x_n$,总有:
+  算术-几何平均值不等式,简称算几不等式,是一个常见而基本的不等式,表现算术平均数和几何平均数之间恒定的不等关系.设$x_1,x_2,\dots,x_n$为$n$个正实数,他们的算数平均数是$\mathbf{A}_n = \cfrac{x_1 + x_2 + \dotsm + x_n}{n}$,他们的几何平均数是$\mathbf{G}_n = \sqrt[n]{x_1\cdot x_2 \dotsm x_n}$.算术-几何平均值不等式表明,对任意的正实数$x_1,\dotsm,x_n$,总有:
 
   \begin{center}
     $\mathbf{A}_n\geq\mathbf{G}_n$
   \end{center}
 
-  等号当且仅当$x_1 = x_2 = \dotsm = x_n$时成立。
+  等号当且仅当$x_1 = x_2 = \dotsm = x_n$时成立.
 
 }%算术-几何均值不等式结尾
 
@@ -312,7 +334,7 @@ $\cfrac{2}{\cfrac{1}{x_1} + \cfrac{1}{x_2}} = \cfrac{2x_1x_2}{x_1 + x_2}\leq\sqr
 
 \subsection{零散的思想}{
   \begin{enumerate}
-    \item 正变换是数学的重要工具,三角变换是只变其形不变其质的。三角变换常常先寻找式子所包含的各个角之间的联系,并以此为依据选择可以联系它们的适当公式,通过换元法把三角恒等变换问题转化为代数恒等变换问题。
+    \item 正变换是数学的重要工具,三角变换是只变其形不变其质的.三角变换常常先寻找式子所包含的各个角之间的联系,并以此为依据选择可以联系它们的适当公式,通过换元法把三角恒等变换问题转化为代数恒等变换问题.
   \end{enumerate}
 }%零散的思想结尾
 
@@ -370,7 +392,7 @@ $\cfrac{2}{\cfrac{1}{x_1} + \cfrac{1}{x_2}} = \cfrac{2x_1x_2}{x_1 + x_2}\leq\sqr
 }%积化和差结尾
 
 \subsection{诱导公式}{
-  \indent 奇变偶不变,符号看象限。
+  \indent 奇变偶不变,符号看象限.
   \subsubsection{第一组诱导公式}{
     $\sin{(2k\pi + \alpha)} = \sin{\alpha}$
 
@@ -522,7 +544,7 @@ $\mathbf{S}\triangle_{ABC} = \cfrac{1}{2}AB \cdot CD = \cfrac{1}{2}cb\sin A$,即
 
 同理得:$\mathbf{S}\triangle_{ABC} = \cfrac{1}{2}\sin B, \mathbf{S}\triangle_{ABC} = \cfrac{1}{2}ab\sin C$.
 
-这就是说,三角形的面积等于任意两边与他们夹角正弦值的一半。
+这就是说,三角形的面积等于任意两边与他们夹角正弦值的一半.
 
 \subsubsection{正弦定理}
 将$\cfrac{1}{2}bc\sin A = \cfrac{1}{2}ac\sin B = \cfrac{1}{2}ab\sin C$三个公式同除$\cfrac{1}{2}abc$,得:
@@ -537,7 +559,7 @@ $\cfrac{\sin A}{a} = \cfrac{\sin B}{b} = \cfrac{\sin C}{c}$, 也可表示为:$\c
 
 \includegraphics[scale=0.5]{resources/insideTriangleAndCircleOutSide.png}
 
-由圆周角定理可知$\angle D = \angle A,BD = 2R,bc = a$。于是$a = BC = BD\sin A = 2R\sin A$,即:
+由圆周角定理可知$\angle D = \angle A,BD = 2R,bc = a$.于是$a = BC = BD\sin A = 2R\sin A$,即:
 
 $\cfrac{a}{\sin A} = 2R$
 
@@ -575,29 +597,29 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
 }%余弦定理结尾
 \\
 
-\indent这些关系在直角三角形中也成立。
+\indent这些关系在直角三角形中也成立.
 
 }%三角函数结尾
 
 \section{空间解析几何}{
-  不容小觑且难以理解的部分,加油。
+  不容小觑且难以理解的部分,加油.
 
   \subsection{关于向量}{
-    在空间解析几何部分不会引入过多有关线性代数的知识(比如向量空间)。定理与定义将会互相交织。
+    在空间解析几何部分不会引入过多有关线性代数的知识(比如向量空间).定理与定义将会互相交织.
 
-    注:本章中的向量默认为三维向量。
+    注:本章中的向量默认为三维向量.
 
     \subsubsection{关于向量的基本概念}{
       有以下概念:
       \begin{itemize}
-        \item 数乘:$\lambda \vec{\alpha}$,即$\lambda$倍长度的$\vec{\alpha}$,当$\lambda > 0$时,方向与原向量相同。当$\lambda < 0$时,方向相反。数乘前后向量的起点一致。
-        \item 取模:$|\lambda\vec{\alpha}| = |\lambda||\vec{\alpha}|$,前一个“$||$”为绝对值,后一个“$||$”为取模。最后得出的结果为$|\lambda\vec{\alpha}|$的长度。
+        \item 数乘:$\lambda \vec{\alpha}$,即$\lambda$倍长度的$\vec{\alpha}$,当$\lambda > 0$时,方向与原向量相同.当$\lambda < 0$时,方向相反.数乘前后向量的起点一致.
+        \item 取模:$|\lambda\vec{\alpha}| = |\lambda||\vec{\alpha}|$,前一个“$||$”为绝对值,后一个“$||$”为取模.最后得出的结果为$|\lambda\vec{\alpha}|$的长度.
         \item 单位化:$|\cfrac{\vec{\alpha}}{|\vec{\alpha}|}| = 1$,即将一个向量除以他的长度得到的是单位向量(长度为1的向量)
-        \item 在三维标准正交坐标系中存在三个单位向量:$\vec{i},\vec{j},\vec{k}$。他们互相垂直,长度为1。坐标系中任意一点$(x,y,z)$都可以表示为一个向量$\vec{r},\vec{r} = x\vec{i} + y\vec{j} + z\vec{k}$。
-        \item 设$\vec{a} = (ax,ay,az),\vec{b} = (bx,by,bz)$。则:$\vec{a} \pm \vec{b} = (ax \pm bx,ay \pm by,az \pm bz)$、$\lambda\vec{a} = (\lambda ax,\lambda ay,\lambda az)$。其中$ax,ay,az,bx,by,bz$称为分量。
-        \item 平行:$\vec{b} = \lambda\vec{a},\cfrac{ax}{bx} = \cfrac{ay}{by} = \cfrac{az}{bz}$即:对应分量之比相同。
-        \item 向量长度(取模)公式:$\vec{r} = (x,y,z),|\vec{r}| = \sqrt{x^2 + y^2 + z^2}$。注:对于任意维度的向量,取模都是各分量平方和开根号。
-        \item 两点之间距离公式:$A:(x_1,y_1,z_1),B:(x_2,y_2,z_2),|\vec{AB}| = \sqrt{(x_1 - x_2)^2 + (y_1 -y_2)^2 + (z_1 - z_2)^2}$。注:在任意维度中,两点之间的距离公式都是对应分量作差的平方和开根号。
+        \item 在三维标准正交坐标系中存在三个单位向量:$\vec{i},\vec{j},\vec{k}$.他们互相垂直,长度为1.坐标系中任意一点$(x,y,z)$都可以表示为一个向量$\vec{r},\vec{r} = x\vec{i} + y\vec{j} + z\vec{k}$.
+        \item 设$\vec{a} = (ax,ay,az),\vec{b} = (bx,by,bz)$.则:$\vec{a} \pm \vec{b} = (ax \pm bx,ay \pm by,az \pm bz)$、$\lambda\vec{a} = (\lambda ax,\lambda ay,\lambda az)$.其中$ax,ay,az,bx,by,bz$称为分量.
+        \item 平行:$\vec{b} = \lambda\vec{a},\cfrac{ax}{bx} = \cfrac{ay}{by} = \cfrac{az}{bz}$即:对应分量之比相同.
+        \item 向量长度(取模)公式:$\vec{r} = (x,y,z),|\vec{r}| = \sqrt{x^2 + y^2 + z^2}$.注:对于任意维度的向量,取模都是各分量平方和开根号.
+        \item 两点之间距离公式:$A:(x_1,y_1,z_1),B:(x_2,y_2,z_2),|\vec{AB}| = \sqrt{(x_1 - x_2)^2 + (y_1 -y_2)^2 + (z_1 - z_2)^2}$.注:在任意维度中,两点之间的距离公式都是对应分量作差的平方和开根号.
         \item {
               两向量夹角:(取锐角)设$\vec{a} = (a_1, a_2, a_3),\vec{b} = (b_1,b_2,b_3)$,设夹角为$\theta$,则:$\cos\theta = \cfrac{|a_1b_1 + a_2b_2 + a_3b_3|}{\sqrt{a_1^2 + a_2^2 + a_3^2}\sqrt{b_1^2 + b_2^2 + b_3^2}}$
 
@@ -607,7 +629,7 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
                 \item 平行:$\cfrac{a_1}{b_1} = \cfrac{a_2}{b_2} = \cfrac{a_3}{b_3}$
               \end{enumerate}
 
-              求两直线夹角也同理。
+              求两直线夹角也同理.
               }
       \end{itemize}
     }%关于向量的基本概念结尾
@@ -623,15 +645,15 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
 
       $\cos\gamma = \cfrac{z}{|\vec{OM}|} = \cfrac{z}{|\vec{r}|}$
 
-      其中$\alpha,\beta,\gamma$称为$\vec{OM}$的方向角。
+      其中$\alpha,\beta,\gamma$称为$\vec{OM}$的方向角.
 
       有恒等式:$\cos^2\alpha + \cos^2\beta + \cos^2\gamma = 1$
 
-      方向余弦是指在解析几何里,一个向量的三个方向余弦分别是这向量与三个坐标轴之间的角度的余弦。两个向量之间的方向余弦指的是这两个向量之间的角度的余弦。在此处指的是前者,也就是:$\cos\alpha,\cos\beta,\cos\gamma$。
+      方向余弦是指在解析几何里,一个向量的三个方向余弦分别是这向量与三个坐标轴之间的角度的余弦.两个向量之间的方向余弦指的是这两个向量之间的角度的余弦.在此处指的是前者,也就是:$\cos\alpha,\cos\beta,\cos\gamma$.
 
       将方向余弦作为三个分量,即:$(\cos\alpha,\cos\beta,\cos\gamma) = (\cfrac{x}{|\vec{r}|}, \cfrac{y}{|\vec{r}|}, \cfrac{z}{|\vec{r}|}) = \cfrac{1}{|\vec{r}|}\vec{r} = e_r$
 
-      其中$e_r$是个单位向量,表示以向量$\vec{r}$的方向余弦为坐标的向量。
+      其中$e_r$是个单位向量,表示以向量$\vec{r}$的方向余弦为坐标的向量.
 
     }%方向角与方向余弦结尾
 
@@ -670,7 +692,7 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
     }%数量积/点乘结尾
 
     \subsubsection{向量积/叉乘}{
-      叉乘算出来的是向量,这个向量垂直于其他两个向量。右手法则:食指为$\vec{a}$,中指为$\vec{b}$,拇指为$\vec{c}$
+      叉乘算出来的是向量,这个向量垂直于其他两个向量.右手法则:食指为$\vec{a}$,中指为$\vec{b}$,拇指为$\vec{c}$
 
       $\vec{a}\times\vec{b} = \vec{c}$
 
@@ -679,7 +701,7 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
       \indent有以下性质:
       \begin{itemize}
         \item $\vec{a}\times\vec{a} = 0$
-        \item 有非零向量$\vec{a},\vec{b},\vec{a}\times\vec{b} = 0\ \Rightarrow \vec{a} // \vec{b}$。即:$\vec{a} // \vec{b} \Leftrightarrow \vec{a} \times \vec{b} = 0$
+        \item 有非零向量$\vec{a},\vec{b},\vec{a}\times\vec{b} = 0\ \Rightarrow \vec{a} // \vec{b}$.即:$\vec{a} // \vec{b} \Leftrightarrow \vec{a} \times \vec{b} = 0$
         \item $\vec{b}\times\vec{a} = -\vec{b}\times\vec{a}$
         \item $(\vec{a} + \vec{b})\times\vec{c} = \vec{a} \times \vec{c} + \vec{b} \times \vec{c}$
         \item $(\lambda\vec{a})\times\vec{b} = \vec{a} \times (\lambda\vec{b}) = \lambda(\vec{a}\times\vec{b})$
@@ -734,12 +756,12 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
   \subsection{关于空间平面}{
 
     \subsubsection{空间平面公式}{
-      法线向量与平面垂直。\\
+      法线向量与平面垂直.\\
 
       \indent空间平面有以下表示方法:
       \begin{itemize}
         \item {
-              点法式:知道一点与法线向量。
+              点法式:知道一点与法线向量.
 
               设一点$M_0:(x_0,y_0,z_0)$,法线向量:$\vec{n} = (A,B,C)$
 
@@ -748,7 +770,7 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
               平面的点法式方程为:$A(x - x_0) + B(y - y_0) + C(z - z_0) = 0$
               }
         \item {
-              一般式:三点确定一个向量。以实例演示:
+              一般式:三点确定一个向量.以实例演示:
 
               设$M_1(2,-1,4),M_2(-1,3,-2),M_3(0,2,3)$代入:
 
@@ -768,9 +790,9 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
 
               \indent有以下情况:
               \begin{enumerate}
-                \item $D = 0,Ax + By + Cz = 0$:平面过原点。
+                \item $D = 0,Ax + By + Cz = 0$:平面过原点.
                 \item $A = 0,By + Cz + D = 0$:平面法线垂直与$x$轴且平行于$x$轴,类似情况同理
-                \item $A = B = 0,CZ + D = 0$:平面过$z = -\cfrac{D}{C}$,平行于$xy$轴。
+                \item $A = B = 0,CZ + D = 0$:平面过$z = -\cfrac{D}{C}$,平行于$xy$轴.
               \end{enumerate}
               }
         \item 截距式:$\cfrac{x}{a} + \cfrac{y}{b} + \cfrac{z}{c} = 1$
@@ -780,7 +802,7 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
     \subsubsection{求两平面夹角}{
       其实是求两平面法线的夹角(取锐角)
 
-      因此只要设两平面法线向量为$n_1(A_1,B_1,C_1),n_2(A_2,B_2,C_2)$,然后套向量夹角公式就行了。
+      因此只要设两平面法线向量为$n_1(A_1,B_1,C_1),n_2(A_2,B_2,C_2)$,然后套向量夹角公式就行了.
 
       其中$\theta = (\hat{n_1\ n_2})$或$(\hat{-n_1\ n_2}) = (\pi - (\hat{n_1\ n_2}))$
 
@@ -828,7 +850,7 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
         \item {
               对称式方程:
 
-              设点$M(x,y,z),M_0(x_0,y_0,z_0)$是直线$L$上的任意两点,那么存在向量$\vec{M_0M}$与直线$L$的方向向量$\vec{s}$平行。因此两向量的对应坐标成比例。$(\vec{M_0M} = (x - x_0, y - y_0, z - z_0), \vec{s} = (m,n,p))$，因此得出:
+              设点$M(x,y,z),M_0(x_0,y_0,z_0)$是直线$L$上的任意两点,那么存在向量$\vec{M_0M}$与直线$L$的方向向量$\vec{s}$平行.因此两向量的对应坐标成比例.$(\vec{M_0M} = (x - x_0, y - y_0, z - z_0), \vec{s} = (m,n,p))$，因此得出:
 
               $\cfrac{x - x_0}{m} = \cfrac{y - y_0}{n} = \cfrac{z - z_0}{p} = t$
               }
@@ -856,7 +878,7 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
         \end{cases}
       $$
 
-      其中$A_1,B_1,C_1$与$A_2,B_2,C_2$不成比例。即:$A_1x + B_1y + C_1z + D_1 + \lambda(A_2x + B_2y + C_2z + D_2) = 0, (\lambda \in \mathRealNumberCollection)$
+      其中$A_1,B_1,C_1$与$A_2,B_2,C_2$不成比例.即:$A_1x + B_1y + C_1z + D_1 + \lambda(A_2x + B_2y + C_2z + D_2) = 0, (\lambda \in \mathRealNumberCollection)$
     }%平面束结尾
 
   }%关于空间直线结尾
@@ -923,7 +945,7 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
         \end{cases}
       $$
 
-      其中 $t \in [\alpha,\beta]$,设三个函数都可导且不同时为0。
+      其中 $t \in [\alpha,\beta]$,设三个函数都可导且不同时为0.
 
       则切向量$\vec{T} = \begin{bmatrix}
           \phi\derivative(t_0) & \Phi\derivative(t_0) & \omega\derivative(t_0)
@@ -946,7 +968,7 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
               法线的方程为 : $\cfrac{x - x_0}{F\derivative_x(x_0,y_0,z_0)} = \cfrac{y - y_0}{F\derivative_y(x_0,y_0,z_0)} = \cfrac{z - z_0}{F\derivative_z(x_0,y_0,z_0)}$
               }
         \item {
-              $z = \defFunction{x,y}$,只需让$F = \defFunction{x,y} - z$,然后套公式1。
+              $z = \defFunction{x,y}$,只需让$F = \defFunction{x,y} - z$,然后套公式1.
 
               切平面解析式为 : $f\derivative_x(x_0,y_0)(x - x_0) + f\derivative_y(x_0,y_0)(y - y_0) - (z - z_0) = 0$
               }
@@ -962,7 +984,7 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
 
       \begin{itemize}
         \item {
-              旋转曲面:由二次曲线绕某一坐标轴旋转形成。
+              旋转曲面:由二次曲线绕某一坐标轴旋转形成.
 
               \begin{itemize}
                 \item {
@@ -1003,9 +1025,9 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
 
                       $\cfrac{x^2}{a^2} + \cfrac{y^2}{b^2} + \cfrac{z^2}{c^2} = 1$
 
-                      其中a和b是赤道半径(沿着x和y轴),c是极半径,(沿着z轴)。这三个数都是固定的正实数，决定了椭球的形状。
+                      其中a和b是赤道半径(沿着x和y轴),c是极半径,(沿着z轴).这三个数都是固定的正实数，决定了椭球的形状.
 
-                      如果三个半径都是相等的,那么就是一个球;如果有两个半径是相等的,则是一个类球面。
+                      如果三个半径都是相等的,那么就是一个球;如果有两个半径是相等的,则是一个类球面.
 
                       \begin{itemize}
                         \item $a = b = c$:球
@@ -1014,11 +1036,11 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
                         \item $a \neq b,b \neq c,c \neq a$:不等边椭球(三条边都不相等)
                       \end{itemize}
 
-                      点(a,0,0)、(0,b,0)和(0,0,c)都在曲面上。从原点到这三个点的线段,称为椭球的半主轴。它们与椭圆的半长轴和半短轴相对应。
+                      点(a,0,0)、(0,b,0)和(0,0,c)都在曲面上.从原点到这三个点的线段,称为椭球的半主轴.它们与椭圆的半长轴和半短轴相对应.
 
-                      体积公式为:$\cfrac{4}{3}\pi abc$。
+                      体积公式为:$\cfrac{4}{3}\pi abc$.
 
-                      注意,当三个半径都相等时,这个公式便化为球的体积;两个半径相等时,便化为扁球面或长球面的体积。
+                      注意,当三个半径都相等时,这个公式便化为球的体积;两个半径相等时,便化为扁球面或长球面的体积.
                       }
                 \item {
                       抛物面:
@@ -1052,22 +1074,22 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
                 \item {
                       类球面:
 
-                      类球面是一种二次曲面。二维的椭圆有两个主轴，称为长轴与短轴。在三维空间里，将一个椭圆绕着其任何一主轴旋转，则可得到一个类球面。
+                      类球面是一种二次曲面.二维的椭圆有两个主轴，称为长轴与短轴.在三维空间里，将一个椭圆绕着其任何一主轴旋转，则可得到一个类球面.
 
                       \begin{itemize}
-                        \item 假若，这旋转主轴是长轴，则这个类球面为长球面。例如，英式足球里所用的橄榄球是长球形状。
-                        \item 假若，这旋转主轴是短轴，则这个类球面为扁球面。例如，地球在北极与南极稍微有点扁平，在赤道又有点凸涨。所以，地球是扁球形状。
-                        \item  假若，生成的椭圆是圆圈，则这个类球面为完全对称的圆球面。
+                        \item 假若，这旋转主轴是长轴，则这个类球面为长球面.例如，英式足球里所用的橄榄球是长球形状.
+                        \item 假若，这旋转主轴是短轴，则这个类球面为扁球面.例如，地球在北极与南极稍微有点扁平，在赤道又有点凸涨.所以，地球是扁球形状.
+                        \item  假若，生成的椭圆是圆圈，则这个类球面为完全对称的圆球面.
                       \end{itemize}
 
-                      用另一种方法来描述,类球面是一种椭球面。而椭球面的公式已经给出,其中a与b分别是椭球面在x轴与y轴的赤道半径,c是椭球面在z轴的极半径,这三个正实数的半径决定了椭球面的形状。以z轴为旋转轴的类球面a = b,他的方程为:
+                      用另一种方法来描述,类球面是一种椭球面.而椭球面的公式已经给出,其中a与b分别是椭球面在x轴与y轴的赤道半径,c是椭球面在z轴的极半径,这三个正实数的半径决定了椭球面的形状.以z轴为旋转轴的类球面a = b,他的方程为:
 
                       $\cfrac{x^2 + y^2}{a^2} + \cfrac{z^2}{c^2} = 1$
 
                       \begin{itemize}
                         \item 如果三个半径都相等,则此椭球面是圆球面$(a = c)$
-                        \item 如果类球面的赤道半径小于极半径,则这是类球面中的长球面。$(a < c)$
-                        \item 如果类球面的赤道半径大于极半径,则这是类球面中的扁球面。$(a > c)$
+                        \item 如果类球面的赤道半径小于极半径,则这是类球面中的长球面.$(a < c)$
+                        \item 如果类球面的赤道半径大于极半径,则这是类球面中的扁球面.$(a > c)$
                       \end{itemize}
                       }
                 \item {
@@ -1081,7 +1103,7 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
 
                       可化作三元二次方程:$Ax^2 + Ay^2 + Az^2 + Bx + Cy + Dz + G = 0$(平方项系数相同)
 
-                      其中$D^2 + E^2 + F^2 > 4AG$。
+                      其中$D^2 + E^2 + F^2 > 4AG$.
 
                       当满足以上两点时可逆推出一个三元二次方程是否为一个球面
 
@@ -1092,14 +1114,14 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
 
                       椭圆锥面在直角坐标系中的方程为:$\cfrac{x^2}{a^2} + \cfrac{y^2}{b^2} - \cfrac{z^2}{c^2} = 0$
 
-                      当a = b时就会变成圆锥面。
+                      当a = b时就会变成圆锥面.
                       }
                 \item {
                       椭圆柱面:
 
                       椭圆柱面在直角坐标系中的方程为:$\cfrac{x^2}{a^2} + \cfrac{y^2}{b^2} = 1$
 
-                      当a = b时就会变成圆柱面。
+                      当a = b时就会变成圆柱面.
                       }
                 \item {
                       双曲柱面:
@@ -1119,9 +1141,9 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
     \subsubsection{伸缩法}{
       注:伸缩法不是放缩法!
 
-      举例:有$x^2 + y^2 = 1$,沿着y轴伸缩两倍,则伸缩后的方程为:$x^2 + \cfrac{y^2}{4} = 1$。
+      举例:有$x^2 + y^2 = 1$,沿着y轴伸缩两倍,则伸缩后的方程为:$x^2 + \cfrac{y^2}{4} = 1$.
 
-      也就是说:沿着n轴伸缩,就对变量n进行替换。
+      也就是说:沿着n轴伸缩,就对变量n进行替换.
 
       伸缩t倍，就把原变量替换成$\cfrac{n}{t}$
     }%伸缩法结尾
@@ -1130,7 +1152,7 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
  }%空间解析几何结尾
 
 \section{微积分}{
-注:本章中的“可积”如果没有特别说明则通常指的是传统意义下的“黎曼可积”。勒贝格积分将放在另一章中。(或者这里也可能)
+注:本章中的“可积”如果没有特别说明则通常指的是传统意义下的“黎曼可积”.勒贝格积分将放在另一章中.(或者这里也可能)
 
 \subsection{极限}{
 
@@ -1144,8 +1166,8 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
   而在多元的情况下,可微、可导与连续的关系如下:
 
   \begin{itemize}
-    \item 可微(全微分)是可导和连续的充分条件,即:可微$\Rightarrow$可导、可微$\Rightarrow$连续。
-    \item 可导推不出连续。
+    \item 可微(全微分)是可导和连续的充分条件,即:可微$\Rightarrow$可导、可微$\Rightarrow$连续.
+    \item 可导推不出连续.
   \end{itemize}
 
   \subsubsection{定理}{
@@ -1198,7 +1220,7 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
 }%极限结尾
 
 \subsection{导数}{
-  导数是什么？教科书上普遍给出的定义是指:函数图像的斜率变化率曲线,事实上某些观点表示导数也可以理解成是函数对于输入值的敏感程度,即:输入值的变化对应的输出值的变化的剧烈程度。
+  导数是什么？教科书上普遍给出的定义是指:函数图像的斜率变化率曲线,事实上某些观点表示导数也可以理解成是函数对于输入值的敏感程度,即:输入值的变化对应的输出值的变化的剧烈程度.
 
   导数的标准定义是指$\limNormal{x to x_0}\cfrac{f(x) - f(x_0)}{x - x_0}$\ 或者\ $\limNormal{\Delta x \to x_0}\cfrac{f(x + \Delta x) - f(x)}{\Delta x}$
 
@@ -1224,7 +1246,7 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
   }%复合函数求导结尾
 
   \subsubsection{求导公式表}{
-    以下为基本函数的求导公式表,类似线性组合,大多数函数的导数可以由以下公式组合得到。
+    以下为基本函数的求导公式表,类似线性组合,大多数函数的导数可以由以下公式组合得到.
 
     $\fint(x) = C, \fint\derivative(x) = 0$
 
@@ -1278,9 +1300,9 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
 
     $\defFunction{x} \approx \defFunction{a} + (x-a)\fDerivative{a}$或者$x - a \approx -\cfrac{\defFunction{a}}{\fDerivative{a}}$
 
-    前者被称为线性近似,后者就是牛顿法,其实本质上是同一个公式的不同变形。
+    前者被称为线性近似,后者就是牛顿法,其实本质上是同一个公式的不同变形.
 
-    当x和a取值越接近,近似也就越精确,这种方法本质上是取级数展开形式的前两位。
+    当x和a取值越接近,近似也就越精确,这种方法本质上是取级数展开形式的前两位.
 
   }%线性近似/牛顿法近似函数/方程解结尾
 
@@ -1296,7 +1318,7 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
 
   $\fint\partialDerivative{z}(x,y,z) = c$
 
-  换言之,偏导就是只把要求偏导的变量看作变量,其他变量看作常量再求导。
+  换言之,偏导就是只把要求偏导的变量看作变量,其他变量看作常量再求导.
 
   \subsubsection{全微分}{
 
@@ -1306,9 +1328,9 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
 
     其中$A = f\partialDerivative{x}, B = f\partialDerivative{y}, \rho = \sqrt{(\Delta x)^2 + (\Delta y)^2}$
 
-    并且$A,B$是$x$和$y$的函数(此处$x,y$为常量),与$\Delta x$和$\Delta y$(此处$\Delta x, \Delta y$是变量)无关。
+    并且$A,B$是$x$和$y$的函数(此处$x,y$为常量),与$\Delta x$和$\Delta y$(此处$\Delta x, \Delta y$是变量)无关.
 
-    如果能写成此形式,则成此函数在这点可微,且$A\Delta x + B\Delta y$叫做他的全微分。
+    如果能写成此形式,则成此函数在这点可微,且$A\Delta x + B\Delta y$叫做他的全微分.
 
     记作:$dz$(近似值)$= A\Delta x + B\Delta y \approx \Delta z$(精确值)
 
@@ -1317,12 +1339,12 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
 }%偏导数结尾
 
 \subsection{微分}{
-那么微分(differential)又是什么？微分是一个函数在自变量做无穷小变化时函数值的变化。在形式上确实与导数类似,但不应该与导数混淆。
+那么微分(differential)又是什么？微分是一个函数在自变量做无穷小变化时函数值的变化.在形式上确实与导数类似,但不应该与导数混淆.
 
-可以形象化理解,微分就是曲线的切线。给定一个横坐标,我们可以在切线上找到纵坐标。就是这样一个映射。而导数就是这条切线的斜率。
+可以形象化理解,微分就是曲线的切线.给定一个横坐标,我们可以在切线上找到纵坐标.就是这样一个映射.而导数就是这条切线的斜率.
 
 \subsubsection{微分公式}{
-  给出以下微分公式,与导数确实类似,但微分和导数是两个不同的映射。他们的定义域都是可微函数,微分的值域是1-form,导数的值域是函数。
+  给出以下微分公式,与导数确实类似,但微分和导数是两个不同的映射.他们的定义域都是可微函数,微分的值域是1-form,导数的值域是函数.
   \begin{enumerate}
     \item $d(u \pm v) = du \pm dv$
     \item $d(\mathbf{C}u) = \mathbf{c}du$
@@ -1352,7 +1374,7 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
     \item 在区间端点处的函数值相等,即$\fint(a) = \fint(b)$,
   \end{enumerate}
 
-  那么在$(a,b)$内至少有一点$\xi, (a<\xi<b)$,使得$\fint\derivative(\xi) = 0$。这个定理称为罗尔定理
+  那么在$(a,b)$内至少有一点$\xi, (a<\xi<b)$,使得$\fint\derivative(\xi) = 0$.这个定理称为罗尔定理
 }%罗尔中值定理结尾
 
 \subsubsection{拉格朗日中值定理}{
@@ -1360,23 +1382,23 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
 
 令$\fint : [a,b] \to \mathbf{R}$为闭区间$[a,b]$上的一个函数,且在开区间
 $(a,b)$内对任意一点$x$,极限$\limNormal{h \to 0}\cfrac{\fint(x + h) - \fint(x)}{h}$存在,
-为一个有限数字或者等于$+\infty$或$-\infty$.如果有限,则极限等于$\fDerivative{x}$。
+为一个有限数字或者等于$+\infty$或$-\infty$.如果有限,则极限等于$\fDerivative{x}$.
 
 此定理称为{\bfseries拉格朗日中值定理},也简称中值定理,是罗尔中值定理的更一般的形式,同时也是柯西中值定理的特殊情形
 
-这个定理再可以稍微推广一点。只需假设$\fint : [a,b] \to \mathbf{R}$在$[a,b]$连续,且在开区间$(a,b)$内对任意一点$x$,极限$\limNormal{h \to 0}
-  \cfrac{\defFunction{x + h} - \defFunction{x}}{b - a}$存在,为一个有限数字或者等于$+\infty$或者$-\infty$.如果有限,则极限等于$\fDerivative{x}$。
-这版本定理应用的一个例子是函数$x \to x^{\cfrac{1}{3}}$,实值三次方根函数,其导数在原点趋于无穷。
+这个定理再可以稍微推广一点.只需假设$\fint : [a,b] \to \mathbf{R}$在$[a,b]$连续,且在开区间$(a,b)$内对任意一点$x$,极限$\limNormal{h \to 0}
+  \cfrac{\defFunction{x + h} - \defFunction{x}}{b - a}$存在,为一个有限数字或者等于$+\infty$或者$-\infty$.如果有限,则极限等于$\fDerivative{x}$.
+这版本定理应用的一个例子是函数$x \to x^{\cfrac{1}{3}}$,实值三次方根函数,其导数在原点趋于无穷.
 
-注意若一个可微函数的值域是复数而不是实数,则上面这定理就未必正确。例如,对实数$x$定义$\defFunction{x} = e^{ix}$。那么
+注意若一个可微函数的值域是复数而不是实数,则上面这定理就未必正确.例如,对实数$x$定义$\defFunction{x} = e^{ix}$.那么
 
 $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
 
-因$|\fDerivative{x}| = 1 \neq 0$时,$c$为开区间$(0,2\pi)$中任意一点。
+因$|\fDerivative{x}| = 1 \neq 0$时,$c$为开区间$(0,2\pi)$中任意一点.
 }%拉格朗日中值定理结尾
 
 \subsubsection{柯西中值定理}{
-  柯西中值定理,也叫拓展中值定理,是中值定理的一般形式。它叙述为:如果函数$f$和$g$都在闭区间$[a,b]$上连续,且在开区间$(a,b)$上可微,那么存在某个$c \in (a,b)$,
+  柯西中值定理,也叫拓展中值定理,是中值定理的一般形式.它叙述为:如果函数$f$和$g$都在闭区间$[a,b]$上连续,且在开区间$(a,b)$上可微,那么存在某个$c \in (a,b)$,
   使得$(\defFunction{b} - \defFunction{a})g\derivative(c) = (g(b)-g(a))\fDerivative{c}$
 
   当然,如果$g(a) \neq g(b)$且$g\derivative(c) \neq 0$,则可表示成:$\cfrac{\fDerivative{c}}{g\derivative(c)} = \cfrac{\defFunction{b} - \defFunction{a}}{g(b) - g(a)}$
@@ -1389,20 +1411,20 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
       t \mapsto (f(t), g(t))
     \end{cases}
   $$
-  上存在一点其切线平行于由两点$(\defFunction{a}, g(a))$和$(\defFunction{b}, g(b))$所连接的直线。但柯西定理不能表明在任何情况下这种切线都存在,因为可能存在一些c值使$\defFunction{c} = g(c) = 0$, 所以在这些点曲线根本没有切线。
+  上存在一点其切线平行于由两点$(\defFunction{a}, g(a))$和$(\defFunction{b}, g(b))$所连接的直线.但柯西定理不能表明在任何情况下这种切线都存在,因为可能存在一些c值使$\defFunction{c} = g(c) = 0$, 所以在这些点曲线根本没有切线.
   下面是这种情况的一个例子
 
   $t \mapsto (t^3, 1-t^2)$
 
-  在区间$[-1,1]$上,曲线由$(-1, 0)$到$(1,0)$,却并无一个水平切线,然而他在$t = 0$出有一个驻点(实际上是一个尖点)。
+  在区间$[-1,1]$上,曲线由$(-1, 0)$到$(1,0)$,却并无一个水平切线,然而他在$t = 0$出有一个驻点(实际上是一个尖点).
 
-  柯西中值定理可以用来证明洛必达法则。拉格朗日中值定理是柯西中值定理当$g(t) = t$时的特殊情况。
+  柯西中值定理可以用来证明洛必达法则.拉格朗日中值定理是柯西中值定理当$g(t) = t$时的特殊情况.
 }%柯西中值定理结尾
 
 }%微分结尾
 
 \subsection{不定积分}{
-  在微积分中,函数$\fint$的不定积分(或称反导函数或原函数)是一个可微函数$\mathbf{F}$且其导数等于原来的函数$\fint$,即$F\prime = \fint$。不定积分和定积分的关系由微积分基本定理联系起来。透过微积分基本定理,函数的定积分的计算就可以简单的通过求不定积分来进行。
+  在微积分中,函数$\fint$的不定积分(或称反导函数或原函数)是一个可微函数$\mathbf{F}$且其导数等于原来的函数$\fint$,即$F\prime = \fint$.不定积分和定积分的关系由微积分基本定理联系起来.透过微积分基本定理,函数的定积分的计算就可以简单的通过求不定积分来进行.
 
   \subsubsection{不定积分公式}{
     下面给出不定积分公式:
@@ -1429,7 +1451,7 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
 
     $\int \defFunction{g}g\derivative dx = \int \defFunction{g}dg$
 
-    第一类换元积分法基本就是配凑的思想。
+    第一类换元积分法基本就是配凑的思想.
 
   }%不定积分第一类换元积分法结尾
 
@@ -1438,7 +1460,7 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
 
     $\int \defFunction{x}dx = \int \defFunction{x(g)x\derivative dx}$
 
-  }%不定积分第一类换元积分法结尾。
+  }%不定积分第一类换元积分法结尾.
 
   \subsubsection{分部积分法}{
     分部积分的公式为:
@@ -1457,15 +1479,15 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
 \subsubsection{定义}{
   $\limNormal{\lambda \to 0}\upDownSum{\infty}{i = 1}\defFunction{\xi_i}\cdot\Delta x_i$
 
-  以上为定义,实际中写法为$\definiteIntegral{a}{b}\defFunction{x}dx$。
+  以上为定义,实际中写法为$\definiteIntegral{a}{b}\defFunction{x}dx$.
 
-  其中$a$为积分区域上限,$b$为积分区域下限。
+  其中$a$为积分区域上限,$b$为积分区域下限.
 }%定义结尾
 
 \subsubsection{性质}{
   定积分有以下性质:
   \begin{enumerate}
-    \item $\definiteIntegral{a}{b}\defFunction{x}dx = -\definiteIntegral{b}{a}\defFunction{x}dx$即:交换上下限积分结果正负改变。
+    \item $\definiteIntegral{a}{b}\defFunction{x}dx = -\definiteIntegral{b}{a}\defFunction{x}dx$即:交换上下限积分结果正负改变.
     \item $a < b < c; \definiteIntegral{b}{a}\defFunction{x}dx = \definiteIntegral{b}{a}\defFunction{x}dx + \definiteIntegral{c}{b}\defFunction{x}dx$,且$\definiteIntegral{b}{a}\defFunction{x}dx = \definiteIntegral{c}{a}\defFunction{x}dx - \definiteIntegral{c}{b}\defFunction{x}dx = \definiteIntegral{c}{a}\defFunction{x}dx + \definiteIntegral{b}{c}\defFunction{x}dx$
     \item $\defFunction{x} \leq g(x); \definiteIntegral{b}{a}\defFunction{x}dx \leq \definiteIntegral{b}{a}g(x)dx$
     \item $|\definiteIntegral{b}{a}\defFunction{x}dx|\leq\definiteIntegral{b}{a}|\defFunction{x}|dx$
@@ -1488,14 +1510,14 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
     \item 引入换元函数
     \item 上下限也要变(将原函数上下限代入换元函数)
   \end{enumerate}
-}%定积分第二类换元积分法结尾。
+}%定积分第二类换元积分法结尾.
 
 \subsubsection{积分上限函数}{
   $I(x) = \definiteIntegral{x}{a}\defFunction{t}dt$
 
   如果$\defFunction{x}连续$,$I(x)$可导,则$I\prime(x) = \cfrac{d\definiteIntegral{x}{a}f(t)dt}{dx} = f(x)$
 
-  $\defFunction{x}$连续,$I(x)$是$f(x)$的一个原函数。
+  $\defFunction{x}$连续,$I(x)$是$f(x)$的一个原函数.
 
   有以下几种变体:
 
@@ -1513,14 +1535,14 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
 
 \subsubsection{积分介值定理}{
 
-  在区间$[a,b]$上$m$和$M$分别是$\defFunction{x}$的最小值和最大值。
+  在区间$[a,b]$上$m$和$M$分别是$\defFunction{x}$的最小值和最大值.
 
   $m(b - a) \leq \definiteIntegral{b}{a}\defFunction{x}dx \leq M(b - a)$
 
 }%积分介值定理结尾
 
 \subsubsection{区间再现公式}{
-  设$\defFunction{x} = \definiteIntegral{a}{b}g(x)dx$,令$x = a + b - t$,当$x = a$时,$t = b$,当$x = b$时,$t = a$,$dx$变成$-dt$。即:
+  设$\defFunction{x} = \definiteIntegral{a}{b}g(x)dx$,令$x = a + b - t$,当$x = a$时,$t = b$,当$x = b$时,$t = a$,$dx$变成$-dt$.即:
 
   $\defFunction{x} = \definiteIntegral{a}{b}g(x)dx = -\definiteIntegral{b}{a}g(a+b-t)dt = \definiteIntegral{a}{b}g(a + b - t)dt$
 
@@ -1539,7 +1561,7 @@ $\definiteIntegral{b}{a}\defFunction{x}g(x)dx = \defFunction{\xi}\definiteIntegr
 \\\\
 以下为证明:
 
-在不失去一般性的条件下,设对所有的$x$,有$g(x) \geq 0$;因为$\fint$是闭区间上的连续函数,$\fint$取得最大值$M$和最小值$m$。于是得出不等式:
+在不失去一般性的条件下,设对所有的$x$,有$g(x) \geq 0$;因为$\fint$是闭区间上的连续函数,$\fint$取得最大值$M$和最小值$m$.于是得出不等式:
 
 $mg(x) \leq \defFunction{x}g(x) \leq Mg(x)$
 
@@ -1547,7 +1569,7 @@ $mg(x) \leq \defFunction{x}g(x) \leq Mg(x)$
 
 $m\definiteIntegral{b}{a}g(x)dx \leq \definiteIntegral{b}{a}\defFunction{x}g(x)dx \leq M\definiteIntegral{b}{a}g(x)dx$
 
-如果$\definiteIntegral{b}{a}g(x)dx = 0$,则$\definiteIntegral{b}{a}\defFunction{x}g(x)dx = 0$。$\xi$可以取$[a,b]$上任意一点。
+如果$\definiteIntegral{b}{a}g(x)dx = 0$,则$\definiteIntegral{b}{a}\defFunction{x}g(x)dx = 0$.$\xi$可以取$[a,b]$上任意一点.
 
 如果不等于$0$,那么$\definiteIntegral{b}{a}g(x)dx>0$,对不等式变形可得:
 
@@ -1577,7 +1599,7 @@ $\defFunction{\xi} = F\prime(\xi) = \cfrac{F(b) - F(a)}{b - a} = \cfrac{\definit
 
 \subsubsection{积分第二中值定理}{
 
-积分第二中值定理与积分第一中值定理相互独立,却又是更精细的积分中值定理。
+积分第二中值定理与积分第一中值定理相互独立,却又是更精细的积分中值定理.
 
 若$f,g$在$[a,b]$上可积且$f(x)$在$[a,b]$上单调,则存在$[a,b]$上的点$\xi$使
 
@@ -1626,7 +1648,7 @@ $\definiteIntegral{\xi}{a}\defFunction{x}dx -\defFunction{a}(\xi - a) = \defFunc
 }%定积分结尾
 
 \subsection{反常积分}{
-通常来说只需要极限存在,则此反常积分收敛。
+通常来说只需要极限存在,则此反常积分收敛.
 
 \subsubsection{无穷限反常积分}{
 
@@ -1660,11 +1682,11 @@ $\definiteIntegral{\xi}{a}\defFunction{x}dx -\defFunction{a}(\xi - a) = \defFunc
 
   $\definiteIntegral{b}{a}\defFunction{x}dx = \definiteIntegral{c}{a}\defFunction{x}dx + \definiteIntegral{b}{c}\defFunction{x}dx$
 
-  然后按照上方两个情况分别求解。
+  然后按照上方两个情况分别求解.
 
-  依然可以使用牛-莱公式。
+  依然可以使用牛-莱公式.
 
-  瑕积分换元需要为单调函数,不论增减性。
+  瑕积分换元需要为单调函数,不论增减性.
 
 }%无界函数反常积分
 
@@ -1686,25 +1708,25 @@ $\varGamma(n+1) = n!$
 \subsection{无穷级数}{
 
 \subsubsection{泰勒公式/泰勒级数/展开}{
-泰勒级数表示:当知道某点$x = a$的情况时,就能知道$a$点附近的函数是怎样的。
+泰勒级数表示:当知道某点$x = a$的情况时,就能知道$a$点附近的函数是怎样的.
 
 $x$在$a$点附近,最为粗略的估计就是$\defFunction{x} \approx \defFunction{a}$
 
-然后才是修正项:$\fDerivative{a}(x - a)$,这是斜率乘以距离,最终得到的就是高度。相当于沿切线前进。
+然后才是修正项:$\fDerivative{a}(x - a)$,这是斜率乘以距离,最终得到的就是高度.相当于沿切线前进.
 
-还有一项表示弯曲:$\cfrac{1}{2}\fint\doubleDerivative(a)(x - a)^2$,他是斜率的斜率,变化率的变化率。
+还有一项表示弯曲:$\cfrac{1}{2}\fint\doubleDerivative(a)(x - a)^2$,他是斜率的斜率,变化率的变化率.
 
 但后面还有更多项,直接写出通项公式如何？
 
-泰勒级数通项公式:$\defFunction{x} = \upDownSum{\infty}{n = 1}\cfrac{1}{n!}\fint\aLotDerivative{n - 1}(x - a)^{n - 1}$,0阶导指的是原函数,a是x附近的点。
+泰勒级数通项公式:$\defFunction{x} = \upDownSum{\infty}{n = 1}\cfrac{1}{n!}\fint\aLotDerivative{n - 1}(x - a)^{n - 1}$,0阶导指的是原函数,a是x附近的点.
 
-还有泰勒公式:表示的不是一个函数的幂级数形式而是对于某个函数的近似,形式与泰勒级数通项公式类似。
+还有泰勒公式:表示的不是一个函数的幂级数形式而是对于某个函数的近似,形式与泰勒级数通项公式类似.
 
-泰勒公式:$\defFunction{x} = \defFunction{a} + \fDerivative{a}(x - a) + \cfrac{1}{2!}\fint\doubleDerivative(a)(x - a)^2 + ... + \cfrac{1}{n!}\fint\aLotDerivative{n}(x - a)^n + R_n(x)$。
+泰勒公式:$\defFunction{x} = \defFunction{a} + \fDerivative{a}(x - a) + \cfrac{1}{2!}\fint\doubleDerivative(a)(x - a)^2 + ... + \cfrac{1}{n!}\fint\aLotDerivative{n}(x - a)^n + R_n(x)$.
 
-$R_n(x)$是余项,表示误差,是$(x - a)^n$的高阶无穷小$O((x - a)^n)$。根据中值定理可得$R_n(x) = \cfrac{1}{(n + 1)!}\fint\aLotDerivative{n + 1}(\xi)(x - a)^{n+1}$,其中$a \leq \xi \leq x$,意思是$\xi$介于$a$和$x$之间。
+$R_n(x)$是余项,表示误差,是$(x - a)^n$的高阶无穷小$O((x - a)^n)$.根据中值定理可得$R_n(x) = \cfrac{1}{(n + 1)!}\fint\aLotDerivative{n + 1}(\xi)(x - a)^{n+1}$,其中$a \leq \xi \leq x$,意思是$\xi$介于$a$和$x$之间.
 
-当泰勒公式在$a = 0$处展开时就称为麦克劳林公式。
+当泰勒公式在$a = 0$处展开时就称为麦克劳林公式.
 
 麦克劳林公式:当$a = 0, \defFunction{x} = \defFunction{0} + \cfrac{1}{1!}\fDerivative{0}x + \cfrac{1}{2!}\fint\doubleDerivative(0)x^2 + ... + \cfrac{1}{(n + 1)!}\fint\aLotDerivative{n + 1}(\theta x)x^{n+1}$,其中$0 < \theta < 1$
 
@@ -1713,7 +1735,7 @@ $R_n(x)$是余项,表示误差,是$(x - a)^n$的高阶无穷小$O((x - a)^n)$。
 }%无穷级数结尾
 
 \subsection{微分方程}{
-微分方程是一种描述世界的好手段,当描述某个东西随时间的微小变化比起描述这个物体整体的变化更方便的时候就会使用微分方程。
+微分方程是一种描述世界的好手段,当描述某个东西随时间的微小变化比起描述这个物体整体的变化更方便的时候就会使用微分方程.
 
 \subsubsection{一阶线性微分方程}{
   形式$\cfrac{dy}{dx} + p(x)y = Q(x)$
@@ -1721,15 +1743,15 @@ $R_n(x)$是余项,表示误差,是$(x - a)^n$的高阶无穷小$O((x - a)^n)$。
   有以下几种情况:
   \begin{enumerate}
     \item $Q(x) = 0\ \to$齐次方程,则$\cfrac{dy}{dx} = -p(x)y\ \to \ \cfrac{dy}{y} = -p(x)dx$,然后两边求积分,从而得出:$y = e^{-\int p(x)dx}e^{\mathConstant_1} = C \cdot e^{-\int p(x)dx}$
-    \item $\cfrac{dy}{dx} + p(x)y = Q(x), Q(x) \neq 0$,也就是非齐次方程。设$y = ue^{-\int p(x)dx, u}$是未知量。然后把$y$代入:\\ $u\derivative e^{-\int p(x)dx} - ue^{-\int p(x)dx} + p(x)u^{e}-\int p(x)dx = Q(x)$,从而推出:$u\derivative e^{-\int p(x)dx} = Q(x)$,并且由$u\derivative = Q(X)e^{\int p(x)dx}$从而推出:$\int Q(x)e^{\int p(x)dx}dx + \mathConstant$。将以上带入,得出:$y = e^{-\int p(x)dx}\cdot(\int Q(x)e^{\int p(x)dx}dx + \mathConstant)$
+    \item $\cfrac{dy}{dx} + p(x)y = Q(x), Q(x) \neq 0$,也就是非齐次方程.设$y = ue^{-\int p(x)dx, u}$是未知量.然后把$y$代入:\\ $u\derivative e^{-\int p(x)dx} - ue^{-\int p(x)dx} + p(x)u^{e}-\int p(x)dx = Q(x)$,从而推出:$u\derivative e^{-\int p(x)dx} = Q(x)$,并且由$u\derivative = Q(X)e^{\int p(x)dx}$从而推出:$\int Q(x)e^{\int p(x)dx}dx + \mathConstant$.将以上带入,得出:$y = e^{-\int p(x)dx}\cdot(\int Q(x)e^{\int p(x)dx}dx + \mathConstant)$
   \end{enumerate}
 
-  注:一个非齐次线性微分方程的通解等于对应的齐次微分方程的通解与非齐次微分方程的一个特解之和。
+  注:一个非齐次线性微分方程的通解等于对应的齐次微分方程的通解与非齐次微分方程的一个特解之和.
 
 }%一阶线性微分方程结尾
 
 \subsubsection{*有疑惑/错误\ 伯努利方程}{
-  $\cfrac{dy}{dx} + p(x)y = Q(x)y^n$。当$n = 0$时,此式为齐次方程,当$n = 1$,为一阶线性微分方程。当$n$不等于0也不等于1时:$y^{-n}\cfrac{dy}{dx} + p(x)y^{1-n} = Q(x)$。将$y^{1-n}$记作$z$,于是得到$\cfrac{dz}{dx} = (1-n)y^{-n}\cfrac{dy}{dx},\cfrac{1}{1-n}\cfrac{dz}{dx} + p(x)z = Q(x)$,再变形得到:$\cfrac{dz}{dx} + (1-n)p(x)z = (1-n)Q(x)$。然后两边求$y$,左边不要带入。
+  $\cfrac{dy}{dx} + p(x)y = Q(x)y^n$.当$n = 0$时,此式为齐次方程,当$n = 1$,为一阶线性微分方程.当$n$不等于0也不等于1时:$y^{-n}\cfrac{dy}{dx} + p(x)y^{1-n} = Q(x)$.将$y^{1-n}$记作$z$,于是得到$\cfrac{dz}{dx} = (1-n)y^{-n}\cfrac{dy}{dx},\cfrac{1}{1-n}\cfrac{dz}{dx} + p(x)z = Q(x)$,再变形得到:$\cfrac{dz}{dx} + (1-n)p(x)z = (1-n)Q(x)$.然后两边求$y$,左边不要带入.
 
 }%伯努利方程结尾
 
@@ -1738,7 +1760,7 @@ $R_n(x)$是余项,表示误差,是$(x - a)^n$的高阶无穷小$O((x - a)^n)$。
 
   \begin{enumerate}
     \item $y^{(n)} = \defFunction{x}$,于是两边不断求积分进行降阶:$y^{n-1} = \int \defFunction{x}dx + \mathConstant$
-    \item $y\doubleDerivative = \defFunction{x,y\derivative}$,设$y\derivative = p,y\doubleDerivative = p\derivative$,则$p\derivative = \defFunction{x,p}$。然后再进行回代。
+    \item $y\doubleDerivative = \defFunction{x,y\derivative}$,设$y\derivative = p,y\doubleDerivative = p\derivative$,则$p\derivative = \defFunction{x,p}$.然后再进行回代.
     \item $y\doubleDerivative = \defFunction{y,y\derivative}$,同样的,令$y\derivative = p, y\doubleDerivative = \cfrac{dp}{dx} = \cfrac{dp}{dy}\cdot\cfrac{dy}{dx} = p\cfrac{dp}{dy}$,于是$p\cfrac{dp}{dy} = \defFunction{y,p}$
   \end{enumerate}
 
@@ -1747,7 +1769,7 @@ $R_n(x)$是余项,表示误差,是$(x - a)^n$的高阶无穷小$O((x - a)^n)$。
 \subsubsection{常系数齐次线性微分方程}{
   例:$y\doubleDerivative + py\derivative + qy = 0$
 
-  先找出特征方程:$r^2 + pr + q = 0$,即:设$r = p\derivative,r^2 = \doubleDerivative$。
+  先找出特征方程:$r^2 + pr + q = 0$,即:设$r = p\derivative,r^2 = \doubleDerivative$.
 
   有以下三种情况:
   \begin{enumerate}
@@ -1766,67 +1788,67 @@ $R_n(x)$是余项,表示误差,是$(x - a)^n$的高阶无穷小$O((x - a)^n)$。
 }%常系数其次线性微分方程结尾
 
 \subsubsection{关于运动的微分方程/线性常系数微分方程}{
-开门见山,先提出此公式再进行分析。
+开门见山,先提出此公式再进行分析.
 
 $m\cfrac{d^2y}{dt^2} + 2r\cfrac{dy}{dt} + ky = 0$
 
-很明显,这是个二阶常系数线性微分方程,二阶指的是它最多求了2次导。线性、这意味着他可以是个抽象的向量,他能被线性代数的方式所表示(见4.1.2-关于抽象向量空间)。至于“常系数”,这意味着它的系数都是常数。
+很明显,这是个二阶常系数线性微分方程,二阶指的是它最多求了2次导.线性、这意味着他可以是个抽象的向量,他能被线性代数的方式所表示(见4.1.2-关于抽象向量空间).至于“常系数”,这意味着它的系数都是常数.
 
-先分析这个方程的退化形式。
+先分析这个方程的退化形式.
 
 1、设$m = 0, r = 1/2, \cfrac{dy}{dt} = ay$
 
-很明显:这意味着函数求导后是它自身的倍数,这暗示着原函数是个指数函数。不难猜到:原函数可以为$y = e^{at}$。但这样还不够。仔细想想:如果e的前面有系数,求导后也依然还是原函数的倍数,所以通解应该是$y = ce^{at}$。
+很明显:这意味着函数求导后是它自身的倍数,这暗示着原函数是个指数函数.不难猜到:原函数可以为$y = e^{at}$.但这样还不够.仔细想想:如果e的前面有系数,求导后也依然还是原函数的倍数,所以通解应该是$y = ce^{at}$.
 
-2、设 $r = 0, \cfrac{d^2y}{dt^2} = -\omega^2y$,其中$\omega$是$\cfrac{k}{m}$。
+2、设 $r = 0, \cfrac{d^2y}{dt^2} = -\omega^2y$,其中$\omega$是$\cfrac{k}{m}$.
 
 这又意味着什么？这意味着:原函数求二次导后是负数倍的他自己,在实数范围内(毕竟一涉及$i$事情就麻烦了起来,不过如果包含虚数的范围倒也是一件合理的事情,设$y=e^{kx},y\doubleDerivative = k^{2}e^{kx}$,如果要使这个二阶导符合条件很明显$k$应该是$i$,而欧拉公式的完整写法是:$e^{ix} = \cos x + i\sin x$)符合这个条件的就这两个函数:$\sin\omega t$和$\cos\omega t$,那么这两个函数就是解集的“基向量/基础解系”,通过这两个函数的线性组合就可以得出所有符合条件的原函数,因此通解写作$y = C\cos\omega t + D\sin\omega t$
 
 3、设$m = 0, r = 0, \cfrac{dy}{dt} = 0$
 
-这更明显,$y = C + Dt$。(y是个函数,表示位置)
+这更明显,$y = C + Dt$.(y是个函数,表示位置)
 
-那么回到那个方程:这个方程在很多领域都是很常见的。这个方程能表示一切振动。(比如弹簧,钟表,摆动...)通过选择不同的系数,可以建立各种最简洁的基础模型。
+那么回到那个方程:这个方程在很多领域都是很常见的.这个方程能表示一切振动.(比如弹簧,钟表,摆动...)通过选择不同的系数,可以建立各种最简洁的基础模型.
 
-那么以弹簧为例来讲解。例子中$t$表示时间(这就是为什么不用x):
+那么以弹簧为例来讲解.例子中$t$表示时间(这就是为什么不用x):
 
-实际上,在这种模型中,常有$r = 0$。那么取$ r = 0$的情况。
+实际上,在这种模型中,常有$r = 0$.那么取$ r = 0$的情况.
 
 有牛顿定律:$F = ma$,m就是质量,a则是加速度,也就是二阶导,因此改写成二阶导形式:$F = m\cfrac{d^2y}{dt^2}$(不考虑质量损失)
 
-弹簧是悬空拉着一个小滑块的。y的正方向是向下,他表示弹簧的位移,当y是正的时候,弹簧有向上拉的力,而弹簧的力与$y$成正比,比例则是常数$k$。当y很大的时候弹簧被拉的很长,向上拉的力在往上拉,写作$F = -ky = m\cfrac{d^2y}{dt^2}$其中F表示拉力,负号是因为力的方向与y相反(胡克定理)。经过变形得到:$m\cfrac{d^2y}{dt^2} + ky = 0$。非常眼熟。
+弹簧是悬空拉着一个小滑块的.y的正方向是向下,他表示弹簧的位移,当y是正的时候,弹簧有向上拉的力,而弹簧的力与$y$成正比,比例则是常数$k$.当y很大的时候弹簧被拉的很长,向上拉的力在往上拉,写作$F = -ky = m\cfrac{d^2y}{dt^2}$其中F表示拉力,负号是因为力的方向与y相反(胡克定理).经过变形得到:$m\cfrac{d^2y}{dt^2} + ky = 0$.非常眼熟.
 
-$r = 0$,$r$表示的是阻力,可以是空气阻力也可以是磁力等等,但他就是我们没法制作永动机的原因,不过现在是假想环境,所以设他为0,那么弹簧就会是一根永不停息的、上下振动的弹簧。就如同上面分析的结果,他沿着{\bfseries 正弦和余弦}振动。而常数$C$与$D$则取决于初始状态。
+$r = 0$,$r$表示的是阻力,可以是空气阻力也可以是磁力等等,但他就是我们没法制作永动机的原因,不过现在是假想环境,所以设他为0,那么弹簧就会是一根永不停息的、上下振动的弹簧.就如同上面分析的结果,他沿着{\bfseries 正弦和余弦}振动.而常数$C$与$D$则取决于初始状态.
 
-回想一下,$-ky = m\cfrac{d^2y}{dt^2}$,将两边同除以$m$,负号移走,于是得到$\omega^2$而$\omega^2 = \cfrac{k}{m}$。
+回想一下,$-ky = m\cfrac{d^2y}{dt^2}$,将两边同除以$m$,负号移走,于是得到$\omega^2$而$\omega^2 = \cfrac{k}{m}$.
 
-这种情况很简单,只有$\sin , \cos$。接下来,来一点阻力。
+这种情况很简单,只有$\sin , \cos$.接下来,来一点阻力.
 
 $my\doubleDerivative + 2ry\derivative + ky = 0$
 
-现在,对于任意$m,r,k$。想要求解此方程,很棒的是指数函数可以求出正确答案。
+现在,对于任意$m,r,k$.想要求解此方程,很棒的是指数函数可以求出正确答案.
 
-核心思想是尝试指数函数$y = e^{\lambda t}$,$\lambda$指的是特征函数。(用$\lambda$而不用$C$的原因可以看4.1.1-什么是线性变换。)将这个代入方程,并求出合适的$\lambda$。何不先从常数项开始？
+核心思想是尝试指数函数$y = e^{\lambda t}$,$\lambda$指的是特征函数.(用$\lambda$而不用$C$的原因可以看4.1.1-什么是线性变换.)将这个代入方程,并求出合适的$\lambda$.何不先从常数项开始？
 
 很容易看出常数项是$ke^{\lambda t}$
 
-而一阶导呢？有$2r$乘以$y = e^{\lambda t}$的导数,只需要将导数代入方程。
+而一阶导呢？有$2r$乘以$y = e^{\lambda t}$的导数,只需要将导数代入方程.
 
 一阶项是$2r\lambda e^{\lambda t}$
 
-到二阶导,同理。
+到二阶导,同理.
 
 二阶项就是$m\lambda^2e^{\lambda t}$
 
 写出完整的形态:$m\lambda^2e^{\lambda t} + 2r\lambda e^{\lambda t} + ke^{\lambda t} = 0$
 
-消掉公因式$e^{\lambda t}$,他显然不是0,可以消掉。结果就是$m\lambda^2 + \lambda + k= 0$
+消掉公因式$e^{\lambda t}$,他显然不是0,可以消掉.结果就是$m\lambda^2 + \lambda + k= 0$
 
-这个方程只不过是个普通的二次方程,随随便便就能解出来。二次方程理应有两个解。因此$e^{\lambda_1 t}$和$e^{\lambda_2 t}$都是方程的解
+这个方程只不过是个普通的二次方程,随随便便就能解出来.二次方程理应有两个解.因此$e^{\lambda_1 t}$和$e^{\lambda_2 t}$都是方程的解
 
 回忆一下公式,$\lambda = \cfrac{-r \pm \sqrt{r^2 - km}}{m}$
 
-引入一些数字,$1y\doubleDerivative + 6y\derivative + 8y = 0$。计算$\lambda$
+引入一些数字,$1y\doubleDerivative + 6y\derivative + 8y = 0$.计算$\lambda$
 
 $\lambda^2 + 6\lambda + 8 = 0$
 
@@ -1836,7 +1858,7 @@ $\lambda_1 = -2, \lambda_2 = -4$
 
 两个$\lambda$都在指数中,然后得解
 
-注意:$\lambda$可能解出复数,可以照样用,但也可以写成另一种形式——利用欧拉公式的美妙性质。
+注意:$\lambda$可能解出复数,可以照样用,但也可以写成另一种形式——利用欧拉公式的美妙性质.
 
 $e^{it} = \cos t + i\sin t$
 
@@ -1848,80 +1870,80 @@ $e^{-it} = \cos t -i\sin t$
 
 $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
 
-另外,当两个$\lambda$相同(出现重根)的时候,方程的解一个是$e^{\lambda t}$另一个是$te^{\lambda t}$,经过验算会发现最后消掉了一部分,得到的是正常的结果。
+另外,当两个$\lambda$相同(出现重根)的时候,方程的解一个是$e^{\lambda t}$另一个是$te^{\lambda t}$,经过验算会发现最后消掉了一部分,得到的是正常的结果.
 
-所以结论就是:线性常系数微分方程只要通过$e^{\lambda t}$就能解决。
+所以结论就是:线性常系数微分方程只要通过$e^{\lambda t}$就能解决.
 }%关于运动的微分方程结尾
 
 \subsubsection{关于增长的微分方程/非线性微分方程/偏微分方程剧透}{
-  从线性的开始。
+  从线性的开始.
 
   最简单的:$\cfrac{dy}{dt} = cy$, 给予了初始条件$y(0)$
 
-  即增长率与自身成正比。很明显的这是呈指数形式的增长,解应该是$y(t) = y(0)e^{ct}$
+  即增长率与自身成正比.很明显的这是呈指数形式的增长,解应该是$y(t) = y(0)e^{ct}$
 
-  看下一个方程,依然是线性的:$\cfrac{dy}{dt} = cy + s$,$s$表示source,可以用银行存钱来描述:前一项是每天的利息,后一项的每天存入的金额。
-  这就是右侧带有常数项的线性微分方程了。事实上甚至能拿现有的知识来解决它:$\cfrac{dy}{dt} = cy + s = c(y + \cfrac{s}{c}) = \cfrac{d(y + \cfrac{s}{c})}{dt}$, 其中$\cfrac{s}{c}$是常数,所以可以任意加减而不影响求导结果。随后观察整体,会发现与第一个例子几乎相同,唯一不同的就是多了个$\cfrac{s}{c}$函数依然以增长率c增长。从0处的y值加上$\cfrac{s}{c}$开始。
+  看下一个方程,依然是线性的:$\cfrac{dy}{dt} = cy + s$,$s$表示source,可以用银行存钱来描述:前一项是每天的利息,后一项的每天存入的金额.
+  这就是右侧带有常数项的线性微分方程了.事实上甚至能拿现有的知识来解决它:$\cfrac{dy}{dt} = cy + s = c(y + \cfrac{s}{c}) = \cfrac{d(y + \cfrac{s}{c})}{dt}$, 其中$\cfrac{s}{c}$是常数,所以可以任意加减而不影响求导结果.随后观察整体,会发现与第一个例子几乎相同,唯一不同的就是多了个$\cfrac{s}{c}$函数依然以增长率c增长.从0处的y值加上$\cfrac{s}{c}$开始.
 
-  所以,结论是:$y(t) + \cfrac{s}{c} = (y(0) + \cfrac{s}{c})e^{ct}$。这就是该微分方程的快速版解答了。将常数丢到右边,就是一个标准的形式。
+  所以,结论是:$y(t) + \cfrac{s}{c} = (y(0) + \cfrac{s}{c})e^{ct}$.这就是该微分方程的快速版解答了.将常数丢到右边,就是一个标准的形式.
 
-  所以线性方程(不只是线性微分方程)的解$y(t) = y_{particular}(t) + y_{another\ solution\ with\ a\ right\ side\ 0}(t)$。用人话说就是:线性方程的解总是自身的某个特解加上另一个右侧等于0的方程的解。
+  所以线性方程(不只是线性微分方程)的解$y(t) = y_{particular}(t) + y_{another\ solution\ with\ a\ right\ side\ 0}(t)$.用人话说就是:线性方程的解总是自身的某个特解加上另一个右侧等于0的方程的解.
 
-  也就是说如果要求$\cfrac{dy}{dt} = cy + s$的解,那么首先求一个特解(也就是任一个满足方程的函数),能找到的最简单的函数就是常函数。想要常数满足方程,常熟的常数必然为0,而且c乘以此常数加s也应该为0。也就是$cy + s = 0,\ cy = -s, \ y = -\cfrac{s}{y}$。这就是一个特解了。
+  也就是说如果要求$\cfrac{dy}{dt} = cy + s$的解,那么首先求一个特解(也就是任一个满足方程的函数),能找到的最简单的函数就是常函数.想要常数满足方程,常熟的常数必然为0,而且c乘以此常数加s也应该为0.也就是$cy + s = 0,\ cy = -s, \ y = -\cfrac{s}{y}$.这就是一个特解了.
 
-  那么“一个右侧为0的方程的解”是什么意思？将s擦去,使得$\cfrac{dy}{dt} = cy$,保留含有y的,去掉常数项,使得右侧为0。也就是$y\derivative - cy = 0$。书本上喜欢称之为:齐次方程。也就是第一个例子。
+  那么“一个右侧为0的方程的解”是什么意思？将s擦去,使得$\cfrac{dy}{dt} = cy$,保留含有y的,去掉常数项,使得右侧为0.也就是$y\derivative - cy = 0$.书本上喜欢称之为:齐次方程.也就是第一个例子.
 
-  那么齐次方程的解是什么呢？$\cfrac{dy}{dt} = cy$的解含有$e^{ct}$以及任意常数$A$,也就是$Ae^{ct}$,任意$Ae^{ct}$都能满足这个简单的方程。
+  那么齐次方程的解是什么呢？$\cfrac{dy}{dt} = cy$的解含有$e^{ct}$以及任意常数$A$,也就是$Ae^{ct}$,任意$Ae^{ct}$都能满足这个简单的方程.
 
-  所以整个方程的解就是$-\cfrac{s}{c} + Ae^{ct}$A是任意常数。不过当然,如果有初始条件就能特定一个。只需要设$t = 0$,就能解出$A$,在这里$A = y(0) + \cfrac{s}{c}$。在上面也算出来了。
+  所以整个方程的解就是$-\cfrac{s}{c} + Ae^{ct}$A是任意常数.不过当然,如果有初始条件就能特定一个.只需要设$t = 0$,就能解出$A$,在这里$A = y(0) + \cfrac{s}{c}$.在上面也算出来了.
 
-  不过线性的已经没啥意思了,来点线性的。非线性的微分方程很有趣,也可以表示很多东西,比如:人口的增长。
+  不过线性的已经没啥意思了,来点线性的.非线性的微分方程很有趣,也可以表示很多东西,比如:人口的增长.
 
   关于人口增长函数$P(t)$,用什么微分方程描述比较合理？
 
-  $\cfrac{dP}{dt} = cP - sP^2$。其中c表示增长率。同样的,有出生也会有死亡,所以需要一个减速项,因为人口增长不可能这么快。也就是s。这在一定程度上反映了人口之间的相互作用。(事实上这种公式在其他领域也有很多用途)
+  $\cfrac{dP}{dt} = cP - sP^2$.其中c表示增长率.同样的,有出生也会有死亡,所以需要一个减速项,因为人口增长不可能这么快.也就是s.这在一定程度上反映了人口之间的相互作用.(事实上这种公式在其他领域也有很多用途)
 
-  在这个公式中$p^2$表示人口之间的相互拥挤造成的影响,因此s是个很小的数,比如十亿分之一。
+  在这个公式中$p^2$表示人口之间的相互拥挤造成的影响,因此s是个很小的数,比如十亿分之一.
 
-  下面要解这个方程了。
+  下面要解这个方程了.
 
-  不过对于非线性方程,目前(正在阅读的你,或者是我自己复习？)暂时没有现成的工具,需要更多的微积分知识。但是只要方法正确,就能解出来的。
+  不过对于非线性方程,目前(正在阅读的你,或者是我自己复习？)暂时没有现成的工具,需要更多的微积分知识.但是只要方法正确,就能解出来的.
 
-  先展示解吧:首先,如果一开始一个人都没有,那么就始终为0。$P = 0$,常数解,很无趣。还有一种情况,很重要的情况,这种情况下导数也为0。
+  先展示解吧:首先,如果一开始一个人都没有,那么就始终为0.$P = 0$,常数解,很无趣.还有一种情况,很重要的情况,这种情况下导数也为0.
 
-  假设导数为0,将会得到一个特殊的特解,他不会变化。也就是当导数为0时,那么$cP = sP^2$。可以约掉一个P,也就是$P = \cfrac{C}{S}$。此时,增长和减少将会相互抵消,成为无法逾越的上限。
+  假设导数为0,将会得到一个特殊的特解,他不会变化.也就是当导数为0时,那么$cP = sP^2$.可以约掉一个P,也就是$P = \cfrac{C}{S}$.此时,增长和减少将会相互抵消,成为无法逾越的上限.
 
   那么来看看真实情况下的解,不过为何不先看看图呢？:
 
   \includegraphics{resources/nonLinearDifferencialEquation_HumanGrow.png}
 
-  其中$\cfrac{c}{s}$称为稳态,到了这里就会保持稳定,不会改变了。不过其实到不了哪里,只会一直接近而已。这就是这个式子所代表的人口曲线了。
+  其中$\cfrac{c}{s}$称为稳态,到了这里就会保持稳定,不会改变了.不过其实到不了哪里,只会一直接近而已.这就是这个式子所代表的人口曲线了.
 
-  那么就是解方程的环节了。有很多方法,先试试一个好使的:尝试$y = \cfrac{1}{P}$。然后尝试把整个方程写成y的形式。这是解这个方程的技巧,而解非线性方程常常需要一些技巧。
+  那么就是解方程的环节了.有很多方法,先试试一个好使的:尝试$y = \cfrac{1}{P}$.然后尝试把整个方程写成y的形式.这是解这个方程的技巧,而解非线性方程常常需要一些技巧.
 
-  看看这个方程长啥样子:$\cfrac{dy}{dt} = -\cfrac{\cfrac{dP}{dt}}{P^2}$而$\cfrac{dP}{dt}$是已知的,所以将他代进来,得到$-\cfrac{cP - sP^2}{P^2}$。将负号写进去,得到一个s:$s - \cfrac{c}{P}$。查看前面的推导能发现:$\cfrac{1}{p} = y$。所以得到$s - cy$。于是$\cfrac{dy}{dt}$变成了线性的,它还含有资源项s,而增长率项还含有一个-c。也许仔细想想为什么
+  看看这个方程长啥样子:$\cfrac{dy}{dt} = -\cfrac{\cfrac{dP}{dt}}{P^2}$而$\cfrac{dP}{dt}$是已知的,所以将他代进来,得到$-\cfrac{cP - sP^2}{P^2}$.将负号写进去,得到一个s:$s - \cfrac{c}{P}$.查看前面的推导能发现:$\cfrac{1}{p} = y$.所以得到$s - cy$.于是$\cfrac{dy}{dt}$变成了线性的,它还含有资源项s,而增长率项还含有一个-c.也许仔细想想为什么
 
-  那么写出y的解:$y(t) - \cfrac{s}{c} = (y(0) - \cfrac{s}{c})e^{-ct}$这就是y的解。$y = \cfrac{1}{P}$,接下来就是要回代了:
+  那么写出y的解:$y(t) - \cfrac{s}{c} = (y(0) - \cfrac{s}{c})e^{-ct}$这就是y的解.$y = \cfrac{1}{P}$,接下来就是要回代了:
 
-  $\cfrac{1}{P(t)} - \cfrac{s}{c} = (\cfrac{1}{P(0)} - \cfrac{s}{c})e^{-ct}$,接下来的一堆化简就不写了。
+  $\cfrac{1}{P(t)} - \cfrac{s}{c} = (\cfrac{1}{P(0)} - \cfrac{s}{c})e^{-ct}$,接下来的一堆化简就不写了.
 
   这种模型称为logistic方程(只是为了提一下)
 
   接下来再来一个有意思的方程:捕食者与猎物的方程:
 
-  这里有两个未知数:猎物——记作$v$,捕食者——记作$u$,表示的都是两者的总数。如果猎物不够,捕食者就会减少。捕食者减少,猎物就会增加。因此这里有正的$u \cdot v$
+  这里有两个未知数:猎物——记作$v$,捕食者——记作$u$,表示的都是两者的总数.如果猎物不够,捕食者就会减少.捕食者减少,猎物就会增加.因此这里有正的$u \cdot v$
 
   这是公式:
 
-  前面有个$-cu$,表示没有食物的情况,捕食者将会慢慢灭绝。
+  前面有个$-cu$,表示没有食物的情况,捕食者将会慢慢灭绝.
 
-  但如果猎物存在,那么资源项就会正比于$uv$。
+  但如果猎物存在,那么资源项就会正比于$uv$.
 
   所以$\cfrac{du}{dt} = -cu + suv$
 
-  那么$\cfrac{dv}{dt}$呢？情况大不相同。他们被捕食,因此有$-Suv$,同时也有正的增长率$Cv$
+  那么$\cfrac{dv}{dt}$呢？情况大不相同.他们被捕食,因此有$-Suv$,同时也有正的增长率$Cv$
 
-  那么这就是一个模型了。剧透一下:这玩意叫偏微分方程(Partical Differential Equation),简称PDE,他比常微分方程(Ordinary Differential Equation, ODE)包含了更多的信息。也更难解。
+  那么这就是一个模型了.剧透一下:这玩意叫偏微分方程(Partical Differential Equation),简称PDE,他比常微分方程(Ordinary Differential Equation, ODE)包含了更多的信息.也更难解.
 
 }%关于增长的微分方程结尾
 
@@ -1930,7 +1952,7 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
 }%微积分结尾
 
 \section{多元微积分}{
-  注:如果忘了什么是偏导数就去上一章回顾。
+  注:如果忘了什么是偏导数就去上一章回顾.
   %# TODO: 重新学一遍
 
   \subsection{隐函数}{
@@ -1954,20 +1976,20 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
 \section{场论}{
 
   \subsection{场论基本内容}{
-    注:矢量 = 向量,有时候会混着用，一般是那个顺口用哪个。
+    注:矢量 = 向量,有时候会混着用，一般是那个顺口用哪个.
 
     \subsubsection{矢量函数/向量函数}{
-      向量值函数，有时也称为向量函数，是一个单变量或多变量的、值域是多维向量或者无穷维向量的集合的函数。向量值函数的输入可以是一个标量或者一个向量（定义域的维度可以是1或大于1);定义域的维度不取决于值域的维度。
+      向量值函数，有时也称为向量函数，是一个单变量或多变量的、值域是多维向量或者无穷维向量的集合的函数.向量值函数的输入可以是一个标量或者一个向量（定义域的维度可以是1或大于1);定义域的维度不取决于值域的维度.
 
-      即:设有数性变量t和变矢量$\vec{A}$。若对于t在某个范围内的每一个数值,$\vec{A}$都有一个确定的矢量和它对应,则称$\vec{A}$为数性变量t的矢量函数。记为:$\vec{A} = A(t)$,也可以写作$\vec{A} = A_x(t)i + A_y(t)j + A_z(t)k$
+      即:设有数性变量t和变矢量$\vec{A}$.若对于t在某个范围内的每一个数值,$\vec{A}$都有一个确定的矢量和它对应,则称$\vec{A}$为数性变量t的矢量函数.记为:$\vec{A} = A(t)$,也可以写作$\vec{A} = A_x(t)i + A_y(t)j + A_z(t)k$
 
-      矢量函数$A(t)$的起点取在坐标原点，其终点随变量t变化描绘出了一条曲线，该曲线叫做$A(t)$的矢端曲线。也就是$A(t)$的图像。
+      矢量函数$A(t)$的起点取在坐标原点，其终点随变量t变化描绘出了一条曲线，该曲线叫做$A(t)$的矢端曲线.也就是$A(t)$的图像.
     }%矢量函数/向量函数结尾
 
     \subsubsection{矢量向量函数的极限}{
       用$\delta-\epsilon$语言来说:
 
-      设矢量函数$A(t)$在点$t_0$的某个邻域内有定义(在$t_0$点可以没有),$\vec{A}_0$为常矢量。若对于任意给定$\epsilon > 0$,都存在一个$\delta > 0$,当$0 < |t - t_0| < \delta$时，就有$|A(t) - \vec{A}_0|$成立，则称当$t \to t_0$时,$A(t)$有极限$\vec{A}_0$,记作:
+      设矢量函数$A(t)$在点$t_0$的某个邻域内有定义(在$t_0$点可以没有),$\vec{A}_0$为常矢量.若对于任意给定$\epsilon > 0$,都存在一个$\delta > 0$,当$0 < |t - t_0| < \delta$时，就有$|A(t) - \vec{A}_0|$成立，则称当$t \to t_0$时,$A(t)$有极限$\vec{A}_0$,记作:
 
       \begin{center}
         $\limNormal{t \to t_0}A(t) = \vec{A}_0$
@@ -1999,13 +2021,13 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
         $\limNormal{t \to t_0}A_y(t) = A_y(t_0)$
       \end{center}
 
-      就称$A(t)$在$t_0$点连续。
+      就称$A(t)$在$t_0$点连续.
     }%矢量函数的连续结尾
 
     \subsubsection{矢量函数的导数}{
       设矢量函数$A(t)$在点t处有增量$\Delta A = A(t + \Delta t) - A(t)$
 
-      当$\Delta t \to 0$时,$\cfrac{\Delta A}{\Delta t} = \cfrac{A(t + \Delta t) - A(t)}{\Delta t}$的极限存在,则称此极限值为$A(t)$在点t处的导向量/导矢。即 :
+      当$\Delta t \to 0$时,$\cfrac{\Delta A}{\Delta t} = \cfrac{A(t + \Delta t) - A(t)}{\Delta t}$的极限存在,则称此极限值为$A(t)$在点t处的导向量/导矢.即 :
 
       \begin{center}
         $A\derivative(t) = \cfrac{dA(t)}{dt} = \limNormal{\Delta t \to 0}\cfrac{\Delta A}{\Delta t} = \limNormal{\Delta t \to 0}\cfrac{A(t + \Delta t) - A(t)}{\Delta t}$
@@ -2022,7 +2044,7 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
         \item 若$\vec{A} = A(u),u = u(t)$,则$\cfrac{d\vec{A}}{dt} = \cfrac{d\vec{A}}{du}\cdot\cfrac{du}{dt}$
       \end{itemize}
 
-      这些公式与函数的导数公式类似。只是在乘法上向量有点乘和叉乘两种乘法,而且没有除法,所以没有除法法则。
+      这些公式与函数的导数公式类似.只是在乘法上向量有点乘和叉乘两种乘法,而且没有除法,所以没有除法法则.
 
       向量导数在几何上的直观图像为:
 
@@ -2032,7 +2054,7 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
     }%矢量函数的导数
 
     \subsubsection{矢量函数的微分}{
-      称$dA(t) = A\derivative(t)dt\ (\Delta t = dt)$为$A(t)$在$t$处的微分。在直角坐标系中有:
+      称$dA(t) = A\derivative(t)dt\ (\Delta t = dt)$为$A(t)$在$t$处的微分.在直角坐标系中有:
 
       $\cfrac{d\vec{A}}{dt} = A\derivative_x(t)\vec{i} + A\derivative_y(t)\vec{j} + A\derivative_z(t)\vec{k}$
 
@@ -2041,7 +2063,120 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
       $d\vec{A} = dA_x(t)\vec{i} + dA_y(t)\vec{j} + dA_z(t)\vec{k} = (A\derivative_x(t)\vec{i} + A\derivative_y(t)\vec{j} + A\derivative_z(t)\vec{k})dt$
     }%矢量函数的微分结尾
 
+    \subsubsection{矢量函数的不定积分}{
+      若$A\derivative(t) = a(t)$,则称$A(t)$是$a(t)$的原函数.$a(t)$的原函数的一般形式叫做$a(t)$的不定积分,记作 :
+
+      $\int a(t)dt$
+
+      若$A\derivative(t)$是$a(t)$的一个原函数,则有 :
+
+      $\int a(t)dt = A(t) + \vec{\mathConstant}$\qquad ($\vec{\mathConstant}$为任意常矢)
+    }
+
+    \subsubsection{矢量函数的定积分}{
+      类似于数性函数,$a(t)$在$[t_1,t_2]$上的定积分的定义为 :
+
+      $\definiteIntegral{t_2}{t_1}a(t)dt = \limNormal{n \to \infty}\limNormal{\lambda \to 0}\upDownSum{n}{i = 1}a(\xi_i)\Delta t_i$
+
+      若$A(t)$是$a(t)$的一个原函数,则有 :
+      $$
+        \definiteIntegral{t_2}{t_1}a(t)dt = A(t_2) - A(t_1)\qquad \mbox{(微积分基本定理)}
+      $$
+      在直角坐标系中可分解为 :
+      $$
+        \definiteIntegral{t_2}{t_1}a(t)dt = \definiteIntegral{t_2}{t_1}a_x(t)dt\vec{i} + \definiteIntegral{t_2}{t_1}a_y(t)dt\vec{j} + \definiteIntegral{t_2}{t_1}a_z(t)dt\vec{k}
+      $$
+    }%矢量函数的定积分
+
+    \begin{itemize}
+      \item 从上述内容看出,矢量函数的微积分与数学分析(高等数学)中的微积分相类似,不过矢量函数要复杂些,他在直角坐标系中分解成三个数性函数,即他的三个分量.对矢量函数进行某一种运算,也就等于对他的各个分量进行这种运算.
+      \item 矢量分解与坐标选取有关.在不同的坐标系中,有不同的表现形式,有的可能复杂的多.这里主要讨论直角坐标系的分解问题,多数问题还是会用分量表示.
+    \end{itemize}
+
   }%场论基本内容结尾
+
+  \subsection{场的分类与表示法}{
+
+    \subsubsection{场的概念}{
+      某一物理量在空间的分布就称为"场".在这个空间发生了物理现象,也就有物理量在这个空间分布.
+    }%场的概念结尾
+
+    \subsubsection{场的分类与表示}{
+      场中每一点$M:(x,y,z)$都对应着一个物理量,即某个函数$\defFunction{M}$,如果这个函数是数量值函数,这种场就叫做数量场.如果是向量值函数,那么这种场就叫做矢量场.
+
+      场中的物理量往往与点的位置有关,而且还将随时间变化.会随时间变化的场就叫做不稳定场(或不定常场),表示为 :
+      $$
+        u= \defFunction{M,t},\vec{A} = A(M,t)
+      $$
+      在三维直角坐标系(可推广至任意维)下也可分解为 :
+      $$
+        u = \defFunction{x,y,z,t}
+      $$
+      $$
+        \vec{A} = A(x,y,z,t) = A_x(x,y,z,t)\vec{i} + A_y(x,y,z,t)\vec{j} + A_z(x,y,z,t)\vec{k}
+      $$\spaceline
+
+      如果场中物理量不随时间变换,这种场叫做稳定场(定常场),表示为 :
+      $$
+        u= \defFunction{M}\qquad \vec{A} = A(M)
+      $$
+      在三维直角坐标系(可推广)下也可以分解为 :
+      $$
+        u= \defFunction{x,y,z}
+      $$
+      $$
+        \vec{A} = A(x,y,z) = A_x(x,y,z)\vec{i} + A_y(x,y,z)\vec{j} + A_z(x,y,z)\vec{k}
+      $$
+      在不稳定场中,美以固定时刻也就是稳定场.在场论中,讨论稳定场是基础.对于不稳定场,可以在讨论不稳定场的基础上再讨论对时间的变化.因此接下来一大段着重讨论稳定场的规律.
+    }%场的分类与表示
+
+    \subsubsection{场的直观表示}{
+      在数量场中,物理量是点的坐标$(x,y,z)$的函数 :
+      $$
+        u = \defFunction{x,y,z}
+      $$
+      当u为某常数$\mathConstant$时,所有满足$\defFunction{x,y,z} = \mathConstant$的点就组成一个曲面.这个曲面的特点是在其上的点$(x,y,z)$处的函数值$u$相等,即
+      $$
+        \defFunction{x,y,z} = \mathConstant
+      $$
+      此曲面称为等值面,在平面中也被称为等值线.
+
+      在矢量场中用矢量线表示.场中的曲线$L$,若他每点的切线方向与场在该点的矢量方向平行,则$L$称为该矢量场的矢量线.矢量线满足微分方程 :
+      $$
+        \cfrac{dx}{A_x} = \cfrac{dy}{A_y} = \cfrac{dz}{A_z}
+      $$
+
+      \begin{itemize}
+        \item 矢量线$L$不止有一个,而是一族曲线.矢量线$L$存在于场中,$L$上每一点都有一个矢量$\vec{A} = \begin{bmatrix}
+                  A_x & A_y & A_z
+                \end{bmatrix}$
+        \item 矢量线$L$只反映矢量场在$L$上每点的方向,并没有大小数量关系.
+        \item 等值面(线)是满足等函数值的自变量全体.因为C时任意常数,所以$\defFunction{x,y,z} = \mathConstant$表示等值面族.
+      \end{itemize}
+    }%场的直观表示结尾
+
+  }%场的分类与表示法结尾
+
+  \subsection{方向导数与梯度}{
+
+    \subsubsection{方向导数的定义}{
+      \includegraphics{resources/directionDerivative1.png}
+
+      从数量场$u= u(M)$中任一点$M_0$出发引一条射线$l$,在$l$上任取一点$M$,记$M_0M = \rho$,当沿$l$,$M \to M_0$时,此式的极限存在 :
+      $$
+        \cfrac{\Delta u}{\rho} = \cfrac{u(M) - u(M_0)}{M_0M}
+      $$
+      称此极限值为函数$u(M)$在点$M_0$处沿方向$l$的方向导数,记为$\directionDerivative{u}{l}{M_0}$,即 :
+      $$
+        \directionDerivative{u}{l}{M_0} = \limNormal{M \to M_0}\cfrac{u(M) - u(M_0)}{M_0M}
+      $$
+
+      \begin{itemize}
+        \item 方向导数是一个数量,他与点$M_0$有关,也与方向$l$有关.
+      \end{itemize}
+    }%方向导数结尾
+
+  }%方向导数,梯度,散度,旋度结尾
 
  }%场论结尾
 
@@ -2068,13 +2203,13 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
    }%网络安全结尾
 
   \section{计算机图形学}{
-    注:本章中向量默认为列向量。
+    注:本章中向量默认为列向量.
 
     \subsection{对于线性代数部分的补充与扩展}{
 
-      在计算机图形学中线性代数的主要作用是操纵与计算空间中对象的变化。由此衍生出了一些特殊的东西。
+      在计算机图形学中线性代数的主要作用是操纵与计算空间中对象的变化.由此衍生出了一些特殊的东西.
 
-      同时有一部分重要的常用基础内容放在了数学篇中的空间解析几何部分。
+      同时有一部分重要的常用基础内容放在了数学篇中的空间解析几何部分.
 
       \begin{enumerate}
         \item {向量叉乘的对偶矩阵:
@@ -2100,9 +2235,9 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
                 \end{bmatrix}
               $$
               }
-        \item 非满秩矩阵意味着将空间变换到了更低的维度。
-        \item 特征向量是指在进行了矩阵所代表的线性变换后方向没改变向量,特征值则是指特征向量的缩放倍数。
-        \item 逆矩阵所代表的变换成为逆变换,是原矩阵所代表的变换的反向操作,一个矩阵乘以他的逆矩阵是单位阵,这从几何上的直观理解就是什么都没做,两次操作互相抵消了。
+        \item 非满秩矩阵意味着将空间变换到了更低的维度.
+        \item 特征向量是指在进行了矩阵所代表的线性变换后方向没改变向量,特征值则是指特征向量的缩放倍数.
+        \item 逆矩阵所代表的变换成为逆变换,是原矩阵所代表的变换的反向操作,一个矩阵乘以他的逆矩阵是单位阵,这从几何上的直观理解就是什么都没做,两次操作互相抵消了.
       \end{enumerate}
     }
 
@@ -2120,7 +2255,7 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
         \item shear 剪切变换
       \end{enumerate}
 
-      如同3b1b的观点,将目标空间看作矩阵的列空间。而矩阵每一列都对应了列空间中的一个基向量,拿2维空间举例:
+      如同3b1b的观点,将目标空间看作矩阵的列空间.而矩阵每一列都对应了列空间中的一个基向量,拿2维空间举例:
       $$
         \begin{bmatrix}
           1 & 0 \\
@@ -2130,7 +2265,7 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
 
       假设第一列代表了$x$轴的单位向量$i$,则第二列代表了$y$轴的单位向量$j$
 
-      因此,对矩阵进行操作就相当于对矩阵所代表的空间进行操作。
+      因此,对矩阵进行操作就相当于对矩阵所代表的空间进行操作.
 
       例如:$$
         \begin{bmatrix}
@@ -2139,8 +2274,8 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
         \end{bmatrix}
       $$
 
-      这个矩阵就代表着将单位向量$i$移动到了坐标$(2,1)$,将单位向量$j$移动到了坐标$(1,2)$。整个二维空间都是由这两个单位向量所张成的。随着单位向量的移动,整个空间也就随之而变形。这种操作被称为变换。
-      其中一类最简单的变换称为线性变换,在线性代数篇中已有了详细解释。
+      这个矩阵就代表着将单位向量$i$移动到了坐标$(2,1)$,将单位向量$j$移动到了坐标$(1,2)$.整个二维空间都是由这两个单位向量所张成的.随着单位向量的移动,整个空间也就随之而变形.这种操作被称为变换.
+      其中一类最简单的变换称为线性变换,在线性代数篇中已有了详细解释.
 
       旋转矩阵的表示原理如下:
 
@@ -2157,7 +2292,7 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
 
 
       \subsubsection{齐次坐标}{
-        由于单纯的线性变换并不能让对象动起来,依然只能在原点操作,所以需要齐次坐标表示空间上的位移。
+        由于单纯的线性变换并不能让对象动起来,依然只能在原点操作,所以需要齐次坐标表示空间上的位移.
 
         如下图:
 
@@ -2169,7 +2304,7 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
 
         $y\prime = y + t_y$
 
-        仔细思考一下发现似乎并不能写成矩阵$A\vec{x} = \vec{b}$的形式。
+        仔细思考一下发现似乎并不能写成矩阵$A\vec{x} = \vec{b}$的形式.
 
         事实上应该写成这样:
         $$
@@ -2193,7 +2328,7 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
           \end{bmatrix}
         $$
 
-        因此平移变换不属于线性变换。但是人们不想要特殊情况,于是引入了齐次坐标:
+        因此平移变换不属于线性变换.但是人们不想要特殊情况,于是引入了齐次坐标:
 
         还是拿二维的情况举例,增加一个维度,将二维的点表示为:
         $$\begin{bmatrix}
@@ -2205,7 +2340,7 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
             x & y & 0
           \end{bmatrix}^T$$
 
-        也就是说:再多增加一个维度用于说明表示的是一个点还是一个向量,这是因为向量具有平移不变性,不管怎么移动表示的始终是一个方向。
+        也就是说:再多增加一个维度用于说明表示的是一个点还是一个向量,这是因为向量具有平移不变性,不管怎么移动表示的始终是一个方向.
 
         齐次坐标的好处就在这里,它是这么用的:
 
@@ -2239,7 +2374,7 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
           \item 向量 + 向量 = 向量, 向量相加还是向量 $0 + 0 = 0$
           \item 点 - 点 = 向量, 两点相减得到向量 $1 - 1 = 0$
           \item 点 + 向量 = 点, 一个点加一个向量结果是一个点 $0 + 1 = 1$
-          \item 点 + 点 = 两个点的中点, $1 + 1 = 2$,原因见扩充定义。
+          \item 点 + 点 = 两个点的中点, $1 + 1 = 2$,原因见扩充定义.
         \end{itemize}
         扩充定义如下:
         $$\begin{bmatrix}
@@ -2323,11 +2458,11 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
       }%齐次坐标结尾
 
       \subsubsection{组合变换}{
-        可以通过组合各个基础变换以形成复杂的变换效果。
+        可以通过组合各个基础变换以形成复杂的变换效果.
 
-        组合方法为对应矩阵按照顺序从右向左做乘法。
+        组合方法为对应矩阵按照顺序从右向左做乘法.
 
-        大部分时候组合顺序至关重要。
+        大部分时候组合顺序至关重要.
 
       }%组合变换结尾
 
@@ -2462,7 +2597,7 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
 
                 所以在实际情况中,需要将相机和被观测的对象视作一个整体，进行如下操作:
                 \begin{enumerate}
-                  \item 将$\vec{e}$平移到原点。
+                  \item 将$\vec{e}$平移到原点.
                   \item 将$\hat{\vec{g}}$旋转到-z方向
                   \item 将$\hat{\vec{t}}$旋转到y方向
                   \item 将$\hat{\vec{g}} \times \hat{\vec{t}}$旋转到x方向
@@ -2496,9 +2631,9 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
                             0                                      & 0                 & 0                  & 1
                           \end{bmatrix}
                         $$
-                        由于旋转矩阵是正交矩阵,所以求逆等于求转置。
+                        由于旋转矩阵是正交矩阵,所以求逆等于求转置.
                 \end{itemize}
-                随着相机的变换,其他所有物体也应当跟着变换,这样才能保证拍出来的是同样的照片。
+                随着相机的变换,其他所有物体也应当跟着变换,这样才能保证拍出来的是同样的照片.
                 }
 
           \item {
@@ -2508,7 +2643,7 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
 
                 \includegraphics[scale=0.5]{resources/twoProjectionTransformation.png}
 
-                两种投影的本质区别就在于是否有近大远小的现象。
+                两种投影的本质区别就在于是否有近大远小的现象.
 
                 \begin{itemize}
                   \item {
@@ -2541,15 +2676,15 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
                   \item {
                         透视变换(Perspective projection) :
 
-                        首先把视锥压缩成长方体。(近平面永远不变,远处平面z值不发生变化,中心点不发生变化)$(n \to n,f \to f,M_{persp \to ortho})$
+                        首先把视锥压缩成长方体.(近平面永远不变,远处平面z值不发生变化,中心点不发生变化)$(n \to n,f \to f,M_{persp \to ortho})$
 
                         \includegraphics[scale=0.5]{resources/perspectiveProjection.png}
 
-                        关键就在于:要找到中点和被投影对象之间的联系。
+                        关键就在于:要找到中点和被投影对象之间的联系.
 
                         \includegraphics[scale=0.5]{resources/perspectiveProjection_middle.png}
 
-                        $y^\prime = \cfrac{n}{z}y$,由这个公式就可以算出来压缩后的y,并且结果是满足要求的。
+                        $y^\prime = \cfrac{n}{z}y$,由这个公式就可以算出来压缩后的y,并且结果是满足要求的.
 
                         类似的,还有$x^\prime = \cfrac{n}{z}x$
 
@@ -2588,7 +2723,7 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
                           \end{bmatrix}
                         $$
 
-                        而这一行未知的也一定与z有关系。
+                        而这一行未知的也一定与z有关系.
 
                         另外，任何在目标平面上的点被投影后一定在原地，也就是说:$$
                           \begin{bmatrix}
@@ -2715,16 +2850,16 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
 
     \subsection{充分必要条件}{
 
-      充分必要条件(sufficient and necessary condition)简称为充要条件。
+      充分必要条件(sufficient and necessary condition)简称为充要条件.
 
       在逻辑学中:
       \begin{itemize}
-        \item 当命题"若P则Q"为真时,P称为Q的充分条件,Q称为P的必要条件。
+        \item 当命题"若P则Q"为真时,P称为Q的充分条件,Q称为P的必要条件.
 
               因此:
 
-        \item 当命题"若P则Q"与"若Q则P"皆为真时,P是Q的充分必要条件,同时,Q也是P的充分必要条件。
-        \item 当命题"若P则Q"为真,而"若Q则P为假时",P是Q的充分不必要条件,Q是P的必要不充分条件,反之亦然。
+        \item 当命题"若P则Q"与"若Q则P"皆为真时,P是Q的充分必要条件,同时,Q也是P的充分必要条件.
+        \item 当命题"若P则Q"为真,而"若Q则P为假时",P是Q的充分不必要条件,Q是P的必要不充分条件,反之亦然.
       \end{itemize}
 
       \subsubsection{必要条件}{
@@ -2734,13 +2869,13 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
 
         $\lnot P \to \lnot Q$
 
-        通过否定后件,得出"如果Q是真,则P是真"。
+        通过否定后件,得出"如果Q是真,则P是真".
 
         $Q \to P$
       }%必要条件结尾
 
       \subsubsection{充分条件}{
-        P是Q的充分条件,代表"如果P是真,则Q是真"或"如果Q是假,则P是假"。
+        P是Q的充分条件,代表"如果P是真,则Q是真"或"如果Q是假,则P是假".
 
         以逻辑符号表示:
 
@@ -2748,13 +2883,13 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
       }%充分条件结尾
 
       \subsubsection{必要条件及充分条件}{
-        P是Q的充分及必要条件,代表"当且仅当P是真,则Q是真"。
+        P是Q的充分及必要条件,代表"当且仅当P是真,则Q是真".
 
         以逻辑符号表示:
 
         $P \longleftrightarrow Q$
 
-        留意$\lnot P \to \lnot Q$可以推出$Q \to P$。
+        留意$\lnot P \to \lnot Q$可以推出$Q \to P$.
 
         $(\lnot P \to \lnot Q) \land (P \to Q)$
 
@@ -2768,4 +2903,6 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
    }%逻辑学基本常识结尾
 
  }%逻辑学结尾
+
+
 \end{document}
