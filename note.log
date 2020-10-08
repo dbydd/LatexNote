@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7 Portable) (preloaded format=pdflatex 2020.8.12)  8 OCT 2020 11:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7 Portable) (preloaded format=pdflatex 2020.8.12)  8 OCT 2020 16:46
 entering extended mode
 **c:/Users/19920/Desktop/LatexNote/note.tex
 (c:/Users/19920/Desktop/LatexNote/note.tex
@@ -1160,111 +1160,118 @@ Overfull \hbox (5.23744pt too wide) in paragraph at lines 2230--2231
 [59
 
 ]
-<resources/rotateMatrixGraphics.png, id=1433, 1078.0275pt x 447.92343pt>
+<resources/rotateMatrixGraphics.png, id=1434, 1078.0275pt x 447.92343pt>
 File: resources/rotateMatrixGraphics.png Graphic file (type png)
 <use resources/rotateMatrixGraphics.png>
-Package pdftex.def Info: resources/rotateMatrixGraphics.png  used on input line 2353.
+Package pdftex.def Info: resources/rotateMatrixGraphics.png  used on input line 2357.
 (pdftex.def)             Requested size: 269.50621pt x 111.98058pt.
  [60]
-<resources/homogeneous_coordinates.png, id=1446, 1357.07pt x 544.0325pt>
+<resources/homogeneous_coordinates.png, id=1447, 1357.07pt x 544.0325pt>
 File: resources/homogeneous_coordinates.png Graphic file (type png)
 <use resources/homogeneous_coordinates.png>
-Package pdftex.def Info: resources/homogeneous_coordinates.png  used on input line 2368.
+Package pdftex.def Info: resources/homogeneous_coordinates.png  used on input line 2372.
 (pdftex.def)             Requested size: 339.26666pt x 136.00778pt.
  [61 <./resources/rotateMatrixGraphics.png> <./resources/homogeneous_coordinates.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 2463--2465
+Underfull \hbox (badness 10000) in paragraph at lines 2467--2469
 
  []
 
 [62]
-Underfull \hbox (badness 10000) in paragraph at lines 2539--2540
+Underfull \hbox (badness 10000) in paragraph at lines 2543--2544
 
  []
 
 [63] [64]
-<resources/viewTransformation.png, id=1475, 590.205pt x 322.95656pt>
+<resources/viewTransformation.png, id=1476, 590.205pt x 322.95656pt>
 File: resources/viewTransformation.png Graphic file (type png)
 <use resources/viewTransformation.png>
-Package pdftex.def Info: resources/viewTransformation.png  used on input line 2663.
+Package pdftex.def Info: resources/viewTransformation.png  used on input line 2667.
 (pdftex.def)             Requested size: 531.17958pt x 290.6582pt.
 
-Overfull \hbox (3.16476pt too wide) in paragraph at lines 2663--2664
+Overfull \hbox (3.16476pt too wide) in paragraph at lines 2667--2668
 [][] 
  []
 
 [65] [66 <./resources/viewTransformation.png>]
-<resources/twoProjectionTransformation.png, id=1493, 1131.22626pt x 493.845pt>
+<resources/twoProjectionTransformation.png, id=1494, 1131.22626pt x 493.845pt>
 File: resources/twoProjectionTransformation.png Graphic file (type png)
 <use resources/twoProjectionTransformation.png>
-Package pdftex.def Info: resources/twoProjectionTransformation.png  used on input line 2713.
+Package pdftex.def Info: resources/twoProjectionTransformation.png  used on input line 2717.
 (pdftex.def)             Requested size: 565.61174pt x 246.92189pt.
 
-Overfull \hbox (37.59692pt too wide) in paragraph at lines 2713--2714
+Overfull \hbox (37.59692pt too wide) in paragraph at lines 2717--2718
 [][] 
  []
 
 
-Overfull \hbox (2.69783pt too wide) in paragraph at lines 2721--2722
+Overfull \hbox (2.69783pt too wide) in paragraph at lines 2725--2726
 []\C70/rm/m/n/12/51 H \C70/rm/m/n/12/5b ö \C70/rm/m/n/12/4e I   * \C70/rm/m/n/12/7a z \C70/rm/m/n/12/95 Ù \C70/rm/m/n/12/4e - \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/7a À \C70/rm/m/n/12/65 π \C70/rm/m/n/12/4f S\OT1/cmr/m/n/12 , \C70/rm/m/n/12/7e Ÿ \C70/rm/m/n/12/51 ˙ \C70/rm/m/n/12/4e 	 * \C70/rm/m/n/12/8f t \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/83  \C70/rm/m/n/12/56 Ù$\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 l; r\OT1/cmr/m/n/12 ] \OMS/cmsy/m/n/12  \OT1/cmr/m/n/12 [\OML/cmm/m/it/12 b; t\OT1/cmr/m/n/12 ] \OMS/cmsy/m/n/12  \OT1/cmr/m/n/12 [\OML/cmm/m/it/12 f; n\OT1/cmr/m/n/12 ]$,\C70/rm/m/n/12/5e s \C70/rm/m/n/12/79 ˚ \C70/rm/m/n/12/5e v \C70/rm/m/n/12/7f ) \C70/rm/m/n/12/65 > \C70/rm/m/n/12/52 0 \C70/rm/m/n/12/68  \C70/rm/m/n/12/51 ∆ \C70/rm/m/n/12/7a À \C70/rm/m/n/12/65 π \C70/rm/m/n/12/4f S$\OT1/cmr/m/n/12 [\OMS/cmsy/m/n/12  \OT1/cmr/m/n/12 1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1][]$ 
  []
 
 [67 <./resources/twoProjectionTransformation.png>]
-<resources/OrthographicProjection.png, id=1499, 1005.00468pt x 289.08pt>
+<resources/OrthographicProjection.png, id=1500, 1005.00468pt x 289.08pt>
 File: resources/OrthographicProjection.png Graphic file (type png)
 <use resources/OrthographicProjection.png>
-Package pdftex.def Info: resources/OrthographicProjection.png  used on input line 2723.
+Package pdftex.def Info: resources/OrthographicProjection.png  used on input line 2727.
 (pdftex.def)             Requested size: 502.50111pt x 144.53964pt.
 
-Overfull \hbox (0.33598pt too wide) in paragraph at lines 2723--2724
+Overfull \hbox (0.33598pt too wide) in paragraph at lines 2727--2728
 [][] 
  []
 
-<resources/perspectiveProjection.png, id=1500, 905.63344pt x 313.17pt>
+<resources/perspectiveProjection.png, id=1501, 905.63344pt x 313.17pt>
 File: resources/perspectiveProjection.png Graphic file (type png)
 <use resources/perspectiveProjection.png>
-Package pdftex.def Info: resources/perspectiveProjection.png  used on input line 2750.
+Package pdftex.def Info: resources/perspectiveProjection.png  used on input line 2754.
 (pdftex.def)             Requested size: 452.81561pt x 156.58461pt.
-<resources/perspectiveProjection_middle.png, id=1501, 1104.37593pt x 333.49594pt>
+<resources/perspectiveProjection_middle.png, id=1502, 1104.37593pt x 333.49594pt>
 File: resources/perspectiveProjection_middle.png Graphic file (type png)
 <use resources/perspectiveProjection_middle.png>
-Package pdftex.def Info: resources/perspectiveProjection_middle.png  used on input line 2754.
+Package pdftex.def Info: resources/perspectiveProjection_middle.png  used on input line 2758.
 (pdftex.def)             Requested size: 552.18661pt x 166.74756pt.
 
-Overfull \hbox (50.02148pt too wide) in paragraph at lines 2754--2755
+Overfull \hbox (50.02148pt too wide) in paragraph at lines 2758--2759
 [][] 
  []
 
 [68 <./resources/OrthographicProjection.png> <./resources/perspectiveProjection.png>] [69 <./resources/perspectiveProjection_middle.png>] [70]
 Á¨¨‰∏âÁ´†
 
-Overfull \hbox (0.33687pt too wide) in paragraph at lines 2931--2932
+Overfull \hbox (0.33687pt too wide) in paragraph at lines 2935--2936
 []\C70/rm/m/n/12/5f S \C70/rm/m/n/12/54 } \C70/rm/m/n/12/98 ò\OT1/cmr/m/n/12 "\C70/rm/m/n/12/82 Â\OT1/cmr/m/n/12 P\C70/rm/m/n/12/52 \OT1/cmr/m/n/12 Q"\C70/rm/m/n/12/4e : \C70/rm/m/n/12/77 \OT1/cmr/m/n/12 ,\C70/rm/m/n/12/80 \OT1/cmr/m/n/12 "\C70/rm/m/n/12/82 Â\OT1/cmr/m/n/12 Q\C70/rm/m/n/12/52 \OT1/cmr/m/n/12 P\C70/rm/m/n/12/4e : \C70/rm/m/n/12/50 G \C70/rm/m/n/12/65 ˆ\OT1/cmr/m/n/12 ",P\C70/rm/m/n/12/66 /\OT1/cmr/m/n/12 Q\C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/51 E \C70/rm/m/n/12/52  \C70/rm/m/n/12/4e  \C70/rm/m/n/12/5f ≈ \C70/rm/m/n/12/89 Å \C70/rm/m/n/12/67 a \C70/rm/m/n/12/4e ˆ\OT1/cmr/m/n/12 ,Q\C70/rm/m/n/12/66 /\OT1/cmr/m/n/12 P\C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/5f ≈ \C70/rm/m/n/12/89 Å \C70/rm/m/n/12/4e  \C70/rm/m/n/12/51 E \C70/rm/m/n/12/52  \C70/rm/m/n/12/67 a \C70/rm/m/n/12/4e ˆ\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/53 Õ \C70/rm/m/n/12/4e K ¶ \C70/rm/m/n/12/71 6\OT1/cmr/m/n/12 . 
  []
 
 [71
 
 ] [72]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2977.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2977.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2981.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2981.
  (note.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2977.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2977.
-Package rerunfilecheck Info: File `note.out' has not changed.
-(rerunfilecheck)             Checksum: 5C05E4734621E320934EA68DF42BBAE9;18480.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2977.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2981.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2981.
+
+
+Package rerunfilecheck Warning: File `note.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `note.out':
+(rerunfilecheck)             Before: 5C05E4734621E320934EA68DF42BBAE9;18480
+(rerunfilecheck)             After:  E1E185D6EAC71C414EA3461E80B9056E;18569.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2981.
  ) 
 Here is how much of TeX's memory you used:
- 38932 strings out of 481212
- 877430 string characters out of 2901265
+ 38933 strings out of 481212
+ 877442 string characters out of 2901265
  1193920 words of memory out of 3000000
  53030 multiletter control sequences out of 15000+200000
  614863 words of font info for 329 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,13n,98p,734b,936s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc> <C:\Users\19920\scoop\apps\latex\current\texmfs/data\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/esint-type1/esint10.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on note.pdf (79 pages, 2816845 bytes).
+Output written on note.pdf (79 pages, 2817140 bytes).
 PDF statistics:
- 2155 PDF objects out of 2487 (max. 8388607)
- 336 named destinations out of 1000 (max. 500000)
+ 2157 PDF objects out of 2487 (max. 8388607)
+ 337 named destinations out of 1000 (max. 500000)
  1700 words of extra memory for PDF output out of 10000 (max. 10000000)
 

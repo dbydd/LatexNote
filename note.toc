@@ -138,6 +138,7 @@
 \contentsline {subsubsection}{\numberline {1.8.3.4}梯度的运算公式}{58}{subsubsection.1.8.3.4}%
 \contentsline {section}{\numberline {1.9}群论}{58}{section.1.9}%
 \contentsline {section}{\numberline {1.10}矩阵论}{58}{section.1.10}%
+\contentsline {section}{\numberline {1.11}离散数学}{58}{section.1.11}%
 \contentsline {chapter}{\numberline {第二章\hspace {.3em}}计算机科学}{59}{chapter.2}%
 \contentsline {section}{\numberline {2.1}编程}{59}{section.2.1}%
 \contentsline {section}{\numberline {2.2}网络安全}{59}{section.2.2}%
