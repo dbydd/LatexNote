@@ -10,6 +10,8 @@
 \usepackage{esint}
 \usepackage{cases}
 \usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usepackage{pgfplots}
 
 \geometry{left=1cm,right=1cm,top=3cm,bottom=3cm}
 \title{db的日常笔记}
@@ -48,49 +50,28 @@
 \newcommand{\transpose}{^T}
 \newcommand{\spaceline}{\\\indent}
 \newcommand{\directionDerivative}[3]{\left.\cfrac{\partial #1}{\partial #2}\right|_{#3}}
+\newcommand{\partialDerivativeFrac}[2]{\cfrac{\partial #1}{\partial #2}}
 
-% \newcommand{\drawBaseAxisInTikz}{
-%   \draw[->,color = red] (-5,0) -- (5,0) node[right]{x};
-%   \draw[->,color = blue] (0,-5) -- (0,5) node[above]{y};
-%   \filldraw(0,0) circle (0.05);
-%   \node (center) at (-0.25,-0.25){o};
-%   \foreach \x in {0,1,...,8}
-%   {
-%     \draw[xshift=\x cm] (-4,0) -- (-4,0.1);
-%     \draw[yshift=\x cm] (0,-4) -- (0.1,-4);
-%     };
-%     \foreach \x in {-4,...,-1}
-%     \node[below] at(\x,0){\x};
-%     \foreach \x in {1,...,4}
-%     \node[below] at(\x,0){\x};
-%     \foreach \y in {-4,...,-1}
-%     \node[left] at(0,\y){\y};
-%     \foreach \y in {1,...,4}
-%     \node[left] at(0,\y){\y};
-%     }
+%  \newcommand{\drawBaseAxis}{
+%    \draw[->,color = red] (-5,0) -- (5,0) node[right]{x};
+%    \draw[->,color = blue] (0,-5) -- (0,5) node[above]{y};
+%    \filldraw(0,0) circle (0.05);
+%    \node (center) at (-0.25,-0.25){o};
+%    \foreach \x in {0,1,...,8}
+%    {
+%      \draw[xshift=\x cm] (-4,0) -- (-4,0.1);
+%      \draw[yshift=\x cm] (0,-4) -- (0.1,-4);
+%      };
+%      \foreach \x in {-4,...,-1}
+%      \node[below] at(\x,0){\x};
+%      \foreach \x in {1,...,4}
+%      \node[below] at(\x,0){\x};
+%      \foreach \y in {-4,...,-1}
+%      \node[left] at(0,\y){\y};
+%      \foreach \y in {1,...,4}
+%      \node[left] at(0,\y){\y};
+%      }
 
-% \tikzset{
-%  \def\drawBaseAxisInTikz{
-%   \draw[->,color = red] (-5,0) -- (5,0) node[right]{x};
-%   \draw[->,color = blue] (0,-5) -- (0,5) node[above]{y};
-%   \filldraw(0,0) circle (0.05);
-%   \node (center) at (-0.25,-0.25){o};
-%   \foreach \x in {0,1,...,8}
-%   {
-%     \draw[xshift=\x cm] (-4,0) -- (-4,0.1);
-%     \draw[yshift=\x cm] (0,-4) -- (0.1,-4);
-%     };
-%     \foreach \x in {-4,...,-1}
-%     \node[below] at(\x,0){\x};
-%     \foreach \x in {1,...,4}
-%     \node[below] at(\x,0){\x};
-%     \foreach \y in {-4,...,-1}
-%     \node[left] at(0,\y){\y};
-%     \foreach \y in {1,...,4}
-%     \node[left] at(0,\y){\y};
-%     } 
-% }
-    
 \begin{document}
 \pagestyle{empty}{
   \maketitle
@@ -99,7 +80,7 @@
       \item 誊录纸质笔记
       \item 隐函数存在定理
       \item 重写线性代数
-      \item 场论:p8
+      \item 场论:p10
       \item 补充多个section,计算机图形学,场论等
     \end{enumerate}
   }
@@ -118,6 +99,7 @@
 }%六大基本初等函数结尾
 
 \subsection{介值定理}{
+
 在数学分析中,介值定理(英语:intermediate value theorem,又称中间值定理)描述了连续函数在两点之间的连续性:
 
 假设有一连续函数$\fint:[a,b]\rightarrow \mathbf{R}$, 且假设$\fint(a)<\fint(b)$, 若对任意数$u$满足$\fint(a)<u<\fint(b)$,则存在一点$c,a<c<b$,使得$\fint(c) = u$,当$\fint(a)>\fint(b)$时也有类似叙述
@@ -826,7 +808,7 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
 
       因此只要设两平面法线向量为$n_1(A_1,B_1,C_1),n_2(A_2,B_2,C_2)$,然后套向量夹角公式就行了.
 
-      其中$\theta = (\hat{n_1\ n_2})$或$(\hat{-n_1\ n_2}) = (\pi - (\hat{n_1\ n_2}))$
+      其中$\theta = (\widehat{n_1\ n_2})$或$(\widehat{-n_1\ n_2}) = (\pi - (\widehat{n_1\ n_2}))$
 
       其中当向量平行时意味着平面重合(因为取的是锐角)、
     }%求两平面夹角结尾
@@ -2184,7 +2166,7 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
     \subsubsection{方向导数的定义}{
       \includegraphics{resources/directionDerivative1.png}
 
-      从数量场$u= u(M)$中任一点$M_0$出发引一条射线$l$,在$l$上任取一点$M$,记$M_0M = \rho$,当沿$l$,$M \to M_0$时,此式的极限存在 :
+      从数量场$u= u(M)$中任一点$M_0$出发引一条有向射线$l$,在$l$上任取一点$M$,记$M_0M = \rho$,当沿$l$,$M \to M_0$时,此式的极限存在 :
       $$
         \cfrac{\Delta u}{\rho} = \cfrac{u(M) - u(M_0)}{M_0M}
       $$
@@ -2195,10 +2177,75 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
 
       \begin{itemize}
         \item 方向导数是一个数量,他与点$M_0$有关,也与方向$l$有关.
-      \end{itemize}
-    }%方向导数结尾
+        \item {
+              以平面数量场为例说明方向导数的意义 :
 
-  }%方向导数,梯度,散度,旋度结尾
+              设数量场
+              $$
+                u = \defFunction{x,y}
+              $$
+              不难看出 :
+              % #TODO 画图
+              $$
+                \cfrac{\Delta u}{\rho} = \cfrac{u(M) - u(M_0)}{M_0M} = \cfrac{\defFunction{M} - \defFunction{M_0}}{M_0M}
+              $$
+              正是沿着$l$方向,函数$\defFunction{x,y}$从点$M_0$到点$M$的平均升高,即平均变化率.而极限 :
+              $$
+                \limNormal{M \to M_0}\cfrac{\Delta u}{\rho} = \limNormal{M \to M_0}\cfrac{\defFunction{M} - \defFunction{M_0}}{M_0M} (\mbox{沿着}l)
+              $$
+              是$u = \defFunction{x,y}$在点$M_0$沿$l$的变化率.所以方向导数是变化率,它反映了函数$u = \defFunction{x,y}$在$l$方向上的增减情况.当$\directionDerivative{u}{l}{M_0} > 0$,表示函数$u = \defFunction{x,y}$在点$M_0$沿方向$l$是增加的,越大表示增加的越快.反之亦然.
+              }
+        \item 偏导数是方向导数的特例.比如当$l$指向x轴正向时,$\cfrac{\partial u}{\partial l} = \cfrac{\partial u}{\partial x}$,当$l$指向y轴正向时,$\cfrac{\partial u}{\partial l} = \cfrac{\partial u}{\partial y}$.
+        \item 有时候要考虑函数沿某曲线C的导数.函数沿曲线C的每一点的切线方向的方向导数叫做函数沿曲线C的导数.
+      \end{itemize}
+    }%方向导数的定义结尾
+
+    \subsubsection{方向导数的计算公式}{
+      设$u= u(x,y,z)$在$M_0(x_0,y_0,z_0)$处可微,l的方向余弦时$\cos\alpha,\cos\beta,\cos\gamma$,则u在点$M_0$沿$l$的方向导数为 :
+      $$
+        \directionDerivative{u}{l}{M_0} = \directionDerivative{u}{x}{M_0}\cos\alpha + \directionDerivative{u}{y}{M_0}\cos\beta + \directionDerivative{u}{z}{M_0}\cos\gamma
+      $$
+      或者 :
+      $$
+        \directionDerivative{u}{l}{M_0} = \partialDerivativeFrac{u}{x}\cos\alpha + \partialDerivativeFrac{u}{y}\cos\beta + \partialDerivativeFrac{u}{z}\cos\gamma
+      $$
+    }%方向导数的计算公式结尾    
+
+    \subsubsection{梯度}{
+      设数量场$u = u(M)$,如果在场中任一点$M$处,存在非零矢量$\vec{G}$,其方向为函数$u(M)$在$M$点处方向导数的最大的方向,其模$|\vec{G}|$这个最大的方向导数值,则称矢量$\vec{G}$为数量场$u$在点$M$处的梯度,记为 :
+      $$
+        grad\ u = \vec{G}
+      $$
+      在直角坐标系中有 :
+      $$
+        grad\ u = \begin{bmatrix}
+          \partialDerivativeFrac{u}{x} & \partialDerivativeFrac{u}{y} & \partialDerivativeFrac{u}{z}
+        \end{bmatrix} = \partialDerivativeFrac{u}{x}\vec{i} + \partialDerivativeFrac{u}{y}\vec{j} + \partialDerivativeFrac{u}{z}\vec{k}
+      $$
+
+      引入$grad\ u = \triangledown u$
+
+      \begin{itemize}
+        \item 梯度是刻划数量场的概念.数量场的梯度是一个矢量.
+        \item 任一点的梯度垂直于过该点的等值面(线),并且指向$u(M)$增大的一方.因而梯度方向平行于等值面(线)的法线方向.
+        \item 数量场的每一点都有一个梯度,他是矢量,数量场的梯度场是矢量场,称为$u(M)$的梯度场.
+        \item $\partialDerivativeFrac{u}{l} = \triangledown u \cdot l_0$,其中$l_0= \cfrac{l}{|l|}$
+        \item $\triangledown$称为$\triangledown$算子
+      \end{itemize}
+    }%梯度结尾
+
+    \subsubsection{梯度的运算公式}{
+      \begin{itemize}
+        \item $\triangledown \mathConstant = 0$
+        \item $\triangledown (\mathConstant u) = \mathConstant \triangledown u$
+        \item $\triangledown (u \pm v) = \triangledown u + \triangledown v$
+        \item $\triangledown (uv) = v\triangledown u + u\triangledown v$
+        \item $\triangledown (\cfrac{u}{v}) = \cfrac{v\triangledown u - u\triangledown v}{v^2}\qquad (v \neq 0)$(注意:与导数的顺序不同)
+        \item $\triangledown \defFunction{u} = \fDerivative{u}\triangledown u$
+      \end{itemize}
+    }%梯度的运算公式
+
+  }%方向导数与梯度结尾
 
  }%场论结尾
 
