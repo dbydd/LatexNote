@@ -51,6 +51,8 @@
 \newcommand{\spaceline}{\\\indent}
 \newcommand{\directionDerivative}[3]{\left.\cfrac{\partial #1}{\partial #2}\right|_{#3}}
 \newcommand{\partialDerivativeFrac}[2]{\cfrac{\partial #1}{\partial #2}}
+\newcommand{\doubleIntegralOnZone}[1]{\iint\limits_{#1}}
+\newcommand{\defDoubleIntegralOnZone}[3]{{\iint\limits_{#1}}^{#2}_{#3}}
 
 %  \newcommand{\drawBaseAxis}{
 %    \draw[->,color = red] (-5,0) -- (5,0) node[right]{x};
@@ -943,8 +945,8 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
 
       $$
         \begin{cases}
-          x = \phi(t) \\
-          y = \Phi(t) \\
+          x = \varphi(t) \\
+          y = \Phi(t)    \\
           z = \omega(t)
         \end{cases}
       $$
@@ -952,12 +954,12 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
       其中 $t \in [\alpha,\beta]$,设三个函数都可导且不同时为0.
 
       则切向量$\vec{T} = \begin{bmatrix}
-          \phi\derivative(t_0) & \Phi\derivative(t_0) & \omega\derivative(t_0)
+          \varphi\derivative(t_0) & \Phi\derivative(t_0) & \omega\derivative(t_0)
         \end{bmatrix}$
 
-      切线方程为 : $\cfrac{x - x_0}{\phi\derivative(t_0)} = \cfrac{y - y_0}{\Phi\derivative(y_0)} = \cfrac{z - z_0}{\omega\derivative(t_0)}$
+      切线方程为 : $\cfrac{x - x_0}{\varphi\derivative(t_0)} = \cfrac{y - y_0}{\Phi\derivative(y_0)} = \cfrac{z - z_0}{\omega\derivative(t_0)}$
 
-      则法平面的点法式方程为 : $\phi\derivative(t_0)(x - x_0) + \Phi\derivative(t_0)(y - y_0) + \omega\derivative(z - z_0) = 0$
+      则法平面的点法式方程为 : $\varphi\derivative(t_0)(x - x_0) + \Phi\derivative(t_0)(y - y_0) + \omega\derivative(z - z_0) = 0$
     }%空间曲线的切线及法平面
 
     \subsubsection{空间曲线的切平面及法线}{
@@ -1528,7 +1530,7 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
   \begin{enumerate}
     \item $(\definiteIntegral{a}{x}\defFunction{t}dt)\prime = -\defFunction{x}$
     \item $(\definiteIntegral{\Phi(x)}{a}\defFunction{t}dt)\prime = \defFunction{\Phi(x)}\Phi\prime(x)$
-    \item $[\definiteIntegral{\phi}{\Phi}\defFunction{t}dt]\prime = \defFunction{\phi(x)}\phi\prime(x) - \defFunction{\Phi(x)}\Phi\prime(x)$
+    \item $[\definiteIntegral{\varphi}{\Phi}\defFunction{t}dt]\prime = \defFunction{\varphi(x)}\varphi\prime(x) - \defFunction{\Phi(x)}\Phi\prime(x)$
   \end{enumerate}
 
 }%积分上限函数结尾
@@ -1623,7 +1625,7 @@ $\definiteIntegral{\xi}{a}\defFunction{x}dx -\defFunction{a}(\xi - a) = \defFunc
 
   $$
     \begin{cases}
-      x = \phi(t) \\
+      x = \varphi(t) \\
       y = \Phi(t)
     \end{cases}
     \alpha \leq t \leq \beta
@@ -1635,7 +1637,7 @@ $\definiteIntegral{\xi}{a}\defFunction{x}dx -\defFunction{a}(\xi - a) = \defFunc
     \alpha \leq t \leq \beta
   $$
 
-  $S = \definiteIntegral{\beta}{\alpha}\sqrt{\phi^{\prime 2}(t) + \Phi^{\prime 2}(t) dt}\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad S = \definiteIntegral{\beta}{\alpha}\sqrt{1 + y^{\prime 2}}$
+  $S = \definiteIntegral{\beta}{\alpha}\sqrt{\varphi^{\prime 2}(t) + \Phi^{\prime 2}(t) dt}\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad S = \definiteIntegral{\beta}{\alpha}\sqrt{1 + y^{\prime 2}}$
 
   极坐标的情况:
 
@@ -1756,7 +1758,7 @@ $R_n(x)$是余项,表示误差,是$(x - a)^n$的高阶无穷小$O((x - a)^n)$.�
 
 \subsubsection{*有疑惑/错误\ 伯努利方程}{
   $\cfrac{dy}{dx} + p(x)y = Q(x)y^n$.当$n = 0$时,此式为齐次方程,当$n = 1$,为一阶线性微分方程.当$n$不等于0也不等于1时:$y^{-n}\cfrac{dy}{dx} + p(x)y^{1-n} = Q(x)$.将$y^{1-n}$记作$z$,于是得到$\cfrac{dz}{dx} = (1-n)y^{-n}\cfrac{dy}{dx},\cfrac{1}{1-n}\cfrac{dz}{dx} + p(x)z = Q(x)$,再变形得到:$\cfrac{dz}{dx} + (1-n)p(x)z = (1-n)Q(x)$.然后两边求$y$,左边不要带入.
-
+  %#TODO 检查笔记.
 }%伯努利方程结尾
 
 \subsubsection{可降阶高阶微分方程}{
@@ -1956,22 +1958,141 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
 }%微积分结尾
 
 \section{多元微积分}{
-  注:如果忘了什么是偏导数就去上一章回顾.
-  %# TODO: 重新学一遍
+注:如果忘了什么是偏导数就去上一章回顾.
+%# TODO: 重新学一遍
 
-  \subsection{隐函数}{
+\subsection{多元函数的极值与最值}{
 
-    \subsubsection{隐函数存在定理}{
+\subsubsection{多元函数的极值}{
+  \begin{itemize}
+    \item {
+          极值存在的必要条件 :
 
-    }%隐函数存在定理结尾
+          如果$z = \defFunction{x,y}$有偏导且在$(x_0,y_0)$存在极值,则$f\derivative_x(x_0,y_0) = 0,f\derivative_y(x_0,y_0) = 0$
 
-  }%隐函数结尾
+          驻点此时指偏导等于0的点,即$f\derivative_x = f\derivative_y = 0$(需要同时成立).
 
- }%多元微积分结尾
+          有偏导数的函数极值点必是驻点.但是函数的驻点不一定是极值点.
+          }
+    \item {
+          极值存在的充分条件 :
 
-\section{高等代数/线性代数}{
+          依然是拿$z = \defFunction{x,y}$举例:
 
- }%高等代数/线性代数结尾
+          首先求出驻点$(x_0,y_0)$,$A = f\doubleDerivative_{xx},B = f\doubleDerivative_{xy}(x_0,y_0),C = f\doubleDerivative_{yy}(x_0,y_0)$
+
+          \begin{itemize}
+            \item {当$AC-B^2 > 0$时,存在极值点.其中 :
+                  \begin{itemize}
+                    \item $A < 0$,极值点为极大值.
+                    \item $A > 0$,极值点为极小值.
+                  \end{itemize}
+                  }
+            \item 当$AC - B^2 > 0$时,无极值.
+            \item 当$AC - B^2 = 0$时,无法判断.
+          \end{itemize}
+          }
+  \end{itemize}
+}%多元函数的极值结尾
+
+\subsubsection{多元函数的最值}{
+  多元函数的最值一般出现在三种情况中 :
+
+  \begin{enumerate}
+    \item 驻点
+    \item 偏导不存在的点
+    \item 端点
+  \end{enumerate}
+}%多元函数的最值结尾
+
+\subsubsection{条件极值与拉格朗日乘数法}{
+设目标函数为$z = \defFunction{x,y}$,条件为$\varphi(x,y) = 0$
+
+则$z = \defFunction{x,\Phi(x)},\cfrac{dz}{dx} = \partialDerivativeFrac{f}{x} + \partialDerivativeFrac{f}{y}\cfrac{dy}{dx}$
+
+$\left.\cfrac{dz}{dx}\right|_{x = x_0} = f\derivative_x(x_0,y_0) + f\derivative_y(x_0,y_0)\left.\cfrac{dy}{dx}\right|_{x = x_0} = 0$
+
+% $f\derivative_x(x_0,y_0) - f\derivative_y(x_0,y_0)\cfrac{\varphi\derivative_x}{}$// #TODO 检查笔记有没有写错,顺便学一下拉格朗日乘数法.
+}%条件极值与拉格朗日乘数法结尾
+
+\subsubsection{拉格朗日乘数法}{
+  引用上一题,作辅助函数$L(x,y) = \defFunction{x,y} + \lambda\varphi(x,y)$
+
+  $$
+    \begin{cases}
+      L\derivative_x = 0 \\
+      L\derivative_y = 0
+    \end{cases}
+    \mbox{即 : }
+    \begin{cases}
+      f\derivative_x + \lambda\varphi\derivative_x = 0 \\
+      f\derivative_y + \lambda\varphi\derivative_y = 0 \\
+      \varphi(x,y) = 0
+    \end{cases}
+  $$
+
+  当有两个以上的约束条件时 :
+
+  $u = \defFunction{x,y,z,t},\varphi(x,y,z,t) = 0,\phi(x,y,z,t) = 0$
+
+  $L = \defFunction{x,y,z,t} + \lambda\varphi(x,y,z,t) + \mu\phi(x,y,z,t)$
+
+  $$
+    \begin{cases}
+      L\derivative_x = 0   \\
+      L\derivative_y = 0   \\
+      L\derivative_z = 0   \\
+      L\derivative_t = 0   \\
+      \varphi(x,y,z,t) = 0 \\
+      \phi(x,y,z,t) = 0
+    \end{cases}
+  $$
+}%拉格朗日乘数法结尾
+
+}%多元函数的极值与最值结尾
+
+\subsection{隐函数}{
+
+  \subsubsection{隐函数存在定理}{
+    % #TODO 填坑
+  }%隐函数存在定理结尾
+
+}%隐函数结尾
+
+\subsection{重积分}{
+
+  \subsubsection{二重积分}{
+    定义 : $\limNormal{\lambda \to 0}\upDownSum{n}{i = 1}\Delta\sigma_i\defFunction{\xi_i,\eta_i} = \doubleIntegralOnZone{D}\defFunction{x,y}d\sigma$
+
+    解释 : $\defFunction{x,y}$是区域$D$上的有界函数,将区域$D$任意分成$n$个区域$\Delta\sigma_1\dots\Delta\sigma_n$,在每个$\Delta\sigma_i$上任取一点,$(\xi_i,\varUpsilon_i)\cdot\Delta\sigma_i$,当$\lambda \to 0$时,如果上述极限存在,则称为$f(x,y)$的二重积分.其中$d\sigma$称为面积元素,可写作$dxdy$
+
+    设被积函数$\defFunction{x,y}$,从几何上来说 :
+    \begin{itemize}
+      \item 当$\defFunction{x,y} \geq 0$时,二重积分结果为体积.
+      \item 当$\defFunction{x,y} < 0$时,二重积分结果为体积的相反数.
+      \item 当$\defFunction{x,y}$有正有负时,二重积分结果为$XOY$平面上半部分的体积减去下半部分的体积.
+    \end{itemize}
+  }%二重积分结尾
+
+  \subsubsection{二重积分的性质}{
+    \begin{itemize}
+      \item $\doubleIntegralOnZone{D}\left[\alpha\defFunction{x,y} + \beta g(x,y)\right]d\sigma = \alpha\doubleIntegralOnZone{D}\defFunction{x,y}d\sigma + \beta\doubleIntegralOnZone{D}g(x,y)d\sigma$
+      \item $D$分为$D_1,D_2$,$\doubleIntegralOnZone{D}\defFunction{x,y}d\sigma = \doubleIntegralOnZone{D_1}\defFunction{x,y}d\sigma + \doubleIntegralOnZone{D_2}\defFunction{x,y}d\sigma$
+      \item $f(x,y) = 1,\doubleIntegralOnZone{D}f(x,y)d\sigma = \sigma$
+      \item $\defFunction{x,y} \leq g(x,y), \doubleIntegralOnZone{D}\defFunction{x,y}d\sigma \leq \doubleIntegralOnZone{D}g(x,y)d\sigma$
+      \item $\left|\doubleIntegralOnZone{D}\defFunction{x,y}d\sigma\right| \leq \doubleIntegralOnZone{D}\left|\defFunction{x,y}\right|d\sigma$
+      \item $M,m$分别是函数的最高和最低点,$m\sigma \leq \doubleIntegralOnZone{D}\defFunction{x,y} \leq M\sigma$
+      \item $m \leq \cfrac{\doubleIntegralOnZone{D}\defFunction{x,y}d\sigma}{\sigma} \leq M$,即 : $\defFunction{\xi,\eta} = \cfrac{1}{\sigma}\doubleIntegralOnZone{D}\defFunction{x,y}d\sigma$
+    \end{itemize}
+  }%二重积分的性质结尾
+
+}%重积分结尾
+
+}%多元微积分结尾
+
+\section{线性代数}{
+
+ }%线性代数结尾
 
 \section{数论}{
 
@@ -2257,8 +2378,8 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
 
  }%矩阵论结尾
 
- \section{离散数学}{
-   
+\section{离散数学}{
+
  }%离散数学结尾
 
 }%数学篇结尾
