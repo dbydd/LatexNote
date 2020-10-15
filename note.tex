@@ -13,6 +13,9 @@
 \usepackage{tikz-3dplot}
 \usepackage{pgfplots}
 
+\usetikzlibrary{svg.path}
+\usetikzlibrary{positioning}
+
 \geometry{left=1cm,right=1cm,top=3cm,bottom=3cm}
 \title{db的日常笔记}
 \date{最后的编译日期:\today}
@@ -53,26 +56,6 @@
 \newcommand{\partialDerivativeFrac}[2]{\cfrac{\partial #1}{\partial #2}}
 \newcommand{\doubleIntegralOnZone}[1]{\iint\limits_{#1}}
 \newcommand{\defDoubleIntegralOnZone}[3]{{\iint\limits_{#1}}^{#2}_{#3}}
-
-%  \newcommand{\drawBaseAxis}{
-%    \draw[->,color = red] (-5,0) -- (5,0) node[right]{x};
-%    \draw[->,color = blue] (0,-5) -- (0,5) node[above]{y};
-%    \filldraw(0,0) circle (0.05);
-%    \node (center) at (-0.25,-0.25){o};
-%    \foreach \x in {0,1,...,8}
-%    {
-%      \draw[xshift=\x cm] (-4,0) -- (-4,0.1);
-%      \draw[yshift=\x cm] (0,-4) -- (0.1,-4);
-%      };
-%      \foreach \x in {-4,...,-1}
-%      \node[below] at(\x,0){\x};
-%      \foreach \x in {1,...,4}
-%      \node[below] at(\x,0){\x};
-%      \foreach \y in {-4,...,-1}
-%      \node[left] at(0,\y){\y};
-%      \foreach \y in {1,...,4}
-%      \node[left] at(0,\y){\y};
-%      }
 
 \begin{document}
 \pagestyle{empty}{
@@ -180,6 +163,7 @@ $\sum\limits_{1 \leq i_1 < i_2 < \dotsm < i_k \leq n}x_{i_{1}}x_{i_{2}} \dotsm x
 极坐标不同于笛卡尔坐标系,他没有x和y轴,而是用基准轴和角度表示一个点.
 
 \subsubsection{极坐标系下的面积}{
+
   \includegraphics{resources/polar_coordness.png}
 
   公式为$\cfrac{1}{2}\definiteIntegral{\beta}{\alpha}(p(\theta))^2d\theta$
@@ -188,7 +172,7 @@ $\sum\limits_{1 \leq i_1 < i_2 < \dotsm < i_k \leq n}x_{i_{1}}x_{i_{2}} \dotsm x
   }%极坐标下的面积结尾
 
   \subsubsection{转换公式}{
-    从笛卡尔坐标系到极坐标有一套转换公式.
+    从直角坐标系到极坐标有一套转换公式.
 
     $$
       \begin{cases}
@@ -197,6 +181,31 @@ $\sum\limits_{1 \leq i_1 < i_2 < \dotsm < i_k \leq n}x_{i_{1}}x_{i_{2}} \dotsm x
       \end{cases}
     $$
   }%转换公式结尾
+
+  \subsubsection{极坐标表示线}{
+    \begin{center}
+      \begin{tikzpicture}
+        \draw (0,0) -- (0,5);
+        \draw[->] (0,0) -- (5,0);
+        \node (p1) at (1,4){(a,b)};
+        \node (p2) at (3,1){(c,d)};
+        \draw (p1) -- (p2);
+      \end{tikzpicture}
+    \end{center}
+
+    由转换公式,可以将直线在直角坐标系下的解析式$y = kx + b$转换为在极坐标下的解析式 :
+    $$
+      \rho\sin\theta = k\rho\sin\theta + b
+    $$
+    再变形得到 :
+    $$
+      \rho = \cfrac{b}{\sin\theta - k\cos\theta}
+    $$
+  }%极坐标表示线结尾
+
+  \subsubsection{极坐标表示面}{
+    所谓"线动成面",想要用极坐标表示面,只需要加上$\rho$的取值条件就行(即 : $a \leq \rho \leq b$,此处的$a,b$也可以是关于其他变量的公式).
+  }%极坐标表示面结尾
 
 }%极坐标结尾
 
@@ -1637,7 +1646,7 @@ $\definiteIntegral{\xi}{a}\defFunction{x}dx -\defFunction{a}(\xi - a) = \defFunc
     \alpha \leq t \leq \beta
   $$
 
-  $S = \definiteIntegral{\beta}{\alpha}\sqrt{\varphi^{\prime 2}(t) + \Phi^{\prime 2}(t) dt}\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad S = \definiteIntegral{\beta}{\alpha}\sqrt{1 + y^{\prime 2}}$
+  $S = \definiteIntegral{\beta}{\alpha}\sqrt{\varphi^{\prime 2}(t) + \Phi^{\prime 2}(t)}dt\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad S = \definiteIntegral{\beta}{\alpha}\sqrt{1 + y^{\prime 2}}$
 
   极坐标的情况:
 
@@ -2085,6 +2094,120 @@ $\left.\cfrac{dz}{dx}\right|_{x = x_0} = f\derivative_x(x_0,y_0) + f\derivative_
       \item $m \leq \cfrac{\doubleIntegralOnZone{D}\defFunction{x,y}d\sigma}{\sigma} \leq M$,即 : $\defFunction{\xi,\eta} = \cfrac{1}{\sigma}\doubleIntegralOnZone{D}\defFunction{x,y}d\sigma$
     \end{itemize}
   }%二重积分的性质结尾
+
+  \subsubsection{直角坐标系下的二重积分计算}{
+    \begin{center}
+      \begin{tikzpicture}
+
+        \begin{axis}[view = {120}{30},axis lines = center,axis on top,xmin = 0,xmax =5,ymin = 0,ymax = 5,zmin = 0,zmax = 5]
+          \addplot3[domain=1:4,y domain=1:4,mesh]{2 + sin(deg(x)) + sin(deg(y))};
+          \addplot3[color = black] coordinates {(1,1,0)(1,4,0)(4,4,0)(4,1,0)(1,1,0)};
+          \addplot3[dashed] coordinates {(1,1,0)(1,0,0)} [above left] node{a};
+          \addplot3[dashed] coordinates {(4,1,0)(4,0,0)} [above left] node{b};
+          \addplot3[dashed] coordinates {(1,1,0)(0,1,0)} [above right] node{c};
+          \addplot3[dashed] coordinates {(1,4,0)(0,4,0)} [above right] node{d};
+        \end{axis}
+
+      \end{tikzpicture}
+    \end{center}
+
+    思路是将立体对象切成一个个面再进行积分,如下 :
+
+    \begin{center}
+      \begin{tikzpicture}
+        \draw [->] (0,0) -- (5,0);
+        \draw [->] (0,0) -- (0,5);
+        \draw (1,3)..controls(2,4) and (3,4)..(4,3);
+        \draw (1,0) -- (1,3);
+        \draw (4,0) -- (4,3);
+        \node (funcZ) at (2.5,4.3){$z = \defFunction{x,y}$};
+        \node (point1) at (1,-0.3){$\varphi_1(x)$};
+        \node (point1) at (4,-0.3){$\varphi_2(x)$};
+        \node (ZAxis) at (5.3,0){Y};
+        \node (YAxis) at (0,5.3){Z};
+      \end{tikzpicture}
+    \end{center}
+
+    此图像的面积$S = \definiteIntegral{\varphi_2(x)}{\varphi_1(x)}\defFunction{x,y}dy$
+
+    再对面积进行积分 : $V = \definiteIntegral{b}{a}\definiteIntegral{\varphi_2(x)}{\varphi_1(x)}\defFunction{x,y}dydx = \definiteIntegral{b}{a}dx\definiteIntegral{\varphi_2(x)}{\varphi_1(x)}\defFunction{x,y}dy = \definiteIntegral{d}{c}\definiteIntegral{\phi_2(y)}{\phi_2(y)}\defFunction{x,y}dxdy$
+
+    在直角坐标系下有两种积分顺序:
+    \begin{itemize}
+      \item $X$型 : 内层积分时上方函数是上限,下方函数是下限,即:$\definiteIntegral{xx}{xx}\definiteIntegral{\mbox{上}}{\mbox{下}}\defFunction{x,y}dydx$
+      \item $Y$型 : 内层积分时左侧函数是下限,右侧函数是上限,即:$\definiteIntegral{xx}{xx}\definiteIntegral{\mbox{左}}{\mbox{右}}\defFunction{x,y}dxdy$
+    \end{itemize}
+  }%直角坐标系下的二重积分的计算结尾
+
+  \subsubsection{直角坐标系下二重积分的特殊情况}{
+    有两种特殊情况可以简化二重积分的运算 :
+
+    \begin{enumerate}
+      \item {
+            积分区域为长方形 :
+            \begin{center}
+              \begin{tikzpicture}
+                \draw (1,1) rectangle (4,3);
+                \node (a) at (2.5,0){a};
+                \node (b) at (2.5,4){b};
+                \node (c) at (0,2){c};
+                \node (d) at (5,2){d};
+                \draw[dashed] (a) -- (b);
+                \draw[dashed] (c) -- (d);
+              \end{tikzpicture}
+            \end{center}
+
+            则$\definiteIntegral{b}{a}dx\definiteIntegral{d}{c}\defFunction{x,y}dy = \definiteIntegral{d}{c}dy\definiteIntegral{b}{a}\defFunction{x,y}dx$
+            }
+      \item {
+            在情况 1 下,如果$\defFunction{d}{c} = f_1(x) \cdot f_2(y)$,则 :
+
+            $$
+              \definiteIntegral{b}{a}dx\definiteIntegral{d}{c} f_1(x) \cdot f_2(y)dy = \definiteIntegral{b}{a}f_1(x)dx\definiteIntegral{d}{c}f_2(y)dy = \definiteIntegral{b}{a}f_1(x)dx \cdot \definiteIntegral{d}{c}f_2(y)dy
+            $$
+            }
+    \end{enumerate}
+
+  }%直角坐标系下二重积分的特殊情况结尾
+
+  \subsubsection{极坐标下的二重积分计算}{
+    \begin{center}
+      \begin{tikzpicture}
+        \draw (0,0) -- (0,5);
+        \draw [-latex] (0,0) -- (5,0);
+        \draw (2.5,2.5) circle (1);
+        \foreach \i in {1,...,5}{
+            \draw[line width = 0.2pt] (\i,0) arc (0:90:\i);
+          }
+        \foreach \j in {1,...,6}{
+            \draw[line width = 0.2pt] (0,0) -- (\j * 15:5);
+          }
+      \end{tikzpicture}
+      \qquad\qquad
+      \begin{tikzpicture}
+        \filldraw[fill = gray,draw = black] (0,0) -- (3,0) arc (0:30:3) -- cycle;
+        \filldraw[fill = white,draw = black] (0,0) -- (2.5,0) arc (0:30:2.5) -- cycle;
+        \draw[-latex] (0,0) -- (1.5,0) node[below]{$\rho_i + \Delta\rho_i$} -- (4,0);
+        \draw (0.35,0) node[above right]{$\Delta\theta_i$} arc (0:30:0.35);
+      \end{tikzpicture}
+    \end{center}
+
+    公式的定义为 :
+    $$
+      \limNormal{\lambda \to 0}\upDownSum{n}{i = 1}\defFunction{\xi_i,\eta_i}\Delta\sigma_i = \limNormal{\lambda \to 0}\upDownSum{n}{i = 1}\defFunction{\bar{\rho_i}\cos\bar{\theta_i}, \bar{\rho_i}\sin\bar{\theta_i}}\cdot\bar{\rho_i}\Delta\rho_i\Delta\theta_i
+    $$
+
+    简而言之,将直角坐标系下的二重积分转换为极坐标下的二重积分的公式为 :
+    $$
+      \doubleIntegralOnZone{D}\defFunction{x,y}d\sigma = \doubleIntegralOnZone{D}\defFunction{\rho\cos\theta,\rho\sin\theta}\rho d\rho d\theta
+    $$
+
+    注意,后面多出来了的一个$\rho$要记得加上,这个$\rho$并不是凭空冒出来的,它来自面积元素$d\sigma$ :
+    $$
+      \Delta\sigma_i = \cfrac{1}{2}(\rho_i + \Delta\rho_i)^2\Delta\theta_i - \cfrac{1}{2}\rho_i^2\Delta\theta_i = \cfrac{\rho_i + (\rho_i + \Delta\rho_i)}{2}\Delta\rho_i - \Delta\theta_i = \bar{\rho_i}\cdot\Delta\rho_i\cdot\Delta\theta_i
+    $$
+
+  }%极坐标下的二重积分计算
 
 }%重积分结尾
 
@@ -3052,7 +3175,7 @@ $\left.\cfrac{dz}{dx}\right|_{x = x_0} = f\derivative_x(x_0,y_0) + f\derivative_
 
               因此:
 
-        \item 当命题"若P则Q"与"若Q则P"皆为真时,P是Q的充分必要条件,同时,Q也是P的充分必要条件.
+        \item 当命题"若P则Q"与"若Q���P"皆为真时,P是Q的充分必要条件,同时,Q也是P的充分必要条件.
         \item 当命题"若P则Q"为真,而"若Q则P为假时",P是Q的充分不必要条件,Q是P的必要不充分条件,反之亦然.
       \end{itemize}
 
