@@ -56,6 +56,10 @@
 \newcommand{\partialDerivativeFrac}[2]{\cfrac{\partial #1}{\partial #2}}
 \newcommand{\doubleIntegralOnZone}[1]{\iint\limits_{#1}}
 \newcommand{\defDoubleIntegralOnZone}[3]{{\iint\limits_{#1}}^{#2}_{#3}}
+\newcommand{\bigO}[1]{\mathcal{O}(#1)}
+\newcommand{\smallO}[1]{o(#1)}
+\newcommand{\doubleAbsoluteValue}[1]{\left\Vert #1 \right\Vert}
+\newcommand{\absoluteValue}[1]{\left\lvert #1 \right\vert}
 
 \begin{document}
 \pagestyle{empty}{
@@ -2202,14 +2206,156 @@ $\left.\cfrac{dz}{dx}\right|_{x = x_0} = f\derivative_x(x_0,y_0) + f\derivative_
       \doubleIntegralOnZone{D}\defFunction{x,y}d\sigma = \doubleIntegralOnZone{D}\defFunction{\rho\cos\theta,\rho\sin\theta}\rho d\rho d\theta
     $$
 
-    注意,后面多出来了的一个$\rho$要记得加上,这个$\rho$并不是凭空冒出来的,它来自面积元素$d\sigma$ :
-    $$
-      \Delta\sigma_i = \cfrac{1}{2}(\rho_i + \Delta\rho_i)^2\Delta\theta_i - \cfrac{1}{2}\rho_i^2\Delta\theta_i = \cfrac{\rho_i + (\rho_i + \Delta\rho_i)}{2}\Delta\rho_i - \Delta\theta_i = \bar{\rho_i}\cdot\Delta\rho_i\cdot\Delta\theta_i
-    $$
+    注意 :
+    \begin{itemize}
+      \item {
+            后面多出来了的一个$\rho$要记得加上,这个$\rho$并不是凭空冒出来的,它来自面积元素$d\sigma$ :
+            $$
+              \Delta\sigma_i = \cfrac{1}{2}(\rho_i + \Delta\rho_i)^2\Delta\theta_i - \cfrac{1}{2}\rho_i^2\Delta\theta_i = \cfrac{\rho_i + (\rho_i + \Delta\rho_i)}{2}\Delta\rho_i - \Delta\theta_i = \bar{\rho_i}\cdot\Delta\rho_i\cdot\Delta\theta_i
+            $$
+            }
+      \item {
+            极坐标的积分顺序不能互换
+            }
+      \item{
+            何时使用极坐标 :
+            \begin{enumerate}
+              \item 积分区域为圆,圆环,扇形
+              \item 被积表达式为$x^2 + y^2,\cfrac{x}{y},\cfrac{y}{x}$
+            \end{enumerate}
+            }
+    \end{itemize}
 
   }%极坐标下的二重积分计算
 
+  \subsubsection{极坐标下的特殊情况}{
+    \begin{itemize}
+      \item $-x^2 -y^2 = -(\rho^2\cos^2\theta + \rho^2\sin^2\theta) = \rho^2$
+      \item $\cfrac{x}{y} = \tan\theta$
+      \item $\cfrac{y}{x} = \cot\theta$
+    \end{itemize}
+  }%极坐标下的特殊情况结尾
+
 }%重积分结尾
+
+\subsection{雅可比矩阵与雅可比行列式}{
+  在向量分析(多元微积分)中，雅可比矩阵是函数的一阶偏导数以一定方式排列成的矩阵。
+
+  其重要性在于，如果函数 $f:\mathRealNumberCollection^n \to \mathRealNumberCollection^m$在点$x$可微的话,在点$x$的雅可比矩阵即为该函数在该点的最佳线性逼近,也代表雅可比矩阵是单变数实数函数的微分在向量值多变数函数的推广,在这种情况下,雅可比矩阵也被称作函数$f$在点$x$的微分或者导数.
+
+  \subsubsection{雅可比矩阵}{
+    假设某函数从$f : \mathRealNumberCollection^n \to \mathRealNumberCollection^M$,从$x\in\mathRealNumberCollection^n$映射到$\defFunction{x}\in\mathRealNumberCollection^m$,其雅可比矩阵就是一个$m \times n$的矩阵.换句话讲也就是从$\mathRealNumberCollection^n$到$\mathRealNumberCollection^m$的线性映射,其重要意义在于它表现了一个多变量向量函数的最佳线性逼近.因此,雅可比矩阵类似于单变数函数的导数.
+
+    此函数$f$的雅可比矩阵$J$为$m \times n$的矩阵,一般由以下方式定义 :
+    $$
+      J =
+      \begin{bmatrix}
+        \partialDerivativeFrac{f}{x_1} & \dotsm & \partialDerivativeFrac{f}{x_n}
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+        \partialDerivativeFrac{f_1}{x_1} & \dotsm & \partialDerivativeFrac{f_1}{x_n} \\
+        \vdots                           & \ldots & \vdots                           \\
+        \partialDerivativeFrac{f_m}{x_1} & \dotsm & \partialDerivativeFrac{f_m}{x_n}
+      \end{bmatrix}
+    $$
+
+    矩阵的分量可表示成 :
+    $$
+      J_{ij} = \partialDerivativeFrac{f_i}{x_j}
+    $$
+
+    雅可比矩阵的其他常用符号还有 :
+    $$
+      Df,J_f(x_1,\dots,x_n)\mbox{或者}\partialDerivativeFrac{(f_1,\dots,f_m)}{(x_1,\dots,x_n)}
+    $$
+
+    此矩阵的第$i$行是由函数$f_i$的梯度函数所表示的,$1 \leq i \leq m$.
+
+    如果$p$时$\mathRealNumberCollection^n$中的一点,$f$在$p$点可微,根据数学分析,$J_f(p)$时在这点的导数.在此情况下,$J_f(p)$这个线性映射即$f$在点$p$附近的最佳线性逼近,也就是说当$x$足够靠近点p时,有 :
+    $$
+      \defFunction{x} \approx \defFunction{p} + J_f(p)\cdot(x - p)
+    $$
+    讲更详细点也就是 :
+    $$
+      \defFunction{x} = \defFunction{p} + J_f(p)(x - p) + \smallO{\absoluteValue{x - p}}
+    $$
+
+    其中,$o$表示高阶无穷小,$\doubleAbsoluteValue{x - p}$为$x$与$p$之间的距离
+  }%雅可比矩阵结尾
+
+  \subsubsection{雅可比行列式}{
+    当雅可比矩阵为方阵时,其行列式称为雅可比行列式.
+
+    如果$m = n$,那么$f$是从$\mathRealNumberCollection^n$映射到$\mathRealNumberCollection^m$的函数,且他的雅可比矩阵是一个方阵.因此可以取他的行列式,称为雅可比行列式.
+
+    在某个给定点的雅可比行列式提供了$f$在接近该点时的表现的重要资讯.例如:如果连续可微函数$f$在$p$点的雅可比行列式不等于0,那么他在该点附近有$f$的反函数,这成为反函数定理.更进一步,如果$p$点的雅可比行列式是正数,则$f$在$p$点保持定向.如果是负数,则逆转定向.而从雅可比行列式的绝对值,就可以知道函数$f$在$p$点附近时放大或缩小体积;这就是他出现在换元积分法中的原因.
+  }%雅可比行列式结尾
+
+  \subsubsection{举例}{
+    \begin{enumerate}
+      \item {
+            球坐标系到直角坐标系的转化由$F : R^+\times[0,\pi]\times[0,2\pi) \to R^3$给出,其分量为 :
+            $$
+              \begin{array}{l}
+                x = r\sin\theta\cos\varphi \\
+                y = r\sin\theta\sin\varphi \\
+                z = r\cos\theta
+              \end{array}
+            $$
+
+            此坐标变换的雅可比矩阵是 :
+            $$
+              J_F(r,\theta,\varphi)
+              =
+              \begin{bmatrix}
+                \partialDerivativeFrac{x}{r} & \partialDerivativeFrac{x}{\theta} & \partialDerivativeFrac{x}{\varphi} \\
+                \partialDerivativeFrac{y}{r} & \partialDerivativeFrac{y}{\theta} & \partialDerivativeFrac{y}{\varphi} \\
+                \partialDerivativeFrac{z}{r} & \partialDerivativeFrac{z}{\theta} & \partialDerivativeFrac{z}{\varphi}
+              \end{bmatrix}
+              =
+              \begin{bmatrix}
+                \sin\theta\cos\varphi & r\cos\theta\cos\varphi & -r\sin\theta\sin\varphi \\
+                \sin\theta\sin\varphi & r\cos\theta\sin\varphi & r\sin\theta\cos\varphi  \\
+                \cos\theta            & -r\sin\theta           & 0
+              \end{bmatrix}
+            $$
+
+            其雅可比行列式为$r^2\sin\theta$,由于$dV = dxdydz$,如果左变数变换的画其体积元$dV$会变成 : $dV = r^2\sin\theta dr d\theta d\varphi$.
+            }
+      \item {
+            设有函数$F : R^3 \to R^3$,其分量为 :
+            $$
+              \begin{array}{l}
+                y_1 = 5x_2                   \\
+                y_2 = 4x_1^2 - 2\sin(x_2x_3) \\
+                y_3 = x_2x_3
+              \end{array}
+            $$
+
+            则他的雅可比行列式为 :
+            $$
+              \begin{vmatrix}
+                0    & 5                 & 0                 \\
+                8x_1 & -2x_3\cos(x_2x_3) & -2x_2\cos(x_2x_3) \\
+                0    & x_3               & x_2
+              \end{vmatrix}
+              =
+              -8x_1
+              \cdot
+              \begin{vmatrix}
+                5   & 0   \\
+                x_3 & x_2
+              \end{vmatrix}
+              =
+              -40x_1x_2
+            $$
+            可以得出:当$x_1$与$x_2$同号时,$F$逆转定向;改函数处处具有反函数,除了在$x_1 = 0$或者$x_2 = 0$的点.
+            }
+    \end{enumerate}
+  }%举例结尾
+
+}%雅可比矩阵与雅可比行列式结尾
 
 }%多元微积分结尾
 
@@ -2940,7 +3086,7 @@ $\left.\cfrac{dz}{dx}\right|_{x = x_0} = f\derivative_x(x_0,y_0) + f\derivative_
                             0                                      & 0                                      & 0                                      & 1
                           \end{bmatrix}
                         $$
-                  \item 仔细思考,发现上面想要直接计算出来过于繁琐,应当反向思考—求出将坐标系变换到相机的位置的矩阵再求逆 : $$
+                  \item 仔细思考,发现上面想要直接计算出来过于繁琐,应当反向思考—求出将坐标系变换到���机的位置的矩阵再求逆 : $$
                           R^{-1}_{view} = \begin{bmatrix}
                             x_{\hat{\vec{g}} \times \hat{\vec{t}}} & x_{\hat{\vec{t}}} & x_{-\hat{\vec{g}}} & 0 \\
                             y_{\hat{\vec{g}} \times \hat{\vec{t}}} & y_{\hat{\vec{t}}} & y_{-\hat{\vec{g}}} & 0 \\
@@ -2993,7 +3139,7 @@ $\left.\cfrac{dz}{dx}\right|_{x = x_0} = f\derivative_x(x_0,y_0) + f\derivative_
                   \item {
                         透视变换(Perspective projection) :
 
-                        首先把视锥压缩成长方体.(近平面永远不变,远处平面z值不发生变化,中心点不发生变化)$(n \to n,f \to f,M_{persp \to ortho})$
+                        首先把视锥压缩成长方体.(近平面永远不变,远��平面z值不发生变化,中心点不发生变化)$(n \to n,f \to f,M_{persp \to ortho})$
 
                         \includegraphics[scale=0.5]{resources/perspectiveProjection.png}
 
