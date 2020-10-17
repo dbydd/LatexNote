@@ -48,6 +48,7 @@
 \newcommand{\degree}{^\circ}
 \newcommand{\projection}[1]{Prj_{#1}}
 \newcommand{\mathRealNumberCollection}{\mathbb{R}}
+\newcommand{\mathIntegerCollection}{\mathbb{Z}}
 \newcommand{\bigCase}[1]{\left(#1\right)}
 \newcommand{\innerProduct}[2]{\langle#1,#2\rangle}
 \newcommand{\transpose}{^T}
@@ -56,10 +57,17 @@
 \newcommand{\partialDerivativeFrac}[2]{\cfrac{\partial #1}{\partial #2}}
 \newcommand{\doubleIntegralOnZone}[1]{\iint\limits_{#1}}
 \newcommand{\defDoubleIntegralOnZone}[3]{{\iint\limits_{#1}}^{#2}_{#3}}
+\newcommand{\defTripleIntegralOnZone}[3]{{\iiint\limits_{#1}}^{#2}_{#3}}
+\newcommand{\tripleIntegralOnZone}[1]{\iiint\limits_{#1}}
 \newcommand{\bigO}[1]{\mathcal{O}(#1)}
 \newcommand{\smallO}[1]{o(#1)}
 \newcommand{\doubleAbsoluteValue}[1]{\left\Vert #1 \right\Vert}
 \newcommand{\absoluteValue}[1]{\left\lvert #1 \right\vert}
+\newcommand{\mathZone}[1]{\left[#1\right]}
+
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccsc}{arccsc}
 
 \begin{document}
 \pagestyle{empty}{
@@ -122,6 +130,13 @@ $\fint(I)\supseteq[\fint(b), \fint(a)]$.
 
   组合:$\mathCombination{m}{n} = \cfrac{\mathPermutation{m}{n}}{m!} = \cfrac{n!}{m!(n-m)!}$
 }%排列组合结尾
+
+\subsection{立方差公式}{
+  \begin{itemize}
+    \item $a^3 + b^3 = (a + b)(a^2 - ab + b^2)$
+    \item $a^3 - b^3 = (a - b)(a^2 + ab + b^3)$
+  \end{itemize}
+}%立方差公式结尾
 
 \subsection{韦达定理}{
 \subsubsection{韦达定理的普遍情况}{
@@ -365,19 +380,43 @@ $\cfrac{2}{\cfrac{1}{x_1} + \cfrac{1}{x_2}} = \cfrac{2x_1x_2}{x_1 + x_2}\leq\sqr
 \includegraphics{resources/UnitCircle.png}
 
 \subsection{正三角函数}{
-  $\sin{\alpha} = \cfrac{y}{r}$
-
-  $\cos{\alpha} = \cfrac{x}{r}$
-
-  $\tan{\alpha} = \cfrac{y}{x}$
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+    名字           & 定义           & 定义域                                                                                       & 值域                                \\
+    \hline
+    $\sin{\alpha}$ & $\cfrac{y}{r}$ & $\mathRealNumberCollection$                                                                  & $\mathZone{-1,1}$                   \\
+    \hline
+    $\cos{\alpha}$ & $\cfrac{x}{r}$ & $\mathRealNumberCollection$                                                                  & $\mathZone{-1,1}$                   \\
+    \hline
+    $\tan{\alpha}$ & $\cfrac{y}{x}$ & $\mathRealNumberCollection(\alpha \neq \cfrac{\pi}{2} + k\pi(k \in \mathIntegerCollection))$ & $\mathRealNumberCollection$         \\
+    \hline
+    $\cot{\alpha}$ & $\cfrac{x}{y}$ & $\mathRealNumberCollection(\alpha \neq k\pi(k \in \mathIntegerCollection))$                  & $\mathRealNumberCollection$         \\
+    \hline
+    $\sec{\alpha}$ & $\cfrac{r}{x}$ & $\mathRealNumberCollection(\alpha \neq k\pi + \cfrac{\pi}{2}(k \in \mathIntegerCollection))$ & $\absoluteValue{\sec\alpha} \geq 1$ \\
+    \hline
+    $\csc{\alpha}$ & $\cfrac{r}{y}$ & $\mathRealNumberCollection(\alpha \neq k\pi + \cfrac{\pi}{2}(k \in \mathIntegerCollection))$ & $\absoluteValue{\csc\alpha} \geq 1$ \\
+    \hline
+  \end{tabular}
 }%正三角函数结尾
 
 \subsection{反三角函数}{
-  $\cot{\alpha} = \cfrac{1}{\tan{\alpha}}$
-
-  $\sec{\alpha} = \cfrac{1}{\cos{\alpha}}$
-
-  $\csc{\alpha} = \cfrac{1}{\sin{\alpha}}$
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+    名字        & 定义         & 定义域                                                & 值域                                                                 \\
+    \hline
+    $\arcsin x$ & $x = \sin y$ & $\mathZone{-1,1}$                                     & $\mathZone{-\cfrac{\pi}{2},\cfrac{\pi}{2}}$                          \\
+    \hline
+    $\arccos x$ & $x = \sin y$ & $\mathZone{-1,1}$                                     & $\mathZone{0,\pi}$                                                   \\
+    \hline
+    $\arctan x$ & $x = \tan y$ & $\mathRealNumberCollection$                           & $\mathZone{-\cfrac{\pi}{2},\cfrac{\pi}{2}}$                          \\
+    \hline
+    $\arccot x$ & $x = \cot y$ & $\mathRealNumberCollection$                           & $\mathZone{0,\pi}$                                                   \\
+    \hline
+    $\arcsec x$ & $x = \sec y$ & $\left(-\infty,-1\right] \cup \left[1,+\infty\right)$ & $\left[0,\cfrac{\pi}{2}\right) \cup \left(\cfrac{\pi}{2},\pi\right]$ \\
+    \hline
+    $\arccsc x$ & $x = \csc y$ & $\left(-\infty,-1\right] \cup \left[1,+\infty\right)$ & $\left[-\cfrac{\pi}{2},0\right) \cup \left(0,\cfrac{\pi}{2}\right]$  \\
+    \hline
+  \end{tabular}
 }%反三角函数结尾
 
 \subsection{和差化积}{
@@ -473,7 +512,9 @@ $\cfrac{2}{\cfrac{1}{x_1} + \cfrac{1}{x_2}} = \cfrac{2x_1x_2}{x_1 + x_2}\leq\sqr
   }%第六组诱导公式结尾
 
   \subsubsection{杂项}{
-    $a\sin\alpha + b\cos\alpha = \sqrt{a^2 + b^2}\sin(\alpha+\beta)$
+    $a\sin x + b\cos x = \sqrt{a^2 + b^2}\sin(x + \arctan\cfrac{b}{a}),(a > 0)$
+
+    $a\sin x + b\cos x = \sqrt{a^2 + b^2}\cos x - \arctan\cfrac{a}{b}$
 
     $\cos\alpha = 2cos^2\cfrac{\alpha}{2} - 1 = 1-2\sin^2\cfrac{\alpha}{2}$
   }%杂项结尾
@@ -1628,7 +1669,7 @@ $\definiteIntegral{b}{a}\defFunction{x}dx = \defFunction{a}(\xi - a) + \defFunct
 
 $\definiteIntegral{\xi}{a}\defFunction{x}dx -\defFunction{a}(\xi - a) = \defFunction{b}(b - \xi) - \definiteIntegral{b}{\xi}\defFunction{x}dx$
 
-他的几何意义很明显为:能找到$\xi\in[a,b]$,使得红色区域的面积和蓝色区域的面积相加等于阴影区域的面积,即S[\uppercase\expandafter{\romannumeral1}] = S[\uppercase\expandafter{\romannumeral2}]
+他的几何意义很明显为:能找到$\xi\in[a,b]$,使得红色区域的面���和蓝色区域的面积相加等于阴影区域的面积,即S[\uppercase\expandafter{\romannumeral1}] = S[\uppercase\expandafter{\romannumeral2}]
 
 \includegraphics{resources/Geometric_explanation_of_the_second_mean_value_theorem_for_integration.jpg}
 
@@ -2235,6 +2276,110 @@ $\left.\cfrac{dz}{dx}\right|_{x = x_0} = f\derivative_x(x_0,y_0) + f\derivative_
       \item $\cfrac{y}{x} = \cot\theta$
     \end{itemize}
   }%极坐标下的特殊情况结尾
+
+  \subsubsection{二重积分换元法}{
+    设$\defFunction{x,y}$在$B$区域连续,$x = x(u,v),y = y(u,v)$,且$x,y$积分区域为$D$,用$u,v$换元后为$D\derivative$\\
+
+    当 :
+    \begin{enumerate}
+      \item $x(u,v),y(u,v)$有一阶连续偏导.
+      \item {
+            $
+              J(u,v)
+              =
+              \partialDerivativeFrac{(x,y)}{(u,v)} = \begin{bmatrix}
+                \partialDerivativeFrac{x}{u} & \partialDerivativeFrac{x}{v} \\
+                \partialDerivativeFrac{y}{u} & \partialDerivativeFrac{y}{v}
+              \end{bmatrix}
+            $
+            }
+      \item $\absoluteValue{J(u,v)} \neq 0$(不全为0,如果指事字一个点或一条线上为0也成立)
+      \item $D\derivative$到$D$点是一一对应的
+    \end{enumerate}
+
+    此时 :
+    $$
+      \doubleIntegralOnZone{D}\defFunction{x,y}dxdy = \doubleIntegralOnZone{D\derivative}\defFunction{x(u,v),y(u,v)}\doubleAbsoluteValue{J(u,v)}dudv
+    $$
+
+    从几何直观上看 :
+    \begin{center}
+      \begin{tikzpicture}
+        \draw[-latex] (0,-3) -- (0,3) node[above]{$y$};
+        \draw[-latex] (-3,0) -- (3,0) node[right]{$x$};
+        \filldraw[fill = gray,draw = black] (0,0) -- (2,0) node[above]{2} -- (0,2) node[above right]{2} -- cycle;
+      \end{tikzpicture}
+      变成了 :
+      \begin{tikzpicture}
+        \draw[-latex] (0,-3) -- (0,3) node[above]{$v$};
+        \draw[-latex] (-3,0) -- (3,0) node[right]{$u$};
+        \filldraw[fill = gray,draw = black] (0,0) -- node[right]{4}({2*sqrt(2)},{2*sqrt(2)}) -- ({-2*sqrt(2)},{2*sqrt(2)}) -- node[left]{4}cycle;
+      \end{tikzpicture}
+    \end{center}
+
+    其中$\doubleAbsoluteValue{J(u,v)} = \cfrac{1}{2}$,因此缩放了两倍.\\
+
+    一般来说在以下情况下会使用换元:
+    \begin{itemize}
+      \item 被积函数不好积
+      \item 积分区域不好表示
+    \end{itemize}
+  }%二重积分换元法结尾
+
+  \subsubsection{三重积分}{
+    设$v = \defFunction{x,y,z}$,从空间中任取一点$\Delta V_i : \defFunction{\xi_i,\eta_i,\zeta_i}$
+
+    定义为 :
+    $$
+      \limNormal{\lambda \to 0}\upDownSum{n}{i = 0}\defFunction{\xi_i,\eta_i,\zeta_i}\Delta V_i = \tripleIntegralOnZone{\Omega}\defFunction{x,y,z}dv = \tripleIntegralOnZone{\Omega}\defFunction{x,y,z}dxdydz
+    $$
+
+    $\Omega$表示积分空间区域.
+
+    与二重积分类似,具体积分思路为 :
+    \begin{center}
+      \begin{tikzpicture}
+        \begin{axis}[view = {120}{30},axis lines = center,axis on top,xmin = 0,xmax =5,ymin = 0,ymax = 5,zmin = 0,zmax = 5]
+          \addplot3[color = black] coordinates {(1,1,0)(4,1,0)(4,4,0)(1,4,0)(1,1,0)};
+          \addplot3[color = black] coordinates {(1,1,4)(4,1,4)(4,4,4)(1,4,4)(1,1,4)};
+          \addplot3[color = black] table {
+              1 1 0 a
+              1 1 4 b
+
+              4 1 0
+              4 1 4
+
+              4 4 0
+              4 4 4
+
+              1 4 0
+              1 4 4
+            };
+
+          \addplot3[color = red,style = dashed] table {
+              2 2.5 -1
+              2 2.5 5
+
+              1 2.5 0
+              4 2.5 0
+
+              2 1 0
+              2 4 0
+
+              1 2.5 4
+              4 2.5 4
+
+              2 1 4
+              2 4 4
+            };
+
+          \draw (axis direction cs:2,2.5,5) node {$z = z_1(x_i,y_i)$};
+          \draw (axis direction cs:2,2.5,1) node {$z = z_2(x_i,y_i)$};
+        \end{axis}
+      \end{tikzpicture}
+      $\doubleIntegralOnZone{D(x,y)}\left[\definiteIntegral{z_2(x,y)}{z_1(x,y)}\defFunction{x,y,z}dz\right]dxdy$
+    \end{center}
+  }%三重积分结尾
 
 }%重积分结尾
 
