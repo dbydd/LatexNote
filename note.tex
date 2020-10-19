@@ -15,6 +15,7 @@
 
 \usetikzlibrary{svg.path}
 \usetikzlibrary{positioning}
+\usetikzlibrary{intersections}
 
 \geometry{left=1cm,right=1cm,top=3cm,bottom=3cm}
 \title{db的日常笔记}
@@ -64,6 +65,9 @@
 \newcommand{\doubleAbsoluteValue}[1]{\left\Vert #1 \right\Vert}
 \newcommand{\absoluteValue}[1]{\left\lvert #1 \right\vert}
 \newcommand{\mathZone}[1]{\left[#1\right]}
+\newcommand{\pathIntegral}[1]{\int_{#1}}
+
+\newcommand{\tikzPlaceDot}[1]{\draw[fill = black] #1 circle (1pt)}
 
 \DeclareMathOperator{\arccot}{arccot}
 \DeclareMathOperator{\arcsec}{arcsec}
@@ -137,6 +141,102 @@ $\fint(I)\supseteq[\fint(b), \fint(a)]$.
     \item $a^3 - b^3 = (a - b)(a^2 + ab + b^3)$
   \end{itemize}
 }%立方差公式结尾
+
+\subsection{圆幂定理}{
+  给定一个圆$r$及一点p,由p引出两条割线,分别于$r$相交于$A,B$及$C,D$,则有$PA \cdot PB = PC \cdot PD$
+
+  事实上此定理包含三条定理 :
+
+  \subsubsection{割线定理}{
+    \begin{tikzpicture}
+      \node (o) at (0.25,0.25){O};
+      \draw [fill = black] (0,0) circle (1pt);
+      \path[name path= c,draw] (0,0) circle (2);
+      \node (B) at (-{sqrt(3)},1) {};
+      \node (D) at (-{sqrt(3)},-1) {};
+      \node (P) at (3,0){};
+      \draw [fill = black] (P) circle (1pt);
+      \draw [fill = black] (B) circle (1pt);
+      \draw [fill = black] (D) circle (1pt);
+
+      \path[name path = l1,draw] (B) node[above left]{$B$} -- (P) node [above right]{$P$};
+      \path[name path = l2,draw] (D) node[below left]{$D$} -- (P);
+
+      \node[name intersections = {of = c and l1,by=x}] (A) at (x){};
+      \node[name intersections = {of = c and l2,by=x}] (C) at (x){};
+
+      \draw [fill = black] (A) circle (1pt) node[above right]{$A$};
+      \draw [fill = black] (C) circle (1pt) node[below right]{$C$};
+    \end{tikzpicture}
+    $PA \cdot PB = PC \cdot PD$
+  }%割线定理结尾
+
+  \subsubsection{交弦定理}{
+    \begin{tikzpicture}
+      \node (o) at (0.25,0.25){O};
+      \draw [fill = black] (0,0) circle (1pt);
+      \path[draw] (0,0) circle (2);
+      \node (A) at (1,{sqrt(3)}){};
+      \node (C) at ({-sqrt(3)},-1){};
+      \node (D) at (2,0){};
+      \node (B) at (0,-2){};
+      \path[draw,name path = l1] (A) -- (B);
+      \path[draw,name path = l2] (D) -- (C);
+      \node[name intersections = {of = l1 and l2,by = x}] (E) at (x){};
+
+      \draw [fill = black] (A) circle (1pt) node[above right]{$A$};
+      \draw [fill = black] (B) circle (1pt) node[below]{$B$};
+      \draw [fill = black] (C) circle (1pt) node[left]{$C$};
+      \draw [fill = black] (D) circle (1pt) node[right]{$D$};
+      \draw [fill = black] (E) circle (1pt) node[below right]{$E$};
+    \end{tikzpicture}
+    $EA \cdot EB = EC \cdot ED$
+  }%交弦定理结尾
+
+  \subsubsection{切割线定理}{
+    \begin{tikzpicture}
+      \node (o) at (0.25,0.25){O};
+      \draw [fill = black] (0,0) circle (1pt);
+      \path[name path= c,draw] (0,0) circle (2);
+
+      \node (T) at (0,2){};
+      \node (B) at ({-sqrt(3)},-1){};
+      \node (P) at (5,2){};
+
+      \draw (T) -- (P);
+      \path[draw,name path = l1] (B) -- (P);
+
+      \node[name intersections = {of = c and l1,by = x}] (A) at (x){};
+
+      \draw [fill = black] (A) circle (1pt) node[above right]{$A$};
+      \draw [fill = black] (B) circle (1pt) node[above left]{$B$};
+      \draw [fill = black] (T) circle (1pt) node[above]{$T$};
+      \draw [fill = black] (P) circle (1pt) node[right]{$P$};
+    \end{tikzpicture}
+    $PT^2 = PA \cdot PB$
+  }%切割线定理结尾
+
+}%圆幂定理结尾
+
+\subsection{圆周角定理}{
+  一条弧所对的圆周角$\alpha$等于所对圆心角的一半.
+
+  \begin{tikzpicture}
+    \node (o) at (0.25,0.25){O};
+    \draw [fill = black] (0,0) circle (1pt);
+    \path[name path= c,draw] (0,0) circle (2);
+    \node (P1) at (-{sqrt(3)},1) {};
+    \node (P2) at (-{sqrt(3)},-1) {};
+
+    \draw (P1) -- (2,0) node[left]{$\alpha$} -- (P2);
+    \draw (P1) -- (0,0) node[left]{$\beta$} -- (P2);
+
+    \tikzPlaceDot{(P1)};
+    \tikzPlaceDot{(P2)};
+    \tikzPlaceDot{(2,0)};
+  \end{tikzpicture}
+
+}%圆周角定理结尾
 
 \subsection{韦达定理}{
 \subsubsection{韦达定理的普遍情况}{
@@ -225,6 +325,38 @@ $\sum\limits_{1 \leq i_1 < i_2 < \dotsm < i_k \leq n}x_{i_{1}}x_{i_{2}} \dotsm x
   \subsubsection{极坐标表示面}{
     所谓"线动成面",想要用极坐标表示面,只需要加上$\rho$的取值条件就行(即 : $a \leq \rho \leq b$,此处的$a,b$也可以是关于其他变量的公式).
   }%极坐标表示面结尾
+
+  \subsubsection{柱面坐标}{
+    柱面坐标是一种将极坐标扩展到三维的方法,其实就是加了个z轴.因此转换公式为 :
+
+    $$
+      \begin{cases}
+        x = \rho\cos\theta \\
+        y = \rho\sin\theta \\
+        z = z
+      \end{cases}
+    $$
+  }%柱面坐标结尾
+
+  \subsubsection{球面坐标}{
+    球面坐标又是不同与柱面坐标的另一种形式,他引入了另一个表示角度的变量$\varphi$
+
+    球面坐标由三个变量组成,如果将某一个点用向量$\vec{v}$表示,那么三个变量分别是 :
+    \begin{itemize}
+      \item $r$ : 表示$\vec{v}$的长度,可以理解成极坐标的$\rho$.取值范围为:$\left[0,+\infty\right)$
+      \item $\theta$ : 用过原点以$z$轴作为法向量的平面作为极坐标的平面,$\vec{v}$投影到此平面上时$\theta$就是该投影在极坐标中的角度单位.取值范围为$\mathZone{0,2\pi}$
+      \item $\varphi$ : 以原点为顶点,$z$轴为旋转轴,$\vec{v}$作为母线的圆锥面的半顶角.也就是$\vec{v}$与$z$轴的夹角.取值范围为:$\mathZone{0,\pi}$
+    \end{itemize}
+
+    从直角坐标系到球面坐标系的转换公式为 :
+    $$
+      \begin{cases}
+        x = r\sin\varphi\cos\theta \\
+        y = r\sin\varphi\sin\theta \\
+        z = r\cos\varphi
+      \end{cases}
+    $$
+  }%球面坐标结尾
 
 }%极坐标结尾
 
@@ -363,6 +495,7 @@ $\cfrac{2}{\cfrac{1}{x_1} + \cfrac{1}{x_2}} = \cfrac{2x_1x_2}{x_1 + x_2}\leq\sqr
 \subsection{零散的定义}{
   \begin{enumerate}
     \item 有界:$\exists\epsilon,f(x) < \epsilon\quad(-\infty < x < \infty )$
+    \item 什么时候函数能复合 : 内层值域$\in$外层定义域
   \end{enumerate}
 }%零散的定义结尾
 
@@ -571,27 +704,42 @@ $\cfrac{2}{\cfrac{1}{x_1} + \cfrac{1}{x_2}} = \cfrac{2x_1x_2}{x_1 + x_2}\leq\sqr
 
 \subsection{三角恒等式}{
 
-  倒数关系:
+  倒数关系 :
+  \begin{itemize}
+    \item $\sin\alpha \cdot \csc\alpha = 1$
+    \item $\cos\alpha \cdot \sec\alpha = 1$
+    \item $\tan\alpha \cdot \cot\alpha = 1$
+  \end{itemize}
 
-  $\sin\alpha \cdot \csc\alpha = 1$
+  商数关系 :
+  \begin{itemize}
+    \item $\tan\alpha = \cfrac{\sin\alpha}{\cos\alpha}$
+    \item $\cot\alpha = \cfrac{\cos x}{\sin x}$
+  \end{itemize}
 
-  $\cos\alpha \cdot \sec\alpha = 1$
+  平方关系 :
+  \begin{itemize}
+    \item $\sin^2\alpha + \cos^2\alpha = 1$
+    \item $1 + \tan^2\alpha = \sec^2\alpha$
+    \item $1 + \cot^2\alpha = \csc^2\alpha$
+  \end{itemize}
 
-  $\tan\alpha \cdot \cot\alpha = 1$
+  余角关系 :
+  \begin{itemize}
+    \item $\arcsin\alpha + \arccos\alpha = \cfrac{\pi}{2}$
+    \item $\arctan\alpha + \arccot\alpha = \cfrac{\pi}{2}$
+    \item $\arcsec\alpha + \arccsc\alpha = \cfrac{\pi}{2}$
+  \end{itemize}
 
-  商数关系:
-
-  $\tan{x} = \cfrac{\sin{x}}{\cos{x}}$
-
-  $\cot\alpha = \cfrac{\cos x}{\sin x}$
-
-  平方关系:
-
-  $\sin^2\alpha + \cos^2\alpha = 1$
-
-  $1 + \tan^2\alpha = \sec^2\alpha$
-
-  $1 + \cot^2\alpha = \csc^2\alpha$
+  负数关系 :
+  \begin{itemize}
+    \item $\arcsin-\alpha = -\arcsin\alpha$
+    \item $\arccos-\alpha = \pi - \arccos\alpha$
+    \item $\arctan-\alpha = -\arctan\alpha$
+    \item $\arccot-\alpha = \pi - \arccot\alpha$
+    \item $\arcsec-\alpha = \pi - \arcsec\alpha$
+    \item $\arccsc-\alpha = -\arccsc\alpha$
+  \end{itemize}
 
 }%三角恒等式结尾
 
@@ -1279,12 +1427,27 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
 
 }%极限结尾
 
+\subsection{渐进线}{
+  渐近线分为三种 :
+  \begin{itemize}
+    \item 水平渐近线 : 当$x \to x_0$时,$\myLimToInf\defFunction{x} = y_0$,则$y = y_0$是水平渐近线.
+    \item 垂直渐近线 : 当$x \to x_0$时,$\limNormal{x \to x_0}\defFunction{x} \to \infty$,且$x_0$为一般间断点,则$x = x_0$是垂直渐近线.
+    \item {
+          斜渐近线 :
+
+          当$\myLimToInf\left[\defFunction{x} - (ax + b)\right] = 0(a,b \in \mathConstant)$存在,则$y = ax + b$是斜渐近线.
+
+          即 : 如果$\myLimToInf\cfrac{\defFunction{x}}{x} = a$存在,且$\myLimToInf\left[\defFunction{x} - ax\right] = b$也存在,则$y = \defFunction{x}$有斜渐近线$y = ax + b$
+          }
+  \end{itemize}
+}%渐近线结尾
+
 \subsection{导数}{
   导数是什么？教科书上普遍给出的定义是指:函数图像的斜率变化率曲线,事实上某些观点表示导数也可以理解成是函数对于输入值的敏感程度,即:输入值的变化对应的输出值的变化的剧烈程度.
 
-  导数的标准定义是指$\limNormal{x to x_0}\cfrac{f(x) - f(x_0)}{x - x_0}$\ 或者\ $\limNormal{\Delta x \to x_0}\cfrac{f(x + \Delta x) - f(x)}{\Delta x}$
+  导数在一元情况下的定义是指$\limNormal{x to x_0}\cfrac{f(x) - f(x_0)}{x - x_0}$\ 或者\ $\limNormal{\Delta x \to x_0}\cfrac{f(x + \Delta x) - f(x)}{\Delta x}$
 
-  值得注意的是:求导是一种线性函数,它满足抽象向量空间的八条准则.
+  值得注意的是:求导是一种线性运算.
 
   \subsubsection{求导法则}{
     以下为求导的基本法则:
@@ -2379,128 +2542,311 @@ $\left.\cfrac{dz}{dx}\right|_{x = x_0} = f\derivative_x(x_0,y_0) + f\derivative_
       \end{tikzpicture}
       $\doubleIntegralOnZone{D(x,y)}\left[\definiteIntegral{z_2(x,y)}{z_1(x,y)}\defFunction{x,y,z}dz\right]dxdy$
     \end{center}
+
+    值得注意的是在二重积分情况下的特殊情况(5.3.4)在三重积分下也适用.
   }%三重积分结尾
+
+  \subsubsection{三重积分(柱面坐标)}{
+    由于柱面坐标只是单纯的加了个$z$轴,因此只是单纯的在外面套了一层对$z$轴的积分而已.
+
+    即 : $dv = \rho d\rho d\theta dz$
+  }%三重积分(柱面坐标结尾)
+
+  \subsubsection{三重积分(球面坐标)}{
+    公式为 :
+    $$
+      dv = dxdydz = r^2\sin\varphi drd\varphi d\theta
+    $$
+
+    多出来的$r^2\sin\varphi$也可以由雅可比行列式推出.
+  }%三重积分(球面坐标)结尾
+
+  \subsubsection{重积分应用(求曲面面积)}{
+    设$z = \defFunction{x,y}$;将曲面划分称一个个长为$a$宽为$b$的小方格:
+
+    图示如下 :
+    \begin{center}
+      \begin{tikzpicture}
+        \draw[color = black] (5,0) -- (0,0) -- (5,3);
+        \draw[color = black] (0.45,0) node[above right]{$\gamma$} arc (0 : {deg(0.54)} : 0.45);
+        \draw[color = red] (3,0) -- node[below]{$b\cos\gamma$} (4,0);
+        \draw[color = red] (3,1.8) -- node[above]{$b$} (4,2.4);
+        \draw[color = red,dashed] (3,1.8) -- (4,1.8) -- (4,2.4);
+      \end{tikzpicture}
+    \end{center}
+
+    设投影后的区域为$d\sigma$,投影前为$dA$.投影后长边的长度$a$不变,因此$dA = \cfrac{d\sigma}{\cos\gamma}$
+
+    其中$\cos\gamma = \cfrac{1}{\sqrt{1 + (f\derivative_x)^2 + (f\derivative_y)^2}}$
+
+    所以$dA = \sqrt{1 + (f\derivative_x)^2 + (f\derivative_y)^2}d\sigma$,即 :
+
+    $$
+      A = \doubleIntegralOnZone{D}\sqrt{1 + (f\derivative_x)^2 + (f\derivative_y)^2}d\sigma
+    $$
+  }%重积分应用(求曲面面积)结尾
+
+  %# TODO 重积分应用(求质心,转动惯量,引力)
 
 }%重积分结尾
 
-\subsection{雅可比矩阵与雅可比行列式}{
-  在向量分析(多元微积分)中，雅可比矩阵是函数的一阶偏导数以一定方式排列成的矩阵。
+\subsection{曲线积分与曲面积分}{
+  在数学中,曲线积分或路径积分(或contour integral[留数定理])是积分的一种.积分函数的取值沿的不是区间,而是特定的曲线,称为积分路径.曲线积分有很多种类,当积分路径为闭合曲线时,称为环路积分或围道积分.
 
-  其重要性在于，如果函数 $f:\mathRealNumberCollection^n \to \mathRealNumberCollection^m$在点$x$可微的话,在点$x$的雅可比矩阵即为该函数在该点的最佳线性逼近,也代表雅可比矩阵是单变数实数函数的微分在向量值多变数函数的推广,在这种情况下,雅可比矩阵也被称作函数$f$在点$x$的微分或者导数.
+  在曲线积分中,被积的函数可以是标量函数或向量函数.当被积函数是标量函数时,积分的值是积分路径各点上的函数值乘上该点切向量的长度.在被积分函数是向量函数时,积分值是积分向量函数与曲线切向量的内积.在函数是标量函数的情形下,可以把切向量的绝对值(长度)看成此曲线把该点附近定义域的极小区间,在到达域内拉长了切向量绝对值的长度,这也是曲线积分与一般区间上的积分的主要不同点.
 
-  \subsubsection{雅可比矩阵}{
-    假设某函数从$f : \mathRealNumberCollection^n \to \mathRealNumberCollection^M$,从$x\in\mathRealNumberCollection^n$映射到$\defFunction{x}\in\mathRealNumberCollection^m$,其雅可比矩阵就是一个$m \times n$的矩阵.换句话讲也就是从$\mathRealNumberCollection^n$到$\mathRealNumberCollection^m$的线性映射,其重要意义在于它表现了一个多变量向量函数的最佳线性逼近.因此,雅可比矩阵类似于单变数函数的导数.
+  \subsubsection{第一类曲线积分(对弧长的曲线积分)}{
+    设曲线的密度为$M(x,y)$,求质量$m$:
 
-    此函数$f$的雅可比矩阵$J$为$m \times n$的矩阵,一般由以下方式定义 :
+    \begin{center}
+      \begin{tikzpicture}
+        \draw[-latex] (0,0) -- (5,0);
+        \draw[-latex] (0,0) -- (0,5);
+
+        \draw (1,1) node[left]{$A$} ..  controls (2,1) and (3,2) .. (4,4) node[right]{$B$};
+        \draw (2.5,2) rectangle (3.5,2.5);
+        \draw[-latex] (3.5,2.25) -- node[above]{放大} (5.5,2.25);
+        \draw (5.7,1.3) node[left]{$M_i - 1$} .. controls (6,1) and (7,2) .. node[below right]{$M(\xi_i,\eta_i)$} (7,3) node[right]{$M_i$};
+      \end{tikzpicture}
+    \end{center}
+
+    第一类曲线积分的定义为 :
     $$
-      J =
-      \begin{bmatrix}
-        \partialDerivativeFrac{f}{x_1} & \dotsm & \partialDerivativeFrac{f}{x_n}
-      \end{bmatrix}
-      =
-      \begin{bmatrix}
-        \partialDerivativeFrac{f_1}{x_1} & \dotsm & \partialDerivativeFrac{f_1}{x_n} \\
-        \vdots                           & \ldots & \vdots                           \\
-        \partialDerivativeFrac{f_m}{x_1} & \dotsm & \partialDerivativeFrac{f_m}{x_n}
-      \end{bmatrix}
-    $$
-
-    矩阵的分量可表示成 :
-    $$
-      J_{ij} = \partialDerivativeFrac{f_i}{x_j}
+      \limNormal{\lambda \to 0}\upDownSum{n}{i = 1}M(\xi_i,\eta_i)\Delta S_i = m = \pathIntegral{L}\defFunction{x,y}ds
     $$
 
-    雅可比矩阵的其他常用符号还有 :
-    $$
-      Df,J_f(x_1,\dots,x_n)\mbox{或者}\partialDerivativeFrac{(f_1,\dots,f_m)}{(x_1,\dots,x_n)}
-    $$
+    其中$ds$称为曲线元素,也有三维的形式$\pathIntegral{L}\defFunction{x,y,z}ds$.
 
-    此矩阵的第$i$行是由函数$f_i$的梯度函数所表示的,$1 \leq i \leq m$.
+    第一类曲线积分有以下运算性质 :
+    \begin{itemize}
+      \item $\pathIntegral{L_1 + L_2}\defFunction{x,y}ds = \pathIntegral{L_1}\defFunction{x,y}ds + \pathIntegral{L_2}\defFunction{x,y}ds$
+      \item $\pathIntegral{L}(\alpha\defFunction{x,y} + \beta g(x,y))ds = \alpha\pathIntegral{L}\defFunction{x,y}ds + \beta\pathIntegral{L}g(x,y)ds$
+      \item $\pathIntegral{L}\defFunction{x,y}ds = \pathIntegral{L_1}\defFunction{x,y}ds + \pathIntegral{L_2}g(x,y)ds \qquad (L = L_1 + L_2)$
+      \item $\defFunction{x,y} \leq g(x,y),\pathIntegral{L}\defFunction{x,y}ds \leq \pathIntegral{L}g(x,y)ds$
+      \item $\absoluteValue{\pathIntegral{L}\defFunction{x,y}ds} \leq \pathIntegral{L}\absoluteValue{\defFunction{x,y}}ds$
+    \end{itemize}
+  }%第一类曲线积分(对弧长的曲线积分)结尾
 
-    如果$p$时$\mathRealNumberCollection^n$中的一点,$f$在$p$点可微,根据数学分析,$J_f(p)$时在这点的导数.在此情况下,$J_f(p)$这个线性映射即$f$在点$p$附近的最佳线性逼近,也就是说当$x$足够靠近点p时,有 :
-    $$
-      \defFunction{x} \approx \defFunction{p} + J_f(p)\cdot(x - p)
-    $$
-    讲更详细点也就是 :
-    $$
-      \defFunction{x} = \defFunction{p} + J_f(p)(x - p) + \smallO{\absoluteValue{x - p}}
-    $$
+  \subsubsection{第一类曲线积分的计算}{
+    定理 : 设曲线$L$ :
+    \begin{center}
+      $$
+        L :
+        \begin{cases}
+          x = \varphi(t),(\alpha \leq t \leq \beta) \\
+          y = \phi(t)
+        \end{cases}
+      $$
+      这两个参数方程都有一阶连续导数,且$\left[\varphi\derivative(t)\right]^2 + \left[\phi\derivative(t)\right]^2 \neq 0$.
+    \end{center}
 
-    其中,$o$表示高阶无穷小,$\doubleAbsoluteValue{x - p}$为$x$与$p$之间的距离
-  }%雅可比矩阵结尾
+    则$\pathIntegral{L}\defFunction{x,y}ds = \definiteIntegral{\beta}{\alpha}\defFunction{\varphi(t),\phi(t)}\sqrt{(\varphi\derivative(t))^2 + (\phi\derivative(t))^2}dt\qquad (\alpha < \beta)$
 
-  \subsubsection{雅可比行列式}{
-    当雅可比矩阵为方阵时,其行列式称为雅可比行列式.
-
-    如果$m = n$,那么$f$是从$\mathRealNumberCollection^n$映射到$\mathRealNumberCollection^m$的函数,且他的雅可比矩阵是一个方阵.因此可以取他的行列式,称为雅可比行列式.
-
-    在某个给定点的雅可比行列式提供了$f$在接近该点时的表现的重要资讯.例如:如果连续可微函数$f$在$p$点的雅可比行列式不等于0,那么他在该点附近有$f$的反函数,这成为反函数定理.更进一步,如果$p$点的雅可比行列式是正数,则$f$在$p$点保持定向.如果是负数,则逆转定向.而从雅可比行列式的绝对值,就可以知道函数$f$在$p$点附近时放大或缩小体积;这就是他出现在换元积分法中的原因.
-  }%雅可比行列式结尾
-
-  \subsubsection{举例}{
+    即:
     \begin{enumerate}
       \item {
-            球坐标系到直角坐标系的转化由$F : R^+\times[0,\pi]\times[0,2\pi) \to R^3$给出,其分量为 :
+            $y = \varphi(x),(x_1 \leq x \leq x_2)$
+
+            则设曲线$L$的参数方程为 :
             $$
-              \begin{array}{l}
-                x = r\sin\theta\cos\varphi \\
-                y = r\sin\theta\sin\varphi \\
-                z = r\cos\theta
-              \end{array}
+              \begin{cases}
+                x = t \\
+                y = \varphi(t)
+              \end{cases}
+              x_1 \leq t \leq x_2
             $$
 
-            此坐标变换的雅可比矩阵是 :
-            $$
-              J_F(r,\theta,\varphi)
-              =
-              \begin{bmatrix}
-                \partialDerivativeFrac{x}{r} & \partialDerivativeFrac{x}{\theta} & \partialDerivativeFrac{x}{\varphi} \\
-                \partialDerivativeFrac{y}{r} & \partialDerivativeFrac{y}{\theta} & \partialDerivativeFrac{y}{\varphi} \\
-                \partialDerivativeFrac{z}{r} & \partialDerivativeFrac{z}{\theta} & \partialDerivativeFrac{z}{\varphi}
-              \end{bmatrix}
-              =
-              \begin{bmatrix}
-                \sin\theta\cos\varphi & r\cos\theta\cos\varphi & -r\sin\theta\sin\varphi \\
-                \sin\theta\sin\varphi & r\cos\theta\sin\varphi & r\sin\theta\cos\varphi  \\
-                \cos\theta            & -r\sin\theta           & 0
-              \end{bmatrix}
-            $$
-
-            其雅可比行列式为$r^2\sin\theta$,由于$dV = dxdydz$,如果左变数变换的画其体积元$dV$会变成 : $dV = r^2\sin\theta dr d\theta d\varphi$.
+            则积分为 : $\definiteIntegral{x_2}{x_1}\defFunction{t,\varphi(t)}\sqrt{1 + (\varphi\derivative(t))^2}dt = \definiteIntegral{x_2}{x_1}\defFunction{x,\varphi(t)}\sqrt{1 + (\varphi\derivative(x))^2}dx\qquad (x_1 < x_2)$
             }
       \item {
-            设有函数$F : R^3 \to R^3$,其分量为 :
-            $$
-              \begin{array}{l}
-                y_1 = 5x_2                   \\
-                y_2 = 4x_1^2 - 2\sin(x_2x_3) \\
-                y_3 = x_2x_3
-              \end{array}
-            $$
+            $x = \varphi(y),(y_1 \leq y \leq y_2)$
 
-            则他的雅可比行列式为 :
+            则设参数方程 :
             $$
-              \begin{vmatrix}
-                0    & 5                 & 0                 \\
-                8x_1 & -2x_3\cos(x_2x_3) & -2x_2\cos(x_2x_3) \\
-                0    & x_3               & x_2
-              \end{vmatrix}
-              =
-              -8x_1
-              \cdot
-              \begin{vmatrix}
-                5   & 0   \\
-                x_3 & x_2
-              \end{vmatrix}
-              =
-              -40x_1x_2
+              \begin{cases}
+                x = \varphi(t) \\
+                y = t
+              \end{cases}
+              y_1 \leq t \leq y_2
             $$
-            可以得出:当$x_1$与$x_2$同号时,$F$逆转定向;改函数处处具有反函数,除了在$x_1 = 0$或者$x_2 = 0$的点.
+            则积分为 : $\definiteIntegral{y_2}{y_1}\defFunction{\varphi(t),t}\sqrt{(\varphi\derivative(t))^2 + 1}dt = \definiteIntegral{y_2}{y_1}\defFunction{\varphi(y),y}\sqrt{(\varphi\derivative(t))^2 + 1}dy\qquad (x_1 < x_2)$
+            }
+      \item{
+            $x = \varphi(t),y = \phi(t),z = \omega(t)$
+
+            $\vdots$
+
+            $\definiteIntegral{\beta}{\alpha}\defFunction{\varphi(t),\phi(t),\omega(t)}\sqrt{(\varphi\derivative(t))^2 + (\phi\derivative(t))^2 + (\omega\derivative(t))^2}dt\qquad (\alpha < \beta),(\alpha \leq t \leq \beta)$
             }
     \end{enumerate}
-  }%举例结尾
+  }%第一类曲线积分的计算结尾
 
-}%雅可比矩阵与雅可比行列式结尾
+  \subsubsection{第二类曲线积分(对坐标的曲线积分)}{
+    引出 : 设$F$是一变力,求他沿着曲线做的功$\omega$ :
+
+    \begin{center}
+      \begin{tikzpicture}
+        \draw[-latex] (0,0) -- (5,0);
+        \draw[-latex] (0,0) -- (0,5);
+
+        \draw[->] (1,1) node[below left]{$A$} ..controls (1.5,3) and (3,3).. (4,4) node[right]{$B$};
+        \draw (1.3,2) rectangle (1.8,2.5);
+        \draw[-latex] (1.8,2.3) -- node[above]{切成小段并放大}(6,2.3);
+        \draw[->] (6.5,2) node[left]{$M_i - 1$}  -- node[below right]{$F(\xi_i,\eta_i)$} (7.5,2.5) node[right]{$M_i$};
+      \end{tikzpicture}
+      $\Delta\omega_i = F(\xi_i,\eta_i)\cdot\vec{(M_{i-1}M_i)}$
+    \end{center}
+
+    定义为 :
+    $$
+      \limNormal{\lambda \to 0}\upDownSum{n}{i = 1}F(\xi_i,\eta_i)\cdot\vec{M_{i - 1}M_i}
+    $$
+
+    其中$F(\xi_i,\eta_i)$可以分解为$P(\xi_i,\eta_i)\vec{i} + Q(\xi_i,\eta_i)\vec{j}$,$\vec{M_{i - 1}M_i}$可以分解为$\delta x_i\vec{i} + \Delta y_i\vec{j}$.($\vec{i},\vec{j}$为基向量)
+
+    因此对定义作变形,可以获得另一个形式 :
+    $$
+    \limNormal{\lambda \to 0}\upDownSum{n}{i = 0}(P(\xi_i,\eta_i)\Delta x_i + Q(\xi_i,\eta_i)\Delta y_i)
+    $$
+    需要注意的是 : 求和与求极限需要单独对第一,第二项求(即对各个正交方向的基向量分别求).
+
+    \begin{itemize}
+      \item 如果第一项极限存在,则$\limNormal{\lambda \to 0}\upDownSum{n}{i = 1}P(\xi_i,\eta_i)\delta x_i = \pathIntegral{L}P(x,y)dx$
+      \item 如果第二项极限存在,则$\limNormal{\lambda \to 0}\upDownSum{n}{i = 1}Q(\xi_i,\eta_i)\delta y_i = \pathIntegral{L}Q(x,y)dy$
+    \end{itemize}
+
+    最后$\pathIntegral{L}P(x,y)dx + \pathIntegral{L}Q(x,y)dy = \pathIntegral{L}F(x,y) \cdot d\vec{r}$
+
+    其中$d\vec{r}$是一个向量,可以分解为$dx\vec{i} + dy\vec{j}$,因此实际上第二类曲线积分求的是积分向量函数各点与该点切向量的内积之和.
+
+    第二类曲线积分有以下运算性质 :
+    \begin{itemize}
+      \item $\pathIntegral{L}(\alpha F_1(x,y) + \beta F_2(x,y)) \cdot d\vec{r} = \alpha\pathIntegral{L}F_1(x,y) \cdot d\vec{r} + \beta\pathIntegral{L}F_2(x,y) \cdot d\vec{r}$
+      \item $\pathIntegral{L}F(x,y) \cdot d\vec{r} = \pathIntegral{L_1}F(x,y) \cdot d\vec{r} + \pathIntegral{L_2}F(x,y) \cdot d\vec{r}$
+      \item 如果$L^-$是$L$的反向曲线弧,则$\pathIntegral{L^-}F(x,y) \cdot d\vec{r} = -\pathIntegral{L}F(x,y) \cdot d\vec{r}$
+    \end{itemize}
+    }%对坐标的曲线积分结尾
+
+  }%曲线积分与曲面积分结尾
+
+  \subsection{雅可比矩阵与雅可比行列式}{
+    在向量分析(多元微积分)中，雅可比矩阵是函数的一阶偏导数以一定方式排列成的矩阵。
+
+    其重要性在于，如果函数 $f:\mathRealNumberCollection^n \to \mathRealNumberCollection^m$在点$x$可微的话,在点$x$的雅可比矩阵即为该函数在该点的最佳线性逼近,也代表雅可比矩阵是单变数实数函数的微分在向量值多变数函数的推广,在这种情况下,雅可比矩阵也被称作函数$f$在点$x$的微分或者导数.
+
+    \subsubsection{雅可比矩阵}{
+      假设某函数从$f : \mathRealNumberCollection^n \to \mathRealNumberCollection^M$,从$x\in\mathRealNumberCollection^n$映射到$\defFunction{x}\in\mathRealNumberCollection^m$,其雅可比矩阵就是一个$m \times n$的矩阵.换句话讲也就是从$\mathRealNumberCollection^n$到$\mathRealNumberCollection^m$的线性映射,其重要意义在于它表现了一个多变量向量函数的最佳线性逼近.因此,雅可比矩阵类似于单变数函数的导数.
+
+      此函数$f$的雅可比矩阵$J$为$m \times n$的矩阵,一般由以下方式定义 :
+      $$
+        J =
+        \begin{bmatrix}
+          \partialDerivativeFrac{f}{x_1} & \dotsm & \partialDerivativeFrac{f}{x_n}
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+          \partialDerivativeFrac{f_1}{x_1} & \dotsm & \partialDerivativeFrac{f_1}{x_n} \\
+          \vdots                           & \ldots & \vdots                           \\
+          \partialDerivativeFrac{f_m}{x_1} & \dotsm & \partialDerivativeFrac{f_m}{x_n}
+        \end{bmatrix}
+      $$
+
+      矩阵的分量可表示成 :
+      $$
+        J_{ij} = \partialDerivativeFrac{f_i}{x_j}
+      $$
+
+      雅可比矩阵的其他常用符号还有 :
+      $$
+        Df,J_f(x_1,\dots,x_n)\mbox{或者}\partialDerivativeFrac{(f_1,\dots,f_m)}{(x_1,\dots,x_n)}
+      $$
+
+      此矩阵的第$i$行是由函数$f_i$的梯度函数所表示的,$1 \leq i \leq m$.
+
+      如果$p$是$\mathRealNumberCollection^n$中的一点,$f$在$p$点可微,根据数学分析,$J_f(p)$时在这点的导数.在此情况下,$J_f(p)$这个线性映射即$f$在点$p$附近的最佳线性逼近,也就是说当$x$足够靠近点p时,有 :
+      $$
+        \defFunction{x} \approx \defFunction{p} + J_f(p)\cdot(x - p)
+      $$
+      讲更详细点也就是 :
+      $$
+        \defFunction{x} = \defFunction{p} + J_f(p)(x - p) + \smallO{\absoluteValue{x - p}}
+      $$
+
+      其中,$o$表示高阶无穷小,$\doubleAbsoluteValue{x - p}$为$x$与$p$之间的距离
+    }%雅可比矩阵结尾
+
+    \subsubsection{雅可比行列式}{
+      当雅可比矩阵为方阵时,其行列式称为雅可比行列式.
+
+      如果$m = n$,那么$f$是从$\mathRealNumberCollection^n$映射到$\mathRealNumberCollection^m$的函数,且他的雅可比矩阵是一个方阵.因此可以取他的行列式,称为雅可比行列式.
+
+      在某个给定点的雅可比行列式提供了$f$在接近该点时的表现的重要资讯.例如:如果连续可微函数$f$在$p$点的雅可比行列式不等于0,那么他在该点附近有$f$的反函数,这成为反函数定理.更进一步,如果$p$点的雅可比行列式是正数,则$f$在$p$点保持定向.如果是负数,则逆转定向.而从雅可比行列式的绝对值,就可以知道函数$f$在$p$点附近时放大或缩小体积;这就是他出现在换元积分法中的原因.
+    }%雅可比行列式结尾
+
+    \subsubsection{举例}{
+      \begin{enumerate}
+        \item {
+              球坐标系到直角坐标系的转化由$F : R^+\times[0,\pi]\times[0,2\pi) \to R^3$给出,其分量为 :
+              $$
+                \begin{array}{l}
+                  x = r\sin\theta\cos\varphi \\
+                  y = r\sin\theta\sin\varphi \\
+                  z = r\cos\theta
+                \end{array}
+              $$
+
+              此坐标变换的雅可比矩阵是 :
+              $$
+                J_F(r,\theta,\varphi)
+                =
+                \begin{bmatrix}
+                  \partialDerivativeFrac{x}{r} & \partialDerivativeFrac{x}{\theta} & \partialDerivativeFrac{x}{\varphi} \\
+                  \partialDerivativeFrac{y}{r} & \partialDerivativeFrac{y}{\theta} & \partialDerivativeFrac{y}{\varphi} \\
+                  \partialDerivativeFrac{z}{r} & \partialDerivativeFrac{z}{\theta} & \partialDerivativeFrac{z}{\varphi}
+                \end{bmatrix}
+                =
+                \begin{bmatrix}
+                  \sin\theta\cos\varphi & r\cos\theta\cos\varphi & -r\sin\theta\sin\varphi \\
+                  \sin\theta\sin\varphi & r\cos\theta\sin\varphi & r\sin\theta\cos\varphi  \\
+                  \cos\theta            & -r\sin\theta           & 0
+                \end{bmatrix}
+              $$
+
+              其雅可比行列式为$r^2\sin\theta$,由于$dV = dxdydz$,如果左变数变换的画其体积元$dV$会变成 : $dV = r^2\sin\theta dr d\theta d\varphi$.
+              }
+        \item {
+              设有函数$F : R^3 \to R^3$,其分量为 :
+              $$
+                \begin{array}{l}
+                  y_1 = 5x_2                   \\
+                  y_2 = 4x_1^2 - 2\sin(x_2x_3) \\
+                  y_3 = x_2x_3
+                \end{array}
+              $$
+
+              则他的雅可比行列式为 :
+              $$
+                \begin{vmatrix}
+                  0    & 5                 & 0                 \\
+                  8x_1 & -2x_3\cos(x_2x_3) & -2x_2\cos(x_2x_3) \\
+                  0    & x_3               & x_2
+                \end{vmatrix}
+                =
+                -8x_1
+                \cdot
+                \begin{vmatrix}
+                  5   & 0   \\
+                  x_3 & x_2
+                \end{vmatrix}
+                =
+                -40x_1x_2
+              $$
+              可以得出:当$x_1$与$x_2$同号时,$F$逆转定向;改函数处处具有反函数,除了在$x_1 = 0$或者$x_2 = 0$的点.
+              }
+      \end{enumerate}
+    }%举例结尾
+
+  }%雅可比矩阵与雅可比行列式结尾
 
 }%多元微积分结尾
 
