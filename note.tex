@@ -2250,9 +2250,9 @@ $\left.\cfrac{dz}{dx}\right|_{x = x_0} = f\derivative_x(x_0,y_0) + f\derivative_
 
   当有两个以上的约束条件时 :
 
-  $u = \defFunction{x,y,z,t},\varphi(x,y,z,t) = 0,\phi(x,y,z,t) = 0$
+  $u = \defFunction{x,y,z,t},\varphi(x,y,z,t) = 0,\psi(x,y,z,t) = 0$
 
-  $L = \defFunction{x,y,z,t} + \lambda\varphi(x,y,z,t) + \mu\phi(x,y,z,t)$
+  $L = \defFunction{x,y,z,t} + \lambda\varphi(x,y,z,t) + \mu\psi(x,y,z,t)$
 
   $$
     \begin{cases}
@@ -2261,7 +2261,7 @@ $\left.\cfrac{dz}{dx}\right|_{x = x_0} = f\derivative_x(x_0,y_0) + f\derivative_
       L\derivative_z = 0   \\
       L\derivative_t = 0   \\
       \varphi(x,y,z,t) = 0 \\
-      \phi(x,y,z,t) = 0
+      \psi(x,y,z,t) = 0
     \end{cases}
   $$
 }%拉格朗日乘数法结尾
@@ -2634,13 +2634,13 @@ $\left.\cfrac{dz}{dx}\right|_{x = x_0} = f\derivative_x(x_0,y_0) + f\derivative_
         L :
         \begin{cases}
           x = \varphi(t),(\alpha \leq t \leq \beta) \\
-          y = \phi(t)
+          y = \psi(t)
         \end{cases}
       $$
-      这两个参数方程都有一阶连续导数,且$\left[\varphi\derivative(t)\right]^2 + \left[\phi\derivative(t)\right]^2 \neq 0$.
+      这两个参数方程都有一阶连续导数,且$\left[\varphi\derivative(t)\right]^2 + \left[\psi\derivative(t)\right]^2 \neq 0$.
     \end{center}
 
-    则$\pathIntegral{L}\defFunction{x,y}ds = \definiteIntegral{\beta}{\alpha}\defFunction{\varphi(t),\phi(t)}\sqrt{(\varphi\derivative(t))^2 + (\phi\derivative(t))^2}dt\qquad (\alpha < \beta)$
+    则$\pathIntegral{L}\defFunction{x,y}ds = \definiteIntegral{\beta}{\alpha}\defFunction{\varphi(t),\psi(t)}\sqrt{(\varphi\derivative(t))^2 + (\psi\derivative(t))^2}dt\qquad (\alpha < \beta)$
 
     即:
     \begin{enumerate}
@@ -2672,11 +2672,11 @@ $\left.\cfrac{dz}{dx}\right|_{x = x_0} = f\derivative_x(x_0,y_0) + f\derivative_
             则积分为 : $\definiteIntegral{y_2}{y_1}\defFunction{\varphi(t),t}\sqrt{(\varphi\derivative(t))^2 + 1}dt = \definiteIntegral{y_2}{y_1}\defFunction{\varphi(y),y}\sqrt{(\varphi\derivative(t))^2 + 1}dy\qquad (x_1 < x_2)$
             }
       \item{
-            $x = \varphi(t),y = \phi(t),z = \omega(t)$
+            $x = \varphi(t),y = \psi(t),z = \omega(t)$
 
             $\vdots$
 
-            $\definiteIntegral{\beta}{\alpha}\defFunction{\varphi(t),\phi(t),\omega(t)}\sqrt{(\varphi\derivative(t))^2 + (\phi\derivative(t))^2 + (\omega\derivative(t))^2}dt\qquad (\alpha < \beta),(\alpha \leq t \leq \beta)$
+            $\definiteIntegral{\beta}{\alpha}\defFunction{\varphi(t),\psi(t),\omega(t)}\sqrt{(\varphi\derivative(t))^2 + (\psi\derivative(t))^2 + (\omega\derivative(t))^2}dt\qquad (\alpha < \beta),(\alpha \leq t \leq \beta)$
             }
     \end{enumerate}
   }%第一类曲线积分的计算结尾
@@ -2726,6 +2726,163 @@ $\left.\cfrac{dz}{dx}\right|_{x = x_0} = f\derivative_x(x_0,y_0) + f\derivative_
       \item 如果$L^-$是$L$的反向曲线弧,则$\pathIntegral{L^-}F(x,y) \cdot d\vec{r} = -\pathIntegral{L}F(x,y) \cdot d\vec{r}$
     \end{itemize}
     }%对坐标的曲线积分结尾
+
+    \subsubsection{第二类曲线积分(对坐标的曲线积分)计算}{
+      设参数方程 :
+      \begin{center}
+        $$
+          \begin{cases}
+            x = \varphi(t) \\
+            y = \psi(t)
+          \end{cases}
+        $$
+        从起点$A$到终点$B$时,$t$从$\alpha$到$\beta$.
+      \end{center}
+      则$\pathIntegral{L}P(x,y)dx + Q(x,y)dy = \definiteIntegral{\beta}{\alpha}[P(\varphi(t),\psi(t))\varphi\derivative(t) + Q(\varphi(t),\psi(t))\psi\derivative(t)]dt$
+
+      注意:第二类曲线积分中$\alpha$不一定比$\beta$小,只是一个对应起点一个对应终点.
+
+      有以下特殊情况 :
+      \begin{itemize}
+        \item {
+              $y = \psi(x)$ :
+
+              令$x = x,y = \psi(x)$,则积分公式为$\definiteIntegral{\beta}{\alpha}[P(x,\psi(x)) + Q(x,\psi(x))\psi\derivative(x)]dx$
+              }
+        \item{
+              $x = \varphi(y)$ :
+
+              令$x = \varphi(y),y = y$,则积分公式为$\definiteIntegral{\beta}{\alpha}[P(\varphi(y),y)\varphi\derivative(y) + Q(\varphi(y),y)]dy$
+              }
+      \end{itemize}
+    }%第二类曲线积分(对坐标的曲线积分)计算结尾
+
+    \subsubsection{第二类曲线积分计算例题}{
+      \begin{enumerate}
+        \item {
+              设$F(x,y) = xy$,从$A$到$B$沿$y^2 = x$积分:
+
+              \begin{tikzpicture}
+                \draw [-latex] (-2,0) -- (2,0);
+                \draw [-latex] (0,-2) -- (0,2);
+                \draw [->] (1,-1) node[below right]{$A(1,-1)$} node[below left]{$y = -\sqrt{x}$} arc (270:90:1) node[right]{$B(1,1)$} node[above left]{$y = \sqrt{x}$};
+                \tikzPlaceDot{(1,-1)};
+                \tikzPlaceDot{(1,1)};
+              \end{tikzpicture}
+
+              有两种方法 :
+              \begin{enumerate}
+                \item {
+                      将$AB$分成两段,$A \to 0$和$0 \to B$ :
+                      $$
+                        \pathIntegral{L}xydx = \pathIntegral{A0}xydx + \pathIntegral{0B}xydx.
+                      $$
+
+                      因为在$A0$上$y = -\sqrt{x}$,在$0B$上$y = \sqrt{x}$,所以x的取值在$A0$上是$1 \to 0$,在$0B$上是$0 \to 1$.所以上式等于 :
+                      $$
+                        \definiteIntegral{0}{1}x(-\sqrt{x})dx + \definiteIntegral{1}{0}x(\sqrt{x})dx = 2\definiteIntegral{1}{x}x^{\cfrac{3}{2}}dx = \cfrac{4}{5}
+                      $$
+
+                      这可以形象的称为"按照x型区域积分"
+                      }
+                \item {
+                      将公式变形成$x = y^2$ :
+
+                      $\pathIntegral{L}y^2dx = \definiteIntegral{1}{-1}y^2 \cdot ydx = \definiteIntegral{1}{-1}y^2 \cdot y \cdot 2ydy = \cfrac{4}{5}$
+                      }
+              \end{enumerate}
+              }
+        \item{
+              $\pathIntegral{L}y^2dx$,求沿着上半圆周L和从$A(a,0)$到$B(-a,0)$的直线$AB$的积分 :
+
+              \begin{tikzpicture}
+                \draw [-latex] (-3,0) -- (3,0);
+                \draw [-latex] (0,-3) -- (0,3);
+                \draw [->] (1.5,0) node [below right]{$A$} arc (0:180:1.5) node[below left]{$B$};
+                \draw [->] (1.5,0) arc (0:90:1.5);
+                \tikzPlaceDot{(-1.5,0)};
+                \tikzPlaceDot{{(1.5,0)}};
+              \end{tikzpicture}
+
+              \begin{enumerate}
+                \item {
+                      第一题 : 极坐标 :
+                      $$
+                        x = a\cos\theta, y = a\sin\theta,0 \leq \theta \leq \pi \mbox{(注意旋转方向)}
+                      $$
+                      $$
+                        \definiteIntegral{\pi}{0}a^2\sin^2\theta(-a\sin\theta)d\theta = a^3\definiteIntegral{\pi}{0}1 - \cos^2\theta d\cos\theta = -\cfrac{4}{3}a^3
+                      $$
+                      }
+                \item {
+                      第二题 : 沿着x轴,y始终等于0. x从$a$到$-a$ :
+                      $$
+                        \definiteIntegral{-a}{a}0^2dx = 0
+                      $$
+                      }
+              \end{enumerate}
+              }
+      \end{enumerate}
+    }%第二类曲线积分计算例题
+
+    \subsubsection{两类曲线积分之间的联系}{
+      先列出两类曲线积分的定义 :
+      \begin{center}
+        \begin{tabular}{c|c}
+          第一类 :                                                       & 第二类                                                                                                              \\
+          \hline
+          {
+            \begin{tikzpicture}
+              \draw[-latex] (0,0) -- (3.5,0);
+              \draw[-latex] (0,0) -- (0,3.5);
+
+              \draw (1,1) node[left]{$A$} ..  controls (2,1) and (3,2) .. (4,4) node[right]{$B$};
+              \draw (2.5,2) rectangle (3.5,2.5);
+              \draw[-latex] (3.5,2.25) -- node[above]{切成小段并放大} (5.5,2.25);
+              \draw (5.7,1.3) node[left]{$M_i - 1$} .. controls (6,1) and (7,2) .. node[below right]{$M(\xi_i,\eta_i)$} node[above left]{此段为$\Delta S_i$} (7,3) node[right]{$M_i$};
+            \end{tikzpicture}
+          }
+                                                                         &
+          {
+              \begin{tikzpicture}
+                \draw[-latex] (0,0) -- (3.5,0);
+                \draw[-latex] (0,0) -- (0,3.5);
+
+                \draw[->] (1,1) node[below left]{$A$} ..controls (1.5,3) and (3,3).. (4,4) node[right]{$B$};
+                \draw (1.3,2) rectangle (1.8,2.5);
+                \draw[-latex] (1.8,2.3) -- node[above]{切成小段并放大}(6,2.3);
+                \draw[->] (6.2,2) node[left]{$M_i - 1$}  -- node[below right]{$F(\xi_i,\eta_i)$} (7.2,2.5) node[right]{$M_i$};
+              \end{tikzpicture}
+          }                                                                                                                                                                                    \\
+          $\defFunction{\xi_i,\eta_i}\Delta S_i(\mbox{简称为}f\Delta S)$ & $P(\xi_i,\eta_i)\Delta x_i + Q(\xi_i,\eta_i)\Delta y_i(\mbox{简称为}P\Delta x + Q\Delta y)$                         \\
+          $\downarrow$                                                   & $\downarrow$                                                                                                        \\
+          {
+          放大的积分弧段可以近似的看作一个三角形 :
+
+          \begin{tikzpicture}
+            \draw (0,0) -- node[below]{$\Delta x$} (1,0) -- node[right]{$\Delta y$} (1,1);
+            \draw (0,0) ..controls (0.3,0) and (1,0.3).. node[above left]{$\Delta S$} (1,1);
+            \draw[dashed] (0,0) -- (1,1);
+          \end{tikzpicture}
+          }
+                                                                         &
+          {
+              将$P\Delta x + Q\Delta y$除以$\sqrt{\Delta x^2 + \Delta y^2}$
+          }                                                                                                                                                                                    \\
+          因此$f\Delta S = f\sqrt{\Delta x^2 + \Delta y^2}$              & 结果为$(P(\cfrac{\Delta x}{\sqrt{\Delta x^2 + \Delta y^2}}) + Q(\cfrac{\Delta y}{\sqrt{\Delta x^2 + \Delta y^2}}))$
+        \end{tabular}
+      \end{center}
+      即 : $f = P(\cfrac{\Delta x}{\sqrt{\Delta x^2 + \Delta y^2}}) + Q(\cfrac{\Delta y}{\sqrt{\Delta x^2 + \Delta y^2}}) = P\cos\alpha + Q\cos\beta$\\
+
+      设$x = \varphi(t),y = \psi(t)$,由此得出 :
+
+      \begin{math}
+        \definiteIntegral{\beta}{\alpha}(P(\varphi(t),\psi(t))\varphi\derivative(t) + Q(\varphi(t),\psi(t))\psi\derivative(t))dt \\
+        = \definiteIntegral{\beta}{\alpha}(P\left(\varphi(t),\psi(t))\cfrac{\varphi\derivative(t)}{\sqrt{(\varphi\derivative(t))^2 + (\psi\derivative(t))^2}}+ Q(\varphi(t),\psi(t))\cfrac{\psi\derivative(t)}{\sqrt{(\varphi\derivative(t))^2 + (\psi\derivative(t))^2}}\right)\sqrt{(\varphi\derivative(t))^2 + (\psi\derivative(t))^2} \\
+        = \definiteIntegral{\beta}{\alpha}(P(\varphi(t),\psi(t))\cos\alpha + Q(\varphi(t),\psi(t))\cos\beta)\sqrt{(\varphi\derivative(t))^2 + (\psi\derivative(t))^2} \\
+        = \pathIntegral{L}[P(x,y)\cos\alpha + Q(x,y)\cos\beta]dS
+      \end{math}
+    }%两类曲线积分之间的联系
 
   }%曲线积分与曲面积分结尾
 
