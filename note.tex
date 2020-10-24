@@ -19,7 +19,7 @@
 
 \geometry{left=1cm,right=1cm,top=3cm,bottom=3cm}
 \title{db的日常笔记}
-\date{最后的编译日期:\today}
+\date{最后编译日期:\today}
 \author{dbydd}    
 \kaishu
 \setlength{\parindent}{2em}
@@ -64,8 +64,10 @@
 \newcommand{\smallO}[1]{o(#1)}
 \newcommand{\doubleAbsoluteValue}[1]{\left\Vert #1 \right\Vert}
 \newcommand{\absoluteValue}[1]{\left\lvert #1 \right\vert}
-\newcommand{\mathZone}[1]{\left[#1\right]}
+\newcommand{\mathBigCase}[1]{\left[#1\right]}
 \newcommand{\pathIntegral}[1]{\int_{#1}}
+\newcommand{\curveIntegralOnLine}[1]{\oint_{#1}}
+\newcommand{\doubleCurveIntegralOnLine}[1]{\oiint_{#1}}
 
 \newcommand{\tikzPlaceDot}[1]{\draw[fill = black] #1 circle (1pt)}
 
@@ -344,8 +346,8 @@ $\sum\limits_{1 \leq i_1 < i_2 < \dotsm < i_k \leq n}x_{i_{1}}x_{i_{2}} \dotsm x
     球面坐标由三个变量组成,如果将某一个点用向量$\vec{v}$表示,那么三个变量分别是 :
     \begin{itemize}
       \item $r$ : 表示$\vec{v}$的长度,可以理解成极坐标的$\rho$.取值范围为:$\left[0,+\infty\right)$
-      \item $\theta$ : 用过原点以$z$轴作为法向量的平面作为极坐标的平面,$\vec{v}$投影到此平面上时$\theta$就是该投影在极坐标中的角度单位.取值范围为$\mathZone{0,2\pi}$
-      \item $\varphi$ : 以原点为顶点,$z$轴为旋转轴,$\vec{v}$作为母线的圆锥面的半顶角.也就是$\vec{v}$与$z$轴的夹角.取值范围为:$\mathZone{0,\pi}$
+      \item $\theta$ : 用过原点以$z$轴作为法向量的平面作为极坐标的平面,$\vec{v}$投影到此平面上时$\theta$就是该投影在极坐标中的角度单位.取值范围为$\mathBigCase{0,2\pi}$
+      \item $\varphi$ : 以原点为顶点,$z$轴为旋转轴,$\vec{v}$作为母线的圆锥面的半顶角.也就是$\vec{v}$与$z$轴的夹角.取值范围为:$\mathBigCase{0,\pi}$
     \end{itemize}
 
     从直角坐标系到球面坐标系的转换公式为 :
@@ -517,9 +519,9 @@ $\cfrac{2}{\cfrac{1}{x_1} + \cfrac{1}{x_2}} = \cfrac{2x_1x_2}{x_1 + x_2}\leq\sqr
     \hline
     名字           & 定义           & 定义域                                                                                       & 值域                                \\
     \hline
-    $\sin{\alpha}$ & $\cfrac{y}{r}$ & $\mathRealNumberCollection$                                                                  & $\mathZone{-1,1}$                   \\
+    $\sin{\alpha}$ & $\cfrac{y}{r}$ & $\mathRealNumberCollection$                                                                  & $\mathBigCase{-1,1}$                \\
     \hline
-    $\cos{\alpha}$ & $\cfrac{x}{r}$ & $\mathRealNumberCollection$                                                                  & $\mathZone{-1,1}$                   \\
+    $\cos{\alpha}$ & $\cfrac{x}{r}$ & $\mathRealNumberCollection$                                                                  & $\mathBigCase{-1,1}$                \\
     \hline
     $\tan{\alpha}$ & $\cfrac{y}{x}$ & $\mathRealNumberCollection(\alpha \neq \cfrac{\pi}{2} + k\pi(k \in \mathIntegerCollection))$ & $\mathRealNumberCollection$         \\
     \hline
@@ -537,13 +539,13 @@ $\cfrac{2}{\cfrac{1}{x_1} + \cfrac{1}{x_2}} = \cfrac{2x_1x_2}{x_1 + x_2}\leq\sqr
     \hline
     名字        & 定义         & 定义域                                                & 值域                                                                 \\
     \hline
-    $\arcsin x$ & $x = \sin y$ & $\mathZone{-1,1}$                                     & $\mathZone{-\cfrac{\pi}{2},\cfrac{\pi}{2}}$                          \\
+    $\arcsin x$ & $x = \sin y$ & $\mathBigCase{-1,1}$                                  & $\mathBigCase{-\cfrac{\pi}{2},\cfrac{\pi}{2}}$                       \\
     \hline
-    $\arccos x$ & $x = \sin y$ & $\mathZone{-1,1}$                                     & $\mathZone{0,\pi}$                                                   \\
+    $\arccos x$ & $x = \sin y$ & $\mathBigCase{-1,1}$                                  & $\mathBigCase{0,\pi}$                                                \\
     \hline
-    $\arctan x$ & $x = \tan y$ & $\mathRealNumberCollection$                           & $\mathZone{-\cfrac{\pi}{2},\cfrac{\pi}{2}}$                          \\
+    $\arctan x$ & $x = \tan y$ & $\mathRealNumberCollection$                           & $\mathBigCase{-\cfrac{\pi}{2},\cfrac{\pi}{2}}$                       \\
     \hline
-    $\arccot x$ & $x = \cot y$ & $\mathRealNumberCollection$                           & $\mathZone{0,\pi}$                                                   \\
+    $\arccot x$ & $x = \cot y$ & $\mathRealNumberCollection$                           & $\mathBigCase{0,\pi}$                                                \\
     \hline
     $\arcsec x$ & $x = \sec y$ & $\left(-\infty,-1\right] \cup \left[1,+\infty\right)$ & $\left[0,\cfrac{\pi}{2}\right) \cup \left(\cfrac{\pi}{2},\pi\right]$ \\
     \hline
@@ -1621,7 +1623,7 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
 }%拉格朗日中值定理结尾
 
 \subsubsection{柯西中值定理}{
-  柯西中值定理,也叫拓展中值定理,是中值定理的一般形式.它叙述为:如果函数$f$和$g$都在闭区间$[a,b]$上连续,且在开区间$(a,b)$上可微,那么存在某个$c \in (a,b)$,
+  柯西中值定理,也叫拓展中值定理,是中值定理的一般形式.它叙述为:如果函数$f$和$g$都在闭区间$[a,b]$上连续,且在开区间$(a,b)$上可微,那么���在某个$c \in (a,b)$,
   使得$(\defFunction{b} - \defFunction{a})g\derivative(c) = (g(b)-g(a))\fDerivative{c}$
 
   当然,如果$g(a) \neq g(b)$且$g\derivative(c) \neq 0$,则可表示成:$\cfrac{\fDerivative{c}}{g\derivative(c)} = \cfrac{\defFunction{b} - \defFunction{a}}{g(b) - g(a)}$
@@ -2880,9 +2882,189 @@ $\left.\cfrac{dz}{dx}\right|_{x = x_0} = f\derivative_x(x_0,y_0) + f\derivative_
         \definiteIntegral{\beta}{\alpha}(P(\varphi(t),\psi(t))\varphi\derivative(t) + Q(\varphi(t),\psi(t))\psi\derivative(t))dt \\
         = \definiteIntegral{\beta}{\alpha}(P\left(\varphi(t),\psi(t))\cfrac{\varphi\derivative(t)}{\sqrt{(\varphi\derivative(t))^2 + (\psi\derivative(t))^2}}+ Q(\varphi(t),\psi(t))\cfrac{\psi\derivative(t)}{\sqrt{(\varphi\derivative(t))^2 + (\psi\derivative(t))^2}}\right)\sqrt{(\varphi\derivative(t))^2 + (\psi\derivative(t))^2} \\
         = \definiteIntegral{\beta}{\alpha}(P(\varphi(t),\psi(t))\cos\alpha + Q(\varphi(t),\psi(t))\cos\beta)\sqrt{(\varphi\derivative(t))^2 + (\psi\derivative(t))^2} \\
-        = \pathIntegral{L}[P(x,y)\cos\alpha + Q(x,y)\cos\beta]dS
+        = \pathIntegral{L}[P(x,y)\cos\alpha + Q(x,y)\cos\beta]ds
       \end{math}
     }%两类曲线积分之间的联系
+
+    \subsubsection{格林公式}{
+      在物理学与数学中,格林公式给出了沿封闭曲线$C$的线积分与以$C$为边界的平面区域$D$上的双重积分的联系.格林公式是斯托克斯公式的二维特例 :
+
+      设闭区域D由分段光滑的简单曲线$L$围成,函数$P(x,y)$及$Q(X,Y)$在$D$上有一阶连续偏导数(即:没有洞的区域),则有 :
+      $$
+        \doubleIntegralOnZone{D}(\partialDerivativeFrac{Q}{x} - \partialDerivativeFrac{P}{y})dxdy = \curveIntegralOnLine{L^+}(Pdx + Qdy)
+      $$
+
+      其中$L^+$是$D$的取正向的边界曲线,$\oint$表示闭合路线上的曲线积分.
+    }%格林公式结尾
+
+    \subsubsection{当$D$为一个简单区域时格林公式的证明}{
+      设一个比较简单的区域D,无论是沿着Y还是X都最多只有两个垂边,即 :
+      \begin{center}
+        \begin{tikzpicture}
+          \draw[-latex] (0,0) -- (0,5);
+          \draw[-latex] (0,0) -- (5,0);
+          \draw (1,3) node[above left]{G} -- (1,1) node[below left]{A};
+          \draw (4,1) node[below right]{B} -- (4,3) node[above right]{C};
+          \draw (1,3) ..controls (2,3.5) and (3,3.5).. node[above]{F} node[below]{$L_1 : y = \varphi_2(x)$} (4,3);
+          \draw (1,1) ..controls (2,0.5) and (3,0.5).. node[below]{E} node[above]{$L_2 : y = \varphi_1(x)$}(4,1);
+          \draw[color = red,dashed] (1,5) -- (1,0) node[below]{$a$};
+          \draw[color = red,dashed] (4,5) -- (4,0) node[below]{$b$};
+        \end{tikzpicture}
+        \begin{tikzpicture}
+          \draw[-latex] (0,0) -- (0,5);
+          \draw[-latex] (0,0) -- (5,0);
+          \draw (1,3) node[above left]{G} -- (1,1) node[below left]{A};
+          \draw (4,1) node[below right]{B} -- (4,3) node[above right]{C};
+          \draw (1,3) ..controls (2,3.5) and (3,3.5).. node[above]{F}(4,3);
+          \draw (1,1) ..controls (2,0.5) and (3,0.5).. node[below]{E}(4,1);
+          \draw[color = red,dashed] (5,3.35) -- (0,3.35) node[left]{$d$};
+          \draw[color = red,dashed] (5,0.65) -- (0,0.65) node[left]{$c$};
+          \node(A) at (4.2,4.5){设$\widehat{FGAE} : x = \psi_1(y),\widehat{EBCF} : x = \psi_2(y)$};
+        \end{tikzpicture}
+      \end{center}
+      \begin{center}左:x型区域,右:y型区域\end{center}
+
+      那么,区域$D$就可以写作:$D : \{(x,y)|\psi_1(y) \leq x \leq \psi_2(y),c \leq y \leq d\}$
+
+      \begin{enumerate}
+        \item {
+              先证明后半部分 :
+              $$
+                \doubleIntegralOnZone{D}\partialDerivativeFrac{P}{y}dxdy = \definiteIntegral{b}{a}dx\definiteIntegral{\varphi_1(x)}{\varphi_2(x)}\partialDerivativeFrac{P}{y}dy = \definiteIntegral{b}{a}[P(x,\varphi_2(x)) - P(x,\varphi_1(x))]dx :
+              $$
+
+              \begin{math}
+                \curveIntegralOnLine{L}Pdx \\
+                = \pathIntegral{L_1}Pdx + \pathIntegral{BC}Pdx + \pathIntegral{L_2}Pdx + \pathIntegral{GA}Pdx \\
+                = \pathIntegral{L_1}Pdx + \pathIntegral{L_2}Pdx \\
+                = \definiteIntegral{b}{a}P(x,\varphi_1(x))dx + \definiteIntegral{a}{b}P(x,\varphi_2(x))dx \\
+                = \definiteIntegral{b}{a}[P(x,\varphi_1(x)) - P(x,\varphi_2(x))]dx \\
+                = -\doubleIntegralOnZone{D}\partialDerivativeFrac{P}{y}dxdy
+              \end{math}
+              }
+        \item{
+              然后是前半部分 :
+
+              \begin{math}
+                \doubleIntegralOnZone{D}\partialDerivativeFrac{Q}{x}dxdy \\
+                = \definiteIntegral{d}{c}dy\definiteIntegral{\psi_2(y)}{\psi_1(y)}\partialDerivativeFrac{Q}{x}dx \\
+                = \definiteIntegral{d}{c}[Q(\psi_2(y),y) - Q(\psi_1(y),y)]dy \\
+                = \pathIntegral{L_2}Qdy + \pathIntegral{L_1}Qdy \\
+                = \curveIntegralOnLine{L}Qdy
+              \end{math}
+              }
+      \end{enumerate}
+    }%当D时一个简单区域时格林公式的证明
+
+    \subsubsection{格林公式的计算}{
+      $$
+        \doubleIntegralOnZone{D}\mathBigCase{\partialDerivativeFrac{Q}{x} - \partialDerivativeFrac{P}{y}}dxdy = \curveIntegralOnLine{L}Pdx + Qdy
+      $$
+
+      有两种情况 :
+      \begin{enumerate}
+        \item {
+              已经得知了以上公式的右侧,求左侧 (计算区域面积):
+              使用格林公式,可以用线积分计算区域的面积.因为区域$D$的面积等于$A = \doubleIntegralOnZone{D}dA$,所以只要选取适当的$P$与$Q$使得$\partialDerivativeFrac{Q}{x} - \partialDerivativeFrac{P}{y} = 1$,就可以通过$A = \curveIntegralOnLine{L}(Pdx + Qdy)$来计算面积.
+
+              还有一种可能的取值是$A = \curveIntegralOnLine{L}xdy = -\curveIntegralOnLine{L}ydx = \cfrac{1}{2}\curveIntegralOnLine{L}(-ydx + xdy)$
+
+              即 : 设$P = -y,Q = x,\partialDerivativeFrac{Q}{x} = 1,\partialDerivativeFrac{P}{y} = -1$
+
+              那么$2\doubleIntegralOnZone{D}dxdy = \curveIntegralOnLine{L}xdy - ydx$
+
+              所以$A = \cfrac{1}{2}\curveIntegralOnLine{L}xdy - ydx$
+
+              $A$:积分区域面积
+              }
+        \item {
+              已经得知了左侧,求右侧 :
+
+              有以下例子 :
+              \begin{enumerate}
+                \item {
+                      $$
+                        \curveIntegralOnLine{L}x^2ydx - xy^2dy
+                      $$
+                      L : 正向圆周$x^2 + y^2 = a^2$.
+
+                      $P = x^2y,Q =-xy^2,\partialDerivativeFrac{Q}{x} - \partialDerivativeFrac{P}{y} = -y^2-x^2$
+
+                      原式$=\doubleIntegralOnZone{D}(-y^2-x^2)dxdy = -\definiteIntegral{2\pi}{0}d\theta\definiteIntegral{a}{0}\rho^2\rho d\rho = -\cfrac{\pi}{2}a^4$
+                      }
+                \item {
+                      $\doubleIntegralOnZone{D}e^{-y^2}dxdy$,积分区域D : \begin{tikzpicture}
+                        \draw[-latex] (0,0) -- (0,2);
+                        \draw[-latex] (0,0) -- (2,0);
+                        \filldraw[color = black] (0,0) -- (1,1) node[right]{$A(1,1)$} -- (0,1) node[left]{$B(0,1)$} -- cycle;
+                      \end{tikzpicture}
+
+                      设$P = 0,Q = xe^{-y^2}$
+
+                      原式 = \begin{math}
+                        \curveIntegralOnLine{OA + AB + BO}xe^{-y^2}dy \\
+                        =\pathIntegral{OA}xe^{-y^2}dy \\
+                        =\definiteIntegral{1}{0}xe^{-x^2}dx \\
+                        =\cfrac{1}{2}(1 - e^{-1})
+                      \end{math}
+
+                      注 : $OA$直线是$y = x$
+                      }
+                \item {
+                      $$
+                        x = a\cos\theta,y = a\sin\theta,\mbox{求面积}
+                      $$
+
+                      用之前得出的$A = \cfrac{1}{2}\curveIntegralOnLine{L}xdy - ydx$ :
+
+                      \begin{math}
+                        \cfrac{1}{2}\definiteIntegral{2\pi}{0}(a\cos\theta \cdot a\cos\theta + a\sin\theta \cdot a\sin\theta)d\theta \\
+                        =\pi ab
+                      \end{math}
+                      }
+                \item {
+                      $$
+                        \curveIntegralOnLine{L}\cfrac{xdy - ydx}{x^2 + y^2},L:\mbox{无重点,分段光滑,且不过原点的连续闭曲线,方向逆时针.}
+                      $$
+
+                      $$
+                        P=\cfrac{-y}{x^2 + y^2},Q=\cfrac{x}{x^2+y^2}\quad \partialDerivativeFrac{P}{y} = \partialDerivativeFrac{y^2 - x^2}{(x^2 +y^2)^2} = \partialDerivativeFrac{Q}{x}
+                      $$
+
+                      分两种情况 :
+                      \begin{enumerate}
+                        \item {
+                              不包含原点,一阶偏导数存在且连续,$ \curveIntegralOnLine{L}\cfrac{xdy - ydx}{x^2 + y^2} = 0$ :
+                              \begin{tikzpicture}
+                                \draw[-latex] (0,0) -- (0,1);
+                                \draw[-latex] (0,0) -- (1,0);
+                                \filldraw[color = gray] (0.5,0.5) circle (0.5);
+                              \end{tikzpicture}
+                              }
+                        \item{
+                              包括原点,去适当小的$r > 0$,在原点附近作圆,圆周$C: x^2 + y^2 = r^2$,称为复联通区域,方向逆时针.
+
+                              \begin{center}
+                                \begin{tikzpicture}
+                                  \draw[-latex] (-1,0) -- (1,0);
+                                  \draw[-latex] (0,-1) -- (0,1);
+                                  \filldraw[color = gray] (0,0) circle (0.5);
+                                \end{tikzpicture}
+                              \end{center}
+                              $$
+                                \curveIntegralOnLine{L}\cfrac{xdy - ydx}{x^2 + y^2} - \curveIntegralOnLine{C}\cfrac{xdy - ydx}{x^2 + y^2} = 0
+                              $$
+
+                              $$
+                                \curveIntegralOnLine{L}\cfrac{xdy - ydx}{x^2 + y^2} = \curveIntegralOnLine{C}\cfrac{xdy - ydx}{x^2 + y^2} = \definiteIntegral{2\pi}{0}\cfrac{r\cos\theta \cdot r\cos\theta + r\sin\theta \cdot r\sin\theta}{r^2}d\theta = 2\pi
+                              $$
+                              }
+                      \end{enumerate}
+                      }
+              \end{enumerate}
+              }
+      \end{enumerate}
+    }%格林公式的计算
 
   }%曲线积分与曲面积分结尾
 
@@ -4014,6 +4196,5 @@ $\left.\cfrac{dz}{dx}\right|_{x = x_0} = f\derivative_x(x_0,y_0) + f\derivative_
    }%逻辑学基本常识结尾
 
  }%逻辑学结尾
-
 
 \end{document}
