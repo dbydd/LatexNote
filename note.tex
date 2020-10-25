@@ -12,6 +12,7 @@
 \usepackage{tikz}
 \usepackage{tikz-3dplot}
 \usepackage{pgfplots}
+\usepackage{listings}
 
 \usetikzlibrary{svg.path}
 \usetikzlibrary{positioning}
@@ -29,6 +30,35 @@
 \titleformat{\paragraph}[block]{\small\bfseries}{[\arabic{paragraph}]}{1em}{}[]
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
+
+\lstloadlanguages{C,C++,csh,Java,Python}
+
+  \lstset{ %
+    % language=csh,                % the language of the code
+    basicstyle=\footnotesize,           % the size of the fonts that are used for the code
+    numbers=left,                   % where to put the line-numbers
+    numberstyle=\tiny\color{gray},  % the style that is used for the line-numbers
+    stepnumber=2,                   % the step between two line-numbers. If it's 1, each line 
+                                    % will be numbered
+    numbersep=5pt,                  % how far the line-numbers are from the code
+    backgroundcolor=\color{white},      % choose the background color. You must add \usepackage{color}
+    showspaces=false,               % show spaces adding particular underscores
+    showstringspaces=false,         % underline spaces within strings
+    showtabs=false,                 % show tabs within strings adding particular underscores
+    frame=single,                   % adds a frame around the code
+    rulecolor=\color{black},        % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. commens (green here))
+    tabsize=2,                      % sets default tabsize to 2 spaces
+    captionpos=b,                   % sets the caption-position to bottom
+    breaklines=true,                % sets automatic line breaking
+    breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+    title=\lstname,                 % show the filename of files included with \lstinputlisting;
+                                    % also try caption instead of title
+    keywordstyle=\color{blue},          % keyword style
+    commentstyle=\color{dkgreen},       % comment style
+    stringstyle=\color{mauve},         % string literal style
+    escapeinside={\%*}{*)},            % if you want to add LaTeX within your code
+    % morekeywords={*,...}               % if you want to add more keywords to the set
+  }
 
 \newcommand{\limNormal}[1]{\lim\limits_{#1}}
 \newcommand{\myLimToZero}{\limNormal{x \to 0}}
@@ -68,6 +98,7 @@
 \newcommand{\pathIntegral}[1]{\int_{#1}}
 \newcommand{\curveIntegralOnLine}[1]{\oint_{#1}}
 \newcommand{\doubleCurveIntegralOnLine}[1]{\oiint_{#1}}
+\newcommand{\sumSeries}{\upDownSum{\infty}{n = 1}}
 
 \newcommand{\tikzPlaceDot}[1]{\draw[fill = black] #1 circle (1pt)}
 
@@ -80,7 +111,7 @@
   \maketitle
   \paragraph{todos}{
     \begin{enumerate}
-      \item 誊录纸质笔记
+      \item 誊录纸质笔记\ 交错级数
       \item 隐函数存在定理
       \item 重写线性代数
       \item 场论:p10
@@ -3189,6 +3220,108 @@ $\left.\cfrac{dz}{dx}\right|_{x = x_0} = f\derivative_x(x_0,y_0) + f\derivative_
 
 }%多元微积分结尾
 
+\section{无穷级数}{
+在数学中,一个有穷或无穷的序列$u_{1},u_{2},u_{3},u_{4}\ldots$的和$S=u_{1}+u_{2}+u_{3}+\ldots$称为级数.如果序列是有穷序列,其和称为有穷级数;反之,称为无穷级数(一般简称为级数).序列{$u_{0},u_{1},u_{2},\ldots$中的项称作级数的通项(或一般项).级数的通项可以是实数,矩阵或向量等常量,也可以是关于其他变量的函数,不一定是一个数.一般的,如果级数的通项是常量,则称之为常数项级数,如果级数的通项是函数,则称之为函数项级数.
+
+有穷数列的级数一般通过初等代数的方法就可以求得.无穷级数有发散和收敛的区别,称为无穷级数的敛散性.判断无穷级数的敛散性是无穷级数研究中的主要工作.无穷级数在收敛时才会有一个和;发散的无穷级数在一般意义上没有和,但可以用一些别的方式来定义.
+
+$$
+  \upDownSum{n}{i = 1}u_i = u_1 + u_2 + u_3 + \dots + u_n +  \dots
+$$
+
+其中$u_n$称为一般项,前$n$项之和$S_n = u_1 + u_2 + u_3 + u_n$称为部分和,比如 :
+$$
+  S_1 = u_1\qquad S_2 = u_1 + u_2\qquad S_3 = u_1 + u_2 + u_3 \dots
+$$
+
+当$\limNormal{n \to +\infty}S_n = S$,即趋于某个常数,就称此级数是收敛的.否则就是发散的.
+
+设$S$是所有项的和,$S_n$是前$n$项的和,那么$R_n = S - S_n = u_{n+1} + u_{n + 2} + \dots$就被称为余项.
+
+\subsection{无穷级数的性质}{
+  无穷级数有以下性质 :
+  \begin{itemize}
+    \item $\sumSeries u_n$收敛于$s$则$\sumSeries ku_n$收敛于$ks$(即 : 级数的每一项乘以$k$不会改变敛散性.和也会乘以$k$)
+    \item {
+          $\sumSeries u_n$和$\sumSeries v_n$分别收敛于$s_1$和$s_2$,则$\sumSeries (u_n \pm v_n)$也收敛,且和等于$s_1 \pm s_2$.即 :
+          \begin{itemize}
+            \item 两个收敛的级数,相加减后仍收敛.
+            \item 相加减后收敛的两个级数,本身未必收敛.
+          \end{itemize}
+          }
+    \item 去掉,加上或改变有限项,敛散性不变
+    \item $\sumSeries u_n$收敛,任意加括号后得到的级数也收敛,并且和不变.(加括号后收敛,原级数不一定收敛)
+    \item 级数$\sumSeries u_n$收敛的必要条件是$u_n$(即通项趋于0).(注意,是必要条件而非充分条件,即 : $u_n$趋于0,级数未必收敛,$u_n$不趋于0,级数一定发散)
+  \end{itemize}
+}%无穷级数的性质结尾
+
+\subsection{常数项无穷级数审敛法}{
+  常数项级数,即每一项都是常数的级数.
+
+  \subsubsection{正项级数}{
+    若通项为实数的无穷级数$\sum u_n$每一项$u_n$都大于等于零,则称$\sum u_n$是一正项级数.
+
+    正项级数的部分和$S_n$是一个单调递增数列.由数列极限的判别准则:单调有界数列必有极限.因此,要么部分和数列$S_n$有界,这时$\sum u_n$收敛,$\myLimToInf S_n = s$,要么部分和数列趋于正无穷,这时级数发散.
+
+    \begin{itemize}
+      \item {
+            比较判别法 :
+
+            设$\sum u_n$和$\sum v_n$是正项级数.
+            如果存在正实数$M$,使得从若干项开始,$u_n \leq Mv_n$(也就是说$u_n$是$v_n$的高阶无穷小),则 :
+            \begin{itemize}
+              \item 当$\sum v_n$收敛时,可推出$\sum u_n$也收敛.
+              \item 当$\sum u_n$发散时,可推出$\sum v_n$也发散.
+            \end{itemize}
+
+            如果$\myLimToInf\cfrac{u_n}{v_n} = 0$,则 :
+            \begin{itemize}
+              \item 当$\sum v_n$收敛时,可推出$\sum u_n$也收敛.
+              \item 当$\sum u_n$发散时,可推出$\sum v_n$也发散.
+            \end{itemize}
+
+            如果$\myLimToInf\cfrac{u_n}{v_n} = 1$或其他有限数,则$\sum u_n$和$\sum v_n$同敛散.
+
+            比如:已知级数$\sum \cfrac{1}{n^2}$收敛,则级数$\sum \cfrac{\absoluteValue{\sin n}}{n^2}$也收敛,因为对任意的$n$,$\sin n \leq 1$
+
+            比较判别法的特点是要已知若干级数的敛散性.一般来说,我们可以选择比较简单的级数:$P$级数$U_p = \sum\cfrac{1}{n^p}$作为"标准级数",依此判断其他函数的敛散性.需要知道的是当$p \leq 1$时,$P$级数发散.当$p \geq 1$时,$P$级数收敛.
+            }
+      \item{
+            达朗贝尔判别法 :
+
+            在比较判别法中,如果去几何级数为比较的标准级数,可得 :
+
+            设$\sum u_n$是通项大于零的正项级数.且$\myLimToInf \cfrac{u_{n + 1}}{u_n} = p$,则 :
+            \begin{itemize}
+              \item 当$p < 1$时,级数$\sum u_n$收敛.
+              \item 当$p > 1$时,级数$\sum u_n$发散.
+              \item 当$p = 1$时,无法判断.级数$\sum u_n$可能收敛也可能发散
+            \end{itemize}
+
+            这个判别法也被称为比值判别法或者比值审敛法.
+            }
+      \item {
+            柯西收敛准则 :
+
+            设$\sum u_n$时正项级数.并且$\myLimToInf \sqrt[n]{u_n} = p$,则 :
+            \begin{itemize}
+              \item 当$p < 1$时,级数$\sum u_n$收敛.
+              \item 当$p > 1$时,级数$\sum u_n$发散.
+              \item 当$p = 1$时,级数$\sum u_n$可能收敛也可能发散.
+            \end{itemize}
+            这个判别法也称为根值判别法或根值审敛法.
+            }
+    \end{itemize}
+  }%正项级数结尾
+
+  \subsubsection{交错级数}{
+
+  }%交错级数结尾
+
+}%常数项级数
+
+}%无穷级数结尾
+
 \section{线性代数}{
 
  }%线性代数结尾
@@ -3908,7 +4041,14 @@ $\left.\cfrac{dz}{dx}\right|_{x = x_0} = f\derivative_x(x_0,y_0) + f\derivative_
                             0 & 0 & 0 & 1
                           \end{bmatrix}
                         $$
-                  \item 将$\hat{\vec{g}}$旋转到-z方向,将$\hat{\vec{t}}$旋转到y方向,($\hat{\vec{g}} \times \hat{\vec{t}}$)旋转到x方向 : $$
+                  \item 将$\hat{\vec{g}}$旋转到-z方向,将$\hat{\vec{t}}$旋转到y方向,($\hat{\vec{g}} \times \hat{\vec{t}}$)旋转到x方向
+                  \item 仔细思考,发现上面的矩阵想要直接计算出来过于繁琐,应当反向思考—做基变换,再求逆以得到旋转矩阵 : $$
+                          R^{-1}_{view} = \begin{bmatrix}
+                            x_{\hat{\vec{g}} \times \hat{\vec{t}}} & x_{\hat{\vec{t}}} & x_{-\hat{\vec{g}}} & 0 \\
+                            y_{\hat{\vec{g}} \times \hat{\vec{t}}} & y_{\hat{\vec{t}}} & y_{-\hat{\vec{g}}} & 0 \\
+                            z_{\hat{\vec{g}} \times \hat{\vec{t}}} & z_{\hat{\vec{t}}} & z_{-\hat{\vec{g}}} & 0 \\
+                            0                                      & 0                 & 0                  & 1
+                          \end{bmatrix}
                           R_{view} = \begin{bmatrix}
                             x_{\hat{\vec{g}} \times \hat{\vec{t}}} & y_{\hat{\vec{g}} \times \hat{\vec{t}}} & z_{\hat{\vec{g}} \times \hat{\vec{t}}} & 0 \\
                             x_{\hat{\vec{t}}}                      & y_{\hat{\vec{t}}}                      & z_{\hat{\vec{t}}}                      & 0 \\
@@ -3916,15 +4056,7 @@ $\left.\cfrac{dz}{dx}\right|_{x = x_0} = f\derivative_x(x_0,y_0) + f\derivative_
                             0                                      & 0                                      & 0                                      & 1
                           \end{bmatrix}
                         $$
-                  \item 仔细思考,发现上面想要直接计算出来过于繁琐,应当反向思考—求出将坐标系变换到���机的位置的矩阵再求逆 : $$
-                          R^{-1}_{view} = \begin{bmatrix}
-                            x_{\hat{\vec{g}} \times \hat{\vec{t}}} & x_{\hat{\vec{t}}} & x_{-\hat{\vec{g}}} & 0 \\
-                            y_{\hat{\vec{g}} \times \hat{\vec{t}}} & y_{\hat{\vec{t}}} & y_{-\hat{\vec{g}}} & 0 \\
-                            z_{\hat{\vec{g}} \times \hat{\vec{t}}} & z_{\hat{\vec{t}}} & z_{-\hat{\vec{g}}} & 0 \\
-                            0                                      & 0                 & 0                  & 1
-                          \end{bmatrix}
-                        $$
-                        由于旋转矩阵是正交矩阵,所以求逆等于求转置.
+                        (由于旋转矩阵是正交矩阵,所以求逆等于求转置.)
                 \end{itemize}
                 随着相机的变换,其他所有物体也应当跟着变换,这样才能保证拍出来的是同样的照片.
                 }
@@ -3969,7 +4101,7 @@ $\left.\cfrac{dz}{dx}\right|_{x = x_0} = f\derivative_x(x_0,y_0) + f\derivative_
                   \item {
                         透视变换(Perspective projection) :
 
-                        首先把视锥压缩成长方体.(近平面永远不变,远��平面z值不发生变化,中心点不发生变化)$(n \to n,f \to f,M_{persp \to ortho})$
+                        首先把视锥压缩成长方体.(近平面永远不变,远平面z值不发生变化,中心点不发生变化)$(n \to n,f \to f,M_{persp \to ortho})$
 
                         \includegraphics[scale=0.5]{resources/perspectiveProjection.png}
 
@@ -4120,6 +4252,104 @@ $\left.\cfrac{dz}{dx}\right|_{x = x_0} = f\derivative_x(x_0,y_0) + f\derivative_
       }%观测变换结尾
 
     }%变换结尾
+
+    \subsection{光栅化}{
+
+      \subsubsection{定义与解释}{
+        \begin{itemize}
+          \item {
+                什么是屏幕?
+                \begin{itemize}
+                  \item 对于图形学来说,抽象的认为是一个二维数组,其中每一个元素都是一个像素.
+                  \item 数组的大小 : 分辨率.
+                  \item 一个典型的光栅(raster)成像设备.
+                \end{itemize}
+                }
+          \item{
+                什么是光栅(raster)?
+                \begin{itemize}
+                  \item raster是德语中"屏幕"的意思.
+                  \item Rasterize-光栅化 == 把东西画到屏幕上.
+                \end{itemize}
+                }
+          \item{
+                像素(Pixel,"picture element"的缩写)是什么?
+                \begin{itemize}
+                  \item 一个很小的只有单个颜色的方块.
+                  \item 颜色由不同比例的三原色(红绿蓝,rgb)混合而成.
+                \end{itemize}
+                }
+          \item{
+                关于"屏幕空间(screen space)"的定义
+
+                \begin{center}
+                  \includegraphics[scale=0.5]{resources/define_of_screen_space_1.png}
+                \end{center}
+
+                \begin{itemize}
+                  \item 认为屏幕的左下角是原点,向上是Y,向右是X.
+                  \item 像素的坐标都是用$(x,y)$描述的,$x,y$是整数.
+                  \item 像素的下标范围是从$(0,0)$到$(width - 1,height - 1)$.
+                  \item 像素的中心总是位于$(x + 0.5,y + 0.5)$.
+                  \item 屏幕被覆盖到的范围是从$(0,0)$到$(width,height)$(全部铺满).
+                \end{itemize}
+                }
+          \item{
+                采样:
+                \begin{itemize}
+                  \item 给定一个函数,在多个地方判断输出结果.
+                \end{itemize}
+                }
+        \end{itemize}
+      }%定义与解释结尾
+
+      \subsubsection{三角形光栅化}{
+        为什么是三角形?
+        \begin{itemize}
+          \item 三角形是最基础的多边形.
+          \item 任何多边形都可以拆成三角形.
+          \item 内部一定是个平面图形.
+          \item 内外位置定义清晰
+          \item 方便的渐变效果
+        \end{itemize}
+
+        将一个三角形光栅化最简单的做法:采样
+
+        采样在图形学中是个重要的概念.此处所指的采样时值对屏幕空间中的像素中心进行采样.(即:判断像素中心是否在函数内,如果是就给像素涂色) :
+
+        \begin{center}
+          \includegraphics[scale=0.5]{resources/sample_if_each_pixel_inside_triangle.png}
+        \end{center}
+
+        代码实现很简单,两层循环遍历屏幕上所有的像素就行.
+
+        要判断一个点是否在三角形内,只需要做叉乘 :
+
+        \begin{center}
+          \includegraphics[scale=0.5]{resources/Triangle_Side_Cross_Prodyct.png}
+        \end{center}
+
+        比如:
+        $$
+          \vec{V_1} = \vec{P_1P_2} \times \vec{P_1Q}
+        $$
+
+        由于$\vec{V_1}$指向外侧,所以Q在$P_1P_2$左侧
+
+        如此就能不断的缩小范围,三条边都判断一次,就能知道该点是否在外面.
+
+        如果点正好在边上,就自己决定.
+
+        但是这么做性能消耗过大,因此可以界定一个判断范围-axis aliged bounding box :
+
+        \begin{center}
+          \includegraphics[scale = 0.5]{resources/pixel_boundingBox.png}
+        \end{center}
+
+        不过对不同的情况有不同的处理方法,优化方法百花八门,交给数据结构与算法篇吧.
+      }%三角形光栅化结尾
+
+    }%光栅化结尾
 
    }%计算机图形学结尾
 
