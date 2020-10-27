@@ -2654,7 +2654,7 @@ $\left.\cfrac{dz}{dx}\right|_{x = x_0} = f\derivative_x(x_0,y_0) + f\derivative_
     \begin{itemize}
       \item $\pathIntegral{L_1 + L_2}\defFunction{x,y}ds = \pathIntegral{L_1}\defFunction{x,y}ds + \pathIntegral{L_2}\defFunction{x,y}ds$
       \item $\pathIntegral{L}(\alpha\defFunction{x,y} + \beta g(x,y))ds = \alpha\pathIntegral{L}\defFunction{x,y}ds + \beta\pathIntegral{L}g(x,y)ds$
-      \item $\pathIntegral{L}\defFunction{x,y}ds = \pathIntegral{L_1}\defFunction{x,y}ds + \pathIntegral{L_2}g(x,y)ds \qquad (L = L_1 + L_2)$
+      \item $\pathIntegral{L}\defFunction{x,y}ds = \pathIntegral{L_1}\defFunction{x,y}ds + \pathIntegral{L_2}\defFunction{x,y}ds \qquad (L = L_1 + L_2)$
       \item $\defFunction{x,y} \leq g(x,y),\pathIntegral{L}\defFunction{x,y}ds \leq \pathIntegral{L}g(x,y)ds$
       \item $\absoluteValue{\pathIntegral{L}\defFunction{x,y}ds} \leq \pathIntegral{L}\absoluteValue{\defFunction{x,y}}ds$
     \end{itemize}
@@ -2735,7 +2735,7 @@ $\left.\cfrac{dz}{dx}\right|_{x = x_0} = f\derivative_x(x_0,y_0) + f\derivative_
       \limNormal{\lambda \to 0}\upDownSum{n}{i = 1}F(\xi_i,\eta_i)\cdot\vec{M_{i - 1}M_i}
     $$
 
-    其中$F(\xi_i,\eta_i)$可以分解为$P(\xi_i,\eta_i)\vec{i} + Q(\xi_i,\eta_i)\vec{j}$,$\vec{M_{i - 1}M_i}$可以分解为$\delta x_i\vec{i} + \Delta y_i\vec{j}$.($\vec{i},\vec{j}$为基向量)
+    其中$F(\xi_i,\eta_i)$可以分解为$P(\xi_i,\eta_i)\vec{i} + Q(\xi_i,\eta_i)\vec{j}$,$\vec{M_{i - 1}M_i}$可以分解为$\Delta x_i\vec{i} + \Delta y_i\vec{j}$.($\vec{i},\vec{j}$为基向量)
 
     因此对定义作变形,可以获得另一个形式 :
     $$
@@ -2744,8 +2744,8 @@ $\left.\cfrac{dz}{dx}\right|_{x = x_0} = f\derivative_x(x_0,y_0) + f\derivative_
     需要注意的是 : 求和与求极限需要单独对第一,第二项求(即对各个正交方向的基向量分别求).
 
     \begin{itemize}
-      \item 如果第一项极限存在,则$\limNormal{\lambda \to 0}\upDownSum{n}{i = 1}P(\xi_i,\eta_i)\delta x_i = \pathIntegral{L}P(x,y)dx$
-      \item 如果第二项极限存在,则$\limNormal{\lambda \to 0}\upDownSum{n}{i = 1}Q(\xi_i,\eta_i)\delta y_i = \pathIntegral{L}Q(x,y)dy$
+      \item 如果第一项极限存在,则$\limNormal{\lambda \to 0}\upDownSum{n}{i = 1}P(\xi_i,\eta_i)\Delta x_i = \pathIntegral{L}P(x,y)dx$
+      \item 如果第二项极限存在,则$\limNormal{\lambda \to 0}\upDownSum{n}{i = 1}Q(\xi_i,\eta_i)\Delta y_i = \pathIntegral{L}Q(x,y)dy$
     \end{itemize}
 
     最后$\pathIntegral{L}P(x,y)dx + \pathIntegral{L}Q(x,y)dy = \pathIntegral{L}F(x,y) \cdot d\vec{r}$
@@ -3247,6 +3247,9 @@ $$
           \begin{itemize}
             \item 两个收敛的级数,相加减后仍收敛.
             \item 相加减后收敛的两个级数,本身未必收敛.
+            \item 若两个级数都是绝对收敛,则合在一起也是绝对收敛.
+            \item 若两个级数都是条件收敛,则合在一起可能是条件收敛,也可能是绝对收敛.
+            \item 若两个级数一个是绝对收敛,一个是条件收敛,则合在一起是条件收敛.
           \end{itemize}
           }
     \item 去掉,加上或改变有限项,敛散性不变
@@ -3274,17 +3277,30 @@ $$
               \item 当$\sum u_n$发散时,可推出$\sum v_n$也发散.
             \end{itemize}
 
+            使用此方法常常是对所要判别的级数的通项进行放缩.
+
+            比较判别法的特点是要已知若干级数的敛散性.一般来说,我们可以选择比较简单的级数:$P$级数$U_p = \sum\cfrac{1}{n^p}$作为"标准级数",依此判断其他函数的敛散性.需要知道的是当$p \leq 1$时,$P$级数发散.当$p \geq 1$时,$P$级数收敛.
+
+            比如:已知级数$\sum \cfrac{1}{n^2}$收敛,则级数$\sum \cfrac{\absoluteValue{\sin n}}{n^2}$也收敛,因为对任意的$n$,$\sin n \leq 1$
+            }
+      \item{
+            比较判别法的极限形式 :
+
+            如果$\myLimToInf\cfrac{u_n}{v_n} = 1$或其他有限数,即同阶无穷小时,两者敛散性一致
+
             如果$\myLimToInf\cfrac{u_n}{v_n} = 0$,则 :
             \begin{itemize}
               \item 当$\sum v_n$收敛时,可推出$\sum u_n$也收敛.
               \item 当$\sum u_n$发散时,可推出$\sum v_n$也发散.
             \end{itemize}
 
-            如果$\myLimToInf\cfrac{u_n}{v_n} = 1$或其他有限数,则$\sum u_n$和$\sum v_n$同敛散.
+            如果$\myLimToInf\cfrac{u_n}{v_n} = \infty$,则 :
+            \begin{itemize}
+              \item 当$\sum u_n$收敛时,可推出$\sum v_n$也收敛.
+              \item 当$\sum v_n$发散时,可推出$\sum u_n$也发散.
+            \end{itemize}
 
-            比如:已知级数$\sum \cfrac{1}{n^2}$收敛,则级数$\sum \cfrac{\absoluteValue{\sin n}}{n^2}$也收敛,因为对任意的$n$,$\sin n \leq 1$
-
-            比较判别法的特点是要已知若干级数的敛散性.一般来说,我们可以选择比较简单的级数:$P$级数$U_p = \sum\cfrac{1}{n^p}$作为"标准级数",依此判断其他函数的敛散性.需要知道的是当$p \leq 1$时,$P$级数发散.当$p \geq 1$时,$P$级数收敛.
+            注 : 使用此方法常常是采用等价无穷小替换或与$p$级数作比较，寻找同阶无穷小来判别原级数的敛散性。
             }
       \item{
             达朗贝尔判别法 :
@@ -3299,6 +3315,8 @@ $$
             \end{itemize}
 
             这个判别法也被称为比值判别法或者比值审敛法.
+
+            对于多个式子连乘的,适合用此方法.
             }
       \item {
             柯西收敛准则 :
@@ -3309,16 +3327,147 @@ $$
               \item 当$p > 1$时,级数$\sum u_n$发散.
               \item 当$p = 1$时,级数$\sum u_n$可能收敛也可能发散.
             \end{itemize}
+
             这个判别法也称为根值判别法或根值审敛法.
+
+            对于通项中含有以$n$为指数幂的,适合用此方法.
+            }
+      \item{
+            对数判别法 :
+
+            \begin{itemize}
+              \item 若存在$\alpha > 0$,使当$n \geq n_0$时,$\cfrac{\ln\cfrac{1}{a_n}}{\ln n} \geq 1 + \alpha$,则正项级数$\sumSeries a_n$收敛.
+              \item 若$n \geq n_0$时,$\cfrac{\ln\cfrac{1}{a_n}}{\ln n} \leq 1$,则正项级数$\sumSeries a_n$发散.
+            \end{itemize}
+            }
+      \item {
+            积分判别法 :
+
+            若函数$\defFunction{x}$是区间$\mathBigCase{a,+\infty}$上非负且单调递减的连续函数,则$\upDownSum{\infty}{n = a} a_n = \upDownSum{\infty}{n = a} f(n)$与$\definiteIntegral{a}{+\infty}\defFunction{x}dx$的敛散性一致.
+
+            注意:只是敛散性一致.
             }
     \end{itemize}
   }%正项级数结尾
 
   \subsubsection{交错级数}{
+    具有以下形式的级数 :
+    $$
+      \sumSeries (-1)^na_n\ (a_n >= 0)
+    $$
+    被称为交错级数.
 
+    \begin{itemize}
+      \item {
+            莱布尼茨判别法 :
+
+            在上述的级数$\sumSeries (-1)^na_n$中,如果当$n$趋于无穷时,数列$a_n$的极限存在且等于$0$,并且每个$a_n$小于$a_{n-1}$(即:数列$a_n$是单调递减的),那么级数收敛.
+
+            即 : 交错级数$\sumSeries(-1)^{n}u_n$满足 :
+            \begin{itemize}
+              \item $u_{n - 1} > u_n$
+              \item $\limNormal{n \to \infty}u_n = 0$
+              \item 注:此处所指的$u_n,u_{n + 1}$不包括负号
+            \end{itemize}
+            }
+      \item{
+            利用级数的敛散性定义 :
+
+            研究交错级数的部分和数列是否收敛,若部分和数列收敛,则级数收敛,反之发散.
+            }
+      \item{
+            利用加括号级数判断 :
+
+            \begin{itemize}
+              \item 若加括号的级数发散,则原级数必发散
+              \item 若加括号的级数收敛,且原级数的通项的极限为$0$,则原级数收敛.
+            \end{itemize}
+            }
+      \item 拆通项判别
+      \item {
+            交换奇偶项判别:
+
+            常常是交换奇偶项配合莱布尼兹判别法判别.
+            }
+    \end{itemize}
   }%交错级数结尾
 
-}%常数项级数
+  \subsubsection{任意项级数}{
+
+    \begin{itemize}
+      \item {
+            比较判别法(只能判定收敛) :
+
+            对于通项为任意实数的无穷级数$\sum u_n$,将级数$\sum \absoluteValue{u_n}$称为他的绝对值级数.可以证明,如果$\sum \absoluteValue{u_n}$收敛,那么$\sum u_n$也收敛,这时称$\sum u_n$为绝对收敛.如果$\sum u_n$收敛,但是$\sum \absoluteValue{u_n}$发散,则称$\sum u_n$为条件收敛.
+
+            比如说,级数$\sum \cfrac{\sin n}{n^2}$绝对收敛,因为$\sum \cfrac{\absoluteValue{\sin n}}{n^2}$是收敛的,而级数$\sum \cfrac{(-1)^n}{n}$是条件收敛的.它自身收敛到$\ln\cfrac{1}{2}$,但是他的绝对值函数$\sum \cfrac{1}{n}$是发散的.
+            }
+      \item {
+            比值判别法,根值判别法 :
+
+            若$\limNormal{n \to \infty} \absoluteValue{\cfrac{a_{n + 1}}{a_n}} = \rho$或者$\limNormal{n \to \infty}\sqrt[n]{\absoluteValue{a_n}} = \rho$,则$\rho < 1$时收敛且为绝对收敛,$\rho > 1$时发散.
+            }
+    \end{itemize}
+
+    黎曼级数定理说明,如果一个无穷级数$\sum u_n$条件收敛,那么对于任意的实数$x$,存在一个正整数到正整数的双射$\sigma$,使得级数$\sum u_{\sigma(n)}$收敛到$x$,对于正负无穷大,上述双射也存在.
+  }%任意项级数结尾
+
+  \subsubsection{常见常数项无穷级数}{
+
+    \begin{itemize}
+      \item {
+            几何级数 :
+
+            几何级数(或等比级数)是指通向为等比数列的级数,比如 :
+            $$
+              1 + \cfrac{1}{2} + \cfrac{1}{4} + \cfrac{1}{8} + \dots = \upDownSum{\infty}{n = 0} \cfrac{1}{2^n} = 2
+            $$
+
+            一般来说,几何级数$\upDownSum{\infty}{n = 0}z^n$收敛当且仅当$\absoluteValue{z} < 1$.
+            }
+      \item{
+            调和级数 :
+
+            调和级数是指通向为$\cfrac{1}{n}$的级数 :
+            $$
+              1 + \cfrac{1}{2} + \cfrac{1}{3} + \dots = \sumSeries \cfrac{1}{n}
+            $$
+
+            他是发散的.
+            }
+      \item{
+            $p$级数 :
+
+            指通项为$\cfrac{1}{n^p}$的级数 :
+            $$
+              U_p = \sumSeries\cfrac{1}{n^p}
+            $$
+
+            对于实数值$p$,当$p > 1$时收敛,$p <= 1$时发散,$p = 1$时为调和级数.
+            }
+      \item{
+            列项级数 :
+            $$
+              \sumSeries(b_n - b_{n - 1})
+            $$
+
+            收敛当且仅当数列$b_n$收敛到某个极限$L$,这时级数的和是$b_1 - L$.
+            }
+      \item{
+            交错级数 :
+
+            具有以下形式的级数 :
+            $$
+              \upDownSum{\infty}{n = 0}(-1)^na_n
+            $$
+
+            其中所有的$a_n$非负,就被称为交错级数.
+            }
+    \end{itemize}
+
+  }%常见常数项无穷级数结尾
+
+}%常数项无穷级数审敛法
 
 }%无穷级数结尾
 
