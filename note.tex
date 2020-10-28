@@ -2920,7 +2920,7 @@ $\left.\cfrac{dz}{dx}\right|_{x = x_0} = f\derivative_x(x_0,y_0) + f\derivative_
     \subsubsection{格林公式}{
       在物理学与数学中,格林公式给出了沿封闭曲线$C$的线积分与以$C$为边界的平面区域$D$上的双重积分的联系.格林公式是斯托克斯公式的二维特例 :
 
-      设闭区域D由分段光滑的简单曲线$L$围成,函数$P(x,y)$及$Q(X,Y)$在$D$上有一阶连续偏导数(即:没有洞的区域),则有 :
+      设闭区域D由分段光滑的简单曲线$L$围成,函数$P(x,y)$及$Q(x,y)$在$D$上有一阶连续偏导数(即:没有洞的区域),则有 :
       $$
         \doubleIntegralOnZone{D}(\partialDerivativeFrac{Q}{x} - \partialDerivativeFrac{P}{y})dxdy = \curveIntegralOnLine{L^+}(Pdx + Qdy)
       $$
@@ -2996,7 +2996,7 @@ $\left.\cfrac{dz}{dx}\right|_{x = x_0} = f\derivative_x(x_0,y_0) + f\derivative_
       \begin{enumerate}
         \item {
               已经得知了以上公式的右侧,求左侧 (计算区域面积):
-              使用格林公式,可以用线积分计算区域的面积.因为区域$D$的面积等于$A = \doubleIntegralOnZone{D}dA$,所以只要选取适当的$P$与$Q$使得$\partialDerivativeFrac{Q}{x} - \partialDerivativeFrac{P}{y} = 1$,就可以通过$A = \curveIntegralOnLine{L}(Pdx + Qdy)$来计算面积.
+              使用格林公式,可以用线积分计算区域的面积.因为区域$D$的面积$A = \doubleIntegralOnZone{D}1dA$,所以只要选取适当的$P$与$Q$使得$\partialDerivativeFrac{Q}{x} - \partialDerivativeFrac{P}{y} = 1$,就可以通过$A = \curveIntegralOnLine{L}(Pdx + Qdy)$来计算面积.
 
               还有一种可能的取值是$A = \curveIntegralOnLine{L}xdy = -\curveIntegralOnLine{L}ydx = \cfrac{1}{2}\curveIntegralOnLine{L}(-ydx + xdy)$
 
@@ -3073,7 +3073,7 @@ $\left.\cfrac{dz}{dx}\right|_{x = x_0} = f\derivative_x(x_0,y_0) + f\derivative_
                               \end{tikzpicture}
                               }
                         \item{
-                              包括原点,去适当小的$r > 0$,在原点附近作圆,圆周$C: x^2 + y^2 = r^2$,称为复联通区域,方向逆时针.
+                              包括原点,取适当小的$r > 0$,在原点附近作圆,圆周$C: x^2 + y^2 = r^2$,称为复联通区域,方向逆时针,用于代换原区域.
 
                               \begin{center}
                                 \begin{tikzpicture}
@@ -3139,7 +3139,7 @@ $\left.\cfrac{dz}{dx}\right|_{x = x_0} = f\derivative_x(x_0,y_0) + f\derivative_
       $$
       讲更详细点也就是 :
       $$
-        \defFunction{x} = \defFunction{p} + J_f(p)(x - p) + \smallO{\absoluteValue{x - p}}
+        \defFunction{x} = \defFunction{p} + J_f(p)(x - p) + \smallO{\doubleAbsoluteValue{x - p}}
       $$
 
       其中,$o$表示高阶无穷小,$\doubleAbsoluteValue{x - p}$为$x$与$p$之间的距离
@@ -3468,6 +3468,70 @@ $$
   }%常见常数项无穷级数结尾
 
 }%常数项无穷级数审敛法
+
+\subsection{函数项无穷级数审敛法}{
+设$(u_n(x))_{n \geq 0}$为定义在区间$I$上的函数列,则表达式$u_1(x) + u_2(x) + \dots + u_n(x) + \dots$称为函数项级数,记为$\sum u_n(x)$.对函数项级数的主要研究是 :
+\begin{enumerate}
+  \item 确定对哪些$x,\sum u_n(x)$收敛
+  \item $\sum u_n(x)$收敛的话,其和是什么,有什么性质?
+\end{enumerate}
+
+\subsubsection{一些定义(收敛点,收敛域,发散点,发散域,和函数与部分和还有余项)}{
+  对于区间$I$上的每个点$x_0$,级数$\sum u_n(x_0)$是常数项级数.
+  \begin{itemize}
+    \item 收敛点 : 若$\sum u_n(x_0)$收敛,则称$x_0$是$\sum u_n(x)$的一个收敛点.
+    \item 收敛域 : $\sum u_n(x)$全体收敛点的集合称为他的收敛域.
+    \item 发散点 : 若$\sum u_n(x_0)$发散,则称$x_0$是$\sum u_n(x)$的一个发散点.
+    \item 发散域 : $\sum u_n(x)$全体发散点的集合称为他的发散域.
+    \item $\sum u_n(x)$在其收敛域的每一点上都有定义,因此定义了一个函数,称为$\sum u_n(x)$的和函数,记为$S(x)$.
+    \item $S(x_0) = \limNormal{n \to \infty}S_n(x_0)$,其中$S_n(x_0) = u_1(x_0) + u_2(x_0) + \dots + u_n(x_0)$为函数项级数在$x_0$点上的部分和.
+    \item 余项为和函数减去部分和 : $r_n(x) = S(x) - S_n(x)$,显然 : $\limNormal{n \to \infty} r_n(x) = 0$
+  \end{itemize}
+}%收敛域结尾
+
+\subsubsection{阿贝尔定理}{
+  设$\defFunction{z} = \upDownSum{\ }{n \geq 0}a_nx^n$为一幂级数,其收敛半径为$R$,若对于收敛圆(模长为$R$的复数的集合)上的某个复数$z_0$,级数$\upDownSum{\ }{n \geq 0}a_nx^n_0$收敛,则有 : $\limNormal{t \to 1^-}\defFunction{tx_0} = \upDownSum{\ }{n \geq 0}a_nx^n_0$.
+
+  用人话来说就是 : $\upDownSum{+\infty}{n = 0}a_nx^n$,如果$x = x_0$时此幂级数收敛,如果$\absoluteValue{x} \leq \absoluteValue{x_0}$,则此幂级数绝对收敛.反之,如果$x = x_0$时发散,且$\absoluteValue{x} > \absoluteValue{x_0}$,则幂级数发散.
+
+  收敛半径是指收敛圆的半径,在数轴上是指收敛域的半径.
+
+  推论 : 收敛的情况有这三种 :
+  \begin{itemize}
+    \item $x = 0$时收敛
+    \item $x \in (-\infty,+\infty)$时收敛.
+    \item $\absoluteValue{x} < R$时绝对收敛(在端点处可能发散也可能收敛).
+  \end{itemize}
+  在判断端点(是否收敛)之前$(-R,R)$称为收敛区间,经过判断决定了是否保留端点后才称为收敛域.
+}
+
+\subsubsection{求幂级数的收敛域}{
+  设幂级数$\sum a_nx^n$满足$\limNormal{n \to +\infty}\cfrac{a_{n + 1}}{a_n} = \rho$,则 :
+  \begin{itemize}
+    \item $\rho$时正实数时,$R = \cfrac{1}{p}$.
+    \item $\rho = 0$时,$R = \infty$
+    \item $\rho = \infty$时,$R = 0$
+  \end{itemize}
+
+  如果模糊一下概念,可以概括为:$R = \cfrac{1}{\rho}$.
+
+  注 : 如果只有偶数项则不能用此方法.
+}%求幂级数的收敛域结尾
+
+\subsubsection{幂级数的比值审敛法}{
+$$
+  \limNormal{n \to +\infty}\absoluteValue{\cfrac{u_{n + 1}}{u_n}} = L
+$$
+
+求当$x$为何值时$L < 1$
+
+例 :
+求$\upDownSum{+\infty}{n = 0}\cfrac{(2n)!}{(n!)^2}x^{2n}$的收敛半径 : $$
+  \limNormal{n \to +\infty}\absoluteValue{\cfrac{\cfrac{(2(n + 1))!}{((n + 1)!)^2}x^{2n + 2}}{\cfrac{(2n)!}{(n!)^2}x^{2n}}} = 4\absoluteValue{x}^2 < 1,\ \absoluteValue{x} < \cfrac{1}{2},\ R = \cfrac{1}{2}
+$$
+}
+
+}%函数项无穷级数审敛法
 
 }%无穷级数结尾
 
