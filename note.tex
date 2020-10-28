@@ -1807,6 +1807,15 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
   $\defFunction{x} = \cfrac{1}{2}\definiteIntegral{a}{b}[g(x) + g(a + b - x)]dx$
 }%区间再现公式结尾
 
+\subsubsection{华里士公式(点火公式)}{
+  $$
+    \definiteIntegral{\cfrac{\pi}{2}}{0}\sin^nxdx = \definiteIntegral{\cfrac{\pi}{2}}{0}\cos^nxdx = \begin{cases}
+      \cfrac{n - 1}{n} \cdot \cfrac{n - 3}{n - 2} \cdots \cfrac{2}{3}\ (n\mbox{为大于1的奇数}) \\
+      \cfrac{n - 1}{n} \cdot \cfrac{n - 3}{n - 2} \cdots \cfrac{1}{2} \cdot \cfrac{\pi}{2}\ (n\mbox{为正偶数})
+    \end{cases}
+  $$
+}%华里士公式(点火公式)结尾
+
 \subsubsection{积分第一中值定理}{
 设$\fint:[a,b] \to \mathbf{R}$为一连续函数,$g:[a,b] \to \mathbf{R}$要求$g(x)$是可积函数且在积分区间不变号,那么存在一点$\xi\in[a,b]$使得:
 
