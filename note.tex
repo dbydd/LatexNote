@@ -3540,6 +3540,107 @@ $$
 $$
 }
 
+\subsubsection{幂级数的运算}{
+  \begin{itemize}
+    \item {
+          幂级数的加法与减法 : 将相应系数进行加减.
+          $$
+            (a_0+ a_1x + a_2x^2 + \dots + a_nx^n + \dots) \pm (b_0 + b_1x + b_2x^2 + \dots + b_nx^n + \dots) = (a_0 + b_0) + (a_1 + b_1)x + (a_2 + b_2)x^2 + \dots + (a_n + b_n)x^n + \dots
+          $$
+          }
+    \item {
+          幂级数的乘积 : 基于柯西乘积
+
+          \begin{math}
+            $$\bigCase{\upDownSum{\infty}{n = 0}a_n(x - c)^n}\mathBigCase{\upDownSum{\infty}{n = 0}b_n(x - c)^n}$$ \\
+            = \upDownSum{\infty}{i = 0}\upDownSum{\infty}{j = 0}a_ib_j(x - c)^{i + j} \\
+            = \upDownSum{\infty}{n = 0}\bigCase{\upDownSum{n}{i = 0}a_ib_{n - i}}(x - c)^n
+          \end{math}
+
+          举例 : $$
+            \upDownSum{\infty}{n = 0}a_nx^n \times \upDownSum{\infty}{n = 0}b_nx^n = a_0b_0 + (a_0b_1 + a_1b_0)x + (a_0b_2 + a_1b_1 + a_2b_0)x^2 + \dots + (a_0b_n + a_1b_{n-1} + \dots + a_nb_0)x^n + \dots
+          $$
+          }
+    \item{
+          幂级数的除法 :
+
+          两个幂级数相除的结果仍然是幂级数.假设$b_0 \neq 0$时 :
+          $$
+            \cfrac{a_0 + a_1x + a_2x^2 + \dots + a_nx^n + \dots}{b_0 + b_1x + b_2x^2 + \dots + b_nx^n + \dots} = c_0 + c_1x + c_2x^2 + \dots + c_nx^n + \dots
+          $$
+
+          系数$c_0,c_1,\dots,c_n$由以下等式逐一确立 :
+
+          \begin{math}
+            a_0 = b_0c_0 \\
+            a_1 = b_1c_0 + b_0c_1 \\
+            a_2 = b_2c_0 + b_1c_1 + b_0c_2 \\
+            \dots \\
+            a_n = b_nc_0 + b_{n-1}c_1 + \dots + b_0c_n
+          \end{math}
+
+          相除所得的幂级数的收敛域可能比原来两个幂级数的收敛域都小得多.
+          }
+  \end{itemize}
+
+  在各种运算后得到的幂级数的收敛半径为较小者.
+}%幂级数的运算结尾
+
+\subsubsection{幂级数和函数的性质}{
+  \begin{itemize}
+    \item 幂级数$\upDownSum{\infty}{n = 0}a_nx^n$的和函数$s(x)$在其收敛域$I$上连续.
+    \item {
+          幂级数$\upDownSum{\infty}{n = 0}a_nx^n$的和函数$s(x)$在其收敛域上$I$可积,并有逐项积分公式 :
+          $$
+            \definiteIntegral{x}{0}s(x)dx = \definiteIntegral{x}{0}\bigCase{\upDownSum{\infty}{n = 0}a_nx^n}dx = \upDownSum{\infty}{n = 0}\definiteIntegral{x}{0}a_nx^ndx = \upDownSum{\infty}{n = 0}\cfrac{a_n}{n + 1}x^{n + 1},(x \in I)
+          $$
+          逐项积分后所得的幂级数和原函数有相同的收敛半径.收敛域端点要重新考察.
+
+          推论 : 幂级数$\upDownSum{\infty}{n = 0}a_nx^n$的和函数$s(x)$在其收敛域内可逐项积分任意次.
+          }
+    \item{
+          幂级数$\upDownSum{\infty}{n = 0}a_nx^n$的和函数$s(x)$在其收敛区间$(-R,R)$内可导,并有逐项求导公式 :
+          $$
+            是\derivative(x) = \bigCase{\upDownSum{\infty}{n = 0}a_nx^n}\derivative = \upDownSum{\infty}{0}(a_nx^n)\derivative = \upDownSum{\infty}{n = 1}na_{n - 1}x^{n - 1},(\absoluteValue{x} < R)
+          $$
+          逐项求导后所得的幂级数和原级数有相同的收敛半径.收敛域端点要重新考察.
+
+          推论 : 幂级数$\upDownSum{\infty}{n = 0}a_nx^n$的和函数$s(x)$在其收敛区间$(-R,R)$内有任意阶导数.
+          }
+
+          实际应用举例 :
+          求$\upDownSum{\infty}{n = 1}nx^{n - 1}$的收敛域,和函数,并求$\cfrac{n}{2^n}$ :
+          $$
+            \limNormal{n \to \infty}\absoluteValue{\cfrac{a_{n + 1}}{a_n}} = \limNormal{n \to \infty}\absoluteValue{\cfrac{n + 1}{n}} = 1 = \rho,R = \cfrac{1}{\rho} = 1
+          $$
+          因此$(-1,1)$为收敛区间,在端点处判断后可得出结论:收敛域为$(-1,1)$.
+
+          设$s(x) = \upDownSum{\infty}{n = 1}nx^{n - 1}$
+
+          \begin{math}
+            \definiteIntegral{x}{0}s(x)dx
+            = \definiteIntegral{x}{0}\upDownSum{\infty}{n = 1}nx^{n - 1}dx \\
+            = \upDownSum{\infty}{n = 1}\definiteIntegral{x}{0}nx^{n - 1}dx \\
+            = \upDownSum{\infty}{n = 1}x^n|^x_0 \\
+            = \upDownSum{\infty}{n = 1}x^n \\
+            =\cfrac{x}{1 - x}\ (\absoluteValue{x} < 1)
+          \end{math}
+
+          $S(x) = \cfrac{1}{1 - x^2},x \in (-1,1)$,$(\definiteIntegral{x}{0}S(x)dx)\derivative = S(x)$(变上限积分).
+
+          令$x = \cfrac{1}{2},S(x) = \upDownSum{\infty}{n = 1}n\bigCase(\cfrac{1}{2})^{n - 1} = 4,\upDownSum{\infty}{n - 1}\cfrac{n}{2^n} = S(x)\times\cfrac{1}{2} = \cfrac{1}{2} \times 4 = 2$
+  \end{itemize}
+
+  关于这些性质的用法有以下五条建议 :
+  \begin{itemize}
+    \item 要先求导时,$n$最好在分母上,即$\cfrac{1}{n}$.
+    \item 要先求积分时,$n$最好在分子上.
+    \item 注意提出可以抵消的$x$的幂次方.
+    \item 求几次积分就要求几次导,相反也一样.
+    \item 可以适当的拆项.
+  \end{itemize}
+}%幂级数和函数的性质结尾
+
 }%函数项无穷级数审敛法
 
 }%无穷级数结尾
