@@ -21,7 +21,7 @@
 \geometry{left=1cm,right=1cm,top=3cm,bottom=3cm}
 \title{db的日常笔记}
 \date{最后编译日期:\today}
-\author{dbydd}    
+\author{dbydd}
 \kaishu
 \setlength{\parindent}{2em}
 \titleformat{\section}[block]{\LARGE\itshape\mdseries}{\arabic{section}}{1em}{}[]
@@ -80,6 +80,7 @@
 \newcommand{\projection}[1]{Prj_{#1}}
 \newcommand{\mathRealNumberCollection}{\mathbb{R}}
 \newcommand{\mathIntegerCollection}{\mathbb{Z}}
+\newcommand{\mathNatureNumberCollection}{\mathbb{N}}
 \newcommand{\bigCase}[1]{\left(#1\right)}
 \newcommand{\innerProduct}[2]{\langle#1,#2\rangle}
 \newcommand{\transpose}{^T}
@@ -111,8 +112,8 @@
   \maketitle
   \paragraph{todos}{
     \begin{enumerate}
-      \item 誊录纸质笔记\ 交错级数
-      \item 隐函数存在定理
+      \item 誊录纸质笔记\ 线性代数
+      \item 隐函数存在定理,等幂求和,二项式系数,朱世杰恒等式.
       \item 重写线性代数
       \item 场论:p10
       \item 补充多个section,计算机图形学,场论等
@@ -1415,6 +1416,15 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
     \begin{enumerate}
       \item 函数在一点极限存在的条件是左右极限存在且相等
       \item 洛必达法则:当极限为$\cfrac{0}{0}$或者$\cfrac{\infty}{\infty}$时可上下同时求导,求导后极限不变,每一步都需要重新判断是否依然符合类型
+      \item {
+            归结原则(海涅定理\#狭义) :
+
+            $\limNormal{x \to a}\defFunction{x} = b$存在的充要条件是:
+
+            取$\defFunction{x}$定义域内的任意数列${a_n}$,$\limNormal{n \to \infty}a_n = a$,且$a_n$不等于$a$,则$\limNormal{n \to \infty}\defFunction{a_n} = b$.
+
+            海涅定理表明了函数极限与数列极限的关系.如果极限$\limNormal{x \to x_0}\defFunction{x}$存在,${x_n}$为函数$\defFunction{x}$定义域内任一收敛于$x_0$的数列,且满足 : $x_n \neq x_0,n \in \mathNatureNumberCollection^+$,那么相应的函数值数列${\defFunction{x_n}}$必收敛,且$\limNormal{n \to \infty}\defFunction{x_n} = \limNormal{x \to x_0}\defFunction{x}$.
+            }
     \end{enumerate}
   }%极限定理结尾
 
@@ -1459,6 +1469,58 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
   }%等价无穷小结尾
 
 }%极限结尾
+
+\subsection{数列极限相关}{
+
+  注:本章内容可用于级数.
+
+  注:数列不是级数,级数需要求和数列不用.
+
+  \subsubsection{数列}{
+    若函数$f$的定义域为全体正整数集合$\mathNatureNumberCollection^n$,则称
+    $$
+      f : \mathNatureNumberCollection^+ \to \mathRealNumberCollection,\defFunction{n} \ (n \in \mathNatureNumberCollection^+)
+    $$
+
+    为数列.因正整数集$\mathNatureNumberCollection^+$的元素可按由小到大的顺序排列,所以数列$\defFunction{n}$也可以写作 :
+    $$
+      a_1,a_2,a_3,\dots,a_n,\dots,
+    $$
+
+    或者可以简记为${a_n}$,其中$a_n$称为该数列的通项.
+  }%数列结尾
+
+  \subsubsection{数列极限}{
+    设数列${a_n}$,存在$a_0$,若对于任意给定的正数$\epsilon$,总存在正整数$N$,使得当$n > N$时由
+    $$
+      \absoluteValue{a_n - a} < \epsilon
+    $$
+
+    则称数列${a_n}$收敛于$a,a$称为数列$a_n$的极限,记作
+    $$
+      \limNormal{n \to \infty}a_n = a
+    $$
+
+    若数列${a_n}$没有极限,则称${a_n}$不收敛,或者称${a_n}$发散.
+
+    此定义等价于 : 任给$\epsilon > 0$,若在$(a - \epsilon,a + \epsilon)$之外数列${a_n}$中的项至多只有有限个,则称数列${a_n}$收敛域极限$a$.
+  }%数列极限结尾
+
+  \subsubsection{O'Stolz(stolz)定理}{
+    设$(a_n)_{n > 1}$和$(b_n)_{n > 1}$为两个实数数列.若$b_n$为从某项开始严格单调的无界正数数列,且有穷穷极限
+    $$
+      \limNormal{n \to \infty}\cfrac{a_{n + 1} - a_n}{b_{n + 1} - b_n} = L
+    $$
+
+    存在,则 :
+    $$
+      \limNormal{n \to \infty}\cfrac{a_n}{b_n} = L
+    $$
+
+    其中$L$可以为有限实数或正/负无穷.
+  }%O'Stolz(stolz)定理结尾
+
+}%数列极限相关结尾
 
 \subsection{渐进线}{
   渐近线分为三种 :
@@ -1676,6 +1738,14 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
 
   柯西中值定理可以用来证明洛必达法则.拉格朗日中值定理是柯西中值定理当$g(t) = t$时的特殊情况.
 }%柯西中值定理结尾
+
+\subsubsection{达布中值定理}{
+  设$\defFunction{x}$在$(A,B)$区间中可导,且$\mathBigCase{a,b} \in (A,B)$,$\fDerivative{a} < \fDerivative{b}$,则对于任意给定的$\eta : \fDerivative{a} < \eta < \fDerivative{b}$,都存在一点$c \in (a,b)$使得$\fDerivative{c} = \eta$
+
+  即 : 设$f : \mathBigCase{a,b} \to \mathRealNumberCollection$为一个$\mathBigCase{a,b}$上的实值可导函数,并在$\mathBigCase{a,b}$上可导,那么$f\derivative$满足 : 对任意介于$\fDerivative{a}$和$\fDerivative{b}$之间的$t$,存在$x \in (a,b)$使得$\fDerivative{x} = t$.
+
+  等价于 : 设$\defFunction{x}$在$\mathBigCase{a,b}$上可微,若在$\mathBigCase{a,b}$上$\fDerivative{x}$不等于0,则$\fDerivative{x}$在$\mathBigCase{a,b}$上保持定号(恒正或恒负).
+}%达布中值定理结尾
 
 }%微分结尾
 
@@ -3643,6 +3713,221 @@ $$
 
 }%函数项无穷级数审敛法
 
+\subsection{函数的幂级数展开(泰勒级数)}{
+  假设有函数$f(x)$,想要展开成$a_0 + a_1(x - x_0) + a_2(x - x_0)^2 + a_3(x - x_0)^3 + \dots  + a_n(x - x_0)^n + \dots$的形式,其中$x$是$x_0$的极限,即 : \\
+  \begin{math}
+    \defFunction{x} = a_0 + a_1(x - x_0)^1 + a_2(x - x_0)^2 + \dots + a_n(x - x_0)^n + \dots \\
+    \fDerivative{x} = 0 + a_1 + 2a_2(x - x_0) + 3a_3(x - x_0)^2 + \dots \\
+    f\doubleDerivative(x) = 0 + 0 + 2a_2 + 2 \times 3 a_3(x - x_0) + 3 \times 4 a_4(x - x_0)^2 + \dots \\
+    f\tripleDerivative(x) = 0 + 0 + 0 + 2 \times 3 a_3 + 3 \times 4 a_4(x - x_0) + \dots
+  \end{math}
+
+  将x取值成$x_0$,即$x = x_0$,代入 : \\
+  \begin{math}
+    \defFunction{x_0} = {\color{red}a_0} + 0 + 0 + 0 + 0 + \dots\ \to \ a_0 = \defFunction{x_0} \\
+    \fDerivative{x_0} = 0 + {\color{red}a_1} + 0 + 0 + 0 + 0 + \dots\ \to \ a_1 = \fDerivative{x_0} \\
+    f\doubleDerivative(x_0) = 0 + 0 + {\color{red}2a_2} + 0 + 0 + 0 + 0 + \dots\ \to \ a_2 = \cfrac{f\doubleDerivative(x_0)}{2!} \\
+    f\tripleDerivative(x_0) = 0 + 0 + 0 + {\color{red}2 \times 3 a_3} + 0 + 0 + 0 + 0 + \dots\ \to \ a_3 = \cfrac{f\tripleDerivative(x_0)}{3!} \\
+    \vdots
+  \end{math}
+
+  最后可以总结出公式 :
+  $$
+    a_n = \cfrac{1}{n!}f\aLotDerivative{n}(x_0),\ \defFunction{x} = \upDownSum{\infty}{n = 0}\cfrac{1}{n!}f\aLotDerivative{n}(x_0)(x - x_0)^n
+  $$
+
+  这种级数展开泰勒级数,此通项公式称为泰勒展开式.
+
+  函数$f(x)$能展开成幂级数的充要条件就是 : 泰勒展开式成立,且收敛到$\defFunction{x}$.
+
+  更确切的来说 :
+  \subsubsection{泰勒展开式与马克劳林展开式}{
+    泰勒展开式 :
+    $$
+      \defFunction{x} = \upDownSum{\infty}{n = 0}\cfrac{1}{n!}f\aLotDerivative{n}(x_0)(x - x_0)^n\qquad x\in U(x_0),\mbox{此公式在$x_0$的邻域内成立}
+    $$
+
+    当$x_0$取$0$,在$0$处展开,就称为马克劳林公式 :
+    $$
+      \defFunction{x} = \upDownSum{\infty}{n = 0}\cfrac{1}{n!}f\aLotDerivative{n}(0)x^n\qquad x\in I_{f},\mbox{麦克劳林的定义更加清晰:此公式在收敛域内成立}.
+    $$
+  }%泰勒展开式结尾
+
+  \subsubsection{基础函数展开公式表推导}{
+    注 : 此处全部使用马克劳林展开
+    \begin{enumerate}
+      \item {
+            $\defFunction{x} = e^x$ :
+
+            由于$f\aLotDerivative{n}(0) = 1$,而且$f\derivative = e$,因此展开项为 :
+            $$
+              e^x = 1 + x + \cfrac{x^2}{2!} + \dots + \cfrac{x^n}{n!} + \dots
+            $$
+            }
+      \item {
+            $\defFunction{x} = \sin(x),g(x) = \cos(x)$ :
+
+            \begin{center}
+              \begin{tabular}{c c}
+                $\fDerivative{x} = \cos(x)$        & $\fDerivative{0} = 1$        \\
+                $f\doubleDerivative(x) = -\sin(x)$ & $f\doubleDerivative(0) = 0$  \\
+                $f\tripleDerivative(x) = \cos(x)$  & $f\tripleDerivative(0) = -1$ \\
+                $f\aLotDerivative{4}(x) = \sin(x)$ & $f\aLotDerivative{4}(0) = 0$
+              \end{tabular}
+            \end{center}
+
+            总结规律,可知 : 展开式只有奇数次项,并且正负会交替出现 :
+            $$
+              \sin(x) = x - \cfrac{x^3}{3!} + \cfrac{x^5}{5!} - \cfrac{x^7}{7!} + \dots + (-1)^n\cfrac{x^{2n + 1}}{(2n + 1)!} + \dots
+            $$
+
+            由$\fDerivative{x} = g(x)$,对上式求导就会得到$\cos$的展开式 :
+            $$
+              \cos(x) = 1 - \cfrac{x^2}{2!} + \cfrac{x^4}{4!} - \cfrac{x^6}{6!} + \dots + (-1)^n\cfrac{x^{2n}}{(2n)!} + \dots
+            $$
+
+            特点是只有偶次项.
+            }
+      \item {
+            $\defFunction{x} = \cfrac{1}{1 - x}$ :
+
+            很容易看出这是等比(几何)级数的通项公式 :
+            $$
+              \cfrac{1}{1 - x} =1 + x + x^2 + x^3 + \dots + x^n + \dots
+            $$
+
+            将$x$换成$-x$ :
+            $$
+              \cfrac{1}{1 + x} = 1 - x + x^2 - x^3 + x^4 + \dots + (-1)^nx^n + \dots
+            $$
+
+            上述两个公式在$\absoluteValue{x} < 1$时成立
+            }
+      \item{
+            公式3从$0$到$x$求定积分 : $\definiteIntegral{x}{0}\cfrac{1}{1 - x}dx = \ln(1 - x),\definiteIntegral{x}{0}\cfrac{1}{1 + x}dx = \ln(1 + x)$ :
+
+            $$
+              \ln(1 - x) = -x - \cfrac{x^2}{2} - \cfrac{x^3}{3} - \dots - \cfrac{x^n}{n} - \dots
+            $$
+
+            $$
+              \ln(1 + x) = x + \cfrac{x^2}{2} + \cfrac{x^3}{3} + \dots + \cfrac{x^n}{n} + \dots
+            $$
+
+            上述两个公式对于在区间$\left(-1,1\right]$内的所有x都成立.
+            }
+      \item {
+            将公式1中的$x$换成$x\ln a$ : $e^{x\ln a} = a^x$ :
+
+            $$
+              a^x = 1 + x\ln a + \cfrac{x^2(\ln a)^2}{2!} + \cfrac{x^3(\ln a)^3}{3!} + \dots + \cfrac{x^n(\ln a)^n}{n!} + \dots
+            $$
+            }
+      \item{
+            将公式3中$\cfrac{1}{1 + x}$中的$x$换成$x^2$ : $\cfrac{1}{1 + x^2}$ :
+
+            $$
+              \cfrac{1}{1 + x^2} = 1 - x^2 + x^4 - x^6 + x^8 + \dots + (-1)^nx^{2n} + \dots
+            $$
+
+            同样的,对于在区间$\left(-1,1\right]$中的所有$x$成立.
+            }
+      \item {
+            对公式7在$0$到$x$求定积分 : $\definiteIntegral{x}{0}\cfrac{1}{1 + x^2}dx = \arctan(x)$  :
+
+            $$
+              \arctan(x) = x - \cfrac{x^3}{3} + \cfrac{x^5}{5} - \cfrac{x^7}{7} + \dots + (-1)^n\cfrac{x^{2n + 1}}{2n + 1} + \dots
+            $$
+
+            对于所有$\absoluteValue{x} < 1$成立.
+            }
+    \end{enumerate}
+  }%基础函数展开公式表推导
+
+  \subsubsection{基础函数展开公式表}{
+    \begin{itemize}
+      \item $e^x = 1 + x + \cfrac{x^2}{2!} + \dots + \cfrac{x^n}{n!} + \dots,(-\infty < x < +\infty)$
+      \item $\sin(x) = x - \cfrac{x^3}{3!} + \cfrac{x^5}{5!} - \cfrac{x^7}{7!} + \dots + (-1)^n\cfrac{x^{2n + 1}}{(2n + 1)!} + \dots,(-\infty < x < +\infty)$
+      \item $\cos(x) = 1 - \cfrac{x^2}{2!} + \cfrac{x^4}{4!} - \cfrac{x^6}{6!} + \dots + (-1)^n\cfrac{x^{2n}}{(2n)!} + \dots,(-\infty < x < +\infty)$
+      \item $\cfrac{1}{1 - x} = 1 + x + x^2 + x^3 + \dots + x^n + \dots,(-1 < x < 1)$
+      \item $\cfrac{1}{1 + x} = 1 - x + x^2 - x^3 + x^4 + \dots + (-1)^nx^n + \dots,(-1 < x < 1)$
+      \item $\ln(1 - x) = -x - \cfrac{x^2}{2} - \cfrac{x^3}{3} - \dots - \cfrac{x^n}{n} - \dots,(-1 < x \leq 1)$
+      \item $\ln(1 + x) = x + \cfrac{x^2}{2} + \cfrac{x^3}{3} + \dots + \cfrac{x^n}{n} + \dots,(-1 < x \leq 1)$
+      \item $a^x = 1 + x\ln a + \cfrac{x^2(\ln a)^2}{2!} + \cfrac{x^3(\ln a)^3}{3!} + \dots + \cfrac{x^n(\ln a)^n}{n!} + \dots,(-\infty < x < +\infty)$
+      \item $\cfrac{1}{1 + x^2} = 1 - x^2 + x^4 - x^6 + x^8 + \dots + (-1)^nx^{2n} + \dots,(-1 < x \leq 1)$
+      \item $\arctan(x) = x - \cfrac{x^3}{3} + \cfrac{x^5}{5} - \cfrac{x^7}{7} + \dots + (-1)^n\cfrac{x^{2n + 1}}{2n + 1} + \dots,(-1 < x < 1)$
+    \end{itemize}
+  }%基础函数展开公式表结尾
+
+  \subsubsection{运算示例}{
+    \begin{enumerate}
+      \item {
+            将$e^{\cfrac{x}{2}}$展开 :
+
+            将$x$换成$\cfrac{x}{2}$,即 :
+            $$
+              e^{\cfrac{x}{2}} = 1 + \cfrac{x}{2} + \cfrac{x^2}{2!2^2} + \cfrac{x^3}{3!3^2} + \dots + \cfrac{x^n}{n!n^2}
+            $$
+            }
+      \item {
+            将$\defFunction{x} = (1 - x)\ln(1 + x)$展成$x$的幂级数 :
+            $$
+              \ln(1 + x) = x - \cfrac{x^2}{2} + \cfrac{x^3}{3} - \cfrac{x^4}{4} + \dots
+            $$
+
+            \begin{math}
+              (1 - x)\ln(1 + x) \\
+              = (1 - x)(x - \cfrac{x^2}{2} + \cfrac{x^3}{3} - \cfrac{x^4}{4} + \dots) \\
+              = x + (-\cfrac{1}{2} - 1)x^2 + (\cfrac{1}{3} + \cfrac{1}{2})x^3 + (-\cfrac{1}{4} - \cfrac{1}{3})x^4 + \dots \\
+              = x + \upDownSum{\infty}{n = 2}(-1)^{n - 1}\cfrac{(2n - 1)x^n}{n(n - 1)} \ (-1 < x \leq 1)
+            \end{math}
+            }
+      \item {
+            将$\sin x$展成$x - \cfrac{\pi}{4}$的幂级数.
+
+            (泰勒级数在$\cfrac{\pi}{4}$处展开,也可以用马克劳林),使用马克劳林 :
+
+            \begin{math}
+              \sin x \xrightarrow{x \to x - \cfrac{\pi}{4}} \sin(\cfrac{\pi}{4} + x - \cfrac{\pi}{4}) \\
+              = \sin\cfrac{\pi}{4}\cos(x - \cfrac{\pi}{4}) + \cos\cfrac{\pi}{4}\sin(x - \cfrac{\pi}{4}) \\
+              = \cfrac{\sqrt{2}}{2}(\cos(x - \cfrac{\pi}{4}) + \sin(x - \cfrac{\pi}{4})) \\
+              =\dots
+            \end{math}
+            }
+      \item {
+            将$\defFunction{x} = \cfrac{1}{x^2 + 4x + 3}$展成$x - 1$的幂级数 :
+            $$
+              \defFunction{x} = \cfrac{1}{(x + 1)(x + 3)} = \cfrac{1}{2}\bigCase{\cfrac{1}{1 + x} - \cfrac{1}{3 + x}}
+            $$
+
+            $$
+              \cfrac{1}{1 + x} = \cfrac{1}{2 + (x - 1)} = \cfrac{1}{2}\bigCase{\cfrac{1}{1 + \cfrac{x - 1}{2}}}(\mbox{先凑出形式})
+            $$
+
+            令$\cfrac{x - 1}{2} = t$,对$\cfrac{1}{2}\cfrac{1}{1 + t}$展开 : $\cfrac{1}{2}\bigCase{1 - \cfrac{x - 1}{2} + \cfrac{(x - 1)^2}{2^2} - \cfrac{(x - 1)^3}{2^3} + \dots}$
+
+            同理,$\cfrac{1}{3 + x}$经过变形 :
+            $$
+              \cfrac{1}{4}(\cfrac{1}{1 + \cfrac{x - 1}{4}}) = \cfrac{1}{4}\bigCase{1 - \cfrac{x - 1}{4} \cfrac{(x - 1)^2}{4^2} - \cfrac{(x - 1)^3}{4^3} + \dots}
+            $$
+
+            因此.$\defFunction{x} = \sumSeries(-1)^n\bigCase{2^{\cfrac{1}{n + 2}} - 2^{\cfrac{1}{2n + 3}}}(x - 1)^n$
+
+            还需要求出收敛域 :
+
+            $-1 < \cfrac{x - 1}{4} < 1 \to -3 < x < 5$,收敛域为$(-3 < x < 5)$
+
+            $-1 < \cfrac{x - 1}{2} < 1 \to -1 < x < 3$,收敛域为$(-1 < x < 3)$
+
+            两者相加减,收敛域取交集 : $(-3 < x < 5) \cap (-1 < x < 3) = (-1 < x < 3)$
+
+            即 : $\defFunction{x}$收敛域为$(-1 < x < 3)$
+            }
+    \end{enumerate}
+  }%运算示例结尾
+
+}%函数的幂级数展开结尾
+
 }%无穷级数结尾
 
 \section{线性代数}{
@@ -4704,7 +4989,7 @@ $$
 
               因此:
 
-        \item 当命题"若P则Q"与"若Q���P"皆为真时,P是Q的充分必要条件,同时,Q也是P的充分必要条件.
+        \item 当命题"若P则Q"与"若Q则P"皆为真时,P是Q的充分必要条件,同时,Q也是P的充分必要条件.
         \item 当命题"若P则Q"为真,而"若Q则P为假时",P是Q的充分不必要条件,Q是P的必要不充分条件,反之亦然.
       \end{itemize}
 
