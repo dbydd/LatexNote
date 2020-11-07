@@ -13,6 +13,7 @@
 \usepackage{tikz-3dplot}
 \usepackage{pgfplots}
 \usepackage{listings}
+\usepackage{multicol}
 
 \usetikzlibrary{svg.path}
 \usetikzlibrary{positioning}
@@ -100,6 +101,7 @@
 \newcommand{\curveIntegralOnLine}[1]{\oint_{#1}}
 \newcommand{\doubleCurveIntegralOnLine}[1]{\oiint_{#1}}
 \newcommand{\sumSeries}{\upDownSum{\infty}{n = 1}}
+\newcommand{\boldText}[1]{{\bfseries#1}}
 
 \newcommand{\tikzPlaceDot}[1]{\draw[fill = black] #1 circle (1pt)}
 
@@ -733,6 +735,16 @@ $\cfrac{2}{\cfrac{1}{x_1} + \cfrac{1}{x_2}} = \cfrac{2x_1x_2}{x_1 + x_2}\leq\sqr
 
     $\tan\alpha \cfrac{2\tan\cfrac{\alpha}{2}}{1 - \tan^2\cfrac{\alpha}{2}}$
   }%万能替换公式结尾
+
+  \subsubsection{降幂公式}{
+    三角函数中的降幂公式可降低三角函数指数幂.多项式各项的先后按照某一个字母的指数逐渐减少的顺序排列,叫做这一字母的降幂.直接运用二倍角公式就是升幂,将公式Cos2α变形后可得到降幂公式.
+
+    $\sin^2\alpha = \cfrac{1 - \cos2\alpha}{2}$
+
+    $\cos^2\alpha = \cfrac{1 + \cos2\alpha}{2}$
+
+    $\tan^2\alpha = \cfrac{1 - \cos2\alpha}{1 + \cos2\alpha}$
+  }%降幂公式
 
 }%倍角公式结尾
 
@@ -3931,8 +3943,222 @@ $$
 }%无穷级数结尾
 
 \section{线性代数}{
+--{\tiny线性代数,永远滴神!}
 
- }%线性代数结尾
+\subsection{一些杂七杂八的前置/补充}{
+
+  \subsubsection{关于"线性"}{
+    通常来说线性是指满足以下两个性质(其中$L$表示线性操作) :
+    \begin{itemize}
+      \item 可加性 : $L(a + b) = L(a) + L(b)$
+      \item 齐次性 : $\mathConstant L(a) = L(\mathConstant a)$
+    \end{itemize}
+  }%关于"线性"结尾
+
+  \subsubsection{关于矩阵}{
+    矩阵并不是某一种特定事物的代表,也许它可以被认为是操作变量的线性变换,但它本身也是一种变量.
+
+    ...算了,留到矩阵论再写吧.
+  }%关于矩阵结尾
+
+  \subsubsection{关于线性组合}{
+    线性组合(Linear combination)是线性代数中的概念,通常的表现形式如下 :
+    $$
+      \vec{b} = \mathConstant_1\vec{a}_1 + \mathConstant_2\vec{a}_2 + \mathConstant_3\vec{a}_3 + \dots + \mathConstant_n\vec{a}_n
+    $$
+
+    直观上来看就是不同长度的向量相加,结果是个新向量.
+  }%关于线性组合结尾
+
+  \subsubsection{矩阵与向量的乘法}{
+    你知道矩阵和向量的乘法有几种写法吗?(x
+
+    \begin{itemize}
+      \item {
+            由列图像可知 : $A\vec{x}$的结果是矩阵列向量的线性组合 :
+            $$
+              \begin{bmatrix}
+                x_1 & x_2 \\
+                y_1 & y_2
+              \end{bmatrix}
+              \begin{bmatrix}
+                \mathConstant_1 \\
+                \mathConstant_2
+              \end{bmatrix}
+              =
+              \mathConstant_1\begin{bmatrix}
+                x_1 \\
+                y_1
+              \end{bmatrix}
+              +
+              \mathConstant_2\begin{bmatrix}
+                x_2 \\
+                y_2
+              \end{bmatrix}
+            $$
+            }
+      \item {
+            也可以把$\vec{x}$看作$2 \times 1$矩阵,作矩阵乘法 :
+            $$
+              \begin{bmatrix}
+                a_{11} & a_{12} \\
+                a_{21} & a_{22}
+              \end{bmatrix}
+              \begin{bmatrix}
+                x_{11} \\
+                x_{21}
+              \end{bmatrix}
+              =
+              \begin{bmatrix}
+                a_{11} \times x_{11} + a_{12} \times x_{21} \\
+                a_{21} \times x_{11} + a_{22} \times x_{21}
+              \end{bmatrix}
+            $$
+
+            }
+    \end{itemize}
+  }%矩阵与向量的乘法
+
+}%一些杂七杂八的前置/补充结尾
+
+\subsection{$A\vec{x} = \vec{b}$与四个子空间}{
+
+  \subsubsection{线性方程的几何图像}{
+    线性代数的基本问题就是解$n$元一次方程组 :
+
+    \begin{center}
+      $2x - y = 0$
+
+      $-x + 2y = 3$
+    \end{center}
+
+    将$x$和$y$抽离出来,可以写成矩阵乘以列向量的形式 :
+
+    $$
+      \begin{bmatrix}
+        2  & -1 \\
+        -1 & 2
+      \end{bmatrix}
+      \begin{bmatrix}
+        x \\
+        y
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+        0 \\
+        3
+      \end{bmatrix}
+    $$
+
+    其中$A = \begin{bmatrix}
+        2  & -1 \\
+        -1 & 2
+      \end{bmatrix}$
+    称为系数矩阵(coefficient matrix).
+
+    未知数向量记作$\vec{x} = \begin{bmatrix}
+        x \\
+        y
+      \end{bmatrix}$.
+
+    而右侧的向量记为$\vec{b}$.
+
+    由此线性方程组可记作$A\vec{x} = \vec{b}$.
+  }%线性方程的几何图像结尾
+
+  \subsubsection{行图像}{
+    \begin{multicols}{2}
+      \includegraphics{resources/row_picture_1.png}
+
+      行图像遵从解析几何的描述,每个方程在平面上的图像为一条直线.找到符合方程的两个数组,就可以确定出$xy$平面上的两个点,连接两点可以画出该方程所代表的直线.两直线交点即为方程组的解:\\$x=1,y=2$.
+    \end{multicols}
+  }%行图像结尾
+
+  \subsubsection{列图像}{
+    在列图像中,将$A\vec{x}$化成线性组合的形式 :
+    $$
+      \begin{bmatrix}
+        2  & -1 \\
+        -1 & 2
+      \end{bmatrix}
+      \begin{bmatrix}
+        x \\
+        y
+      \end{bmatrix}
+      =
+      x\begin{bmatrix}
+        2 \\
+        -1
+      \end{bmatrix}
+      +
+      y\begin{bmatrix}
+        -1 \\
+        2
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+        0 \\
+        3
+      \end{bmatrix}
+    $$
+
+    这样一来问题就变成了:寻找合适的矩阵$A$的列向量的线性组合以构成向量$\vec{b}$.
+
+    人话就是说 : 需要寻找满足要求的标量x和y来放缩$\begin{bmatrix}
+        2 \\
+        -1
+      \end{bmatrix}$
+    和$\begin{bmatrix}
+        -1 \\
+        2
+      \end{bmatrix}$
+    使得他们相加的结果等于$\begin{bmatrix}
+        0 \\
+        3
+      \end{bmatrix}$.
+
+    \begin{multicols}{2}
+      \includegraphics{resources/colum_picture_1.png}
+
+      可以看到:只需要一倍的$\begin{bmatrix}
+          2 \\
+          -1
+        \end{bmatrix}$
+      加上两倍的$\begin{bmatrix}
+          -1 \\
+          2
+        \end{bmatrix}$
+      就可以得到向量$\vec{b}$,因此 : $\vec{a} = \begin{bmatrix}
+          1 \\
+          2
+        \end{bmatrix}$,
+      即 : $x = 1,y = 2$.
+    \end{multicols}
+
+    一直任意取$x,y$进行线性组合,最后会得到整个坐标平面.
+
+    在这方面,列图像相对于行图像的优点在于:如果$\vec{b}$改变了,那么对于行图像而言一切都变了,而对于列图像而言:列向量不需要发生变化,只需要寻找一个新的线性组合来得到新的$\vec{b}$.
+  }%列图像结尾
+
+  \subsubsection{线性相关,线性无关}{
+    问题 : 是否对于所有的$A\vec{x} = \vec{b}$都能找到解$\vec{x}$?
+
+    拿三维的情况来说,很容易就能联想到 : 列向量的所有线性组合是否覆盖了整个空间?
+
+    很明显,并不是所有的情况都这么幸运,如果三个列向量中有两个向量的线性组合可以得到第三个向量,或者干脆三个列向量互为倍数-前者意味着三个向量处在同一平面,后者意味着三个向量处于同一直线,这种情况下这三个向量的组合就永远只能得到平面/直线上的其他向量.如果向量$b$不在平面/线上,那么就永远不可能得到解.此时称矩阵$A$为奇异矩阵(或不可逆矩阵),在矩阵$A$不可逆的条件下,不是所有的$\vec{b}$都能令$A\vec{x} = \vec{b}$有解.
+
+    推广到$n$维:一个向量组有$n$个向量,如果$n$个向量相互独立,则称这组向量\boldText{线性无关},否则就是\boldText{线性相关}.
+
+    \textcolor{red}{从行图像的角度来看:当方程所代表的三个平面相交于一点时方程有唯一解;三个平面中至少两个平行则方程无解;平面的两两交线互相平行方程也无解;三个平面交于一条直线则方程有无穷多解.}
+
+    \begin{center}
+      \includegraphics{resources/lineardepedent_independent_1.png}
+    \end{center}
+  }%线性相关,线性无关结尾
+
+}%Ax = b与四个子空间结尾
+
+}%线性代数结尾
 
 \section{数论}{
 
@@ -4241,7 +4467,7 @@ $$
 
     \subsection{对于线性代数部分的补充与扩展}{
 
-      在计算机图形学中线性代数的主要作用是操纵与计算空间中对象的变化.由此衍生出了一些特殊的东西.
+      在计算机图形学中线性代数的主要作用是操纵与计算空间中对象的变化.由此衍生出了一些特殊的观点.
 
       同时有一部分重要的常用基础内容放在了数学篇中的空间解析几何部分.
 
