@@ -103,6 +103,14 @@
 \newcommand{\sumSeries}{\upDownSum{\infty}{n = 1}}
 \newcommand{\boldText}[1]{{\bfseries#1}}
 
+\newcommand{\augmentedMatrix}[2]{
+  \mathBigCase{
+  \begin{array}{c|c}
+    #1 & #2
+  \end{array}
+  }
+  }
+
 \newcommand{\tikzPlaceDot}[1]{\draw[fill = black] #1 circle (1pt)}
 
 \DeclareMathOperator{\arccot}{arccot}
@@ -114,7 +122,7 @@
   \maketitle
   \paragraph{todos}{
     \begin{enumerate}
-      \item 誊录纸质笔记\ 线性代数
+      \item 誊录纸质笔记\ 线性代数-矩阵乘法,逆矩阵
       \item 隐函数存在定理,等幂求和,二项式系数,朱世杰恒等式.
       \item 重写线性代数
       \item 场论:p10
@@ -3956,7 +3964,7 @@ $$
   }%关于"线性"结尾
 
   \subsubsection{关于矩阵}{
-    矩阵并不是某一种特定事物的代表,也许它可以被认为是操作变量的线性变换,但它本身也是一种变量.
+    矩阵并不是某一种特定事物的代表,也许它可以被认为是操作变量的线性变换,但它本身也是一种变量.他也可以只是一个单纯的数表.
 
     ...算了,留到矩阵论再写吧.
   }%关于矩阵结尾
@@ -3971,52 +3979,97 @@ $$
   }%关于线性组合结尾
 
   \subsubsection{矩阵与向量的乘法}{
-    你知道矩阵和向量的乘法有几种写法吗?(x
-
+    你知道矩阵和向量相乘有几种写法吗?(x
     \begin{itemize}
       \item {
-            由列图像可知 : $A\vec{x}$的结果是矩阵列向量的线性组合 :
-            $$
-              \begin{bmatrix}
-                x_1 & x_2 \\
-                y_1 & y_2
-              \end{bmatrix}
-              \begin{bmatrix}
-                \mathConstant_1 \\
-                \mathConstant_2
-              \end{bmatrix}
-              =
-              \mathConstant_1\begin{bmatrix}
-                x_1 \\
-                y_1
-              \end{bmatrix}
-              +
-              \mathConstant_2\begin{bmatrix}
-                x_2 \\
-                y_2
-              \end{bmatrix}
-            $$
+            矩阵右乘列向量 :
+            \begin{itemize}
+              \item {
+                    由列图像可知 : $A\vec{x}$的结果是矩阵列向量的线性组合 :
+                    $$
+                      \begin{bmatrix}
+                        x_1 & x_2 \\
+                        y_1 & y_2
+                      \end{bmatrix}
+                      \begin{bmatrix}
+                        \mathConstant_1 \\
+                        \mathConstant_2
+                      \end{bmatrix}
+                      =
+                      \mathConstant_1\begin{bmatrix}
+                        x_1 \\
+                        y_1
+                      \end{bmatrix}
+                      +
+                      \mathConstant_2\begin{bmatrix}
+                        x_2 \\
+                        y_2
+                      \end{bmatrix}
+                    $$
+                    }
+              \item {
+                    也可以把$\vec{x}$看作$2 \times 1$矩阵,作矩阵乘法 :
+                    $$
+                      \begin{bmatrix}
+                        a_{11} & a_{12} \\
+                        a_{21} & a_{22}
+                      \end{bmatrix}
+                      \begin{bmatrix}
+                        x_{11} \\
+                        x_{21}
+                      \end{bmatrix}
+                      =
+                      \begin{bmatrix}
+                        a_{11} \times x_{11} + a_{12} \times x_{21} \\
+                        a_{21} \times x_{11} + a_{22} \times x_{21}
+                      \end{bmatrix}
+                    $$
+                    }
+            \end{itemize}
             }
       \item {
-            也可以把$\vec{x}$看作$2 \times 1$矩阵,作矩阵乘法 :
-            $$
-              \begin{bmatrix}
-                a_{11} & a_{12} \\
-                a_{21} & a_{22}
-              \end{bmatrix}
-              \begin{bmatrix}
-                x_{11} \\
-                x_{21}
-              \end{bmatrix}
-              =
-              \begin{bmatrix}
-                a_{11} \times x_{11} + a_{12} \times x_{21} \\
-                a_{21} \times x_{11} + a_{22} \times x_{21}
-              \end{bmatrix}
-            $$
-
+            矩阵左乘行向量:
+            \begin{itemize}
+              \item {
+                    $\vec{x}\transpose A$的结果可以是行向量的线性组合 :
+                    $$
+                      \begin{bmatrix}
+                        \mathConstant_1 & \mathConstant_2
+                      \end{bmatrix}
+                      \begin{bmatrix}
+                        x_1 & x_2 \\
+                        y_2 & y_2
+                      \end{bmatrix}
+                      =
+                      \mathConstant_1\begin{bmatrix}
+                        x_1 & x_2
+                      \end{bmatrix}
+                      +
+                      \mathConstant_2\begin{bmatrix}
+                        y_1 & y_2
+                      \end{bmatrix}
+                    $$
+                    }
+              \item {
+                    ...也可以是矩阵乘法 :
+                    $$
+                      \begin{bmatrix}
+                        \mathConstant_1 & \mathConstant_2
+                      \end{bmatrix}
+                      \begin{bmatrix}
+                        x_1 & x_2 \\
+                        y_2 & y_2
+                      \end{bmatrix}
+                      =
+                      \begin{bmatrix}
+                        \mathConstant_1 \times x_1 + \mathConstant_1 \times y_1 & \mathConstant_2 \times x_2 + \mathConstant_2 \times y_2
+                      \end{bmatrix}
+                    $$
+                    }
+            \end{itemize}
             }
     \end{itemize}
+
   }%矩阵与向量的乘法
 
 }%一些杂七杂八的前置/补充结尾
@@ -4068,9 +4121,15 @@ $$
 
   \subsubsection{行图像}{
     \begin{multicols}{2}
-      \includegraphics{resources/row_picture_1.png}
+      {
+        \includegraphics{resources/row_picture_1.png}
+      }
 
-      行图像遵从解析几何的描述,每个方程在平面上的图像为一条直线.找到符合方程的两个数组,就可以确定出$xy$平面上的两个点,连接两点可以画出该方程所代表的直线.两直线交点即为方程组的解:\\$x=1,y=2$.
+      {
+        一次取一行,作出行图像.
+
+        行图像遵从解析几何的描述,每个方程在平面上的图像为一条直线.找到符合方程的两个数组,就可以确定出$xy$平面上的两个点,连接两点可以画出该方程所代表的直线.两直线交点即为方程组的解:\\$x=1,y=2$.
+      }
     \end{multicols}
   }%行图像结尾
 
@@ -4147,14 +4206,272 @@ $$
 
     很明显,并不是所有的情况都这么幸运,如果三个列向量中有两个向量的线性组合可以得到第三个向量,或者干脆三个列向量互为倍数-前者意味着三个向量处在同一平面,后者意味着三个向量处于同一直线,这种情况下这三个向量的组合就永远只能得到平面/直线上的其他向量.如果向量$b$不在平面/线上,那么就永远不可能得到解.此时称矩阵$A$为奇异矩阵(或不可逆矩阵),在矩阵$A$不可逆的条件下,不是所有的$\vec{b}$都能令$A\vec{x} = \vec{b}$有解.
 
-    推广到$n$维:一个向量组有$n$个向量,如果$n$个向量相互独立,则称这组向量\boldText{线性无关},否则就是\boldText{线性相关}.
-
     \textcolor{red}{从行图像的角度来看:当方程所代表的三个平面相交于一点时方程有唯一解;三个平面中至少两个平行则方程无解;平面的两两交线互相平行方程也无解;三个平面交于一条直线则方程有无穷多解.}
 
     \begin{center}
       \includegraphics{resources/lineardepedent_independent_1.png}
     \end{center}
+
+    推广到$n$维:一个向量组有$n$个向量,如果$n$个向量相互独立,则称这组向量\boldText{线性无关},否则就是\boldText{线性相关}.
   }%线性相关,线性无关结尾
+
+  \subsubsection{矩阵消元(消元法)(初等变换)}{
+    消元法是一种很自然的求解线性方程组的解法.任何情况下,只要矩阵$A$可逆,那么总可以通过消元法求得$A\vec{x} = \vec{b}$的解.
+
+    消元法与初等变换有同样的形式.事实上从本质来说是一种东西,叫法取决于用途.
+
+    概括来说,初等变换/消元法是指以下操作 :
+
+    \begin{itemize}
+      \item {
+            初等行变换 :
+            \begin{itemize}
+              \item 交换两行
+              \item 用$k(k \neq 0)$乘以某一行
+              \item 某一行的$L$倍加到另一行上去($L$可以为0)
+            \end{itemize}
+            }
+      \item {
+            初等列变换 :
+            \begin{itemize}
+              \item 交换两列
+              \item 用$k(k \neq 0)$乘以某一列
+              \item 某一列的$L$倍加到另一列上去($L$可以为0)
+            \end{itemize}
+            }
+    \end{itemize}
+
+    设矩阵 :
+    $$
+      A = \begin{bmatrix}
+        1 & 2 & 1 \\
+        3 & 8 & 1 \\
+        0 & 4 & 1
+      \end{bmatrix}
+    $$
+
+    将矩阵对角线上的元素称为主元,从左上角向右下角依次编号为:主元一,主元二$\dots$
+
+    消元的步骤如下,两个矩阵之间应当用箭头相连 :
+    $$
+      A = \begin{bmatrix}
+        \boxed{1} & 2 & 1 \\
+        3         & 8 & 1 \\
+        0         & 4 & 1
+      \end{bmatrix}
+      \xrightarrow{\mbox{第一行乘以-3加到第三行}}
+      \begin{bmatrix}
+        \boxed{1} & 2         & 1  \\
+        0         & \boxed{2} & -2 \\
+        0         & 4         & 1
+      \end{bmatrix}
+      \xrightarrow{\mbox{第二行乘以-2加到第三行}}
+      U = \begin{bmatrix}
+        \boxed{1} & 2         & 1         \\
+        0         & \boxed{2} & -2        \\
+        0         & 0         & \boxed{5} \\
+      \end{bmatrix}
+    $$
+
+    矩阵$A$为可逆矩阵,那么消元结束后的结果就是上三角阵$U$(Uppertriangular matrix).$U$的主对角线以下全为0,并且行列式等于其主元之积.
+
+    需要说明的是,主元不能为$0$,如果恰好消元至某行,$0$出现在了主元的位置上,应当通过与下方一行进行“行交换”使得非零数字出现在主元位置上.如果$0$出现在了主元位置上,并且下方没有对等位置为非$0$数字的行,则消元终止,并证明矩阵$A$为不可逆矩阵,且线性方程组没有唯一解.
+
+    $$
+      \mbox{就像这样 : }\begin{bmatrix}
+        * & * & * \\
+        0 & * & * \\
+        0 & 0 & 0
+      \end{bmatrix}
+    $$
+  }%矩阵消元(消元法)结尾
+
+  \subsubsection{高斯消元法}{
+    高斯消元法(Gauss elimination)就是通过对方程组中的某两个方程进行适当的数乘和加减,以达到将其中某个方程的某个系数变为0,从而简化整个方程组的目的.
+
+    设线性方程组 :
+    $$
+      A = \begin{bmatrix}
+        1 & 2 & 1 \\
+        3 & 8 & 1 \\
+        0 & 4 & 1
+      \end{bmatrix}
+      \
+      \vec{x} = \begin{bmatrix}
+        x \\
+        y \\
+        z
+      \end{bmatrix}
+      \
+      \vec{b} = \begin{bmatrix}
+        2  \\
+        12 \\
+        2
+      \end{bmatrix}
+    $$
+
+    做方程的高斯消元时,需要对等式右侧的$\vec{b}$做同样的变换.手动计算时比较方便有效率的方法是应用"增广矩阵(augmented matrix)",给矩阵$A$后面再加一列,中间用线隔开,在消元过程中带着$\vec{b}$一起操作 :
+
+    $$
+      \augmentedMatrix{
+        \begin{matrix}
+          1 & 2 & 1 \\
+          3 & 8 & 1 \\
+          0 & 4 & 1
+        \end{matrix}
+      }{
+        \begin{matrix}
+          2  \\
+          12 \\
+          2
+        \end{matrix}
+      }
+      \to
+      \augmentedMatrix{
+        \begin{matrix}
+          1 & 2 & 1  \\
+          0 & 2 & -2 \\
+          0 & 4 & 1
+        \end{matrix}
+      }{
+        \begin{matrix}
+          2 \\
+          6 \\
+          2
+        \end{matrix}
+      }
+      \to
+      \augmentedMatrix{
+        \begin{matrix}
+          1 & 2 & 1  \\
+          0 & 2 & -2 \\
+          0 & 0 & 5
+        \end{matrix}
+      }{
+        \begin{matrix}
+          2 \\
+          6 \\
+          -10
+        \end{matrix}
+      }
+    $$
+
+    此时就将原方程$A\vec{x} = \vec{b}$转化成了新的方程$U\vec{x} = \vec{c}$,其中$\vec{c} = \begin{bmatrix}
+        2 \\
+        6 \\
+        -10
+      \end{bmatrix}$.
+
+    从最后一行得知$z = -2$,依次回代还可得到$y = 1,x = 2$.
+
+    需要说明的是,主元不能为$0$,如果恰好消元至某行,$0$出现在了主元的位置上,应当通过与下方一行进行“行交换”使得非零数字出现在主元位置上.如果$0$出现在了主元位置上,并且下方没有对等位置为非$0$数字的行,则消元终止,并证明矩阵$A$为不可逆矩阵,且线性方程组没有唯一解.
+  }%高斯消元法结尾
+
+  \subsubsection{消元矩阵}{
+    矩阵运算的核心内容就是对行或者列进行独立操作.
+
+    消元矩阵则是记录这些操作的载体.
+
+    以上一章的的消元为例,写出增广矩阵,右侧为单位阵$I$(或者$E$) :
+    $$
+      \augmentedMatrix{
+        \begin{matrix}
+          1 & 0 & 0 \\
+          0 & 1 & 0 \\
+          0 & 0 & 1
+        \end{matrix}
+      }{
+        \begin{matrix}
+          1 & 2 & 1 \\
+          3 & 8 & 1 \\
+          0 & 4 & 1
+        \end{matrix}
+      }
+    $$
+
+    作第一步替换,得到的矩阵是 :
+    $$
+      \augmentedMatrix{
+        \begin{matrix}
+          1  & 0 & 0 \\
+          -3 & 1 & 0 \\
+          0  & 0 & 1
+        \end{matrix}
+      }{
+        \begin{matrix}
+          1 & 2 & 1  \\
+          0 & 2 & -2 \\
+          0 & 4 & 1
+        \end{matrix}
+      }
+    $$
+
+    此时右侧的矩阵就是表示这一步初等变换的"消元矩阵",消元矩阵乘以被消元的矩阵就是结果矩阵.他的第二行表示:取被消元矩阵\ $-3$倍的行一,$1$倍的行二,$0$倍的行三\ 进行\boldText{线性组合}作为结果矩阵的第$2$行 :
+
+    $$
+      \begin{bmatrix}
+        1  & 0 & 0 \\
+        -3 & 1 & 0 \\
+        0  & 0 & 1
+      \end{bmatrix}
+      \begin{bmatrix}
+        1 & 2 & 1 \\
+        3 & 8 & 1 \\
+        0 & 4 & 1
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+        1 & 2 & 1  \\
+        0 & 2 & -2 \\
+        0 & 4 & 1
+      \end{bmatrix}
+    $$
+
+    各个消元矩阵可以相乘复合,产生的矩阵右乘被消元矩阵可以一步到位,完成被复合的那些矩阵所做的初等变换.
+
+    即 : 设第一步消元矩阵为$El_1$,第二步为$El_2$,最初的被消元矩阵为$A$,则:
+    $$
+      El_2(El_1 A) = (El_1 El_2)A
+    $$
+  }%消元矩阵结尾
+
+  \subsubsection{置换矩阵}{
+    置换矩阵表示了初等变换中的"交换两行"或者"交换两列"的操作.左乘被置换矩阵为行变换,右乘为列变换,比如 :
+    $$
+      \begin{bmatrix}
+        0 & 1 \\
+        1 & 0
+      \end{bmatrix}
+      \begin{bmatrix}
+        a & b \\
+        c & d
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+        c & d \\
+        a & b
+      \end{bmatrix}
+    $$
+    $$
+      \begin{bmatrix}
+        a & b \\
+        c & d
+      \end{bmatrix}
+      \begin{bmatrix}
+        0 & 1 \\
+        1 & 0
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+        b & a \\
+        d & c
+      \end{bmatrix}
+    $$
+
+    原理上也可以用线性组合的思想来解释,"线性代数"章节中置换矩阵可以简称为$P$,$P$矩阵是通过对$I$矩阵进行"行交换"或者"列交换"构造的.
+
+    (这也展示了矩阵运算不符合交换律的性质)
+  }%置换矩阵结尾
 
 }%Ax = b与四个子空间结尾
 
