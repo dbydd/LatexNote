@@ -102,6 +102,7 @@
 \newcommand{\doubleCurveIntegralOnLine}[1]{\oiint_{#1}}
 \newcommand{\sumSeries}{\upDownSum{\infty}{n = 1}}
 \newcommand{\boldText}[1]{{\bfseries#1}}
+% \newcommand{\inverse}{^{-1}}
 
 \newcommand{\augmentedMatrix}[2]{
   \mathBigCase{
@@ -116,13 +117,14 @@
 \DeclareMathOperator{\arccot}{arccot}
 \DeclareMathOperator{\arcsec}{arcsec}
 \DeclareMathOperator{\arccsc}{arccsc}
+\DeclareMathOperator{\inverse}{^{-1}}
 
 \begin{document}
 \pagestyle{empty}{
   \maketitle
   \paragraph{todos}{
     \begin{enumerate}
-      \item 誊录纸质笔记\ 线性代数-矩阵乘法,逆矩阵
+      \item 誊录纸质笔记\ 线性代数-矩阵乘法,lu分解
       \item 隐函数存在定理,等幂求和,二项式系数,朱世杰恒等式.
       \item 重写线性代数
       \item 场论:p10
@@ -4069,409 +4071,570 @@ $$
             \end{itemize}
             }
     \end{itemize}
-
   }%矩阵与向量的乘法
+
+  \subsubsection{矩阵的乘法}{
+    矩阵的乘法就目前看来有四种看待方法,设$A$与$B$相乘得到$C$,其中$A$为$m \times n$矩阵,而$B$为$n \times p$矩阵,则$C$为$m \times p$矩阵.记$c_{ij}$为矩阵$c$中第$i$行$j$列的元素 :
+
+    \begin{itemize}
+      \item {
+            标准方法(行乘列) :
+
+            矩阵乘法的标准计算方法是取矩阵$A$的第$i$行的行向量和矩阵$B$第$j$列的列向量作点乘得到$C_{ij}$.
+            $$
+              c_{ij} = \upDownSum{n}{k = 1}a_{ik}b_{ik} = a_{i1}b_{1j} + a_{i2}b_{2j} + a_{i3}b_{3j} + \dots
+            $$
+
+            \begin{center}
+              \includegraphics{resources/MatrixMultiple_1.png}
+            \end{center}
+
+            (原理是矩阵相乘可以看作方程组相乘)
+            % #TODO 待补充
+            }
+    \end{itemize}
+  }%矩阵的乘法
+
+  \subsubsection{逆矩阵}{
+    如果将矩阵看作一种函数,逆矩阵则是他的逆函数,即 :
+    $$
+      \mbox{设}A\vec{x} = \vec{b},\mbox{则}A\inverse\vec{b} = \vec{x}
+    $$
+
+    而且 :
+    $$
+      AB = C,\mbox{则}A\inverse C = B\ (A,B,C\mbox{都是矩阵})
+    $$
+
+    因此 :
+    $$
+      A\inverse A = AA\inverse = I
+    $$
+
+    从消元矩阵的角度看,逆矩阵就是反转了消元矩阵的消元操作.
+  }%逆矩阵结尾
 
 }%一些杂七杂八的前置/补充结尾
 
 \subsection{$A\vec{x} = \vec{b}$与四个子空间}{
 
-  \subsubsection{线性方程的几何图像}{
-    线性代数的基本问题就是解$n$元一次方程组 :
+\subsubsection{线性方程的几何图像}{
+  线性代数的基本问题就是解$n$元一次方程组 :
 
-    \begin{center}
-      $2x - y = 0$
+  \begin{center}
+    $2x - y = 0$
 
-      $-x + 2y = 3$
-    \end{center}
+    $-x + 2y = 3$
+  \end{center}
 
-    将$x$和$y$抽离出来,可以写成矩阵乘以列向量的形式 :
+  将$x$和$y$抽离出来,可以写成矩阵乘以列向量的形式 :
 
-    $$
-      \begin{bmatrix}
-        2  & -1 \\
-        -1 & 2
-      \end{bmatrix}
-      \begin{bmatrix}
-        x \\
-        y
-      \end{bmatrix}
-      =
-      \begin{bmatrix}
-        0 \\
-        3
-      \end{bmatrix}
-    $$
+  $$
+    \begin{bmatrix}
+      2  & -1 \\
+      -1 & 2
+    \end{bmatrix}
+    \begin{bmatrix}
+      x \\
+      y
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      0 \\
+      3
+    \end{bmatrix}
+  $$
 
-    其中$A = \begin{bmatrix}
-        2  & -1 \\
-        -1 & 2
-      \end{bmatrix}$
-    称为系数矩阵(coefficient matrix).
+  其中$A = \begin{bmatrix}
+      2  & -1 \\
+      -1 & 2
+    \end{bmatrix}$
+  称为系数矩阵(coefficient matrix).
 
-    未知数向量记作$\vec{x} = \begin{bmatrix}
-        x \\
-        y
-      \end{bmatrix}$.
+  未知数向量记作$\vec{x} = \begin{bmatrix}
+      x \\
+      y
+    \end{bmatrix}$.
 
-    而右侧的向量记为$\vec{b}$.
+  而右侧的向量记为$\vec{b}$.
 
-    由此线性方程组可记作$A\vec{x} = \vec{b}$.
-  }%线性方程的几何图像结尾
+  由此线性方程组可记作$A\vec{x} = \vec{b}$.
+}%线性方程的几何图像结尾
 
-  \subsubsection{行图像}{
-    \begin{multicols}{2}
-      {
-        \includegraphics{resources/row_picture_1.png}
-      }
+\subsubsection{行图像}{
+  \begin{multicols}{2}
+    {
+      \includegraphics{resources/row_picture_1.png}
+    }
 
-      {
-        一次取一行,作出行图像.
+    {
+      一次取一行,作出行图像.
 
-        行图像遵从解析几何的描述,每个方程在平面上的图像为一条直线.找到符合方程的两个数组,就可以确定出$xy$平面上的两个点,连接两点可以画出该方程所代表的直线.两直线交点即为方程组的解:\\$x=1,y=2$.
-      }
-    \end{multicols}
-  }%行图像结尾
+      行图像遵从解析几何的描述,每个方程在平面上的图像为一条直线.找到符合方程的两个数组,就可以确定出$xy$平面上的两个点,连接两点可以画出该方程所代表的直线.两直线交点即为方程组的解:\\$x=1,y=2$.
+    }
+  \end{multicols}
+}%行图像结尾
 
-  \subsubsection{列图像}{
-    在列图像中,将$A\vec{x}$化成线性组合的形式 :
-    $$
-      \begin{bmatrix}
-        2  & -1 \\
-        -1 & 2
-      \end{bmatrix}
-      \begin{bmatrix}
-        x \\
-        y
-      \end{bmatrix}
-      =
-      x\begin{bmatrix}
+\subsubsection{列图像}{
+  在列图像中,将$A\vec{x}$化成线性组合的形式 :
+  $$
+    \begin{bmatrix}
+      2  & -1 \\
+      -1 & 2
+    \end{bmatrix}
+    \begin{bmatrix}
+      x \\
+      y
+    \end{bmatrix}
+    =
+    x\begin{bmatrix}
+      2 \\
+      -1
+    \end{bmatrix}
+    +
+    y\begin{bmatrix}
+      -1 \\
+      2
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      0 \\
+      3
+    \end{bmatrix}
+  $$
+
+  这样一来问题就变成了:寻找合适的矩阵$A$的列向量的线性组合以构成向量$\vec{b}$.
+
+  人话就是说 : 需要寻找满足要求的标量x和y来放缩$\begin{bmatrix}
+      2 \\
+      -1
+    \end{bmatrix}$
+  和$\begin{bmatrix}
+      -1 \\
+      2
+    \end{bmatrix}$
+  使得他们相加的结果等于$\begin{bmatrix}
+      0 \\
+      3
+    \end{bmatrix}$.
+
+  \begin{multicols}{2}
+    \includegraphics{resources/colum_picture_1.png}
+
+    可以看到:只需要一倍的$\begin{bmatrix}
         2 \\
         -1
-      \end{bmatrix}
-      +
-      y\begin{bmatrix}
-        -1 \\
-        2
-      \end{bmatrix}
-      =
-      \begin{bmatrix}
-        0 \\
-        3
-      \end{bmatrix}
-    $$
-
-    这样一来问题就变成了:寻找合适的矩阵$A$的列向量的线性组合以构成向量$\vec{b}$.
-
-    人话就是说 : 需要寻找满足要求的标量x和y来放缩$\begin{bmatrix}
-        2 \\
-        -1
       \end{bmatrix}$
-    和$\begin{bmatrix}
+    加上两倍的$\begin{bmatrix}
         -1 \\
         2
       \end{bmatrix}$
-    使得他们相加的结果等于$\begin{bmatrix}
-        0 \\
-        3
-      \end{bmatrix}$.
+    就可以得到向量$\vec{b}$,因此 : $\vec{a} = \begin{bmatrix}
+        1 \\
+        2
+      \end{bmatrix}$,
+    即 : $x = 1,y = 2$.
+  \end{multicols}
 
-    \begin{multicols}{2}
-      \includegraphics{resources/colum_picture_1.png}
+  一直任意取$x,y$进行线性组合,最后会得到整个坐标平面.
 
-      可以看到:只需要一倍的$\begin{bmatrix}
-          2 \\
-          -1
-        \end{bmatrix}$
-      加上两倍的$\begin{bmatrix}
-          -1 \\
-          2
-        \end{bmatrix}$
-      就可以得到向量$\vec{b}$,因此 : $\vec{a} = \begin{bmatrix}
-          1 \\
-          2
-        \end{bmatrix}$,
-      即 : $x = 1,y = 2$.
-    \end{multicols}
+  在这方面,列图像相对于行图像的优点在于:如果$\vec{b}$改变了,那么对于行图像而言一切都变了,而对于列图像而言:列向量不需要发生变化,只需要寻找一个新的线性组合来得到新的$\vec{b}$.
+}%列图像结尾
 
-    一直任意取$x,y$进行线性组合,最后会得到整个坐标平面.
+\subsubsection{线性相关,线性无关}{
+  问题 : 是否对于所有的$A\vec{x} = \vec{b}$都能找到解$\vec{x}$?
 
-    在这方面,列图像相对于行图像的优点在于:如果$\vec{b}$改变了,那么对于行图像而言一切都变了,而对于列图像而言:列向量不需要发生变化,只需要寻找一个新的线性组合来得到新的$\vec{b}$.
-  }%列图像结尾
+  拿三维的情况来说,很容易就能联想到 : 列向量的所有线性组合是否覆盖了整个空间?
 
-  \subsubsection{线性相关,线性无关}{
-    问题 : 是否对于所有的$A\vec{x} = \vec{b}$都能找到解$\vec{x}$?
+  很明显,并不是所有的情况都这么幸运,如果三个列向量中有两个向量的线性组合可以得到第三个向量,或者干脆三个列向量互为倍数-前者意味着三个向量处在同一平面,后者意味着三个向量处于同一直线,这种情况下这三个向量的组合就永远只能得到平面/直线上的其他向量.如果向量$b$不在平面/线上,那么就永远不可能得到解.此时称矩阵$A$为奇异矩阵(或不可逆矩阵),在矩阵$A$不可逆的条件下,不是所有的$\vec{b}$都能令$A\vec{x} = \vec{b}$有解.
 
-    拿三维的情况来说,很容易就能联想到 : 列向量的所有线性组合是否覆盖了整个空间?
+  \textcolor{red}{从行图像的角度来看:当方程所代表的三个平面相交于一点时方程有唯一解;三个平面中至少两个平行则方程无解;平面的两两交线互相平行方程也无解;三个平面交于一条直线则方程有无穷多解.}
 
-    很明显,并不是所有的情况都这么幸运,如果三个列向量中有两个向量的线性组合可以得到第三个向量,或者干脆三个列向量互为倍数-前者意味着三个向量处在同一平面,后者意味着三个向量处于同一直线,这种情况下这三个向量的组合就永远只能得到平面/直线上的其他向量.如果向量$b$不在平面/线上,那么就永远不可能得到解.此时称矩阵$A$为奇异矩阵(或不可逆矩阵),在矩阵$A$不可逆的条件下,不是所有的$\vec{b}$都能令$A\vec{x} = \vec{b}$有解.
+  \begin{center}
+    \includegraphics{resources/lineardepedent_independent_1.png}
+  \end{center}
 
-    \textcolor{red}{从行图像的角度来看:当方程所代表的三个平面相交于一点时方程有唯一解;三个平面中至少两个平行则方程无解;平面的两两交线互相平行方程也无解;三个平面交于一条直线则方程有无穷多解.}
+  推广到$n$维:一个向量组有$n$个向量,如果$n$个向量相互独立,则称这组向量\boldText{线性无关},否则就是\boldText{线性相关}.
+}%线性相关,线性无关结尾
 
-    \begin{center}
-      \includegraphics{resources/lineardepedent_independent_1.png}
-    \end{center}
+\subsubsection{矩阵消元(消元法)(初等变换)}{
+  消元法是一种很自然的求解线性方程组的解法.任何情况下,只要矩阵$A$可逆,那么总可以通过消元法求得$A\vec{x} = \vec{b}$的解.
 
-    推广到$n$维:一个向量组有$n$个向量,如果$n$个向量相互独立,则称这组向量\boldText{线性无关},否则就是\boldText{线性相关}.
-  }%线性相关,线性无关结尾
+  消元法与初等变换有同样的形式.事实上从本质来说是一种东西,叫法取决于用途.
 
-  \subsubsection{矩阵消元(消元法)(初等变换)}{
-    消元法是一种很自然的求解线性方程组的解法.任何情况下,只要矩阵$A$可逆,那么总可以通过消元法求得$A\vec{x} = \vec{b}$的解.
+  概括来说,初等变换/消元法是指以下操作 :
 
-    消元法与初等变换有同样的形式.事实上从本质来说是一种东西,叫法取决于用途.
+  \begin{itemize}
+    \item {
+          初等行变换 :
+          \begin{itemize}
+            \item 交换两行
+            \item 用$k(k \neq 0)$乘以某一行
+            \item 某一行的$L$倍加到另一行上去($L$可以为0)
+          \end{itemize}
+          }
+    \item {
+          初等列变换 :
+          \begin{itemize}
+            \item 交换两列
+            \item 用$k(k \neq 0)$乘以某一列
+            \item 某一列的$L$倍加到另一列上去($L$可以为0)
+          \end{itemize}
+          }
+  \end{itemize}
 
-    概括来说,初等变换/消元法是指以下操作 :
+  设矩阵 :
+  $$
+    A = \begin{bmatrix}
+      1 & 2 & 1 \\
+      3 & 8 & 1 \\
+      0 & 4 & 1
+    \end{bmatrix}
+  $$
 
-    \begin{itemize}
-      \item {
-            初等行变换 :
-            \begin{itemize}
-              \item 交换两行
-              \item 用$k(k \neq 0)$乘以某一行
-              \item 某一行的$L$倍加到另一行上去($L$可以为0)
-            \end{itemize}
-            }
-      \item {
-            初等列变换 :
-            \begin{itemize}
-              \item 交换两列
-              \item 用$k(k \neq 0)$乘以某一列
-              \item 某一列的$L$倍加到另一列上去($L$可以为0)
-            \end{itemize}
-            }
-    \end{itemize}
+  将矩阵对角线上的元素称为主元,从左上角向右下角依次编号为:主元一,主元二$\dots$
 
-    设矩阵 :
-    $$
-      A = \begin{bmatrix}
+  消元的步骤如下,两个矩阵之间应当用箭头相连 :
+  $$
+    A = \begin{bmatrix}
+      \boxed{1} & 2 & 1 \\
+      3         & 8 & 1 \\
+      0         & 4 & 1
+    \end{bmatrix}
+    \xrightarrow{\mbox{第一行乘以-3加到第三行}}
+    \begin{bmatrix}
+      \boxed{1} & 2         & 1  \\
+      0         & \boxed{2} & -2 \\
+      0         & 4         & 1
+    \end{bmatrix}
+    \xrightarrow{\mbox{第二行乘以-2加到第三行}}
+    U = \begin{bmatrix}
+      \boxed{1} & 2         & 1         \\
+      0         & \boxed{2} & -2        \\
+      0         & 0         & \boxed{5} \\
+    \end{bmatrix}
+  $$
+
+  矩阵$A$为可逆矩阵,那么消元结束后的结果就是上三角阵$U$(Uppertriangular matrix).$U$的主对角线以下全为0,并且行列式等于其主元之积.
+
+  需要说明的是,主元不能为$0$,如果恰好消元至某行,$0$出现在了主元的位置上,应当通过与下方一行进行“行交换”使得非零数字出现在主元位置上.如果$0$出现在了主元位置上,并且下方没有对等位置为非$0$数字的行,则消元终止,并证明矩阵$A$为不可逆矩阵,且线性方程组没有唯一解.
+
+  $$
+    \mbox{就像这样 : }\begin{bmatrix}
+      * & * & * \\
+      0 & * & * \\
+      0 & 0 & 0
+    \end{bmatrix}
+  $$
+}%矩阵消元(消元法)结尾
+
+\subsubsection{高斯消元法}{
+  高斯消元法(Gauss elimination)就是通过对方程组中的某两个方程进行适当的数乘和加减,以达到将其中某个方程的某个系数变为0,从而简化整个方程组的目的.
+
+  设线性方程组 :
+  $$
+    A = \begin{bmatrix}
+      1 & 2 & 1 \\
+      3 & 8 & 1 \\
+      0 & 4 & 1
+    \end{bmatrix}
+    \
+    \vec{x} = \begin{bmatrix}
+      x \\
+      y \\
+      z
+    \end{bmatrix}
+    \
+    \vec{b} = \begin{bmatrix}
+      2  \\
+      12 \\
+      2
+    \end{bmatrix}
+  $$
+
+  做方程的高斯消元时,需要对等式右侧的$\vec{b}$做同样的变换.手动计算时比较方便有效率的方法是应用"增广矩阵(augmented matrix)",给矩阵$A$后面再加一列,中间用线隔开,在消元过程中带着$\vec{b}$一起操作 :
+
+  $$
+    \augmentedMatrix{
+      \begin{matrix}
         1 & 2 & 1 \\
         3 & 8 & 1 \\
         0 & 4 & 1
-      \end{bmatrix}
-    $$
-
-    将矩阵对角线上的元素称为主元,从左上角向右下角依次编号为:主元一,主元二$\dots$
-
-    消元的步骤如下,两个矩阵之间应当用箭头相连 :
-    $$
-      A = \begin{bmatrix}
-        \boxed{1} & 2 & 1 \\
-        3         & 8 & 1 \\
-        0         & 4 & 1
-      \end{bmatrix}
-      \xrightarrow{\mbox{第一行乘以-3加到第三行}}
-      \begin{bmatrix}
-        \boxed{1} & 2         & 1  \\
-        0         & \boxed{2} & -2 \\
-        0         & 4         & 1
-      \end{bmatrix}
-      \xrightarrow{\mbox{第二行乘以-2加到第三行}}
-      U = \begin{bmatrix}
-        \boxed{1} & 2         & 1         \\
-        0         & \boxed{2} & -2        \\
-        0         & 0         & \boxed{5} \\
-      \end{bmatrix}
-    $$
-
-    矩阵$A$为可逆矩阵,那么消元结束后的结果就是上三角阵$U$(Uppertriangular matrix).$U$的主对角线以下全为0,并且行列式等于其主元之积.
-
-    需要说明的是,主元不能为$0$,如果恰好消元至某行,$0$出现在了主元的位置上,应当通过与下方一行进行“行交换”使得非零数字出现在主元位置上.如果$0$出现在了主元位置上,并且下方没有对等位置为非$0$数字的行,则消元终止,并证明矩阵$A$为不可逆矩阵,且线性方程组没有唯一解.
-
-    $$
-      \mbox{就像这样 : }\begin{bmatrix}
-        * & * & * \\
-        0 & * & * \\
-        0 & 0 & 0
-      \end{bmatrix}
-    $$
-  }%矩阵消元(消元法)结尾
-
-  \subsubsection{高斯消元法}{
-    高斯消元法(Gauss elimination)就是通过对方程组中的某两个方程进行适当的数乘和加减,以达到将其中某个方程的某个系数变为0,从而简化整个方程组的目的.
-
-    设线性方程组 :
-    $$
-      A = \begin{bmatrix}
-        1 & 2 & 1 \\
-        3 & 8 & 1 \\
-        0 & 4 & 1
-      \end{bmatrix}
-      \
-      \vec{x} = \begin{bmatrix}
-        x \\
-        y \\
-        z
-      \end{bmatrix}
-      \
-      \vec{b} = \begin{bmatrix}
+      \end{matrix}
+    }{
+      \begin{matrix}
         2  \\
         12 \\
         2
-      \end{bmatrix}
-    $$
-
-    做方程的高斯消元时,需要对等式右侧的$\vec{b}$做同样的变换.手动计算时比较方便有效率的方法是应用"增广矩阵(augmented matrix)",给矩阵$A$后面再加一列,中间用线隔开,在消元过程中带着$\vec{b}$一起操作 :
-
-    $$
-      \augmentedMatrix{
-        \begin{matrix}
-          1 & 2 & 1 \\
-          3 & 8 & 1 \\
-          0 & 4 & 1
-        \end{matrix}
-      }{
-        \begin{matrix}
-          2  \\
-          12 \\
-          2
-        \end{matrix}
-      }
-      \to
-      \augmentedMatrix{
-        \begin{matrix}
-          1 & 2 & 1  \\
-          0 & 2 & -2 \\
-          0 & 4 & 1
-        \end{matrix}
-      }{
-        \begin{matrix}
-          2 \\
-          6 \\
-          2
-        \end{matrix}
-      }
-      \to
-      \augmentedMatrix{
-        \begin{matrix}
-          1 & 2 & 1  \\
-          0 & 2 & -2 \\
-          0 & 0 & 5
-        \end{matrix}
-      }{
-        \begin{matrix}
-          2 \\
-          6 \\
-          -10
-        \end{matrix}
-      }
-    $$
-
-    此时就将原方程$A\vec{x} = \vec{b}$转化成了新的方程$U\vec{x} = \vec{c}$,其中$\vec{c} = \begin{bmatrix}
-        2 \\
-        6 \\
-        -10
-      \end{bmatrix}$.
-
-    从最后一行得知$z = -2$,依次回代还可得到$y = 1,x = 2$.
-
-    需要说明的是,主元不能为$0$,如果恰好消元至某行,$0$出现在了主元的位置上,应当通过与下方一行进行“行交换”使得非零数字出现在主元位置上.如果$0$出现在了主元位置上,并且下方没有对等位置为非$0$数字的行,则消元终止,并证明矩阵$A$为不可逆矩阵,且线性方程组没有唯一解.
-  }%高斯消元法结尾
-
-  \subsubsection{消元矩阵}{
-    矩阵运算的核心内容就是对行或者列进行独立操作.
-
-    消元矩阵则是记录这些操作的载体.
-
-    以上一章的的消元为例,写出增广矩阵,右侧为单位阵$I$(或者$E$) :
-    $$
-      \augmentedMatrix{
-        \begin{matrix}
-          1 & 0 & 0 \\
-          0 & 1 & 0 \\
-          0 & 0 & 1
-        \end{matrix}
-      }{
-        \begin{matrix}
-          1 & 2 & 1 \\
-          3 & 8 & 1 \\
-          0 & 4 & 1
-        \end{matrix}
-      }
-    $$
-
-    作第一步替换,得到的矩阵是 :
-    $$
-      \augmentedMatrix{
-        \begin{matrix}
-          1  & 0 & 0 \\
-          -3 & 1 & 0 \\
-          0  & 0 & 1
-        \end{matrix}
-      }{
-        \begin{matrix}
-          1 & 2 & 1  \\
-          0 & 2 & -2 \\
-          0 & 4 & 1
-        \end{matrix}
-      }
-    $$
-
-    此时右侧的矩阵就是表示这一步初等变换的"消元矩阵",消元矩阵乘以被消元的矩阵就是结果矩阵.他的第二行表示:取被消元矩阵\ $-3$倍的行一,$1$倍的行二,$0$倍的行三\ 进行\boldText{线性组合}作为结果矩阵的第$2$行 :
-
-    $$
-      \begin{bmatrix}
-        1  & 0 & 0 \\
-        -3 & 1 & 0 \\
-        0  & 0 & 1
-      \end{bmatrix}
-      \begin{bmatrix}
-        1 & 2 & 1 \\
-        3 & 8 & 1 \\
-        0 & 4 & 1
-      \end{bmatrix}
-      =
-      \begin{bmatrix}
+      \end{matrix}
+    }
+    \to
+    \augmentedMatrix{
+      \begin{matrix}
         1 & 2 & 1  \\
         0 & 2 & -2 \\
         0 & 4 & 1
-      \end{bmatrix}
-    $$
+      \end{matrix}
+    }{
+      \begin{matrix}
+        2 \\
+        6 \\
+        2
+      \end{matrix}
+    }
+    \to
+    \augmentedMatrix{
+      \begin{matrix}
+        1 & 2 & 1  \\
+        0 & 2 & -2 \\
+        0 & 0 & 5
+      \end{matrix}
+    }{
+      \begin{matrix}
+        2 \\
+        6 \\
+        -10
+      \end{matrix}
+    }
+  $$
 
-    各个消元矩阵可以相乘复合,产生的矩阵右乘被消元矩阵可以一步到位,完成被复合的那些矩阵所做的初等变换.
+  此时就将原方程$A\vec{x} = \vec{b}$转化成了新的方程$U\vec{x} = \vec{c}$,其中$\vec{c} = \begin{bmatrix}
+      2 \\
+      6 \\
+      -10
+    \end{bmatrix}$.
 
-    即 : 设第一步消元矩阵为$El_1$,第二步为$El_2$,最初的被消元矩阵为$A$,则:
-    $$
-      El_2(El_1 A) = (El_1 El_2)A
-    $$
-  }%消元矩阵结尾
+  从最后一行得知$z = -2$,依次回代还可得到$y = 1,x = 2$.
 
-  \subsubsection{置换矩阵}{
-    置换矩阵表示了初等变换中的"交换两行"或者"交换两列"的操作.左乘被置换矩阵为行变换,右乘为列变换,比如 :
-    $$
-      \begin{bmatrix}
-        0 & 1 \\
-        1 & 0
-      \end{bmatrix}
-      \begin{bmatrix}
-        a & b \\
-        c & d
-      \end{bmatrix}
-      =
-      \begin{bmatrix}
-        c & d \\
-        a & b
-      \end{bmatrix}
-    $$
-    $$
-      \begin{bmatrix}
-        a & b \\
-        c & d
-      \end{bmatrix}
-      \begin{bmatrix}
-        0 & 1 \\
-        1 & 0
-      \end{bmatrix}
-      =
-      \begin{bmatrix}
-        b & a \\
-        d & c
-      \end{bmatrix}
-    $$
+  需要说明的是,主元不能为$0$,如果恰好消元至某行,$0$出现在了主元的位置上,应当通过与下方一行进行“行交换”使得非零数字出现在主元位置上.如果$0$出现在了主元位置上,并且下方没有对等位置为非$0$数字的行,则消元终止,并证明矩阵$A$为不可逆矩阵,且线性方程组没有唯一解.
+}%高斯消元法结尾
 
-    原理上也可以用线性组合的思想来解释,"线性代数"章节中置换矩阵可以简称为$P$,$P$矩阵是通过对$I$矩阵进行"行交换"或者"列交换"构造的.
+\subsubsection{消元矩阵}{
+矩阵运算的核心内容就是对行或者列进行独立操作.
 
-    (这也展示了矩阵运算不符合交换律的性质)
-  }%置换矩阵结尾
+消元矩阵则是记录这些操作的载体.
+
+以上一章的的消元为例,写出增广矩阵,右侧为单位阵$I$(或者$E$) :
+$$
+  \augmentedMatrix{
+    \begin{matrix}
+      1 & 0 & 0 \\
+      0 & 1 & 0 \\
+      0 & 0 & 1
+    \end{matrix}
+  }{
+    \begin{matrix}
+      1 & 2 & 1 \\
+      3 & 8 & 1 \\
+      0 & 4 & 1
+    \end{matrix}
+  }
+$$
+
+作第一步替换,得到的矩阵是 :
+$$
+  \augmentedMatrix{
+    \begin{matrix}
+      1  & 0 & 0 \\
+      -3 & 1 & 0 \\
+      0  & 0 & 1
+    \end{matrix}
+  }{
+    \begin{matrix}
+      1 & 2 & 1  \\
+      0 & 2 & -2 \\
+      0 & 4 & 1
+    \end{matrix}
+  }
+$$
+
+此时右侧的矩阵就是表示这一步初等变换的"消元矩阵",消元矩阵乘以被消元的矩阵就是结果矩阵.他的第二行表示:取被消元矩阵\ $-3$倍的行一,$1$倍的行二,$0$倍的行三\ 进行\boldText{线性组合}作为结果矩阵的第$2$行 :
+
+$$
+  \begin{bmatrix}
+    1  & 0 & 0 \\
+    -3 & 1 & 0 \\
+    0  & 0 & 1
+  \end{bmatrix}
+  \begin{bmatrix}
+    1 & 2 & 1 \\
+    3 & 8 & 1 \\
+    0 & 4 & 1
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    1 & 2 & 1  \\
+    0 & 2 & -2 \\
+    0 & 4 & 1
+  \end{bmatrix}
+$$
+
+各个消元矩阵可以相乘复合,产生的矩阵右乘被消元矩阵可以一步到位,完成被复合的那些矩阵所做的初等变换.
+
+即 : 设第一步消元矩阵为${E_l}_1$,第二步为${E_l}_2$,最初的被消元矩阵为$A$,则:
+$$
+  {E_l}_2({E_l}_1 A) = ({E_l}_1 {E_l}_2)A
+$$
+}%消元矩阵结尾
+
+\subsubsection{置换矩阵}{
+  置换矩阵表示了初等变换中的"交换两行"或者"交换两列"的操作.左乘被置换矩阵为行变换,右乘为列变换,比如 :
+  $$
+    \begin{bmatrix}
+      0 & 1 \\
+      1 & 0
+    \end{bmatrix}
+    \begin{bmatrix}
+      a & b \\
+      c & d
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      c & d \\
+      a & b
+    \end{bmatrix}
+  $$
+  $$
+    \begin{bmatrix}
+      a & b \\
+      c & d
+    \end{bmatrix}
+    \begin{bmatrix}
+      0 & 1 \\
+      1 & 0
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      b & a \\
+      d & c
+    \end{bmatrix}
+  $$
+
+  原理上也可以用线性组合的思想来解释,"线性代数"章节中置换矩阵可以简称为$P$,$P$矩阵是通过对$I$矩阵进行"行交换"或者"列交换"构造的.
+
+  (这也展示了矩阵运算不符合交换律的性质)
+}%置换矩阵结尾
+
+\subsubsection{可逆矩阵,方程的非零解}{
+  如果矩阵$A$是方阵,且存在逆矩阵$A\inverse$,使得$A\inverse A = AA\inverse = I$(左逆矩阵等于右逆矩阵).则称矩阵$A$可逆(invertible),或者矩阵$A$非奇异(nonsingular).反之,如果$A$为奇异矩阵,则其没有逆矩阵,行列式也为0.
+
+  另一个等价的说法是 : $A$为奇异矩阵,则方程$A\vec{x} = \vec{0}$存在非零解$\vec{x}$,比如 :
+  $$
+    \begin{bmatrix}
+      1 & 3 \\
+      2 & 6
+    \end{bmatrix}
+    \begin{bmatrix}
+      -3 \\
+      1
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      0 \\
+      0
+    \end{bmatrix}
+  $$
+
+  在这个二阶矩阵的例子中,两个列向量指向同一方向.不可逆矩阵中总有列向量对生成线性组合没有贡献(不是最大线性无关组),等价的说法还有 : 不可逆矩阵的列向量可以通过线性组合得到$0$.
+
+  换而言之,若矩阵$A$存在逆矩阵,则方程$A\vec{x} = \vec{0}$只有零解.证明很容易,只需要简单的反证法 : 假设存在非零解$\vec{x}$,则有$x = (A\inverse A)\vec{x} = A\inverse(A\vec{x}) = A\inverse\vec{0} = \vec{0}$,矛盾.
+
+  对于可逆矩阵,求他的逆矩阵是一个重要的问题 :
+  $$
+    \underset{A}{\begin{bmatrix}
+        1 & 3 \\
+        2 & 7
+      \end{bmatrix}}
+    \underset{A\inverse}{\begin{bmatrix}
+        a & c \\
+        b & d
+      \end{bmatrix}}
+    =
+    \underset{I}{\begin{bmatrix}
+        1 & 0 \\
+        0 & 1
+      \end{bmatrix}}
+  $$
+
+  从"列操作"以及"矩阵相乘"的角度看,求逆矩阵过程其实和求$A\vec{x} = \vec{b}$差不多,只是要求多组解.(此处$\vec{x}$为矩阵$A\inverse$的第i列,而$\vec{b}$为单位阵$I$的第$j$列.)
+}%可逆矩阵,方程的非零解结尾
+
+\subsubsection{高斯-若尔当消元法(Gauss-Jordan Elimination)(初等变换法)求逆矩阵}{
+如同上面一章中说的,对上面一章结尾的二阶矩阵求逆相当于解两组方程 :
+$$
+  \begin{bmatrix}
+    1 & 3 \\
+    2 & 7
+  \end{bmatrix}
+  \begin{bmatrix}
+    a \\
+    b
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    1 \\
+    0
+  \end{bmatrix}
+  \mbox{和}
+  \begin{bmatrix}
+    1 & 3 \\
+    2 & 7
+  \end{bmatrix}
+  \begin{bmatrix}
+    c \\
+    d
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    0 \\
+    1
+  \end{bmatrix}
+$$
+
+而高斯-若尔当消元法(国内通常称为 : 初等变换法)可以同时处理这两个方程 :
+$$
+  \augmentedMatrix{
+    \begin{matrix}
+      1 & 3 \\
+      2 & 7
+    \end{matrix}
+  }{
+    \begin{matrix}
+      1 & 0 \\
+      0 & 1
+    \end{matrix}
+  }
+  \to
+  \augmentedMatrix{
+    \begin{matrix}
+      1 & 3 \\
+      0 & 1
+    \end{matrix}
+  }{
+    \begin{matrix}
+      1  & 0 \\
+      -2 & 1
+    \end{matrix}
+  }
+  \to
+  \augmentedMatrix{
+    \begin{matrix}
+      1 & 0 \\
+      0 & 1
+    \end{matrix}
+  }{
+    \begin{matrix}
+      7  & -3 \\
+      -2 & 1
+    \end{matrix}
+  }
+$$
+
+对$A$进行一系列消元操作,也等于左乘消元矩阵$E_l$,此时消元的结果为$E_l A = I$,因为右侧矩阵也同样被左乘了消元矩阵,又因为右侧是单位阵,所以右侧矩阵$E_l I = E_l$.又由$E_l A = I$可知$E_l$就是$A$的逆矩阵,因此右侧矩阵给出的就是逆矩阵$E_l = A\inverse$.
+$$
+  E_l[A|I] = [E_lA|E_lI] = [I|A\inverse]
+$$
+}%高斯-若尔当消元法(初等变换法)求逆矩阵
 
 }%Ax = b与四个子空间结尾
 
