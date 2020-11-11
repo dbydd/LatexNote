@@ -14,6 +14,7 @@
 \usepackage{pgfplots}
 \usepackage{listings}
 \usepackage{multicol}
+\usepackage{pdfpages}
 
 \usetikzlibrary{svg.path}
 \usetikzlibrary{positioning}
@@ -102,6 +103,7 @@
 \newcommand{\doubleCurveIntegralOnLine}[1]{\oiint_{#1}}
 \newcommand{\sumSeries}{\upDownSum{\infty}{n = 1}}
 \newcommand{\boldText}[1]{{\bfseries#1}}
+\newcommand{\bookName}[1]{$\ll$#1$\gg$}
 % \newcommand{\inverse}{^{-1}}
 
 \newcommand{\augmentedMatrix}[2]{
@@ -2100,16 +2102,59 @@ $R_n(x)$是余项,表示误差,是$(x - a)^n$的高阶无穷小$O((x - a)^n)$.�
   有以下几种情况:
   \begin{enumerate}
     \item $Q(x) = 0\ \to$齐次方程,则$\cfrac{dy}{dx} = -p(x)y\ \to \ \cfrac{dy}{y} = -p(x)dx$,然后两边求积分,从而得出:$y = e^{-\int p(x)dx}e^{\mathConstant_1} = C \cdot e^{-\int p(x)dx}$
-    \item $\cfrac{dy}{dx} + p(x)y = Q(x), Q(x) \neq 0$,也就是非齐次方程.设$y = ue^{-\int p(x)dx, u}$是未知量.然后把$y$代入:\\ $u\derivative e^{-\int p(x)dx} - ue^{-\int p(x)dx} + p(x)u^{e}-\int p(x)dx = Q(x)$,从而推出:$u\derivative e^{-\int p(x)dx} = Q(x)$,并且由$u\derivative = Q(X)e^{\int p(x)dx}$从而推出:$\int Q(x)e^{\int p(x)dx}dx + \mathConstant$.将以上带入,得出:$y = e^{-\int p(x)dx}\cdot(\int Q(x)e^{\int p(x)dx}dx + \mathConstant)$
+    \item {
+          $\cfrac{dy}{dx} + p(x)y = Q(x), Q(x) \neq 0$,也就是非齐次方程.设$y = ue^{-\int p(x)dx, u}$是未知量.然后把$y$代入:
+
+          $$
+            u\derivative e^{-\int p(x)dx} - ue^{-\int p(x)dx}p(x) + p(x)ue^{-\int p(x)dx} = Q(x)
+          $$
+
+          从而推出:
+          $$
+            u\derivative e^{-\int p(x)dx} = Q(x)
+          $$
+
+          因此$u\derivative = Q(x)e^{\int p(x)dx}$,从而推出:
+          $$
+            u = \int Q(x)e^{\int p(x)dx}dx + \mathConstant
+          $$
+
+          将以上带入,得出:$y = e^{-\int p(x)dx}\cdot(\int Q(x)e^{\int p(x)dx}dx + \mathConstant)$\ (通用公式)
+          }
   \end{enumerate}
 
   注:一个非齐次线性微分方程的通解等于对应的齐次微分方程的通解与非齐次微分方程的一个特解之和.
 
 }%一阶线性微分方程结尾
 
-\subsubsection{*有疑惑/错误\ 伯努利方程}{
-  $\cfrac{dy}{dx} + p(x)y = Q(x)y^n$.当$n = 0$时,此式为齐次方程,当$n = 1$,为一阶线性微分方程.当$n$不等于0也不等于1时:$y^{-n}\cfrac{dy}{dx} + p(x)y^{1-n} = Q(x)$.将$y^{1-n}$记作$z$,于是得到$\cfrac{dz}{dx} = (1-n)y^{-n}\cfrac{dy}{dx},\cfrac{1}{1-n}\cfrac{dz}{dx} + p(x)z = Q(x)$,再变形得到:$\cfrac{dz}{dx} + (1-n)p(x)z = (1-n)Q(x)$.然后两边求$y$,左边不要带入.
-  %#TODO 检查笔记.
+\subsubsection{伯努利方程}{
+  $$
+    \cfrac{dy}{dx} + p(x)y = Q(x)y^n
+  $$
+
+  当$n = 0$时,此式为齐次方程,当$n = 1$,为一阶线性微分方程.
+
+  当$n$即不等于$0$也不等于$1$时,用$y^n$除以两边,得到 :
+  $$
+    y^{-n}\cfrac{dy}{dx} + p(x)y^{1 - n} = Q(x)
+  $$
+
+  设$y^{1 - n} = z$,则 :
+  $$
+    \cfrac{dz}{dx} = (1 - n)y^{-n}\cfrac{dy}{dx} \to \cfrac{1}{1 - n}\cfrac{dz}{dx} = y^{-n}\cfrac{dy}{dx}
+  $$
+
+  代入原方程,则原式等于 :
+  $$
+    \cfrac{1}{1 - n}\cfrac{dz}{dx} + p(x)z = Q(x)
+  $$
+
+  再两侧同乘$\cfrac{dz}{dx}$ :
+  $$
+    \cfrac{dz}{dx} + (1 - n)p(x)z = (1 - n)Q(x)
+  $$
+
+  再套用非齐次线性微分方程的公式,再把$y$求出来就行.
 }%伯努利方程结尾
 
 \subsubsection{可降阶高阶微分方程}{
@@ -2314,91 +2359,127 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
 
 \subsection{多元函数的极值与最值}{
 
-\subsubsection{多元函数的极值}{
-  \begin{itemize}
-    \item {
-          极值存在的必要条件 :
+  \subsubsection{多元函数的极值}{
+    \begin{itemize}
+      \item {
+            极值存在的必要条件 :
 
-          如果$z = \defFunction{x,y}$有偏导且在$(x_0,y_0)$存在极值,则$f\derivative_x(x_0,y_0) = 0,f\derivative_y(x_0,y_0) = 0$
+            如果$z = \defFunction{x,y}$有偏导且在$(x_0,y_0)$存在极值,则$f\derivative_x(x_0,y_0) = 0,f\derivative_y(x_0,y_0) = 0$
 
-          驻点此时指偏导等于0的点,即$f\derivative_x = f\derivative_y = 0$(需要同时成立).
+            驻点此时指偏导等于0的点,即$f\derivative_x = f\derivative_y = 0$(需要同时成立).
 
-          有偏导数的函数极值点必是驻点.但是函数的驻点不一定是极值点.
-          }
-    \item {
-          极值存在的充分条件 :
+            有偏导数的函数极值点必是驻点.但是函数的驻点不一定是极值点.
+            }
+      \item {
+            极值存在的充分条件 :
 
-          依然是拿$z = \defFunction{x,y}$举例:
+            依然是拿$z = \defFunction{x,y}$举例:
 
-          首先求出驻点$(x_0,y_0)$,$A = f\doubleDerivative_{xx},B = f\doubleDerivative_{xy}(x_0,y_0),C = f\doubleDerivative_{yy}(x_0,y_0)$
+            首先求出驻点$(x_0,y_0)$,$A = f\doubleDerivative_{xx},B = f\doubleDerivative_{xy}(x_0,y_0),C = f\doubleDerivative_{yy}(x_0,y_0)$
 
-          \begin{itemize}
-            \item {当$AC-B^2 > 0$时,存在极值点.其中 :
-                  \begin{itemize}
-                    \item $A < 0$,极值点为极大值.
-                    \item $A > 0$,极值点为极小值.
-                  \end{itemize}
-                  }
-            \item 当$AC - B^2 > 0$时,无极值.
-            \item 当$AC - B^2 = 0$时,无法判断.
-          \end{itemize}
-          }
-  \end{itemize}
-}%多元函数的极值结尾
+            \begin{itemize}
+              \item {当$AC-B^2 > 0$时,存在极值点.其中 :
+                    \begin{itemize}
+                      \item $A < 0$,极值点为极大值.
+                      \item $A > 0$,极值点为极小值.
+                    \end{itemize}
+                    }
+              \item 当$AC - B^2 > 0$时,无极值.
+              \item 当$AC - B^2 = 0$时,无法判断.
+            \end{itemize}
+            }
+    \end{itemize}
+  }%多元函数的极值结尾
 
-\subsubsection{多元函数的最值}{
-  多元函数的最值一般出现在三种情况中 :
+  \subsubsection{多元函数的最值}{
+    多元函数的最值一般出现在三种情况中 :
 
-  \begin{enumerate}
-    \item 驻点
-    \item 偏导不存在的点
-    \item 端点
-  \end{enumerate}
-}%多元函数的最值结尾
+    \begin{enumerate}
+      \item 驻点
+      \item 偏导不存在的点
+      \item 端点
+    \end{enumerate}
+  }%多元函数的最值结尾
 
-\subsubsection{条件极值与拉格朗日乘数法}{
-设目标函数为$z = \defFunction{x,y}$,条件为$\varphi(x,y) = 0$
+  \subsubsection{条件极值与拉格朗日乘数法}{
+    设目标函数为$z = \defFunction{x,y}$,条件为$\varphi(x,y) = 0$
 
-则$z = \defFunction{x,\Phi(x)},\cfrac{dz}{dx} = \partialDerivativeFrac{f}{x} + \partialDerivativeFrac{f}{y}\cfrac{dy}{dx}$
+    假设$y$也是$x$的函数$\psi$,则 :
 
-$\left.\cfrac{dz}{dx}\right|_{x = x_0} = f\derivative_x(x_0,y_0) + f\derivative_y(x_0,y_0)\left.\cfrac{dy}{dx}\right|_{x = x_0} = 0$
+    $$
+      z = \defFunction{x,\psi(x)}
+    $$
 
-% $f\derivative_x(x_0,y_0) - f\derivative_y(x_0,y_0)\cfrac{\varphi\derivative_x}{}$// #TODO 检查笔记有没有写错,顺便学一下拉格朗日乘数法.
-}%条件极值与拉格朗日乘数法结尾
+    如果对$x$的导数存在且有极值,那么求导应该为$0$,因此对$z$求导 :
+    $$
+      \cfrac{dz}{dx} = \partialDerivativeFrac{f}{x} + \partialDerivativeFrac{f}{y}\cdot\cfrac{dy}{dx}
+    $$
 
-\subsubsection{拉格朗日乘数法}{
-  引用上一题,作辅助函数$L(x,y) = \defFunction{x,y} + \lambda\varphi(x,y)$
+    那么 :
+    $$
+      \directionDerivative{z}{x}{x = x_0} = f\derivative_x(x_0,y_0) + f\derivative_y(x_0,y_0)\directionDerivative{y}{x}{x = x_0} = 0
+    $$
 
-  $$
-    \begin{cases}
-      L\derivative_x = 0 \\
-      L\derivative_y = 0
-    \end{cases}
-    \mbox{即 : }
-    \begin{cases}
-      f\derivative_x + \lambda\varphi\derivative_x = 0 \\
-      f\derivative_y + \lambda\varphi\derivative_y = 0 \\
-      \varphi(x,y) = 0
-    \end{cases}
-  $$
+    由此结论,把$y$看作$x$的隐函数,则由隐函数存在定理 : $\cfrac{dy}{dx} = -\cfrac{\varphi\derivative_x(x,y)}{\varphi\derivative_y(x,y)}$
 
-  当有两个以上的约束条件时 :
+    将其代入,从而得到 :
+    $$
+      f\derivative_x(x_0,y_0) - f\derivative_y(x_0,y_0)\cfrac{\varphi\derivative_x(x,y)}{\varphi\derivative_y(x,y)} = 0
+    $$
 
-  $u = \defFunction{x,y,z,t},\varphi(x,y,z,t) = 0,\psi(x,y,z,t) = 0$
+    设后一项中的$-\cfrac{f\derivative_y(x_0,y_0)}{\varphi\derivative_y(x_0,y_0)} = \lambda$
 
-  $L = \defFunction{x,y,z,t} + \lambda\varphi(x,y,z,t) + \mu\psi(x,y,z,t)$
+    代入替换,得 :
+    $$
+      f\derivative_x + \lambda\varphi\derivative_x = 0
+    $$
 
-  $$
-    \begin{cases}
-      L\derivative_x = 0   \\
-      L\derivative_y = 0   \\
-      L\derivative_z = 0   \\
-      L\derivative_t = 0   \\
-      \varphi(x,y,z,t) = 0 \\
-      \psi(x,y,z,t) = 0
-    \end{cases}
-  $$
-}%拉格朗日乘数法结尾
+    并且对$\lambda$作变形 :
+    $$
+      f\derivative_y(x_0,y_0) - \cfrac{f\derivative_y(x_0,y_0)}{\varphi\derivative_y(x_0,y_0)}\varphi\derivative_y(x_0,y_0) = f\derivative_y + \lambda\varphi\derivative_y = 0
+    $$
+
+    联立方程组 :
+    $$
+      \begin{cases}
+        f\derivative_x + \lambda\varphi\derivative_x = 0 \\
+        f\derivative_y + \lambda\varphi\derivative_y = 0 \\
+        \varphi(x_0,y_0) = 0
+      \end{cases}
+    $$
+
+    作辅助函数$L(x,y) = \defFunction{x,y} + \lambda\varphi(x,y)$
+
+    $$
+      \begin{cases}
+        L\derivative_x = 0 \\
+        L\derivative_y = 0
+      \end{cases}
+      \mbox{即 : }
+      \begin{cases}
+        f\derivative_x + \lambda\varphi\derivative_x = 0 \\
+        f\derivative_y + \lambda\varphi\derivative_y = 0 \\
+        \varphi(x,y) = 0
+      \end{cases}
+    $$
+
+    当有两个以上的约束条件时 :
+
+    $u = \defFunction{x,y,z,t},\varphi(x,y,z,t) = 0,\psi(x,y,z,t) = 0$
+
+    $L = \defFunction{x,y,z,t} + \lambda\varphi(x,y,z,t) + \mu\psi(x,y,z,t)$
+
+    $$
+      \begin{cases}
+        L\derivative_x = 0   \\
+        L\derivative_y = 0   \\
+        L\derivative_z = 0   \\
+        L\derivative_t = 0   \\
+        \varphi(x,y,z,t) = 0 \\
+        \psi(x,y,z,t) = 0
+      \end{cases}
+    $$
+  }%条件极值与拉格朗日乘数法结尾
 
 }%多元函数的极值与最值结尾
 
@@ -4074,7 +4155,20 @@ $$
   }%矩阵与向量的乘法
 
   \subsubsection{矩阵的乘法}{
-    矩阵的乘法就目前看来有四种看待方法,设$A$与$B$相乘得到$C$,其中$A$为$m \times n$矩阵,而$B$为$n \times p$矩阵,则$C$为$m \times p$矩阵.记$c_{ij}$为矩阵$c$中第$i$行$j$列的元素 :
+    矩阵的数乘 :
+    $$
+      \mathConstant\begin{bmatrix}
+        a & b \\
+        c & d
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+        \mathConstant a & \mathConstant b \\
+        \mathConstant c & \mathConstant d
+      \end{bmatrix}
+    $$
+
+    矩阵与矩阵的乘法有很多种看待方法,设$A$与$B$相乘得到$C$,其中$A$为$m \times n$矩阵,而$B$为$n \times p$矩阵,则$C$为$m \times p$矩阵.记$c_{ij}$为矩阵$c$中第$i$行$j$列的元素 :
 
     \begin{itemize}
       \item {
@@ -4089,8 +4183,112 @@ $$
               \includegraphics{resources/MatrixMultiple_1.png}
             \end{center}
 
-            (原理是矩阵相乘可以看作方程组相乘)
-            % #TODO 待补充
+            原理是矩阵相乘可以看作方程组相乘,见\bookName{数学:他的内容,方法和意义}(A.D.亚历山大洛夫)
+            }
+      \item {
+            列操作 :
+
+            列操作是指矩阵$C$的第$j$列是通过矩阵$A$乘以矩阵$B$的第$j$的列向量得到的.这表明矩阵$C$的列向量是矩阵$A$列向量的线性组合,组合的"权"就是矩阵$B$第$j$列的各个分量.
+            $$
+              AB = A\begin{bmatrix}
+                b_1 & b_1 & \dots & b_p
+              \end{bmatrix}
+              =
+              \begin{bmatrix}
+                Ab_1 & Ab_1 & \dots & Ab_p
+              \end{bmatrix}
+            $$
+
+            上式中$b_i,Ab_i$均为列向量,其中 :
+            $$
+              Ab_j = \begin{bmatrix}
+                \vline & \vline & \     & \     & \vline \\
+                a_1    & a_2    & \dots & \dots & a_n    \\
+                \vline & \vline & \     & \     & \vline
+              \end{bmatrix}
+            $$
+            为矩阵$A$中列向量的线性组合
+            }
+      \item {
+            行操作 :
+
+            行操作是指矩阵$C$的第$i$行是通过矩阵$A$的第$i$行乘以矩阵$B$得到的.这表明矩阵$C$的行向量是矩阵$B$行向量的线性组合.
+            $$
+              AB = \begin{bmatrix}
+                a_1    \\
+                a_2    \\
+                \vdots \\
+                \vdots \\
+                a_m
+              \end{bmatrix}
+              ,
+              B = \begin{bmatrix}
+                a_1B   \\
+                a_2B   \\
+                \vdots \\
+                \vdots \\
+                a_mB
+              \end{bmatrix}
+              \mbox{此处$a_i$和$a_iB$为行向量}
+            $$
+
+            $$
+              a_iB = \begin{bmatrix}
+                {a_i}_1 & {a_i}_2 & \dots & {a_i}_n
+              \end{bmatrix}
+              \begin{bmatrix}
+                -- & b_1    & -- \\
+                -- & b_2    & -- \\
+                \  & \vdots & \  \\
+                \  & \vdots & \  \\
+                -- & b_n    & --
+              \end{bmatrix}
+            $$
+
+            $$
+              =
+              {a_i}_1\begin{bmatrix}
+                -- & b_1 & --
+              \end{bmatrix}
+              +
+              {a_i}_2\begin{bmatrix}
+                -- & b_2 & --
+              \end{bmatrix}
+              +
+              \dots
+              +
+              {a_i}_n\begin{bmatrix}
+                -- & b_n & --
+              \end{bmatrix}
+            $$
+            }
+            \item {
+              列乘以行 : 
+
+              矩阵$A$的第$k$列是一个$m \times 1$的向量,而举证$B$的第$k$行是一个$1 \times p$的向量,两向量相乘会得到一个矩阵$C_k$,将所有的$n$个矩阵相加即得到$C$.
+              $$
+              AB = \upDownSum{n}{k = 1}\underset{\begin{bmatrix}
+                {a_i}_k \\
+                \vdots \\
+                {a_m}_k
+              \end{bmatrix}
+              }{
+                m \times 1
+              }
+              \underset{\begin{bmatrix}
+                {b_k}_1 & \dots & {b_i}_p
+              \end{bmatrix}
+              }{
+                1 \times p
+              }
+              $$
+
+              可以从矩阵乘法对加法的分配率推导出来.
+            }
+            \item {
+              分块乘法 : 
+
+              % #TODO 补全
             }
     \end{itemize}
   }%矩阵的乘法
