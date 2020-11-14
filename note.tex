@@ -104,6 +104,7 @@
 \newcommand{\sumSeries}{\upDownSum{\infty}{n = 1}}
 \newcommand{\boldText}[1]{{\bfseries#1}}
 \newcommand{\bookName}[1]{$\ll$#1$\gg$}
+\newcommand{\eliminationMatrix}[1]{{E_l}_{#1}}
 % \newcommand{\inverse}{^{-1}}
 
 \newcommand{\augmentedMatrix}[2]{
@@ -126,7 +127,7 @@
   \maketitle
   \paragraph{todos}{
     \begin{enumerate}
-      \item 誊录纸质笔记\ 线性代数-矩阵乘法,lu分解
+      \item 誊录纸质笔记\ 线性代数-转置,置换和空间
       \item 隐函数存在定理,等幂求和,二项式系数,朱世杰恒等式.
       \item 重写线性代数
       \item 场论:p10
@@ -4341,14 +4342,14 @@ $$
   }%矩阵的乘法
 
   \subsubsection{矩阵乘积的转置}{
-$$
-(AB)\transpose = B\transpose A\transpose
-$$
+    $$
+      (AB)\transpose = B\transpose A\transpose
+    $$
 
-  可以用定义证明,也可以将矩阵乘法那章中的小技巧的图片按照乘积矩阵的对角线翻转 : 
-  \begin{center}
-    \includegraphics{resources/theMultiplecationProductOfTranspose.png}
-  \end{center}
+    可以用定义证明,也可以将矩阵乘法那章中的小技巧的图片按照乘积矩阵的对角线翻转 :
+    \begin{center}
+      \includegraphics{resources/theMultiplecationProductOfTranspose.png}
+    \end{center}
   }%矩阵乘积的转置
 
   \subsubsection{逆矩阵}{
@@ -4383,10 +4384,10 @@ $$
 
   \subsubsection{转置矩阵的逆矩阵}{
     $$
-    (A\transpose)\inverse = (A\inverse)\transpose
+      (A\transpose)\inverse = (A\inverse)\transpose
     $$
 
-    $AA\inverse$两边取转置,并应用矩阵乘积的转置公式,得到$(A\inverse)\transposeA\transpose = I$.根据逆矩阵定义得到$(A\transpose)\inverse = (A\inverse)\transpose$
+    $AA\inverse$两边取转置,并应用矩阵乘积的转置公式,得到$(A\inverse)\transpose A\transpose = I$.根据逆矩阵定义得到$(A\transpose)\inverse = (A\inverse)\transpose$
   }%转置矩阵的逆矩阵
 
 }%一些杂七杂八的前置/补充结尾
@@ -4912,9 +4913,126 @@ $$
 }%高斯-若尔当消元法(初等变换法)求逆矩阵
 
 \subsubsection{矩阵的$LU$分解}{
-  找到$L$矩阵(下三角矩阵),使得矩阵$A$变为上三角矩阵$U$.这就是$LU$分解:$A = LU$.
-  %#TODO 补全
+找到$L$矩阵(下三角矩阵),使得矩阵$A$变为上三角矩阵$U$.这就是$LU$分解:$A = LU$.
+
+前几章已经描述了如何应用消元法将矩阵$A$转变为上三角阵$U$,这就引出了矩阵的$LU$分解,他是理解矩阵$A$性质的重要方法.
+
+可以将矩阵的分解类比为多项式的因式分解,分解后的结果可以让我们更容易看清"解"的状态.
+
+再没有行交换的情况下,矩阵$A$通过左乘一系列消元矩阵$E_l$可以转化为$U$.再二阶矩阵中,只需要进行一次消元即可达到这一效果 :
+$$
+  \underset{{E_l}_{21}}{\begin{bmatrix}
+      1  & 0 \\
+      -4 & 1
+    \end{bmatrix}}
+  \underset{A}{\begin{bmatrix}
+      2 & 1 \\
+      8 & 7
+    \end{bmatrix}}
+  =
+  \underset{U}{\begin{bmatrix}
+      2 & 1 \\
+      0 & 3
+    \end{bmatrix}}
+$$
+
+在等式两侧左乘,得到${E_l}_{21}\inverse {E_l}_{21} A = {E_l}_{21}\inverse U$,即$A = {E_l}_{21}\inverse U$.这就是矩阵$A$的$LU$分解结构.${E_l}_{21}\inverse$是${E_l}_{21}$的逆向操作.即左乘${E_l}_{21}$中使得矩阵$A$第二行$[8,7]$减去第一行的四倍得到新的第二行$[0,3]$那么再左乘${E_l}_{21}\inverse$可以使得新的第二行$[0,3]$加上第一行的四倍又变回原来的第二行$0,7$.
+$$
+  \underset{A}{\begin{bmatrix}
+      2 & 1 \\
+      8 & 7
+    \end{bmatrix}}
+  =
+  \underset{L}{\begin{bmatrix}
+      1 & 0 \\
+      4 & 1
+    \end{bmatrix}}
+  \underset{U}{\begin{bmatrix}
+      2 & 1 \\
+      0 & 3
+    \end{bmatrix}}
+$$
+
+其中$U$为上三角矩阵(Upper triangular matrix),主元依次排列于他的对角线上,${E_l}_{21}\inverse$即$L$为下三角阵(Lower triangular matrix).事实上可以将主元提出来变成对角阵$D$(Diagno matrix),比如 :
+$$
+  \underset{A}{\begin{bmatrix}
+      2 & 1 \\
+      8 & 7
+    \end{bmatrix}}
+  =
+  \underset{L}{\begin{bmatrix}
+      1 & 0 \\
+      4 & 1
+    \end{bmatrix}}
+  \underset{D}{\begin{bmatrix}
+      2 & 0 \\
+      0 & 3
+    \end{bmatrix}}
+  \underset{U^\prime}{\begin{bmatrix}
+      1 & \cfrac{1}{2} \\
+      0 & 1
+    \end{bmatrix}}
+$$
+
+三阶矩阵也是一样的.如果没有行交换操作,则消元矩阵的因子可以直接写入矩阵$L$,没有多余的交叉项出现时$LU$分解要优于$EA = U$这种形式的原因之一.
 }%矩阵的LU分解结尾
+
+\subsubsection{行交换}{
+  如果主元的位置出现了0,就需要进行"行交换".可以通过左乘一个置换矩阵$P$(Permutation matrix)来实现"行交换"的操作,比如 :
+  $$
+    P_{21} = \begin{bmatrix}
+      0 & 1 & 0 \\
+      1 & 0 & 0 \\
+      0 & 0 & 1
+    \end{bmatrix}
+  $$可以实现$3 \times 3$矩阵的第一行于第二行的交换.
+
+  所有的$3 \times 3$的置换矩阵如下 :
+  $$
+    \begin{bmatrix}
+      1 & 0 & 0 \\
+      0 & 1 & 0 \\
+      0 & 0 & 1
+    \end{bmatrix}
+    \begin{bmatrix}
+      1 & 0 & 0 \\
+      0 & 0 & 1 \\
+      0 & 1 & 0
+    \end{bmatrix}
+    \begin{bmatrix}
+      0 & 1 & 0 \\
+      1 & 0 & 0 \\
+      0 & 0 & 1
+    \end{bmatrix}
+    \begin{bmatrix}
+      0 & 1 & 0 \\
+      0 & 0 & 1 \\
+      1 & 0 & 0
+    \end{bmatrix}
+    \begin{bmatrix}
+      0 & 0 & 1 \\
+      1 & 0 & 0 \\
+      0 & 1 & 0
+    \end{bmatrix}
+    \begin{bmatrix}
+      0 & 0 & 1 \\
+      0 & 1 & 0 \\
+      1 & 0 & 0
+    \end{bmatrix}
+  $$
+
+  对于$n \times n$矩阵存在着$n!$个置换矩阵.置换矩阵每一行或者每一列只有一个元素是一,其他都是0,从第一行选一个位置设定为$1$有$n$个选择,第二行就只剩下$n-1$个选择,如此类推,最终有$n!$种可能.
+
+  对于某阶的置换矩阵几何而言,置换矩阵的两两乘积仍然在这个集合中.置换矩阵的逆矩阵也在其中.由于置换矩阵时正交矩阵,所以他的逆就是他的转置$p\inverse = P\transpose$
+
+  可以用前面的小技巧来理解这件事情 :
+
+  \begin{center}
+    \includegraphics{resources/permutation_trick_1.png}
+  \end{center}
+
+  $P$的第$i$行和$P\inverse$的第$i$列相乘会得到$1$,于其他列相乘都得到$0$,所以$P\inverse$第$i$列只能是$P$的第$i$行行向量的转置(让分量$1$出现在向量里的相同位置),其他割裂以此类推,则$P$的每一个行向量转置就会得到$P\inverse$的列向量,这就是矩阵转置$P\transpose$的定义,因此可得$P\inverse = P\transpose$
+}%行交换结尾
 
 }%Ax = b与四个子空间结尾
 
@@ -4976,13 +5094,13 @@ $$
     }%矢量函数的连续结尾
 
     \subsubsection{矢量函数的导数}{
-      设矢量函数$A(t)$在点t处有增量$\Delta A = A(t + \Delta t) - A(t)$
+      设矢量函数$A(t)$在点t处有增量$\Delta \vec{A} = A(t + \Delta t) - A(t)$
 
-      当$\Delta t \to 0$时,$\cfrac{\Delta A}{\Delta t} = \cfrac{A(t + \Delta t) - A(t)}{\Delta t}$的极限存在,则称此极限值为$A(t)$在点t处的导向量/导矢.即 :
+      当$\Delta t \to 0$时,$\cfrac{\Delta \vec{A}}{\Delta t} = \cfrac{A(t + \Delta t) - A(t)}{\Delta t}$的极限存在,则称此极限值为$A(t)$在点t处的导向量/导矢.即 :
 
-      \begin{center}
-        $A\derivative(t) = \cfrac{dA(t)}{dt} = \limNormal{\Delta t \to 0}\cfrac{\Delta A}{\Delta t} = \limNormal{\Delta t \to 0}\cfrac{A(t + \Delta t) - A(t)}{\Delta t}$
-      \end{center}
+      $$
+        A\derivative(t) = \cfrac{dA(t)}{dt} = \limNormal{\Delta t \to 0}\cfrac{\Delta \vec{A}}{\Delta t} = \limNormal{\Delta t \to 0}\cfrac{A(t + \Delta t) - A(t)}{\Delta t}
+      $$
 
       以下为导数公式 :
 
@@ -5025,7 +5143,7 @@ $$
     }
 
     \subsubsection{矢量函数的定积分}{
-      类似于数性函数,$a(t)$在$[t_1,t_2]$上的定积分的定义为 :
+      类似于数性函数,$a(t)$在$[t_1,t_2]$上的定积分的定义为($A(t)\mbox{是}a(t)$的原函数) :
 
       $\definiteIntegral{t_2}{t_1}a(t)dt = \limNormal{n \to \infty}\limNormal{\lambda \to 0}\upDownSum{n}{i = 1}a(\xi_i)\Delta t_i$
 
@@ -5113,17 +5231,17 @@ $$
     \subsubsection{方向导数的定义}{
       \includegraphics{resources/directionDerivative1.png}
 
-      从数量场$u= u(M)$中任一点$M_0$出发引一条有向射线$l$,在$l$上任取一点$M$,记$M_0M = \rho$,当沿$l$,$M \to M_0$时,此式的极限存在 :
+      从数量场$u= u(M)$中任一点$M_0$出发引一条有向射线$\vec{l}$,在$\vec{l}$上任取一点$M$,记$\vec{M_0M} = \rho$,当沿$\vec{l}$,$M \to M_0$时,此式的极限存在 :
       $$
-        \cfrac{\Delta u}{\rho} = \cfrac{u(M) - u(M_0)}{M_0M}
+        \cfrac{\Delta u}{\vec{\rho}} = \cfrac{u(M) - u(M_0)}{\vec{M_0M}}
       $$
-      称此极限值为函数$u(M)$在点$M_0$处沿方向$l$的方向导数,记为$\directionDerivative{u}{l}{M_0}$,即 :
+      称此极限值为函数$u(M)$在点$M_0$处沿方向$\vec{l}$的方向导数,记为$\directionDerivative{u}{l}{M_0}$,即 :
       $$
         \directionDerivative{u}{l}{M_0} = \limNormal{M \to M_0}\cfrac{u(M) - u(M_0)}{M_0M}
       $$
 
       \begin{itemize}
-        \item 方向导数是一个数量,他与点$M_0$有关,也与方向$l$有关.
+        \item 方向导数是一个数量,他与点$M_0$有关,也与方向$\vec{l}$有关.
         \item {
               以平面数量场为例说明方向导数的意义 :
 
@@ -5134,21 +5252,21 @@ $$
               不难看出 :
               % #TODO 画图
               $$
-                \cfrac{\Delta u}{\rho} = \cfrac{u(M) - u(M_0)}{M_0M} = \cfrac{\defFunction{M} - \defFunction{M_0}}{M_0M}
+                \cfrac{\Delta u}{\rho} = \cfrac{u(M) - u(M_0)}{\vec{M_0M}} = \cfrac{\defFunction{M} - \defFunction{M_0}}{\vec{M_0M}}
               $$
-              正是沿着$l$方向,函数$\defFunction{x,y}$从点$M_0$到点$M$的平均升高,即平均变化率.而极限 :
+              正是沿着$\vec{l}$方向,函数$\defFunction{x,y}$从点$M_0$到点$M$的平均升高,即平均变化率.而极限 :
               $$
-                \limNormal{M \to M_0}\cfrac{\Delta u}{\rho} = \limNormal{M \to M_0}\cfrac{\defFunction{M} - \defFunction{M_0}}{M_0M} (\mbox{沿着}l)
+                \limNormal{M \to M_0}\cfrac{\Delta u}{\vec{\rho}} = \limNormal{M \to M_0}\cfrac{\defFunction{M} - \defFunction{M_0}}{\vec{M_0M}} (\mbox{沿着})\vec{l}
               $$
-              是$u = \defFunction{x,y}$在点$M_0$沿$l$的变化率.所以方向导数是变化率,它反映了函数$u = \defFunction{x,y}$在$l$方向上的增减情况.当$\directionDerivative{u}{l}{M_0} > 0$,表示函数$u = \defFunction{x,y}$在点$M_0$沿方向$l$是增加的,越大表示增加的越快.反之亦然.
+              是$u = \defFunction{x,y}$在点$M_0$沿$\vec{l}$的变化率.所以方向导数是变化率,它反映了函数$u = \defFunction{x,y}$在$\vec{l}$方向上的增减情况.当$\directionDerivative{u}{l}{M_0} > 0$,表示函数$u = \defFunction{x,y}$在点$M_0$沿方向$\vec{l}$是增加的,越大表示增加的越快,反之亦然.
               }
-        \item 偏导数是方向导数的特例.比如当$l$指向x轴正向时,$\cfrac{\partial u}{\partial l} = \cfrac{\partial u}{\partial x}$,当$l$指向y轴正向时,$\cfrac{\partial u}{\partial l} = \cfrac{\partial u}{\partial y}$.
+        \item 偏导数是方向导数的特例.比如当$\vec{l}$指向x轴正向时,$\cfrac{\partial u}{\partial l} = \cfrac{\partial u}{\partial x}$,当$\vec{l}$指向y轴正向时,$\cfrac{\partial u}{\partial l} = \cfrac{\partial u}{\partial y}$.
         \item 有时候要考虑函数沿某曲线C的导数.函数沿曲线C的每一点的切线方向的方向导数叫做函数沿曲线C的导数.
       \end{itemize}
     }%方向导数的定义结尾
 
     \subsubsection{方向导数的计算公式}{
-      设$u= u(x,y,z)$在$M_0(x_0,y_0,z_0)$处可微,l的方向余弦时$\cos\alpha,\cos\beta,\cos\gamma$,则u在点$M_0$沿$l$的方向导数为 :
+      设$u= u(x,y,z)$在$M_0(x_0,y_0,z_0)$处可微,$\vec{l}$的方向余弦是$\cos\alpha,\cos\beta,\cos\gamma$,则u在点$M_0$沿$\vec{l}$的方向导数为 :
       $$
         \directionDerivative{u}{l}{M_0} = \directionDerivative{u}{x}{M_0}\cos\alpha + \directionDerivative{u}{y}{M_0}\cos\beta + \directionDerivative{u}{z}{M_0}\cos\gamma
       $$
@@ -5193,6 +5311,20 @@ $$
     }%梯度的运算公式
 
   }%方向导数与梯度结尾
+
+  \subsection{通量与散度,高斯公式}{
+    对于一个矢量场,主要讨论他的两个基本性质 : 其一是有没有源,其二是有没有旋
+
+    \subsubsection{通量}{
+      设矢量场$A(M)$,将沿着场中某一有向曲面$S$的曲面积分 :
+      $$
+        \varPhi = \doubleIntegralOnZone{S} A_n dS = \doubleIntegralOnZone{s} A \cdot d\mathbf{S}
+      $$
+      称为矢量场$A(M)$向正侧穿过曲面$S$的通量.其中$d\mathbf{S} = ndS$,$\vec{n}$是$dS$的法线方向,$A_n = A \cdot n$
+      %#TODO GKD
+    }%通量结尾
+
+  }%通量与旋度,高斯公式
 
  }%场论结尾
 
