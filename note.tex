@@ -105,6 +105,7 @@
 \newcommand{\boldText}[1]{{\bfseries#1}}
 \newcommand{\bookName}[1]{$\ll$#1$\gg$}
 \newcommand{\eliminationMatrix}[1]{{E_l}_{#1}}
+\newcommand{\vecAngle}[2]{(\widehat{#1\ #2})}
 % \newcommand{\inverse}{^{-1}}
 
 \newcommand{\augmentedMatrix}[2]{
@@ -5316,13 +5317,45 @@ $$
     对于一个矢量场,主要讨论他的两个基本性质 : 其一是有没有源,其二是有没有旋
 
     \subsubsection{通量}{
-      设矢量场$A(M)$,将沿着场中某一有向曲面$S$的曲面积分 :
+      定义 : 设矢量场$A(M)$,将沿着场中某一有向曲面$S$的曲面积分 :
       $$
         \varPhi = \doubleIntegralOnZone{S} A_n dS = \doubleIntegralOnZone{s} A \cdot d\mathbf{S}
       $$
-      称为矢量场$A(M)$向正侧穿过曲面$S$的通量.其中$d\mathbf{S} = ndS$,$\vec{n}$是$dS$的法线方向,$A_n = A \cdot n$
-      %#TODO GKD
+      称为矢量场$A(M)$向正侧穿过曲面$S$的通量.其中$d\mathbf{S} = \vec{n}dS$,$\vec{n}$是$dS$的法线方向,$A_n = A \cdot \vec{n}$
+
+      说明 :
+      \begin{itemize}
+        \item {通量$\varPhi$是一个数列.(顾名思义,通量就是矢量$\vec{A}$通过$S$的量,$A$可以表示流速,电场,磁场的强度等.相应的$\varPhi$就是流量,电通量,磁通量等.)因为$d\mathbf{S} = \vec{n}dS$,$A\cdot d\mathbf{S}$有正负之分
+
+              \begin{itemize}
+                \item $\vecAngle{\vec{A}}{\vec{n}} < \cfrac{\pi}{2},\varPhi > 0$
+                \item $\vecAngle{\vec{A}}{\vec{n}} > \cfrac{\pi}{2},\varPhi < 0$
+                \item $\vec{A} \perp \vec{n},\varPhi = 0$.
+              \end{itemize}
+
+              在一个矢量场中,每点上的$\vec{A}$是确定对.$\varPhi$的正负与$\vec{n}$的制定有关.
+              }
+        \item {
+              若$S$是闭曲面,一般去向外法线方向为正向.因此 :
+
+              \begin{itemize}
+                \item $\varPhi > 0$,表示$S$内部有源.这意味着穿过$S$流入的量小于流出的量,而$\varPhi$正是流出量与流入量的差,因此$S$内部有源.$\varPhi$就是由$S$散发出去的量.
+                \item $\varPhi < 0$,表示$S$内部有洞.流出的量小于流入的量,$\varPhi$就是流入的多余部分,这个量再$S$所包围的区域内被吸收或者渗掉,所以有洞.$\varPhi$是吸收入$S$内部的量.
+                \item $\varPhi = 0$,说明流入等于流出.
+              \end{itemize}
+              }
+        \item {
+              由定义得 :
+              $$
+                d\varPhi = \vec{A} \cdot d\mathbf{S}
+              $$
+
+              表示流过面积元$dS$的正向的通量.
+              }
+      \end{itemize}
     }%通量结尾
+
+    %# TODO 散度
 
   }%通量与旋度,高斯公式
 
