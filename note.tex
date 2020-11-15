@@ -100,12 +100,13 @@
 \newcommand{\mathBigCase}[1]{\left[#1\right]}
 \newcommand{\pathIntegral}[1]{\int_{#1}}
 \newcommand{\curveIntegralOnLine}[1]{\oint_{#1}}
-\newcommand{\doubleCurveIntegralOnLine}[1]{\oiint_{#1}}
+\newcommand{\doubleCurveIntegralOnZone}[1]{\oiint_{#1}}
 \newcommand{\sumSeries}{\upDownSum{\infty}{n = 1}}
 \newcommand{\boldText}[1]{{\bfseries#1}}
 \newcommand{\bookName}[1]{$\ll$#1$\gg$}
 \newcommand{\eliminationMatrix}[1]{{E_l}_{#1}}
 \newcommand{\vecAngle}[2]{(\widehat{#1\ #2})}
+\newcommand{\divergenceText}[1]{\mbox{div}}
 % \newcommand{\inverse}{^{-1}}
 
 \newcommand{\augmentedMatrix}[2]{
@@ -122,6 +123,7 @@
 \DeclareMathOperator{\arcsec}{arcsec}
 \DeclareMathOperator{\arccsc}{arccsc}
 \DeclareMathOperator{\inverse}{^{-1}}
+\DeclareMathOperator{\divergenceSymbol}{\nabla\cdot}
 
 \begin{document}
 \pagestyle{empty}{
@@ -131,7 +133,7 @@
       \item 誊录纸质笔记\ 线性代数-转置,置换和空间
       \item 隐函数存在定理,等幂求和,二项式系数,朱世杰恒等式.
       \item 重写线性代数
-      \item 场论:p10
+      \item 场论:环量,旋度,斯托克斯公式
       \item 补充多个section,计算机图形学,场论等
     \end{enumerate}
   }
@@ -1533,7 +1535,7 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
   }%数列极限结尾
 
   \subsubsection{O'Stolz(stolz)定理}{
-    设$(a_n)_{n > 1}$和$(b_n)_{n > 1}$为两个实数数列.若$b_n$为从某项开始严格单调的无界正数数列,且有穷穷极限
+    设$(a_n)_{n > 1}$和$(b_n)_{n > 1}$为两个实数数列.若$b_n$为从某项开始严格单调的无界正数数列,且有穷极限
     $$
       \limNormal{n \to \infty}\cfrac{a_{n + 1} - a_n}{b_{n + 1} - b_n} = L
     $$
@@ -1544,6 +1546,12 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
     $$
 
     其中$L$可以为有限实数或正/负无穷.
+
+    该定理虽然主要被用于处理数列不定型极限,但该定理再没有$\limNormal{n \to \infty}a_n = \infty$这一条件时也是成立的.虽然该定理通常是以分布$b_n$为正数数列的情形加以叙述的,但注意到该定理对分子$a_n$的正负没有限制,所以原则上把对数列$b_n$的限制条i按替换为"严格单调递减且趋于负无穷大"也是没问题的.
+
+    与洛必达的迭代用法类似,在尝试使用此定理考察数列极限时,如果发现两个数列差分的商任然是不定型,那么可以继续用.
+
+    注意 : 与洛必达类似,判定条件不存在不能认定极限本身不存在.
   }%O'Stolz(stolz)定理结尾
 
 }%数列极限相关结尾
@@ -5355,9 +5363,146 @@ $$
       \end{itemize}
     }%通量结尾
 
-    %# TODO 散度
+    \subsubsection{散度}{
+      通量描述了一固定区域上向量场的流通倾向,而散度在某点的的值则是这个性质在这点的局部描述,也就是说,从散度在一点的值,我们可以看出向量场在这点附近到底是倾向于发散还是收敛.
+
+      设矢量场$A(M)$,在场中作包围点$M$的闭曲面$S$,$S$包围的趋于称为$\Omega$,$\Omega$的体积为$\Delta V$.当$\Omega$收缩到极限$M$时,如果极限 :
+      $$
+        \limNormal{\Omega \to M}\cfrac{\doubleCurveIntegralOnZone{S}A \cdot d\mathbf{S}}{\Delta V}
+      $$
+      存在,则称此极限值为向量场$A$在点$M$处的散度.记为$\divergenceText{A}$,即 :
+      $$
+        \divergenceText{A} = \limNormal{\Omega \to M}\cfrac{\doubleCurveIntegralOnZone{S}A \cdot d\mathbf{S}}{\Delta V}
+      $$
+
+      说明 :
+      \begin{itemize}
+        \item {
+              散度是刻画矢量场的基本性质的量,是数量.$\divergenceText{A}$形成一个数量场,称为矢量场$A$的散度场.
+              }
+        \item {
+              散度,顾名思义就是向量场一点处发散量的大小.在$M$点 :
+              \begin{itemize}
+                \item $\divergenceText{A} > 0$,表示M点有源.值越大,表示源$M$的发散量越大.
+                \item $\divergenceText{A} < 0$,表示M点有洞.绝对值越大,表示这个洞吸收量越大(或渗的越快).
+                \item $\divergenceText{A} = 0$,表示$M$点无源无洞.
+              \end{itemize}
+              }
+        \item {
+              由定义可知,$\divergenceText{A}$就是单位体积的通量的极限,也就是通量的密度.
+              }
+        \item {
+              散度算子为$\divergenceSymbol$,表示点乘结果为数.
+              }
+        \item {
+              还有一种理解方法 : 散度表示当$x,y,z$有微小增加时,向量场分量增加量的总和.散度在各个方向是一样的,不随坐标系旋转而改变.
+              }
+      \end{itemize}
+    }%散度
+
+    \subsubsection{散度在常见坐标系中的计算公式}{
+      在不同的坐标系下,向量场的散度有不同的表达方. :
+      \begin{itemize}
+        \item {
+              直角坐标系 :
+
+              在三维直角坐标系$xyz$中,设向量场$A$的表示为 :
+              $$
+                A(x,y,z) = A_x(x,y,z)\vec{i} + A_y(x,y,z)\vec{j} + A_z(x,y,z)\vec{k}
+              $$
+
+              其中$\vec{i},\vec{j},\vec{k}$分别是$x,y,z$轴上的单位向量,场的分量$A_x,A_y,A_z$具有一阶连续偏导数,那么向量场$A$的散度就是 :
+              $$
+                \divergenceText{A} = \divergenceSymbol A = \partialDerivativeFrac{A_x}{x} + \partialDerivativeFrac{A_y}{y} + \partialDerivativeFrac{A_z}{z}
+              $$
+              }
+        \item {
+              圆柱坐标系 :
+
+              圆柱坐标系中,假设物体的位置为$(\rho,\varphi,z)$,定义其径向单位矢量,横向单位的矢量和纵向单位的矢量为
+
+              $\vec{e_{\rho}},\vec{e_{\varPhi}},\vec{e_z}$,那么向量场$A$可以表示为 :
+              $$
+                A = A_{\rho}(\rho,\varphi,z)\vec{e_{\rho}} + A_{\varphi}(\rho,\varphi,z)\vec{e_{\varphi}} + A_{z}(\rho,\varphi,z)\vec{e_{z}}
+              $$
+              向量场$A$的散度就是 :
+              $$
+                \divergenceText{A} = \divergenceSymbol A = \cfrac{1}{\rho}\partialDerivativeFrac{\rho A_\rho}{\rho} + \cfrac{1}{\rho}\partialDerivativeFrac{A_\varphi}{\varphi} + \partialDerivativeFrac{A_z}{z}
+              $$
+              }
+        \item {
+              球坐标系 :
+
+              球坐标系中,假设物体的位置用球坐标系表示为$(r,\theta,\varphi)$,定义它的基向量 : $\vec{e_r},\vec{e_\theta},\vec{e_\varphi}$,则向量场$A$可以表示为 :
+              $$
+                A = A_r(r,\theta,\varphi)\vec{e_r} + A_\theta(r,\theta,\varphi)\vec{e_\theta} + A_\varphi(r,\theta,\varphi)\vec{e_\varphi}
+              $$
+              向量场$A$的散度就是 :
+              $$
+                \divergenceText{A} = \divergenceSymbol A = \cfrac{1}{r^2}\partialDerivativeFrac{r^2A_r}{r} + \cfrac{1}{r\sin\theta}\partialDerivativeFrac{\sin\theta A_\theta}{\theta} + \cfrac{1}{r\sin\theta}\partialDerivativeFrac{A_\varphi}{\varphi}
+              $$
+              }
+      \end{itemize}
+    }%散度在常见坐标系中的计算公式
+
+    \subsubsection{高斯散度定理/高斯公式/高斯-奥斯特洛格拉特斯基公式}{
+      既然向量场某一处的散度是向量场在该处附近通量的体密度,那么对某一个体积内的散度进行积分,就应该得到这个体积内的总通量.事实上可以证明这个推论是正确的,称为高斯散度定理.高斯定理说明,如果在体积V内的向量场A拥有散度,那么散度的体积分等于向量场在V的表面S的面积分
+
+      设矢量场$A = P\vec{i} + Q\vec{j} + R\vec{k}$的各分量$P,Q,R$再闭曲面所围区域$\Omega$内有一阶连续偏导数,则有 :
+      $$
+        \doubleCurveIntegralOnZone{S}A \cdot d\mathbf{S} = \tripleIntegralOnZone{\Omega}\divergenceText{A}dxdydZ
+      $$
+      或者 :
+      $$
+        \doubleCurveIntegralOnZone{S}Pdydz + Qdzdx + Rdxdy = \tripleIntegralOnZone{\Omega}\left(\partialDerivativeFrac{P}{x} + \partialDerivativeFrac{Q}{y} + \partialDerivativeFrac{R}{z}\right)dxdydz
+      $$
+
+      说明 :
+      \begin{itemize}
+        \item {
+              高斯公式是重要公式,它的意义是曲面积分与体积分互化.因为曲面积分不易计算,所以将曲面积分化作了三重积分
+              }
+        \item {
+              高斯公式的物理意义是 : 矢量场通过任意闭曲面$S$的通量等于他所包围的体积$V$内散度的总和.
+              }
+      \end{itemize}
+    }%高斯散度定理/高斯公式/高斯-奥斯特洛格拉特斯基公式结尾
+
+    \subsubsection{散度的运算性质}{
+      \begin{itemize}
+        \item {
+              由于散度是线性算符,所以 :
+              $$
+                \divergenceSymbol(aF \pm bG) = a\divergenceSymbol F \pm b\divergenceSymbol G
+              $$
+              其中$F,G$是向量场,$a,b$是实数.
+              }
+        \item {
+              $\divergenceSymbol(\varphi A) = grad \varphi \cdot A + \varphi\divergenceSymbol A$
+
+              其中$\varphi$是数性函数.
+              }
+        \item {
+              $\divergenceSymbol (\vec{\mathConstant}\varphi) = \vec{\mathConstant} \cdot grad \varphi$
+              }
+      \end{itemize}
+
+      注意 :
+      \begin{itemize}
+        \item 散度是对矢量场而言的,所以对一个标量函数求散度无意义.
+        \item {
+              散度运算与通常的微分运算相似 :
+              $$
+                d(uv) = vdu + udv
+              $$
+              若是直接仿照应当有$\divergenceSymbol (\varphi A) = \varphi\divergenceSymbol A + A\divergenceSymbol \varphi$,但是由于$\varphi$是数性函数,求散度无意义,只有写成$grad \varphi$才有意义.于是就能满足散度是一个"数量"的要求.
+              }
+      \end{itemize}
+    }%散度的运算性质
 
   }%通量与旋度,高斯公式
+
+  %# TODO 环量,旋度,斯托克斯
 
  }%场论结尾
 
