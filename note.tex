@@ -97,7 +97,7 @@
 \newcommand{\smallO}[1]{o(#1)}
 \newcommand{\doubleAbsoluteValue}[1]{\left\Vert #1 \right\Vert}
 \newcommand{\absoluteValue}[1]{\left\lvert #1 \right\vert}
-\newcommand{\mathBigCase}[1]{\left[#1\right]}
+\newcommand{\mediumBigCase}[1]{\left[#1\right]}
 \newcommand{\pathIntegral}[1]{\int_{#1}}
 \newcommand{\curveIntegralOnLine}[1]{\oint_{#1}}
 \newcommand{\doubleCurveIntegralOnZone}[1]{\oiint_{#1}}
@@ -106,25 +106,30 @@
 \newcommand{\bookName}[1]{$\ll$#1$\gg$}
 \newcommand{\eliminationMatrix}[1]{{E_l}_{#1}}
 \newcommand{\vecAngle}[2]{(\widehat{#1\ #2})}
-\newcommand{\divergenceText}[1]{\mbox{div}}
+\newcommand{\surfaceIntegralOnSurface}[1]{\iint_{#1}}
 % \newcommand{\inverse}{^{-1}}
 
 \newcommand{\augmentedMatrix}[2]{
-  \mathBigCase{
-  \begin{array}{c|c}
-    #1 & #2
-  \end{array}
-  }
-  }
-
-\newcommand{\tikzPlaceDot}[1]{\draw[fill = black] #1 circle (1pt)}
-
-\DeclareMathOperator{\arccot}{arccot}
-\DeclareMathOperator{\arcsec}{arcsec}
-\DeclareMathOperator{\arccsc}{arccsc}
-\DeclareMathOperator{\inverse}{^{-1}}
-\DeclareMathOperator{\divergenceSymbol}{\nabla\cdot}
-
+  \mediumBigCase{
+    \begin{array}{c|c}
+      #1 & #2
+    \end{array}
+    }
+    }
+    
+    \newcommand{\tikzPlaceDot}[1]{\draw[fill = black] #1 circle (1pt)}
+    
+    \DeclareMathOperator{\arccot}{arccot}
+    \DeclareMathOperator{\arcsec}{arcsecll}
+    \DeclareMathOperator{\arccsc}{arccsc}
+    \DeclareMathOperator{\inverse}{^{-1}}
+    \DeclareMathOperator{\divergenceText}{\mathbf{div}\ }
+    \DeclareMathOperator{\divergenceSymbol}{\nabla\cdot}
+    \DeclareMathOperator{\curlSymbol}{\nabla\times}
+    \DeclareMathOperator{\curlText}{\mathbf{curl}\ }
+    \DeclareMathOperator{\curlRotText}{\mathbf{rot}\ }
+    \DeclareMathOperator{\gradText}{\mathbf{grad}\ }
+    
 \begin{document}
 \pagestyle{empty}{
   \maketitle
@@ -133,8 +138,9 @@
       \item 誊录纸质笔记\ 线性代数-转置,置换和空间
       \item 隐函数存在定理,等幂求和,二项式系数,朱世杰恒等式.
       \item 重写线性代数
-      \item 场论:环量,旋度,斯托克斯公式
+      \item 场论:p20,三个概念即两个公式的算子表示法
       \item 补充多个section,计算机图形学,场论等
+      \item 整合冗余部分
     \end{enumerate}
   }
 
@@ -144,6 +150,8 @@
 \setcounter{page}{1}
 
 \chapter{数学}{
+
+注:由于特殊原因,数学分析,高等代数内容会被拆散放在各个章节中,善用搜索.
 
 \section{基本概念}{
 
@@ -396,8 +404,8 @@ $\sum\limits_{1 \leq i_1 < i_2 < \dotsm < i_k \leq n}x_{i_{1}}x_{i_{2}} \dotsm x
     球面坐标由三个变量组成,如果将某一个点用向量$\vec{v}$表示,那么三个变量分别是 :
     \begin{itemize}
       \item $r$ : 表示$\vec{v}$的长度,可以理解成极坐标的$\rho$.取值范围为:$\left[0,+\infty\right)$
-      \item $\theta$ : 用过原点以$z$轴作为法向量的平面作为极坐标的平面,$\vec{v}$投影到此平面上时$\theta$就是该投影在极坐标中的角度单位.取值范围为$\mathBigCase{0,2\pi}$
-      \item $\varphi$ : 以原点为顶点,$z$轴为旋转轴,$\vec{v}$作为母线的圆锥面的半顶角.也就是$\vec{v}$与$z$轴的夹角.取值范围为:$\mathBigCase{0,\pi}$
+      \item $\theta$ : 用过原点以$z$轴作为法向量的平面作为极坐标的平面,$\vec{v}$投影到此平面上时$\theta$就是该投影在极坐标中的角度单位.取值范围为$\mediumBigCase{0,2\pi}$
+      \item $\varphi$ : 以原点为顶点,$z$轴为旋转轴,$\vec{v}$作为母线的圆锥面的半顶角.也就是$\vec{v}$与$z$轴的夹角.取值范围为:$\mediumBigCase{0,\pi}$
     \end{itemize}
 
     从直角坐标系到球面坐标系的转换公式为 :
@@ -569,9 +577,9 @@ $\cfrac{2}{\cfrac{1}{x_1} + \cfrac{1}{x_2}} = \cfrac{2x_1x_2}{x_1 + x_2}\leq\sqr
     \hline
     名字           & 定义           & 定义域                                                                                       & 值域                                \\
     \hline
-    $\sin{\alpha}$ & $\cfrac{y}{r}$ & $\mathRealNumberCollection$                                                                  & $\mathBigCase{-1,1}$                \\
+    $\sin{\alpha}$ & $\cfrac{y}{r}$ & $\mathRealNumberCollection$                                                                  & $\mediumBigCase{-1,1}$              \\
     \hline
-    $\cos{\alpha}$ & $\cfrac{x}{r}$ & $\mathRealNumberCollection$                                                                  & $\mathBigCase{-1,1}$                \\
+    $\cos{\alpha}$ & $\cfrac{x}{r}$ & $\mathRealNumberCollection$                                                                  & $\mediumBigCase{-1,1}$              \\
     \hline
     $\tan{\alpha}$ & $\cfrac{y}{x}$ & $\mathRealNumberCollection(\alpha \neq \cfrac{\pi}{2} + k\pi(k \in \mathIntegerCollection))$ & $\mathRealNumberCollection$         \\
     \hline
@@ -589,13 +597,13 @@ $\cfrac{2}{\cfrac{1}{x_1} + \cfrac{1}{x_2}} = \cfrac{2x_1x_2}{x_1 + x_2}\leq\sqr
     \hline
     名字        & 定义         & 定义域                                                & 值域                                                                 \\
     \hline
-    $\arcsin x$ & $x = \sin y$ & $\mathBigCase{-1,1}$                                  & $\mathBigCase{-\cfrac{\pi}{2},\cfrac{\pi}{2}}$                       \\
+    $\arcsin x$ & $x = \sin y$ & $\mediumBigCase{-1,1}$                                & $\mediumBigCase{-\cfrac{\pi}{2},\cfrac{\pi}{2}}$                     \\
     \hline
-    $\arccos x$ & $x = \sin y$ & $\mathBigCase{-1,1}$                                  & $\mathBigCase{0,\pi}$                                                \\
+    $\arccos x$ & $x = \sin y$ & $\mediumBigCase{-1,1}$                                & $\mediumBigCase{0,\pi}$                                              \\
     \hline
-    $\arctan x$ & $x = \tan y$ & $\mathRealNumberCollection$                           & $\mathBigCase{-\cfrac{\pi}{2},\cfrac{\pi}{2}}$                       \\
+    $\arctan x$ & $x = \tan y$ & $\mathRealNumberCollection$                           & $\mediumBigCase{-\cfrac{\pi}{2},\cfrac{\pi}{2}}$                     \\
     \hline
-    $\arccot x$ & $x = \cot y$ & $\mathRealNumberCollection$                           & $\mathBigCase{0,\pi}$                                                \\
+    $\arccot x$ & $x = \cot y$ & $\mathRealNumberCollection$                           & $\mediumBigCase{0,\pi}$                                              \\
     \hline
     $\arcsec x$ & $x = \sec y$ & $\left(-\infty,-1\right] \cup \left[1,+\infty\right)$ & $\left[0,\cfrac{\pi}{2}\right) \cup \left(\cfrac{\pi}{2},\pi\right]$ \\
     \hline
@@ -1422,7 +1430,7 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
  }%空间解析几何结尾
 
 \section{微积分}{
-注:本章中的“可积”如果没有特别说明则通常指的是传统意义下的“黎曼可积”.勒贝格积分将放在另一章中.(或者这里也可能)
+注:本章中的“可积”如果没有特别说明则通常指的是传统意义下的“黎曼可积”.勒贝格积分属于测度论.
 
 \subsection{极限}{
 
@@ -1774,11 +1782,11 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
 }%柯西中值定理结尾
 
 \subsubsection{达布中值定理}{
-  设$\defFunction{x}$在$(A,B)$区间中可导,且$\mathBigCase{a,b} \in (A,B)$,$\fDerivative{a} < \fDerivative{b}$,则对于任意给定的$\eta : \fDerivative{a} < \eta < \fDerivative{b}$,都存在一点$c \in (a,b)$使得$\fDerivative{c} = \eta$
+  设$\defFunction{x}$在$(A,B)$区间中可导,且$\mediumBigCase{a,b} \in (A,B)$,$\fDerivative{a} < \fDerivative{b}$,则对于任意给定的$\eta : \fDerivative{a} < \eta < \fDerivative{b}$,都存在一点$c \in (a,b)$使得$\fDerivative{c} = \eta$
 
-  即 : 设$f : \mathBigCase{a,b} \to \mathRealNumberCollection$为一个$\mathBigCase{a,b}$上的实值可导函数,并在$\mathBigCase{a,b}$上可导,那么$f\derivative$满足 : 对任意介于$\fDerivative{a}$和$\fDerivative{b}$之间的$t$,存在$x \in (a,b)$使得$\fDerivative{x} = t$.
+  即 : 设$f : \mediumBigCase{a,b} \to \mathRealNumberCollection$为一个$\mediumBigCase{a,b}$上的实值可导函数,并在$\mediumBigCase{a,b}$上可导,那么$f\derivative$满足 : 对任意介于$\fDerivative{a}$和$\fDerivative{b}$之间的$t$,存在$x \in (a,b)$使得$\fDerivative{x} = t$.
 
-  等价于 : 设$\defFunction{x}$在$\mathBigCase{a,b}$上可微,若在$\mathBigCase{a,b}$上$\fDerivative{x}$不等于0,则$\fDerivative{x}$在$\mathBigCase{a,b}$上保持定号(恒正或恒负).
+  等价于 : 设$\defFunction{x}$在$\mediumBigCase{a,b}$上可微,若在$\mediumBigCase{a,b}$上$\fDerivative{x}$不等于0,则$\fDerivative{x}$在$\mediumBigCase{a,b}$上保持定号(恒正或恒负).
 }%达布中值定理结尾
 
 }%微分结尾
@@ -3181,7 +3189,7 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
 
     \subsubsection{格林公式的计算}{
       $$
-        \doubleIntegralOnZone{D}\mathBigCase{\partialDerivativeFrac{Q}{x} - \partialDerivativeFrac{P}{y}}dxdy = \curveIntegralOnLine{L}Pdx + Qdy
+        \doubleIntegralOnZone{D}\mediumBigCase{\partialDerivativeFrac{Q}{x} - \partialDerivativeFrac{P}{y}}dxdy = \curveIntegralOnLine{L}Pdx + Qdy
       $$
 
       有两种情况 :
@@ -3535,7 +3543,7 @@ $$
       \item {
             积分判别法 :
 
-            若函数$\defFunction{x}$是区间$\mathBigCase{a,+\infty}$上非负且单调递减的连续函数,则$\upDownSum{\infty}{n = a} a_n = \upDownSum{\infty}{n = a} f(n)$与$\definiteIntegral{a}{+\infty}\defFunction{x}dx$的敛散性一致.
+            若函数$\defFunction{x}$是区间$\mediumBigCase{a,+\infty}$上非负且单调递减的连续函数,则$\upDownSum{\infty}{n = a} a_n = \upDownSum{\infty}{n = a} f(n)$与$\definiteIntegral{a}{+\infty}\defFunction{x}dx$的敛散性一致.
 
             注意:只是敛散性一致.
             }
@@ -3735,7 +3743,7 @@ $$
           幂级数的乘积 : 基于柯西乘积
 
           \begin{math}
-            $$\bigCase{\upDownSum{\infty}{n = 0}a_n(x - c)^n}\mathBigCase{\upDownSum{\infty}{n = 0}b_n(x - c)^n}$$ \\
+            $$\bigCase{\upDownSum{\infty}{n = 0}a_n(x - c)^n}\mediumBigCase{\upDownSum{\infty}{n = 0}b_n(x - c)^n}$$ \\
             = \upDownSum{\infty}{i = 0}\upDownSum{\infty}{j = 0}a_ib_j(x - c)^{i + j} \\
             = \upDownSum{\infty}{n = 0}\bigCase{\upDownSum{n}{i = 0}a_ib_{n - i}}(x - c)^n
           \end{math}
@@ -4042,6 +4050,8 @@ $$
 }%函数的幂级数展开结尾
 
 }%无穷级数结尾
+
+\section{抽象代数}{}%抽象代数结尾
 
 \section{线性代数}{
 --{\tiny线性代数,永远滴神!}
@@ -5122,7 +5132,7 @@ $$
 
  }%数论结尾
 
-\section{场论}{
+\section{场论(含有多元微积分向量分析部分)}{
 
   \subsection{场论基本内容}{
     注:矢量 = 向量,有时候会混着用，一般是那个顺口用哪个.
@@ -5359,11 +5369,11 @@ $$
     \subsubsection{梯度}{
       设数量场$u = u(M)$,如果在场中任一点$M$处,存在非零矢量$\vec{G}$,其方向为函数$u(M)$在$M$点处方向导数的最大的方向,其模$|\vec{G}|$这个最大的方向导数值,则称矢量$\vec{G}$为数量场$u$在点$M$处的梯度,记为 :
       $$
-        grad\ u = \vec{G}
+        \gradText u = \vec{G}
       $$
       在直角坐标系中有 :
       $$
-        grad\ u = \begin{bmatrix}
+        \gradText u = \begin{bmatrix}
           \partialDerivativeFrac{u}{x} & \partialDerivativeFrac{u}{y} & \partialDerivativeFrac{u}{z}
         \end{bmatrix} = \partialDerivativeFrac{u}{x}\vec{i} + \partialDerivativeFrac{u}{y}\vec{j} + \partialDerivativeFrac{u}{z}\vec{k}
       $$
@@ -5374,19 +5384,20 @@ $$
         \item 梯度是刻划数量场的概念.数量场的梯度是一个矢量.
         \item 任一点的梯度垂直于过该点的等值面(线),并且指向$u(M)$增大的一方.因而梯度方向平行于等值面(线)的法线方向.
         \item 数量场的每一点都有一个梯度,他是矢量,数量场的梯度场是矢量场,称为$u(M)$的梯度场.
-        \item $\partialDerivativeFrac{u}{l} = \triangledown u \cdot l_0$,其中$l_0= \cfrac{l}{|l|}$
-        \item $\triangledown$称为$\triangledown$算子
+        \item $\partialDerivativeFrac{u}{l} = \nabla u \cdot l_0$,其中$l_0= \cfrac{l}{|l|}$
+        \item $\nabla$称为nabla算子
       \end{itemize}
     }%梯度结尾
 
     \subsubsection{梯度的运算公式}{
       \begin{itemize}
-        \item $\triangledown \mathConstant = 0$
-        \item $\triangledown (\mathConstant u) = \mathConstant \triangledown u$
-        \item $\triangledown (u \pm v) = \triangledown u + \triangledown v$
-        \item $\triangledown (uv) = v\triangledown u + u\triangledown v$
-        \item $\triangledown (\cfrac{u}{v}) = \cfrac{v\triangledown u - u\triangledown v}{v^2}\qquad (v \neq 0)$(注意:与导数的顺序不同)
-        \item $\triangledown \defFunction{u} = \fDerivative{u}\triangledown u$
+        \item $\gradText \mathConstant = 0$
+        \item $\gradText (\mathConstant u) = \mathConstant \triangledown u$
+        \item $\gradText (u \pm v) = \triangledown u + \triangledown v$
+        \item $\gradText (uv) = v\triangledown u + u\triangledown v$
+        \item $\gradText (\cfrac{u}{v}) = \cfrac{v\triangledown u - u\triangledown v}{v^2}\qquad (v \neq 0)$(注意:与导数的顺序不同)
+        \item $\gradText \defFunction{u} = \fDerivative{u}\triangledown u$
+        \item 以上的公式都可以改写成用$\nabla$算子的形式
       \end{itemize}
     }%梯度的运算公式
 
@@ -5404,7 +5415,7 @@ $$
 
       说明 :
       \begin{itemize}
-        \item {通量$\varPhi$是一个数列.(顾名思义,通量就是矢量$\vec{A}$通过$S$的量,$A$可以表示流速,电场,磁场的强度等.相应的$\varPhi$就是流量,电通量,磁通量等.)因为$d\mathbf{S} = \vec{n}dS$,$A\cdot d\mathbf{S}$有正负之分
+        \item {通量$\varPhi$是一个数量.(顾名思义,通量就是矢量$\vec{A}$通过$S$的量,$A$可以表示流速,电场,磁场的强度等.相应的$\varPhi$就是流量,电通量,磁通量等.)因为$d\mathbf{S} = \vec{n}dS$,$A\cdot d\mathbf{S}$有正负之分
 
               \begin{itemize}
                 \item $\vecAngle{\vec{A}}{\vec{n}} < \cfrac{\pi}{2},\varPhi > 0$
@@ -5441,26 +5452,26 @@ $$
       $$
         \limNormal{\Omega \to M}\cfrac{\doubleCurveIntegralOnZone{S}A \cdot d\mathbf{S}}{\Delta V}
       $$
-      存在,则称此极限值为向量场$A$在点$M$处的散度.记为$\divergenceText{A}$,即 :
+      存在,则称此极限值为向量场$A$在点$M$处的散度.记为$\divergenceText A$,即 :
       $$
-        \divergenceText{A} = \limNormal{\Omega \to M}\cfrac{\doubleCurveIntegralOnZone{S}A \cdot d\mathbf{S}}{\Delta V}
+        \divergenceText A = \limNormal{\Omega \to M}\cfrac{\doubleCurveIntegralOnZone{S}A \cdot d\mathbf{S}}{\Delta V}
       $$
 
       说明 :
       \begin{itemize}
         \item {
-              散度是刻画矢量场的基本性质的量,是数量.$\divergenceText{A}$形成一个数量场,称为矢量场$A$的散度场.
+              散度是刻画矢量场的基本性质的量,是数量.$\divergenceText A$形成一个数量场,称为矢量场$A$的散度场.
               }
         \item {
               散度,顾名思义就是向量场一点处发散量的大小.在$M$点 :
               \begin{itemize}
-                \item $\divergenceText{A} > 0$,表示M点有源.值越大,表示源$M$的发散量越大.
-                \item $\divergenceText{A} < 0$,表示M点有洞.绝对值越大,表示这个洞吸收量越大(或渗的越快).
-                \item $\divergenceText{A} = 0$,表示$M$点无源无洞.
+                \item $\divergenceText A > 0$,表示M点有源.值越大,表示源$M$的发散量越大.
+                \item $\divergenceText A < 0$,表示M点有洞.绝对值越大,表示这个洞吸收量越大(或渗的越快).
+                \item $\divergenceText A = 0$,表示$M$点无源无洞.
               \end{itemize}
               }
         \item {
-              由定义可知,$\divergenceText{A}$就是单位体积的通量的极限,也就是通量的密度.
+              由定义可知,$\divergenceText A$就是单位体积的通量的极限,也就是通量的密度.
               }
         \item {
               散度算子为$\divergenceSymbol$,表示点乘结果为数.
@@ -5484,7 +5495,7 @@ $$
 
               其中$\vec{i},\vec{j},\vec{k}$分别是$x,y,z$轴上的单位向量,场的分量$A_x,A_y,A_z$具有一阶连续偏导数,那么向量场$A$的散度就是 :
               $$
-                \divergenceText{A} = \divergenceSymbol A = \partialDerivativeFrac{A_x}{x} + \partialDerivativeFrac{A_y}{y} + \partialDerivativeFrac{A_z}{z}
+                \divergenceText A = \divergenceSymbol A = \partialDerivativeFrac{A_x}{x} + \partialDerivativeFrac{A_y}{y} + \partialDerivativeFrac{A_z}{z}
               $$
               }
         \item {
@@ -5498,7 +5509,7 @@ $$
               $$
               向量场$A$的散度就是 :
               $$
-                \divergenceText{A} = \divergenceSymbol A = \cfrac{1}{\rho}\partialDerivativeFrac{\rho A_\rho}{\rho} + \cfrac{1}{\rho}\partialDerivativeFrac{A_\varphi}{\varphi} + \partialDerivativeFrac{A_z}{z}
+                \divergenceText A = \divergenceSymbol A = \cfrac{1}{\rho}\partialDerivativeFrac{\rho A_\rho}{\rho} + \cfrac{1}{\rho}\partialDerivativeFrac{A_\varphi}{\varphi} + \partialDerivativeFrac{A_z}{z}
               $$
               }
         \item {
@@ -5510,7 +5521,7 @@ $$
               $$
               向量场$A$的散度就是 :
               $$
-                \divergenceText{A} = \divergenceSymbol A = \cfrac{1}{r^2}\partialDerivativeFrac{r^2A_r}{r} + \cfrac{1}{r\sin\theta}\partialDerivativeFrac{\sin\theta A_\theta}{\theta} + \cfrac{1}{r\sin\theta}\partialDerivativeFrac{A_\varphi}{\varphi}
+                \divergenceText A = \divergenceSymbol A = \cfrac{1}{r^2}\partialDerivativeFrac{r^2A_r}{r} + \cfrac{1}{r\sin\theta}\partialDerivativeFrac{\sin\theta A_\theta}{\theta} + \cfrac{1}{r\sin\theta}\partialDerivativeFrac{A_\varphi}{\varphi}
               $$
               }
       \end{itemize}
@@ -5521,7 +5532,7 @@ $$
 
       设矢量场$A = P\vec{i} + Q\vec{j} + R\vec{k}$的各分量$P,Q,R$再闭曲面所围区域$\Omega$内有一阶连续偏导数,则有 :
       $$
-        \doubleCurveIntegralOnZone{S}A \cdot d\mathbf{S} = \tripleIntegralOnZone{\Omega}\divergenceText{A}dxdydZ
+        \doubleCurveIntegralOnZone{S}A \cdot d\mathbf{S} = \tripleIntegralOnZone{\Omega}\divergenceText AdxdydZ
       $$
       或者 :
       $$
@@ -5573,7 +5584,212 @@ $$
 
   }%通量与旋度,高斯公式
 
-  %# TODO 环量,旋度,斯托克斯
+  \subsection{环量,旋度,斯托克斯公式}{
+    \subsubsection{环量}{
+      设矢量场$A(M)$,将沿着场中某一有向封闭曲线$l$的曲线积分 : $$
+        \Gamma = \curveIntegralOnLine{l}A \cdot dl
+      $$
+
+      称为矢量场$A$按照所取方向沿着曲线$l$的环量.
+
+      说明 :
+      \begin{itemize}
+        \item 环量与通量一样,是一个刻画矢量场的特征量.
+        \item 环量是一个数量,他的数值除了与场$A$有关外,还和回路$l$的形状和取向有关,说明$\Gamma$并不只是表示向量场本身内在属性的量,为了只表示场$A$本身的性质,就需要让$l$收缩到一点,为此引入环量面密度.
+      \end{itemize}
+      %#TODO wiki
+    }%环量结尾
+
+    \subsubsection{环量面密度}{
+      设$M$是矢量场中的一点,在$M$点取一矢量$\vec{n}$,并且在$M$点附近取回路$l$,作以$l$为边界,$\vec{n}$为法线且过$M$的曲面$\Delta S$,并取$l$的正向与$n$构成右手系.令$l$沿着$\Delta S$以任意方式收缩到$M$点,如果极限$$
+        \limNormal{l \to M(\mbox{沿着}\Delta S)}\cfrac{\curveIntegralOnLine{l}A \cdot dl}{\Delta S}
+      $$
+      存在,则称此极限值为向量场$A$在点$M$处沿方向$\vec{n}$的环量面密度.记为$L_{n}$
+
+      说明 :
+      \begin{itemize}
+        \item $L_n$是单位面积的环量的极限.在物理上,单位面积的某个两被称为面密度.$\cfrac{\curveIntegralOnLine{l}A \cdot dl}{\Delta S}$是平均单位面积的环量,即$\Delta S$上的平均面密度.用微分方法处理,取极限得到了在$M$点的环量密度,与$l$的形状无关.
+        \item $L_n$的大小反映了在点$M$沿着$\vec{n}$方向的旋转强弱情况.
+        \item $L_n$的大小与取定的方向$\vec{n}$有关.在空间中一点,方向$L_n$可以任取,于是又无穷多个$L_n$,这些$L_n$中有一个最大者,沿着最大者的方向,场在该点旋转最强,于是引入旋度概念.
+      \end{itemize}
+    }%环量面密度结尾
+
+    \subsubsection{旋度}{
+      若在向量场$A$中的一点$M$处存在矢量$\vec{R}$,他的方向是$A$在该点环量面密度最大的方向,他的模就是这个最大的环量面密度.矢量$\vec{R}$称为向量场$A$在点$M$的旋度,记为$\curlRotText A$或者$\curlText A$
+
+      说明 :
+      \begin{itemize}
+        \item 旋度是刻划向量场的一个特征量.说明一个矢量场是否有旋以及旋转强弱.
+        \item 旋度与环量中$l$的形状,取向都无关,只与场在$M$点的量$A(M)$本身有关,他是代表矢量场本身内在属性的量.
+        \item 旋度是一个向量算子,表示在三维欧几里得空间中的向量场的无穷小量旋转.在向量场的每个点上,点的旋度表示为一个向量,称为旋度向量.这个向量的模和方向刻画了在这个点上的强度和旋转方向.
+        \item 由定义知旋度与环量面密度的关系 : $L_n = \curlRotText A \cdot \vec{n}$
+        \item 旋转的方向是旋转的轴,它由右手定则来确定,而旋度的大小是旋转的量.如果向量场表示一个移动的流形的流速,则旋度是这个流形的环量面密度.旋度为0的向量场叫做无旋向量场.旋度是向量的一种微分形式.微积分基本定理的对应形式是开尔文-斯托克斯定理(斯托克斯公式),他将向量场旋度的曲面积分关联到这个向量场环绕的边界曲线的曲线积分.
+        \item 不同于梯度和散度,旋度不能简单的推广到其他维度;某些推广是可能的,但是只有在三位中,在几何上定义的向量场旋度还是向量场.这个现象类似于三维叉积,此联系反映在了旋度的符号$\curlSymbol$上.
+        \item 矢量场每点都对应一个旋度,这些旋度就形成了一个新的矢量场,称为原矢量场$A$的旋度场$\curlRotText A$.
+      \end{itemize}
+    }%旋度结尾
+
+    \subsubsection{旋度在直角坐标系中的运算公式}{
+      设矢量场$A$ : $$
+        A = P(x,y,z)\vec{i} + Q(x,y,z)\vec{j} + R(x,y,z)\vec{k}
+      $$
+      且$P,Q,R$具有一阶连续偏导数,则 : $$
+        \curlRotText A = \bigCase{\partialDerivativeFrac{R}{y} - \partialDerivativeFrac{Q}{z}}\vec{i} + \bigCase{\partialDerivativeFrac{P}{z} - \partialDerivativeFrac{R}{x}}\vec{j} + \bigCase{\partialDerivativeFrac{Q}{x} - \partialDerivativeFrac{P}{y}}\vec{k}
+      $$
+      可以写成便于记忆的行列式(只是便于记忆,只有形式上的意义,无实际意义) : $$
+        \curlRotText A = \begin{vmatrix}
+          \vec{i}                       & \vec{j}                       & \vec{k}                       \\
+          \partialDerivativeFrac{\ }{x} & \partialDerivativeFrac{\ }{y} & \partialDerivativeFrac{\ }{z} \\
+          P                             & Q                             & R
+        \end{vmatrix}
+      $$
+    }%旋度在直角坐标系中的运算公式结尾
+
+    \subsubsection{旋度的运算性质}{
+      \begin{itemize}
+        \item $\curlRotText (\vec{A} \pm \vec{B}) = \curlRotText \vec{A} \pm \curlRotText \vec{B}$
+        \item $\curlRotText (\varphi \vec{A}) = \varphi \curlRotText \vec{A} + \gradText \varphi \times \vec{A}$($\varphi$是数性函数)
+        \item $\curlRotText \mathConstant \vec{A} = \mathConstant \curlRotText \vec{A}$
+        \item $\curlRotText (\varphi \vec{a}) = \gradText \varphi \times \vec{a}$($\vec{a}$为常向量)
+      \end{itemize}
+    }%旋度的运算性质结尾
+
+    \subsubsection{斯托克斯公式}{
+      设矢量场$A = P\vec{i} + Q\vec{j} + R\vec{k}$的分量$P,Q,R$在包围曲面$S$的空间区域中有一阶连续偏导数,$l$为曲面$S$的边界,则 : $$
+        \curveIntegralOnLine{l}A \cdot dl = \surfaceIntegralOnSurface{S}\curlRotText A\cdot dS
+      $$
+      或者写成 : $$
+        \curveIntegralOnLine{l}Pdx + Qdy + Rdz = \surfaceIntegralOnSurface{S}\mediumBigCase{\bigCase{\partialDerivativeFrac{R}{y} - \partialDerivativeFrac{Q}{z}}dydz + \bigCase{\partialDerivativeFrac{P}{z} - \partialDerivativeFrac{R}{x}}dzdx + \bigCase{\partialDerivativeFrac{Q}{x} - \partialDerivativeFrac{P}{y}}dxdy}
+      $$
+
+      说明 :
+      \begin{itemize}
+        \item 斯托克斯公式也是重要公式之一,利用它可以把曲线积分转换为曲面积分,或者相反.
+        \item 由于计算曲面积分困难，而曲线积分可以直接计算,若用斯托克斯公式化为曲面积分,除了特殊情况外可能会更难计算,因此斯托克斯公式没有高斯公式用的多.
+        \item 此公式的意义就是向量场在任意闭回路$l$上的环量等于以$l$为边界的曲面$S$上的旋度的总和.
+        \item 注意 : 高斯公式把闭曲面的曲面积分华为三重积分,斯托克斯则把曲线积分华为以$l$为边界的曲面积分,如果不能化为闭曲面的曲面积分,也就不能化成三重积分.
+      \end{itemize}
+
+      当$A$为平面向量场是,斯托克斯公式会变成格林公式,斯托克斯公式可以看作是格林公式的推广.
+    }%斯托克斯公式
+
+  }%环量,旋度,斯托克斯公式结尾
+
+  \subsection{几个特殊的向量场}{
+
+    \subsubsection{管形场}{
+      在向量场$A$中,如果$\divergenceText A = 0$,则称$A$为管形场,又称无源场.
+
+      管形场的判别法 : A为管形场$\Leftrightarrow \divergenceText A = 0$.
+
+      管形场的一条重要性质就是 : 场中任一矢量管(由矢量线所组成的管型曲面)的所有横截面的通量都相等.
+    }%管形场结尾
+
+    \subsubsection{有势场}{
+      在矢量场$A(M)$中,如果存在函数$u(M)$使得$A = \gradText u$,则称$A$为有势场.称$v = -u$为矢量场$A$的势函数.
+
+      有以下等价定义 :
+      \begin{itemize}
+        \item $A = P\vec{i} + Q\vec{j} + R\vec{k}$为有势场
+        \item $\curlRotText A = 0$
+        \item $\curveIntegralOnLine{l} A \cdot dl = 0$($l$为任意闭曲线)
+        \item $\definiteIntegral{M}{M_0}A \cdot dl$与路径无关.
+        \item 存在函数$u$使得$du(x,y,z) = Pdx + Qdy + Rdz$
+      \end{itemize}
+      以上五条定义都互相等价
+
+      有势场的判别方法 : 如果$\curlRotText A = 0$,则$A$为有势场.
+
+      使用这一判别方法比较方便,当然等价定义也可以用于判别.\spaceline
+
+      求势函数的方法 :
+      \begin{enumerate}
+        \item {
+              公式法 :
+
+              任取一点$M_0(x_0,y_0,z_0)$,则$$
+                u(x,y,z) = \definiteIntegral{x}{x_0}P(x,y_0,z_0)dx + \definiteIntegral{y}{y_0}Q(x,y,z)dy + \definiteIntegral{x}{x_0}R(x,y,z)dz %# TODO 查错
+              $$
+              则势函数$v(x,y,z) = -u(x,y,z)$
+              }
+        \item {
+              凑全微分法 :
+
+              找一个函数$u(x,y,z)$,使得$$
+                du = Pdx + Qdy + Rdz
+              $$,
+              则势函数$v(x,y,z) = -u(x,y,z)$
+              }
+        \item 积分法:微分法换一种思路,解微分方程.
+      \end{enumerate}
+    }%有势场结尾
+
+    \subsubsection{调和场}{
+      矢量场$A$中,若$\divergenceText A = 0$且$\curlRotText A = 0$,则称$A$是调和场.也叫做无源无旋场.
+
+      说明 :
+      \begin{itemize}
+        \item 调和场$\Leftrightarrow$有势场且管形场
+        \item {
+              调和场是有势场,必有$u$存在,使$$
+                \gradText u = A
+              $$
+              又因为是管形场,所以$\divergenceText A = \divergenceText\gradText u = 0$,即$\Delta u = 0$(参考公式表)
+
+              $u$称为调和场的调和函数.
+              }
+      \end{itemize}
+    }%调和场结尾
+
+  }%几个特殊的向量场结尾
+
+  \subsection{nabla算子(哈密尔顿算子)}{
+
+    \subsubsection{定义}{
+      $$
+        \nabla = \vec{i}\partialDerivativeFrac{\ }{x} + \vec{j}\partialDerivativeFrac{\ }{y} + \vec{k}\partialDerivativeFrac{\ }{z} = \begin{Bmatrix}
+          \partialDerivativeFrac{\ }{x} & \partialDerivativeFrac{\ }{y} & \partialDerivativeFrac{\ }{z}
+        \end{Bmatrix}
+      $$
+      称为哈密尔顿算子(nabla算子).它是一个向量形式的微分算子,兼有微分运算和向量运算的双重作用.它本身既不是一个函数也不是某个物理量.他表示的是一种运算,以一定方式作用于函数式向量后才能表示一个量.
+    }%nabla算子定义结尾
+
+    \subsubsection{运算规则}{
+      \begin{itemize}
+        \item $\nabla u = \bigCase{\vec{i}\partialDerivativeFrac{\ }{x} + \vec{j}\partialDerivativeFrac{\ }{y} + \vec{k}\partialDerivativeFrac{\ }{z}}u = \partialDerivativeFrac{u}{x}\vec{i} + \partialDerivativeFrac{u}{y}\vec{j} + \partialDerivativeFrac{u}{z}\vec{k} = \begin{bmatrix}
+                  \partialDerivativeFrac{u}{x} & \partialDerivativeFrac{u}{y} & \partialDerivativeFrac{u}{z}
+                \end{bmatrix}$
+        \item $\divergenceSymbol A = \bigCase{\vec{i}\partialDerivativeFrac{\ }{x} + \vec{j}\partialDerivativeFrac{\ }{y} + \vec{k}\partialDerivativeFrac{\ }{z}} \cdot (P\vec{i} + Q\vec{j} + R\vec{k}) = \partialDerivativeFrac{P}{x} + \partialDerivativeFrac{Q}{y} + \partialDerivativeFrac{R}{z}$
+        \item $\curlSymbol A = \bigCase{\vec{i}\partialDerivativeFrac{\ }{x} + \vec{j}\partialDerivativeFrac{\ }{y} + \vec{k}\partialDerivativeFrac{\ }{z}} \times (\vec{i}P + \vec{j}Q + \vec{k}R) = \begin{vmatrix}
+                  \vec{i}                       & \vec{j}                       & \vec{k}                       \\
+                  \partialDerivativeFrac{\ }{x} & \partialDerivativeFrac{\ }{y} & \partialDerivativeFrac{\ }{z} \\
+                  P                             & Q                             & R
+                \end{vmatrix}\\
+                = \vec{i}\bigCase{\partialDerivativeFrac{R}{y} - \partialDerivativeFrac{Q}{z}} + \vec{j}\bigCase{\partialDerivativeFrac{P}{z} - \partialDerivativeFrac{R}{x}} + \vec{k}\bigCase{\partialDerivativeFrac{Q}{x} - \partialDerivativeFrac{P}{y}}$
+      \end{itemize}
+
+      说明 :
+      \begin{itemize}
+        \item {
+              $\nabla$算子可以作用到数性函数,也可以作用到向量函数,有三种形式 : $$
+                \nabla u \quad \divergenceSymbol A \quad \curlSymbol A
+              $$
+              }
+        \item {
+              $\nabla$不是向量,所以$A \cdot \nabla \neq \divergenceSymbol A$ :
+
+              $$
+                \divergenceSymbol A = \partialDerivativeFrac{\ }{x}A_x + \partialDerivativeFrac{\ }{y}A_y + \partialDerivativeFrac{\ }{z}A_z
+              $$
+
+              $$
+                A \cdot \nabla = A_x\partialDerivativeFrac{\ }{x} + A_y\partialDerivativeFrac{\ }{y} + A_z\partialDerivativeFrac{\ }{z}
+              $$
+              }
+      \end{itemize}
+    }%运算规则结尾
+
+  }%nabla算子结尾
 
  }%场论结尾
 
