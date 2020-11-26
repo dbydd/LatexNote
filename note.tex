@@ -129,6 +129,7 @@
     \DeclareMathOperator{\curlText}{\mathbf{curl}\ }
     \DeclareMathOperator{\curlRotText}{\mathbf{rot}\ }
     \DeclareMathOperator{\gradText}{\mathbf{grad}\ }
+    \DeclareMathOperator{\laplaceOperator}{\Delta}
     
 \begin{document}
 \pagestyle{empty}{
@@ -5708,7 +5709,7 @@ $$
               公式法 :
 
               任取一点$M_0(x_0,y_0,z_0)$,则$$
-                u(x,y,z) = \definiteIntegral{x}{x_0}P(x,y_0,z_0)dx + \definiteIntegral{y}{y_0}Q(x,y,z)dy + \definiteIntegral{x}{x_0}R(x,y,z)dz %# TODO 查错
+                u(x,y,z) = \definiteIntegral{x}{x_0}P(x,y_0,z_0)dx + \definiteIntegral{y}{y_0}Q(x,y,z)dy + \definiteIntegral{z}{z_0}R(x,y,z)dz %# TODO 查错
               $$
               则势函数$v(x,y,z) = -u(x,y,z)$
               }
@@ -5789,7 +5790,47 @@ $$
       \end{itemize}
     }%运算规则结尾
 
+    \subsubsection{梯度散度旋度以及高斯公式和斯托克斯公式的算子表示法}{
+      梯度 : $\nabla u = \gradText u$
+
+      散度 : $\divergenceSymbol A = \divergenceText A$
+
+      旋度 : $\curlSymbol A = \curlRotText A$
+
+      高斯公式 : $\doubleCurveIntegralOnZone{S} A \cdot d\mathbf{S} = \tripleIntegralOnZone{\Omega} \divergenceSymbol A d\Omega$
+
+      斯托克斯公式 : $\curveIntegralOnLine{l} A \cdot dl = \surfaceIntegralOnSurface{S}\curlSymbol A \cdot ds$
+    }%梯度散度旋度以及高斯公式和斯托克斯公式的算子表示法
+
+    \subsubsection{常用公式}{
+      \begin{itemize}
+        \item $\nabla(\mathConstant u) = \mathConstant \nabla u$
+        \item $\divergenceSymbol(\mathConstant\vec{A}) = \mathConstant \divergenceSymbol \vec{A}$
+        \item $\curlSymbol(\mathConstant \vec{A}) = \mathConstant \curlSymbol \vec{A}$
+        \item $\nabla(u \pm v) = \nabla u \pm \nabla v$
+        \item $\divergenceSymbol(\vec{A} \pm \vec{B}) = \divergenceSymbol \vec{A} \pm \divergenceSymbol \vec{B}$
+        \item $\curlSymbol(\vec{A} \pm \vec{B}) = \curlSymbol\vec{A} \pm \curlSymbol\vec{B}$
+        \item $\divergenceSymbol(u\vec{\mathConstant}) = \nabla u \cdot \vec{\mathConstant}$
+        \item $\curlSymbol(u\vec{\mathConstant}) = \nabla u \times \vec{\mathConstant}$
+        \item $\nabla(uv) = u\nabla v + v\nabla u$
+        \item $\divergenceSymbol(u\vec{A}) = \nabla u \cdot \vec{A} + u \divergenceSymbol \vec{A}$
+        \item $\curlSymbol(u\vec{A}) = \nabla u \times \vec{A} + u \curlSymbol \vec{A}$
+        \item $\nabla(\vec{A} \cdot \vec{B}) = (\vec{A} \cdot \nabla)\vec{B} + (\vec{B} \cdot \nabla)\vec{A} + \vec{A}\times(\curlSymbol\vec{B}) + \vec{B}\times(\curlSymbol\vec{A})$
+        \item $\divergenceSymbol(\vec{A}\times\vec{B}) = \vec{B}\cdot(\curlSymbol\vec{A}) - \vec{A}\cdot(\curlSymbol\vec{B})$
+        \item $\curlSymbol(\vec{A} \times \vec{B}) = (\vec{B} \cdot \nabla)\vec{A} - (\vec{A} \cdot \nabla)\vec{B} + (\divergenceSymbol\vec{B})\vec{A} - (\divergenceSymbol\vec{A})\vec{B}$
+        \item $\divergenceSymbol\nabla u = \nabla^2 u = \laplaceOperator u$($\laplaceOperator \equiv  \cfrac{\partial^2}{\partial x^2} + \cfrac{\partial^2}{\partial x^2} + \cfrac{\partial^2}{\partial z^2}$为拉普拉斯算符,$\laplaceOperator u$称为调和量)
+        \item $\curlSymbol(\nabla u) = 0$(数量场的梯度场是无旋场)
+        \item $\divergenceSymbol(\curlSymbol\vec{A}) = 0$(向量场的旋度场是无源场)
+        \item $\curlSymbol(\curlSymbol\vec{A}) = \nabla(\divergenceSymbol\vec{A}) - \laplaceOperator\vec{A}$
+      \end{itemize}
+      $$
+        \laplaceOperator \vec{A} = \laplaceOperator A_x\vec{i} + \laplaceOperator A_y\vec{j} + \laplaceOperator A_z\vec{k}
+      $$
+    }%常用公式结尾
+
   }%nabla算子结尾
+
+  %#TODO 梯度,散度,旋度在不同坐标系中的表达式,整理,将A和B改写成\vec{f},\vec{g}此类形式,合并至多元微积分.
 
  }%场论结尾
 
