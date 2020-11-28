@@ -5168,48 +5168,49 @@ $$
 
 \subsubsection{b的取值对于解的影响}{
   如果方程变为 : $$
-  \begin{bmatrix}
-    1 & 1 & 2 \\
-    2 & 1 & 3 \\
-    3 & 1 & 4 \\
-    4 & 1 & 5
-  \end{bmatrix}
-  \begin{bmatrix}
-    x_1 \\
-    x_2 \\
-    x_3
-  \end{bmatrix}
-  =
-  \begin{bmatrix}
-    1 \\
-    2 \\
-    3 \\
-    4
-  \end{bmatrix}
+    \begin{bmatrix}
+      1 & 1 & 2 \\
+      2 & 1 & 3 \\
+      3 & 1 & 4 \\
+      4 & 1 & 5
+    \end{bmatrix}
+    \begin{bmatrix}
+      x_1 \\
+      x_2 \\
+      x_3
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      1 \\
+      2 \\
+      3 \\
+      4
+    \end{bmatrix}
   $$
 
-则其解集就无法构成一个子空间.零向量并不在这个集合内.阶级是空间$\mathRealNumberCollection^3$内过$\begin{bmatrix}
-  1 \\
-  0 \\
-  0 
-\end{bmatrix}$
-和$\begin{bmatrix}
-  0 \\
-  -1 \\
-  1 
-\end{bmatrix}$
-的一个平面,但是并不过原点$\begin{bmatrix}
-  0 \\
-  0 \\
-  0 
-\end{bmatrix}$
+  则其解集就无法构成一个子空间.零向量并不在这个集合内.阶级是空间$\mathRealNumberCollection^3$内过$\begin{bmatrix}
+      1 \\
+      0 \\
+      0
+    \end{bmatrix}$
+  和$\begin{bmatrix}
+      0  \\
+      -1 \\
+      1
+    \end{bmatrix}$
+  的一个平面,但是并不过原点$\begin{bmatrix}
+      0 \\
+      0 \\
+      0
+    \end{bmatrix}$
 }%b的取值对于解的影响结尾
 
 \subsubsection{构造列空间和零空间的方法}{
 
-对于列空间,它是由列向量进行线性组合张成的空间;
+  对于列空间,它是由列向量进行线性组合张成的空间;
 
-对于零空间则是从方程组触发,通过让$\vec{x}$满足特定条件而得到的子空间.
+  对于零空间则是从方程组触发,通过让$\vec{x}$满足特定条件而得到的子空间.
+
 }%构造两种子空间的方法
 
 }%Ax = b与四个子空间结尾
@@ -5931,6 +5932,66 @@ $$
 
 \section{离散数学}{
 
+  \subsection{前置知识}
+
+  \subsection{集合论}{
+
+    \subsubsection{集合论的主要内容}{
+      \begin{itemize}
+        \item 研究对象 : 集合,关系,函数,自然数,基数
+        \item 研究思想 : 以逻辑为基础,以集合为工具,表示和构造各种数学对象
+        \item 研究内容 : \begin{itemize}
+                \item 集合的基本概念 : 集合之间的关系,运算,恒等式
+                \item 二元关系 : 表示,性质,函数,等价关系,序关系
+                \item 自然数 : 皮亚诺系统,自然数的运算,性质
+                \item 基数 : 有序集于无穷集,基数的比较
+                \item 良序,超限归纳法
+              \end{itemize}
+      \end{itemize}
+    }%集合论的主要内容结尾
+
+    \subsubsection{集合论中的问题}{
+      \begin{itemize}
+        \item 如何给集合下定义?
+        \item 如何用集合去定义关系,函数,自然数?
+        \item 如何比较集合的大小?
+        \item 能否把每个集合的元素依次列举出来?
+        \item 有没有最大的集合?
+      \end{itemize}
+    }%集合论中的问题结尾
+
+  }%集合论结尾
+
+  \subsection{图论}{
+
+    \subsubsection{图论的主要内容}{
+      \begin{itemize}
+        \item 研究对象 : 由顶点和边构成的图
+        \item 研究思想 : 以集合论为基础,以图为工具,为各种二元关系建立模型
+        \item 研究内容 : \begin{itemize}
+                \item 图的基本概念 : 连通性,矩阵表示,带权图
+                \item 欧拉图,哈密顿图 : 边和顶点的遍历
+                \item 树 : 表示层级组织关系
+                \item 平面图 : 判定,表示,性质
+                \item 图的着色 : 各种调度问题的模型
+                \item 独立集,支配集,覆盖集,匹配 : 各种应用问题
+              \end{itemize}
+      \end{itemize}
+    }%图论的主要内容结尾
+
+    \subsubsection{图论中的问题}{
+      \begin{itemize}
+        \item 什么是图?有哪些图?图有什么性质?
+        \item 什么是欧拉图?什么是哈密顿图?
+        \item 什么是树?如何用矩阵表示图?
+        \item 什么是图的着色?
+        \item 什么是支配集,独立集,覆盖,匹配?
+        \item 什么是带权图?
+      \end{itemize}
+    }%图论中的问题结尾
+
+  }%图论结尾
+
  }%离散数学结尾
 
 }%数学篇结尾
@@ -5948,7 +6009,7 @@ $$
    }%网络安全结尾
 
   \section{计算机图形学}{
-    注:本章中向量默认为列向量.
+    注:本章中向���默认为列向量.
 
     \subsection{对于线性代数部分的补充与扩展}{
 
@@ -6686,9 +6747,168 @@ $$
 
  }%计算机科学篇结尾
 
-\chapter{逻辑学}{
+\chapter{哲学}{
 
-  \section{逻辑学基本常识}{
+  \section{逻辑学}{
+
+    \subsection{命题公式}{
+
+      \subsubsection{连结词}{
+
+        \begin{itemize}
+          \item $P,Q,R,...$表示原子命题(或简单命题)
+          \item $1$ 表示命题的真值为真,$0$ 表示命题的真值为假
+          \item $\lnot$(非)称为否定连结词.
+          \item {
+                $\lnot P$称为$P$的否定式 :
+
+                \begin{center}
+                  \begin{tabular}{c|c}
+                    \hline
+                    $P$ & $\lnot P$ \\
+                    \hline
+                    $0$ & $1$       \\
+                    $1$ & $0$       \\
+                    \hline
+                  \end{tabular}
+                \end{center}
+
+                否定的定义就是取反,如果被连结词是0那么就取1,如果是1那么就取0.
+                }
+          \item $\land$(与)称为合取连结词
+          \item {
+                $P \land Q$称为$P$与$Q$的合取式 :
+
+                \begin{center}
+                  \begin{tabular}{c|c|c}
+                    \hline
+                    $P$ & $Q$ & $P \land Q$ \\
+                    \hline
+                    0   & 0   & 0           \\
+                    0   & 1   & 0           \\
+                    1   & 0   & 0           \\
+                    1   & 1   & 1           \\
+                    \hline
+                  \end{tabular}
+                \end{center}
+
+                合取的定义就是只有当两边都是1的时候才取1.
+
+                注意左边两列,可以当成二进制读出"0","1","2","3",此表称为真值表.
+
+                构造真值表的方法就是将所有命题列出,每个命题一列,当有$n$个命题时就会有$2^n$行,从左往右第一个命题二分,一半是0一半是1,第二列在第一列的基础上再次二分$\dots$,如此就能写出所有取值.
+                }
+          \item $\lor$(或)称为析取连结词
+          \item {
+                $P \lor Q$称为$P$与$Q$的析取式 :
+
+                \begin{center}
+                  \begin{tabular}{c|c|c}
+                    \hline
+                    $P$ & $Q$ & $P \lor Q$ \\
+                    \hline
+                    0   & 0   & 0          \\
+                    0   & 1   & 1          \\
+                    1   & 0   & 1          \\
+                    1   & 1   & 1          \\
+                    \hline
+                  \end{tabular}
+                \end{center}
+
+                析取的定义就是只有当两边都是0时才取0,否则取1.
+                }
+          \item $\to$(如果$\dots$则$\dots$)称为蕴涵连结词
+          \item {
+                $P \to Q$称为$P$与$Q$的蕴涵式 :
+
+                \begin{center}
+                  \begin{tabular}{c|c|c}
+                    \hline
+                    $P$ & $Q$ & $P \to Q$ \\
+                    \hline
+                    0   & 0   & 1         \\
+                    0   & 1   & 1         \\
+                    1   & 0   & 0         \\
+                    1   & 1   & 1         \\
+                  \end{tabular}
+                \end{center}
+
+                蕴含的定义就是命题的推导 : 如果$P$是个假命题(0),$Q$也是个假命题(0),那么"P的结论是Q"就是个真命题($P \to Q = 1$)
+
+                只考虑形式逻辑不考虑内在联系,因此有局限性,有时候会得到一些奇怪且显然错误的结论.
+
+                可以把它当成$\leq$(?)
+                }
+          \item $\leftrightarrow$ 称为等价联结词
+          \item {
+                $P \longleftrightarrow Q$称为$P$与$Q$的等价式 :
+
+                \begin{center}
+                  \begin{tabular}{c|c|c}
+                    \hline
+                    $P$ & $Q$ & $P \longleftrightarrow Q$ \\
+                    \hline
+                    0   & 0   & 1                         \\
+                    0   & 1   & 0                         \\
+                    1   & 0   & 0                         \\
+                    1   & 1   & 1                         \\
+                    \hline
+                  \end{tabular}
+                \end{center}
+
+                只有当两边命题都是真命题或者假命题的时候才是真.
+                }
+        \end{itemize}
+
+        联结词优先级为 : $\lnot > (\land \geq \lor) > (\to \geq \longleftrightarrow)$(是否取等号看具体定义,默认相等)
+      }%联接词结尾
+
+      \subsubsection{命题公式的定义}{
+        \begin{enumerate}
+          \item 单个命题变元(或常元)($P,Q,R,...$)是命题公式.
+          \item 如果$A$是命题公式,则$(\lnot A)$也是.
+          \item 如果$A,B$都是命题公式,则$(A \land B),(A \lor B),(A \to B),(A \longleftrightarrow B)$也是.
+          \item 只有有限次应用$1 - 3$形成的符号串才是命题公式(有限长度).
+        \end{enumerate}
+      }%命题公式的定义结尾
+
+      \subsubsection{命题公式举例}{
+        $P$:简单命题(无连结词)
+
+        $(\lnot(\lnot(\lnot P)))$, $\lnot\lnot\lnot P$:复合命题(有连结词)
+
+        $(P \to (Q \to R))$, $P \to (Q \to R)$:括号不能乱去,此命题是"$P$"的结论是"如果$Q$则$R$".与代数运算类似,如果无括号就从左往右,如果有就优先结合括号.
+      }%命题公式举例
+
+      \subsubsection{真值表}{
+        将公式可能的赋值全部列出,后面再列出公式的取值,就称为真值表.
+
+        \begin{center}
+          \begin{tabular}{c|c|c|c|c}
+            \hline
+            $P$                        & $Q$      & $P \to Q$                                   & $P \land\lnot P$                            & $P\land(P \lor Q) \longleftrightarrow P$ \\
+            \hline
+            0                          & 0        & 1                                           & 0                                           & 1                                        \\
+            0                          & 1        & 1                                           & 0                                           & 1                                        \\
+            1                          & 0        & 0                                           & 0                                           & 1                                        \\
+            1                          & 1        & 1                                           & 0                                           & 1                                        \\
+            \hline
+            \multicolumn{2}{c|}{赋值} & 可满足式 & $\underset{\mbox{矛盾式}}{\mbox{(永假式)}}$ & $\underset{\mbox{重言式}}{\mbox{(永真式)}}$
+          \end{tabular}
+        \end{center}
+
+        \begin{itemize}
+          \item 可满足式 : 至少有一种情况可以取值为真.
+          \item 矛盾式 : 没有可以取真的情况.
+          \item 永真式 : 所有的取值都取真,是可满足式的一种.
+        \end{itemize}
+      }%真值表
+
+    }%命题公式结尾
+
+    \subsection{等值演算}{
+      
+    }%等值演算结尾
 
     \subsection{充分必要条件}{
 
@@ -6742,8 +6962,8 @@ $$
 
     }%充分必要条件结尾
 
-   }%逻辑学基本常识结尾
+   }%逻辑学结尾
 
- }%逻辑学结尾
+ }%哲学结尾
 
 \end{document}
