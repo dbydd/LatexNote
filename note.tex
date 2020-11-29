@@ -15,6 +15,7 @@
 \usepackage{listings}
 \usepackage{multicol}
 \usepackage{pdfpages}
+\usepackage{cancel}
 
 \usetikzlibrary{svg.path}
 \usetikzlibrary{positioning}
@@ -116,6 +117,16 @@
     \end{array}
     }
     }
+
+    \newcommand{\reasoningStructure}[5]{
+      {#1}-{#2} : 
+
+      前提 : {#3}
+
+      结论 : {#4}
+
+      {#5}是永真式.
+    }
     
     \newcommand{\tikzPlaceDot}[1]{\draw[fill = black] #1 circle (1pt)}
     
@@ -181,8 +192,10 @@ $\fint(I)\supseteq[\fint(b), \fint(a)]$.
 
 介值定理通常以下述等价的形式表述:假设$f:I\rightarrow\mathbf{R}$是连续函数,且实数$u$满足$\fint(a)<u<\fint(b)$或$\fint(a)>u>\fint(b)$,则存在$c\in(a,b)$使得$\fint(c) = u$
 
-图示:
-\includegraphics{resources/Intermediatevaluetheorem.png}
+\begin{center}
+  图示:
+  \includegraphics{resources/Intermediatevaluetheorem.png}
+\end{center}
 }%介值定理结尾
 
 \subsection{二项式定理}{
@@ -343,8 +356,9 @@ $\sum\limits_{1 \leq i_1 < i_2 < \dotsm < i_k \leq n}x_{i_{1}}x_{i_{2}} \dotsm x
 极坐标不同于笛卡尔坐标系,他没有x和y轴,而是用基准轴和角度表示一个点.
 
 \subsubsection{极坐标系下的面积}{
-
-  \includegraphics{resources/polar_coordness.png}
+  \begin{center}
+    \includegraphics{resources/polar_coordness.png}
+  \end{center}
 
   公式为$\cfrac{1}{2}\definiteIntegral{\beta}{\alpha}(p(\theta))^2d\theta$
 
@@ -571,7 +585,9 @@ $\cfrac{2}{\cfrac{1}{x_1} + \cfrac{1}{x_2}} = \cfrac{2x_1x_2}{x_1 + x_2}\leq\sqr
 \section{三角函数}{
 三角函数一般由单位圆引出,如下:
 
-\includegraphics{resources/UnitCircle.png}
+\begin{center}
+  \includegraphics{resources/UnitCircle.png}
+\end{center}
 
 \subsection{正三角函数}{
   \begin{tabular}{|c|c|c|c|}
@@ -836,7 +852,9 @@ $\cfrac{\sin A}{a} = \cfrac{\sin B}{b} = \cfrac{\sin C}{c}$, 也可表示为:$\c
 
 并且,做三角形外接圆:
 
-\includegraphics[scale=0.5]{resources/insideTriangleAndCircleOutSide.png}
+\begin{center}
+  \includegraphics[scale=0.5]{resources/insideTriangleAndCircleOutSide.png}
+\end{center}
 
 由圆周角定理可知$\angle D = \angle A,BD = 2R,bc = a$.于是$a = BC = BD\sin A = 2R\sin A$,即:
 
@@ -914,7 +932,9 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
     }%关于向量的基本概念结尾
 
     \subsubsection{方向角与方向余弦}{
-      \includegraphics[scale = 0.5]{resources/directionAngle.png}
+      \begin{center}
+        \includegraphics[scale = 0.5]{resources/directionAngle.png}
+      \end{center}
 
       $\vec{OM} = \vec{r} = (x,y,z)$
 
@@ -937,7 +957,9 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
     }%方向角与方向余弦结尾
 
     \subsubsection{向量投影}{
-      \includegraphics{resources/vector_axis_projection.png}
+      \begin{center}
+        \includegraphics{resources/vector_axis_projection.png}
+      \end{center}
 
       直接写出来:
       \begin{enumerate}
@@ -1725,7 +1747,9 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
 }%复合微分结尾
 
 \subsubsection{罗尔中值定理}{
-  \includegraphics{resources/Rolle's_mean_value_theorem.jpg}
+  \begin{center}
+    \includegraphics{resources/Rolle's_mean_value_theorem.jpg}
+  \end{center}
 
   如果函数$\fint(x)$满足:
 
@@ -1739,7 +1763,9 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
 }%罗尔中值定理结尾
 
 \subsubsection{拉格朗日中值定理}{
-\includegraphics{resources/Lagrange's_mean_value_theorem.png}
+\begin{center}
+  \includegraphics{resources/Lagrange's_mean_value_theorem.png}
+\end{center}
 
 令$\fint : [a,b] \to \mathbf{R}$为闭区间$[a,b]$上的一个函数,且在开区间
 $(a,b)$内对任意一点$x$,极限$\limNormal{h \to 0}\cfrac{\fint(x + h) - \fint(x)}{h}$存在,
@@ -1935,8 +1961,10 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
 $\definiteIntegral{b}{a}\defFunction{x}g(x)dx = \defFunction{\xi}\definiteIntegral{b}{a}g(x)dx$
 他的几何意义为:
 
-\includegraphics{resources/Geometric_explanation_of_the_mean_value_theorem_for_integration.jpg}
-\\\\
+\begin{center}
+  \includegraphics{resources/Geometric_explanation_of_the_mean_value_theorem_for_integration.jpg}
+\end{center}
+
 以下为证明:
 
 在不失去一般性的条件下,设对所有的$x$,有$g(x) \geq 0$;因为$\fint$是闭区间上的连续函数,$\fint$取得最大值$M$和最小值$m$.于是得出不等式:
@@ -1987,9 +2015,11 @@ $\definiteIntegral{b}{a}\defFunction{x}dx = \defFunction{a}(\xi - a) + \defFunct
 
 $\definiteIntegral{\xi}{a}\defFunction{x}dx -\defFunction{a}(\xi - a) = \defFunction{b}(b - \xi) - \definiteIntegral{b}{\xi}\defFunction{x}dx$
 
-他的几何意义很明显为:能找到$\xi\in[a,b]$,使得红色区域的面���和蓝色区域的面积相加等于阴影区域的面积,即S[\uppercase\expandafter{\romannumeral1}] = S[\uppercase\expandafter{\romannumeral2}]
+他的几何意义很明显为:能找到$\xi\in[a,b]$,使得红色区域的面积和蓝色区域的面积相加等于阴影区域的面积,即S[\uppercase\expandafter{\romannumeral1}] = S[\uppercase\expandafter{\romannumeral2}]
 
-\includegraphics{resources/Geometric_explanation_of_the_second_mean_value_theorem_for_integration.jpg}
+\begin{center}
+  \includegraphics{resources/Geometric_explanation_of_the_second_mean_value_theorem_for_integration.jpg}
+\end{center}
 
 }%积分第二中值定理结尾
 
@@ -2044,19 +2074,25 @@ $\definiteIntegral{\xi}{a}\defFunction{x}dx -\defFunction{a}(\xi - a) = \defFunc
 
   设b为瑕点:
 
-  \includegraphics[scale=0.5]{resources/infityFunctionUnormalIntegral.png}
+  \begin{center}
+    \includegraphics[scale=0.5]{resources/infityFunctionUnormalIntegral.png}
+  \end{center}
 
   $\definiteIntegral{b}{a}\defFunction{x}dx = \limNormal{t \to b^-}\definiteIntegral{t}{a}\defFunction{x}dx$
 
   或者是设a为瑕点:
 
-  \includegraphics[scale=0.5]{resources/infityFunctionUnormalIntegral2.png}
+  \begin{center}
+    \includegraphics[scale=0.5]{resources/infityFunctionUnormalIntegral2.png}
+  \end{center}
 
   $\definiteIntegral{b}{a}\defFunction{x}dx = \limNormal{t \to a^+}\definiteIntegral{b}{t}\defFunction{x}dx$
 
   或者以上两者情况合一,设c为瑕点将其拆分:
 
-  \includegraphics{resources/infityFunctionUnormalIntegral3.png}
+  \begin{center}
+    \includegraphics{resources/infityFunctionUnormalIntegral3.png}
+  \end{center}
 
   $\definiteIntegral{b}{a}\defFunction{x}dx = \definiteIntegral{c}{a}\defFunction{x}dx + \definiteIntegral{b}{c}\defFunction{x}dx$
 
@@ -2336,7 +2372,9 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
 
   那么来看看真实情况下的解,不过为何不先看看图呢？:
 
-  \includegraphics{resources/nonLinearDifferencialEquation_HumanGrow.png}
+  \begin{center}
+    \includegraphics{resources/nonLinearDifferencialEquation_HumanGrow.png}
+  \end{center}
 
   其中$\cfrac{c}{s}$称为稳态,到了这里就会保持稳定,不会改变了.不过其实到不了哪里,只会一直接近而已.这就是这个式子所代表的人口曲线了.
 
@@ -2540,7 +2578,6 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
   \subsubsection{直角坐标系下的二重积分计算}{
     \begin{center}
       \begin{tikzpicture}
-
         \begin{axis}[view = {120}{30},axis lines = center,axis on top,xmin = 0,xmax =5,ymin = 0,ymax = 5,zmin = 0,zmax = 5]
           \addplot3[domain=1:4,y domain=1:4,mesh]{2 + sin(deg(x)) + sin(deg(y))};
           \addplot3[color = black] coordinates {(1,1,0)(1,4,0)(4,4,0)(4,1,0)(1,1,0)};
@@ -3693,7 +3730,7 @@ $$
 \subsubsection{阿贝尔定理}{
   设$\defFunction{z} = \upDownSum{\ }{n \geq 0}a_nx^n$为一幂级数,其收敛半径为$R$,若对于收敛圆(模长为$R$的复数的集合)上的某个复数$z_0$,级数$\upDownSum{\ }{n \geq 0}a_nx^n_0$收敛,则有 : $\limNormal{t \to 1^-}\defFunction{tx_0} = \upDownSum{\ }{n \geq 0}a_nx^n_0$.
 
-  用人话来说就是 : $\upDownSum{+\infty}{n = 0}a_nx^n$,如果$x = x_0$时此幂级数收敛,如果$\absoluteValue{x} \leq \absoluteValue{x_0}$,则此幂级数绝对收敛.反之,如果$x = x_0$时发散,且$\absoluteValue{x} > \absoluteValue{x_0}$,则幂级数发散.
+  用人话来说就是 : $\upDownSum{+\infty}{n = 0}a_nx^n$,如果$x = x_0$时此幂级数收敛,对于所有满足$\absoluteValue{x} \leq \absoluteValue{x_0}$的$x$,此幂级数绝对收敛.反之,如果$x = x_0$时发散,则对于所有满足$\absoluteValue{x} > \absoluteValue{x_0}$的$x$,此幂级数发散.
 
   收敛半径是指收敛圆的半径,在数轴上是指收敛域的半径.
 
@@ -3709,7 +3746,7 @@ $$
 \subsubsection{求幂级数的收敛域}{
   设幂级数$\sum a_nx^n$满足$\limNormal{n \to +\infty}\cfrac{a_{n + 1}}{a_n} = \rho$,则 :
   \begin{itemize}
-    \item $\rho$时正实数时,$R = \cfrac{1}{p}$.
+    \item $\rho$是正实数时,$R = \cfrac{1}{p}$.
     \item $\rho = 0$时,$R = \infty$
     \item $\rho = \infty$时,$R = 0$
   \end{itemize}
@@ -3736,9 +3773,10 @@ $$
   \begin{itemize}
     \item {
           幂级数的加法与减法 : 将相应系数进行加减.
-          $$
-            (a_0+ a_1x + a_2x^2 + \dots + a_nx^n + \dots) \pm (b_0 + b_1x + b_2x^2 + \dots + b_nx^n + \dots) = (a_0 + b_0) + (a_1 + b_1)x + (a_2 + b_2)x^2 + \dots + (a_n + b_n)x^n + \dots
-          $$
+          \begin{math}
+            (a_0+ a_1x + a_2x^2 + \dots + a_nx^n + \dots) \pm (b_0 + b_1x + b_2x^2 + \dots + b_nx^n + \dots)
+            = (a_0 + b_0) + (a_1 + b_1)x + (a_2 + b_2)x^2 + \dots + (a_n + b_n)x^n + \dots
+          \end{math}
           }
     \item {
           幂级数的乘积 : 基于柯西乘积
@@ -5212,6 +5250,119 @@ $$
   对于零空间则是从方程组触发,通过让$\vec{x}$满足特定条件而得到的子空间.
 
 }%构造两种子空间的方法
+
+\subsubsection{计算零空间}{
+  矩阵$A$的零空间即满足$A\vec{x} = \vec{0}$的所有$\vec{x}$所构成的向量空间.
+
+  $$
+    \mbox{取}A = \begin{bmatrix}
+      1 & 2 & 2 & 2  \\
+      2 & 4 & 6 & 8  \\
+      3 & 6 & 8 & 10
+    \end{bmatrix}
+  $$
+
+  首先,$A$的列空间很明显不是线性无关的,但是无论$A$是否可逆,都采用消元法作为计算零空间的算法.
+
+  对矩阵$A$进行初等行变换并不会改变$A\vec{X} = \vec{b}$的解,因此也不会改变零空间(但是会改变列空间).此处不需要应用增广矩阵,因为等号做的的向量$\vec{b} = 0$,第一步消元得到 : $$
+    A = \begin{bmatrix}
+      1 & 2 & 2 & 2  \\
+      2 & 4 & 6 & 8  \\
+      3 & 6 & 8 & 10
+    \end{bmatrix}
+    \to
+    \begin{bmatrix}
+      \boxed{1} & 2 & 2 & 2 \\
+      0         & 0 & 2 & 4 \\
+      0         & 0 & 2 & 4
+    \end{bmatrix}
+  $$
+
+  $A_{22} = 0$,而0不能作为主元,因此向后取$A_{23} = 2$作为主元 :$$
+    U
+    =
+    \begin{bmatrix}
+      \boxed{1} & 2 & 2         & 2 \\
+      0         & 0 & \boxed{2} & 4 \\
+      0         & 0 & 0         & 0
+    \end{bmatrix}
+  $$
+
+  矩阵$U$为梯形矩阵.其第三行全为0,是因为第三行原本的行向量是第一行和第二行行向量的线性组合.
+
+  矩阵的秩(rank)就是矩阵的主元的个数.消元法不会改变矩阵的秩,本例中矩阵$A$和$U$的秩均为2.矩阵中包含主元的列称为主元列(pivot column),不包含主元的列称为自由列(free column).设一个矩阵为$m \times n$矩阵,主元列的个数等于秩$r$,自由列的个数等于$n - r$.
+}%计算零空间结尾
+
+\subsubsection{特解}{
+  当将系数矩阵$A$变换为上三角矩阵$U$时,就可以利用会带求得方程$U\vec{x} = \vec{0}$的解 : $$
+    \begin{bmatrix}
+      1 & 2 & 2 & 2 \\
+      0 & 0 & 2 & 4 \\
+      0 & 0 & 0 & 0
+    \end{bmatrix}
+    \begin{bmatrix}
+      x_1 \\
+      x_2 \\
+      x_3 \\
+      x_4
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      0 \\
+      0 \\
+      0 \\
+      0
+    \end{bmatrix}
+  $$
+
+  本例中,包含主元的矩阵第一列和第三列为主元列,而不包含主元的第二列和第四列为自由列.对自由变量$x_2$和$x_4$可以进行任意赋值,比如令$x_2 = 1,x_4 = 0$.则 : $$
+    \begin{bmatrix}
+      1 & 2 & 2 & 2 \\
+      0 & 0 & 2 & 4 \\
+      0 & 0 & 0 & 0
+    \end{bmatrix}
+    \begin{bmatrix}
+      x_1 \\
+      1   \\
+      x_3 \\
+      0
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      0 \\
+      0 \\
+      0 \\
+      0 \\
+    \end{bmatrix}
+  $$
+
+  $$
+    \begin{cases}
+      (\cancel{0 \times x_1} + \cancel{0 \times 1} + 2 \times x_3 + \cancel{4 \times 0} = 0) \Rightarrow (x_3 = 0) \\
+      (1 \times x_1 + 2 \times 1 + 2 \times x_3 + \cancel{4 \times 0 = 0}) \Rightarrow (x_1 = -1)
+    \end{cases}
+  $$
+
+  由此可以得出一个特解 : $\vec{x}_1 = \begin{bmatrix}
+      -1 \\
+      1  \\
+      0  \\
+      0
+    \end{bmatrix}$
+
+  令$x_2 = 0,x_4 = 1$,就能得到另外一个特解 : $\vec{x}_2 = \begin{bmatrix}
+      2  \\
+      0  \\
+      -2 \\
+      1
+    \end{bmatrix}$
+
+  矩阵$A$的零空间就是这些"特解"向量所张成的空间(换句话来说,是由这些向量线性组合而成).自由列的数目($n - r$)就等于特解的数目以及零空间的维数.
+
+  自由量可以任意取值,但是习惯上取"0"和"1"来简化计算,令各个自由分量分别取1,其余取0,就能很轻易的得到数量正好的特解.如果将自由变量都赋值为0,那么求得的特解就会是$\vec{0}$.
+
+  自由列的一个有趣(且重要)的特点就是 : 自由列可以表示为其左侧所有主元列的线性组合,而主元列不可以.
+}%特解结尾
 
 }%Ax = b与四个子空间结尾
 
@@ -6833,7 +6984,7 @@ $$
                   \end{tabular}
                 \end{center}
 
-                蕴含的定义就是命题的推导 : 如果$P$是个假命题(0),$Q$也是个假命题(0),那么"P的结论是Q"就是个真命题($P \to Q = 1$)
+                蕴含的定义就是命题的推导 : 如果$P$是个假命题(0),$Q$也是个假命题(0),那么"P的结论是Q"就是个真命题($P \to Q \Leftrightarrow 1$)
 
                 只考虑形式逻辑不考虑内在联系,因此有局限性,有时候会得到一些奇怪且显然错误的结论.
 
@@ -6886,12 +7037,12 @@ $$
         \begin{center}
           \begin{tabular}{c|c|c|c|c}
             \hline
-            $P$                        & $Q$      & $P \to Q$                                   & $P \land\lnot P$                            & $P\land(P \lor Q) \longleftrightarrow P$ \\
+            $P$                       & $Q$      & $P \to Q$                                   & $P \land\lnot P$                            & $P\land(P \lor Q) \longleftrightarrow P$ \\
             \hline
-            0                          & 0        & 1                                           & 0                                           & 1                                        \\
-            0                          & 1        & 1                                           & 0                                           & 1                                        \\
-            1                          & 0        & 0                                           & 0                                           & 1                                        \\
-            1                          & 1        & 1                                           & 0                                           & 1                                        \\
+            0                         & 0        & 1                                           & 0                                           & 1                                        \\
+            0                         & 1        & 1                                           & 0                                           & 1                                        \\
+            1                         & 0        & 0                                           & 0                                           & 1                                        \\
+            1                         & 1        & 1                                           & 0                                           & 1                                        \\
             \hline
             \multicolumn{2}{c|}{赋值} & 可满足式 & $\underset{\mbox{矛盾式}}{\mbox{(永假式)}}$ & $\underset{\mbox{重言式}}{\mbox{(永真式)}}$
           \end{tabular}
@@ -6907,8 +7058,105 @@ $$
     }%命题公式结尾
 
     \subsection{等值演算}{
-      
+
+      \subsubsection{等值式}{
+        等值式$A \Leftrightarrow B$的意思就是: $A \longleftrightarrow B$是永真式 :
+
+        \begin{center}
+          \begin{tabular}{c|c|c|c|c}
+            \hline
+            $P$ & $Q$ & $P \to Q$ & $\lnot P \lor Q$ & $(P \to Q) \longleftrightarrow (\lnot P \lor Q)$ \\
+            \hline
+            0   & 0   & 1         & 1                & 1                                                \\
+            0   & 1   & 1         & 1                & 1                                                \\
+            1   & 0   & 0         & 0                & 1                                                \\
+            1   & 1   & 1         & 1                & 1                                                \\
+            \hline
+          \end{tabular}
+        \end{center}
+
+        $\therefore P \to Q \Leftrightarrow \lnot P \lor Q$
+
+        意义就在于:证明是等值式后可以将两个公式互相随意替换而不改变运算结果.
+      }%等值式结尾
+
+      \subsubsection{基本等值式}{
+        \begin{itemize}
+          \item 幂等律 : $A \Leftrightarrow A \lor A,A \Leftrightarrow A \land A$
+          \item 交换律 : $A \lor B \Leftrightarrow B \lor A,A \land B \Leftrightarrow B \land A$
+          \item 结合律 : $(A \lor B) \lor C \Leftrightarrow A \lor (B \lor C),(A \land B) \land C \Leftrightarrow A \land (B \land C)$
+          \item 分配律 : $A \land (B \lor C) \Leftrightarrow (A \land B) \lor (A \land C),A \lor (B \land C) \Leftrightarrow (A \lor B) \land (A \lor C)$
+          \item 德$\cdot$摩根律 : $\lnot (A \lor B) \Leftrightarrow \lnot A \land \lnot B,\lnot (A \land B) \Leftrightarrow \lnot A \lor \lnot B$
+          \item 吸收律 : $A \lor (A \land B) \Leftrightarrow A,A \land (A \lor B) \Leftrightarrow A$
+          \item 零律 : $A \lor 1 \Leftrightarrow 1,A \land 0 \Leftrightarrow 0$
+          \item 同一律 : $A \lor 0 \Leftrightarrow A,A \land 1 \Leftrightarrow A$
+          \item 排中律 : $A \lor \lnot A \Leftrightarrow 1$
+          \item 矛盾律 : $A \land \lnot A \Leftrightarrow 0$
+          \item 双重否定律 : $\lnot \lnot A \Leftrightarrow A$
+          \item 蕴涵等值式 : $A \to B \Leftrightarrow \lnot A \lor B$
+          \item 等价等值式 : $A \longleftrightarrow B \Leftrightarrow (A \to B) \land (B \to A)$
+          \item 等价否定等值式 : $A \longleftrightarrow B \Leftrightarrow \lnot A \longleftrightarrow \lnot B$
+          \item 假言易位 : $A \to B \Leftrightarrow \lnot B \to \lnot A$
+          \item 归谬论 : $(A \to B) \land (A \to \lnot B) \Leftrightarrow \lnot A$
+          \item 对偶原理 : 一个等值式$\lor - \land$互换,并将结果$0 - 1$互换,那么依然是对的.
+          \item 排中律略有争议 : 在某些地方问题并不是非错即对,不过一般默认成立.
+          \item 以上公式都可以通过列真值表证明.
+        \end{itemize}
+      }%基本等值式结尾
+
+      \subsubsection{等值演算}{
+        要证明等值式,除了列真值表还可以做等值演算.
+
+        例 :
+
+        \begin{math}
+          P \to (Q \to R) \\
+          \Leftrightarrow P \to (\lnot Q \lor R)(\mbox{蕴涵等值式,置换规则}) \\
+          \Leftrightarrow \lnot P \lor (\lnot Q \lor R) \\
+          \Leftrightarrow (\lnot P \lor \lnot Q) \lor R (\mbox{结合律}) \\
+          \Leftrightarrow \lnot (P \land Q) \lor R (\mbox{德$\cdot$摩根律}) \\
+          \Leftrightarrow (P \land Q) \to R (\mbox{蕴涵等值式})
+        \end{math}
+      }%等值演算结尾
+
     }%等值演算结尾
+
+    \subsection{命题推理逻辑}{
+
+      \subsubsection{推理的形式结构}{
+        前提 : $A_1.A_2,\dots,A_K$
+
+        结论 : $B$
+
+        推理的形式结构 : $(A_1 \land A_2 \land \dots \land A_K) \to B$
+      }%推理的形式结构结尾
+
+      \subsubsection{重要的推理定律}{
+        推理定律-$A \Rightarrow B$(由A可以推出B) : $A \to B$是永真式
+
+        \begin{itemize}
+          \item \reasoningStructure{附加律}{$A \Rightarrow (A \lor B)$}{$A$}{$A \lor B$}{$A \to (A \lor B)$}
+          \item \reasoningStructure{化简律}{$(A \land B) \Rightarrow A,(A \land B) \Rightarrow B$}{$A \land B$}{}{}
+          \item \reasoningStructure{假言推理}{$(A \to B) \land A \Rightarrow B$}{$A \to B,A$}{$B$}{$((A \to B) \land A) \to B$}
+          \item \reasoningStructure{拒取式}{$(A \to B) \land \lnot B \Rightarrow \lnot A$}{$A \to B,\lnot B$}{$\lnot A$}{$((A \to B) \land \lnot B) \to (\lnot A)$}
+          \item \reasoningStructure{析取三段论}{$(A \lor B) \land \lnot A \Rightarrow B,(A \lor B) \land \lnot B \Rightarrow A$}{$A \lor B,\lnot A$}{$B$}{$((A \lor B)\land \lnot A) \to B$}
+          \item \reasoningStructure{假言三段论}{$(A \to B) \land (B \to C) \Rightarrow (A \to C)$}{$A \to B,B \to C$}{$A \to C$}{$((A \to B) \land (B \to C)) \to (A \to C)$}
+          \item \reasoningStructure{等价三段论}{$(A \longleftrightarrow B) \land (B \longleftrightarrow C) \Rightarrow (A \longleftrightarrow C)$}{$A \longleftrightarrow B,B \longleftrightarrow C$}{$A \longleftrightarrow C$}{$((A \longleftrightarrow B) \land (B \longleftrightarrow C)) \to (A \longleftrightarrow C)$}
+          \item \reasoningStructure{构造性两难}{$(A \to B) \land (C \to D) \land (A \lor C) \Rightarrow (B \lor D)$}{$A \to B,C \to D,A \lor C$}{$B \lor D$}{$(A \to B) \land (C \to D) \land (A \lor C) \to (B \lor D)$}
+        \end{itemize}
+      }%重要的推理定律结尾
+
+      \subsubsection{判断推理正确的方法}{
+        前提 : $P \to (Q \to R),P,Q$
+
+        结论 : $R$
+
+        方法一 : 推理的形式结构(判断是否为永真式).
+
+        方法二 : 从前提推演结论(用前提一步步推结论).
+      }%判断推理正确的方法结尾
+
+    }%命题推理逻辑结尾
 
     \subsection{充分必要条件}{
 
