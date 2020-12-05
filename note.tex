@@ -147,7 +147,7 @@
   \maketitle
   \paragraph{todos}{
     \begin{enumerate}
-      \item 誊录纸质笔记\ 线性代数-转置,置换和空间
+      \item 誊录纸质笔记\ 线性代数-与零空间进行线性组合
       \item 隐函数存在定理,等幂求和,二项式系数,朱世杰恒等式.
       \item 重写线性代数
       \item 场论:p20,三个概念即两个公式的算子表示法
@@ -5293,7 +5293,7 @@ $$
   矩阵的秩(rank)就是矩阵的主元的个数.消元法不会改变矩阵的秩,本例中矩阵$A$和$U$的秩均为2.矩阵中包含主元的列称为主元列(pivot column),不包含主元的列称为自由列(free column).设一个矩阵为$m \times n$矩阵,主元列的个数等于秩$r$,自由列的个数等于$n - r$.
 }%计算零空间结尾
 
-\subsubsection{特解}{
+\subsubsection{特解(Special Solution)}{
   当将系数矩阵$A$变换为上三角矩阵$U$时,就可以利用会带求得方程$U\vec{x} = \vec{0}$的解 : $$
     \begin{bmatrix}
       1 & 2 & 2 & 2 \\
@@ -5363,6 +5363,165 @@ $$
 
   自由列的一个有趣(且重要)的特点就是 : 自由列可以表示为其左侧所有主元列的线性组合,而主元列不可以.
 }%特解结尾
+
+\subsubsection{行最简型阶梯矩阵(rref)}{
+  通过继续消元可以将矩阵$U$转换为行最简阶梯矩阵形式$R$,其中主元为1,而主元列除了主元外都是0 : $$
+    U = \begin{bmatrix}
+      1 & 2 & 2 & 2 \\
+      0 & 0 & 2 & 4 \\
+      0 & 0 & 0 & 0
+    \end{bmatrix}
+    \to
+    \begin{bmatrix}
+      1 & 2 & 0 & -2 \\
+      0 & 0 & 2 & 4  \\
+      0 & 0 & 0 & 0
+    \end{bmatrix}
+    \to
+    \begin{bmatrix}
+      \boxed{1} & 2 & 0         & -2 \\
+      0         & 0 & \boxed{1} & 2  \\
+      0         & 0 & 0         & 0
+    \end{bmatrix}
+    =
+    R
+  $$
+
+  再矩阵中主元行和主元列的交汇处存在一个单位阵,通过列交换可以将矩阵$R$中的主元列集中在左侧并,从而在左上角形成这个单位阵$I$,并会将自由列集中在矩阵的右侧形成矩阵$F$.如果矩阵$A$中的某些行是线性相关的,那么在矩阵$R$的下半部分就会出现一些完全为0的行向量 : $$
+    R
+    =
+    \begin{bmatrix}
+      I & F \\
+      0 & 0
+    \end{bmatrix}
+  $$
+  这里的$I$是一个$r \times r$的方阵,$F$就是自由列消元后组成的部分.
+
+  原方程$A\vec{x} = \vec{0}$就变成了求解$R$的主元行乘以$\vec{x}$,即$\begin{bmatrix}
+      I & F
+    \end{bmatrix}
+    \begin{bmatrix}
+      x_{pivot} \\
+      x_{free}
+    \end{bmatrix}
+    =
+    0
+  $.
+  可以将$A\vec{x} = \vec{0}$的特解作为列向量写成一个矩阵$N$,即零空间矩阵.其形式为$N = \begin{bmatrix}
+      \ \\
+      I
+    \end{bmatrix}$.这里的$I$为一个$(n - r) \times (n - r)$的矩阵,是对$n - r$个自由变量分别赋值为1所构造出来的,零空间矩阵满足$RN = 0$,$0$是一个$0$矩阵,大小为$m \times (n - r)$.则从矩阵分块乘法运算可知零空间矩阵上半部分为$-F$,即$N$的完整形式为 : $$
+    N = \begin{bmatrix}
+      -F \\
+      I
+    \end{bmatrix}
+    \begin{matrix}
+      r\mbox{\ 主变量} \\
+      n-r\mbox{\ 自由变量}
+    \end{matrix}
+  $$
+
+  对于矩阵$R$而言,求零空间特解就会变得非常简单.只需要将消元得到的$F$加上负号再拼接上单位阵就可以得到所有的通解.但是注意如果在变换出$R$左上角的过程中交换了列,那么最后得到的$N$就得再进行相应的逆变换.仅仅是为了变量的顺序匹配.
+}%行最简型阶梯矩阵(rref)结尾
+
+\subsubsection{Ax = b可解的条件}{
+  仍然取$A = \begin{bmatrix}
+      1 & 2 & 2 & 2  \\
+      2 & 4 & 6 & 8  \\
+      3 & 6 & 8 & 10
+    \end{bmatrix}$
+  为例,则方程为 : $$
+    \begin{bmatrix}
+      1 & 2 & 2 & 2  \\
+      2 & 4 & 6 & 8  \\
+      3 & 6 & 8 & 10
+    \end{bmatrix}
+    \begin{bmatrix}
+      x_1 \\
+      x_2 \\
+      x_3 \\
+      x_4
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      b_1 \\
+      b_2 \\
+      b_3
+    \end{bmatrix}
+  $$
+
+  $A$的第三行为第一行和第二行的和,因此$A\vec{x} = b$中$b$的第三个分量也要等于其第一个和第二个分量的和.换句话来说,如果$\vec{b}$不满足$b_3 = b_1 + b_2$那么方程组就无解.
+
+  检验$A\vec{x} = \vec{b}$是否可解的方法就是对增广矩阵进行初等行变换(行消元).如果矩阵$A$的行被完全消去的话,那么对应的$\vec{b}$的分量也得要为$0$.在本例中,$A$的第三行被消去 : $$
+    \augmentedMatrix{\begin{matrix}
+        1 & 2 & 2 & 2  \\
+        2 & 4 & 6 & 8  \\
+        3 & 6 & 8 & 10
+      \end{matrix}}{\begin{matrix}
+        b_1 \\
+        b_2 \\
+        b_3
+      \end{matrix}}
+    \to
+    \dots
+    \to
+    \augmentedMatrix{\begin{matrix}
+        1 & 2 & 2 & 2 \\
+        0 & 0 & 2 & 4 \\
+        0 & 0 & 0 & 0
+      \end{matrix}}{\begin{matrix}
+        b_1        \\
+        b_2 - 2b_1 \\
+        b_3 - b_2 - b_1
+      \end{matrix}}
+  $$
+  如果$A\vec{x} = \vec{b}$有解,则$b_3 - b_1 - b_2 = 0$.在本例中令$\vec{b} = \begin{bmatrix}
+      1 \\
+      5 \\
+      6
+    \end{bmatrix}$
+
+  前几章讨论过,只有当$\vec{b}$处于矩阵的列空间$C(A)$中时,方程才有解.本章推导出矩阵$A$的行向量如果经过线性组合成为了零向量,那么对应的$\vec{b}$经过同样的线性组合后也要等价于$\vec{0}$.因此看起来有了两条关于$\vec{b}$的限制条件,但实际上两者是等价的.
+}%Ax = b可解的条件结尾
+
+\subsubsection{通解(Complete Solution)}{
+  注释 : 此处的通解与上文所讲述的通过特解(Special Solution)进行线性组合得到的通解是同一个向量空间,但是通过计算得到他的方法不同.
+
+  注释 : 此处的特解指的不是上文的"Special Solution",而是"particular solution",只不过两者都翻译成了特解.
+
+  要求得$A\vec{x} = \vec{b}$的所有解,首先要检验方程是否可解,然后找到一个特解(particular solution).将此特解和矩阵零空间的向量相加得到的就是方程的通解.
+}%通解(Complete Solution)结尾
+
+\subsubsection{特解(particular solution)}{
+  注释 : 此处的特解指的不是上文的"Special Solution",而是"particular solution",只不过两者都翻译成了特解.
+
+  求$A\vec{x} = \vec{b}$的特解(particular solution)的方法是将自由变量均赋值为0,然后求解其主变量.
+  本例中,令$x_2 = x_4 = 0$,得到方程组 : $$
+    \begin{cases}
+      x_1 + 2x_3 = 1 \\
+      2x_3 = 3
+    \end{cases}
+  $$
+
+  可解得$x_3 = \cfrac{3}{2},x_1= -2$,因此特解(particular solution)为$x_p = \begin{bmatrix}
+      -2           \\
+      0            \\
+      \cfrac{3}{2} \\
+      0
+    \end{bmatrix}$.
+
+  第8.2.21章还说了主元列和自由列的一个重要区别就是 : 自由列可以表示为其左侧所有主元列的线性组合,而主元列不可以,主元列是线性无关的.
+  $$
+    U = \begin{bmatrix}
+      \boxed{*} & * & *         & * & * & *         & * & *         \\
+      0         & 0 & \boxed{*} & * & * & *         & * & *         \\
+      0         & 0 & 0         & 0 & 0 & \boxed{*} & * & *         \\
+      0         & 0 & 0         & 0 & 0 & 0         & 0 & \boxed{*}
+    \end{bmatrix}
+  $$
+
+  仍然以这个消元完成后的梯形矩阵$U$为例,其包含四个主元列.对于$A\vec{x} = \vec{b}$的求解转变成了$U\vec{x} = \vec{c}$,其中$\vec{c}$是向量$\vec{b}$经过与左侧矩阵相同的行操作得到的向量.明显可以看到,此时四个主元列的线性组合可以组合成任何$\mathRealNumberCollection^4$中的向量,将$\vec{x}$中的自由变量赋值为0就可以去掉自由列的列向量的干扰,求得方程的特解$\vec{x}_p$.如果消元得到$U$最后的$i$行为0,就要求$c$的最后$i$个分量也为0,这时主元列才可以通过线性组合得到$\vec{c}$,否则无解.
+}%特解(particular solution)结尾
 
 }%Ax = b与四个子空间结尾
 
@@ -7213,5 +7372,42 @@ $$
    }%逻辑学结尾
 
  }%哲学结尾
+
+\chapter{各国语言}{
+  争取称为八国猛男!(x)
+
+  \section{英语(通用部分)}{
+
+    \subsection{语法}{
+
+    }%语法结尾
+
+    \subsection{词汇}{
+
+    }%词汇结尾
+
+   }%英语(通用部分)结尾
+
+ }%各国语言结尾
+
+\chapter{物理}{
+
+ }%物理结尾
+
+\chapter{化学}{
+
+ }%化学结尾
+
+\chapter{生物学}{
+
+ }%生物学结尾
+
+\chapter{医学}{
+
+ }%医学结尾
+
+\chapter{艺术}{
+
+ }%艺术结尾
 
 \end{document}
