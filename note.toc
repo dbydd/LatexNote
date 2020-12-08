@@ -110,7 +110,7 @@
 \contentsline {subsubsection}{\numberline {1.4.8.2}性质}{44}{subsubsection.1.4.8.2}%
 \contentsline {subsubsection}{\numberline {1.4.8.3}定积分第一类换元积分法}{45}{subsubsection.1.4.8.3}%
 \contentsline {subsubsection}{\numberline {1.4.8.4}定积分第二类换元积分法}{45}{subsubsection.1.4.8.4}%
-\contentsline {subsubsection}{\numberline {1.4.8.5}积分上限函数}{45}{subsubsection.1.4.8.5}%
+\contentsline {subsubsection}{\numberline {1.4.8.5}积分上限函数(定积分求导公式)}{45}{subsubsection.1.4.8.5}%
 \contentsline {subsubsection}{\numberline {1.4.8.6}牛顿-莱布尼兹公式/微积分基本定理}{45}{subsubsection.1.4.8.6}%
 \contentsline {subsubsection}{\numberline {1.4.8.7}积分介值定理}{45}{subsubsection.1.4.8.7}%
 \contentsline {subsubsection}{\numberline {1.4.8.8}区间再现公式}{46}{subsubsection.1.4.8.8}%
@@ -319,12 +319,8 @@
 \contentsline {subsubsection}{\numberline {3.1.5.1}必要条件}{162}{subsubsection.3.1.5.1}%
 \contentsline {subsubsection}{\numberline {3.1.5.2}充分条件}{162}{subsubsection.3.1.5.2}%
 \contentsline {subsubsection}{\numberline {3.1.5.3}必要条件及充分条件}{163}{subsubsection.3.1.5.3}%
-\contentsline {chapter}{\numberline {第四章\hspace {.3em}}各国语言}{165}{chapter.4}%
-\contentsline {section}{\numberline {4.1}英语(通用部分)}{165}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}语法}{165}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}词汇}{165}{subsection.4.1.2}%
-\contentsline {chapter}{\numberline {第五章\hspace {.3em}}物理}{167}{chapter.5}%
-\contentsline {chapter}{\numberline {第六章\hspace {.3em}}化学}{169}{chapter.6}%
-\contentsline {chapter}{\numberline {第七章\hspace {.3em}}生物学}{171}{chapter.7}%
-\contentsline {chapter}{\numberline {第八章\hspace {.3em}}医学}{173}{chapter.8}%
-\contentsline {chapter}{\numberline {第九章\hspace {.3em}}艺术}{175}{chapter.9}%
+\contentsline {chapter}{\numberline {第四章\hspace {.3em}}物理}{165}{chapter.4}%
+\contentsline {chapter}{\numberline {第五章\hspace {.3em}}化学}{167}{chapter.5}%
+\contentsline {chapter}{\numberline {第六章\hspace {.3em}}生物学}{169}{chapter.6}%
+\contentsline {chapter}{\numberline {第七章\hspace {.3em}}医学}{171}{chapter.7}%
+\contentsline {chapter}{\numberline {第八章\hspace {.3em}}艺术}{173}{chapter.8}%
