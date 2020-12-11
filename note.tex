@@ -148,7 +148,7 @@
   \maketitle
   \paragraph{todos}{
     \begin{enumerate}
-      \item 誊录纸质笔记\ 线性代数-与零空间进行线性组合
+      \item 誊录纸质笔记\ 线性代数-线性无关,基和维数.
       \item 隐函数存在定理,等幂求和,二项式系数,朱世杰恒等式.
       \item 重写线性代数
       \item 场论:p20,三个概念即两个公式的算子表示法
@@ -5523,6 +5523,170 @@ $$
 
   仍然以这个消元完成后的梯形矩阵$U$为例,其包含四个主元列.对于$A\vec{x} = \vec{b}$的求解转变成了$U\vec{x} = \vec{c}$,其中$\vec{c}$是向量$\vec{b}$经过与左侧矩阵相同的行操作得到的向量.明显可以看到,此时四个主元列的线性组合可以组合成任何$\mathRealNumberCollection^4$中的向量,将$\vec{x}$中的自由变量赋值为0就可以去掉自由列的列向量的干扰,求得方程的特解$\vec{x}_p$.如果消元得到$U$最后的$i$行为0,就要求$c$的最后$i$个分量也为0,这时主元列才可以通过线性组合得到$\vec{c}$,否则无解.
 }%特解(particular solution)结尾
+
+\subsubsection{与零空间进行线性组合}{
+  $A\vec{x} = \vec{b}$的通解为$\vec{x} = \vec{x}_{particular} + \vec{x}_{null}$,其中$\vec{x}_n$为矩阵零空间中的一般向量.将$A\vec{x}_{particular} = b$和$A\vec{x}_{null} = \vec{0}$相加可以得出$A(\vec{x}_{particular} + \vec{x}_{null}) = \vec{b}$.
+
+  在之前的章节得到了矩阵的零空间$N(A)$就是其特解$\begin{bmatrix}
+      -2 \\
+      1  \\
+      0  \\
+      0
+    \end{bmatrix}$
+  和$\begin{bmatrix}
+      2  \\
+      0  \\
+      -2 \\
+      1
+    \end{bmatrix}$
+  的线性组合的集合.因此方程$A\vec{x} = \begin{bmatrix}
+      1 \\
+      5 \\
+      6
+    \end{bmatrix}$
+  的通解即为 : $$
+    \vec{x} = \begin{bmatrix}
+      -2           \\
+      0            \\
+      \cfrac{3}{2} \\
+      0
+    \end{bmatrix}
+    +
+    \mathConstant_1\begin{bmatrix}
+      -2 \\
+      1  \\
+      0  \\
+      0
+    \end{bmatrix}
+    +
+    \mathConstant\begin{bmatrix}
+      2  \\
+      0  \\
+      -2 \\
+      1
+    \end{bmatrix}
+  $$
+
+  矩阵的零空间$N(A)$是$\mathRealNumberCollection^4$空间中的二维子空间,方程的解$A\vec{x} = \vec{b}$构成了穿过$\vec{x}_{particular}$点并和矩阵零空间平行的"平面".但是该"平面"并不是$\mathRealNumberCollection^4$并不是$\mathRealNumberCollection^4$空间的子空间.
+
+  前面求取$A\vec{x} = \vec{b}$的特解过程中,令所有的自由变量赋值为0,如果不赋值为0,那么就等于带着自由列进行计算,但自由列其实也就是主元列的线性组合,这样求得的解只不过是特解(particular solution)和零空间特解的一个加和.
+}%与零空间进行线性组合结尾
+
+\subsubsection{秩}{
+  矩阵的秩等于矩阵的主元数.如果$m \times n$矩阵的值为$r$,那么一定有$r \leq m$且$r \leq n$.
+
+  满秩分为行满秩和列满秩 :
+  \begin{itemize}
+    \item {
+          列满秩 : $r = n$
+
+          此时每列都有主元,$\vec{x}$的每一个分量都是主变量,没有自由变量.零空间$N(A)$之内只有零向量.则方程无解或者有唯一解$x_{particular}$.
+          $$
+            \mbox{比如}A = \begin{bmatrix}
+              1 & 3 \\
+              2 & 1 \\
+              6 & 1 \\
+              5 & 1
+            \end{bmatrix}
+            \to
+            \begin{bmatrix}
+              1 & 0 \\
+              0 & 1 \\
+              0 & 0 \\
+              0 & 0
+            \end{bmatrix}
+            =
+            R
+          $$
+          }
+    \item {
+          行满秩 : $r = m$
+
+          此时每行都有主元,无论$\vec{b}$取什么值,方程$A\vec{x} = \vec{b}$都有解,主变量$r$个,自由变量有$n - r$个.
+          $$
+            \mbox{比如}A = \begin{bmatrix}
+              1 & 2 & 6 & 5 \\
+              3 & 1 & 1 & 1
+            \end{bmatrix}
+            \to
+            \begin{bmatrix}
+              1 & 0 & * & * \\
+              0 & 1 & * & *
+            \end{bmatrix}
+            =
+            R
+          $$
+          }
+    \item {
+          满秩 : $r = m = n$
+
+          此时矩阵可逆并且是个方阵.零空间只有零向量,无论$\vec{b}$取什么值,方程$A\vec{x} = \vec{b}$都有唯一解.
+          $$
+            \mbox{比如}A = \begin{bmatrix}
+              1 & 2 \\
+              3 & 1
+            \end{bmatrix}
+            \to
+            \begin{bmatrix}
+              1 & 0 \\
+              0 & 1
+            \end{bmatrix}
+            =
+            R
+            =
+            I
+          $$
+          }
+  \end{itemize}
+
+  % 总结 :
+  % \begin{tabular}{|c|c|c|c|}
+  %   \hline
+  %   {
+  %     $r = m = n$
+
+  %     $
+  %       R = I
+  %     $
+
+  %     有唯一解.
+  %   } & {
+  %       $r = n < m$
+
+  %       $
+  %         R = \begin{bmatrix}
+  %           I \\
+  %           0
+  %         \end{bmatrix}
+  %       $
+
+  %       无解或者有唯一解.
+  %   } & {
+  %       $r = m < n$
+
+  %       $
+  %         R = \begin{bmatrix}
+  %           I & F
+  %         \end{bmatrix}
+  %       $
+
+  %       有无穷多解.
+  %   } & {
+  %       $r < n,r < m$
+
+  %       $
+  %         R = \begin{bmatrix}
+  %           I & F \\
+  %           0 & 0
+  %         \end{bmatrix}
+  %       $
+
+  %       无解或有无穷多解.
+  %     }
+  % \end{tabular}
+
+  秩决定了方程组解的个数,$m \times n$给出了矩阵的尺寸,但是秩给出的是矩阵实际上的"大小"(下几章讨论).
+}%秩结尾
 
 }%Ax = b与四个子空间结尾
 
