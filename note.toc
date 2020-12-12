@@ -192,7 +192,7 @@
 \contentsline {subsubsection}{\numberline {1.8.1.4}矩阵的转置}{95}{subsubsection.1.8.1.4}%
 \contentsline {subsubsection}{\numberline {1.8.1.5}矩阵与向量的乘法}{95}{subsubsection.1.8.1.5}%
 \contentsline {subsubsection}{\numberline {1.8.1.6}矩阵的乘法}{96}{subsubsection.1.8.1.6}%
-\contentsline {subsubsection}{\numberline {1.8.1.7}矩阵乘积的转置}{98}{subsubsection.1.8.1.7}%
+\contentsline {subsubsection}{\numberline {1.8.1.7}矩阵乘积的转置}{99}{subsubsection.1.8.1.7}%
 \contentsline {subsubsection}{\numberline {1.8.1.8}逆矩阵}{99}{subsubsection.1.8.1.8}%
 \contentsline {subsubsection}{\numberline {1.8.1.9}矩阵乘积的逆矩阵}{99}{subsubsection.1.8.1.9}%
 \contentsline {subsubsection}{\numberline {1.8.1.10}转置矩阵的逆矩阵}{99}{subsubsection.1.8.1.10}%

@@ -4119,10 +4119,66 @@ $$
   }%关于矩阵结尾
 
   \subsubsection{关于线性组合}{
-    线性组合(Linear combination)是线性代数中的概念,通常的表现形式如下 :
-    $$
-      \vec{b} = \mathConstant_1\vec{a}_1 + \mathConstant_2\vec{a}_2 + \mathConstant_3\vec{a}_3 + \dots + \mathConstant_n\vec{a}_n
-    $$
+对于向量有两个基本的操作--加法和数乘 :
+
+            \begin{itemize}
+                \item {
+                      加法 :
+
+                      设$\vec{a} = \begin{bmatrix}
+                              a_1 \\
+                              a_2
+                          \end{bmatrix},\vec{b} = \begin{bmatrix}
+                              b_1 \\
+                              b_2
+                          \end{bmatrix}$
+
+                      那么$\vec{a} + \vec{b} = \begin{bmatrix}
+                              a_1 + b_1 \\
+                              a_2 + b_2
+                          \end{bmatrix}$
+
+                      分量分别相加,将会产生一个新的向量,遵守三角形规则.
+                      }
+                \item {
+                      数乘 :
+
+                      设$\vec{a} = \begin{bmatrix}
+                              a_1 \\
+                              a_2
+                          \end{bmatrix}$
+
+                      那么$\mathConstant\vec{a} = \begin{bmatrix}
+                              \mathConstant a_1 \\
+                              \mathConstant a_2
+                          \end{bmatrix}$
+
+                      其中$\mathRealNumberCollection$是任意实数,称为放缩因子,从几何上来看向量数乘$n$会把向量放缩$n$倍,指向由放缩因子的正负号决定.
+                      }
+            \end{itemize}
+
+            而线性组合就是将两者综和起来,设向量$\vec{u} = \begin{bmatrix}
+                    u_1 \\
+                    u_2
+                \end{bmatrix},\vec{v} = \begin{bmatrix}
+                    v_1 \\
+                    v_2
+                \end{bmatrix}$,他们的线性组合可以概括为 : $$
+                \mathRealNumberCollection_1\vec{u} + \mathRealNumberCollection_2\vec{v} = \mathRealNumberCollection_1\begin{bmatrix}
+                    u_1 \\
+                    u_2
+                \end{bmatrix}
+                +
+                \mathRealNumberCollection_2\begin{bmatrix}
+                    v_1 \\
+                    v_2
+                \end{bmatrix}
+                =
+                \begin{bmatrix}
+                    \mathRealNumberCollection_1 u_1 + \mathRealNumberCollection_2 v_1 \\
+                    \mathRealNumberCollection_1 u_2 + \mathRealNumberCollection_2 v_2
+                \end{bmatrix}
+            $$
 
     直观上来看就是不同长度的向量相加,结果是个新向量.
   }%关于线性组合结尾
