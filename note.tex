@@ -214,15 +214,20 @@ $\fint(I)\supseteq[\fint(b), \fint(a)]$.
   $(x + y)^n = x^n + \mathCombination{n - 1}{n}(x^{n-1} y) + \mathCombination{n - 2}{n}(x^{n-2} y^2) + \dots + y^n$
 
   \subsubsection{二项式系数与帕斯卡三角形(杨辉三角)}{
+
     二项式系数是二项式定理中各项的系数.一般而言,二项式系数由两个非负整数$n$和$k$作为参数来决定,写作$\begin{pmatrix}
       n \\
       k
-    \end{pmatrix}$,定义为$(1 + x)^n$的多项式展开式中$x^k$项的系数,因此一定是非负整数.如果将二项式系数$\binom{n}{0},\binom{n}{1},\dots,\binom{n}{n}$写成一行,再依照$n = 0,1,2,3,...$顺序由上往下排列,则构成帕斯卡三角形(杨辉三角) : 
+    \end{pmatrix}$,定义为$(1 + x)^n$的多项式展开式中$x^k$项的系数,因此一定是非负整数.
+    
+    如果将二项式系数$\binom{n}{0},\binom{n}{1},\dots,\binom{n}{n}$写成一行,再依照$n = 0,1,2,3,...$顺序由上往下排列,则构成帕斯卡三角形(杨辉三角) : 
     \begin{center}
-      \includegraphics{resources/Pascal's_triangle_5.svg.png}
+      \includegraphics[scale=0.5]{resources/Pascal's_triangle_5.svg.png}
     \end{center}
 
-    事实上,二项式系数就是排列组合中的组合 : ($\mathCombination{m}{n} \Longleftrightarrow \binom{m}{n}$),此外也有不同的表达方式 : $C(n,k),~_nC_k,~^nC_k,C^k_n,C^n_k$.
+    事实上,二项式系数就是排列组合中的组合 : ($\mathCombination{m}{n} \Longleftrightarrow \binom{m}{n}$)
+    
+    此外也有不同的表达方式 : $C(n,k),~_nC_k,~^nC_k,C^k_n,C^n_k\dots$
 
     %# TODO 看看Wiki : https://zh.wikipedia.org/wiki/%E4%BA%8C%E9%A0%85%E5%BC%8F%E4%BF%82%E6%95%B8
     }%二项式系数结尾
