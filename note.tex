@@ -132,7 +132,7 @@
       \newcommand{\tikzPlaceDot}[1]{\draw[fill = black] #1 circle (1pt)}
       
       \DeclareMathOperator{\arccot}{arccot}
-      \DeclareMathOperator{\arcsec}{arcsecll}
+      \DeclareMathOperator{\arcsec}{arcsec}
       \DeclareMathOperator{\arccsc}{arccsc}
       \DeclareMathOperator{\inverse}{^{-1}}
       \DeclareMathOperator{\divergenceText}{\mathbf{div}\ }
@@ -160,7 +160,7 @@
   \paragraph{todos}{
     \begin{enumerate}
       \item 誊录纸质笔记\ 线性代数-线性无关,基和维数.
-      \item 隐函数存在定理,等幂求和,二项式系数,朱世杰恒等式,参数方程.
+      \item 隐函数存在定理,等幂求和-二项式系数-朱世杰恒等式-(复变函数)
       \item 重写线性代数
       \item 场论:p20,三个概念即两个公式的算子表示法
       \item 补充多个section,计算机图形学,场论等
@@ -212,6 +212,21 @@ $\fint(I)\supseteq[\fint(b), \fint(a)]$.
 
 \subsection{二项式定理}{
   $(x + y)^n = x^n + \mathCombination{n - 1}{n}(x^{n-1} y) + \mathCombination{n - 2}{n}(x^{n-2} y^2) + \dots + y^n$
+
+  \subsubsection{二项式系数与帕斯卡三角形(杨辉三角)}{
+    二项式系数是二项式定理中各项的系数.一般而言,二项式系数由两个非负整数$n$和$k$作为参数来决定,写作$\begin{pmatrix}
+      n \\
+      k
+    \end{pmatrix}$,定义为$(1 + x)^n$的多项式展开式中$x^k$项的系数,因此一定是非负整数.如果将二项式系数$\binom{n}{0},\binom{n}{1},\dots,\binom{n}{n}$写成一行,再依照$n = 0,1,2,3,...$顺序由上往下排列,则构成帕斯卡三角形(杨辉三角) : 
+    \begin{center}
+      \includegraphics{resources/Pascal's_triangle_5.svg.png}
+    \end{center}
+
+    事实上,二项式系数就是排列组合中的组合 : ($\mathCombination{m}{n} \Longleftrightarrow \binom{m}{n}$),此外也有不同的表达方式 : $C(n,k),~_nC_k,~^nC_k,C^k_n,C^n_k$.
+
+    %# TODO 看看Wiki : https://zh.wikipedia.org/wiki/%E4%BA%8C%E9%A0%85%E5%BC%8F%E4%BF%82%E6%95%B8
+    }%二项式系数结尾
+
 }%二项式定理结尾
 
 \subsection{排列组合}{
@@ -227,6 +242,10 @@ $\fint(I)\supseteq[\fint(b), \fint(a)]$.
     \item $a^3 - b^3 = (a - b)(a^2 + ab + b^3)$
   \end{itemize}
 }%立方差公式结尾
+
+\subsection{等幂求和公式}{
+
+}%等幂求和公式
 
 \subsection{圆幂定理}{
   给定一个圆$r$及一点p,由p引出两条割线,分别于$r$相交于$A,B$及$C,D$,则有$PA \cdot PB = PC \cdot PD$
@@ -2673,9 +2692,9 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
 
 \subsection{隐函数}{
 
-  \subsubsection{隐函数存在定理}{
-    % #TODO 填坑
-  }%隐函数存在定理结尾
+  \subsubsection{隐函数存在定理/隐函数定理(二元)}{
+    %# TODO 填坑
+  }%隐函数存在定理/隐函数定理(二元)结尾
 
 }%隐函数结尾
 
@@ -6223,7 +6242,7 @@ $$
       $$
         \limNormal{\Omega \to M}\cfrac{\doubleCurveIntegralOnZone{S}A \cdot d\mathbf{S}}{\Delta V}
       $$
-      存在,则称此极限值为向量场$A$在点$M$处的散度.记为$\divergenceText A$,即 :
+      存在,则称此极限值为���量场$A$在点$M$处的散度.记为$\divergenceText A$,即 :
       $$
         \divergenceText A = \limNormal{\Omega \to M}\cfrac{\doubleCurveIntegralOnZone{S}A \cdot d\mathbf{S}}{\Delta V}
       $$
@@ -7669,7 +7688,7 @@ $$
 
         由于$\vec{V_1}$指向外侧,所以Q在$P_1P_2$左侧
 
-        如此就能不断的缩小范围,三条边都判断一次,就能知道该点是否在外面.
+        如此就能不断��缩小范围,三条边都判断一次,就能知道该点是否在外面.
 
         如果点正好在边上,就自己决定.
 

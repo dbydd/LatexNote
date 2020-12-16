@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7 Portable) (preloaded format=pdflatex 2020.8.12)  13 DEC 2020 17:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7 Portable) (preloaded format=pdflatex 2020.8.12)  16 DEC 2020 18:01
 entering extended mode
 **c:/Users/19920/Desktop/LatexNote/note.tex
 (c:/Users/19920/Desktop/LatexNote/note.tex
@@ -1032,188 +1032,196 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has b
                    \relax 
 l.205 ‰ªã
          ÂÄºÂÆöÁêÜÈÄöÂ∏∏‰ª•‰∏ãËø∞Á≠â‰ª∑ÁöÑÂΩ¢ÂºèË°®Ëø∞:ÂÅáËÆæ$f:I\rightarrow... [3]
-<resources/Intermediatevaluetheorem.png, id=2031, 281.05pt x 281.05pt>
+<resources/Intermediatevaluetheorem.png, id=2041, 281.05pt x 281.05pt>
 File: resources/Intermediatevaluetheorem.png Graphic file (type png)
 <use resources/Intermediatevaluetheorem.png>
 Package pdftex.def Info: resources/Intermediatevaluetheorem.png  used on input line 209.
 (pdftex.def)             Requested size: 281.0493pt x 281.0493pt.
+
+Overfull \hbox (14.77446pt too wide) in paragraph at lines 217--221
+\C70/rm/m/n/12/4f \$[]$\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/5b ö \C70/rm/m/n/12/4e I :$\OT1/cmr/m/n/12 (1 + \OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )[]$\C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/59  \C70/rm/m/n/12/98 y \C70/rm/m/n/12/5f  \C70/rm/m/n/12/5c U \C70/rm/m/n/12/5f    \C70/rm/m/n/12/4e -$\OML/cmm/m/it/12 x[]$\C70/rm/m/n/12/98 y \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/7c ˚ \C70/rm/m/n/12/65 p\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/56 ‡ \C70/rm/m/n/12/6b d \C70/rm/m/n/12/4e   \C70/rm/m/n/12/5b ö \C70/rm/m/n/12/66 / \C70/rm/m/n/12/97 ^ \C70/rm/m/n/12/8d  \C70/rm/m/n/12/65 t p\OT1/cmr/m/n/12 .\C70/rm/m/n/12/59 Ç \C70/rm/m/n/12/67 ú \C70/rm/m/n/12/5c  \C70/rm/m/n/12/4e å \C70/rm/m/n/12/98 y \C70/rm/m/n/12/5f  \C70/rm/m/n/12/7c ˚ \C70/rm/m/n/12/65 p$[]\OML/cmm/m/it/12 ; []; [] ; []$\C70/rm/m/n/12/51 ô
+ []
+
+<resources/Pascal's_triangle_5.svg.png, id=2044, 301.125pt x 216.81pt>
+File: resources/Pascal's_triangle_5.svg.png Graphic file (type png)
+<use resources/Pascal's_triangle_5.svg.png>
+Package pdftex.def Info: resources/Pascal's_triangle_5.svg.png  used on input line 222.
+(pdftex.def)             Requested size: 301.12425pt x 216.80946pt.
+
+Underfull \vbox (badness 3792) has occurred while \output is active []
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.228   \end{itemize}
-                      [4 <./resources/Intermediatevaluetheorem.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+l.223     \end{center}
+                       [4 <./resources/Intermediatevaluetheorem.png>]
+Overfull \hbox (48.02727pt too wide) in paragraph at lines 225--226
+[]\C70/rm/m/n/12/4e ã \C70/rm/m/n/12/5b û \C70/rm/m/n/12/4e 
+\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/4e å \C70/rm/m/n/12/98 y \C70/rm/m/n/12/5f  \C70/rm/m/n/12/7c ˚ \C70/rm/m/n/12/65 p \C70/rm/m/n/12/5c 1 \C70/rm/m/n/12/66 / \C70/rm/m/n/12/63 í \C70/rm/m/n/12/52  \C70/rm/m/n/12/7e ƒ \C70/rm/m/n/12/54  \C70/rm/m/n/12/4e - \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/7e ƒ \C70/rm/m/n/12/54  \OT1/cmr/m/n/12 : ($\OML/cmm/m/it/12 C[] \OMS/cmsy/m/n/12 ([]) []$\OT1/cmr/m/n/12 ),\C70/rm/m/n/12/6b d \C70/rm/m/n/12/59  \C70/rm/m/n/12/4e _ \C70/rm/m/n/12/67 	 \C70/rm/m/n/12/4e  \C70/rm/m/n/12/54  \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/88 h \C70/rm/m/n/12/8f æ \C70/rm/m/n/12/65 π \C70/rm/m/n/12/5f  \OT1/cmr/m/n/12 : $\OML/cmm/m/it/12 C\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 n; k\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ;  []C[];  []C[]; C[]; C[]$\OT1/cmr/m/n/12 . 
+ []
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.307 \subsection{ÂúÜÂë®ËßíÂÆöÁêÜ}
-                                  { [5]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.6}) has been already used, duplicate ignored
+l.279   \subsubsection{‰∫§Âº¶ÂÆöÁêÜ}
+                                    { [5 <./resources/Pascal's_triangle_5.svg.png>]pdfTeX warning (ext4): destination with the same identifier (name{page.6}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.338 $$
-         [6]
-Package CJKpunct Info: use punctuation spaces for family 'rm' with punctstyle (quanjiao) on input line 340.
+l.346 \subsection{Èü¶ËææÂÆöÁêÜ}
+                               { [6]
+Package CJKpunct Info: use punctuation spaces for family 'rm' with punctstyle (quanjiao) on input line 359.
 
-Overfull \hbox (5.14317pt too wide) in paragraph at lines 354--356
+Overfull \hbox (5.14317pt too wide) in paragraph at lines 373--375
 []\C70/rm/m/n/12/57 ( \C70/rm/m/n/12/8f Ÿ \C70/rm/m/n/12/4e * \C70/rm/m/n/12/60 ≈ \C70/rm/m/n/12/51 µ \C70/rm/m/n/12/4e |\C70/rm/m/n/12/ff | \C70/rm/m/n/12/97 Ê \C70/rm/m/n/12/8f æ \C70/rm/m/n/12/5b ö \C70/rm/m/n/12/74  \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/90  \C70/rm/m/n/12/5b ö \C70/rm/m/n/12/74  \C70/rm/m/n/12/54  \C70/rm/m/n/12/68 7 \C70/rm/m/n/12/62  \C70/rm/m/n/12/7a À \OT1/cmr/m/n/12 : \C70/rm/m/n/12/7e Ÿ \C70/rm/m/n/12/5b ö \C70/rm/m/n/12/4e   *   \C70/rm/m/n/12/51 C \C70/rm/m/n/12/4e å \C70/rm/m/n/12/6b ! \C70/rm/m/n/12/59  \C70/rm/m/n/12/98 y \C70/rm/m/n/12/5f $\OML/cmm/m/it/12 ax[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 bx \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 c$\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/59 Ç \C70/rm/m/n/12/67 ú 	 \C70/rm/m/n/12/4e $ * \C70/rm/m/n/12/65 p$\OML/cmm/m/it/12 x[]; x[]$\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/6e ·
  []
 
-<resources/polar_coordness.png, id=2065, 225.84375pt x 225.84375pt>
-File: resources/polar_coordness.png Graphic file (type png)
-<use resources/polar_coordness.png>
-Package pdftex.def Info: resources/polar_coordness.png  used on input line 372.
-(pdftex.def)             Requested size: 225.84319pt x 225.84319pt.
 pdfTeX warning (ext4): destination with the same identifier (name{page.7}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.373   \end{center}
-                     [7]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+l.375 
+       [7]
+<resources/polar_coordness.png, id=2090, 225.84375pt x 225.84375pt>
+File: resources/polar_coordness.png Graphic file (type png)
+<use resources/polar_coordness.png>
+Package pdftex.def Info: resources/polar_coordness.png  used on input line 391.
+(pdftex.def)             Requested size: 225.84319pt x 225.84319pt.
 pdfTeX warning (ext4): destination with the same identifier (name{page.8}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.400     \end{center}
-                       [8 <./resources/polar_coordness.png>]pdfTeX warning (ext4): destination with the same identifier (name{page.9}) has been already used, duplicate ignored
+l.407     $$
+             [8 <./resources/polar_coordness.png>]pdfTeX warning (ext4): destination with the same identifier (name{page.9}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.435       \item $
-                   \varphi$ : ‰ª•ÂéüÁÇπ‰∏∫È°∂ÁÇπ,$z$ËΩ¥‰∏∫ÊóãËΩ¨ËΩ¥,$\vec{v}... [9]pdfTeX warning (ext4): destination with the same identifier (name{page.10}) has been already used, duplicate ignored
+l.450     ÁêÉ
+             Èù¢ÂùêÊ†áÁî±‰∏â‰∏™ÂèòÈáèÁªÑÊàê,Â¶ÇÊûúÂ∞ÜÊüê‰∏Ä‰∏™ÁÇπÁî®ÂêëÈáè$\... [9]pdfTeX warning (ext4): destination with the same identifier (name{page.10}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.479           ‰∏Ä
-                   Ëà¨ÂΩ¢Âºè‰∏∫$\upDownSum{n}{i = 1}a_i^2\upDownSum{n}{i = 1... [10]pdfTeX warning (ext4): destination with the same identifier (name{page.11}) has been already used, duplicate ignored
+l.491     \item {
+                  [10]pdfTeX warning (ext4): destination with the same identifier (name{page.11}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.521           ËÆæ
-                   $V$ÊòØ‰∏ÄÁ∫øÊÄßÁ©∫Èó¥,ÂÆö‰πâÂÜÖÁßØ,ËÆ∞‰Ωú$\innerProduct{\... [11]pdfTeX warning (ext4): destination with the same identifier (name{page.12}) has been already used, duplicate ignored
+l.535           $
+                 \bigCase{\int\defFunction{x}g(x)dx}^2 \leq \int\fint^2(x)dx... [11]pdfTeX warning (ext4): destination with the same identifier (name{page.12}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.563   \end{center}
-                     [12]pdfTeX warning (ext4): destination with the same identifier (name{page.13}) has been already used, duplicate ignored
+l.579 
+       [12]pdfTeX warning (ext4): destination with the same identifier (name{page.13}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.617     \end{center}
-                       [13]
-<resources/UnitCircle.png, id=2115, 170.88844pt x 167.12437pt>
+l.624       \item Â
+                   èØÂØº$\nRightarrow$ËøûÁª≠. [13]
+<resources/UnitCircle.png, id=2130, 170.88844pt x 167.12437pt>
 File: resources/UnitCircle.png Graphic file (type png)
 <use resources/UnitCircle.png>
-Package pdftex.def Info: resources/UnitCircle.png  used on input line 642.
+Package pdftex.def Info: resources/UnitCircle.png  used on input line 661.
 (pdftex.def)             Requested size: 170.88802pt x 167.12395pt.
-
-Underfull \vbox (badness 1199) has occurred while \output is active []
-
  [14 <./resources/UnitCircle.png>] [15] [16] [17] [18] [19] [20]
-<resources/insideTriangleAndCircleOutSide.png, id=2155, 225.84375pt x 225.84375pt>
+<resources/insideTriangleAndCircleOutSide.png, id=2168, 225.84375pt x 225.84375pt>
 File: resources/insideTriangleAndCircleOutSide.png Graphic file (type png)
 <use resources/insideTriangleAndCircleOutSide.png>
-Package pdftex.def Info: resources/insideTriangleAndCircleOutSide.png  used on input line 909.
+Package pdftex.def Info: resources/insideTriangleAndCircleOutSide.png  used on input line 928.
 (pdftex.def)             Requested size: 112.92159pt x 112.92159pt.
  [21]
-Underfull \hbox (badness 10000) in paragraph at lines 946--949
+Underfull \hbox (badness 10000) in paragraph at lines 965--968
 
  []
 
 [22 <./resources/insideTriangleAndCircleOutSide.png>]
-Overfull \hbox (1.76314pt too wide) in paragraph at lines 974--975
+Overfull \hbox (1.76314pt too wide) in paragraph at lines 993--994
 []\C70/rm/m/n/12/4e $ \C70/rm/m/n/12/54  \C70/rm/m/n/12/91 œ \C70/rm/m/n/12/59 9 \C70/rm/m/n/12/89 “\OT1/cmr/m/n/12 :(\C70/rm/m/n/12/53 ÷ \C70/rm/m/n/12/95  \C70/rm/m/n/12/89 “\OT1/cmr/m/n/12 )\C70/rm/m/n/12/8b æ$[] \OT1/cmr/m/n/12 = (\OML/cmm/m/it/12 a[]; a[]; a[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; [] \OT1/cmr/m/n/12 = (\OML/cmm/m/it/12 b[]; b[]; b[]\OT1/cmr/m/n/12 )$,\C70/rm/m/n/12/8b æ \C70/rm/m/n/12/59 9 \C70/rm/m/n/12/89 “ \C70/rm/m/n/12/4e :$\OML/cmm/m/it/12 $\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/52 \OT1/cmr/m/n/12 :$[] \OML/cmm/m/it/12  \OT1/cmr/m/n/12 = []$ 
  []
 
 [23]
-<resources/directionAngle.png, id=2179, 816.04875pt x 582.175pt>
+<resources/directionAngle.png, id=2192, 816.04875pt x 582.175pt>
 File: resources/directionAngle.png Graphic file (type png)
 <use resources/directionAngle.png>
-Package pdftex.def Info: resources/directionAngle.png  used on input line 989.
+Package pdftex.def Info: resources/directionAngle.png  used on input line 1008.
 (pdftex.def)             Requested size: 408.02338pt x 291.08679pt.
 
-Overfull \hbox (1.13818pt too wide) in paragraph at lines 1004--1005
+Overfull \hbox (1.13818pt too wide) in paragraph at lines 1023--1024
 []\C70/rm/m/n/12/65 π \C70/rm/m/n/12/54  \C70/rm/m/n/12/4f Y \C70/rm/m/n/12/5f & \C70/rm/m/n/12/66 / \C70/rm/m/n/12/63  \C70/rm/m/n/12/57 ( \C70/rm/m/n/12/89 „ \C70/rm/m/n/12/67 ê \C70/rm/m/n/12/51 ‡ \C70/rm/m/n/12/4f U \C70/rm/m/n/12/91 Ã\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/4e   * \C70/rm/m/n/12/54  \C70/rm/m/n/12/91 œ \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/4e 	 * \C70/rm/m/n/12/65 π \C70/rm/m/n/12/54  \C70/rm/m/n/12/4f Y \C70/rm/m/n/12/5f & \C70/rm/m/n/12/52  + \C70/rm/m/n/12/66 / \C70/rm/m/n/12/8f Ÿ \C70/rm/m/n/12/54  \C70/rm/m/n/12/91 œ \C70/rm/m/n/12/4e  	 * \C70/rm/m/n/12/57 P \C70/rm/m/n/12/68  \C70/rm/m/n/12/8f t \C70/rm/m/n/12/4e K \C70/rm/m/n/12/95 Ù \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/89 “ \C70/rm/m/n/12/5e ¶ \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/4f Y \C70/rm/m/n/12/5f &\OT1/cmr/m/n/12 .\C70/rm/m/n/12/4e $
  []
 
 [24 <./resources/directionAngle.png>]
-<resources/vector_axis_projection.png, id=2188, 225.84375pt x 225.84375pt>
+<resources/vector_axis_projection.png, id=2201, 225.84375pt x 225.84375pt>
 File: resources/vector_axis_projection.png Graphic file (type png)
 <use resources/vector_axis_projection.png>
-Package pdftex.def Info: resources/vector_axis_projection.png  used on input line 1014.
+Package pdftex.def Info: resources/vector_axis_projection.png  used on input line 1033.
 (pdftex.def)             Requested size: 225.84319pt x 225.84319pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1033--1034
+Underfull \hbox (badness 10000) in paragraph at lines 1052--1053
 
  []
 
 [25 <./resources/vector_axis_projection.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1053--1054
+Underfull \hbox (badness 10000) in paragraph at lines 1072--1073
 
  []
 
 [26]
-Underfull \hbox (badness 10000) in paragraph at lines 1113--1114
+Underfull \hbox (badness 10000) in paragraph at lines 1132--1133
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1143--1144
+Underfull \hbox (badness 10000) in paragraph at lines 1162--1163
 
  []
 
 [27]
-Underfull \hbox (badness 10000) in paragraph at lines 1177--1178
+Underfull \hbox (badness 10000) in paragraph at lines 1196--1197
 
  []
 
 [28]
-Overfull \hbox (1.05348pt too wide) in paragraph at lines 1207--1208
+Overfull \hbox (1.05348pt too wide) in paragraph at lines 1226--1227
 []\C70/rm/m/n/12/8b æ \C70/rm/m/n/12/70 π$\OML/cmm/m/it/12 M\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x; y; z\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; M[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]; y[]; z[]\OT1/cmr/m/n/12 )$\C70/rm/m/n/12/66 / \C70/rm/m/n/12/76 Ù \C70/rm/m/n/12/7e ø$\OML/cmm/m/it/12 L$\C70/rm/m/n/12/4e 
  \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/4e ˚ \C70/rm/m/n/12/61  \C70/rm/m/n/12/4e $ \C70/rm/m/n/12/70 π\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/90 £ \C70/rm/m/n/12/4e H \C70/rm/m/n/12/5b X \C70/rm/m/n/12/57 ( \C70/rm/m/n/12/54  \C70/rm/m/n/12/91 œ$[]$\C70/rm/m/n/12/4e  \C70/rm/m/n/12/76 Ù \C70/rm/m/n/12/7e ø$\OML/cmm/m/it/12 L$\C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/65 π \C70/rm/m/n/12/54   \C70/rm/m/n/12/91 œ$[]$\C70/rm/m/n/12/5e s \C70/rm/m/n/12/88 L\OT1/cmr/m/n/12 .\C70/rm/m/n/12/56 ‡ \C70/rm/m/n/12/6b d
  []
 
 [29] [30] [31] [32] [33] [34]
-Overfull \hbox (6.2304pt too wide) in paragraph at lines 1526--1527
+Overfull \hbox (6.2304pt too wide) in paragraph at lines 1545--1546
 []\C70/rm/m/n/12/75 ( \C70/rm/m/n/12/53 Ê \C70/rm/m/n/12/4e   \C70/rm/m/n/12/79 Õ \C70/rm/m/n/12/65 π \C70/rm/m/n/12/6c ’ \C70/rm/m/n/12/67 e \C70/rm/m/n/12/63 œ \C70/rm/m/n/12/8f \OT1/cmr/m/n/12 ,\C70/rm/m/n/12/7c { \C70/rm/m/n/12/74  \C70/rm/m/n/12/97 b \C70/rm/m/n/12/66 / \C70/rm/m/n/12/4e   \C70/rm/m/n/12/79 Õ \C70/rm/m/n/12/69 - \C70/rm/m/n/12/74  \C70/rm/m/n/12/97 b\OT1/cmr/m/n/12 .\C70/rm/m/n/12/80  \C70/rm/m/n/12/69 - \C70/rm/m/n/12/74  \C70/rm/m/n/12/97 b \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/51 l \C70/rm/m/n/12/5f  \C70/rm/m/n/12/5d Ú \C70/rm/m/n/12/7e œ Ÿ \C70/rm/m/n/12/51 ˙\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/51 v \C70/rm/m/n/12/4e -\OT1/cmr/m/n/12 a\C70/rm/m/n/12/4e \OT1/cmr/m/n/12 b\C70/rm/m/n/12/52  + \C70/rm/m/n/12/66 / \C70/rm/m/n/12/69 - \C70/rm/m/n/12/74  \C70/rm/m/n/12/97 b \C70/rm/m/n/12/57 (\OT1/cmr/m/n/12 x\C70/rm/m/n/12/8f t
  []
 
 [35] [36] [37] [38] [39]
-Underfull \hbox (badness 10000) in paragraph at lines 1791--1794
+Underfull \hbox (badness 10000) in paragraph at lines 1810--1813
 
  []
 
 [40] [41]
-<resources/Rolle's_mean_value_theorem.jpg, id=2309, 165.61874pt x 126.4725pt>
+<resources/Rolle's_mean_value_theorem.jpg, id=2321, 165.61874pt x 126.4725pt>
 File: resources/Rolle's_mean_value_theorem.jpg Graphic file (type jpg)
 <use resources/Rolle's_mean_value_theorem.jpg>
-Package pdftex.def Info: resources/Rolle's_mean_value_theorem.jpg  used on input line 1882.
+Package pdftex.def Info: resources/Rolle's_mean_value_theorem.jpg  used on input line 1901.
 (pdftex.def)             Requested size: 165.61833pt x 126.47218pt.
  [42 <./resources/Rolle's_mean_value_theorem.jpg>]
-<resources/Lagrange's_mean_value_theorem.png, id=2319, 301.125pt x 191.71625pt>
+<resources/Lagrange's_mean_value_theorem.png, id=2331, 301.125pt x 191.71625pt>
 File: resources/Lagrange's_mean_value_theorem.png Graphic file (type png)
 <use resources/Lagrange's_mean_value_theorem.png>
-Package pdftex.def Info: resources/Lagrange's_mean_value_theorem.png  used on input line 1898.
+Package pdftex.def Info: resources/Lagrange's_mean_value_theorem.png  used on input line 1917.
 (pdftex.def)             Requested size: 301.12425pt x 191.71577pt.
 
-Overfull \hbox (6.9522pt too wide) in paragraph at lines 1901--1904
+Overfull \hbox (6.9522pt too wide) in paragraph at lines 1920--1923
 []\C70/rm/m/n/12/4e ‰$[] \OT1/cmr/m/n/12 : [\OML/cmm/m/it/12 a; b\OT1/cmr/m/n/12 ] \OMS/cmsy/m/n/12 ! \OT1/cmr/bx/n/12 R$\C70/rm/m/n/12/4e : \C70/rm/m/n/12/95 Ì \C70/rm/m/n/12/53 : \C70/rm/m/n/12/95 Ù$\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 a; b\OT1/cmr/m/n/12 ]$\C70/rm/m/n/12/4e 
  \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/4e   * \C70/rm/m/n/12/51 ˝ \C70/rm/m/n/12/65 p\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/4e  \C70/rm/m/n/12/57 ( \C70/rm/m/n/12/5f   \C70/rm/m/n/12/53 : \C70/rm/m/n/12/95 Ù $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a; b\OT1/cmr/m/n/12 )$\C70/rm/m/n/12/51 Ö \C70/rm/m/n/12/5b ˘ \C70/rm/m/n/12/4e ˚ \C70/rm/m/n/12/61  \C70/rm/m/n/12/4e   \C70/rm/m/n/12/70 π$\OML/cmm/m/it/12 x$\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/67 Å \C70/rm/m/n/12/96 P$[] []$\C70/rm/m/n/12/5b X
  []
 
 
-Overfull \hbox (6.66148pt too wide) in paragraph at lines 1911--1912
+Overfull \hbox (6.66148pt too wide) in paragraph at lines 1930--1931
 []\C70/rm/m/n/12/6c Ë \C70/rm/m/n/12/61  \C70/rm/m/n/12/82 Â \C70/rm/m/n/12/4e   * \C70/rm/m/n/12/53 Ô \C70/rm/m/n/12/5f Æ \C70/rm/m/n/12/51 ˝ \C70/rm/m/n/12/65 p \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/50 < \C70/rm/m/n/12/57 ﬂ \C70/rm/m/n/12/66 / \C70/rm/m/n/12/59  \C70/rm/m/n/12/65 p \C70/rm/m/n/12/80  \C70/rm/m/n/12/4e  \C70/rm/m/n/12/66 / \C70/rm/m/n/12/5b û \C70/rm/m/n/12/65 p\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/52  \C70/rm/m/n/12/4e 
  \C70/rm/m/n/12/97 b \C70/rm/m/n/12/8f Ÿ \C70/rm/m/n/12/5b ö \C70/rm/m/n/12/74  \C70/rm/m/n/12/5c 1 \C70/rm/m/n/12/67 * \C70/rm/m/n/12/5f ≈ \C70/rm/m/n/12/6b c \C70/rm/m/n/12/78 n\OT1/cmr/m/n/12 .\C70/rm/m/n/12/4f ã \C70/rm/m/n/12/59 Ç\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/5b ˘ û \C70/rm/m/n/12/65 p$\OML/cmm/m/it/12 x$\C70/rm/m/n/12/5b ö \C70/rm/m/n/12/4e I$\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 e[]$\OT1/cmr/m/n/12 .\C70/rm/m/n/12/90 £
  []
 
 [43 <./resources/Lagrange's_mean_value_theorem.png>]
-Overfull \hbox (16.16014pt too wide) in paragraph at lines 1945--1946
+Overfull \hbox (16.16014pt too wide) in paragraph at lines 1964--1965
 []\C70/rm/m/n/12/53 s \OT1/cmr/m/n/12 : \C70/rm/m/n/12/8b æ$\OML/cmm/m/it/12 f \OT1/cmr/m/n/12 : [] \OMS/cmsy/m/n/12 ! []$\C70/rm/m/n/12/4e :   *$[]$
  \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/5b û \C70/rm/m/n/12/50 < \C70/rm/m/n/12/53 Ô \C70/rm/m/n/12/5b ¸ \C70/rm/m/n/12/51 ˝ \C70/rm/m/n/12/65 p\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/5e v \C70/rm/m/n/12/57 ($[]$\C70/rm/m/n/12/4e 
  \C70/rm/m/n/12/53 Ô \C70/rm/m/n/12/5b ¸\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/90 £ \C70/rm/m/n/12/4e H$\OML/cmm/m/it/12 f[]$\C70/rm/m/n/12/6e · \C70/rm/m/n/12/8d ≥ \OT1/cmr/m/n/12 : \C70/rm/m/n/12/5b ˘ \C70/rm/m/n/12/4e ˚ \C70/rm/m/n/12/61  \C70/rm/m/n/12/4e À é$[][]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a\OT1/cmr/m/n/12 )$\C70/rm/m/n/12/54 å$[][]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 b\OT1/cmr/m/n/12 )$\C70/rm/m/n/12/4e K
  []
 
 
-Overfull \hbox (23.77333pt too wide) in paragraph at lines 1953--1954
+Overfull \hbox (23.77333pt too wide) in paragraph at lines 1972--1973
 []\C70/rm/m/n/12/57 ( \C70/rm/m/n/12/5f Æ \C70/rm/m/n/12/79 Ô \C70/rm/m/n/12/52  \C70/rm/m/n/12/4e -\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/51 ˝ \C70/rm/m/n/12/65 p$[]$\C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/4e  \C70/rm/m/n/12/5b ö \C70/rm/m/n/12/79 Ô \C70/rm/m/n/12/52 \OT1/cmr/m/n/12 (\C70/rm/m/n/12/62  \C70/rm/m/n/12/79  \C70/rm/m/n/12/53 Õ \C70/rm/m/n/12/5b ¸ \C70/rm/m/n/12/51 ˝ \C70/rm/m/n/12/65 p \C70/rm/m/n/12/62  \C70/rm/m/n/12/53 ü \C70/rm/m/n/12/51 ˝ \C70/rm/m/n/12/65 p\OT1/cmr/m/n/12 )\C70/rm/m/n/12/66 / \C70/rm/m/n/12/4e   * \C70/rm/m/n/12/53 Ô \C70/rm/m/n/12/5f Æ \C70/rm/m/n/12/51 ˝ \C70/rm/m/n/12/65 p$\OT1/cmr/bx/n/12 F$\C70/rm/m/n/12/4e  \C70/rm/m/n/12/51 v \C70/rm/m/n/12/5b ¸ \C70/rm/m/n/12/65 p \C70/rm/m/n/12/7b I \C70/rm/m/n/12/4e é \C70/rm/m/n/12/53 ü \C70/rm/m/n/12/67 e \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/51 ˝ \C70/rm/m/n/12/65 p$[]$\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/53 s$\OML/cmm/m/it/12 F\OMS/cmsy/m/n/12 0 \OT1/cmr/m/n/12 =
  []
 
@@ -1221,107 +1229,107 @@ Overfull \hbox (23.77333pt too wide) in paragraph at lines 1953--1954
 Missing character: There is no ﬁ in font cmr12!
 Missing character: There is no Ì in font cmr12!
  [47]
-<resources/Geometric_explanation_of_the_mean_value_theorem_for_integration.jpg, id=2371, 410.53375pt x 310.15875pt>
+<resources/Geometric_explanation_of_the_mean_value_theorem_for_integration.jpg, id=2383, 410.53375pt x 310.15875pt>
 File: resources/Geometric_explanation_of_the_mean_value_theorem_for_integration.jpg Graphic file (type jpg)
 <use resources/Geometric_explanation_of_the_mean_value_theorem_for_integration.jpg>
-Package pdftex.def Info: resources/Geometric_explanation_of_the_mean_value_theorem_for_integration.jpg  used on input line 2096.
+Package pdftex.def Info: resources/Geometric_explanation_of_the_mean_value_theorem_for_integration.jpg  used on input line 2115.
 (pdftex.def)             Requested size: 410.53275pt x 310.15799pt.
  [48 <./resources/Geometric_explanation_of_the_mean_value_theorem_for_integration.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 2119--2122
+Underfull \hbox (badness 10000) in paragraph at lines 2138--2141
 
  []
 
-<resources/Geometric_explanation_of_the_second_mean_value_theorem_for_integration.jpg, id=2379, 451.6875pt x 309.40594pt>
+<resources/Geometric_explanation_of_the_second_mean_value_theorem_for_integration.jpg, id=2391, 451.6875pt x 309.40594pt>
 File: resources/Geometric_explanation_of_the_second_mean_value_theorem_for_integration.jpg Graphic file (type jpg)
 <use resources/Geometric_explanation_of_the_second_mean_value_theorem_for_integration.jpg>
-Package pdftex.def Info: resources/Geometric_explanation_of_the_second_mean_value_theorem_for_integration.jpg  used on input line 2152.
+Package pdftex.def Info: resources/Geometric_explanation_of_the_second_mean_value_theorem_for_integration.jpg  used on input line 2171.
 (pdftex.def)             Requested size: 451.68639pt x 309.40518pt.
 
 Underfull \vbox (badness 4995) has occurred while \output is active []
 
  [49] [50 <./resources/Geometric_explanation_of_the_second_mean_value_theorem_for_integration.jpg>]
-<resources/infityFunctionUnormalIntegral.png, id=2389, 225.84375pt x 225.84375pt>
+<resources/infityFunctionUnormalIntegral.png, id=2401, 225.84375pt x 225.84375pt>
 File: resources/infityFunctionUnormalIntegral.png Graphic file (type png)
 <use resources/infityFunctionUnormalIntegral.png>
-Package pdftex.def Info: resources/infityFunctionUnormalIntegral.png  used on input line 2209.
+Package pdftex.def Info: resources/infityFunctionUnormalIntegral.png  used on input line 2228.
 (pdftex.def)             Requested size: 112.92159pt x 112.92159pt.
-<resources/infityFunctionUnormalIntegral2.png, id=2390, 225.84375pt x 225.84375pt>
+<resources/infityFunctionUnormalIntegral2.png, id=2402, 225.84375pt x 225.84375pt>
 File: resources/infityFunctionUnormalIntegral2.png Graphic file (type png)
 <use resources/infityFunctionUnormalIntegral2.png>
-Package pdftex.def Info: resources/infityFunctionUnormalIntegral2.png  used on input line 2217.
+Package pdftex.def Info: resources/infityFunctionUnormalIntegral2.png  used on input line 2236.
 (pdftex.def)             Requested size: 112.92159pt x 112.92159pt.
-<resources/infityFunctionUnormalIntegral3.png, id=2391, 225.84375pt x 225.84375pt>
+<resources/infityFunctionUnormalIntegral3.png, id=2403, 225.84375pt x 225.84375pt>
 File: resources/infityFunctionUnormalIntegral3.png Graphic file (type png)
 <use resources/infityFunctionUnormalIntegral3.png>
-Package pdftex.def Info: resources/infityFunctionUnormalIntegral3.png  used on input line 2225.
+Package pdftex.def Info: resources/infityFunctionUnormalIntegral3.png  used on input line 2244.
 (pdftex.def)             Requested size: 225.84319pt x 225.84319pt.
  [51 <./resources/infityFunctionUnormalIntegral.png> <./resources/infityFunctionUnormalIntegral2.png>] [52 <./resources/infityFunctionUnormalIntegral3.png>]
-Overfull \hbox (18.95885pt too wide) in paragraph at lines 2272--2273
+Overfull \hbox (18.95885pt too wide) in paragraph at lines 2291--2292
 []$\OML/cmm/m/it/12 R[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\C70/rm/m/n/12/66 / \C70/rm/m/n/12/4f Y \C70/rm/m/n/12/98 y\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/88 h \C70/rm/m/n/12/79 : \C70/rm/m/n/12/8b Ô \C70/rm/m/n/12/5d Ó\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/66 /$\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12   \OML/cmm/m/it/12 a\OT1/cmr/m/n/12 )[]$\C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/9a ÿ \C70/rm/m/n/12/96 6 \C70/rm/m/n/12/65 ‡ \C70/rm/m/n/12/7a w \C70/rm/m/n/12/5c $\OML/cmm/m/it/12 O\OT1/cmr/m/n/12 ((\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12   \OML/cmm/m/it/12 a\OT1/cmr/m/n/12 )[])$.\C70/rm/m/n/12/68 9 \C70/rm/m/n/12/63 n \C70/rm/m/n/12/4e - \C70/rm/m/n/12/50 < \C70/rm/m/n/12/5b ö \C70/rm/m/n/12/74  \C70/rm/m/n/12/53 Ô \C70/rm/m/n/12/5f ó$\OML/cmm/m/it/12 R[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) = [] [][](\OML/cmm/m/it/12 \OT1/cmr/m/n/12 )(\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12  
  []
 
 
-Overfull \hbox (1.65335pt too wide) in paragraph at lines 2290--2291
+Overfull \hbox (1.65335pt too wide) in paragraph at lines 2309--2310
 []$\OML/cmm/m/it/12 Q\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) = 0  \OMS/cmsy/m/n/12 !$\C70/rm/m/n/12/9f P \C70/rm/m/n/12/6b ! \C70/rm/m/n/12/65 π \C70/rm/m/n/12/7a \OT1/cmr/m/n/12 ,\C70/rm/m/n/12/52 $[] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12  \OML/cmm/m/it/12 p\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 y  \OMS/cmsy/m/n/12 !  [] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12  \OML/cmm/m/it/12 p\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 dx$\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/71 6 \C70/rm/m/n/12/54  \C70/rm/m/n/12/4e $ \C70/rm/m/n/12/8f π \C70/rm/m/n/12/6c B \C70/rm/m/n/12/79 Ô \C70/rm/m/n/12/52 \OT1/cmr/m/n/12 ,\C70/rm/m/n/12/4e Œ \C70/rm/m/n/12/80  \C70/rm/m/n/12/5f ó \C70/rm/m/n/12/51 ˙\OT1/cmr/m/n/12 :$\OML/cmm/m/it/12 y \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 e[]e[] \OT1/cmr/m/n/12 =
  []
 
 [53] [54]
-Overfull \hbox (2.29764pt too wide) in paragraph at lines 2389--2390
+Overfull \hbox (2.29764pt too wide) in paragraph at lines 2408--2409
 []\C70/rm/m/n/12/5f à \C70/rm/m/n/12/66  >\OT1/cmr/m/n/12 :\C70/rm/m/n/12/8f Ÿ \C70/rm/m/n/12/61  \C70/rm/m/n/12/54 s \C70/rm/m/n/12/77 @ \C70/rm/m/n/12/51 ˝ \C70/rm/m/n/12/65 p \C70/rm/m/n/12/6c B \C70/rm/m/n/12/5b ¸ \C70/rm/m/n/12/54  \C70/rm/m/n/12/66 / \C70/rm/m/n/12/5b É \C70/rm/m/n/12/81 Í \C70/rm/m/n/12/8e ´ \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/50  \C70/rm/m/n/12/65 p\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/8f Ÿ \C70/rm/m/n/12/66 ó \C70/rm/m/n/12/79 : \C70/rm/m/n/12/77 @ \C70/rm/m/n/12/53 ü \C70/rm/m/n/12/51 ˝ \C70/rm/m/n/12/65 p \C70/rm/m/n/12/66 / \C70/rm/m/n/12/4e * \C70/rm/m/n/12/63  \C70/rm/m/n/12/65 p \C70/rm/m/n/12/51 ˝ \C70/rm/m/n/12/65 p\OT1/cmr/m/n/12 .\C70/rm/m/n/12/4e  \C70/rm/m/n/12/96 æ \C70/rm/m/n/12/73  \C70/rm/m/n/12/52 0\OT1/cmr/m/n/12 :\C70/rm/m/n/12/53 ü \C70/rm/m/n/12/51 ˝ \C70/rm/m/n/12/65 p \C70/rm/m/n/12/53 Ô \C70/rm/m/n/12/4e Â :$\OML/cmm/m/it/12 y \OT1/cmr/m/n/12 =
  []
 
 
-Overfull \hbox (28.98485pt too wide) in paragraph at lines 2393--2394
+Overfull \hbox (28.98485pt too wide) in paragraph at lines 2412--2413
 \C70/rm/m/n/12/67 a \C70/rm/m/n/12/4e ˆ \C70/rm/m/n/12/5f à \C70/rm/m/n/12/66  >$\OML/cmm/m/it/12 k$\C70/rm/m/n/12/5e î \C70/rm/m/n/12/8b Â \C70/rm/m/n/12/66 /$\OML/cmm/m/it/12 i$\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/80  \C70/rm/m/n/12/6b ' \C70/rm/m/n/12/62 … \C70/rm/m/n/12/51 l \C70/rm/m/n/12/5f  \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/5b å \C70/rm/m/n/12/65 t \C70/rm/m/n/12/51 ô \C70/rm/m/n/12/6c ’ \C70/rm/m/n/12/66 /\OT1/cmr/m/n/12 :$\OML/cmm/m/it/12 e[] \OT1/cmr/m/n/12 = [] \OML/cmm/m/it/12 x \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 i [] x$\OT1/cmr/m/n/12 )\C70/rm/m/n/12/7b & \C70/rm/m/n/12/54  \C70/rm/m/n/12/8f Ÿ \C70/rm/m/n/12/4e * \C70/rm/m/n/12/67 a \C70/rm/m/n/12/4e ˆ \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/5c 1 \C70/rm/m/n/12/8f Ÿ \C70/rm/m/n/12/4e $ * \C70/rm/m/n/12/51 ˝ \C70/rm/m/n/12/65 p\OT1/cmr/m/n/12 :$[] \OML/cmm/m/it/12 !t$\C70/rm/m/n/12/54 å$[] \OML/cmm/m/it/12 !t$\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/90 £
  []
 
 [55]
-Overfull \hbox (17.8601pt too wide) in paragraph at lines 2399--2400
+Overfull \hbox (17.8601pt too wide) in paragraph at lines 2418--2419
 []\C70/rm/m/n/12/90 £ \C70/rm/m/n/12/4e H \C70/rm/m/n/12/56 ﬁ \C70/rm/m/n/12/52 0 \C70/rm/m/n/12/90 £ \C70/rm/m/n/12/4e * \C70/rm/m/n/12/65 π \C70/rm/m/n/12/7a \OT1/cmr/m/n/12 :\C70/rm/m/n/12/8f Ÿ \C70/rm/m/n/12/4e * \C70/rm/m/n/12/65 π \C70/rm/m/n/12/7a  \C70/rm/m/n/12/57 ( \C70/rm/m/n/12/5f à \C70/rm/m/n/12/59  \C70/rm/m/n/12/98 Ü \C70/rm/m/n/12/57 ﬂ \C70/rm/m/n/12/90 ˝ \C70/rm/m/n/12/66 / \C70/rm/m/n/12/5f à \C70/rm/m/n/12/5e 8 \C70/rm/m/n/12/89 ¡ \C70/rm/m/n/12/76 Ñ\OT1/cmr/m/n/12 .\C70/rm/m/n/12/8f Ÿ \C70/rm/m/n/12/4e * \C70/rm/m/n/12/65 π \C70/rm/m/n/12/7a  \C70/rm/m/n/12/80 ˝ \C70/rm/m/n/12/88 h \C70/rm/m/n/12/79 : \C70/rm/m/n/12/4e   \C70/rm/m/n/12/52  \C70/rm/m/n/12/63 / \C70/rm/m/n/12/52 ®\OT1/cmr/m/n/12 .(\C70/rm/m/n/12/6b ‘ \C70/rm/m/n/12/59 Ç \C70/rm/m/n/12/5f 9 \C70/rm/m/n/12/7c '\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/94 ü \C70/rm/m/n/12/88 h\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/64 F \C70/rm/m/n/12/52 ®\OT1/cmr/m/n/12 ...)\C70/rm/m/n/12/90 
  []
 
 
-Overfull \hbox (17.327pt too wide) in paragraph at lines 2407--2408
+Overfull \hbox (17.327pt too wide) in paragraph at lines 2426--2427
 \C70/rm/m/n/12/52 õ\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/80  \C70/rm/m/n/12/5f 9 \C70/rm/m/n/12/7c ' \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/52 õ \C70/rm/m/n/12/4e $\OML/cmm/m/it/12 y$\C70/rm/m/n/12/62  \C70/rm/m/n/12/6b c ‘\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/6b ‘ \C70/rm/m/n/12/4f ã \C70/rm/m/n/12/52  \C70/rm/m/n/12/66 / \C70/rm/m/n/12/5e 8 \C70/rm/m/n/12/65 p$\OML/cmm/m/it/12 k$\OT1/cmr/m/n/12 .\C70/rm/m/n/12/5f S\OT1/cmr/m/n/12 y\C70/rm/m/n/12/5f à \C70/rm/m/n/12/59 ' \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/65 ˆ \C70/rm/m/n/12/50  \C70/rm/m/n/12/5f 9 \C70/rm/m/n/12/7c ' \C70/rm/m/n/12/88 ´ \C70/rm/m/n/12/62 … \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/5f à \C70/rm/m/n/12/95 \OT1/cmr/m/n/12 ,\C70/rm/m/n/12/54  \C70/rm/m/n/12/4e 
  \C70/rm/m/n/12/62 … \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/52 õ \C70/rm/m/n/12/57 ( \C70/rm/m/n/12/5f Ä \C70/rm/m/n/12/4e 
  \C70/rm/m/n/12/62 …\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/51 ô \C70/rm/m/n/12/4f \$\OML/cmm/m/it/12 F \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12  \OML/cmm/m/it/12 ky \OT1/cmr/m/n/12 =
  []
 
 
-Overfull \hbox (4.5251pt too wide) in paragraph at lines 2419--2420
+Overfull \hbox (4.5251pt too wide) in paragraph at lines 2438--2439
 []\C70/rm/m/n/12/68 8 \C70/rm/m/n/12/5f √ \C70/rm/m/n/12/60  Û \C70/rm/m/n/12/66 / \C70/rm/m/n/12/5c  \C70/rm/m/n/12/8b ’ \C70/rm/m/n/12/63  \C70/rm/m/n/12/65 p \C70/rm/m/n/12/51 ˝ \C70/rm/m/n/12/65 p$\OML/cmm/m/it/12 y \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 e[]$\OT1/cmr/m/n/12 ,$\OML/cmm/m/it/12 $\C70/rm/m/n/12/63  \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/66 / \C70/rm/m/n/12/72 y \C70/rm/m/n/12/5f Å \C70/rm/m/n/12/51 ˝ \C70/rm/m/n/12/65 p\OT1/cmr/m/n/12 .(\C70/rm/m/n/12/75 ($\OML/cmm/m/it/12 $\C70/rm/m/n/12/80  \C70/rm/m/n/12/4e  \C70/rm/m/n/12/75 ($\OML/cmm/m/it/12 C$\C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/53 ü \C70/rm/m/n/12/56 ‡ \C70/rm/m/n/12/53 Ô \C70/rm/m/n/12/4e Â \C70/rm/m/n/12/77 \OT1/cmr/m/n/12 4.1.1-\C70/rm/m/n/12/4e ¿ H \C70/rm/m/n/12/66 / \C70/rm/m/n/12/7e ø \C70/rm/m/n/12/60 ' \C70/rm/m/n/12/53 ÿ \C70/rm/m/n/12/63 b\OT1/cmr/m/n/12 .)\C70/rm/m/n/12/5c 
  []
 
 [56] [57]
-Overfull \hbox (10.51665pt too wide) in paragraph at lines 2502--2503
+Overfull \hbox (10.51665pt too wide) in paragraph at lines 2521--2522
 []\C70/rm/m/n/12/50 G \C70/rm/m/n/12/8b æ \C70/rm/m/n/12/5b ¸ \C70/rm/m/n/12/65 p \C70/rm/m/n/12/4e :\OT1/cmr/m/n/12 0,\C70/rm/m/n/12/5c  \C70/rm/m/n/12/4f  \C70/rm/m/n/12/5f ó \C70/rm/m/n/12/52 0 \C70/rm/m/n/12/4e   * \C70/rm/m/n/12/72 y \C70/rm/m/n/12/6b ä \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/72 y \C70/rm/m/n/12/89 „\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/4e ÷  \C70/rm/m/n/12/4f  \C70/rm/m/n/12/53 ÿ \OT1/cmr/m/n/12 .\C70/rm/m/n/12/4e _ \C70/rm/m/n/12/5c 1 \C70/rm/m/n/12/66 / \C70/rm/m/n/12/5f S \C70/rm/m/n/12/5b ¸ \C70/rm/m/n/12/65 p \C70/rm/m/n/12/4e :\OT1/cmr/m/n/12 0\C70/rm/m/n/12/65 ˆ\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/90 £ \C70/rm/m/n/12/4e H$\OML/cmm/m/it/12 cP \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 sP[]$\OT1/cmr/m/n/12 .\C70/rm/m/n/12/53 Ô \C70/rm/m/n/12/4e Â \C70/rm/m/n/12/7e ¶ \C70/rm/m/n/12/63 â \C70/rm/m/n/12/4e   *\OT1/cmr/m/n/12 P,\C70/rm/m/n/12/4e _
  []
 
-<resources/nonLinearDifferencialEquation_HumanGrow.png, id=2443, 96.36pt x 96.36pt>
+<resources/nonLinearDifferencialEquation_HumanGrow.png, id=2455, 96.36pt x 96.36pt>
 File: resources/nonLinearDifferencialEquation_HumanGrow.png Graphic file (type png)
 <use resources/nonLinearDifferencialEquation_HumanGrow.png>
-Package pdftex.def Info: resources/nonLinearDifferencialEquation_HumanGrow.png  used on input line 2507.
+Package pdftex.def Info: resources/nonLinearDifferencialEquation_HumanGrow.png  used on input line 2526.
 (pdftex.def)             Requested size: 96.35974pt x 96.35974pt.
 [58 <./resources/nonLinearDifferencialEquation_HumanGrow.png>] [59] [60] [61]
-Overfull \hbox (11.88972pt too wide) in paragraph at lines 2687--2688
+Overfull \hbox (11.88972pt too wide) in paragraph at lines 2706--2707
 []\C70/rm/m/n/12/89 „ \C70/rm/m/n/12/91   \OT1/cmr/m/n/12 : $\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x; y\OT1/cmr/m/n/12 )$\C70/rm/m/n/12/66 / \C70/rm/m/n/12/53 : \C70/rm/m/n/12/57 ﬂ$\OML/cmm/m/it/12 D$\C70/rm/m/n/12/4e 
  \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/67 	 \C70/rm/m/n/12/75 L \C70/rm/m/n/12/51 ˝ \C70/rm/m/n/12/65 p\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/5c  \C70/rm/m/n/12/53 : \C70/rm/m/n/12/57 ﬂ$\OML/cmm/m/it/12 D$\C70/rm/m/n/12/4e ˚ \C70/rm/m/n/12/61  \C70/rm/m/n/12/52  \C70/rm/m/n/12/62 $\OML/cmm/m/it/12 n$\C70/rm/m/n/12/4e * \C70/rm/m/n/12/53 : \C70/rm/m/n/12/57 ﬂ$\OT1/cmr/m/n/12 \OML/cmm/m/it/12 [] [] \OT1/cmr/m/n/12 \OML/cmm/m/it/12 []$\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/57 ( \C70/rm/m/n/12/6b œ \C70/rm/m/n/12/4e *$\OT1/cmr/m/n/12 \OML/cmm/m/it/12 []$\C70/rm/m/n/12/4e 
  ˚ \C70/rm/m/n/12/53 ÷ \C70/rm/m/n/12/4e   \C70/rm/m/n/12/70 π\OT1/cmr/m/n/12 ,$(\OML/cmm/m/it/12 []; []\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 
  []
 
 [62] [63] [64]
-Underfull \hbox (badness 10000) in paragraph at lines 2846--2847
+Underfull \hbox (badness 10000) in paragraph at lines 2865--2866
 
  []
 
 [65]
-Underfull \hbox (badness 10000) in paragraph at lines 2885--2886
+Underfull \hbox (badness 10000) in paragraph at lines 2904--2905
 
  []
 
 [66]
 
-Package pgfplots Warning: Table '<inline_table>' has non-unique column name '1'. Only the first occurence can be accessed via column names. on input line 2922.
+Package pgfplots Warning: Table '<inline_table>' has non-unique column name '1'. Only the first occurence can be accessed via column names. on input line 2941.
 
 Missing character: There is no ` in font nullfont!
 Missing character: There is no ` in font nullfont!
@@ -1334,149 +1342,149 @@ Missing character: There is no ` in font nullfont!
 Underfull \vbox (badness 6380) has occurred while \output is active []
 
  [68] [69] [70] [71] [72]
-Overfull \hbox (23.66096pt too wide) in paragraph at lines 3233--3276
+Overfull \hbox (23.66096pt too wide) in paragraph at lines 3252--3295
  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3277--3278
+Underfull \hbox (badness 10000) in paragraph at lines 3296--3297
 
  []
 
 [73]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3300.
+(hyperref)                removing `math shift' on input line 3319.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3300.
+(hyperref)                removing `math shift' on input line 3319.
 
 [74] [75] [76] [77]
-Overfull \hbox (0.86981pt too wide) in paragraph at lines 3522--3524
+Overfull \hbox (0.86981pt too wide) in paragraph at lines 3541--3543
 \C70/rm/m/n/12/52  \C70/rm/m/n/12/5f  \C70/rm/m/n/12/66 / \C70/rm/m/n/12/6b c \C70/rm/m/n/12/65 p\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/52 $\OML/cmm/m/it/12 f$\C70/rm/m/n/12/57 ($\OML/cmm/m/it/12 p$\C70/rm/m/n/12/70 π \C70/rm/m/n/12/4f › \C70/rm/m/n/12/63  \C70/rm/m/n/12/5b ö \C70/rm/m/n/12/54 \OT1/cmr/m/n/12 .\C70/rm/m/n/12/59 Ç \C70/rm/m/n/12/67 ú \C70/rm/m/n/12/66 / \C70/rm/m/n/12/8d  \C70/rm/m/n/12/65 p\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/52  \C70/rm/m/n/12/90  \C70/rm/m/n/12/8f l \C70/rm/m/n/12/5b ö \C70/rm/m/n/12/54 \OT1/cmr/m/n/12 .\C70/rm/m/n/12/80  \C70/rm/m/n/12/4e Œ \C70/rm/m/n/12/96 ≈ \C70/rm/m/n/12/53 Ô \C70/rm/m/n/12/6b ‘ \C70/rm/m/n/12/88 L \C70/rm/m/n/12/52  \C70/rm/m/n/12/5f  \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/7e › \C70/rm/m/n/12/5b ˘ \C70/rm/m/n/12/50 <\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/5c 1 \C70/rm/m/n/12/53 Ô \C70/rm/m/n/12/4e Â \C70/rm/m/n/12/77 Â \C70/rm/m/n/12/90 S \C70/rm/m/n/12/51 ˝ \C70/rm/m/n/12/65 p$\OML/cmm/m/it/12 f$\C70/rm/m/n/12/57 ($\OML/cmm/m/it/12 p$\C70/rm/m/n/12/70 π
  []
 
 [78]
-Overfull \hbox (26.31409pt too wide) in paragraph at lines 3554--3556
+Overfull \hbox (26.31409pt too wide) in paragraph at lines 3573--3575
 []\C70/rm/m/n/12/51 v \C70/rm/m/n/12/96 ≈ \C70/rm/m/n/12/53 Ô \C70/rm/m/n/12/6b ‘ \C70/rm/m/n/12/88 L \C70/rm/m/n/12/52  \C70/rm/m/n/12/5f  \C70/rm/m/n/12/4e :$\OML/cmm/m/it/12 r[] [] $\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/75 1 \C70/rm/m/n/12/4e é$\OML/cmm/m/it/12 dV \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 dxdydz$\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/59 Ç \C70/rm/m/n/12/67 ú \C70/rm/m/n/12/5d Ê \C70/rm/m/n/12/53 ÿ \C70/rm/m/n/12/65 p \C70/rm/m/n/12/53 ÿ \C70/rm/m/n/12/63 b \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/75 ; \C70/rm/m/n/12/51 v \C70/rm/m/n/12/4f S \C70/rm/m/n/12/79 Ô \C70/rm/m/n/12/51 C$\OML/cmm/m/it/12 dV$\C70/rm/m/n/12/4f  \C70/rm/m/n/12/53 ÿ \C70/rm/m/n/12/62  \OT1/cmr/m/n/12 : $\OML/cmm/m/it/12 dV \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 r[] [] drdd'$\OT1/cmr/m/n/12 . 
  []
 
 [79] [80]
-Overfull \hbox (3.20564pt too wide) in paragraph at lines 3651--3652
+Overfull \hbox (3.20564pt too wide) in paragraph at lines 3670--3671
 []\C70/rm/m/n/12/6b ‘ \C70/rm/m/n/12/8f É \C70/rm/m/n/12/52 $ + \C70/rm/m/n/12/6c ’ \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/72 y \C70/rm/m/n/12/70 π \C70/rm/m/n/12/66 / \C70/rm/m/n/12/89 Å \C70/rm/m/n/12/5d Ú \C70/rm/m/n/12/77 Â \C70/rm/m/n/12/82 Â \C70/rm/m/n/12/5e r \C70/rm/m/n/12/7e ß \C70/rm/m/n/12/65 p \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/65 [ c \C70/rm/m/n/12/60 '\OT1/cmr/m/n/12 .\C70/rm/m/n/12/4e   \C70/rm/m/n/12/82 , \C70/rm/m/n/12/67 e \C70/rm/m/n/12/8b Ù\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/53 Ô \C70/rm/m/n/12/4e Â \C70/rm/m/n/12/90 	 \C70/rm/m/n/12/62 È \C70/rm/m/n/12/6b ‘ \C70/rm/m/n/12/8f É \C70/rm/m/n/12/7b Ä \C70/rm/m/n/12/53 U \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/7e ß \C70/rm/m/n/12/65 p\OT1/cmr/m/n/12 :$\OML/cmm/m/it/12 P$\C70/rm/m/n/12/7e ß \C70/rm/m/n/12/65 p$\OML/cmm/m/it/12 U[] \OT1/cmr/m/n/12 = [] []$\C70/rm/m/n/12/4f \
  []
 
 [81] [82]
-Overfull \hbox (2.68512pt too wide) in paragraph at lines 3733--3734
+Overfull \hbox (2.68512pt too wide) in paragraph at lines 3752--3753
 []\C70/rm/m/n/12/57 ( \C70/rm/m/n/12/4e 
  \C70/rm/m/n/12/8f  \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/7e ß \C70/rm/m/n/12/65 p$[]\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12  \OT1/cmr/m/n/12 1)[]\OML/cmm/m/it/12 a[]$\C70/rm/m/n/12/4e -\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/59 Ç \C70/rm/m/n/12/67 ú \C70/rm/m/n/12/5f S$\OML/cmm/m/it/12 n$\C70/rm/m/n/12/8d ã \C70/rm/m/n/12/4e é \C70/rm/m/n/12/65 ‡ \C70/rm/m/n/12/7a w \C70/rm/m/n/12/65 ˆ\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/65 p \C70/rm/m/n/12/52 $\OML/cmm/m/it/12 a[]$\C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/67 Å \C70/rm/m/n/12/96 P \C70/rm/m/n/12/5b X \C70/rm/m/n/12/57 ( \C70/rm/m/n/12/4e  \C70/rm/m/n/12/7b I \C70/rm/m/n/12/4e é$\OT1/cmr/m/n/12 0$,\C70/rm/m/n/12/5e v \C70/rm/m/n/12/4e  \C70/rm/m/n/12/6b œ \C70/rm/m/n/12/4e *$\OML/cmm/m/it/12 a[]$\C70/rm/m/n/12/5c  \C70/rm/m/n/12/4e é$\OML/cmm/m/it/12 a[]$\OT1/cmr/m/n/12 (\C70/rm/m/n/12/53 s\OT1/cmr/m/n/12 :\C70/rm/m/n/12/65 p
  []
 
 
-Overfull \hbox (14.32214pt too wide) in paragraph at lines 3772--3774
+Overfull \hbox (14.32214pt too wide) in paragraph at lines 3791--3793
 []\C70/rm/m/n/12/6b ‘ \C70/rm/m/n/12/59 Ç \C70/rm/m/n/12/8b Ù\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/7e ß \C70/rm/m/n/12/65 p$[] []$\C70/rm/m/n/12/7e › \C70/rm/m/n/12/5b ˘ \C70/rm/m/n/12/65 6 [\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/56 ‡ \C70/rm/m/n/12/4e :$[] []$\C70/rm/m/n/12/66 / \C70/rm/m/n/12/65 6 [ \C70/rm/m/n/12/76 Ñ\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/80  \C70/rm/m/n/12/7e ß \C70/rm/m/n/12/65 p$[] []$\C70/rm/m/n/12/66 / \C70/rm/m/n/12/67 a \C70/rm/m/n/12/4e ˆ \C70/rm/m/n/12/65 6 [ \C70/rm/m/n/12/76 Ñ\OT1/cmr/m/n/12 .\C70/rm/m/n/12/5b É \C70/rm/m/n/12/81 Í \C70/rm/m/n/12/8e ´ \C70/rm/m/n/12/65 6 [ \C70/rm/m/n/12/52 0$[] []$\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/4f F
  []
 
 [83] [84]
-Overfull \hbox (2.02245pt too wide) in paragraph at lines 3862--3863
+Overfull \hbox (2.02245pt too wide) in paragraph at lines 3881--3882
 []\C70/rm/m/n/12/8b æ$\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 z\OT1/cmr/m/n/12 ) = [] \OML/cmm/m/it/12 a[]x[]$\C70/rm/m/n/12/4e :   \C70/rm/m/n/12/5e B \C70/rm/m/n/12/7e ß \C70/rm/m/n/12/65 p\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/51 v \C70/rm/m/n/12/65 6 [ \C70/rm/m/n/12/53 J \C70/rm/m/n/12/5f Ñ \C70/rm/m/n/12/4e :$\OML/cmm/m/it/12 R$\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/82 Â \C70/rm/m/n/12/5b ˘ \C70/rm/m/n/12/4e é \C70/rm/m/n/12/65 6 [ \C70/rm/m/n/12/57 \OT1/cmr/m/n/12 (\C70/rm/m/n/12/6a ! \C70/rm/m/n/12/95  \C70/rm/m/n/12/4e :$\OML/cmm/m/it/12 R$\C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/59  \C70/rm/m/n/12/65 p \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/96 ∆ \C70/rm/m/n/12/54 \OT1/cmr/m/n/12 )\C70/rm/m/n/12/4e 
  \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/67 – \C70/rm/m/n/12/4e * \C70/rm/m/n/12/59  \C70/rm/m/n/12/65 p$\OML/cmm/m/it/12 z[]$\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/7e ß
  []
 
 [85] [86] [87] [88] [89] [90] [91] [92] [93] [94]
-Overfull \hbox (4.40204pt too wide) in paragraph at lines 4240--4241
+Overfull \hbox (4.40204pt too wide) in paragraph at lines 4259--4260
 []\C70/rm/m/n/12/77 È \C70/rm/m/n/12/96 5 \C70/rm/m/n/12/5e v \C70/rm/m/n/12/4e  \C70/rm/m/n/12/66 / \C70/rm/m/n/12/67 – \C70/rm/m/n/12/4e   \C70/rm/m/n/12/79 Õ \C70/rm/m/n/12/72 y \C70/rm/m/n/12/5b ö \C70/rm/m/n/12/4e ã \C70/rm/m/n/12/72 i \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/4e „ \C70/rm/m/n/12/88 h\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/4e _ \C70/rm/m/n/12/8b ∏ \C70/rm/m/n/12/5b É \C70/rm/m/n/12/53 Ô \C70/rm/m/n/12/4e Â \C70/rm/m/n/12/88 ´ \C70/rm/m/n/12/8b § \C70/rm/m/n/12/4e : \C70/rm/m/n/12/66 / \C70/rm/m/n/12/64 Õ \C70/rm/m/n/12/4f \ \C70/rm/m/n/12/53 ÿ \C70/rm/m/n/12/91 œ \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/7e ø \C70/rm/m/n/12/60 ' \C70/rm/m/n/12/53 ÿ \C70/rm/m/n/12/63 b\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/4f F \C70/rm/m/n/12/5b É \C70/rm/m/n/12/67 , \C70/rm/m/n/12/8e ´ \C70/rm/m/n/12/4e _ \C70/rm/m/n/12/66 / \C70/rm/m/n/12/4e   \C70/rm/m/n/12/79 Õ \C70/rm/m/n/12/53 ÿ \C70/rm/m/n/12/91 œ\OT1/cmr/m/n/12 .\C70/rm/m/n/12/4e ÷
  []
 
 [95] [96]
-<resources/MatrixMultiplecation_trick.png, id=2657, 420.06938pt x 130.23656pt>
+<resources/MatrixMultiplecation_trick.png, id=2669, 420.06938pt x 130.23656pt>
 File: resources/MatrixMultiplecation_trick.png Graphic file (type png)
 <use resources/MatrixMultiplecation_trick.png>
-Package pdftex.def Info: resources/MatrixMultiplecation_trick.png  used on input line 4448.
+Package pdftex.def Info: resources/MatrixMultiplecation_trick.png  used on input line 4467.
 (pdftex.def)             Requested size: 420.06836pt x 130.23624pt.
-<resources/MatrixMultiple_1.png, id=2658, 351.714pt x 124.66576pt>
+<resources/MatrixMultiple_1.png, id=2670, 351.714pt x 124.66576pt>
 File: resources/MatrixMultiple_1.png Graphic file (type png)
 <use resources/MatrixMultiple_1.png>
-Package pdftex.def Info: resources/MatrixMultiple_1.png  used on input line 4463.
+Package pdftex.def Info: resources/MatrixMultiple_1.png  used on input line 4482.
 (pdftex.def)             Requested size: 351.71315pt x 124.66544pt.
  [97 <./resources/MatrixMultiplecation_trick.png>] [98 <./resources/MatrixMultiple_1.png>]
-Overfull \hbox (5.28134pt too wide) in paragraph at lines 4548--4549
+Overfull \hbox (5.28134pt too wide) in paragraph at lines 4567--4568
 []\C70/rm/m/n/12/77 È \C70/rm/m/n/12/96 5$\OML/cmm/m/it/12 A$\C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/7b ,$\OML/cmm/m/it/12 k$\C70/rm/m/n/12/52  \C70/rm/m/n/12/66 / \C70/rm/m/n/12/4e   *$\OML/cmm/m/it/12 m \OMS/cmsy/m/n/12  \OT1/cmr/m/n/12 1$\C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/54  \C70/rm/m/n/12/91 œ\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/80  \C70/rm/m/n/12/4e > \C70/rm/m/n/12/8b ¡$\OML/cmm/m/it/12 B$\C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/7b ,$\OML/cmm/m/it/12 k$\C70/rm/m/n/12/88 L \C70/rm/m/n/12/66 / \C70/rm/m/n/12/4e   *$\OT1/cmr/m/n/12 1 \OMS/cmsy/m/n/12  \OML/cmm/m/it/12 p$\C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/54  \C70/rm/m/n/12/91 œ\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/4e $ \C70/rm/m/n/12/54  \C70/rm/m/n/12/91 œ \C70/rm/m/n/12/76 ¯ \C70/rm/m/n/12/4e X \C70/rm/m/n/12/4f  \C70/rm/m/n/12/5f ó \C70/rm/m/n/12/52 0 \C70/rm/m/n/12/4e   * \C70/rm/m/n/12/77 È \C70/rm/m/n/12/96 5$\OML/cmm/m/it/12 C[]$\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/5c 
  []
 
-<resources/MatrixMultiplecation_trick_2.png, id=2670, 204.765pt x 146.34676pt>
+<resources/MatrixMultiplecation_trick_2.png, id=2682, 204.765pt x 146.34676pt>
 File: resources/MatrixMultiplecation_trick_2.png Graphic file (type png)
 <use resources/MatrixMultiplecation_trick_2.png>
-Package pdftex.def Info: resources/MatrixMultiplecation_trick_2.png  used on input line 4592.
+Package pdftex.def Info: resources/MatrixMultiplecation_trick_2.png  used on input line 4611.
 (pdftex.def)             Requested size: 204.76448pt x 146.34639pt.
 
-Overfull \hbox (5.74684pt too wide) in paragraph at lines 4595--4597
+Overfull \hbox (5.74684pt too wide) in paragraph at lines 4614--4616
 []\C70/rm/m/n/12/53 Ô \C70/rm/m/n/12/4e Â \C70/rm/m/n/12/77  \C70/rm/m/n/12/51 ˙$\OML/cmm/m/it/12 C[]$\C70/rm/m/n/12/5c 1 \C70/rm/m/n/12/66 / \C70/rm/m/n/12/7e œ \C70/rm/m/n/12/8f «$\OML/cmm/m/it/12 A[]B[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 A[]B[]$\C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/8f – \C70/rm/m/n/12/7b ó \C70/rm/m/n/12/8b ° \C70/rm/m/n/12/7b ó \C70/rm/m/n/12/51 ˙ \C70/rm/m/n/12/67 e \C70/rm/m/n/12/76 Ñ\OT1/cmr/m/n/12 ,$\OML/cmm/m/it/12 A[]$\C70/rm/m/n/12/4e - \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/51 C \C70/rm/m/n/12/7d   \C70/rm/m/n/12/53 Í \C70/rm/m/n/12/54 å$\OML/cmm/m/it/12 B[]$\C70/rm/m/n/12/4e - \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/51 C \C70/rm/m/n/12/7d   \C70/rm/m/n/12/8f € \C70/rm/m/n/12/88 L \C70/rm/m/n/12/8f – \C70/rm/m/n/12/7b ó\OT1/cmr/m/n/12 ,$\OML/cmm/m/it/12 A[]$\C70/rm/m/n/12/53 Í \C70/rm/m/n/12/54 å$\OML/cmm/m/it/12 B[]$\C70/rm/m/n/12/8f €
  []
 
 [99 <./resources/MatrixMultiplecation_trick_2.png>]
-<resources/theMultiplecationProductOfTranspose.png, id=2677, 382.42876pt x 87.32625pt>
+<resources/theMultiplecationProductOfTranspose.png, id=2689, 382.42876pt x 87.32625pt>
 File: resources/theMultiplecationProductOfTranspose.png Graphic file (type png)
 <use resources/theMultiplecationProductOfTranspose.png>
-Package pdftex.def Info: resources/theMultiplecationProductOfTranspose.png  used on input line 4607.
+Package pdftex.def Info: resources/theMultiplecationProductOfTranspose.png  used on input line 4626.
 (pdftex.def)             Requested size: 382.42781pt x 87.32603pt.
  [100 <./resources/theMultiplecationProductOfTranspose.png>]
-<resources/row_picture_1.png, id=2683, 154.176pt x 172.2435pt>
+<resources/row_picture_1.png, id=2695, 154.176pt x 172.2435pt>
 File: resources/row_picture_1.png Graphic file (type png)
 <use resources/row_picture_1.png>
-Package pdftex.def Info: resources/row_picture_1.png  used on input line 4699.
+Package pdftex.def Info: resources/row_picture_1.png  used on input line 4718.
 (pdftex.def)             Requested size: 154.1756pt x 172.24307pt.
  [101 <./resources/row_picture_1.png>]
-<resources/colum_picture_1.png, id=2689, 157.7895pt x 193.32225pt>
+<resources/colum_picture_1.png, id=2701, 157.7895pt x 193.32225pt>
 File: resources/colum_picture_1.png Graphic file (type png)
 <use resources/colum_picture_1.png>
-Package pdftex.def Info: resources/colum_picture_1.png  used on input line 4754.
+Package pdftex.def Info: resources/colum_picture_1.png  used on input line 4773.
 (pdftex.def)             Requested size: 157.78911pt x 193.32178pt.
 
-Overfull \hbox (4.40204pt too wide) in paragraph at lines 4781--4782
+Overfull \hbox (4.40204pt too wide) in paragraph at lines 4800--4801
 []\C70/rm/m/n/12/5f à \C70/rm/m/n/12/66  >\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/5e v \C70/rm/m/n/12/4e  \C70/rm/m/n/12/66 / \C70/rm/m/n/12/62 @ \C70/rm/m/n/12/67 	 \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/60 ≈ \C70/rm/m/n/12/51 µ \C70/rm/m/n/12/90 ˝ \C70/rm/m/n/12/8f Ÿ \C70/rm/m/n/12/4e H \C70/rm/m/n/12/5e x \C70/rm/m/n/12/8f –\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/59 Ç \C70/rm/m/n/12/67 ú \C70/rm/m/n/12/4e 	 * \C70/rm/m/n/12/52  \C70/rm/m/n/12/54  \C70/rm/m/n/12/91 œ \C70/rm/m/n/12/4e - \C70/rm/m/n/12/67 	 \C70/rm/m/n/12/4e $ * \C70/rm/m/n/12/54  \C70/rm/m/n/12/91 œ \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/7e ø \C70/rm/m/n/12/60 ' \C70/rm/m/n/12/7e ƒ \C70/rm/m/n/12/54  \C70/rm/m/n/12/53 Ô \C70/rm/m/n/12/4e Â \C70/rm/m/n/12/5f ó \C70/rm/m/n/12/52 0 \C70/rm/m/n/12/7b , \C70/rm/m/n/12/4e 	 * \C70/rm/m/n/12/54  \C70/rm/m/n/12/91 œ\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/62 
  []
 
-<resources/lineardepedent_independent_1.png, id=2690, 330.63525pt x 68.6565pt>
+<resources/lineardepedent_independent_1.png, id=2702, 330.63525pt x 68.6565pt>
 File: resources/lineardepedent_independent_1.png Graphic file (type png)
 <use resources/lineardepedent_independent_1.png>
-Package pdftex.def Info: resources/lineardepedent_independent_1.png  used on input line 4786.
+Package pdftex.def Info: resources/lineardepedent_independent_1.png  used on input line 4805.
 (pdftex.def)             Requested size: 330.63445pt x 68.65631pt.
 [102 <./resources/colum_picture_1.png>] [103 <./resources/lineardepedent_independent_1.png>] [104] [105] [106]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 5177.
+(hyperref)                removing `math shift' on input line 5196.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 5177.
+(hyperref)                removing `math shift' on input line 5196.
 
 
-Overfull \hbox (6.7093pt too wide) in paragraph at lines 5201--5202
+Overfull \hbox (6.7093pt too wide) in paragraph at lines 5220--5221
 []\C70/rm/m/n/12/57 ( \C70/rm/m/n/12/7b I \C70/rm/m/n/12/5f  \C70/rm/m/n/12/4e $ \C70/rm/m/n/12/4f ß \C70/rm/m/n/12/5d Ê \C70/rm/m/n/12/4e X\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/5f ó \C70/rm/m/n/12/52 0$[][] [] [][]\OML/cmm/m/it/12 A \OT1/cmr/m/n/12 = [][] [] \OML/cmm/m/it/12 U$\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/53 s$\OML/cmm/m/it/12 A \OT1/cmr/m/n/12 = [][] [] \OML/cmm/m/it/12 U$\OT1/cmr/m/n/12 .\C70/rm/m/n/12/8f Ÿ \C70/rm/m/n/12/5c 1 \C70/rm/m/n/12/66 / \C70/rm/m/n/12/77 È \C70/rm/m/n/12/96 5$\OML/cmm/m/it/12 A$\C70/rm/m/n/12/76 Ñ$\OML/cmm/m/it/12 LU$\C70/rm/m/n/12/52  \C70/rm/m/n/12/89 „ \C70/rm/m/n/12/7e ” \C70/rm/m/n/12/67 Ñ\OT1/cmr/m/n/12 .$[][] []$\C70/rm/m/n/12/66 /$[][]$\C70/rm/m/n/12/76 Ñ
  []
 
 
-Overfull \hbox (11.71936pt too wide) in paragraph at lines 5218--5219
+Overfull \hbox (11.71936pt too wide) in paragraph at lines 5237--5238
 []\C70/rm/m/n/12/51 v \C70/rm/m/n/12/4e -$\OML/cmm/m/it/12 U$\C70/rm/m/n/12/4e : 
  	 \C70/rm/m/n/12/89 “ \C70/rm/m/n/12/77 È \C70/rm/m/n/12/96 5\OT1/cmr/m/n/12 (Upper tri-an-gu-lar ma-trix),\C70/rm/m/n/12/4e ; \C70/rm/m/n/12/51 C \C70/rm/m/n/12/4f ù \C70/rm/m/n/12/6b ! \C70/rm/m/n/12/63 í \C70/rm/m/n/12/52  \C70/rm/m/n/12/4e é ÷ \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/5b ˘ \C70/rm/m/n/12/89 “ \C70/rm/m/n/12/7e ø \C70/rm/m/n/12/4e 
 \OT1/cmr/m/n/12 ,$[][] []$\C70/rm/m/n/12/53 s$\OML/cmm/m/it/12 L$\C70/rm/m/n/12/4e :  	 \C70/rm/m/n/12/89 “ \C70/rm/m/n/12/96 5\OT1/cmr/m/n/12 (Lower
  []
 
 [107]
-<resources/permutation_trick_1.png, id=2721, 328.8285pt x 93.951pt>
+<resources/permutation_trick_1.png, id=2733, 328.8285pt x 93.951pt>
 File: resources/permutation_trick_1.png Graphic file (type png)
 <use resources/permutation_trick_1.png>
-Package pdftex.def Info: resources/permutation_trick_1.png  used on input line 5293.
+Package pdftex.def Info: resources/permutation_trick_1.png  used on input line 5312.
 (pdftex.def)             Requested size: 328.8277pt x 93.95078pt.
  [108 <./resources/permutation_trick_1.png>]
-Overfull \hbox (3.9018pt too wide) in paragraph at lines 5332--5333
+Overfull \hbox (3.9018pt too wide) in paragraph at lines 5351--5352
 \C70/rm/m/n/12/4e _ \C70/rm/m/n/12/6e · \C70/rm/m/n/12/8d ≥ \C70/rm/m/n/12/54  \C70/rm/m/n/12/91 œ \C70/rm/m/n/12/7a z \C70/rm/m/n/12/95 Ù \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/89 Å \C70/rm/m/n/12/6c B\OT1/cmr/m/n/12 .\C70/rm/m/n/12/4f F \C70/rm/m/n/12/66 /\OT1/cmr/m/n/12 "\C70/rm/m/n/12/5b P \C70/rm/m/n/12/7a z \C70/rm/m/n/12/95 Ù\OT1/cmr/m/n/12 "\C70/rm/m/n/12/54 å\OT1/cmr/m/n/12 "\C70/rm/m/n/12/5b P \C70/rm/m/n/12/96 ∆\OT1/cmr/m/n/12 "\C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/69 Ç \C70/rm/m/n/12/5f ı \C70/rm/m/n/12/67 	 \C70/rm/m/n/12/53 : \C70/rm/m/n/12/52 +\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/62 @ \C70/rm/m/n/12/67 	 \C70/rm/m/n/12/51 C \C70/rm/m/n/12/7d   \C70/rm/m/n/12/90 ˝ \C70/rm/m/n/12/57 ( \C70/rm/m/n/12/53 ü \C70/rm/m/n/12/7a z \C70/rm/m/n/12/95 Ù \C70/rm/m/n/12/4e K \C70/rm/m/n/12/51 Ö \C70/rm/m/n/12/5c 1 \C70/rm/m/n/12/53 Ô \C70/rm/m/n/12/4e Â \C70/rm/m/n/12/79  \C70/rm/m/n/12/4e K : \C70/rm/m/n/12/5b P \C70/rm/m/n/12/96 ∆\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/4f F
  []
 
 [109]
-Overfull \hbox (12.64206pt too wide) in paragraph at lines 5368--5369
+Overfull \hbox (12.64206pt too wide) in paragraph at lines 5387--5388
 \C70/rm/m/n/12/7e ƒ \C70/rm/m/n/12/54  \C70/rm/m/n/12/65 ‡ \C70/rm/m/n/12/6c ’ \C70/rm/m/n/12/51 E \C70/rm/m/n/12/6e ·$[][]$\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/56 ‡ \C70/rm/m/n/12/6b d \C70/rm/m/n/12/59 Ç \C70/rm/m/n/12/67 ú$[]$\C70/rm/m/n/12/4e  \C70/rm/m/n/12/80 ˝ \C70/rm/m/n/12/88 h \C70/rm/m/n/12/79 : \C70/rm/m/n/12/4e :$\OML/cmm/m/it/12 A$\C70/rm/m/n/12/52  \C70/rm/m/n/12/54  \C70/rm/m/n/12/91 œ \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/7e ø \C70/rm/m/n/12/60 ' \C70/rm/m/n/12/7e ƒ \C70/rm/m/n/12/54  \C70/rm/m/n/12/65 ˆ\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/65 π \C70/rm/m/n/12/7a  \C70/rm/m/n/12/66 / \C70/rm/m/n/12/65 ‡ \C70/rm/m/n/12/89 „ \C70/rm/m/n/12/76 Ñ\OT1/cmr/m/n/12 .\C70/rm/m/n/12/53 Í \C70/rm/m/n/12/67 	 \C70/rm/m/n/12/5f S$[]$\C70/rm/m/n/12/57 ( \C70/rm/m/n/12/77 È \C70/rm/m/n/12/96 5$\OML/cmm/m/it/12 A$\C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/52  \C70/rm/m/n/12/7a z \C70/rm/m/n/12/95 Ù$\OML/cmm/m/it/12 C\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A\OT1/cmr/m/n/12 )$\C70/rm/m/n/12/91 Ã
  []
 
@@ -1484,25 +1492,25 @@ Overfull \hbox (12.64206pt too wide) in paragraph at lines 5368--5369
 Underfull \vbox (badness 1406) has occurred while \output is active []
 
  [110] [111] [112] [113] [114] [115] [116] [117] [118]
-<resources/derivativeOfVectorFunction.png, id=2770, 376.40625pt x 225.84375pt>
+<resources/derivativeOfVectorFunction.png, id=2782, 376.40625pt x 225.84375pt>
 File: resources/derivativeOfVectorFunction.png Graphic file (type png)
 <use resources/derivativeOfVectorFunction.png>
-Package pdftex.def Info: resources/derivativeOfVectorFunction.png  used on input line 5981.
+Package pdftex.def Info: resources/derivativeOfVectorFunction.png  used on input line 6000.
 (pdftex.def)             Requested size: 376.40532pt x 225.84319pt.
  [119 <./resources/derivativeOfVectorFunction.png>]
-Overfull \hbox (6.91553pt too wide) in paragraph at lines 6022--6023
+Overfull \hbox (6.91553pt too wide) in paragraph at lines 6041--6042
 []\C70/rm/m/n/12/4e Œ 
  \C70/rm/m/n/12/8f  \C70/rm/m/n/12/51 Ö \C70/rm/m/n/12/5b π \C70/rm/m/n/12/77  \C70/rm/m/n/12/51 ˙\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/77 ‚ \C70/rm/m/n/12/91 œ \C70/rm/m/n/12/51 ˝ \C70/rm/m/n/12/65 p \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/5f Æ \C70/rm/m/n/12/79 Ô \C70/rm/m/n/12/52  \C70/rm/m/n/12/4e  \C70/rm/m/n/12/65 p \C70/rm/m/n/12/5b f \C70/rm/m/n/12/52  \C70/rm/m/n/12/67 ê\OT1/cmr/m/n/12 (\C70/rm/m/n/12/9a ÿ \C70/rm/m/n/12/7b I \C70/rm/m/n/12/65 p \C70/rm/m/n/12/5b f\OT1/cmr/m/n/12 )\C70/rm/m/n/12/4e - \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/5f Æ \C70/rm/m/n/12/79 Ô \C70/rm/m/n/12/52  \C70/rm/m/n/12/76 ¯ \C70/rm/m/n/12/7c { \C70/rm/m/n/12/4f <\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/4e  \C70/rm/m/n/12/8f « \C70/rm/m/n/12/77 ‚ \C70/rm/m/n/12/91 œ \C70/rm/m/n/12/51 ˝ \C70/rm/m/n/12/65 p \C70/rm/m/n/12/89 Å \C70/rm/m/n/12/59  \C70/rm/m/n/12/67 B \C70/rm/m/n/12/4e õ\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/4e ÷
  []
 
 [120] [121]
-<resources/directionDerivative1.png, id=2785, 451.6875pt x 225.84375pt>
+<resources/directionDerivative1.png, id=2797, 451.6875pt x 225.84375pt>
 File: resources/directionDerivative1.png Graphic file (type png)
 <use resources/directionDerivative1.png>
-Package pdftex.def Info: resources/directionDerivative1.png  used on input line 6093.
+Package pdftex.def Info: resources/directionDerivative1.png  used on input line 6112.
 (pdftex.def)             Requested size: 451.68639pt x 225.84319pt.
 
-Overfull \hbox (7.90773pt too wide) in paragraph at lines 6095--6096
+Overfull \hbox (7.90773pt too wide) in paragraph at lines 6114--6115
 []\C70/rm/m/n/12/4e Œ \C70/rm/m/n/12/65 p \C70/rm/m/n/12/91 œ \C70/rm/m/n/12/57 :$\OML/cmm/m/it/12 u \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 u\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 M\OT1/cmr/m/n/12 )$\C70/rm/m/n/12/4e - ˚   \C70/rm/m/n/12/70 π$\OML/cmm/m/it/12 M[]$\C70/rm/m/n/12/51 ˙ \C70/rm/m/n/12/53 — \C70/rm/m/n/12/5f  \C70/rm/m/n/12/4e   \C70/rm/m/n/12/67 a 	 \C70/rm/m/n/12/54  \C70/rm/m/n/12/5c  \C70/rm/m/n/12/7e ø$[]$\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/57 ($[]$\C70/rm/m/n/12/4e 
  ˚ \C70/rm/m/n/12/53 ÷ \C70/rm/m/n/12/4e   \C70/rm/m/n/12/70 π$\OML/cmm/m/it/12 M$\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/8b ∞$[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 $\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/5f S \C70/rm/m/n/12/6c ø$[]$\OT1/cmr/m/n/12 ,$\OML/cmm/m/it/12 M \OMS/cmsy/m/n/12 ! \OML/cmm/m/it/12 M[]$\C70/rm/m/n/12/65 ˆ\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/6b d
  []
@@ -1511,22 +1519,22 @@ Overfull \hbox (7.90773pt too wide) in paragraph at lines 6095--6096
 Underfull \vbox (badness 1292) has occurred while \output is active []
 
  [122 <./resources/directionDerivative1.png>]
-Overfull \hbox (4.70709pt too wide) in paragraph at lines 6125--6126
+Overfull \hbox (4.70709pt too wide) in paragraph at lines 6144--6145
 []\C70/rm/m/n/12/67 	 \C70/rm/m/n/12/65 ˆ \C70/rm/m/n/12/50  \C70/rm/m/n/12/89 Å \C70/rm/m/n/12/80  \C70/rm/m/n/12/86 Q \C70/rm/m/n/12/51 ˝ \C70/rm/m/n/12/65 p \C70/rm/m/n/12/6c ø \C70/rm/m/n/12/67 – \C70/rm/m/n/12/66 Ú \C70/rm/m/n/12/7e ø\OT1/cmr/m/n/12 C\C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/5b ¸ \C70/rm/m/n/12/65 p\OT1/cmr/m/n/12 .\C70/rm/m/n/12/51 ˝ \C70/rm/m/n/12/65 p \C70/rm/m/n/12/6c ø \C70/rm/m/n/12/66 Ú \C70/rm/m/n/12/7e ø\OT1/cmr/m/n/12 C\C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/6b œ \C70/rm/m/n/12/4e   \C70/rm/m/n/12/70 π \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/52  \C70/rm/m/n/12/7e ø \C70/rm/m/n/12/65 π \C70/rm/m/n/12/54  \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/65 π \C70/rm/m/n/12/54  \C70/rm/m/n/12/5b ¸ \C70/rm/m/n/12/65 p \C70/rm/m/n/12/53 Î \C70/rm/m/n/12/50 Z \C70/rm/m/n/12/51 ˝ \C70/rm/m/n/12/65 p \C70/rm/m/n/12/6c ø \C70/rm/m/n/12/66 Ú \C70/rm/m/n/12/7e ø\OT1/cmr/m/n/12 C\C70/rm/m/n/12/76 Ñ
  []
 
 [123]
-Overfull \hbox (5.23744pt too wide) in paragraph at lines 6156--6157
+Overfull \hbox (5.23744pt too wide) in paragraph at lines 6175--6176
 []\C70/rm/m/n/12/4e ˚   \C70/rm/m/n/12/70 π \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/68 Ø \C70/rm/m/n/12/5e ¶ \C70/rm/m/n/12/57 Ç \C70/rm/m/n/12/76 Ù \C70/rm/m/n/12/4e é \C70/rm/m/n/12/8f « \C70/rm/m/n/12/8b Â \C70/rm/m/n/12/70 π \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/7b I \C70/rm/m/n/12/50 < \C70/rm/m/n/12/97 b\OT1/cmr/m/n/12 (\C70/rm/m/n/12/7e ø\OT1/cmr/m/n/12 ),\C70/rm/m/n/12/5e v \C70/rm/m/n/12/4e  \C70/rm/m/n/12/63  \C70/rm/m/n/12/54 $\OML/cmm/m/it/12 u\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 M\OT1/cmr/m/n/12 )$\C70/rm/m/n/12/58 û \C70/rm/m/n/12/59 ' \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/4e   \C70/rm/m/n/12/65 π\OT1/cmr/m/n/12 .\C70/rm/m/n/12/56 ‡ \C70/rm/m/n/12/80  \C70/rm/m/n/12/68 Ø \C70/rm/m/n/12/5e ¶ \C70/rm/m/n/12/65 π \C70/rm/m/n/12/54  \C70/rm/m/n/12/5e s \C70/rm/m/n/12/88 L \C70/rm/m/n/12/4e é \C70/rm/m/n/12/7b I \C70/rm/m/n/12/50 < \C70/rm/m/n/12/97 b\OT1/cmr/m/n/12 (\C70/rm/m/n/12/7e ø\OT1/cmr/m/n/12 )\C70/rm/m/n/12/76 Ñ
  []
 
 [124]
-Overfull \hbox (5.34561pt too wide) in paragraph at lines 6189--6190
+Overfull \hbox (5.34561pt too wide) in paragraph at lines 6208--6209
 []\C70/rm/m/n/12/90  \C70/rm/m/n/12/91 œ$\OML/cmm/m/it/12 $\C70/rm/m/n/12/66 / \C70/rm/m/n/12/4e   * \C70/rm/m/n/12/65 p \C70/rm/m/n/12/91 œ\OT1/cmr/m/n/12 .(\C70/rm/m/n/12/98 ~ \C70/rm/m/n/12/54  \C70/rm/m/n/12/60  \C70/rm/m/n/12/4e I\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/90  \C70/rm/m/n/12/91 œ \C70/rm/m/n/12/5c 1 \C70/rm/m/n/12/66 / \C70/rm/m/n/12/77 ‚ \C70/rm/m/n/12/91 œ$[]$\C70/rm/m/n/12/90  \C70/rm/m/n/12/8f «$\OML/cmm/m/it/12 S$\C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/91 œ\OT1/cmr/m/n/12 ,$\OML/cmm/m/it/12 A$\C70/rm/m/n/12/53 Ô \C70/rm/m/n/12/4e Â \C70/rm/m/n/12/88 h \C70/rm/m/n/12/79 : \C70/rm/m/n/12/6d A \C70/rm/m/n/12/90 \OT1/cmr/m/n/12 ,\C70/rm/m/n/12/75 5 \C70/rm/m/n/12/57 :\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/78 ¡ \C70/rm/m/n/12/57 : \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/5f : \C70/rm/m/n/12/5e ¶ \C70/rm/m/n/12/7b I\OT1/cmr/m/n/12 .\C70/rm/m/n/12/76 ¯ \C70/rm/m/n/12/5e î \C70/rm/m/n/12/76 Ñ$\OML/cmm/m/it/12 $\C70/rm/m/n/12/5c 1
  []
 
 [125]
-Overfull \hbox (7.29956pt too wide) in paragraph at lines 6222--6223
+Overfull \hbox (7.29956pt too wide) in paragraph at lines 6241--6242
 []\C70/rm/m/n/12/8b æ \C70/rm/m/n/12/77 ‚ \C70/rm/m/n/12/91 œ \C70/rm/m/n/12/57 :$\OML/cmm/m/it/12 A\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 M\OT1/cmr/m/n/12 )$,\C70/rm/m/n/12/57 ( : \C70/rm/m/n/12/4e - \C70/rm/m/n/12/4f \ \C70/rm/m/n/12/53  \C70/rm/m/n/12/56 Ù \C70/rm/m/n/12/70 π$\OML/cmm/m/it/12 M$\C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/95 Ì \C70/rm/m/n/12/66 Ú \C70/rm/m/n/12/97 b$\OML/cmm/m/it/12 S$\OT1/cmr/m/n/12 ,$\OML/cmm/m/it/12 S$\C70/rm/m/n/12/53  \C70/rm/m/n/12/56 Ù \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/8d ã \C70/rm/m/n/12/4e é \C70/rm/m/n/12/79  \C70/rm/m/n/12/4e :$\OT1/cmr/m/n/12 
 $,$
 $\C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/4f S \C70/rm/m/n/12/79 Ô \C70/rm/m/n/12/4e :$\OT1/cmr/m/n/12 \OML/cmm/m/it/12 V$\OT1/cmr/m/n/12 .\C70/rm/m/n/12/5f S$\OT1/cmr/m/n/12 
@@ -1534,116 +1542,116 @@ $\C70/rm/m/n/12/65 6 \C70/rm/m/n/12/7f ) \C70/rm/m/n/12/52 0 \C70/rm/m/n/12/67 Å
  []
 
 [126] [127]
-Overfull \hbox (0.72182pt too wide) in paragraph at lines 6350--6353
+Overfull \hbox (0.72182pt too wide) in paragraph at lines 6369--6372
 \C70/rm/m/n/12/82 Â \C70/rm/m/n/12/66 / \C70/rm/m/n/12/76 Ù \C70/rm/m/n/12/63 • \C70/rm/m/n/12/4e ˇ \C70/rm/m/n/12/71 g \C70/rm/m/n/12/5e î \C70/rm/m/n/12/5f S \C70/rm/m/n/12/67 	$[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 'A\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 ' [] A \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 A [] '$\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/4f F \C70/rm/m/n/12/66 / \C70/rm/m/n/12/75 1 \C70/rm/m/n/12/4e é$\OML/cmm/m/it/12 '$\C70/rm/m/n/12/66 / \C70/rm/m/n/12/65 p \C70/rm/m/n/12/60 ' \C70/rm/m/n/12/51 ˝ \C70/rm/m/n/12/65 p\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/6c B \C70/rm/m/n/12/65 c \C70/rm/m/n/12/5e ¶ \C70/rm/m/n/12/65 ‡ \C70/rm/m/n/12/61  \C70/rm/m/n/12/4e I\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/53 Í \C70/rm/m/n/12/67 	 \C70/rm/m/n/12/51 ô \C70/rm/m/n/12/62 $\OML/cmm/m/it/12 grad'$\C70/rm/m/n/12/62 M
  []
 
 [128]
-Overfull \hbox (28.68463pt too wide) in paragraph at lines 6375--6375
+Overfull \hbox (28.68463pt too wide) in paragraph at lines 6394--6394
 []\C70/rm/m/n/12/8b æ$\OML/cmm/m/it/12 M$\C70/rm/m/n/12/66 / \C70/rm/m/n/12/77 ‚ \C70/rm/m/n/12/91 œ \C70/rm/m/n/12/57 : \C70/rm/m/n/12/4e - \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/4e   \C70/rm/m/n/12/70 π\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/57 ($\OML/cmm/m/it/12 M$\C70/rm/m/n/12/70 π \C70/rm/m/n/12/53 ÷ \C70/rm/m/n/12/4e   \C70/rm/m/n/12/77 ‚ \C70/rm/m/n/12/91 œ$[]$\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/5e v \C70/rm/m/n/12/4e  \C70/rm/m/n/12/57 ($\OML/cmm/m/it/12 M$\C70/rm/m/n/12/70 π \C70/rm/m/n/12/96 D \C70/rm/m/n/12/8f — \C70/rm/m/n/12/53 ÷ \C70/rm/m/n/12/56 ﬁ \C70/rm/m/n/12/8d Ô$\OML/cmm/m/it/12 l$\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/4f \ \C70/rm/m/n/12/4e Â$\OML/cmm/m/it/12 l$\C70/rm/m/n/12/4e : \C70/rm/m/n/12/8f π \C70/rm/m/n/12/75 L\OT1/cmr/m/n/12 ,$[]$\C70/rm/m/n/12/4e : \C70/rm/m/n/12/6c ’ \C70/rm/m/n/12/7e ø \C70/rm/m/n/12/4e  \C70/rm/m/n/12/8f «$\OML/cmm/m/it/12 M$\C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/66 Ú \C70/rm/m/n/12/97 b$\OT1/cmr/m/n/12 \OML/cmm/m/it/12 S$\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/5e v
  []
 
 [129] [130] [131] [132] [133] [134] [135] [136]
-Overfull \hbox (20.06538pt too wide) in paragraph at lines 6650--6652
+Overfull \hbox (20.06538pt too wide) in paragraph at lines 6669--6671
 []\C70/rm/m/n/12/52  \C70/rm/m/n/12/51 ˙ \C70/rm/m/n/12/96 ∆ \C70/rm/m/n/12/54  \C70/rm/m/n/12/4e - \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/51 h \C70/rm/m/n/12/4f S \C70/rm/m/n/12/51 C \C70/rm/m/n/12/7d  \OT1/cmr/m/n/12 ,\C70/rm/m/n/12/51 C \C70/rm/m/n/12/7d   \C70/rm/m/n/12/4e K \C70/rm/m/n/12/95 Ù \C70/rm/m/n/12/75 ( \C70/rm/m/n/12/90  \C70/rm/m/n/12/53 ˜ \C70/rm/m/n/12/52  \C70/rm/m/n/12/5f  \OT1/cmr/m/n/12 ,\C70/rm/m/n/12/71 6 \C70/rm/m/n/12/54  \C70/rm/m/n/12/75 ( \C70/rm/m/n/12/82 ± \C70/rm/m/n/12/62 Ï \C70/rm/m/n/12/53 ˜ \C70/rm/m/n/12/62 Ï \C70/rm/m/n/12/8d w \C70/rm/m/n/12/67 e\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/6b ‘ \C70/rm/m/n/12/59 Ç \OT1/cmr/m/n/12 : $\OML/cmm/m/it/12 A \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 a; b; c; d\OMS/cmsy/m/n/12 g\OML/cmm/m/it/12 ; B \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 2\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 4\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 6\OML/cmm/m/it/12 ; [] \OMS/cmsy/m/n/12 g$\OT1/cmr/m/n/12 . 
  []
 
 [137] [138]
-Overfull \hbox (12.40205pt too wide) in paragraph at lines 6743--6745
+Overfull \hbox (12.40205pt too wide) in paragraph at lines 6762--6764
 []\C70/rm/m/n/12/7e Ÿ \C70/rm/m/n/12/5b ö \C70/rm/m/n/12/82 Â \C70/rm/m/n/12/5e r \C70/rm/m/n/12/4e * \C70/rm/m/n/12/96 ∆ \C70/rm/m/n/12/54  \C70/rm/m/n/12/4e K \C70/rm/m/n/12/54 \OT1/cmr/m/n/12 ,\C70/rm/m/n/12/90 ˝ \C70/rm/m/n/12/53 Ô \C70/rm/m/n/12/4e Â \C70/rm/m/n/12/62 ~ \C70/rm/m/n/12/52 0 \C70/rm/m/n/12/53  \C70/rm/m/n/12/54 + \C70/rm/m/n/12/5b É \C70/rm/m/n/12/4e Ï \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/51 h \C70/rm/m/n/12/96 ∆\OT1/cmr/m/n/12 .\C70/rm/m/n/12/57 ( \C70/rm/m/n/12/4e   \C70/rm/m/n/12/54  \C70/rm/m/n/12/8b ® ∫ \C70/rm/m/n/12/4e -\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/62 @ \C70/rm/m/n/12/6d â \C70/rm/m/n/12/53   \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/96 ∆ \C70/rm/m/n/12/54  \C70/rm/m/n/12/90 ˝ \C70/rm/m/n/12/53 Ô \C70/rm/m/n/12/4e Â \C70/rm/m/n/12/77  \C70/rm/m/n/12/62  \C70/rm/m/n/12/66 / \C70/rm/m/n/12/67 – \C70/rm/m/n/12/4e * \C70/rm/m/n/12/51 h \C70/rm/m/n/12/96 ∆$[]$\C70/rm/m/n/12/76 Ñ
  []
 
 [139] [140]
-Overfull \hbox (0.54103pt too wide) in paragraph at lines 6830--6831
+Overfull \hbox (0.54103pt too wide) in paragraph at lines 6849--6850
 []\C70/rm/m/n/12/8b æ$\OML/cmm/m/it/12 A; B$\C70/rm/m/n/12/4e : å \C70/rm/m/n/12/96 ∆ \C70/rm/m/n/12/54 \OT1/cmr/m/n/12 ,\C70/rm/m/n/12/82 Â$\OML/cmm/m/it/12 A [] B \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 ;$\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/52  \C70/rm/m/n/12/79 $\OML/cmm/m/it/12 A$\C70/rm/m/n/12/54 å$\OML/cmm/m/it/12 B$\C70/rm/m/n/12/66 / \C70/rm/m/n/12/4e  § \C70/rm/m/n/12/76 Ñ\OT1/cmr/m/n/12 .\C70/rm/m/n/12/8b æ$\OML/cmm/m/it/12 A[]; A[]; [] $\C70/rm/m/n/12/66 / \C70/rm/m/n/12/53 Ô \C70/rm/m/n/12/65 p \C70/rm/m/n/12/4e * \C70/rm/m/n/12/96 ∆ \C70/rm/m/n/12/54  \C70/rm/m/n/12/79 “ \C70/rm/m/n/12/59 Ç \C70/rm/m/n/12/67 ú \C70/rm/m/n/12/5b ˘ \C70/rm/m/n/12/4e é ˚ \C70/rm/m/n/12/61  \C70/rm/m/n/12/76 Ñ$\OML/cmm/m/it/12 i \OMS/cmsy/m/n/12 6\OT1/cmr/m/n/12 = \OML/cmm/m/it/12 j$\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/90 ˝
  []
 
 [141] [142]
-<resources/Venn's_diagram.png, id=2887, 315.579pt x 56.00925pt>
+<resources/Venn's_diagram.png, id=2899, 315.579pt x 56.00925pt>
 File: resources/Venn's_diagram.png Graphic file (type png)
 <use resources/Venn's_diagram.png>
-Package pdftex.def Info: resources/Venn's_diagram.png  used on input line 6906.
+Package pdftex.def Info: resources/Venn's_diagram.png  used on input line 6925.
 (pdftex.def)             Requested size: 315.57822pt x 56.0091pt.
  [143 <./resources/Venn's_diagram.png>] [144]
 Á¨¨‰∫åÁ´†
 [145
 
 ]
-<resources/rotateMatrixGraphics.png, id=2904, 1078.0275pt x 447.92343pt>
+<resources/rotateMatrixGraphics.png, id=2916, 1078.0275pt x 447.92343pt>
 File: resources/rotateMatrixGraphics.png Graphic file (type png)
 <use resources/rotateMatrixGraphics.png>
-Package pdftex.def Info: resources/rotateMatrixGraphics.png  used on input line 7043.
+Package pdftex.def Info: resources/rotateMatrixGraphics.png  used on input line 7062.
 (pdftex.def)             Requested size: 269.50621pt x 111.98058pt.
  [146]
-<resources/homogeneous_coordinates.png, id=2916, 1357.07pt x 544.0325pt>
+<resources/homogeneous_coordinates.png, id=2928, 1357.07pt x 544.0325pt>
 File: resources/homogeneous_coordinates.png Graphic file (type png)
 <use resources/homogeneous_coordinates.png>
-Package pdftex.def Info: resources/homogeneous_coordinates.png  used on input line 7058.
+Package pdftex.def Info: resources/homogeneous_coordinates.png  used on input line 7077.
 (pdftex.def)             Requested size: 339.26666pt x 136.00778pt.
  [147 <./resources/rotateMatrixGraphics.png> <./resources/homogeneous_coordinates.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 7153--7155
+Underfull \hbox (badness 10000) in paragraph at lines 7172--7174
 
  []
 
 [148]
-Underfull \hbox (badness 10000) in paragraph at lines 7229--7230
+Underfull \hbox (badness 10000) in paragraph at lines 7248--7249
 
  []
 
 [149] [150]
-<resources/viewTransformation.png, id=2944, 590.205pt x 322.95656pt>
+<resources/viewTransformation.png, id=2956, 590.205pt x 322.95656pt>
 File: resources/viewTransformation.png Graphic file (type png)
 <use resources/viewTransformation.png>
-Package pdftex.def Info: resources/viewTransformation.png  used on input line 7353.
+Package pdftex.def Info: resources/viewTransformation.png  used on input line 7372.
 (pdftex.def)             Requested size: 531.17958pt x 290.6582pt.
 
-Overfull \hbox (3.16476pt too wide) in paragraph at lines 7353--7354
+Overfull \hbox (3.16476pt too wide) in paragraph at lines 7372--7373
 [][] 
  []
 
 [151] [152 <./resources/viewTransformation.png>]
-<resources/twoProjectionTransformation.png, id=2960, 1131.22626pt x 493.845pt>
+<resources/twoProjectionTransformation.png, id=2972, 1131.22626pt x 493.845pt>
 File: resources/twoProjectionTransformation.png Graphic file (type png)
 <use resources/twoProjectionTransformation.png>
-Package pdftex.def Info: resources/twoProjectionTransformation.png  used on input line 7402.
+Package pdftex.def Info: resources/twoProjectionTransformation.png  used on input line 7421.
 (pdftex.def)             Requested size: 565.61174pt x 246.92189pt.
 
-Overfull \hbox (37.59692pt too wide) in paragraph at lines 7402--7403
+Overfull \hbox (37.59692pt too wide) in paragraph at lines 7421--7422
 [][] 
  []
 
 
-Overfull \hbox (2.69783pt too wide) in paragraph at lines 7410--7411
+Overfull \hbox (2.69783pt too wide) in paragraph at lines 7429--7430
 []\C70/rm/m/n/12/51 H \C70/rm/m/n/12/5b ö \C70/rm/m/n/12/4e I   * \C70/rm/m/n/12/7a z \C70/rm/m/n/12/95 Ù \C70/rm/m/n/12/4e - \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/7a À \C70/rm/m/n/12/65 π \C70/rm/m/n/12/4f S\OT1/cmr/m/n/12 , \C70/rm/m/n/12/7e Ÿ \C70/rm/m/n/12/51 ˙ \C70/rm/m/n/12/4e 	 * \C70/rm/m/n/12/8f t \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/83  \C70/rm/m/n/12/56 Ù$\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 l; r\OT1/cmr/m/n/12 ] \OMS/cmsy/m/n/12  \OT1/cmr/m/n/12 [\OML/cmm/m/it/12 b; t\OT1/cmr/m/n/12 ] \OMS/cmsy/m/n/12  \OT1/cmr/m/n/12 [\OML/cmm/m/it/12 f; n\OT1/cmr/m/n/12 ]$,\C70/rm/m/n/12/5e s \C70/rm/m/n/12/79 ˚ \C70/rm/m/n/12/5e v \C70/rm/m/n/12/7f ) \C70/rm/m/n/12/65 > \C70/rm/m/n/12/52 0 \C70/rm/m/n/12/68  \C70/rm/m/n/12/51 ∆ \C70/rm/m/n/12/7a À \C70/rm/m/n/12/65 π \C70/rm/m/n/12/4f S$\OT1/cmr/m/n/12 [\OMS/cmsy/m/n/12  \OT1/cmr/m/n/12 1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1][]$ 
  []
 
-<resources/OrthographicProjection.png, id=2961, 1005.00468pt x 289.08pt>
+<resources/OrthographicProjection.png, id=2973, 1005.00468pt x 289.08pt>
 File: resources/OrthographicProjection.png Graphic file (type png)
 <use resources/OrthographicProjection.png>
-Package pdftex.def Info: resources/OrthographicProjection.png  used on input line 7412.
+Package pdftex.def Info: resources/OrthographicProjection.png  used on input line 7431.
 (pdftex.def)             Requested size: 502.50111pt x 144.53964pt.
 
-Overfull \hbox (0.33598pt too wide) in paragraph at lines 7412--7413
+Overfull \hbox (0.33598pt too wide) in paragraph at lines 7431--7432
 [][] 
  []
 
 [153 <./resources/twoProjectionTransformation.png>]
-Overfull \hbox (6.921pt too wide) in paragraph at lines 7437--7438
+Overfull \hbox (6.921pt too wide) in paragraph at lines 7456--7457
 []\C70/rm/m/n/12/99 ñ \C70/rm/m/n/12/51 H \C70/rm/m/n/12/62 ä \C70/rm/m/n/12/89 ∆ \C70/rm/m/n/12/95 % \C70/rm/m/n/12/53 ã \C70/rm/m/n/12/7f ) \C70/rm/m/n/12/62  \C70/rm/m/n/12/95  \C70/rm/m/n/12/65 π \C70/rm/m/n/12/4f S\OT1/cmr/m/n/12 .(\C70/rm/m/n/12/8f — \C70/rm/m/n/12/5e s \C70/rm/m/n/12/97 b \C70/rm/m/n/12/6c 8 \C70/rm/m/n/12/8f ‹ \C70/rm/m/n/12/4e  \C70/rm/m/n/12/53 ÿ\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/8f ‹ \C70/rm/m/n/12/5e s \C70/rm/m/n/12/97 b\OT1/cmr/m/n/12 z\C70/rm/m/n/12/50 < \C70/rm/m/n/12/4e  \C70/rm/m/n/12/53 — \C70/rm/m/n/12/75  \C70/rm/m/n/12/53 ÿ \OT1/cmr/m/n/12 ,\C70/rm/m/n/12/4e - \C70/rm/m/n/12/5f √ \C70/rm/m/n/12/70 π \C70/rm/m/n/12/4e  \C70/rm/m/n/12/53 — \C70/rm/m/n/12/75  \C70/rm/m/n/12/53 ÿ \OT1/cmr/m/n/12 )$(\OML/cmm/m/it/12 n \OMS/cmsy/m/n/12 ! \OML/cmm/m/it/12 n; f \OMS/cmsy/m/n/12 !
  []
 
-<resources/perspectiveProjection.png, id=2967, 905.63344pt x 313.17pt>
+<resources/perspectiveProjection.png, id=2979, 905.63344pt x 313.17pt>
 File: resources/perspectiveProjection.png Graphic file (type png)
 <use resources/perspectiveProjection.png>
-Package pdftex.def Info: resources/perspectiveProjection.png  used on input line 7439.
+Package pdftex.def Info: resources/perspectiveProjection.png  used on input line 7458.
 (pdftex.def)             Requested size: 452.81561pt x 156.58461pt.
-<resources/perspectiveProjection_middle.png, id=2968, 1104.37593pt x 333.49594pt>
+<resources/perspectiveProjection_middle.png, id=2980, 1104.37593pt x 333.49594pt>
 File: resources/perspectiveProjection_middle.png Graphic file (type png)
 <use resources/perspectiveProjection_middle.png>
-Package pdftex.def Info: resources/perspectiveProjection_middle.png  used on input line 7443.
+Package pdftex.def Info: resources/perspectiveProjection_middle.png  used on input line 7462.
 (pdftex.def)             Requested size: 552.18661pt x 166.74756pt.
 
-Overfull \hbox (50.02148pt too wide) in paragraph at lines 7443--7444
+Overfull \hbox (50.02148pt too wide) in paragraph at lines 7462--7463
 [][] 
  []
 
@@ -1651,50 +1659,50 @@ Overfull \hbox (50.02148pt too wide) in paragraph at lines 7443--7444
 Underfull \vbox (badness 4886) has occurred while \output is active []
 
  [154 <./resources/OrthographicProjection.png> <./resources/perspectiveProjection.png>] [155 <./resources/perspectiveProjection_middle.png>] [156]
-<resources/define_of_screen_space_1.png, id=2982, 690.32906pt x 448.67625pt>
+<resources/define_of_screen_space_1.png, id=2994, 690.32906pt x 448.67625pt>
 File: resources/define_of_screen_space_1.png Graphic file (type png)
 <use resources/define_of_screen_space_1.png>
-Package pdftex.def Info: resources/define_of_screen_space_1.png  used on input line 7619.
+Package pdftex.def Info: resources/define_of_screen_space_1.png  used on input line 7638.
 (pdftex.def)             Requested size: 345.16368pt x 224.33757pt.
  [157 <./resources/define_of_screen_space_1.png>]
-<resources/sample_if_each_pixel_inside_triangle.png, id=2987, 827.09pt x 708.6475pt>
+<resources/sample_if_each_pixel_inside_triangle.png, id=2999, 827.09pt x 708.6475pt>
 File: resources/sample_if_each_pixel_inside_triangle.png Graphic file (type png)
 <use resources/sample_if_each_pixel_inside_triangle.png>
-Package pdftex.def Info: resources/sample_if_each_pixel_inside_triangle.png  used on input line 7654.
+Package pdftex.def Info: resources/sample_if_each_pixel_inside_triangle.png  used on input line 7673.
 (pdftex.def)             Requested size: 413.54398pt x 354.32289pt.
  [158 <./resources/sample_if_each_pixel_inside_triangle.png>]
-<resources/Triangle_Side_Cross_Prodyct.png, id=2993, 1122.1925pt x 817.0525pt>
+<resources/Triangle_Side_Cross_Prodyct.png, id=3005, 1122.1925pt x 817.0525pt>
 File: resources/Triangle_Side_Cross_Prodyct.png Graphic file (type png)
 <use resources/Triangle_Side_Cross_Prodyct.png>
-Package pdftex.def Info: resources/Triangle_Side_Cross_Prodyct.png  used on input line 7662.
+Package pdftex.def Info: resources/Triangle_Side_Cross_Prodyct.png  used on input line 7681.
 (pdftex.def)             Requested size: 561.09488pt x 408.52525pt.
 
-Overfull \hbox (3.70537pt too wide) in paragraph at lines 7662--7663
+Overfull \hbox (3.70537pt too wide) in paragraph at lines 7681--7682
  [] 
  []
 
-<resources/pixel_boundingBox.png, id=2994, 894.34125pt x 711.65875pt>
+<resources/pixel_boundingBox.png, id=3006, 894.34125pt x 711.65875pt>
 File: resources/pixel_boundingBox.png Graphic file (type png)
 <use resources/pixel_boundingBox.png>
-Package pdftex.def Info: resources/pixel_boundingBox.png  used on input line 7679.
+Package pdftex.def Info: resources/pixel_boundingBox.png  used on input line 7698.
 (pdftex.def)             Requested size: 447.16953pt x 355.8285pt.
 [159 <./resources/Triangle_Side_Cross_Prodyct.png>] [160 <./resources/pixel_boundingBox.png>]
 Á¨¨‰∏âÁ´†
 [161
 
 ] [162] [163] [164] [165] [166]
-Overfull \hbox (24.49316pt too wide) in paragraph at lines 7967--7968
+Overfull \hbox (24.49316pt too wide) in paragraph at lines 7986--7987
 []\C70/rm/m/n/12/5c  \C70/rm/m/n/12/53 Ô \C70/rm/m/n/12/4e Â \C70/rm/m/n/12/72 Ï \C70/rm/m/n/12/7a À \C70/rm/m/n/12/5b X \C70/rm/m/n/12/57 ( \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/8b ˛ \C70/rm/m/n/12/98 ò\OT1/cmr/m/n/12 (\C70/rm/m/n/12/51 w \C70/rm/m/n/12/4f S \C70/rm/m/n/12/4e ã \C70/rm/m/n/12/52 ° \C70/rm/m/n/12/62  Ω \C70/rm/m/n/12/8c a \C70/rm/m/n/12/69 Ç \C70/rm/m/n/12/5f ı\OT1/cmr/m/n/12 )\C70/rm/m/n/12/79  \C70/rm/m/n/12/4e : * \C70/rm/m/n/12/4f S \C70/rm/m/n/12/62  \C70/rm/m/n/12/4e * \C70/rm/m/n/12/4f S \C70/rm/m/n/12/8b Õ\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/5e v \C70/rm/m/n/12/75 ($\OML/cmm/m/it/12 a; b; c; [] $\C70/rm/m/n/12/88 h \C70/rm/m/n/12/79 : \C70/rm/m/n/12/4e * \C70/rm/m/n/12/4f S \C70/rm/m/n/12/5e 8 \C70/rm/m/n/12/51 C\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/75 ($\OML/cmm/m/it/12 x; y; z; [] $\C70/rm/m/n/12/88 h
  []
 
 [167] [168]
-Overfull \hbox (43.95854pt too wide) in paragraph at lines 8055--8056
+Overfull \hbox (43.95854pt too wide) in paragraph at lines 8074--8075
 []\C70/rm/m/n/12/4e   \C70/rm/m/n/12/96 6 \C70/rm/m/n/12/8c  \C70/rm/m/n/12/8b Õ \C70/rm/m/n/12/90 ; \C70/rm/m/n/12/8f ë \C70/rm/m/n/12/51 l \C70/rm/m/n/12/5f  \C70/rm/m/n/12/4e _ \C70/rm/m/n/12/7b Ä \C70/rm/m/n/12/79  \C70/rm/m/n/12/4e : \C70/rm/m/n/12/51 l \C70/rm/m/n/12/5f \OT1/cmr/m/n/12 ,\C70/rm/m/n/12/5b É \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/5f b \C70/rm/m/n/12/62  \C70/rm/m/n/12/89 ƒ \C70/rm/m/n/12/52  \C70/rm/m/n/12/7c { \C70/rm/m/n/12/4f < \C70/rm/m/n/12/4e é \C70/rm/m/n/12/54 } \C70/rm/m/n/12/98 ò \C70/rm/m/n/12/90 ; \C70/rm/m/n/12/8f ë \C70/rm/m/n/12/51 l \C70/rm/m/n/12/5f \OT1/cmr/m/n/12 ,\C70/rm/m/n/12/53 Í \C70/rm/m/n/12/97   \C70/rm/m/n/12/52 † \C70/rm/m/n/12/4e 
    \C70/rm/m/n/12/67 a \OT1/cmr/m/n/12 : \C70/rm/m/n/12/82 Â$\OML/cmm/m/it/12 A$\C70/rm/m/n/12/66 / \C70/rm/m/n/12/51 l \C70/rm/m/n/12/5f \OT1/cmr/m/n/12 ,\C70/rm/m/n/12/52 $\OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 xA$\C70/rm/m/n/12/4e $\OMS/cmsy/m/n/12 9\OML/cmm/m/it/12 xA$\C70/rm/m/n/12/4e _
  []
 
 [169] [170] [171]
-Overfull \hbox (0.33687pt too wide) in paragraph at lines 8203--8204
+Overfull \hbox (0.33687pt too wide) in paragraph at lines 8222--8223
 []\C70/rm/m/n/12/5f S \C70/rm/m/n/12/54 } \C70/rm/m/n/12/98 ò\OT1/cmr/m/n/12 "\C70/rm/m/n/12/82 Â\OT1/cmr/m/n/12 P\C70/rm/m/n/12/52 \OT1/cmr/m/n/12 Q"\C70/rm/m/n/12/4e : \C70/rm/m/n/12/77 \OT1/cmr/m/n/12 ,\C70/rm/m/n/12/80 \OT1/cmr/m/n/12 "\C70/rm/m/n/12/82 Â\OT1/cmr/m/n/12 Q\C70/rm/m/n/12/52 \OT1/cmr/m/n/12 P\C70/rm/m/n/12/4e : \C70/rm/m/n/12/50 G \C70/rm/m/n/12/65 ˆ\OT1/cmr/m/n/12 ",P\C70/rm/m/n/12/66 /\OT1/cmr/m/n/12 Q\C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/51 E \C70/rm/m/n/12/52  \C70/rm/m/n/12/4e  \C70/rm/m/n/12/5f ≈ \C70/rm/m/n/12/89 Å \C70/rm/m/n/12/67 a \C70/rm/m/n/12/4e ˆ\OT1/cmr/m/n/12 ,Q\C70/rm/m/n/12/66 /\OT1/cmr/m/n/12 P\C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/5f ≈ \C70/rm/m/n/12/89 Å \C70/rm/m/n/12/4e  \C70/rm/m/n/12/51 E \C70/rm/m/n/12/52  \C70/rm/m/n/12/67 a \C70/rm/m/n/12/4e ˆ\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/53 Õ \C70/rm/m/n/12/4e K ¶ \C70/rm/m/n/12/71 6\OT1/cmr/m/n/12 . 
  []
 
@@ -1719,34 +1727,34 @@ Overfull \hbox (0.33687pt too wide) in paragraph at lines 8203--8204
 ]
 Á¨¨ÂÖ´Á´†
 [183]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 8268.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 8268.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 8287.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 8287.
  (note.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 8268.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 8268.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 8287.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 8287.
 Package rerunfilecheck Info: File `note.out' has not changed.
-(rerunfilecheck)             Checksum: 181A1501AE035157804D50438F5BFEBF;43915.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 8268.
+(rerunfilecheck)             Checksum: 2A2CEA2EB0980592E40BFCFCE1FFF2F1;44333.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 8287.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 176 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 43960 strings out of 481212
- 973650 string characters out of 2901265
- 1484929 words of memory out of 3000000
- 57507 multiletter control sequences out of 15000+200000
+ 43979 strings out of 481212
+ 974104 string characters out of 2901265
+ 1484963 words of memory out of 3000000
+ 57525 multiletter control sequences out of 15000+200000
  627668 words of font info for 376 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,17n,376p,755b,2379s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc
+<C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc
 
 pdfTeX warning: pdflatex (file C:/Windows/Fonts/simsun.ttc): subfont unisongff: wrong mapping: character 253 --> 0xFFFD --> .notdef
-><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf> <C:\Users\19920\scoop\apps\latex\current\texmfs/data\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/esint-type1/esint10.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/latxfont/line10.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on note.pdf (196 pages, 4519300 bytes).
+><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf> <C:\Users\19920\scoop\apps\latex\current\texmfs/data\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/esint-type1/esint10.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/latxfont/line10.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on note.pdf (196 pages, 4530135 bytes).
 PDF statistics:
- 3890 PDF objects out of 4296 (max. 8388607)
- 735 named destinations out of 1000 (max. 500000)
- 3365 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3902 PDF objects out of 4296 (max. 8388607)
+ 737 named destinations out of 1000 (max. 500000)
+ 3386 words of extra memory for PDF output out of 10000 (max. 10000000)
 
