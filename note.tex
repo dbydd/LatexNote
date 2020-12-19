@@ -216,21 +216,21 @@ $\fint(I)\supseteq[\fint(b), \fint(a)]$.
   \subsubsection{二项式系数与帕斯卡三角形(杨辉三角)}{
 
     二项式系数是二项式定理中各项的系数.一般而言,二项式系数由两个非负整数$n$和$k$作为参数来决定,写作$\begin{pmatrix}
-      n \\
-      k
-    \end{pmatrix}$,定义为$(1 + x)^n$的多项式展开式中$x^k$项的系数,因此一定是非负整数.
-    
-    如果将二项式系数$\binom{n}{0},\binom{n}{1},\dots,\binom{n}{n}$写成一行,再依照$n = 0,1,2,3,...$顺序由上往下排列,则构成帕斯卡三角形(杨辉三角) : 
+        n \\
+        k
+      \end{pmatrix}$,定义为$(1 + x)^n$的多项式展开式中$x^k$项的系数,因此一定是非负整数.
+
+    如果将二项式系数$\binom{n}{0},\binom{n}{1},\dots,\binom{n}{n}$写成一行,再依照$n = 0,1,2,3,...$顺序由上往下排列,则构成帕斯卡三角形(杨辉三角) :
     \begin{center}
       \includegraphics[scale=0.5]{resources/Pascal's_triangle_5.svg.png}
     \end{center}
 
     事实上,二项式系数就是排列组合中的组合 : ($\mathCombination{m}{n} \Longleftrightarrow \binom{m}{n}$)
-    
+
     此外也有不同的表达方式 : $C(n,k),~_nC_k,~^nC_k,C^k_n,C^n_k\dots$
 
     %# TODO 看看Wiki : https://zh.wikipedia.org/wiki/%E4%BA%8C%E9%A0%85%E5%BC%8F%E4%BF%82%E6%95%B8
-    }%二项式系数结尾
+  }%二项式系数结尾
 
 }%二项式定理结尾
 
@@ -4448,7 +4448,7 @@ $$
             \end{itemize}
             }
     \end{itemize}
-  }%矩阵与向量的乘法
+  }%矩阵��向量的乘法
 
   \subsubsection{矩阵的乘法}{
     矩阵的数乘 :
@@ -6225,7 +6225,7 @@ $$
 
               \begin{itemize}
                 \item $\varPhi > 0$,表示$S$内部有源.这意味着穿过$S$流入的量小于流出的量,而$\varPhi$正是流出量与流入量的差,因此$S$内部有源.$\varPhi$就是由$S$散发出去的量.
-                \item $\varPhi < 0$,表示$S$内部有洞.流出的量小于流入的量,$\varPhi$就是流入的多余部分,这个量再$S$所包围的区域内被吸收或者渗掉,所以有洞.$\varPhi$是吸收入$S$内部的量.
+                \item $\varPhi < 0$,表示$S$内部有洞.流出的量小于流入的量,$\varPhi$就是流入的多余部分,���个量再$S$所包围的区域内被吸收或者渗掉,所以有洞.$\varPhi$是吸收入$S$内部的量.
                 \item $\varPhi = 0$,说明流入等于流出.
               \end{itemize}
               }
@@ -6874,7 +6874,7 @@ $$
 }%对称差结尾
 
 \subsubsection{绝对补集}{
-  设$\mathEverythingCollection$为全集,$A \subseteq \mathEverythingCollection$, 称$A$对$mathEverythingCollection$的相对补集为$A$的绝对补集,记作$A\absoluteCompletementSet$或${~}^\sim A$或$\complement_{\mathEverythingCollection} A$.
+  设$\mathEverythingCollection$为全集,$A \subseteq \mathEverythingCollection$, 称$A$对$\mathEverythingCollection$的相对补集为$A$的绝对补集,记作$A\absoluteCompletementSet$或${~}^\sim A$或$\complement_{\mathEverythingCollection} A$.
 
   $A\absoluteCompletementSet$的描述法表示为 : $$
     A\absoluteCompletementSet = \{x | x \in \mathEverythingCollection \land x \notin A\}
@@ -6936,6 +6936,54 @@ $$
     \absoluteValue{\updownUnion{n}{i = 1}A_i} = \upDownSum{n}{i = 1}\absoluteValue{A_i} - \upDownSum{\ }{i < j}\absoluteValue{A_i \intersectionSet A_j} + \upDownSum{\ }{i < j < k}\absoluteValue{A_i \unionSet A_j \unionSet A_k} - \dots + (-1)^{n - 1}\absoluteValue{A_1 \unionSet A_2 \unionSet \dots \unionSet A_n}
   $$
 }
+
+\subsubsection{基本集合恒等式}{
+  设$\mathEverythingCollection$,$A,B,C$为$\mathEverythingCollection$的任意子集:
+
+  \begin{enumerate}
+    \item 幂等律 : $A \intersectionSet A = A, A \unionSet A = A$
+    \item 交换律 : $A \unionSet B = B \unionSet A,A \intersectionSet B = B \intersectionSet A$
+    \item 结合律 : $(A \unionSet B) \unionSet C = A \unionSet (B \unionSet C),(A \intersectionSet B) \intersectionSet C = A \intersectionSet (B \intersectionSet C)$
+    \item 分配律 : $A \unionSet (B \intersectionSet C) = (A \intersectionSet B) \intersectionSet (A \unionSet C), A \intersectionSet (B \unionSet C) = (A \intersectionSet B) \unionSet (A \intersectionSet C)$
+    \item 德$\cdot$摩根律 : \begin{itemize}
+            \item 绝对形式 : $(A \unionSet B)\absoluteCompletementSet = A\absoluteCompletementSet \intersectionSet B\absoluteCompletementSet,(A \intersectionSet B)\absoluteCompletementSet = A\absoluteCompletementSet \unionSet B\absoluteCompletementSet$
+            \item 相对形式 : $\mathEverythingCollection - (A \unionSet B) = (\mathEverythingCollection - A) \intersectionSet (\mathEverythingCollection - B),\mathEverythingCollection - (A \intersectionSet B) = (\mathEverythingCollection - A) \unionSet (\mathEverythingCollection - B)$
+          \end{itemize}
+    \item 吸收律 : $A \unionSet (A \intersectionSet B) = A,A \intersectionSet (A \unionSet B) = A$
+    \item 零律 : $A \unionSet \mathEverythingCollection = E,A \intersectionSet \emptyset = \emptyset$
+    \item 同一律 : $A \unionSet \emptyset = A,A \intersectionSet E = A$
+    \item 排中律 : $A \unionSet A\absoluteCompletementSet = \mathEverythingCollection$
+    \item 矛盾律 : $A \intersectionSet A\absoluteCompletementSet = \emptyset$
+    \item 余补律 : $\emptyset\absoluteCompletementSet = \mathEverythingCollection,\mathEverythingCollection\absoluteCompletementSet = \emptyset$
+    \item 双重否定律 : $(A\absoluteCompletementSet)\absoluteCompletementSet = A$
+    \item 补交转换律 : $A - B = A \intersectionSet B\absoluteCompletementSet$
+  \end{enumerate}
+}%基本集合恒等式结尾
+
+\subsubsection{集合恒等式推广到集族的情况}{
+设$\{A_\alpha\}_{\alpha \in S}$为集族,$B$为一集合 :
+
+\begin{itemize}
+  \item 分配律 : $B \unionSet (\updownIntersection{~}{~}\{A_\alpha\}_{\alpha \in S}) = \updownIntersection{~}{\alpha \in S}(B \unionSet A_\alpha),B \intersectionSet (\updownUnion{~}{~}\{A_\alpha\}_{\alpha \in S}) = \updownUnion{~}{\alpha \in S}(B \intersectionSet A_\alpha)$
+  \item 德$\cdot$摩根律 : \begin{itemize}
+          \item 绝对形式: \begin{itemize}
+                  \item $(\updownUnion{~}{~}\{A_\alpha\}_{\alpha \in S})\absoluteCompletementSet = \updownIntersection{~}{\alpha \in S}(A_\alpha\absoluteCompletementSet)$
+                  \item$(\updownIntersection{~}{~}\{A\alpha\}_{\alpha \in S}) = \updownUnion{~}{\alpha \in S}(A\absoluteCompletementSet)$
+                \end{itemize}
+          \item 相对形式 : \begin{itemize}
+                  \item $B - (\updownUnion{~}{~}\{A_\alpha\}_{\alpha \in S}) = \updownIntersection{~}{\alpha \in S}(B - A_\alpha)$
+                  \item $B - (\updownIntersection{~}{~}\{A_\alpha\}_{\alpha \in S}) = \updownUnion{~}{\alpha \in S}(B - A_\alpha)$
+                \end{itemize}
+        \end{itemize}
+\end{itemize}
+}%集合恒等式推广到集族的情况结尾
+
+\subsubsection{集合幂集运算的性质}{
+  \begin{enumerate}
+    \item $A \subseteq B$当且仅当$\powerSetOf{A} \subseteq \powerSetOf{B}$
+    \item $\powerSetOf{A - B} \subseteq (\powerSetOf{A} - \powerSetOf{B}) \unionSet \{\emptyset\}$
+  \end{enumerate}
+}%集合幂集运算的性质结尾
 
 }%集合论结尾
 
