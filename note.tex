@@ -64,6 +64,8 @@
     % morekeywords={*,...}               % if you want to add more keywords to the set
   }
 
+  \renewcommand{\qed}{\rightline{\qedsymbol-Q.E.D.(Quod Erat Demonstrandum/证毕)}}
+
 \newcommand{\limNormal}[1]{\lim\limits_{#1}}
 \newcommand{\myLimToZero}{\limNormal{x \to 0}}
 \newcommand{\myLimToInf}{\limNormal{x \to \infty}}
@@ -109,6 +111,7 @@
 \newcommand{\vecAngle}[2]{(\widehat{#1\ #2})}
 \newcommand{\surfaceIntegralOnSurface}[1]{\iint_{#1}}
 \newcommand{\powerSetOf}[1]{\powerSet (#1)}
+\newcommand{\set}[1]{\{#1\}}
 % \newcommand{\inverse}{^{-1}}
 
 \newcommand{\augmentedMatrix}[2]{
@@ -1627,7 +1630,7 @@ $a^2\sin2B + b^2\sin2A = 2ab\sin C$
       \item {
             归结原则(海涅定理\#狭义) :
 
-            $\limNormal{x \to a}\defFunction{x} = b$存在的充要条件是:
+            $\limNormal{x \to a}\defFunction{x} = b$存���的充要条件是:
 
             取$\defFunction{x}$定义域内的任意数列${a_n}$,$\limNormal{n \to \infty}a_n = a$,且$a_n$不等于$a$,则$\limNormal{n \to \infty}\defFunction{a_n} = b$.
 
@@ -4448,7 +4451,7 @@ $$
             \end{itemize}
             }
     \end{itemize}
-  }%矩阵��向量的乘法
+  }%矩阵�����量的乘法
 
   \subsubsection{矩阵的乘法}{
     矩阵的数乘 :
@@ -5870,52 +5873,6 @@ $$
           }
   \end{itemize}
 
-  % 总结 :
-  % \begin{tabular}{|c|c|c|c|}
-  %   \hline
-  %   {
-  %     $r = m = n$
-
-  %     $
-  %       R = I
-  %     $
-
-  %     有唯一解.
-  %   } & {
-  %       $r = n < m$
-
-  %       $
-  %         R = \begin{bmatrix}
-  %           I \\
-  %           0
-  %         \end{bmatrix}
-  %       $
-
-  %       无解或者有唯一解.
-  %   } & {
-  %       $r = m < n$
-
-  %       $
-  %         R = \begin{bmatrix}
-  %           I & F
-  %         \end{bmatrix}
-  %       $
-
-  %       有无穷多解.
-  %   } & {
-  %       $r < n,r < m$
-
-  %       $
-  %         R = \begin{bmatrix}
-  %           I & F \\
-  %           0 & 0
-  %         \end{bmatrix}
-  %       $
-
-  %       无解或有无穷多解.
-  %     }
-  % \end{tabular}
-
   秩决定了方程组解的个数,$m \times n$给出了矩阵的尺寸,但是秩给出的是矩阵实际上的"大小"(下几章讨论).
 }%秩结尾
 
@@ -6243,7 +6200,7 @@ $$
     \subsubsection{散度}{
       通量描述了一固定区域上向量场的流通倾向,而散度在某点的的值则是这个性质在这点的局部描述,也就是说,从散度在一点的值,就可以看出向量场在这点附近到底是倾向于发散还是收敛.
 
-      设矢量场$A(M)$,在场中作包围点$M$的闭曲面$S$,$S$包围的趋于称为$\Omega$,$\Omega$的体积为$\Delta V$.当$\Omega$收缩到极限$M$时,如果极限 :
+      设��量场$A(M)$,在场中作包围点$M$的闭曲面$S$,$S$包围的趋于称为$\Omega$,$\Omega$的体积为$\Delta V$.当$\Omega$收缩到极限$M$时,如果极限 :
       $$
         \limNormal{\Omega \to M}\cfrac{\doubleCurveIntegralOnZone{S}A \cdot d\mathbf{S}}{\Delta V}
       $$
@@ -6710,6 +6667,24 @@ $$
   $$
 }%子集结尾
 
+\subsubsection{有限集和无限集}{
+  \begin{itemize}
+    \item 有限集,即元素数量优先的集合,定义叙述为 : $S$是由$n$个元素组成的集合($n$是非负正整数,包含0),则称$S$为有限集.
+    \item 无限集:不是有限集的集合都是无限集.
+  \end{itemize}
+}%有限集和无限集结尾
+
+\subsubsection{可列集}{
+  可列集是无限集的一种,如果某无限集$S$中的元素可以按某种规则排成一列,并且无重复,无遗漏,则称该$S$为可列集.
+
+  此时$S$可以被用列举法或者描述法表示.
+
+  任何无限集都包含可列集,但是无限集本身不一定是可列集.
+
+  另外,可列个可列集的并也是可列集.
+
+}%可列集结尾
+
 \subsubsection{相等}{
   设$A,B$为二集合,若$A$包含$B$且$B$包含$A$,则称$A$与$B$相等,记作$A = B$,符号化形式为 : $$
     A = B \Leftrightarrow \forall x (x \in B \longleftrightarrow x \in A)
@@ -6968,7 +6943,7 @@ $$
   \item 德$\cdot$摩根律 : \begin{itemize}
           \item 绝对形式: \begin{itemize}
                   \item $(\updownUnion{~}{~}\{A_\alpha\}_{\alpha \in S})\absoluteCompletementSet = \updownIntersection{~}{\alpha \in S}(A_\alpha\absoluteCompletementSet)$
-                  \item$(\updownIntersection{~}{~}\{A\alpha\}_{\alpha \in S}) = \updownUnion{~}{\alpha \in S}(A\absoluteCompletementSet)$
+                  \item$(\updownIntersection{~}{~}\{A_\alpha\}_{\alpha \in S})\absoluteCompletementSet = \updownUnion{~}{\alpha \in S}(A_\alpha\absoluteCompletementSet)$
                 \end{itemize}
           \item 相对形式 : \begin{itemize}
                   \item $B - (\updownUnion{~}{~}\{A_\alpha\}_{\alpha \in S}) = \updownIntersection{~}{\alpha \in S}(B - A_\alpha)$
@@ -6984,6 +6959,136 @@ $$
     \item $\powerSetOf{A - B} \subseteq (\powerSetOf{A} - \powerSetOf{B}) \unionSet \{\emptyset\}$
   \end{enumerate}
 }%集合幂集运算的性质结尾
+
+\subsubsection{有序对(有序二元组)}{
+  有序对又称有序二元组 : $$
+    <a,b> = \{\{a\},\{a,b\}\}
+  $$
+
+  其中$a$是第一元素,$b$是第二元素.
+
+  $<a,b>$也记作$(a,b)$.
+
+  由于集合没有顺序,因此${a,b}$和${b,a}$是一样的.又称无序对,在公理集合论中有一条定义无序对的公理,称为无序对公理 : $$
+    \mbox{如果$a,b$是集合,则\{a,b\}依然是集合}
+  $$
+
+  而在$<a,b>$中,$a$在每一个子集合中,而$b$只出现在其中一个子集合中,因此他们的地位不相等,所以在有序对中$a$是第一元素,$n$是第二元素.
+
+  实际上是定义了一个数组,用这种方法来保证元素的顺序.
+
+  接下来一章严格证明有序对的性质.
+}%有序对结尾
+
+\subsubsection{有序对性质的证明}{
+  \begin{itemize}
+    \item {
+          引理1 : $\{x,a\} = \{x,b\} \Leftrightarrow a = b$
+
+          叙述为 : 当集合$\{x,a\}$等于$\{x,b\}$当且仅当$a = b$.
+
+          证明 : \begin{itemize}
+            \item 充分性($\Leftarrow$) 是显然的,因此不证.
+            \item 必要性($\Rightarrow$) 分两种情况 : \begin{enumerate}
+                    \item $x = a.\ \{x,a\} = \{x,b\} \Rightarrow \{a,a\} = \{a,b\} \Rightarrow \{a\} = \{a,b\} \Rightarrow a = b$
+                    \item $x \neq a.\ a \in \{x,a\} = \{x,b\} \Rightarrow a = b$.
+                  \end{enumerate}
+          \end{itemize}
+
+          \qed
+          }
+    \item {
+          引理2 : 若$\mathcal{A} = \mathcal{B} \neq \emptyset$.则 : \begin{enumerate}
+            \item $\updownUnion{~}{~}\mathcal{A} = \updownUnion{~}{~}\mathcal{B}$
+            \item $\updownIntersection{~}{~}\mathcal{A} = \updownIntersection{~}{~}\mathcal{B}$
+          \end{enumerate}
+
+          证明 : \begin{enumerate}
+            \item $\forall x,x \in \updownUnion{~}{~}\mathcal{A} \Leftrightarrow \exists z(z \in \mathcal{A} \land x \in z) \Leftrightarrow \exists z(z \in \mathcal{B} \land x \in z) \Leftrightarrow x \in \updownUnion{~}{~}\mathcal{B}$
+            \item $\forall x,x \in \updownIntersection{~}{~}\mathcal{A} \Leftrightarrow \forall z(z \in \mathcal{A} \land x \in z) \Leftrightarrow \forall z(z \in \mathcal{B} \land x \in z) \Leftrightarrow x \in \updownIntersection{~}{~}\mathcal{B}$
+          \end{enumerate}
+
+          \qed
+          }
+    \item {
+          定理(性质1)--两个有序对相对,当且仅当他们的第一个元素和第二个元素分别相等 : $<a,b> = <c,d> \Leftrightarrow a = c \land b = d$
+
+          证明 : \begin{itemize}
+            \item ($\Leftarrow$) 显然,不证.
+            \item{
+                  ($\Rightarrow$) :
+
+                  由引理2,$\set{\set{a},\set{a,b}} = \set{\set{c},\set{c,d}} \Rightarrow \updownIntersection{~}{~}\set{\set{a},\set{a,b}} = \updownIntersection{~}{~}\set{\set{c},\set{c,d}} \Rightarrow \set{a} = \set{c} \Leftrightarrow a = c$
+
+                  又因为$<a,b> = <c,d> \Leftrightarrow \set{\set{a},\set{a,b}} = \set{\set{c},\set{c,d}} \Rightarrow \updownUnion{~}{~}\set{\set{a},\set{a,b}} = \updownUnion{~}{~}\set{\set{c},\set{c,d}} \Rightarrow \set{a,b} = \set{c,d}$
+
+                  再由引理1,得出$b = d$.
+
+                  \qed
+                  }
+          \end{itemize}
+          }
+          \item {
+            推论 : $a \neq b \Rightarrow <a,b> \neq <b,a>$
+
+            证明(反证) : $$
+            <a,b> = <b,a> \Leftrightarrow a = b
+            $$
+            与$a \neq b$矛盾.
+
+            \qed
+          }
+  \end{itemize}
+}%有序对性质的证明结尾
+
+\subsubsection{有序n元组}{
+\begin{itemize}
+  \item {
+    有序三元组 : $$
+    <a,b,c> = <<a,b>,c>
+    $$
+  }
+  \item 有序三元组 %# TODO 有序三元组
+\end{itemize}
+}
+
+\subsubsection{笛卡尔乘积集合(卡氏积)}{
+  设$A,B$为两个集合,取$x \in A,y \in B$,构造有序对集合$\{(x,y)| x \in A \land y \in B\}$(属于$A$的$x$在前面,属于$B$的$y$在后面),将这样的集合记为笛卡尔乘积集合(又称为卡氏积) : $$
+  A \times B = \set{<x,y>|x \in A \land y \in B}
+  $$
+
+  这种集合可以用来表示两个集合中元素的排列组合.
+
+  特别的 : $A = B = \mathRealNumberCollection$,则$A \times B = \mathRealNumberCollection \times \mathRealNumberCollection = \mathRealNumberCollection^2$,也就是笛卡尔平面直角坐标系.
+
+  同样的,也有$R^3,R^n$
+
+  举例 :
+
+  $$
+    A = \{x | x \in \mathRealNumberCollection \land a \leq x \leq b\}
+  $$
+  $$
+    B = \{y | y \in \mathRealNumberCollection \land c \leq y \leq d\}
+  $$
+  $$
+    C = \{z | z \in \mathRealNumberCollection \land e \leq z \leq f\}
+  $$
+  那么$A \times B$的图像表示就是 :
+  \begin{center}
+    \begin{tikzpicture}
+      \draw[-latex] (0,0) -- (4,0) node[below right]{x};
+      \draw[-latex] (0,0) -- (0,3) node[above right]{y};
+      \draw[fill = gray] (1,1) rectangle (3,2);
+      \draw[dashed] (1,1) -- (1,0) node[below]{a};
+      \draw[dashed] (3,1) -- (3,0) node[below]{b};
+      \draw[dashed] (1,2) -- (0,2) node[left]{c};
+      \draw[dashed] (1,1) -- (0,1) node[left]{d};
+    \end{tikzpicture}
+  \end{center}
+
+  同样的,$A \times B \times C$表示的是空间中的一个立方体,这里就不画了(邪恶的tikz).
+}%笛卡尔乘积集合结尾
 
 }%集合论结尾
 
