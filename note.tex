@@ -7028,42 +7028,89 @@ $$
                   }
           \end{itemize}
           }
-          \item {
-            推论 : $a \neq b \Rightarrow <a,b> \neq <b,a>$
+    \item {
+          推论 : $a \neq b \Rightarrow <a,b> \neq <b,a>$
 
-            证明(反证) : $$
+          证明(反证) : $$
             <a,b> = <b,a> \Leftrightarrow a = b
-            $$
-            与$a \neq b$矛盾.
+          $$
+          与$a \neq b$矛盾.
 
-            \qed
+          \qed
           }
   \end{itemize}
 }%有序对性质的证明结尾
 
 \subsubsection{有序n元组}{
-\begin{itemize}
-  \item {
-    有序三元组 : $$
-    <a,b,c> = <<a,b>,c>
-    $$
-  }
-  \item 有序三元组 %# TODO 有序三元组
-\end{itemize}
-}
+  \begin{itemize}
+    \item {
+          有序三元组 : $$
+            <a,b,c> = <<a,b>,c>
+          $$
+          }
+    \item {
+          有序n($n > 2$)元组 : $$
+            <a_1,a_2,\dots,a_n> = <<a_1,a_2,\dots,a_{n - 1}>,a_n>
+          $$
+          }
+  \end{itemize}
+
+  有以下定理 : $$
+    <a_1,a_2,\dots,a_n> = <b_1,b_2,\dots,b_n> \Leftrightarrow a_i = b_i,i = 1,2,\dots,n
+  $$
+}%有序n元组结尾
 
 \subsubsection{笛卡尔乘积集合(卡氏积)}{
   设$A,B$为两个集合,取$x \in A,y \in B$,构造有序对集合$\{(x,y)| x \in A \land y \in B\}$(属于$A$的$x$在前面,属于$B$的$y$在后面),将这样的集合记为笛卡尔乘积集合(又称为卡氏积) : $$
-  A \times B = \set{<x,y>|x \in A \land y \in B}
+    A \times B = \set{<x,y>|x \in A \land y \in B}
   $$
 
   这种集合可以用来表示两个集合中元素的排列组合.
+
+  举例,设$A = \set{\emptyset,a},B = \set{1,2,3}$,则 :
+
+  \begin{itemize}
+    \item $A \times B = \set{<\emptyset,1>,<\emptyset,2>,<\emptyset,3>,<a,1>,<a,2>,<a,3>}$
+    \item $B \times A = \set{<1,\emptyset>,<1,a>,<2,\emptyset>,<2,a>,<3,\emptyset>,<3,a>}$
+    \item $A \times A = \set{<\emptyset,\emptyset>,<\emptyset,a>,<a,\emptyset>,<a,a>}$
+    \item \dots
+  \end{itemize}
+}%笛卡尔乘积集合结尾
+
+\subsubsection{卡氏积的性质}{
+  \begin{itemize}
+    \item {
+      卡氏积非交换性 : $A \times B \neq B \times A$(除非$A = B \lor A = \emptyset \lor B = \emptyset$)
+
+      反证法反例 : 设$A = \set{1},B = \set{2}$ : $$
+      A \times B = \set{<1,2>} \neq \set{<2,1>} = B \times A
+      $$
+
+      \qed
+      }
+      \item {
+        卡氏积非结合性 : $(A \times B) \times C \neq A \times (B \times C)$(除非$A = \emptyset \lor B = \emptyset \lor C = \emptyset$)
+
+        反证法反例 : $A = B = C = \set{1}$ : $$
+        (A \times B) \times C = \set{<<1,1>,1>} \neq \set{<1,<1,1>>} = A \times (B \times C)
+        $$
+        
+        \qed
+      }% # TODO 卡氏积非结合性
+  \end{itemize}
+}%卡氏积的性质结尾
+
+\subsubsection{卡氏积的图示}{
+  放张图就一目了然了 :
+
+  \begin{center}
+    \includegraphics{resources/Set_DicarelProduct.png}
+  \end{center}
 
   特别的 : $A = B = \mathRealNumberCollection$,则$A \times B = \mathRealNumberCollection \times \mathRealNumberCollection = \mathRealNumberCollection^2$,也就是笛卡尔平面直角坐标系.
 
   同样的,也有$R^3,R^n$
 
-  举例 :
 
   $$
     A = \{x | x \in \mathRealNumberCollection \land a \leq x \leq b\}
@@ -7088,7 +7135,7 @@ $$
   \end{center}
 
   同样的,$A \times B \times C$表示的是空间中的一个立方体,这里就不画了(邪恶的tikz).
-}%笛卡尔乘积集合结尾
+}%卡氏积的图示结尾
 
 }%集合论结尾
 

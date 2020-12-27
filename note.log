@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7 Portable) (preloaded format=pdflatex 2020.8.12)  26 DEC 2020 18:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7 Portable) (preloaded format=pdflatex 2020.8.12)  27 DEC 2020 20:10
 entering extended mode
 **c:/Users/19920/Desktop/LatexNote/note.tex
 (c:/Users/19920/Desktop/LatexNote/note.tex
@@ -1032,12 +1032,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has b
                    \relax 
 l.208 ‰ªã
          ÂÄºÂÆöÁêÜÈÄöÂ∏∏‰ª•‰∏ãËø∞Á≠â‰ª∑ÁöÑÂΩ¢ÂºèË°®Ëø∞:ÂÅáËÆæ$f:I\rightarrow... [3]
-<resources/Intermediatevaluetheorem.png, id=2081, 281.05pt x 281.05pt>
+<resources/Intermediatevaluetheorem.png, id=2096, 281.05pt x 281.05pt>
 File: resources/Intermediatevaluetheorem.png Graphic file (type png)
 <use resources/Intermediatevaluetheorem.png>
 Package pdftex.def Info: resources/Intermediatevaluetheorem.png  used on input line 212.
 (pdftex.def)             Requested size: 281.0493pt x 281.0493pt.
-<resources/Pascal's_triangle_5.svg.png, id=2084, 301.125pt x 216.81pt>
+<resources/Pascal's_triangle_5.svg.png, id=2099, 301.125pt x 216.81pt>
 File: resources/Pascal's_triangle_5.svg.png Graphic file (type png)
 <use resources/Pascal's_triangle_5.svg.png>
 Package pdftex.def Info: resources/Pascal's_triangle_5.svg.png  used on input line 228.
@@ -1072,7 +1072,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.7}) has b
                    \relax 
 l.383 
        [7]
-<resources/polar_coordness.png, id=2130, 225.84375pt x 225.84375pt>
+<resources/polar_coordness.png, id=2145, 225.84375pt x 225.84375pt>
 File: resources/polar_coordness.png Graphic file (type png)
 <use resources/polar_coordness.png>
 Package pdftex.def Info: resources/polar_coordness.png  used on input line 399.
@@ -1102,13 +1102,13 @@ l.587
                    \relax 
 l.632       \item Â
                    èØÂØº$\nRightarrow$ËøûÁª≠. [13]
-<resources/UnitCircle.png, id=2170, 170.88844pt x 167.12437pt>
+<resources/UnitCircle.png, id=2185, 170.88844pt x 167.12437pt>
 File: resources/UnitCircle.png Graphic file (type png)
 <use resources/UnitCircle.png>
 Package pdftex.def Info: resources/UnitCircle.png  used on input line 669.
 (pdftex.def)             Requested size: 170.88802pt x 167.12395pt.
  [14 <./resources/UnitCircle.png>] [15] [16] [17] [18] [19] [20]
-<resources/insideTriangleAndCircleOutSide.png, id=2208, 225.84375pt x 225.84375pt>
+<resources/insideTriangleAndCircleOutSide.png, id=2223, 225.84375pt x 225.84375pt>
 File: resources/insideTriangleAndCircleOutSide.png Graphic file (type png)
 <use resources/insideTriangleAndCircleOutSide.png>
 Package pdftex.def Info: resources/insideTriangleAndCircleOutSide.png  used on input line 936.
@@ -1124,7 +1124,7 @@ Overfull \hbox (1.76314pt too wide) in paragraph at lines 1001--1002
  []
 
 [23]
-<resources/directionAngle.png, id=2232, 816.04875pt x 582.175pt>
+<resources/directionAngle.png, id=2247, 816.04875pt x 582.175pt>
 File: resources/directionAngle.png Graphic file (type png)
 <use resources/directionAngle.png>
 Package pdftex.def Info: resources/directionAngle.png  used on input line 1016.
@@ -1135,7 +1135,7 @@ Overfull \hbox (1.13818pt too wide) in paragraph at lines 1031--1032
  []
 
 [24 <./resources/directionAngle.png>]
-<resources/vector_axis_projection.png, id=2241, 225.84375pt x 225.84375pt>
+<resources/vector_axis_projection.png, id=2256, 225.84375pt x 225.84375pt>
 File: resources/vector_axis_projection.png Graphic file (type png)
 <use resources/vector_axis_projection.png>
 Package pdftex.def Info: resources/vector_axis_projection.png  used on input line 1041.
@@ -1182,13 +1182,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 1818--1821
  []
 
 [40] [41]
-<resources/Rolle's_mean_value_theorem.jpg, id=2361, 165.61874pt x 126.4725pt>
+<resources/Rolle's_mean_value_theorem.jpg, id=2376, 165.61874pt x 126.4725pt>
 File: resources/Rolle's_mean_value_theorem.jpg Graphic file (type jpg)
 <use resources/Rolle's_mean_value_theorem.jpg>
 Package pdftex.def Info: resources/Rolle's_mean_value_theorem.jpg  used on input line 1909.
 (pdftex.def)             Requested size: 165.61833pt x 126.47218pt.
  [42 <./resources/Rolle's_mean_value_theorem.jpg>]
-<resources/Lagrange's_mean_value_theorem.png, id=2371, 301.125pt x 191.71625pt>
+<resources/Lagrange's_mean_value_theorem.png, id=2386, 301.125pt x 191.71625pt>
 File: resources/Lagrange's_mean_value_theorem.png Graphic file (type png)
 <use resources/Lagrange's_mean_value_theorem.png>
 Package pdftex.def Info: resources/Lagrange's_mean_value_theorem.png  used on input line 1925.
@@ -1221,7 +1221,7 @@ Overfull \hbox (23.77333pt too wide) in paragraph at lines 1980--1981
 Missing character: There is no ﬁ in font cmr12!
 Missing character: There is no Ì in font cmr12!
  [47]
-<resources/Geometric_explanation_of_the_mean_value_theorem_for_integration.jpg, id=2423, 410.53375pt x 310.15875pt>
+<resources/Geometric_explanation_of_the_mean_value_theorem_for_integration.jpg, id=2438, 410.53375pt x 310.15875pt>
 File: resources/Geometric_explanation_of_the_mean_value_theorem_for_integration.jpg Graphic file (type jpg)
 <use resources/Geometric_explanation_of_the_mean_value_theorem_for_integration.jpg>
 Package pdftex.def Info: resources/Geometric_explanation_of_the_mean_value_theorem_for_integration.jpg  used on input line 2123.
@@ -1231,7 +1231,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2146--2149
 
  []
 
-<resources/Geometric_explanation_of_the_second_mean_value_theorem_for_integration.jpg, id=2431, 451.6875pt x 309.40594pt>
+<resources/Geometric_explanation_of_the_second_mean_value_theorem_for_integration.jpg, id=2446, 451.6875pt x 309.40594pt>
 File: resources/Geometric_explanation_of_the_second_mean_value_theorem_for_integration.jpg Graphic file (type jpg)
 <use resources/Geometric_explanation_of_the_second_mean_value_theorem_for_integration.jpg>
 Package pdftex.def Info: resources/Geometric_explanation_of_the_second_mean_value_theorem_for_integration.jpg  used on input line 2179.
@@ -1240,17 +1240,17 @@ Package pdftex.def Info: resources/Geometric_explanation_of_the_second_mean_valu
 Underfull \vbox (badness 4995) has occurred while \output is active []
 
  [49] [50 <./resources/Geometric_explanation_of_the_second_mean_value_theorem_for_integration.jpg>]
-<resources/infityFunctionUnormalIntegral.png, id=2441, 225.84375pt x 225.84375pt>
+<resources/infityFunctionUnormalIntegral.png, id=2456, 225.84375pt x 225.84375pt>
 File: resources/infityFunctionUnormalIntegral.png Graphic file (type png)
 <use resources/infityFunctionUnormalIntegral.png>
 Package pdftex.def Info: resources/infityFunctionUnormalIntegral.png  used on input line 2236.
 (pdftex.def)             Requested size: 112.92159pt x 112.92159pt.
-<resources/infityFunctionUnormalIntegral2.png, id=2442, 225.84375pt x 225.84375pt>
+<resources/infityFunctionUnormalIntegral2.png, id=2457, 225.84375pt x 225.84375pt>
 File: resources/infityFunctionUnormalIntegral2.png Graphic file (type png)
 <use resources/infityFunctionUnormalIntegral2.png>
 Package pdftex.def Info: resources/infityFunctionUnormalIntegral2.png  used on input line 2244.
 (pdftex.def)             Requested size: 112.92159pt x 112.92159pt.
-<resources/infityFunctionUnormalIntegral3.png, id=2443, 225.84375pt x 225.84375pt>
+<resources/infityFunctionUnormalIntegral3.png, id=2458, 225.84375pt x 225.84375pt>
 File: resources/infityFunctionUnormalIntegral3.png Graphic file (type png)
 <use resources/infityFunctionUnormalIntegral3.png>
 Package pdftex.def Info: resources/infityFunctionUnormalIntegral3.png  used on input line 2252.
@@ -1297,7 +1297,7 @@ Overfull \hbox (10.51665pt too wide) in paragraph at lines 2529--2530
 []\C70/rm/m/n/12/50 G \C70/rm/m/n/12/8b æ \C70/rm/m/n/12/5b ¸ \C70/rm/m/n/12/65 p \C70/rm/m/n/12/4e :\OT1/cmr/m/n/12 0,\C70/rm/m/n/12/5c  \C70/rm/m/n/12/4f  \C70/rm/m/n/12/5f ó \C70/rm/m/n/12/52 0 \C70/rm/m/n/12/4e   * \C70/rm/m/n/12/72 y \C70/rm/m/n/12/6b ä \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/72 y \C70/rm/m/n/12/89 „\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/4e ÷  \C70/rm/m/n/12/4f  \C70/rm/m/n/12/53 ÿ \OT1/cmr/m/n/12 .\C70/rm/m/n/12/4e _ \C70/rm/m/n/12/5c 1 \C70/rm/m/n/12/66 / \C70/rm/m/n/12/5f S \C70/rm/m/n/12/5b ¸ \C70/rm/m/n/12/65 p \C70/rm/m/n/12/4e :\OT1/cmr/m/n/12 0\C70/rm/m/n/12/65 ˆ\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/90 £ \C70/rm/m/n/12/4e H$\OML/cmm/m/it/12 cP \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 sP[]$\OT1/cmr/m/n/12 .\C70/rm/m/n/12/53 Ô \C70/rm/m/n/12/4e Â \C70/rm/m/n/12/7e ¶ \C70/rm/m/n/12/63 â \C70/rm/m/n/12/4e   *\OT1/cmr/m/n/12 P,\C70/rm/m/n/12/4e _
  []
 
-<resources/nonLinearDifferencialEquation_HumanGrow.png, id=2495, 96.36pt x 96.36pt>
+<resources/nonLinearDifferencialEquation_HumanGrow.png, id=2510, 96.36pt x 96.36pt>
 File: resources/nonLinearDifferencialEquation_HumanGrow.png Graphic file (type png)
 <use resources/nonLinearDifferencialEquation_HumanGrow.png>
 Package pdftex.def Info: resources/nonLinearDifferencialEquation_HumanGrow.png  used on input line 2534.
@@ -1390,12 +1390,12 @@ Overfull \hbox (4.40204pt too wide) in paragraph at lines 4267--4268
  []
 
 [95] [96]
-<resources/MatrixMultiplecation_trick.png, id=2709, 420.06938pt x 130.23656pt>
+<resources/MatrixMultiplecation_trick.png, id=2724, 420.06938pt x 130.23656pt>
 File: resources/MatrixMultiplecation_trick.png Graphic file (type png)
 <use resources/MatrixMultiplecation_trick.png>
 Package pdftex.def Info: resources/MatrixMultiplecation_trick.png  used on input line 4475.
 (pdftex.def)             Requested size: 420.06836pt x 130.23624pt.
-<resources/MatrixMultiple_1.png, id=2710, 351.714pt x 124.66576pt>
+<resources/MatrixMultiple_1.png, id=2725, 351.714pt x 124.66576pt>
 File: resources/MatrixMultiple_1.png Graphic file (type png)
 <use resources/MatrixMultiple_1.png>
 Package pdftex.def Info: resources/MatrixMultiple_1.png  used on input line 4490.
@@ -1405,7 +1405,7 @@ Overfull \hbox (5.28134pt too wide) in paragraph at lines 4575--4576
 []\C70/rm/m/n/12/77 È \C70/rm/m/n/12/96 5$\OML/cmm/m/it/12 A$\C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/7b ,$\OML/cmm/m/it/12 k$\C70/rm/m/n/12/52  \C70/rm/m/n/12/66 / \C70/rm/m/n/12/4e   *$\OML/cmm/m/it/12 m \OMS/cmsy/m/n/12  \OT1/cmr/m/n/12 1$\C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/54  \C70/rm/m/n/12/91 œ\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/80  \C70/rm/m/n/12/4e > \C70/rm/m/n/12/8b ¡$\OML/cmm/m/it/12 B$\C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/7b ,$\OML/cmm/m/it/12 k$\C70/rm/m/n/12/88 L \C70/rm/m/n/12/66 / \C70/rm/m/n/12/4e   *$\OT1/cmr/m/n/12 1 \OMS/cmsy/m/n/12  \OML/cmm/m/it/12 p$\C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/54  \C70/rm/m/n/12/91 œ\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/4e $ \C70/rm/m/n/12/54  \C70/rm/m/n/12/91 œ \C70/rm/m/n/12/76 ¯ \C70/rm/m/n/12/4e X \C70/rm/m/n/12/4f  \C70/rm/m/n/12/5f ó \C70/rm/m/n/12/52 0 \C70/rm/m/n/12/4e   * \C70/rm/m/n/12/77 È \C70/rm/m/n/12/96 5$\OML/cmm/m/it/12 C[]$\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/5c 
  []
 
-<resources/MatrixMultiplecation_trick_2.png, id=2722, 204.765pt x 146.34676pt>
+<resources/MatrixMultiplecation_trick_2.png, id=2737, 204.765pt x 146.34676pt>
 File: resources/MatrixMultiplecation_trick_2.png Graphic file (type png)
 <use resources/MatrixMultiplecation_trick_2.png>
 Package pdftex.def Info: resources/MatrixMultiplecation_trick_2.png  used on input line 4619.
@@ -1416,19 +1416,19 @@ Overfull \hbox (5.74684pt too wide) in paragraph at lines 4622--4624
  []
 
 [99 <./resources/MatrixMultiplecation_trick_2.png>]
-<resources/theMultiplecationProductOfTranspose.png, id=2729, 382.42876pt x 87.32625pt>
+<resources/theMultiplecationProductOfTranspose.png, id=2744, 382.42876pt x 87.32625pt>
 File: resources/theMultiplecationProductOfTranspose.png Graphic file (type png)
 <use resources/theMultiplecationProductOfTranspose.png>
 Package pdftex.def Info: resources/theMultiplecationProductOfTranspose.png  used on input line 4634.
 (pdftex.def)             Requested size: 382.42781pt x 87.32603pt.
  [100 <./resources/theMultiplecationProductOfTranspose.png>]
-<resources/row_picture_1.png, id=2735, 154.176pt x 172.2435pt>
+<resources/row_picture_1.png, id=2750, 154.176pt x 172.2435pt>
 File: resources/row_picture_1.png Graphic file (type png)
 <use resources/row_picture_1.png>
 Package pdftex.def Info: resources/row_picture_1.png  used on input line 4726.
 (pdftex.def)             Requested size: 154.1756pt x 172.24307pt.
  [101 <./resources/row_picture_1.png>]
-<resources/colum_picture_1.png, id=2741, 157.7895pt x 193.32225pt>
+<resources/colum_picture_1.png, id=2756, 157.7895pt x 193.32225pt>
 File: resources/colum_picture_1.png Graphic file (type png)
 <use resources/colum_picture_1.png>
 Package pdftex.def Info: resources/colum_picture_1.png  used on input line 4781.
@@ -1438,7 +1438,7 @@ Overfull \hbox (4.40204pt too wide) in paragraph at lines 4808--4809
 []\C70/rm/m/n/12/5f à \C70/rm/m/n/12/66  >\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/5e v \C70/rm/m/n/12/4e  \C70/rm/m/n/12/66 / \C70/rm/m/n/12/62 @ \C70/rm/m/n/12/67 	 \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/60 ≈ \C70/rm/m/n/12/51 µ \C70/rm/m/n/12/90 ˝ \C70/rm/m/n/12/8f Ÿ \C70/rm/m/n/12/4e H \C70/rm/m/n/12/5e x \C70/rm/m/n/12/8f –\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/59 Ç \C70/rm/m/n/12/67 ú \C70/rm/m/n/12/4e 	 * \C70/rm/m/n/12/52  \C70/rm/m/n/12/54  \C70/rm/m/n/12/91 œ \C70/rm/m/n/12/4e - \C70/rm/m/n/12/67 	 \C70/rm/m/n/12/4e $ * \C70/rm/m/n/12/54  \C70/rm/m/n/12/91 œ \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/7e ø \C70/rm/m/n/12/60 ' \C70/rm/m/n/12/7e ƒ \C70/rm/m/n/12/54  \C70/rm/m/n/12/53 Ô \C70/rm/m/n/12/4e Â \C70/rm/m/n/12/5f ó \C70/rm/m/n/12/52 0 \C70/rm/m/n/12/7b , \C70/rm/m/n/12/4e 	 * \C70/rm/m/n/12/54  \C70/rm/m/n/12/91 œ\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/62 
  []
 
-<resources/lineardepedent_independent_1.png, id=2742, 330.63525pt x 68.6565pt>
+<resources/lineardepedent_independent_1.png, id=2757, 330.63525pt x 68.6565pt>
 File: resources/lineardepedent_independent_1.png Graphic file (type png)
 <use resources/lineardepedent_independent_1.png>
 Package pdftex.def Info: resources/lineardepedent_independent_1.png  used on input line 4813.
@@ -1465,7 +1465,7 @@ Overfull \hbox (11.71936pt too wide) in paragraph at lines 5245--5246
  []
 
 [107]
-<resources/permutation_trick_1.png, id=2773, 328.8285pt x 93.951pt>
+<resources/permutation_trick_1.png, id=2788, 328.8285pt x 93.951pt>
 File: resources/permutation_trick_1.png Graphic file (type png)
 <use resources/permutation_trick_1.png>
 Package pdftex.def Info: resources/permutation_trick_1.png  used on input line 5320.
@@ -1484,7 +1484,7 @@ Overfull \hbox (12.64206pt too wide) in paragraph at lines 5395--5396
 Underfull \vbox (badness 1406) has occurred while \output is active []
 
  [110] [111] [112] [113] [114] [115] [116] [117] [118]
-<resources/derivativeOfVectorFunction.png, id=2822, 376.40625pt x 225.84375pt>
+<resources/derivativeOfVectorFunction.png, id=2837, 376.40625pt x 225.84375pt>
 File: resources/derivativeOfVectorFunction.png Graphic file (type png)
 <use resources/derivativeOfVectorFunction.png>
 Package pdftex.def Info: resources/derivativeOfVectorFunction.png  used on input line 5962.
@@ -1496,7 +1496,7 @@ Overfull \hbox (6.91553pt too wide) in paragraph at lines 6003--6004
  []
 
 [120] [121]
-<resources/directionDerivative1.png, id=2837, 451.6875pt x 225.84375pt>
+<resources/directionDerivative1.png, id=2852, 451.6875pt x 225.84375pt>
 File: resources/directionDerivative1.png Graphic file (type png)
 <use resources/directionDerivative1.png>
 Package pdftex.def Info: resources/directionDerivative1.png  used on input line 6074.
@@ -1564,7 +1564,7 @@ Overfull \hbox (0.54103pt too wide) in paragraph at lines 6829--6830
  []
 
 [141] [142]
-<resources/Venn's_diagram.png, id=2939, 315.579pt x 56.00925pt>
+<resources/Venn's_diagram.png, id=2954, 315.579pt x 56.00925pt>
 File: resources/Venn's_diagram.png Graphic file (type png)
 <use resources/Venn's_diagram.png>
 Package pdftex.def Info: resources/Venn's_diagram.png  used on input line 6905.
@@ -1582,190 +1582,189 @@ Overfull \hbox (4.50333pt too wide) in paragraph at lines 7014--7015
  []
 
 [146]
-Overfull \hbox (0.60857pt too wide) in paragraph at lines 7056--7056
+Overfull \hbox (0.60857pt too wide) in paragraph at lines 7064--7064
 []\C70/rm/m/n/12/8b æ$\OML/cmm/m/it/12 A; B$\C70/rm/m/n/12/4e : $ * \C70/rm/m/n/12/96 ∆ \C70/rm/m/n/12/54 \OT1/cmr/m/n/12 ,\C70/rm/m/n/12/53 ÷$\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 A; y \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 B$\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/67 Ñ \C70/rm/m/n/12/90   \C70/rm/m/n/12/67 	 \C70/rm/m/n/12/5e è \C70/rm/m/n/12/5b ˘ \C70/rm/m/n/12/96 ∆ \C70/rm/m/n/12/54 $\OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x; y\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 A \OMS/cmsy/m/n/12 ^ \OML/cmm/m/it/12 y \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 B\OMS/cmsy/m/n/12 g$\OT1/cmr/m/n/12 (\C70/rm/m/n/12/5c ^ \C70/rm/m/n/12/4e é$\OML/cmm/m/it/12 A$\C70/rm/m/n/12/76 Ñ$\OML/cmm/m/it/12 x$\C70/rm/m/n/12/57 ( \C70/rm/m/n/12/52 M \C70/rm/m/n/12/97 b\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/5c ^ \C70/rm/m/n/12/4e é$\OML/cmm/m/it/12 B$\C70/rm/m/n/12/76 Ñ$\OML/cmm/m/it/12 y$\C70/rm/m/n/12/57 (
  []
 
-[147] [148]
-Á¨¨‰∫åÁ´†
-[149
+[147]
+<resources/Set_DicarelProduct.png, id=2998, 469.755pt x 178.266pt>
+File: resources/Set_DicarelProduct.png Graphic file (type png)
+<use resources/Set_DicarelProduct.png>
+Package pdftex.def Info: resources/Set_DicarelProduct.png  used on input line 7107.
+(pdftex.def)             Requested size: 469.75386pt x 178.26555pt.
+ [148 <./resources/Set_DicarelProduct.png>] [149] [150
 
 ]
-<resources/rotateMatrixGraphics.png, id=2994, 1078.0275pt x 447.92343pt>
+Á¨¨‰∫åÁ´†
+[151]
+<resources/rotateMatrixGraphics.png, id=3019, 1078.0275pt x 447.92343pt>
 File: resources/rotateMatrixGraphics.png Graphic file (type png)
 <use resources/rotateMatrixGraphics.png>
-Package pdftex.def Info: resources/rotateMatrixGraphics.png  used on input line 7220.
+Package pdftex.def Info: resources/rotateMatrixGraphics.png  used on input line 7267.
 (pdftex.def)             Requested size: 269.50621pt x 111.98058pt.
- [150]
-<resources/homogeneous_coordinates.png, id=3007, 1357.07pt x 544.0325pt>
+ [152]
+<resources/homogeneous_coordinates.png, id=3031, 1357.07pt x 544.0325pt>
 File: resources/homogeneous_coordinates.png Graphic file (type png)
 <use resources/homogeneous_coordinates.png>
-Package pdftex.def Info: resources/homogeneous_coordinates.png  used on input line 7235.
+Package pdftex.def Info: resources/homogeneous_coordinates.png  used on input line 7282.
 (pdftex.def)             Requested size: 339.26666pt x 136.00778pt.
- [151 <./resources/rotateMatrixGraphics.png> <./resources/homogeneous_coordinates.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 7330--7332
+ [153 <./resources/rotateMatrixGraphics.png> <./resources/homogeneous_coordinates.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 7377--7379
 
  []
 
-[152]
-Underfull \hbox (badness 10000) in paragraph at lines 7406--7407
+[154]
+Underfull \hbox (badness 10000) in paragraph at lines 7453--7454
 
  []
 
-[153] [154]
-<resources/viewTransformation.png, id=3034, 590.205pt x 322.95656pt>
+[155] [156]
+<resources/viewTransformation.png, id=3059, 590.205pt x 322.95656pt>
 File: resources/viewTransformation.png Graphic file (type png)
 <use resources/viewTransformation.png>
-Package pdftex.def Info: resources/viewTransformation.png  used on input line 7530.
+Package pdftex.def Info: resources/viewTransformation.png  used on input line 7577.
 (pdftex.def)             Requested size: 531.17958pt x 290.6582pt.
 
-Overfull \hbox (3.16476pt too wide) in paragraph at lines 7530--7531
+Overfull \hbox (3.16476pt too wide) in paragraph at lines 7577--7578
 [][] 
  []
 
-[155] [156 <./resources/viewTransformation.png>]
-<resources/twoProjectionTransformation.png, id=3051, 1131.22626pt x 493.845pt>
+[157] [158 <./resources/viewTransformation.png>]
+<resources/twoProjectionTransformation.png, id=3075, 1131.22626pt x 493.845pt>
 File: resources/twoProjectionTransformation.png Graphic file (type png)
 <use resources/twoProjectionTransformation.png>
-Package pdftex.def Info: resources/twoProjectionTransformation.png  used on input line 7579.
+Package pdftex.def Info: resources/twoProjectionTransformation.png  used on input line 7626.
 (pdftex.def)             Requested size: 565.61174pt x 246.92189pt.
 
-Overfull \hbox (37.59692pt too wide) in paragraph at lines 7579--7580
+Overfull \hbox (37.59692pt too wide) in paragraph at lines 7626--7627
 [][] 
  []
 
 
-Overfull \hbox (2.69783pt too wide) in paragraph at lines 7587--7588
+Overfull \hbox (2.69783pt too wide) in paragraph at lines 7634--7635
 []\C70/rm/m/n/12/51 H \C70/rm/m/n/12/5b ö \C70/rm/m/n/12/4e I   * \C70/rm/m/n/12/7a z \C70/rm/m/n/12/95 Ù \C70/rm/m/n/12/4e - \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/7a À \C70/rm/m/n/12/65 π \C70/rm/m/n/12/4f S\OT1/cmr/m/n/12 , \C70/rm/m/n/12/7e Ÿ \C70/rm/m/n/12/51 ˙ \C70/rm/m/n/12/4e 	 * \C70/rm/m/n/12/8f t \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/83  \C70/rm/m/n/12/56 Ù$\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 l; r\OT1/cmr/m/n/12 ] \OMS/cmsy/m/n/12  \OT1/cmr/m/n/12 [\OML/cmm/m/it/12 b; t\OT1/cmr/m/n/12 ] \OMS/cmsy/m/n/12  \OT1/cmr/m/n/12 [\OML/cmm/m/it/12 f; n\OT1/cmr/m/n/12 ]$,\C70/rm/m/n/12/5e s \C70/rm/m/n/12/79 ˚ \C70/rm/m/n/12/5e v \C70/rm/m/n/12/7f ) \C70/rm/m/n/12/65 > \C70/rm/m/n/12/52 0 \C70/rm/m/n/12/68  \C70/rm/m/n/12/51 ∆ \C70/rm/m/n/12/7a À \C70/rm/m/n/12/65 π \C70/rm/m/n/12/4f S$\OT1/cmr/m/n/12 [\OMS/cmsy/m/n/12  \OT1/cmr/m/n/12 1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1][]$ 
  []
 
-<resources/OrthographicProjection.png, id=3052, 1005.00468pt x 289.08pt>
+<resources/OrthographicProjection.png, id=3076, 1005.00468pt x 289.08pt>
 File: resources/OrthographicProjection.png Graphic file (type png)
 <use resources/OrthographicProjection.png>
-Package pdftex.def Info: resources/OrthographicProjection.png  used on input line 7589.
+Package pdftex.def Info: resources/OrthographicProjection.png  used on input line 7636.
 (pdftex.def)             Requested size: 502.50111pt x 144.53964pt.
 
-Overfull \hbox (0.33598pt too wide) in paragraph at lines 7589--7590
+Overfull \hbox (0.33598pt too wide) in paragraph at lines 7636--7637
 [][] 
  []
 
-[157 <./resources/twoProjectionTransformation.png>]
-Overfull \hbox (6.921pt too wide) in paragraph at lines 7614--7615
+[159 <./resources/twoProjectionTransformation.png>]
+Overfull \hbox (6.921pt too wide) in paragraph at lines 7661--7662
 []\C70/rm/m/n/12/99 ñ \C70/rm/m/n/12/51 H \C70/rm/m/n/12/62 ä \C70/rm/m/n/12/89 ∆ \C70/rm/m/n/12/95 % \C70/rm/m/n/12/53 ã \C70/rm/m/n/12/7f ) \C70/rm/m/n/12/62  \C70/rm/m/n/12/95  \C70/rm/m/n/12/65 π \C70/rm/m/n/12/4f S\OT1/cmr/m/n/12 .(\C70/rm/m/n/12/8f — \C70/rm/m/n/12/5e s \C70/rm/m/n/12/97 b \C70/rm/m/n/12/6c 8 \C70/rm/m/n/12/8f ‹ \C70/rm/m/n/12/4e  \C70/rm/m/n/12/53 ÿ\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/8f ‹ \C70/rm/m/n/12/5e s \C70/rm/m/n/12/97 b\OT1/cmr/m/n/12 z\C70/rm/m/n/12/50 < \C70/rm/m/n/12/4e  \C70/rm/m/n/12/53 — \C70/rm/m/n/12/75  \C70/rm/m/n/12/53 ÿ \OT1/cmr/m/n/12 ,\C70/rm/m/n/12/4e - \C70/rm/m/n/12/5f √ \C70/rm/m/n/12/70 π \C70/rm/m/n/12/4e  \C70/rm/m/n/12/53 — \C70/rm/m/n/12/75  \C70/rm/m/n/12/53 ÿ \OT1/cmr/m/n/12 )$(\OML/cmm/m/it/12 n \OMS/cmsy/m/n/12 ! \OML/cmm/m/it/12 n; f \OMS/cmsy/m/n/12 !
  []
 
-<resources/perspectiveProjection.png, id=3058, 905.63344pt x 313.17pt>
+<resources/perspectiveProjection.png, id=3082, 905.63344pt x 313.17pt>
 File: resources/perspectiveProjection.png Graphic file (type png)
 <use resources/perspectiveProjection.png>
-Package pdftex.def Info: resources/perspectiveProjection.png  used on input line 7616.
+Package pdftex.def Info: resources/perspectiveProjection.png  used on input line 7663.
 (pdftex.def)             Requested size: 452.81561pt x 156.58461pt.
-<resources/perspectiveProjection_middle.png, id=3059, 1104.37593pt x 333.49594pt>
+<resources/perspectiveProjection_middle.png, id=3083, 1104.37593pt x 333.49594pt>
 File: resources/perspectiveProjection_middle.png Graphic file (type png)
 <use resources/perspectiveProjection_middle.png>
-Package pdftex.def Info: resources/perspectiveProjection_middle.png  used on input line 7620.
+Package pdftex.def Info: resources/perspectiveProjection_middle.png  used on input line 7667.
 (pdftex.def)             Requested size: 552.18661pt x 166.74756pt.
 
-Overfull \hbox (50.02148pt too wide) in paragraph at lines 7620--7621
+Overfull \hbox (50.02148pt too wide) in paragraph at lines 7667--7668
 [][] 
  []
 
 
 Underfull \vbox (badness 4886) has occurred while \output is active []
 
- [158 <./resources/OrthographicProjection.png> <./resources/perspectiveProjection.png>] [159 <./resources/perspectiveProjection_middle.png>] [160]
-<resources/define_of_screen_space_1.png, id=3072, 690.32906pt x 448.67625pt>
+ [160 <./resources/OrthographicProjection.png> <./resources/perspectiveProjection.png>] [161 <./resources/perspectiveProjection_middle.png>] [162]
+<resources/define_of_screen_space_1.png, id=3097, 690.32906pt x 448.67625pt>
 File: resources/define_of_screen_space_1.png Graphic file (type png)
 <use resources/define_of_screen_space_1.png>
-Package pdftex.def Info: resources/define_of_screen_space_1.png  used on input line 7796.
+Package pdftex.def Info: resources/define_of_screen_space_1.png  used on input line 7843.
 (pdftex.def)             Requested size: 345.16368pt x 224.33757pt.
- [161 <./resources/define_of_screen_space_1.png>]
-<resources/sample_if_each_pixel_inside_triangle.png, id=3077, 827.09pt x 708.6475pt>
+ [163 <./resources/define_of_screen_space_1.png>]
+<resources/sample_if_each_pixel_inside_triangle.png, id=3102, 827.09pt x 708.6475pt>
 File: resources/sample_if_each_pixel_inside_triangle.png Graphic file (type png)
 <use resources/sample_if_each_pixel_inside_triangle.png>
-Package pdftex.def Info: resources/sample_if_each_pixel_inside_triangle.png  used on input line 7831.
+Package pdftex.def Info: resources/sample_if_each_pixel_inside_triangle.png  used on input line 7878.
 (pdftex.def)             Requested size: 413.54398pt x 354.32289pt.
- [162 <./resources/sample_if_each_pixel_inside_triangle.png>]
-<resources/Triangle_Side_Cross_Prodyct.png, id=3084, 1122.1925pt x 817.0525pt>
+ [164 <./resources/sample_if_each_pixel_inside_triangle.png>]
+<resources/Triangle_Side_Cross_Prodyct.png, id=3108, 1122.1925pt x 817.0525pt>
 File: resources/Triangle_Side_Cross_Prodyct.png Graphic file (type png)
 <use resources/Triangle_Side_Cross_Prodyct.png>
-Package pdftex.def Info: resources/Triangle_Side_Cross_Prodyct.png  used on input line 7839.
+Package pdftex.def Info: resources/Triangle_Side_Cross_Prodyct.png  used on input line 7886.
 (pdftex.def)             Requested size: 561.09488pt x 408.52525pt.
 
-Overfull \hbox (3.70537pt too wide) in paragraph at lines 7839--7840
+Overfull \hbox (3.70537pt too wide) in paragraph at lines 7886--7887
  [] 
  []
 
-<resources/pixel_boundingBox.png, id=3085, 894.34125pt x 711.65875pt>
+<resources/pixel_boundingBox.png, id=3109, 894.34125pt x 711.65875pt>
 File: resources/pixel_boundingBox.png Graphic file (type png)
 <use resources/pixel_boundingBox.png>
-Package pdftex.def Info: resources/pixel_boundingBox.png  used on input line 7856.
+Package pdftex.def Info: resources/pixel_boundingBox.png  used on input line 7903.
 (pdftex.def)             Requested size: 447.16953pt x 355.8285pt.
-[163 <./resources/Triangle_Side_Cross_Prodyct.png>] [164 <./resources/pixel_boundingBox.png>]
+[165 <./resources/Triangle_Side_Cross_Prodyct.png>] [166 <./resources/pixel_boundingBox.png>]
 Á¨¨‰∏âÁ´†
-[165
+[167
 
-] [166] [167] [168] [169] [170]
-Overfull \hbox (24.49316pt too wide) in paragraph at lines 8144--8145
+] [168] [169] [170] [171] [172]
+Overfull \hbox (24.49316pt too wide) in paragraph at lines 8191--8192
 []\C70/rm/m/n/12/5c  \C70/rm/m/n/12/53 Ô \C70/rm/m/n/12/4e Â \C70/rm/m/n/12/72 Ï \C70/rm/m/n/12/7a À \C70/rm/m/n/12/5b X \C70/rm/m/n/12/57 ( \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/8b ˛ \C70/rm/m/n/12/98 ò\OT1/cmr/m/n/12 (\C70/rm/m/n/12/51 w \C70/rm/m/n/12/4f S \C70/rm/m/n/12/4e ã \C70/rm/m/n/12/52 ° \C70/rm/m/n/12/62  Ω \C70/rm/m/n/12/8c a \C70/rm/m/n/12/69 Ç \C70/rm/m/n/12/5f ı\OT1/cmr/m/n/12 )\C70/rm/m/n/12/79  \C70/rm/m/n/12/4e : * \C70/rm/m/n/12/4f S \C70/rm/m/n/12/62  \C70/rm/m/n/12/4e * \C70/rm/m/n/12/4f S \C70/rm/m/n/12/8b Õ\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/5e v \C70/rm/m/n/12/75 ($\OML/cmm/m/it/12 a; b; c; [] $\C70/rm/m/n/12/88 h \C70/rm/m/n/12/79 : \C70/rm/m/n/12/4e * \C70/rm/m/n/12/4f S \C70/rm/m/n/12/5e 8 \C70/rm/m/n/12/51 C\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/75 ($\OML/cmm/m/it/12 x; y; z; [] $\C70/rm/m/n/12/88 h
  []
 
-[171] [172]
-Overfull \hbox (43.95854pt too wide) in paragraph at lines 8232--8233
+[173] [174]
+Overfull \hbox (43.95854pt too wide) in paragraph at lines 8279--8280
 []\C70/rm/m/n/12/4e   \C70/rm/m/n/12/96 6 \C70/rm/m/n/12/8c  \C70/rm/m/n/12/8b Õ \C70/rm/m/n/12/90 ; \C70/rm/m/n/12/8f ë \C70/rm/m/n/12/51 l \C70/rm/m/n/12/5f  \C70/rm/m/n/12/4e _ \C70/rm/m/n/12/7b Ä \C70/rm/m/n/12/79  \C70/rm/m/n/12/4e : \C70/rm/m/n/12/51 l \C70/rm/m/n/12/5f \OT1/cmr/m/n/12 ,\C70/rm/m/n/12/5b É \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/5f b \C70/rm/m/n/12/62  \C70/rm/m/n/12/89 ƒ \C70/rm/m/n/12/52  \C70/rm/m/n/12/7c { \C70/rm/m/n/12/4f < \C70/rm/m/n/12/4e é \C70/rm/m/n/12/54 } \C70/rm/m/n/12/98 ò \C70/rm/m/n/12/90 ; \C70/rm/m/n/12/8f ë \C70/rm/m/n/12/51 l \C70/rm/m/n/12/5f \OT1/cmr/m/n/12 ,\C70/rm/m/n/12/53 Í \C70/rm/m/n/12/97   \C70/rm/m/n/12/52 † \C70/rm/m/n/12/4e 
    \C70/rm/m/n/12/67 a \OT1/cmr/m/n/12 : \C70/rm/m/n/12/82 Â$\OML/cmm/m/it/12 A$\C70/rm/m/n/12/66 / \C70/rm/m/n/12/51 l \C70/rm/m/n/12/5f \OT1/cmr/m/n/12 ,\C70/rm/m/n/12/52 $\OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 xA$\C70/rm/m/n/12/4e $\OMS/cmsy/m/n/12 9\OML/cmm/m/it/12 xA$\C70/rm/m/n/12/4e _
  []
 
-[173] [174] [175]
-Overfull \hbox (0.33687pt too wide) in paragraph at lines 8380--8381
+[175] [176] [177]
+Overfull \hbox (0.33687pt too wide) in paragraph at lines 8427--8428
 []\C70/rm/m/n/12/5f S \C70/rm/m/n/12/54 } \C70/rm/m/n/12/98 ò\OT1/cmr/m/n/12 "\C70/rm/m/n/12/82 Â\OT1/cmr/m/n/12 P\C70/rm/m/n/12/52 \OT1/cmr/m/n/12 Q"\C70/rm/m/n/12/4e : \C70/rm/m/n/12/77 \OT1/cmr/m/n/12 ,\C70/rm/m/n/12/80 \OT1/cmr/m/n/12 "\C70/rm/m/n/12/82 Â\OT1/cmr/m/n/12 Q\C70/rm/m/n/12/52 \OT1/cmr/m/n/12 P\C70/rm/m/n/12/4e : \C70/rm/m/n/12/50 G \C70/rm/m/n/12/65 ˆ\OT1/cmr/m/n/12 ",P\C70/rm/m/n/12/66 /\OT1/cmr/m/n/12 Q\C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/51 E \C70/rm/m/n/12/52  \C70/rm/m/n/12/4e  \C70/rm/m/n/12/5f ≈ \C70/rm/m/n/12/89 Å \C70/rm/m/n/12/67 a \C70/rm/m/n/12/4e ˆ\OT1/cmr/m/n/12 ,Q\C70/rm/m/n/12/66 /\OT1/cmr/m/n/12 P\C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/5f ≈ \C70/rm/m/n/12/89 Å \C70/rm/m/n/12/4e  \C70/rm/m/n/12/51 E \C70/rm/m/n/12/52  \C70/rm/m/n/12/67 a \C70/rm/m/n/12/4e ˆ\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/53 Õ \C70/rm/m/n/12/4e K ¶ \C70/rm/m/n/12/71 6\OT1/cmr/m/n/12 . 
  []
 
-[176] [177] [178
+[178] [179] [180
 
 ]
 Á¨¨ÂõõÁ´†
-[179] [180
-
-]
-Á¨¨‰∫îÁ´†
 [181] [182
 
 ]
-Á¨¨ÂÖ≠Á´†
+Á¨¨‰∫îÁ´†
 [183] [184
 
 ]
-Á¨¨‰∏ÉÁ´†
+Á¨¨ÂÖ≠Á´†
 [185] [186
 
 ]
+Á¨¨‰∏ÉÁ´†
+[187] [188
+
+]
 Á¨¨ÂÖ´Á´†
-[187]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 8445.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 8445.
+[189]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 8492.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 8492.
  (note.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 8445.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 8445.
-
-
-Package rerunfilecheck Warning: File `note.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `note.out':
-(rerunfilecheck)             Before: 47096CD797E00F5F52C2AC867B623590;45493
-(rerunfilecheck)             After:  2450C7418B7453AC47F35CECC4C88EED;45606.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 8445.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 8492.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 8492.
+Package rerunfilecheck Info: File `note.out' has not changed.
+(rerunfilecheck)             Checksum: F12F535FC6A3A44074F32D54825D05EB;45854.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 8492.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 179 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 44053 strings out of 481212
- 975242 string characters out of 2901265
+ 44067 strings out of 481212
+ 975596 string characters out of 2901265
  1485010 words of memory out of 3000000
- 57562 multiletter control sequences out of 15000+200000
+ 57571 multiletter control sequences out of 15000+200000
  627668 words of font info for 376 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,17n,376p,755b,2379s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1773,9 +1772,9 @@ Here is how much of TeX's memory you used:
 
 pdfTeX warning: pdflatex (file C:/Windows/Fonts/simsun.ttc): subfont unisongff: wrong mapping: character 253 --> 0xFFFD --> .notdef
 ><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf> <C:\Users\19920\scoop\apps\latex\current\texmfs/data\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/esint-type1/esint10.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/latxfont/line10.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on note.pdf (200 pages, 4554639 bytes).
+Output written on note.pdf (202 pages, 4574146 bytes).
 PDF statistics:
- 3988 PDF objects out of 4296 (max. 8388607)
- 771 named destinations out of 1000 (max. 500000)
- 3450 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 4013 PDF objects out of 4296 (max. 8388607)
+ 775 named destinations out of 1000 (max. 500000)
+ 3479 words of extra memory for PDF output out of 10000 (max. 10000000)
 
