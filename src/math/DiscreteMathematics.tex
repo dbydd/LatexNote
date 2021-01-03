@@ -1,0 +1,619 @@
+\section{离散数学}{
+
+\subsection{前置知识}
+
+\subsection{集合论}{
+
+\subsubsection{集合论的主要内容}{
+  \begin{itemize}
+    \item 研究对象 : 集合,关系,函数,自然数,基数
+    \item 研究思想 : 以逻辑为基础,以集合为工具,表示和构造各种数学对象
+    \item 研究内容 : \begin{itemize}
+            \item 集合的基本概念 : 集合之间的关系,运算,恒等式
+            \item 二元关系 : 表示,性质,函数,等价关系,序关系
+            \item 自然数 : 皮亚诺系统,自然数的运算,性质
+            \item 基数 : 有序集于无穷集,基数的比较
+            \item 良序,超限归纳法
+          \end{itemize}
+  \end{itemize}
+}%集合论的主要内容结尾
+
+\subsubsection{集合论中的问题}{
+  \begin{itemize}
+    \item 如何给集合下定义?
+    \item 如何用集合去定义关系,函数,自然数?
+    \item 如何比较集合的大小?
+    \item 能否把每个集合的元素依次列举出来?
+    \item 有没有最大的集合?
+  \end{itemize}
+}%集合论中的问题结尾
+
+\subsubsection{集合的表示}{
+  \begin{itemize}
+    \item {
+          列举法 :
+
+          列出集合中的全体元素,元素之间用逗号分开,然后用花括号括起来,比如 : $A = \{a,b,c,d\},B = \{2,4,6,\dots\}$.
+          }
+    \item {
+          描述法 :
+
+          用谓词$P(x)$表示$x$具有性质$P$,用$\{x | P(x)\}$表示具有性质$P$的集合.例如 : $P_1(x)$表示$x$是英文字母,$P_2(x)$表示$x$是十进制数字,$C = \{x | P_1(x)\}$表示26个英文字母的集合,$D = \{x | P_2(x)\}$表示10个十进制数字的集合.
+          }
+  \end{itemize}
+}%集合的表示结尾
+
+\subsubsection{描述集合的注意事项}{
+  \begin{enumerate}
+    \item 集合中的元素是各不相同的.
+    \item 集合中的元素不规定顺序.
+    \item {
+          集合的两种表示法可以互相转化,例如,$B={2,4,6,...}$可用描述法表示为$B=\{x|x>0\mbox{且x是偶数}\}$或$B=\{x|x=2(k+1),\mbox{k为非负整数}\}$.
+          }
+  \end{enumerate}
+}%描述集合的注意事项结尾
+
+\subsubsection{常用的集合}{
+  \begin{itemize}
+    \item $\mathNatureNumberCollection$: 自然数集合 $\mathNatureNumberCollection = {0,1,2,3,\dots}$
+    \item $\mathIntegerCollection$: 整数集合 $\mathIntegerCollection = {0, \pm 1, \pm 2, \dots} = {\dots, -2, -1, 0, 1, 2, \dots}$
+    \item $\mathRationalNumberCollection$: 有理数集合
+    \item $\mathRealNumberCollection$: 实数集合
+    \item $\mathComplexNumberCollection$: 复数集合
+  \end{itemize}
+}%常用的集合结尾
+
+\subsubsection{子集}{
+  设$A,B$为二集合,若$B$中的元素都是$A$中的元素,则称$B$是$A$的子集,也称$A$包含$B$,或者$B$包含于$A$,记作$B \subseteq A$,其符号化形式为 : $$
+    B \subseteq A \Leftrightarrow \forall x (x \in B \to x \in A)
+  $$
+  若$B$不是$A$的子集,则记作$B \subsetneq A$,其符号化形式为 : $$
+    B \subsetneq A \Leftrightarrow \exists x (x \in B \land x \notin A)
+  $$
+}%子集结尾
+
+\subsubsection{有限集和无限集}{
+  \begin{itemize}
+    \item 有限集,即元素数量优先的集合,定义叙述为 : $S$是由$n$个元素组成的集合($n$是非负正整数,包含0),则称$S$为有限集.
+    \item 无限集:不是有限集的集合都是无限集.
+  \end{itemize}
+}%有限集和无限集结尾
+
+\subsubsection{可列集}{
+  可列集是无限集的一种,如果某无限集$S$中的元素可以按某种规则排成一列,并且无重复,无遗漏,则称该$S$为可列集.
+
+  此时$S$可以被用列举法或者描述法表示.
+
+  任何无限集都包含可列集,但是无限集本身不一定是可列集.
+
+  另外,可列个可列集的并也是可列集.
+
+}%可列集结尾
+
+\subsubsection{相等}{
+  设$A,B$为二集合,若$A$包含$B$且$B$包含$A$,则称$A$与$B$相等,记作$A = B$,符号化形式为 : $$
+    A = B \Leftrightarrow \forall x (x \in B \leftrightarrow x \in A)
+  $$
+}%相等结尾
+
+\subsubsection{集合之间包含关系的性质}{
+  设$A,B,C$为三个集合,则以下三命题为真 :
+
+  \begin{enumerate}
+    \item $A \subseteq A$;
+    \item 若$A \subseteq A$且$A \neq B$,则$B \subsetneq A$;
+    \item 若$A \subseteq B$且$B \subseteq C$,则$A \subseteq C$
+  \end{enumerate}
+}%集合之间包含关系的性质结尾
+
+\subsubsection{真子集}{
+  设$A,B$为二集合,若$A$为$B$的子集且$A \neq B$,则称$A$为$B$的真子集,或者又称$B$真包含$A$,记作$A \subset B$,符号化形式为 : $$
+    A \subset B \Leftrightarrow A \subseteq B \land A \neq B
+  $$
+  若$A$不是$B$的真子集,则记作$A \notRealSubset B$,其符号化形式为 : $$
+    A \notRealSubset B \Leftrightarrow \exists x (x \in A \land x \notin B) \land A \neq B
+  $$
+
+  设$A,B,C$为三个集合,则以下命题为真 :
+
+  \begin{enumerate}
+    \item $A \notRealSubset A$;
+    \item 若$A \subset B$,则$B \notRealSubset A$;
+    \item 若$A \subset B$,且$B \subset C$,则$A \subset C$
+  \end{enumerate}
+}%真子集结尾
+
+\subsubsection{空集}{
+  不拥有任何元素的集合称为空集合,简称空集,记作$\emptyset$(读作ugh)
+
+  比如$\{x | x^2 + 1 = 0 \land x \in \mathRealNumberCollection\}$和$\{(x,y) | x^2+y^2 < 0 \land x,y \in \mathRealNumberCollection\}$都是空集.
+
+  注意 :
+
+  \begin{itemize}
+    \item 空集是一切集合的子集,
+    \item 空集是唯一的
+    \item 空集是最小的集合.
+  \end{itemize}
+}%空集结尾
+
+\subsubsection{全集}{
+  如果限定所讨论的集合都是某个集合的子集，则称该集合为全集,记作$\mathEverythingCollection$.
+
+  从定义可以看出,全集是相对的,视具体情况而定,因此不唯一.
+
+  比如 : 讨论区间$(a,b)$上的实数的性质时,可以取$(a,b)$为全集,也可以取$[a,b),(a,b],(a , +\infty),\mathRealNumberCollection$等为全集.
+
+  给定若干个集合之后,都可以找到包含它们的全集.在今后讨论中,所涉及的集合都可以看成是某个全集$\mathEverythingCollection$的子集.
+}%全集结尾
+
+\subsubsection{幂集}{
+  设$A$为一个集合,称由$A$的全体子集组成的集合为$A$的幂集,记作$\powerSetOf{A}$.
+
+  用描述法可以表示为 $\powerSetOf{A} = \{x | x \subseteq A\}$
+
+  注意 :
+
+  \begin{itemize}
+    \item 在概率论中也会用$\powerSetOf{A}$来表示事件$A$的概率,两者虽然不相同但是定义是一样的.
+    \item 为了避免混淆,也可以用$2^A$表示$A$的幂集.
+    \item 这并不是没有道理,设集合$A$的元素个数$\absoluteValue{A} = n$,则$\absoluteValue{\powerSetOf{A}} = 2^n$
+  \end{itemize}
+}%幂集结尾s
+
+\subsubsection{集合的元素个数}{
+  $\emptyset$为$0$元集,含1个元素的集合为单元集或1元集,含两个元素的集合为2元集,依次类推,含$n$个元素的集合称为$n$元集$(n \geq 1)$.
+
+  用$\absoluteValue{A}$表示集合$A$中该点元素个数,当$A$中的元素个数为有限数时,$A$称为有穷集或有限集.
+}%集合的元素个数结尾
+
+\subsubsection{求幂集的步骤}{
+  为了求出给定集合$A$的幂集,先求$A$的由低到高的所有子集,再将它们组成集合.
+
+  设$A = \{a,b,c\}$,求$\powerSetOf{A}$的步骤如下 :
+
+  0元子集为$\emptyset$;1元子集为$\{a\},\{b\},\{c\}$;2元子集为$\{a,b\},\{a,c\},\{b,c\}$;3元子集为$\{a,b,c\} = A$;
+
+  所以,$A$的幂集为 : $$
+    \powerSetOf{A} = \{\emptyset,\{a\},\{b\},\{c\},\{a,b\},\{a,c\},\{b,c\},\{a,b,c\}\}
+  $$
+}%求全集的步骤结尾
+
+\subsubsection{集族}{
+除了幂集$\powerSetOf{A}$以外,还有其他形式的由集合构成的集合,统称为集族.若集族中的集合都赋予记号,则可得带指标集的集族.
+
+设$\mathcal{A}$为一个集族,$S$为一个集合,若对于任意的$\alpha \in S$,存在唯一的$A_\alpha \in \mathcal{A}$与之对应,而且$\mathcal{A}$中的任意集合都对应$S$中的某一元素,则称$\mathcal{A}$是以$S$为指标集的集族,$S$称为$\mathcal{A}$的指标集.记为$\mathcal{A} = \{A_\alpha | \alpha \in S\}$,或$\mathcal{A} = \{A_\alpha\}_{\alpha \in S}$
+
+如果把$\emptyset$看作集族,则称$\emptyset$为空集族.
+}%集族结尾
+
+\subsubsection{多重集}{
+  设全集为$\mathEverythingCollection$,$\mathEverythingCollection$中元素可以不止一次在$A$中出现的集合$A$称为多重集.若$\mathEverythingCollection$中元素$a$在$A$中出现$k$次($k \geq 0$),则称$a$在$A$中重复度为$k$.
+
+  例如 : 设全集$E = \{a,b,c,d,e\},A = \{a,a,b,b,c\}$为多重集,其中$a,b$的重复度为2,$c$的重复度为1,而$d,e$的重复度为0.
+
+  集合可以看作重复度均$\leq 1$的多重集.
+}%多重集结尾
+
+\subsubsection{并集}{
+  设$A,B$为二集合,称由$A$和$B$的所有元素组成的集合为$A$与$B$的并集,记作$A \unionSet B$,称$\unionSet$为并元算符.
+
+  $A \unionSet B$得到的集合,用描述法可以表示为 : $$
+    A \unionSet B = \{x | x \in A \lor x \in B\}
+  $$
+  集合的并运算可以推广到有限个或可数个集合(初级并).
+
+  设$A_1,A_2,\dots,A_n$为$n$个集合,$A_1,A_2,\dots,A_n,\dots$为可数个集合,则 : $$
+    A_1 \unionSet A_2 \unionSet \dots \unionSet A_n = \{x | \exists i (1 \leq i \leq n \land x \in A_i)\}
+  $$
+
+  并集也可以写作类似求和的形式 : $$
+    \updownUnion{n}{i = 1}A_i = A_1 \unionSet A_2 \unionSet \dots \unionSet A_n
+  $$
+
+}%并集结尾
+
+\subsubsection{交集}{
+  设$A,B$为二集合,称由$A$和$B$的公共元素组成的集合为$A$与$B$的交集,记作$A \intersectionSet B$,称$\intersectionSet$为并元算符.
+
+  $A \intersectionSet B$的描述法表示为$$
+    A \intersectionSet B = \{x | x \in A \land x \in B\}
+  $$
+  集合的交运算可以推广到有限个或可数个集合(初级交).
+
+  设$A_1,A_2,\dots,A_n,\dots$为可数个集合,则 : $$
+    A_1 \intersectionSet A_2 \intersectionSet \dots \intersectionSet A_n = \{x | \forall i (1 \leq i \leq n \to x \in A_i)\}
+  $$
+
+  同样的,也有这种简化形式 : $$
+    \bigcap\limits_{i = 1}^{n}A_i = A_1 \intersectionSet A_2 \intersectionSet \dots \intersectionSet A_n
+  $$
+}%交集结尾
+
+\subsubsection{不相交}{
+  设$A,B$为二集合,若$A \intersectionSet B = \emptyset$,则称$A$和$B$是不交的.设$A_1,A_2,\dots$是可数个集合秒如果对于任意的$i \neq j$,都有$A_i \intersectionSet A_j = \neq$,则称$A_1,A_2,\dots$是互不相交的.
+
+  设$A_n = \{x \in R | n - 1 < x < n\},n = 1,2,\dots$,则$A_1,A_2,\dots$是互不相交的.
+}%不相交结尾
+
+\subsubsection{相对补集}{
+  设$A,B$为二集合,称属于$A$而不属于$B$的全体元素组成的集合为$B$对$A$的相对补集,记作$A - B$或$\complement_A B$.$A - B$的描述法表示为 : $$
+    A - B = \{x | x \in A \land x \notin B\}
+  $$
+}%相对补集
+
+\subsubsection{对称差}{
+  设$A,B$为二集合,称属于$A$而不属于$B$,或属于$B$而不属于$A$的全体元素组成的集合为$A$与$B$的对称差,记作$A \oplus B$.
+
+  $A \oplus B$的描述法表示为 : $$
+    A \oplus B = \{x | (x \in A \land x \notin B) \lor (x \notin A \land x \in B)\}
+  $$
+  容易看出 : $$
+    A \oplus B = (A - B) \unionSet (B - A) = (A \unionSet B) - (A \intersectionSet B)
+  $$
+}%对称差结尾
+
+\subsubsection{绝对补集}{
+  设$\mathEverythingCollection$为全集,$A \subseteq \mathEverythingCollection$, 称$A$对$\mathEverythingCollection$的相对补集为$A$的绝对补集,记作$A\absoluteCompletementSet$或${~}^\sim A$或$\complement_{\mathEverythingCollection} A$.
+
+  $A\absoluteCompletementSet$的描述法表示为 : $$
+    A\absoluteCompletementSet = \{x | x \in \mathEverythingCollection \land x \notin A\}
+  $$
+  因为$\mathEverythingCollection$是全集,所以$x \in \mathEverythingCollection$是真命题,于是 : $$
+    A\absoluteCompletementSet = \{x | x \notin A\}
+  $$
+}%绝对补集结尾
+
+\subsubsection{广义并集}{
+  设$\mathcal{A}$为一个集族,称由$\mathcal{A}$中全体元素的元素组成的集合为$\mathcal{A}$的广义并,记作$\bigcup \mathcal{A}$("大并$\mathcal{A}$").
+
+  $\bigcup \mathcal{A}$的描述法表示为 : $$
+    \bigcup\mathcal{A} = \{x | \exists z (x \in z \land z \in \mathcal{A})\}
+  $$
+
+  设$\mathcal{A} = \{\{a,b\},\{c,d\},\{d,e,f\}\}$,则$\bigcup \mathcal{A} = \{a,b,c,d,e,f\}$.
+
+  当$\mathcal{A}$是以$S$为指标集的集族时 : $$
+    \bigcup\mathcal{A} = \bigcup\{A_\alpha | \alpha \in S\} = \bigcup_{\alpha \in S}A_\alpha
+  $$
+}%广义并集结尾
+
+\subsubsection{广义交}{
+  设$\mathcal{A}$为一个集族,称由$\mathcal{A}$中全体元素的元素组成的集合为$\mathcal{A}$的广义并,记作$\bigcap \mathcal{A}$("大并$\mathcal{A}$").
+
+  $\bigcap \mathcal{A}$的描述法表示为 : $$
+    \bigcap\mathcal{A} = \{x | \exists z (x \in z \land z \in \mathcal{A})\}
+  $$
+
+  设$\mathcal{A} = \{\{1,2,3\},\{1,a,b\},\{1,6,7\}\}$,则$\bigcap \mathcal{A} = \{1\}$.
+
+  当$\mathcal{A}$是以$S$为指标集的集族时 : $$
+    \bigcap\mathcal{A} = \bigcap\{A_\alpha | \alpha \in S\} = \bigcap_{\alpha \in S}\mathcal{A}_\alpha
+  $$
+
+  注意 : 当$A = \emptyset$时,$\intersectionSet \emptyset$无意义.
+}%广义交结尾
+
+\subsubsection{集合运算的优先级}{
+  有以下几类 :
+
+  \begin{itemize}
+    \item 第一类运算(此类运算按照从左向右的顺序进行) : 绝对补,幂集,广义交,广义并等.
+    \item 第二类运算(此类运算按照括号决定的顺序运算,多个括号并排或没有括号的部分按照从左向右的顺序运算) : 初级并,初级交,相对补,对称差等.
+  \end{itemize}
+}%集合运算的优先级结尾
+
+\subsubsection{文氏图}{
+  文氏图就是将集合与集合之间的关系以及一些运算的结果用图像进行表示.在文氏图中,用矩形代表全集,用元或者其他闭曲线的内部代表$\mathEverythingCollection$的子集,并将运算结果得到的集合用阴影部分表示.
+
+  \begin{center}
+    \includegraphics{resources/Venn's_diagram.png}
+  \end{center}
+}%文氏图结尾
+
+\subsubsection{容斥原理(排斥原理)}{
+  设$A_1,A_2,\dots,A_n$为$n$个集合,则 : $$
+    \absoluteValue{\updownUnion{n}{i = 1}A_i} = \upDownSum{n}{i = 1}\absoluteValue{A_i} - \upDownSum{\ }{i < j}\absoluteValue{A_i \intersectionSet A_j} + \upDownSum{\ }{i < j < k}\absoluteValue{A_i \unionSet A_j \unionSet A_k} - \dots + (-1)^{n - 1}\absoluteValue{A_1 \unionSet A_2 \unionSet \dots \unionSet A_n}
+  $$
+}
+
+\subsubsection{基本集合恒等式}{
+  设$\mathEverythingCollection$,$A,B,C$为$\mathEverythingCollection$的任意子集:
+
+  \begin{enumerate}
+    \item 幂等律 : $A \intersectionSet A = A, A \unionSet A = A$
+    \item 交换律 : $A \unionSet B = B \unionSet A,A \intersectionSet B = B \intersectionSet A$
+    \item 结合律 : $(A \unionSet B) \unionSet C = A \unionSet (B \unionSet C),(A \intersectionSet B) \intersectionSet C = A \intersectionSet (B \intersectionSet C)$
+    \item 分配律 : $A \unionSet (B \intersectionSet C) = (A \intersectionSet B) \intersectionSet (A \unionSet C), A \intersectionSet (B \unionSet C) = (A \intersectionSet B) \unionSet (A \intersectionSet C)$
+    \item 德$\cdot$摩根律 : \begin{itemize}
+            \item 绝对形式 : $(A \unionSet B)\absoluteCompletementSet = A\absoluteCompletementSet \intersectionSet B\absoluteCompletementSet,(A \intersectionSet B)\absoluteCompletementSet = A\absoluteCompletementSet \unionSet B\absoluteCompletementSet$
+            \item 相对形式 : $\mathEverythingCollection - (A \unionSet B) = (\mathEverythingCollection - A) \intersectionSet (\mathEverythingCollection - B),\mathEverythingCollection - (A \intersectionSet B) = (\mathEverythingCollection - A) \unionSet (\mathEverythingCollection - B)$
+          \end{itemize}
+    \item 吸收律 : $A \unionSet (A \intersectionSet B) = A,A \intersectionSet (A \unionSet B) = A$
+    \item 零律 : $A \unionSet \mathEverythingCollection = E,A \intersectionSet \emptyset = \emptyset$
+    \item 同一律 : $A \unionSet \emptyset = A,A \intersectionSet E = A$
+    \item 排中律 : $A \unionSet A\absoluteCompletementSet = \mathEverythingCollection$
+    \item 矛盾律 : $A \intersectionSet A\absoluteCompletementSet = \emptyset$
+    \item 余补律 : $\emptyset\absoluteCompletementSet = \mathEverythingCollection,\mathEverythingCollection\absoluteCompletementSet = \emptyset$
+    \item 双重否定律 : $(A\absoluteCompletementSet)\absoluteCompletementSet = A$
+    \item 补交转换律 : $A - B = A \intersectionSet B\absoluteCompletementSet$
+  \end{enumerate}
+}%基本集合恒等式结尾
+
+\subsubsection{集合恒等式推广到集族的情况}{
+设$\{A_\alpha\}_{\alpha \in S}$为集族,$B$为一集合 :
+
+\begin{itemize}
+  \item 分配律 : $B \unionSet (\updownIntersection{~}{~}\{A_\alpha\}_{\alpha \in S}) = \updownIntersection{~}{\alpha \in S}(B \unionSet A_\alpha),B \intersectionSet (\updownUnion{~}{~}\{A_\alpha\}_{\alpha \in S}) = \updownUnion{~}{\alpha \in S}(B \intersectionSet A_\alpha)$
+  \item 德$\cdot$摩根律 : \begin{itemize}
+          \item 绝对形式: \begin{itemize}
+                  \item $(\updownUnion{~}{~}\{A_\alpha\}_{\alpha \in S})\absoluteCompletementSet = \updownIntersection{~}{\alpha \in S}(A_\alpha\absoluteCompletementSet)$
+                  \item$(\updownIntersection{~}{~}\{A_\alpha\}_{\alpha \in S})\absoluteCompletementSet = \updownUnion{~}{\alpha \in S}(A_\alpha\absoluteCompletementSet)$
+                \end{itemize}
+          \item 相对形式 : \begin{itemize}
+                  \item $B - (\updownUnion{~}{~}\{A_\alpha\}_{\alpha \in S}) = \updownIntersection{~}{\alpha \in S}(B - A_\alpha)$
+                  \item $B - (\updownIntersection{~}{~}\{A_\alpha\}_{\alpha \in S}) = \updownUnion{~}{\alpha \in S}(B - A_\alpha)$
+                \end{itemize}
+        \end{itemize}
+\end{itemize}
+}%集合恒等式推广到集族的情况结尾
+
+\subsubsection{集合幂集运算的性质}{
+  \begin{enumerate}
+    \item $A \subseteq B$当且仅当$\powerSetOf{A} \subseteq \powerSetOf{B}$
+    \item $\powerSetOf{A - B} \subseteq (\powerSetOf{A} - \powerSetOf{B}) \unionSet \{\emptyset\}$
+  \end{enumerate}
+}%集合幂集运算的性质结尾
+
+\subsubsection{有序对(有序二元组)}{
+  有序对又称有序二元组 : $$
+    <a,b> = \{\{a\},\{a,b\}\}
+  $$
+
+  其中$a$是第一元素,$b$是第二元素.
+
+  $<a,b>$也记作$(a,b)$.
+
+  由于集合没有顺序,因此${a,b}$和${b,a}$是一样的.又称无序对,在公理集合论中有一条定义无序对的公理,称为无序对公理 : $$
+    \mbox{如果$a,b$是集合,则\{a,b\}依然是集合}
+  $$
+
+  而在$<a,b>$中,$a$在每一个子集合中,而$b$只出现在其中一个子集合中,因此他们的地位不相等,所以在有序对中$a$是第一元素,$n$是第二元素.
+
+  实际上是定义了一个数组,用这种方法来保证元素的顺序.
+
+  接下来一章严格证明有序对的性质.
+}%有序对结尾
+
+\subsubsection{有序对性质的证明}{
+  \begin{itemize}
+    \item {
+          引理1 : $\{x,a\} = \{x,b\} \Leftrightarrow a = b$
+
+          叙述为 : 当集合$\{x,a\}$等于$\{x,b\}$当且仅当$a = b$.
+
+          证明 : \begin{itemize}
+            \item 充分性($\Leftarrow$) 是显然的,因此不证.
+            \item 必要性($\Rightarrow$) 分两种情况 : \begin{enumerate}
+                    \item $x = a.\ \{x,a\} = \{x,b\} \Rightarrow \{a,a\} = \{a,b\} \Rightarrow \{a\} = \{a,b\} \Rightarrow a = b$
+                    \item $x \neq a.\ a \in \{x,a\} = \{x,b\} \Rightarrow a = b$.
+                  \end{enumerate}
+          \end{itemize}
+
+          \qed
+          }
+    \item {
+          引理2 : 若$\mathcal{A} = \mathcal{B} \neq \emptyset$.则 : \begin{enumerate}
+            \item $\updownUnion{~}{~}\mathcal{A} = \updownUnion{~}{~}\mathcal{B}$
+            \item $\updownIntersection{~}{~}\mathcal{A} = \updownIntersection{~}{~}\mathcal{B}$
+          \end{enumerate}
+
+          证明 : \begin{enumerate}
+            \item $\forall x,x \in \updownUnion{~}{~}\mathcal{A} \Leftrightarrow \exists z(z \in \mathcal{A} \land x \in z) \Leftrightarrow \exists z(z \in \mathcal{B} \land x \in z) \Leftrightarrow x \in \updownUnion{~}{~}\mathcal{B}$
+            \item $\forall x,x \in \updownIntersection{~}{~}\mathcal{A} \Leftrightarrow \forall z(z \in \mathcal{A} \land x \in z) \Leftrightarrow \forall z(z \in \mathcal{B} \land x \in z) \Leftrightarrow x \in \updownIntersection{~}{~}\mathcal{B}$
+          \end{enumerate}
+
+          \qed
+          }
+    \item {
+          定理(性质1)--两个有序对相对,当且仅当他们的第一个元素和第二个元素分别相等 : $<a,b> = <c,d> \Leftrightarrow a = c \land b = d$
+
+          证明 : \begin{itemize}
+            \item ($\Leftarrow$) 显然,不证.
+            \item{
+                  ($\Rightarrow$) :
+
+                  由引理2,$\set{\set{a},\set{a,b}} = \set{\set{c},\set{c,d}} \Rightarrow \updownIntersection{~}{~}\set{\set{a},\set{a,b}} = \updownIntersection{~}{~}\set{\set{c},\set{c,d}} \Rightarrow \set{a} = \set{c} \Leftrightarrow a = c$
+
+                  又因为$<a,b> = <c,d> \Leftrightarrow \set{\set{a},\set{a,b}} = \set{\set{c},\set{c,d}} \Rightarrow \updownUnion{~}{~}\set{\set{a},\set{a,b}} = \updownUnion{~}{~}\set{\set{c},\set{c,d}} \Rightarrow \set{a,b} = \set{c,d}$
+
+                  再由引理1,得出$b = d$.
+
+                  \qed
+                  }
+          \end{itemize}
+          }
+    \item {
+          推论 : $a \neq b \Rightarrow <a,b> \neq <b,a>$
+
+          证明(反证) : $$
+            <a,b> = <b,a> \Leftrightarrow a = b
+          $$
+          与$a \neq b$矛盾.
+
+          \qed
+          }
+  \end{itemize}
+}%有序对性质的证明结尾
+
+\subsubsection{有序n元组}{
+  \begin{itemize}
+    \item {
+          有序三元组 : $$
+            <a,b,c> = <<a,b>,c>
+          $$
+          }
+    \item {
+          有序n($n > 2$)元组 : $$
+            <a_1,a_2,\dots,a_n> = <<a_1,a_2,\dots,a_{n - 1}>,a_n>
+          $$
+          }
+  \end{itemize}
+
+  有以下定理 : $$
+    <a_1,a_2,\dots,a_n> = <b_1,b_2,\dots,b_n> \Leftrightarrow a_i = b_i,i = 1,2,\dots,n
+  $$
+}%有序n元组结尾
+
+\subsubsection{笛卡尔乘积集合(卡氏积)}{
+  设$A,B$为两个集合,取$x \in A,y \in B$,构造有序对集合$\{(x,y)| x \in A \land y \in B\}$(属于$A$的$x$在前面,属于$B$的$y$在后面),将这样的集合记为笛卡尔乘积集合(又称为卡氏积) : $$
+    A \times B = \set{<x,y>|x \in A \land y \in B}
+  $$
+
+  这种集合可以用来表示两个集合中元素的排列组合.
+
+  举例,设$A = \set{\emptyset,a},B = \set{1,2,3}$,则 :
+
+  \begin{itemize}
+    \item $A \times B = \set{<\emptyset,1>,<\emptyset,2>,<\emptyset,3>,<a,1>,<a,2>,<a,3>}$
+    \item $B \times A = \set{<1,\emptyset>,<1,a>,<2,\emptyset>,<2,a>,<3,\emptyset>,<3,a>}$
+    \item $A \times A = \set{<\emptyset,\emptyset>,<\emptyset,a>,<a,\emptyset>,<a,a>}$
+    \item \dots
+  \end{itemize}
+}%笛卡尔乘积集合结尾
+
+\subsubsection{卡氏积的性质}{
+  \begin{itemize}
+    \item {
+          卡氏积非交换性 : $A \times B \neq B \times A$(除非$A = B \lor A = \emptyset \lor B = \emptyset$)
+
+          反证法反例 : 设$A = \set{1},B = \set{2}$ : $$
+            A \times B = \set{<1,2>} \neq \set{<2,1>} = B \times A
+          $$
+
+          \qed
+          }
+    \item {
+          卡氏积非结合性 : $(A \times B) \times C \neq A \times (B \times C)$(除非$A = \emptyset \lor B = \emptyset \lor C = \emptyset$)
+
+          反证法反例 : $A = B = C = \set{1}$ : $$
+            (A \times B) \times C = \set{<<1,1>,1>} \neq \set{<1,<1,1>>} = A \times (B \times C)
+          $$
+
+          \qed
+          }
+    \item {
+          卡氏积分配律 :
+
+          \begin{enumerate}
+            \item $A \times (B \unionSet C) = (A \times B) \unionSet (A \times C)$
+            \item $A \times (B \intersectionSet C) = (A \times B) \intersectionSet (A \times C)$
+            \item $(B \unionSet C) \times A = (B \times A) \unionSet (C \unionSet A)$
+            \item $(B \intersectionSet C) \times A = (B \times A) \intersectionSet (C \times A)$
+          \end{enumerate}
+
+          其中选一个证明 : $A \times (B \unionSet C) = (A \times B) \unionSet (A \times C)$.
+
+          证明 : \begin{math}
+            \forall <x,y>,<x,y> \in A \times (B \unionSet C) \\
+            \Leftrightarrow x \in A \land y \in (B \unionSet C) \Leftrightarrow x \in A \land (y \in B \lor y \in C) \\
+            \Leftrightarrow (x \in A \lor y \in B) \lor (x \in A \land y \in C) \\
+            \Leftrightarrow (<x,y> \in A \times B) \lor (<x,y> \in A \times C) \\
+            \Leftrightarrow <x,y> \in (A \times B) \unionSet (A \times C)
+          \end{math}
+
+          \qed
+          }
+  \end{itemize}
+}%卡氏积的性质结尾
+
+\subsubsection{卡氏积的图示}{
+  放张图就一目了然了 :
+
+  \begin{center}
+    \includegraphics{resources/Set_DicarelProduct.png}
+  \end{center}
+
+  特别的 : $A = B = \mathRealNumberCollection$,则$A \times B = \mathRealNumberCollection \times \mathRealNumberCollection = \mathRealNumberCollection^2$,也就是笛卡尔平面直角坐标系.
+
+  同样的,也有$R^3,R^n$
+
+
+  $$
+    A = \{x | x \in \mathRealNumberCollection \land a \leq x \leq b\}
+  $$
+  $$
+    B = \{y | y \in \mathRealNumberCollection \land c \leq y \leq d\}
+  $$
+  $$
+    C = \{z | z \in \mathRealNumberCollection \land e \leq z \leq f\}
+  $$
+  那么$A \times B$的图像表示就是 :
+  \begin{center}
+    \begin{tikzpicture}
+      \draw[-latex] (0,0) -- (4,0) node[below right]{x};
+      \draw[-latex] (0,0) -- (0,3) node[above right]{y};
+      \draw[fill = gray] (1,1) rectangle (3,2);
+      \draw[dashed] (1,1) -- (1,0) node[below]{a};
+      \draw[dashed] (3,1) -- (3,0) node[below]{b};
+      \draw[dashed] (1,2) -- (0,2) node[left]{c};
+      \draw[dashed] (1,1) -- (0,1) node[left]{d};
+    \end{tikzpicture}
+  \end{center}
+
+  同样的,$A \times B \times C$表示的是空间中的一个立方体,这里就不画了(邪恶的tikz).
+}%卡氏积的图示结尾
+
+\subsubsection{n维卡氏积}{
+  \begin{itemize}
+    \item n维卡氏积 : $$
+            A_1 \times A_2 \times \dots \times A_n = \set{<x)1,x_2,\dots,x_n> | x_1 \in A_1 \land x_2 \in A_2 \land \dots \land x_n \in A_n}
+          $$
+    \item $A^n = A \times A \times \dots \times A$
+    \item $\absoluteValue{A_i} = n_i,i = 1,2,\dots,n \Rightarrow \absoluteValue{A_1 \times A_2 \times \dots \times A_n} = n_1 \times n_2 \times \dots \times n_n$.
+    \item n维卡氏积性质于2维卡氏积类似.
+  \end{itemize}
+}%n维卡氏积结尾
+
+\subsubsection{n维卡氏积的性质}{
+  \begin{itemize}
+    \item 非交换 : $A \times B \times C \neq B \times C \times A$\ (要求$A,B,C$均非空,且互不相等)
+    \item 非结合 : (非二元运算)
+    \item 分配律 : 例如 : $A \times B \times (C \unionSet D) = (A \times B \times C) \unionSet (A \times B \times D)$
+    \item 其他 : 比如$A \times B \times C = \emptyset \Leftrightarrow A = \emptyset \lor B = \emptyset \lor C = \emptyset$.
+  \end{itemize}
+}%n维卡氏积的性质结尾
+
+}%集合论结尾
+
+\subsection{图论}{
+
+  \subsubsection{图论的主要内容}{
+    \begin{itemize}
+      \item 研究对象 : 由顶点和边构成的图
+      \item 研究思想 : 以集合论为基础,以图为工具,为各种二元关系建立模型
+      \item 研究内容 : \begin{itemize}
+              \item 图的基本概念 : 连通性,矩阵表示,带权图
+              \item 欧拉图,哈密顿图 : 边和顶点的遍历
+              \item 树 : 表示层级组织关系
+              \item 平面图 : 判定,表示,性质
+              \item 图的着色 : 各种调度问题的模型
+              \item 独立集,支配集,覆盖集,匹配 : 各种应用问题
+            \end{itemize}
+    \end{itemize}
+  }%图论的主要内容结尾
+
+  \subsubsection{图论中的问题}{
+    \begin{itemize}
+      \item 什么是图?有哪些图?图有什么性质?
+      \item 什么是欧拉图?什么是哈密顿图?
+      \item 什么是树?如何用矩阵表示图?
+      \item 什么是图的着色?
+      \item 什么是支配集,独立集,覆盖,匹配?
+      \item 什么是带权图?
+    \end{itemize}
+  }%图论中的问题结尾
+
+}%图论结尾
+
+}%离散数学结尾
