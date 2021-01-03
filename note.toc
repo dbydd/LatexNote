@@ -1,8 +1,15 @@
 \contentsline {paragraph}{todos}{2}{Doc-Start}%
 \contentsline {chapter}{\numberline {第一章\hspace {.3em}}数学}{3}{chapter.1}%
-\contentsline {section}{\numberline {1.1}线性代数}{3}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}向量相关}{3}{subsection.1.1.1}%
-\contentsline {subsubsection}{\numberline {1.1.1.1}标量}{3}{subsubsection.1.1.1.1}%
-\contentsline {subsubsection}{\numberline {1.1.1.2}向量}{3}{subsubsection.1.1.1.2}%
-\contentsline {subsubsection}{\numberline {1.1.1.3}向量表示法}{4}{subsubsection.1.1.1.3}%
-\contentsline {subsubsection}{\numberline {1.1.1.4}向量空间}{5}{subsubsection.1.1.1.4}%
+\contentsline {section}{\numberline {1.1}数学分析}{3}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}映射与函数}{3}{subsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1.1}映射}{3}{subsubsection.1.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1.2}映射的基本要素}{4}{subsubsection.1.1.1.2}%
+\contentsline {subsubsection}{\numberline {1.1.1.3}映射的分类}{4}{subsubsection.1.1.1.3}%
+\contentsline {subsubsection}{\numberline {1.1.1.4}逆映射}{5}{subsubsection.1.1.1.4}%
+\contentsline {subsubsection}{\numberline {1.1.1.5}复合映射}{5}{subsubsection.1.1.1.5}%
+\contentsline {subsubsection}{\numberline {1.1.1.6}函数}{5}{subsubsection.1.1.1.6}%
+\contentsline {subsubsection}{\numberline {1.1.1.7}基本初等函数}{6}{subsubsection.1.1.1.7}%
+\contentsline {subsubsection}{\numberline {1.1.1.8}初等函数}{6}{subsubsection.1.1.1.8}%
+\contentsline {subsubsection}{\numberline {1.1.1.9}自然定义域}{6}{subsubsection.1.1.1.9}%
+\contentsline {subsubsection}{\numberline {1.1.1.10}函数的表示}{7}{subsubsection.1.1.1.10}%
+\contentsline {subsubsection}{\numberline {1.1.1.11}一些特殊的函数}{7}{subsubsection.1.1.1.11}%
