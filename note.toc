@@ -12,4 +12,5 @@
 \contentsline {subsubsection}{\numberline {1.1.1.8}初等函数}{6}{subsubsection.1.1.1.8}%
 \contentsline {subsubsection}{\numberline {1.1.1.9}自然定义域}{6}{subsubsection.1.1.1.9}%
 \contentsline {subsubsection}{\numberline {1.1.1.10}函数的表示}{7}{subsubsection.1.1.1.10}%
-\contentsline {subsubsection}{\numberline {1.1.1.11}一些特殊的函数}{7}{subsubsection.1.1.1.11}%
+\contentsline {subsubsection}{\numberline {1.1.1.11}函数的简单性质}{8}{subsubsection.1.1.1.11}%
+\contentsline {subsubsection}{\numberline {1.1.1.12}一些特殊的函数}{8}{subsubsection.1.1.1.12}%

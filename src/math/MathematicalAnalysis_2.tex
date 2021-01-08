@@ -189,8 +189,58 @@ $$
 
               这个方程描述了行星绕太阳运行的轨迹的规律,轨迹是个椭圆.其中$\varepsilon$是这个椭圆的离心,$x$与时间有关,$y$与行星的位置有关.
               }
+        \item {
+              参数表示 :
+
+              当$x$与$y$的关系不方便表示的时候可以考虑引进参数$t$($t$只是个字符),如果$x$和$y$可以表示成$t$的函数 : $$
+                  \begin{cases}
+                      x = x(t) \\
+                      y = y(t)
+                  \end{cases},\ t \in [a,b]
+              $$
+
+              这样就间接的反映了变量$y$与$x$之间的参数表示,称为函数的参数表示.
+
+              他是这么表示的 : 有两个集合 : $$
+                  X = \set{x | x = x(t),t \in [a,b]},\ Y = \set{y | y = y(t),t \in [a,b]}
+              $$
+
+              那么函数关系$f$就是一个映射 : $$
+                  \mapsToWithSubText{f}{X \to Y}{x = x(t) \mapsto y = y(t)}
+              $$
+              }
     \end{itemize}
 }%函数的表示结尾
+
+\subsubsection{函数的简单性质}{
+    \begin{enumerate}
+        \item {
+              有界性 : 对于$y = \defFunction{x},x \in D$ :
+
+              如果存在$m < M$,使得$m \leq \defFunction{x} \leq M,x \in D$,则称$\defFunction{x}$有界,$m$称为下界,$M$称为上界.
+
+              等价定义 : 存在$X > 0$(此$X$不是集合),使得$\absoluteValue{\defFunction{x}} \leq X,x \in D$
+
+              需要注意的是 : 如果函数有界,那么上下界是不唯一的.
+              }
+        \item {
+              单调性 : 对于$y = \defFunction{x},x \in D$ :
+
+              若对于任意的$x_1,x_2 \in D,x_1 < x_2 \Leftrightarrow \defFunction{x_1} \leq \defFunction{x_2}$,则称函数$f$在$D$单调增加.如果$\leq$可以换成$<$,则称为严格单调增加.
+
+              记为 : $$
+                  f\uparrow(f\mbox{严格}\uparrow)
+              $$
+
+              类似的,将不等号的箭头方向改变,也有单调减少和严格单调减少,记为 : $$
+                  f\downarrow(f\mbox{严格}\downarrow)
+              $$
+              }
+              \item {
+                  
+              }
+    \end{enumerate}
+}%函数的简单性质结尾
 
 \subsubsection{一些特殊的函数}{
     \begin{itemize}
