@@ -322,7 +322,7 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
 }%拉格朗日中值定理结尾
 
 \subsubsection{柯西中值定理}{
-  柯西中值定理,也叫拓展中值定理,是中值定理的一般形式.它叙述为:如果函数$f$和$g$都在闭区间$[a,b]$上连续,且在开区间$(a,b)$上可微,那么���在某个$c \in (a,b)$,
+  柯西中值定理,也叫拓展中值定理,是中值定理的一般形式.它叙述为:如果函数$f$和$g$都在闭区间$[a,b]$上连续,且在开区间$(a,b)$上可微,那么存在某个$c \in (a,b)$,
   使得$(\defFunction{b} - \defFunction{a})g\derivative(c) = (g(b)-g(a))\fDerivative{c}$
 
   当然,如果$g(a) \neq g(b)$且$g\derivative(c) \neq 0$,则可表示成:$\cfrac{\fDerivative{c}}{g\derivative(c)} = \cfrac{\defFunction{b} - \defFunction{a}}{g(b) - g(a)}$
@@ -1370,7 +1370,7 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
   }%三重积分(球面坐标)结尾
 
   \subsubsection{重积分应用(求曲面面积)}{
-    设$z = \defFunction{x,y}$;将曲面划分称一个个长为$a$宽为$b$�����小方格:
+    设$z = \defFunction{x,y}$;将曲面划分称一个个长为$a$宽为$b$的小方格:
 
     图示如下 :
     \begin{center}
@@ -2862,7 +2862,7 @@ $$
     }%方向导数的计算公式结尾    
 
     \subsubsection{梯度}{
-      设数量场$u = u(M)$,如果在���中任一点$M$处,存在非零矢量$\vec{G}$,其方向为函数$u(M)$在$M$点处方向导数的最大的方向,其模$|\vec{G}|$这个最大的方向导数值,则称矢量$\vec{G}$为数量场$u$在点$M$处的梯度,记为 :
+      设数量场$u = u(M)$,如果在场中任一点$M$处,存在非零矢量$\vec{G}$,其方向为函数$u(M)$在$M$点处方向导数的最大的方向,其模$|\vec{G}|$这个最大的方向导数值,则称矢量$\vec{G}$为数量场$u$在点$M$处的梯度,记为 :
       $$
         \gradText u = \vec{G}
       $$
@@ -2925,7 +2925,7 @@ $$
 
               \begin{itemize}
                 \item $\varPhi > 0$,表示$S$内部有源.这意味着穿过$S$流入的量小于流出的量,而$\varPhi$正是流出量与流入量的差,因此$S$内部有源.$\varPhi$就是由$S$散发出去的量.
-                \item $\varPhi < 0$,表示$S$内部有洞.流出的量小于流入的量,$\varPhi$就是流入的多余部分,���个量再$S$所包围的区域内被吸收或者渗掉,所以有洞.$\varPhi$是吸收入$S$内部的量.
+                \item $\varPhi < 0$,表示$S$内部有洞.流出的量小于流入的量,$\varPhi$就是流入的多余部分,这些量在$S$所包围的区域内被吸收或者渗掉,所以有洞.$\varPhi$是吸收入$S$内部的量.
                 \item $\varPhi = 0$,说明流入等于流出.
               \end{itemize}
               }
@@ -2943,7 +2943,7 @@ $$
     \subsubsection{散度}{
       通量描述了一固定区域上向量场的流通倾向,而散度在某点的的值则是这个性质在这点的局部描述,也就是说,从散度在一点的值,就可以看出向量场在这点附近到底是倾向于发散还是收敛.
 
-      设��量场$A(M)$,在场中作包围点$M$的闭曲面$S$,$S$包围的趋于称为$\Omega$,$\Omega$的体积为$\Delta V$.当$\Omega$收缩到极限$M$时,如果极限 :
+      设向量场$A(M)$,在场中作包围点$M$的闭曲面$S$,$S$包围的趋于称为$\Omega$,$\Omega$的体积为$\Delta V$.当$\Omega$收缩到极限$M$时,如果极限 :
       $$
         \limNormal{\Omega \to M}\cfrac{\doubleCurveIntegralOnZone{S}A \cdot d\mathbf{S}}{\Delta V}
       $$

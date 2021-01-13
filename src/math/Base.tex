@@ -342,18 +342,19 @@ $\sum\limits_{1 \leq i_1 < i_2 < \dotsm < i_k \leq n}x_{i_{1}}x_{i_{2}} \dotsm x
 
               另外,当且仅当$x$和$y$线性相关时,等号成立(仅两个向量而言,线性相关等同于平行).
 
-              若$x_1,\dotsm,x_n \in \mathConstant$和$y_1,\dotsm,y_n \in mathConstant$有虚部,内积即为标注内积.如果用上划线标记共轭复数,这个不等式可以更明确的表述为:
+              若$x_1,\dotsm,x_n \in \mathConstant$和$y_1,\dotsm,y_n \in \mathConstant$有虚部,内积即为标注内积.如果用上划线标记共轭复数,这个不等式可以更明确的表述为:
 
               $|\vec{x_1}\bar{\vec{y_1}} + \dotsm + \vec{x_n}\bar{\vec{y_n}}|^2\leq (|\vec{x_1}|^2 + \dotsm + |\vec{x_n}|^2)(|\vec{y_1}|^2 + \dotsm + |\vec{y_n}|^2)$.
               }
         \item {
               三角形式:
 
-              在三角形$ABC$中,这个式子可以写作:$||\vec{AB}|| + ||\vec{BC}|| \geq ||\vec{AC}||$
+              在三角形$ABC$中,这个式子可以写作:$||\vec{AB}|| + ||\vec{BC}|| \geq ||\vec{AC}|| = \doubleAbsoluteValue{\doubleAbsoluteValue{\vec{AB}} + \doubleAbsoluteValue{\vec{BC}}}$
 
               也就是说:$\sqrt{a^2 + b^2} + \sqrt{c^2 + d^2} \geq \sqrt{(a - c)^2 + (b - d)^2}$
 
-              等号成立的条件为:$ad = bc,且ac + bc \geq 0$(即$\cfrac{a}{c} = \cfrac{b}{d}$).
+              等号成立的条件为:$ad = bc \land ac + bc \geq 0$(即$\cfrac{a}{c} = \cfrac{b}{d}$).
+
               }
         \item {
               积分形式:
@@ -370,7 +371,28 @@ $\sum\limits_{1 \leq i_1 < i_2 < \dotsm < i_k \leq n}x_{i_{1}}x_{i_{2}} \dotsm x
               其中$\alpha,\beta$为$V$中的向量.
               }
     \end{itemize}
-}%柯西不等式结尾
+}\label{triangle_inequality}%柯西不等式结尾
+
+\subsubsection{三角不等式}{
+    叙述为 : 对于任意实数$a,b$,有 :
+    $$
+        \absoluteValue{\absoluteValue{a} - \absoluteValue{b}} \leq \absoluteValue{a + b} \leq \absoluteValue{a} - \absoluteValue{b}
+    $$
+
+    证明 : 首先有 : $$
+        -\absoluteValue{a}\cdot\absoluteValue{b} \leq ab \leq \absoluteValue{a}\cdot\absoluteValue{b}
+    $$
+
+    然后三侧都加上$a^2 + b^2$,就变成了 : $$
+        (\absoluteValue{a} - \absoluteValue{b})^2 \leq (a + b)^2 \leq (\absoluteValue{a} + \absoluteValue{b})^2
+    $$
+
+    再开根号,原式就出来了.
+
+    \qed
+
+    (三角不等式的向量形式其实也有出现在柯西不等式中,见{\ref{triangle_inequality}})
+}
 
 \subsubsection{均值不等式}{
 平均数不等式,或称平均值不等式、均值不等式,是数学上的一组不等式,也是基本不等式的推广.它是说:
@@ -381,24 +403,23 @@ $\mathbf{H}_n \leq \mathbf{G}_n \leq \mathbf{A}_n \leq \mathbf{Q}_n$
 
 其中:
 
-$\mathbf{H}_n = \cfrac{n}{\upDownSum{n}{i = 1}\cfrac{1}{x_i}} = \cfrac{n}{\cfrac{1}{x_1} + \cfrac{1}{x_2} + \dotsm + \cfrac{1}{x_n}}$
-
-$\mathbf{G}_n = \sqrt[n]{\upDownProd{n}{i = 1}x_i} = \sqrt[n]{x_1x_2\dotsm x_n}$
-
-$\mathbf{A}_n = \cfrac{\upDownSum{n}{i = 1}x_i}{n} = \cfrac{x_1 + x_2 + x_n}{n}$
-
-$\mathbf{Q}_n = \sqrt{\cfrac{\upDownSum{n}{i = 1}x^2_i}{n}} = \sqrt{\cfrac{x^2_1 + x^2_2 + \dotsm + x^2_n}{n}}$
+\begin{itemize}
+    \item 调和平均数 :　$\mathbf{H}_n = \cfrac{n}{\upDownSum{n}{i = 1}\cfrac{1}{x_i}} = \cfrac{n}{\cfrac{1}{x_1} + \cfrac{1}{x_2} + \dotsm + \cfrac{1}{x_n}}$
+    \item 几何平均数 : $\mathbf{G}_n = \sqrt[n]{\upDownProd{n}{i = 1}x_i} = \sqrt[n]{x_1x_2\dotsm x_n}$
+    \item 算术平均数 : $\mathbf{A}_n = \cfrac{\upDownSum{n}{i = 1}x_i}{n} = \cfrac{x_1 + x_2 + x_n}{n}$
+    \item 平方平均数 : $\mathbf{Q}_n = \sqrt{\cfrac{\upDownSum{n}{i = 1}x^2_i}{n}} = \sqrt{\cfrac{x^2_1 + x^2_2 + \dotsm + x^2_n}{n}}$
+\end{itemize}
 
 当且仅当$x_1 = x_2 = \dotsm = x_n$,等号成立.
 
-当$n = 2$时:
-
-$\cfrac{2}{\cfrac{1}{x_1} + \cfrac{1}{x_2}} = \cfrac{2x_1x_2}{x_1 + x_2}\leq\sqrt{x_1x_2}\leq\cfrac{x_1 + x_2}{2}\leq\sqrt{\cfrac{x_1^2 + x_2^2}{2}}$
+当$n = 2$时:$$
+    \cfrac{2}{\cfrac{1}{x_1} + \cfrac{1}{x_2}} = \cfrac{2x_1x_2}{x_1 + x_2}\leq\sqrt{x_1x_2}\leq\cfrac{x_1 + x_2}{2}\leq\sqrt{\cfrac{x_1^2 + x_2^2}{2}}
+$$
 
 即对这些正数:调和平均数$\leq$几何平均数$\leq$算数平均数$\leq$平方平均数(方均根)
 
 可简记为:“{\bfseries 算几调方}”
-}%二元均值不等式结尾  
+}%均值不等式结尾  
 
 \subsubsection{算术-几何均值不等式}{
     算术-几何平均值不等式,简称算几不等式,是一个常见而基本的不等式,表现算术平均数和几何平均数之间恒定的不等关系.设$x_1,x_2,\dots,x_n$为$n$个正实数,他们的算数平均数是$\mathbf{A}_n = \cfrac{x_1 + x_2 + \dotsm + x_n}{n}$,他们的几何平均数是$\mathbf{G}_n = \sqrt[n]{x_1\cdot x_2 \dotsm x_n}$.算术-几何平均值不等式表明,对任意的正实数$x_1,\dotsm,x_n$,总有:
@@ -409,6 +430,33 @@ $\cfrac{2}{\cfrac{1}{x_1} + \cfrac{1}{x_2}} = \cfrac{2x_1x_2}{x_1 + x_2}\leq\sqr
 
     等号当且仅当$x_1 = x_2 = \dotsm = x_n$时成立.
 
+    证明 :
+
+    当$n = 0,1,2$时情况是退化的,已知.当$n = 4$时 : $$
+        \cfrac{x_1 + x_2 + x_3 + x_4}{4} \geq \cfrac{2\sqrt{x_1x_2} + 2\sqrt{x_3x_4}}{4} = \cfrac{\sqrt{x_1x_2} + \sqrt{x_3x_4}}{2} \geq \sqrt[4]{x_1x_2x_3x_4}
+    $$
+
+    $n = 8$时多进行一步.如此往复用归纳法,可得出当$n = 2^k$时成立.
+
+    如果$n \neq 2^k$,则一定存在$l \in N^+$,使得$2^{l - 1} \leq n \leq 2^l$.
+
+    记$\sqrt[n]{x_1x_2 \dots x_n} = \bar{x}$.
+
+    那么对$x_1,x_2,\dots,x_n,\bar{x},\bar{x},\dots,\bar{x}$(此处一共有$2^l - n$个$\bar{x}$)求算术平均术,则 : $$
+        \cfrac{\mediumBigCase{x_1+x_2+\dots+x_n+(2^l - n)\bar{x}}}{2^l} \geq \sqrt[2^l]{x_1x_2...x_n \cdot \bar{x}^{2^l - n}} = \bar{x}
+    $$
+
+    因此 : $$
+        x_1 + x_2 + \dots + x_n + (2^l - n)\bar{x} \geq 2^l\bar{x}
+    $$
+
+    移项可得 : $$
+        x_1 + x_2 + \dots + x_n \geq n\bar{x}
+    $$
+
+    再将$n$除到左边,就证出来了.
+
+    \qed
 }%算术-几何均值不等式结尾
 
 \subsubsection{常用不等式}{

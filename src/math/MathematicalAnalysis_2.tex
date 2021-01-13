@@ -236,8 +236,24 @@ $$
                   f\downarrow(f\mbox{严格}\downarrow)
               $$
               }
-              \item {
-                  
+        \item {
+              奇偶性 : 设函数的定义域$D$关于原点对称.即 : $$
+                  x \in D \Leftrightarrow -x \in D
+              $$
+              那么 :
+
+              \begin{itemize}
+                  \item 若在$D$上,$f(x) = f(-x)$,则称$f$是偶函数.
+                  \item 若在$D$上,$f(x) = -f(x)$,则称$f$是奇函数.
+              \end{itemize}
+              }
+        \item {
+              周期性 : 设$D$是函数$f$的定义域,$x \pm T \in D$,并且$f(x) = f(x \pm T)$
+
+              $T$称为函数的一个周期.
+
+              在所有的周期中,如果有最小的$T$,则称他为最小周期.
+
               }
     \end{enumerate}
 }%函数的简单性质结尾
@@ -300,6 +316,26 @@ $$
               \begin{center}
                   \includegraphics[]{resources/DecimalPartFunction.png}
               \end{center}
+              }
+        \item {
+              狄利克雷函数 :
+
+              问 : 是否周期函数都有最小周期?
+
+              答 : 不是.
+
+              反例 : 狄利克雷函数(Dirichlet function)$D(x)$ : $$
+                  D(x)
+                  =
+                  \begin{cases}
+                      0\qquad \mbox{$x$无理数} \\
+                      1\qquad \mbox{$x$有理数}
+                  \end{cases}
+              $$
+
+              \functionTabular{$D = (-\infty,+\infty)$}{$R = D(x) = (0,1)$}{偶函数}
+
+              任何的有理数$r > 0$都是他的周期,没有最小周期.
               }
     \end{itemize}
 }%一些特殊的函数结尾
