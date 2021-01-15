@@ -138,7 +138,7 @@
 }%空集结尾
 
 \subsubsection{全集}{
-  如果限定所讨论的集合都是某个集合的子集，则称该集合为全集,记作$\mathEverythingCollection$.
+  如果限定所讨论的集合都是某个集合的子集,则称该集合为全集,记作$\mathEverythingCollection$.
 
   从定义可以看出,全集是相对的,视具体情况而定,因此不唯一.
 
@@ -567,7 +567,7 @@
 \subsubsection{n维卡氏积}{
   \begin{itemize}
     \item n维卡氏积 : $$
-            A_1 \times A_2 \times \dots \times A_n = \set{<x)1,x_2,\dots,x_n> | x_1 \in A_1 \land x_2 \in A_2 \land \dots \land x_n \in A_n}
+            A_1 \times A_2 \times \dots \times A_n = \set{<x_1,x_2,\dots,x_n> | x_1 \in A_1 \land x_2 \in A_2 \land \dots \land x_n \in A_n}
           $$
     \item $A^n = A \times A \times \dots \times A$
     \item $\absoluteValue{A_i} = n_i,i = 1,2,\dots,n \Rightarrow \absoluteValue{A_1 \times A_2 \times \dots \times A_n} = n_1 \times n_2 \times \dots \times n_n$.
@@ -583,6 +583,244 @@
     \item 其他 : 比如$A \times B \times C = \emptyset \Leftrightarrow A = \emptyset \lor B = \emptyset \lor C = \emptyset$.
   \end{itemize}
 }%n维卡氏积的性质结尾
+
+\subsubsection{n元关系}{
+  \begin{itemize}
+    \item n元关系 : 其元素全是有序n元组的集合.
+    \item 例1 : $F_1 = \set{<a,b,c,d>,<1,2,3,4>,<\alpha,\beta,\gamma,\delta>}$---$F_1$是3元关系.
+    \item 例2 : $F_2 = \set{<a,b,c>,<\alpha,\beta,\gamma>,<A,B,C>}$---$F_2$是3元关系
+  \end{itemize}
+}%n元关系结尾
+
+\subsubsection{二元关系}{
+  \begin{itemize}
+    \item 2元关系(关系) : 元素全是有序对的集合.
+    \item 比如$A = \set{<A,B>,<1,2,3>,a,\alpha,1}$---如果$a,\alpha,1$不是有序对,那么$A$不是关系.
+  \end{itemize}
+}%二元关系结尾
+
+\subsubsection{二元关系的记号}{
+  \begin{itemize}
+    \item{
+          设$F$是二元关系,那么有三种记法 :
+
+          \begin{itemize}
+            \item 中缀(infix)记号 : $xFy$
+            \item 前缀(prefix)记号 : $F(x,t),Fxy$
+            \item 后缀(suffix)记号 : $\dependent{,xy} \in F,xyF$
+          \end{itemize}
+          }
+    \item 例如 : $2 < 15 \Leftrightarrow <(2,15) \Leftrightarrow \dependent{2,15} \in <$
+  \end{itemize}
+}%二元关系的记号结尾
+
+\subsubsection{A到B的二元关系}{
+  \begin{itemize}
+    \item {
+          A到B的二元关系 : 是$A \times B$的任意子集.
+
+          $R$是$A$到$B$的二元关系$\Leftrightarrow R \subseteq A \times B \Leftrightarrow R \in P(A \times B)$
+          }
+    \item 如果$\absoluteValue{A} = m,\absoluteValue{B} = n$,则$\absoluteValue{A \times B} = mn$,所以$\absoluteValue{P(A \times B)} = 2^{mn}$,也就是说$A$到$B$不同的二元关系共有$2^{mn}$个.
+  \end{itemize}
+}%A到B的二元关系结尾
+
+\subsubsection{A到B的二元关系举例}{
+  设$A = \set{a_1,a_2},B = \set{b_1,b_2}$,则$A$到$B$的二元关系共有4个 : $$
+    R_1 = \emptyset,R_2 = \set{\dependent{a_1,b}},R_3 = \set{\dependent{a_2,b}},R_4 = \set{\dependent{a_1,b},\dependent{a_2,b}}
+  $$
+
+  反过来,$B$到$A$的二元关系也有4个 : $$
+    R_5 = \emptyset.R_6 = \set{\dependent{b,a_1}},R_7 = \set{\dependent{b,a_2}},R_8 = \set{\dependent{b,a_1},\dependent{b,a_2}}
+  $$
+}%A到B的二元关系举例结尾
+
+\subsubsection{A上的二元关系}{
+  \begin{itemize}
+    \item {
+          $A$上的二元关系 : 是$A \times A$的任意子集.
+
+          $R$是$A$上的二元关系 $\Leftrightarrow R \subseteq A \times A \Leftrightarrow R \in P(A \times A)$
+          }
+    \item {
+          如果$\absoluteValue{A} = m$,则$\absoluteValue{A \times A} = m^2$,所以 : $$
+            \absoluteValue{P(A \times A)} = 2^{m^2}
+          $$
+
+          即$A$上不同的二元关系共有$2^{m^2}$个
+          }
+  \end{itemize}
+}%A上的二元关系
+
+\subsubsection{一些特殊关系}{
+  \begin{itemize}
+    \item {
+          设$A$是任意集合,则可以定义$A$上的 :
+
+          \begin{itemize}
+            \item 空关系 : $\emptyset$
+            \item 恒等关系 : $I_A = \set{\dependent{x,x}| x \in A}$
+            \item 全域关系 : $E_A = A \times A = \set{\dependent{x,y} | x \in A \land y \in A}$
+            \item 包含关系 : $\subseteq_A = \set{\dependent{x,y}|x \subseteq \land y \subseteq A \land x \subseteq y}$
+            \item 真包含关系 : $\subset_A = \set{\dependent{x,y} | x \subseteq A \land y \subseteq A \land x \subset y}$
+          \end{itemize}
+          }
+    \item {
+          设$A \subseteq Z$,则可以定义$A$上的 :
+
+          \begin{itemize}
+            \item 整除关系 : $D_A = \set{\dependent{x,y} | x \in A \land y \in A \land x|y}$
+            \item {
+                  例 : $A = \set{1,2,3,4}$,则 : $$
+                    D_A = \set{\dependent{1,1},\dependent{1,2},\dependent{1,3},\dependent{1,4},\dependent{2,2},\dependent{2,4},\dependent{3,3},\dependent{4,4}}
+                  $$
+                  }
+          \end{itemize}
+          }
+    \item {
+          设$A \subset R$,则可以定义$A$上的 :
+
+          \begin{itemize}
+            \item 小于等于(less than or equal to)关系 : $LE_A = \set{\dependent{x,y}|x \in A \land y \in A \land x \leq y}$
+            \item 小于(less than)关系 : $L_A = \set{\dependent{x,y}| x \in A \land y \in A \land x < y}$
+            \item 大于等于(greater than or equal to)关系
+            \item 大于(greater than)关系,\dots
+          \end{itemize}
+          }
+  \end{itemize}
+}%一些特殊关系结尾
+
+\subsubsection{与二元关系有关的概念}{
+  \begin{itemize}
+    \item {
+          对任意集合$R$,可以定义 :
+
+          \begin{itemize}
+            \item 定义域(domain) : $dom\ R = \set{x | \exists y(x R y)}$
+            \item 值域(range) : $ran\ R = \set{y | \exists x(x R y)}$
+            \item 域(field) : $fld\ R = dom\ R \unionSet ran\ R$
+          \end{itemize}
+
+          例 : \begin{itemize}
+            \item $R_1 = \set{a,b}$
+            \item $R_2 = \set{a,b,\dependent{c,d},\dependent{e,f}}$
+            \item $R_3 = \set{\dependent{1,2}, \dependent{3,4}, \dependent{5,6}}$
+          \end{itemize}
+
+          当$a,b$不是有序对时,$R_1$和$R_2$不是关系.
+          \begin{itemize}
+            \item $dom\ R_1 = \emptyset,ran\ R_1 = \emptyset,fld\ R_1 = \emptyset$
+            \item $dom\ R_2 = \set{c,e}, ran\ R_2 = \set{d,f},fld\ R_2 = \set{c,d,e,f}$
+            \item $dom\ R_3 = \set{1,3,5}, ran\ R_3 = \set{2,4,6}, fld\ R_3 \set{1,2,3,4,5,6}$
+          \end{itemize}
+          }
+    \item {
+          对任意集合$F,G$,可以定义 :
+
+          \begin{itemize}
+            \item {
+                  逆(inverse) : $F\inverse = \set{\dependent{x,y} | yFx}$
+
+                  定理 : 设$F,G$为二集合,则$(F \circ G)\inverse = G\inverse \circ F\inverse$
+
+                  这个可以用矩阵的逆来理解.
+
+                  证明 : \begin{math}
+                    \forall \dependent{x,y},\dependent{x,y} \in (F \circ G)\inverse \\
+                    \Leftrightarrow \dependent{y,x} \in (F \circ G) \\
+                    \Leftrightarrow \exists z (yGz \land zFx) \\
+                    \Leftrightarrow \exists z (z G\inverse y \land x F\inverse z) \\
+                    \Leftrightarrow \exists z (x F\inverse z \land z G\inverse y) \Leftrightarrow \dependent{x,y} \in G\inverse \circ F\inverse
+                  \end{math}
+
+                  \qed
+                  }
+            \item {
+                  合成(复合)(composite) : $F \circ G = \set{\dependent{x,y} | \exists z(xGz \land zFy)}$
+
+                  \begin{center}
+                    \begin{tikzpicture}
+                      \draw (-4,0) ellipse [x radius = 1,y radius = 1.5];
+                      \draw (0,0) ellipse [x radius = 1,y radius = 1.5];
+                      \draw (4,0) ellipse [x radius = 1,y radius = 1.5];
+                      \foreach \xOffset in {-4,0,4}{
+                          \foreach \yOffset in {0.5,0,-0.5}{
+                              \tikzPlaceDot{(\xOffset,\yOffset)};
+                            }
+                        }
+                      \draw[->] (-4,0.5) -- (-0.1,0.5);
+                      \draw[->] (-4,0) node[left]{$x$} --node[below]{$G$} (-0.1,0);
+                      \draw[->] (0,0) --node[above]{$F$} (3.9,0) node[right]{$y$};
+                      \draw[->] (0,-0.5) -- (3.9,-0.5);
+                    \end{tikzpicture}
+                  \end{center}
+
+                  关于合成,还分为 :
+
+                  \begin{itemize}
+                    \item 顺序合成(右合成) : $F \circ G = \set{\dependent{x,y} | \exists z (xFz \land zGy)}$
+                    \item 逆序合成(左合成) : $F \circ G = \set{\dependent{x,y} | \exists z (xGz \land zFy)}$
+                  \end{itemize}
+
+                  合成运算有结合律 :
+
+                  \begin{itemize}
+                    \item 设$R_1,R_2,R_3$为集合,则 : $$
+                            (R_1 \circ R_2) \circ R_3 = R_1 \circ (R_2 \circ R_3)
+                          $$
+                  \end{itemize}
+
+                  证明 : \begin{math}
+                    \forall\dependent{x,y}, \dependent{x,y} \in (R_1 \circ R_2) \circ R_3 \\
+                    \Leftrightarrow \exists z (x R_3 z \land z(R_1 \circ R_2)y) \\
+                    \Leftrightarrow \exists z (x R_3 z \land \exists t(z R_2 t \land t R_1 y)) \\
+                    \Leftrightarrow \exists z \exists t(x R_3 z \land (z R_2 t \land t R_1 y)) \\
+                    \Leftrightarrow \exists t \exists z(x R_3 z \land z R_2 t \land t R_1 y) \\
+                    \Leftrightarrow \exists t \exists z (x R_3 z \land z R_2 t \land t R_1 y) \\
+                    \Leftrightarrow \exists t(\exists z(x R_3 z \land z R_2 t) \land t R_1 y) \\
+                    \Leftrightarrow \exists t(x(R_2 \circ R_3)t \land t R_1 y) \\
+                    \Leftrightarrow x R_1 \circ (R_2 \circ R_3) y \\
+                    \Leftrightarrow \dependent{x,y} \in R_1 \circ (R_2 \circ R_3) \\
+                    \therefore (R_1 \circ R_2) \circ R_3 = R_1 \circ (R_2 \circ R_3)
+                  \end{math}
+
+                  \qed
+                  }
+          \end{itemize}
+          }
+    \item {
+          对任意集合$F,A$,可以定义 :
+
+          \begin{itemize}
+            \item 限制(restriction) : $F \uparrow A = \set{\dependent{x,y} | xFy \land x \in A}$
+            \item 象$image$ : $F[A] = ran(F \uparrow A),F[A] = \set{y | \exists x (x \in A \land xFy)}$
+          \end{itemize}
+          }
+    \item {
+          对任意集合$F$,可以定义 :
+
+          \begin{itemize}
+            \item {
+                  单根(single rooted) : 一个$y$对应唯一的一个$x$就是单根.
+
+                  $F$是单根的 $\Leftrightarrow \forall y(y \in ran\ F \to \exists! x(x \in dom\ F \land xFy)) \Leftrightarrow (\forall y \in ran\ F)(\exists! x \in dom\ F)(xFy)$
+
+                  \begin{itemize}
+                    \item $\exists!$表示"存在唯一的"
+                    \item $\forall x (x \in A \to B(x))$缩写为$(\forall x \in A)B(x)$
+                    \item $\exists x (x \in A \land B(x))$缩写为$(\exists x \in A)B(x)$
+                  \end{itemize}
+                  }
+            \item {
+                  单值(single valued) : 一个$x$对应一个唯一的$y$就是单值.
+                  $$
+                    \mbox{$F$是单值的} \Leftrightarrow \forall x(x \in dom\ F \to \exists! y (y \in \rangle F \land xFy)) \Leftrightarrow (\forall x \in dom\ F)(\exists! y \in ran\ F)(xFy)
+                  $$
+                  }
+          \end{itemize}
+          }
+  \end{itemize}
+}%与二元关系有关的概念结尾
 
 }%集合论结尾
 
