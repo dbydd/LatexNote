@@ -147,6 +147,14 @@
   给定若干个集合之后,都可以找到包含它们的全集.在今后讨论中,所涉及的集合都可以看成是某个全集$\mathEverythingCollection$的子集.
 }%全集结尾
 
+\subsubsection{集合的元素个数/集合的基数/集合的势}{
+  $\emptyset$为$0$元集,含1个元素的集合为单元集或1元集,含两个元素的集合为2元集,依次类推,含$n$个元素的集合称为$n$元集$(n \geq 1)$.
+
+  一个集合$A$所包含的元素数目称为该集合的基数或势(cardinality).记作$\absoluteValue{A}$或者$\#A$或$card(A)$
+
+  当$A$中的元素个数为有限数时($\absoluteValue{A} < \infty$),$A$称为有穷集或有限集,否则称为无限集或者无穷集.
+}%集合的元素个数结尾
+
 \subsubsection{幂集}{
   设$A$为一个集合,称由$A$的全体子集组成的集合为$A$的幂集,记作$\powerSetOf{A}$.
 
@@ -160,12 +168,6 @@
     \item 这并不是没有道理,设集合$A$的元素个数$\absoluteValue{A} = n$,则$\absoluteValue{\powerSetOf{A}} = 2^n$
   \end{itemize}
 }%幂集结尾s
-
-\subsubsection{集合的元素个数}{
-  $\emptyset$为$0$元集,含1个元素的集合为单元集或1元集,含两个元素的集合为2元集,依次类推,含$n$个元素的集合称为$n$元集$(n \geq 1)$.
-
-  用$\absoluteValue{A}$表示集合$A$中该点元素个数,当$A$中的元素个数为有限数时,$A$称为有穷集或有限集.
-}%集合的元素个数结尾
 
 \subsubsection{求幂集的步骤}{
   为了求出给定集合$A$的幂集,先求$A$的由低到高的所有子集,再将它们组成集合.
@@ -619,7 +621,7 @@
     \item {
           A到B的二元关系 : 是$A \times B$的任意子集.
 
-          $R$是$A$到$B$的二元关系$\Leftrightarrow R \subseteq A \times B \Leftrightarrow R \in P(A \times B)$
+          $R$是$A$到$B$的二元关系$\Leftrightarrow R \subseteq A \times B \Leftrightarrow R \in \powerSetOf{A \times B}$
           }
     \item 如果$\absoluteValue{A} = m,\absoluteValue{B} = n$,则$\absoluteValue{A \times B} = mn$,所以$\absoluteValue{P(A \times B)} = 2^{mn}$,也就是说$A$到$B$不同的二元关系共有$2^{mn}$个.
   \end{itemize}
@@ -792,8 +794,8 @@
           对任意集合$F,A$,可以定义 :
 
           \begin{itemize}
-            \item 限制(restriction) : $F \uparrow A = \set{\dependent{x,y} | xFy \land x \in A}$
-            \item 象$image$ : $F[A] = ran(F \uparrow A),F[A] = \set{y | \exists x (x \in A \land xFy)}$
+            \item 限制(restriction) : $F \upharpoonright  A = \set{\dependent{x,y} | xFy \land x \in A}$
+            \item 象(image) : $F[A] = ran(F \upharpoonright A),F[A] = \set{y | \exists x (x \in A \land xFy)}$
           \end{itemize}
           }
     \item {
