@@ -137,14 +137,6 @@
     $\cot(\cfrac{\pi}{2} + \alpha) = -\tan\alpha$
   }%第六组诱导公式结尾
 
-  \subsubsection{杂项}{
-    $a\sin x + b\cos x = \sqrt{a^2 + b^2}\sin(x + \arctan\cfrac{b}{a}),(a > 0)$
-
-    $a\sin x + b\cos x = \sqrt{a^2 + b^2}\cos x - \arctan\cfrac{a}{b}$
-
-    $\cos\alpha = 2cos^2\cfrac{\alpha}{2} - 1 = 1-2\sin^2\cfrac{\alpha}{2}$
-  }%杂项结尾
-
 }%诱导公式结尾
 
 \subsection{倍角公式}{
@@ -244,11 +236,32 @@
     \item $\arccsc-\alpha = -\arccsc\alpha$
   \end{itemize}
 
+
+  \subsection{其他恒等式}{
+    \begin{enumerate}
+      \item $a\sin x + b\cos x = \sqrt{a^2 + b^2}\sin(x + \arctan\cfrac{b}{a}),(a > 0)$
+      \item $a\sin x + b\cos x = \sqrt{a^2 + b^2}\cos x - \arctan\cfrac{a}{b}$
+      \item $\cos\alpha = 2cos^2\cfrac{\alpha}{2} - 1 = 1-2\sin^2\cfrac{\alpha}{2}$
+      \item {
+            $\arctan x + \arctan\cfrac{1}{x} = \cfrac{\pi}{2}\ (x \neq 0)$ :
+
+            证明 :
+
+            对此式求导,得$\cfrac{1}{1 + x^2} + \cfrac{1}{1 + (\cfrac{1}{x})^2}\cdot\bigCase{-\cfrac{1}{x^2}}$
+
+            化简后发现恒等于0,导数恒等于0说明是个常数,代入任意值都可得答案为$\cfrac{\pi}{2}$
+
+            \qed
+            }
+    \end{enumerate}
+
+  }%其他恒等式结尾
+
 }%三角恒等式结尾
 
+\subsection{解斜三角形}{
 三角形的边角、面积、和外接圆半径之间有着密切的联系
 
-\subsection{解斜三角形}{
 设三角形$\triangle ABC$,角A、B、C的对边为abc,以A为原点$O$建系,总有以下公式:
 
 $\mathbf{S}\triangle_{ABC} = \cfrac{1}{2}AB \cdot CD = \cfrac{1}{2}cb\sin A$,即$\mathbf{S}\triangle_{ABC} = \cfrac{1}{2}bc\sin A$

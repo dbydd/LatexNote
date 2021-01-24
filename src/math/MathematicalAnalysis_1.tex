@@ -381,7 +381,7 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
   因此对弧长的微分$s\derivative(x) = \limNormal{\Delta x \to 0}\cfrac{\Delta s}{\Delta x} = \sqrt{1 + (y\derivative)^2}$
 
   或者,考虑到参数方程,更通用的公式为 : $$
-  ds = \sqrt{(dx)^2 + (dy)^2}
+    ds = \sqrt{(dx)^2 + (dy)^2}
   $$
   当$x$是自变量时这个公式和上面的公式完全等价.
 
@@ -397,8 +397,8 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
   \end{center}
 
   曲率有多种等价定义 : \begin{itemize}
-    \item (曲率半径?)圆上每一点的弯曲程度都相同,半径越小弯曲的越厉害,所以可以用半径的倒数来定量描述圆的弯曲程度.直线可以看作半径无限大的圆,所以直线的曲率为$0$.对于任意形状的曲线,每一点处的弯曲程度通常是不同的.对曲线$C$上任意一点$P$,在其附近再找$C$上的两个点$P_1,P_2$,这三点总能确定一个圆(三点共线时确定一条直线,但可以把直线看作半径无限大的圆).当$P_1,P_2$无限接近于点$P$时,相应的圆也有一个极限,这个极限圆就是在点$P$处最接近曲线$C$的圆,称为密切圆.密切圆的曲率就是曲线$C$在点$P$处的曲率.
-    \item (曲率半径?)柯西这样定义密切圆和曲率 : 对于曲线$C$上任意一点$P$,在其附近再找$C$上的两个点$P_1,P_2$,分别过$P_1,P_2$作出曲线$C$的发现,两条法线会有一个交点.当$P_1,P_2$无线接近于点$P$时,交点的位置也有一个极限,以这个极限点位圆心,过点$P$作圆,就是曲线$C$在点$P$处的密切圆,密切圆的半径的倒数就是曲率.
+    \item 圆上每一点的弯曲程度都相同,半径越小弯曲的越厉害,所以可以用半径的倒数来定量描述圆的弯曲程度.直线可以看作半径无限大的圆,所以直线的曲率为$0$.对于任意形状的曲线,每一点处的弯曲程度通常是不同的.对曲线$C$上任意一点$P$,在其附近再找$C$上的两个点$P_1,P_2$,这三点总能确定一个圆(三点共线时确定一条直线,但可以把直线看作半径无限大的圆).当$P_1,P_2$无限接近于点$P$时,相应的圆也有一个极限,这个极限圆就是在点$P$处最接近曲线$C$的圆,称为密切圆.密切圆的曲率就是曲线$C$在点$P$处的曲率.
+    \item 柯西这样定义密切圆和曲率 : 对于曲线$C$上任意一点$P$,在其附近再找$C$上的两个点$P_1,P_2$,分别过$P_1,P_2$作出曲线$C$的法线,两条法线会有一个交点.当$P_1,P_2$无线接近于点$P$时,交点的位置也有一个极限,以这个极限点为圆心,过点$P$作圆,就是曲线$C$在点$P$处的密切圆,密切圆的半径的倒数就是曲率.
     \item (本节所讲)当曲线上一点沿着曲线以单位速率运动时,过这一点处的切线的方向在转动.曲线弯曲程度越高,切线旋转得越快.设曲线$C$的参数方程为$r = r(s)$,其中$s$是弧长参数,则$\alpha(s) = \dot{r}(s)$是单位切向量.设切向量$\alpha(s)$与$\alpha(s + \Delta s)$的夹角为$\Delta \theta$,记曲率为$k$,则 : $$
             k = \absoluteValue{\dot{\alpha}(s)} = \limNormal{\Delta s \to 0}\absoluteValue{\cfrac{\Delta \theta}{\Delta s}}
           $$
@@ -423,6 +423,8 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
           对于一个以参数化形式给出的平面曲线(参数为t) : $$
             k(t) = \cfrac{\absoluteValue{x\derivative(t)y\doubleDerivative(t) - x\doubleDerivative(t)y\derivative(t)}}{(x^{\prime 2}(t) + y^{\prime 2}(t))^\frac{3}{2}}
           $$
+
+          由这个写法完全可以推出除了隐函数以外其他情况下的写法.所以通常只要记这玩意就行.
           }
     \item {
           隐函数曲线的曲率 :
@@ -478,6 +480,7 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
       \item $\int \csc x\cot xdx = -\csc x + \mathConstant$
       \item $\int e^xdx = e^x + \mathConstant$
       \item $\int a^xdx = \cfrac{a^x}{\ln a} + \mathConstant$
+      \item $\int \cfrac{dx}{\sqrt{x^2 + k}} = \ln\absoluteValue{x + \sqrt{x^2 + k}} + \mathConstant$
     \end{enumerate}
 
   }%不定积分公式结尾

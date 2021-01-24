@@ -1,4 +1,4 @@
-\section{空间解析几何}{
+\section{解析几何}{
   不容小觑且难以理解的部分,加油.
 
   \subsection{关于向量}{
@@ -153,6 +153,71 @@
     }%向量积/叉乘结尾
 
   }%关于向量结尾
+
+  \subsection{关于圆}{
+
+    \subsubsection{圆的方程}{
+      \begin{center}
+        \begin{tikzpicture}
+          \draw[-latex] (0,0) node[below left]{$o$} -- (4,0) node[below right]{$x$};
+          \draw[-latex] (0,0) -- (0,4) node[left]{$y$};
+          \draw  (2,2) circle (2);
+          \tikzPlaceDot{(2,2) node [above right]{$C(a,b)$}};
+          \draw[->] (2,2) -- ({2 - sqrt(2)},{2 + sqrt(2)}) node[right]{$M(x,y)$};
+        \end{tikzpicture}
+      \end{center}
+
+      \begin{itemize}
+        \item {
+              圆的标准方程 : $(x - a)^2 + (y - b)^2 = r^2$
+
+              由圆的定义可知,$\absoluteValue{\vec{CM}} = r$,因此 : $$
+                \sqrt{(x - a)^2 + (y - b)^2} = r
+              $$
+              即,以$C(a,b)$为圆心,$r$为半径的圆的方程为 : $$
+                (x - a)^2 + (y - b)^2 = r^2
+              $$
+              }
+        \item {
+              圆的一般方程 : $x^2 + y^2 + Dx + Ey + F = 0$
+
+              将标准方程展开可得以上形式,反过来,也可以将以上形式配方,得到 : $$
+                \bigCase{x + \cfrac{D}{2}}^2 + \bigCase{y + \cfrac{E}{2}}^2 = \cfrac{D^2 + E^2 - 4F}{4}
+              $$
+
+              \begin{enumerate}
+                \item $D^2 + E^2 - 4F$称为圆方程的判别式,暂时把他记作$\alpha$吧(非正式用法,只在本章有效).
+                \item 当$\alpha > 0$时,把一般方程和圆的标准方程比较,可以看出此一般方程表示以$\bigCase{-\cfrac{D}{2},-\cfrac{E}{2}}$为圆心,半径为$\cfrac{1}{2}\sqrt{D^2 + E^2 - 4F}$的圆.
+                \item 当$\alpha = < 0$时,方程没有实数解,此时方程没有图形.
+              \end{enumerate}
+
+              因从,当$\alpha > 0$时,此种方程形式就叫做圆的一般方程,这种形式有以下特点 :
+              \begin{enumerate}
+                \item $x^2$与$y^2$的系数相同且不为0.
+                \item 不含$xy$项.
+                \item $D^2 + E^2 - 4F > 0$.
+              \end{enumerate}
+              }
+      \end{itemize}
+    }%圆的方程结尾
+
+    \subsubsection{圆的切线方程}{
+      已知$M(x_0,y_0)$为圆$x^2 + y^2 = r^2$上的一点,求过点$M$的圆$C$的切线$l$的方程 :
+
+      因为$M$是$l$与圆$C$的切点,所以过$M$的半径$OM$与$l$垂直,即$\vec{OM}=\begin{bmatrix}
+          x_0 \\ y_0
+        \end{bmatrix}$是$l$的法向量,于是可得切线$l$的点法向式方程 : $$
+        x_0(x - x_0) + y_0(y - y_0) = 0
+      $$
+      整理后可得 : $$
+        x_0x + y_0y = x_0^2 + y_0^2
+      $$
+      又因为$M$在$C$上,因此$x_0^2 + y_0^2 = r^2$,最终得到切线的方程为 : $$
+        x_0x + y_0y = r^2
+      $$
+    }%圆的切线方程结尾
+
+  }%关于圆结尾
 
   \subsection{关于空间平面}{
 
@@ -637,4 +702,4 @@
     }%伸缩法结尾
   }%关于空间曲面结尾
 
- }%空间解析几何结尾
+ }%解析几何结尾
