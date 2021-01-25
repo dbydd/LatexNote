@@ -243,7 +243,14 @@
       \item $a\sin x + b\cos x = \sqrt{a^2 + b^2}\cos x - \arctan\cfrac{a}{b}$
       \item $\cos\alpha = 2cos^2\cfrac{\alpha}{2} - 1 = 1-2\sin^2\cfrac{\alpha}{2}$
       \item {
-            $\arctan x + \arctan\cfrac{1}{x} = \cfrac{\pi}{2}\ (x \neq 0)$ :
+            $$
+              \arctan x + \arctan\cfrac{1}{x} =
+              \begin{cases}
+                \cfrac{\pi}{2}\ (x > 0) \\
+                0\ (x = 0)              \\
+                -\cfrac{\pi}{2}\ (x < 0)
+              \end{cases}
+            $$
 
             证明 :
 
