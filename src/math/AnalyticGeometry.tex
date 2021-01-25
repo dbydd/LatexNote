@@ -188,7 +188,8 @@
               \begin{enumerate}
                 \item $D^2 + E^2 - 4F$称为圆方程的判别式,暂时把他记作$\alpha$吧(非正式用法,只在本章有效).
                 \item 当$\alpha > 0$时,把一般方程和圆的标准方程比较,可以看出此一般方程表示以$\bigCase{-\cfrac{D}{2},-\cfrac{E}{2}}$为圆心,半径为$\cfrac{1}{2}\sqrt{D^2 + E^2 - 4F}$的圆.
-                \item 当$\alpha = < 0$时,方程没有实数解,此时方程没有图形.
+                \item 当$\alpha = 0$时,方程只有一个实数解-也就是说方程只表示唯一的一个点$\bigCase{-\cfrac{D}{2},-\cfrac{E}{2}}$.
+                \item 当$\alpha < 0$时,方程没有实数解,此时方程没有图形.
               \end{enumerate}
 
               因从,当$\alpha > 0$时,此种方程形式就叫做圆的一般方程,这种形式有以下特点 :
@@ -218,6 +219,61 @@
     }%圆的切线方程结尾
 
   }%关于圆结尾
+
+  \subsection{关于椭圆}{
+
+    \subsubsection{椭圆的一般方程}{
+      \begin{center}
+        \begin{tikzpicture}
+          \draw[-latex] (-3,0) -- node[below left]{$O$} (3,0)node [below]{$x$};
+          \draw[-latex] (0,-3) -- (0,3)node [left]{$y$};
+          \draw (0,0) ellipse (2.5 and 1.5);
+          \draw[red] (1.5,0) node[below]{$F_2(c,0)$} -- (1,1.37) node[above right]{$M(x,y)$} -- (-1.5,0) node[below]{$F_1(-c,0)$};
+        \end{tikzpicture}
+      \end{center}
+
+      将平面内到两个定点$F_1,F_2$的距离之和等于常数$2a$的点的轨迹叫做椭圆.这两个定点叫做椭圆$EC$的焦点,两个焦点的距离$\absoluteValue{F_1F_2}$称为椭圆的焦距.
+
+      根据定义,建系建立方程,设焦距为$2c$,$F_1,F_2$的坐标分别为$(-c,0),(c,0)$.设$M(x,y)$是椭圆上任意一点,点$M$到两焦点的距离和等于$2a(a>c>0)$. : $$
+        \absoluteValue{MF_1} + \absoluteValue{MF_2} = \sqrt{(x + c)^2 + y^2} + \sqrt{(x - c)^2 + y^2} = 2a
+      $$
+      将第二项移到右边,两边平方再整理,得 : $$
+        a^2 - cx = a\sqrt{(x - c)^2 + y^2}
+      $$
+      两边再平方,经过整理,得 : $$
+        (a^2 - c^2)x^2 + a^2y^2 = a^2(a^2 - c^2)
+      $$
+      由于$a^2 - c^2 > 0$,设$吧^2 = a^2 - c^2$ : $$
+        b^2x^2 + a^2y^2 = a^2b^2
+      $$
+      即 : $$
+        \cfrac{x^2}{a^2} + \cfrac{y^2}{b^2} = 1(a>b>0)
+      $$
+      同理,如果焦点在y轴上,那么方程就是 : $$
+        \cfrac{y^2}{a^2} + \cfrac{x^2}{b^2} = 1(a > b > 0)
+      $$
+
+      这其实是一种很漂亮的形式 :
+
+      \begin{center}
+        \begin{tikzpicture}
+          \draw[-latex] (-3,0) -- node[below left]{$O$} (3,0)node [below]{$x$};
+          \draw[-latex] (0,-3) -- (0,3)node [left]{$y$};
+          \draw (0,0) ellipse (2.5 and 1.5);
+          \filldraw[blue] (1.5,0) node[below]{$F_2$} -- node[below]{$c$} (0,0) -- node[left]{$b$}(0,1.5) -- node[right]{a} cycle;
+        \end{tikzpicture}
+        \begin{tikzpicture}
+          \draw[-latex] (-3,0) -- node[below left]{$O$} (3,0)node [below]{$x$};
+          \draw[-latex] (0,-3) -- (0,3)node [left]{$y$};
+          \draw (0,0) ellipse (1.5 and 2.5);
+          \filldraw[blue] (0,1.5) node[left]{$F_2$} -- node[left]{$c$} (0,0) -- node[below]{$b$}(1.5,0) -- node[right]{a} cycle;
+        \end{tikzpicture}
+      \end{center}
+
+      这就是椭圆的标准方程.
+    }%椭圆的一般方程结尾
+
+  }%关于椭圆结尾
 
   \subsection{关于空间平面}{
 
