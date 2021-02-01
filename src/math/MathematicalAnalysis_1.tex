@@ -1,8 +1,8 @@
-\section{微积分}{
+\chapter{微积分}{
 
-\subsection{极限}{
+\section{极限}{
 
-  \subsubsection{定理}{
+  \subsection{定理}{
     \begin{enumerate}
       \item 函数在一点极限存在的条件是左右极限存在且相等
       \item 洛必达法则:当极限为$\cfrac{0}{0}$或者$\cfrac{\infty}{\infty}$时可上下同时求导,求导后极限不变,每一步都需要重新判断是否依然符合类型
@@ -18,13 +18,13 @@
     \end{enumerate}
   }%极限定理结尾
 
-  \subsubsection{重要极限}{
+  \subsection{重要极限}{
     $\myLimToZero\cfrac{\sin{x}}{x}=1 \to \limNormal{x \to 0}\sin{x} \to x$
 
     $\myLimToInf(1+\cfrac{1}{x})^x = e$
   }%重要极限结尾  
 
-  \subsubsection{等价无穷小}{
+  \subsection{等价无穷小}{
     $\myLimToZero a^x - 1 \approx x\ln{a}$
 
     $\myLimToZero \arcsin(a)x \approx \sin(a)x \approx (a)x$
@@ -58,89 +58,89 @@
     以上等价无穷小都可以由泰勒公式推出
   }%等价无穷小结尾
 
-}%极限结尾
+  \subsection{渐进线}{
+    渐近线分为三种 :
+    \begin{itemize}
+      \item 水平渐近线 : 当$x \to x_0$时,$\myLimToInf\defFunction{x} = y_0$,则$y = y_0$是水平渐近线.
+      \item 垂直渐近线 : 当$x \to x_0$时,$\limNormal{x \to x_0}\defFunction{x} \to \infty$,且$x_0$为一般间断点,则$x = x_0$是垂直渐近线.
+      \item {
+            斜渐近线 :
 
-\subsection{数列极限相关}{
+            当$\myLimToInf\left[\defFunction{x} - (ax + b)\right] = 0(a,b \in \mathConstant)$存在,则$y = ax + b$是斜渐近线.
 
-  注:本章内容可用于级数.
+            即 : 如果$\myLimToInf\cfrac{\defFunction{x}}{x} = a$存在,且$\myLimToInf\left[\defFunction{x} - ax\right] = b$也存在,则$y = \defFunction{x}$有斜渐近线$y = ax + b$
+            }
+    \end{itemize}
+  }%渐近线结尾
 
-  注:数列不是级数,级数需要求和数列不用.
+  \subsection{数列极限相关}{
 
-  \subsubsection{数列}{
-    若函数$f$的定义域为全体正整数集合$\mathNatureNumberCollection^n$,则称
-    $$
-      f : \mathNatureNumberCollection^+ \to \mathRealNumberCollection,\defFunction{n} \ (n \in \mathNatureNumberCollection^+)
-    $$
+    注:本章内容可用于级数.
 
-    为数列.因正整数集$\mathNatureNumberCollection^+$的元素可按由小到大的顺序排列,所以数列$\defFunction{n}$也可以写作 :
-    $$
-      a_1,a_2,a_3,\dots,a_n,\dots,
-    $$
+    注:数列不是级数,级数需要求和数列不用.
 
-    或者可以简记为${a_n}$,其中$a_n$称为该数列的通项.
-  }%数列结尾
+    \subsubsection{数列}{
+      若函数$f$的定义域为全体正整数集合$\mathNatureNumberCollection^n$,则称
+      $$
+        f : \mathNatureNumberCollection^+ \to \mathRealNumberCollection,\defFunction{n} \ (n \in \mathNatureNumberCollection^+)
+      $$
 
-  \subsubsection{数列极限}{
-    设数列${a_n}$,存在$a_0$,若对于任意给定的正数$\epsilon$,总存在正整数$N$,使得当$n > N$时由
-    $$
-      \absoluteValue{a_n - a} < \epsilon
-    $$
+      为数列.因正整数集$\mathNatureNumberCollection^+$的元素可按由小到大的顺序排列,所以数列$\defFunction{n}$也可以写作 :
+      $$
+        a_1,a_2,a_3,\dots,a_n,\dots,
+      $$
 
-    则称数列${a_n}$收敛于$a,a$称为数列$a_n$的极限,记作
-    $$
-      \limNormal{n \to \infty}a_n = a
-    $$
+      或者可以简记为${a_n}$,其中$a_n$称为该数列的通项.
+    }%数列结尾
 
-    若数列${a_n}$没有极限,则称${a_n}$不收敛,或者称${a_n}$发散.
+    \subsubsection{数列极限}{
+      设数列${a_n}$,存在$a_0$,若对于任意给定的正数$\epsilon$,总存在正整数$N$,使得当$n > N$时由
+      $$
+        \absoluteValue{a_n - a} < \epsilon
+      $$
 
-    此定义等价于 : 任给$\epsilon > 0$,若在$(a - \epsilon,a + \epsilon)$之外数列${a_n}$中的项至多只有有限个,则称数列${a_n}$收敛域极限$a$.
-  }%数列极限结尾
+      则称数列${a_n}$收敛于$a,a$称为数列$a_n$的极限,记作
+      $$
+        \limNormal{n \to \infty}a_n = a
+      $$
 
-  \subsubsection{O'Stolz(stolz)定理}{
-    设$(a_n)_{n > 1}$和$(b_n)_{n > 1}$为两个实数数列.若$b_n$为从某项开始严格单调的无界正数数列,且有穷极限
-    $$
-      \limNormal{n \to \infty}\cfrac{a_{n + 1} - a_n}{b_{n + 1} - b_n} = L
-    $$
+      若数列${a_n}$没有极限,则称${a_n}$不收敛,或者称${a_n}$发散.
 
-    存在,则 :
-    $$
-      \limNormal{n \to \infty}\cfrac{a_n}{b_n} = L
-    $$
+      此定义等价于 : 任给$\epsilon > 0$,若在$(a - \epsilon,a + \epsilon)$之外数列${a_n}$中的项至多只有有限个,则称数列${a_n}$收敛域极限$a$.
+    }%数列极限结尾
 
-    其中$L$可以为有限实数或正/负无穷.
+    \subsubsection{O'Stolz(stolz)定理}{
+      设$(a_n)_{n > 1}$和$(b_n)_{n > 1}$为两个实数数列.若$b_n$为从某项开始严格单调的无界正数数列,且有穷极限
+      $$
+        \limNormal{n \to \infty}\cfrac{a_{n + 1} - a_n}{b_{n + 1} - b_n} = L
+      $$
 
-    该定理虽然主要被用于处理数列不定型极限,但该定理再没有$\limNormal{n \to \infty}a_n = \infty$这一条件时也是成立的.虽然该定理通常是以分布$b_n$为正数数列的情形加以叙述的,但注意到该定理对分子$a_n$的正负没有限制,所以原则上把对数列$b_n$的限制条i按替换为"严格单调递减且趋于负无穷大"也是没问题的.
+      存在,则 :
+      $$
+        \limNormal{n \to \infty}\cfrac{a_n}{b_n} = L
+      $$
 
-    与洛必达的迭代用法类似,在尝试使用此定理考察数列极限时,如果发现两个数列差分的商任然是不定型,那么可以继续用.
+      其中$L$可以为有限实数或正/负无穷.
 
-    注意 : 与洛必达类似,判定条件不存在不能认定极限本身不存在.
-  }%O'Stolz(stolz)定理结尾
+      该定理虽然主要被用于处理数列不定型极限,但该定理再没有$\limNormal{n \to \infty}a_n = \infty$这一条件时也是成立的.虽然该定理通常是以分布$b_n$为正数数列的情形加以叙述的,但注意到该定理对分子$a_n$的正负没有限制,所以原则上把对数列$b_n$的限制条i按替换为"严格单调递减且趋于负无穷大"也是没问题的.
 
-}%数列极限相关结尾
+      与洛必达的迭代用法类似,在尝试使用此定理考察数列极限时,如果发现两个数列差分的商任然是不定型,那么可以继续用.
 
-\subsection{渐进线}{
-  渐近线分为三种 :
-  \begin{itemize}
-    \item 水平渐近线 : 当$x \to x_0$时,$\myLimToInf\defFunction{x} = y_0$,则$y = y_0$是水平渐近线.
-    \item 垂直渐近线 : 当$x \to x_0$时,$\limNormal{x \to x_0}\defFunction{x} \to \infty$,且$x_0$为一般间断点,则$x = x_0$是垂直渐近线.
-    \item {
-          斜渐近线 :
+      注意 : 与洛必达类似,判定条件不存在不能认定极限本身不存在.
+    }%O'Stolz(stolz)定理结尾
 
-          当$\myLimToInf\left[\defFunction{x} - (ax + b)\right] = 0(a,b \in \mathConstant)$存在,则$y = ax + b$是斜渐近线.
+  }%数列极限相关结尾
 
-          即 : 如果$\myLimToInf\cfrac{\defFunction{x}}{x} = a$存在,且$\myLimToInf\left[\defFunction{x} - ax\right] = b$也存在,则$y = \defFunction{x}$有斜渐近线$y = ax + b$
-          }
-  \end{itemize}
-}%渐近线结尾
+ }%极限结尾
 
-\subsection{导数}{
+\section{导数}{
   导数是什么?教科书上普遍给出的定义是指:函数图像的斜率变化率曲线,事实上某些观点表示导数也可以理解成是函数对于输入值的敏感程度,即:输入值的变化对应的输出值的变化的剧烈程度.
 
   导数在一元情况下的定义是指$\limNormal{x to x_0}\cfrac{f(x) - f(x_0)}{x - x_0}$\ 或者\ $\limNormal{\Delta x \to x_0}\cfrac{f(x + \Delta x) - f(x)}{\Delta x}$
 
   值得注意的是:求导是一种线性运算.
 
-  \subsubsection{求导法则}{
+  \subsection{求导法则}{
     以下为求导的基本法则:
     \begin{enumerate}
       \item $(u + v)\derivative = u\derivative + v\derivative$
@@ -153,48 +153,48 @@
     注:反函数的导数等于函数导数的倒数,即——互为倒数的导数相乘依然为1
   }%求导法则结尾
 
-  \subsubsection{复合函数求导}{
+  \subsection{复合函数求导}{
     对于复合函数求导,有以下方法:
 
-    $y = \fint(u), u = g(x); \cfrac{dy}{dx} = \cfrac{dy}{du} \cdot \cfrac{du}{dx} = f\derivative(u) \cdot g\derivative(x)$
+    $y = f(u), u = g(x); \cfrac{dy}{dx} = \cfrac{dy}{du} \cdot \cfrac{du}{dx} = f\derivative(u) \cdot g\derivative(x)$
   }%复合函数求导结尾
 
-  \subsubsection{求导公式表}{
+  \subsection{求导公式表}{
     以下为基本函数的求导公式表,类似线性组合,大多数函数的导数可以由以下公式组合得到.
 
-    $\fint(x) = C, \fint\derivative(x) = 0$
+    $f(x) = C, f\derivative(x) = 0$
 
-    $\fint(x) = x^n, \fint\derivative(x) = nx^{n-1}$
+    $f(x) = x^n, f\derivative(x) = nx^{n-1}$
 
-    $\fint(x) = x, \fint\derivative(x) = 1$
+    $f(x) = x, f\derivative(x) = 1$
 
-    $\fint(x) = \sin x, \fint\derivative(x) = \cos x$
+    $f(x) = \sin x, f\derivative(x) = \cos x$
 
-    $\fint(x) = \cos x, \fint\derivative(x) = -\sin x$
+    $f(x) = \cos x, f\derivative(x) = -\sin x$
 
-    $\fint(x) = \tan x, \fint\derivative(x) = \sec^2 x$
+    $f(x) = \tan x, f\derivative(x) = \sec^2 x$
 
-    $\fint(x) = \sec x, \fint\derivative(x) = \sec x\tan x$
+    $f(x) = \sec x, f\derivative(x) = \sec x\tan x$
 
-    $\fint(x) = \cot x, \fint\derivative(x) = -\csc^2 x$
+    $f(x) = \cot x, f\derivative(x) = -\csc^2 x$
 
-    $\fint(x) = \csc x, \fint\derivative(x) = -\csc x\cot x$
+    $f(x) = \csc x, f\derivative(x) = -\csc x\cot x$
 
-    $\fint(x) = \arcsin x, \fint\derivative(x) = \cfrac{1}{\sqrt{1 - x^2}}$
+    $f(x) = \arcsin x, f\derivative(x) = \cfrac{1}{\sqrt{1 - x^2}}$
 
-    $\fint(x) = \arccos x, \fint\derivative(x) = -\cfrac{1}{\sqrt{1 - x^2}}$
+    $f(x) = \arccos x, f\derivative(x) = -\cfrac{1}{\sqrt{1 - x^2}}$
 
-    $\fint(x) = \arctan x, \fint\derivative(x) = \cfrac{1}{1 + x^2}$
+    $f(x) = \arctan x, f\derivative(x) = \cfrac{1}{1 + x^2}$
 
-    $\fint(x) = arccotx, \fint\derivative(x) = -\cfrac{1}{1 + x^2}$
+    $f(x) = arccotx, f\derivative(x) = -\cfrac{1}{1 + x^2}$
 
-    $\fint(x) = a^x, \fint\derivative(x) = a^x\ln x$
+    $f(x) = a^x, f\derivative(x) = a^x\ln x$
 
-    $\fint(x) = \log_a x, \fint\derivative(x) = \cfrac{1}{x\ln a}$
+    $f(x) = \log_a x, f\derivative(x) = \cfrac{1}{x\ln a}$
 
-    $\fint(x) = \ln x, \fint\derivative(x)= \cfrac{1}{x}$
+    $f(x) = \ln x, f\derivative(x)= \cfrac{1}{x}$
 
-    $\fint(x) = e^x, \fint\derivative(x) = e^x$
+    $f(x) = e^x, f\derivative(x) = e^x$
   }%求导公式表结尾
   \newline
 
@@ -207,7 +207,7 @@
     \item 连续则不一定可导
   \end{enumerate}
 
-  \subsubsection{线性近似/牛顿法近似函数/求方程解}{
+  \subsection{线性近似/牛顿法近似函数/求方程解}{
     由导数的另一种定义:$\fDerivative{x} = \limNormal{x \to a}\cfrac{\defFunction{x} - \defFunction{a}}{x - a}$
 
     当不再取极限的时候等号变成约等于,即:$\fDerivative{x} \approx \cfrac{\defFunction{x} - \defFunction{a}}{x - a}$, 两边移项,可得
@@ -220,50 +220,50 @@
 
   }%线性近似/牛顿法近似函数/方程解结尾
 
-}%导数结尾
+  \subsection{偏导数}{
 
-\subsection{偏导数}{
+    设$\defFunction{x,y,z} = ax + by + cz + d$
 
-  设$\defFunction{x,y,z} = ax + by + cz + d$
+    $f\partialDerivative{x}(x,y,z) = a$
 
-  $\fint\partialDerivative{x}(x,y,z) = a$
+    $f\partialDerivative{y}(x,y,z) = b$
 
-  $\fint\partialDerivative{y}(x,y,z) = b$
+    $f\partialDerivative{z}(x,y,z) = c$
 
-  $\fint\partialDerivative{z}(x,y,z) = c$
+    换言之,偏导就是只把要求偏导的变量看作变量,其他变量看作常量再求导.
 
-  换言之,偏导就是只把要求偏导的变量看作变量,其他变量看作常量再求导.
+    \subsubsection{全微分}{
 
-  \subsubsection{全微分}{
+      $\Delta z = \defFunction{x + \Delta x,y + \Delta y} - \defFunction{x,y}\qquad\Delta z : $ 近似求得
 
-    $\Delta z = \defFunction{x + \Delta x,y + \Delta y} - \defFunction{x,y}\qquad\Delta z : $ 近似求得
+      定义:$\defFunction{x,y}$在定义域内有定义,产生$\Delta x$和$\Delta y$,$\Delta z = \defFunction{x + \Delta x,y + \Delta y} - \defFunction{x,y} = A\Delta x + B\Delta y + O(\rho)$
 
-    定义:$\defFunction{x,y}$在定义域内有定义,产生$\Delta x$和$\Delta y$,$\Delta z = \defFunction{x + \Delta x,y + \Delta y} - \defFunction{x,y} = A\Delta x + B\Delta y + O(\rho)$
+      其中$A = f\partialDerivative{x}, B = f\partialDerivative{y}, \rho = \sqrt{(\Delta x)^2 + (\Delta y)^2}$
 
-    其中$A = f\partialDerivative{x}, B = f\partialDerivative{y}, \rho = \sqrt{(\Delta x)^2 + (\Delta y)^2}$
+      并且$A,B$是$x$和$y$的函数(此处$x,y$为常量),与$\Delta x$和$\Delta y$(此处$\Delta x, \Delta y$是变量)无关.
 
-    并且$A,B$是$x$和$y$的函数(此处$x,y$为常量),与$\Delta x$和$\Delta y$(此处$\Delta x, \Delta y$是变量)无关.
+      如果能写成此形式,则称此函数在这点可微,且$A\Delta x + B\Delta y$叫做他的全微分.
 
-    如果能写成此形式,则称此函数在这点可微,且$A\Delta x + B\Delta y$叫做他的全微分.
+      记作:$dz$(近似值)$= A\Delta x + B\Delta y \approx \Delta z$(精确值)
 
-    记作:$dz$(近似值)$= A\Delta x + B\Delta y \approx \Delta z$(精确值)
+      注意 :
 
-    注意 :
+      \begin{itemize}
+        \item 可微的必要条件 : 如果$z = f(x,y)$可微,可以推出偏导存在,且$dz - f\partialDerivative{x}\Delta x + f\partialDerivative{y}\Delta y$
+        \item 可微的充分条件 : 在定义域内有连续偏导数.
+      \end{itemize}
+    }
 
-    \begin{itemize}
-      \item 可微的必要条件 : 如果$z = f(x,y)$可微,可以推出偏导存在,且$dz - f\partialDerivative{x}\Delta x + f\partialDerivative{y}\Delta y$
-      \item 可微的充分条件 : 在定义域内有连续偏导数.
-    \end{itemize}
-  }
+  }%偏导数结尾
 
-}%偏导数结尾
+ }%导数结尾
 
-\subsection{微分}{
+\section{微分}{
 那么微分(differential)又是什么?微分是一个函数在自变量做无穷小变化时函数值的变化.在形式上确实与导数类似,但不应该与导数混淆.
 
 可以形象化理解,微分就是曲线的切线.给定一个横坐标,可以在切线上找到纵坐标.就是这样一个映射.而导数就是这条切线的斜率.
 
-\subsubsection{微分公式}{
+\subsection{微分公式}{
   给出以下微分公式,与导数确实类似,但微分和导数是两个不同的映射.他们的定义域都是可微函数,微分的值域是1-form,导数的值域是函数.
   \begin{enumerate}
     \item $d(u \pm v) = du \pm dv$
@@ -273,30 +273,32 @@
   \end{enumerate}
 }%微分公式结尾
 
-\subsubsection{复合微分}{
+\subsection{复合微分}{
   与复合求导类似:
 
-  $y = \fint(u), u = g(x);$
+  $y = f(u), u = g(x);$
 
-  $dy = y\derivative dx = \fint\derivative(u)du = \fint\derivative{u}g\derivative(x)dx$
+  $dy = y\derivative dx = f\derivative(u)du = f\derivative{u}g\derivative(x)dx$
 
   即:$du = dg(x)$
 }%复合微分结尾
+
+\subsection{微分中值定理}{
 
 \subsubsection{罗尔中值定理}{
   \begin{center}
     \includegraphics{resources/Rolle's_mean_value_theorem.jpg}
   \end{center}
 
-  如果函数$\fint(x)$满足:
+  如果函数$f(x)$满足:
 
   \begin{enumerate}
     \item 在闭区间$[a,b]$上连续;
     \item 在开区间$(a,b)$上可导;
-    \item 在区间端点处的函数值相等,即$\fint(a) = \fint(b)$,
+    \item 在区间端点处的函数值相等,即$f(a) = f(b)$,
   \end{enumerate}
 
-  那么在$(a,b)$内至少有一点$\xi, (a<\xi<b)$,使得$\fint\derivative(\xi) = 0$.这个定理称为罗尔定理
+  那么在$(a,b)$内至少有一点$\xi, (a<\xi<b)$,使得$f\derivative(\xi) = 0$.这个定理称为罗尔定理
 }%罗尔中值定理结尾
 
 \subsubsection{拉格朗日中值定理}{
@@ -304,13 +306,13 @@
   \includegraphics{resources/Lagrange's_mean_value_theorem.png}
 \end{center}
 
-令$\fint : [a,b] \to \mathbf{R}$为闭区间$[a,b]$上的一个函数,且在开区间
-$(a,b)$内对任意一点$x$,极限$\limNormal{h \to 0}\cfrac{\fint(x + h) - \fint(x)}{h}$存在,
+令$f : [a,b] \to \mathbf{R}$为闭区间$[a,b]$上的一个函数,且在开区间
+$(a,b)$内对任意一点$x$,极限$\limNormal{h \to 0}\cfrac{f(x + h) - f(x)}{h}$存在,
 为一个有限数字或者等于$+\infty$或$-\infty$.如果有限,则极限等于$\fDerivative{x}$.
 
 此定理称为{\bfseries拉格朗日中值定理},也简称中值定理,是罗尔中值定理的更一般的形式,同时也是柯西中值定理的特殊情形
 
-这个定理再可以稍微推广一点.只需假设$\fint : [a,b] \to \mathbf{R}$在$[a,b]$连续,且在开区间$(a,b)$内对任意一点$x$,极限$\limNormal{h \to 0}
+这个定理再可以稍微推广一点.只需假设$f : [a,b] \to \mathbf{R}$在$[a,b]$连续,且在开区间$(a,b)$内对任意一点$x$,极限$\limNormal{h \to 0}
   \cfrac{\defFunction{x + h} - \defFunction{x}}{b - a}$存在,为一个有限数字或者等于$+\infty$或者$-\infty$.如果有限,则极限等于$\fDerivative{x}$.
 这版本定理应用的一个例子是函数$x \to x^{\cfrac{1}{3}}$,实值三次方根函数,其导数在原点趋于无穷.
 
@@ -353,7 +355,9 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
   等价于 : 设$\defFunction{x}$在$\mediumBigCase{a,b}$上可微,若在$\mediumBigCase{a,b}$上对于任意的$x,\fDerivative{x}$不等于0,则$\fDerivative{x}$在$\mediumBigCase{a,b}$上保持定号(恒正或恒负).
 }%达布中值定理结尾
 
-\subsubsection{弧微分}{
+}%微分中值定理结尾
+
+\subsection{弧微分}{
   设$y = \defFunction{x}$在$(a,b)$内有连续导数,其图形为$\widehat{AB}$,弧长$s = \widehat{AM} = s(x)$,
 
   \begin{center}
@@ -387,7 +391,7 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
 
 }%弧微分结尾
 
-\subsubsection{曲线曲率}{
+\subsection{曲线曲率}{
   曲线的曲率通常是标量,但也可以定义曲率向量.对于更复杂的对象(例如曲面,或者一般的n维空间),曲率要用更复杂的线性代数来描述,例如一般的黎曼曲率张量.
 
   首先要有密切圆的概念 :
@@ -444,7 +448,7 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
   \end{itemize}
 }%曲线曲率结尾
 
-\subsubsection{曲率半径}{
+\subsection{曲率半径}{
   曲线上$M$处的曲率的倒数,称作曲线在这点处的曲率半径,记作$\rho$ : $$
     \rho = \cfrac{1}{k} = \cfrac{(1 + y^{\prime 2})^{\frac{3}{2}}}{\absoluteValue{y\doubleDerivative}}
   $$
@@ -461,10 +465,10 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
 
 }%微分结尾
 
-\subsection{不定积分}{
-  在微积分中,函数$\fint$的不定积分(或称反导函数或原函数)是一个可微函数$\mathbf{F}$且其导数等于原来的函数$\fint$,即$F\prime = \fint$.不定积分和定积分的关系由微积分基本定理联系起来.透过微积分基本定理,函数的定积分的计算就可以简单的通过求不定积分来进行.
+\section{不定积分}{
+  在微积分中,函数$f$的不定积分(或称反导函数或原函数)是一个可微函数$\mathbf{F}$且其导数等于原来的函数$f$,即$F\prime = f$.不定积分和定积分的关系由微积分基本定理联系起来.透过微积分基本定理,函数的定积分的计算就可以简单的通过求不定积分来进行.
 
-  \subsubsection{不定积分公式}{
+  \subsection{不定积分公式}{
     下面给出不定积分公式:
 
     \begin{enumerate}
@@ -485,23 +489,25 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
 
   }%不定积分公式结尾
 
-  \subsubsection{不定积分第一类换元积分法}{
-    设$\defFunction{x}$为可积函数,$g = g(x)$是连续可导函数,则有:
+  \subsection{不定积分换元法}{
+    \subsubsection{不定积分第一类换元积分法}{
+      设$\defFunction{x}$为可积函数,$g = g(x)$是连续可导函数,则有:
 
-    $\int \defFunction{g}g\derivative dx = \int \defFunction{g}dg$
+      $\int \defFunction{g}g\derivative dx = \int \defFunction{g}dg$
 
-    第一类换元积分法基本就是配凑的思想.
+      第一类换元积分法基本就是配凑的思想.
 
-  }%不定积分第一类换元积分法结尾
+    }%不定积分第一类换元积分法结尾
 
-  \subsubsection{不定积分第二类换元积分法}{
-    设$\defFunction{x}$为可积函数,$x = x(g)$为连续可导函数,则有:
+    \subsubsection{不定积分第二类换元积分法}{
+      设$\defFunction{x}$为可积函数,$x = x(g)$为连续可导函数,则有:
 
-    $\int \defFunction{x}dx = \int \defFunction{x(g)x\derivative dx}$
+      $\int \defFunction{x}dx = \int \defFunction{x(g)x\derivative dx}$
 
-  }%不定积分第一类换元积分法结尾.
+    }%不定积分第一类换元积分法结尾.
+  }%不定积分换元法结尾
 
-  \subsubsection{分部积分法}{
+  \subsection{分部积分法}{
     分部积分的公式为:
 
     $\int udv = uv - \int v du$
@@ -511,11 +517,11 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
     指数函数,三角函数,幂函数,对数函数,反函数
   }%分部积分法结尾
 
-}%不定积分结尾
+ }%不定积分结尾
 
-\subsection{定积分}{
+\section{定积分}{
 
-\subsubsection{定义}{
+\subsection{定义}{
   $\limNormal{\lambda \to 0}\upDownSum{\infty}{i = 1}\defFunction{\xi_i}\cdot\Delta x_i$
 
   以上为定义,实际中写法为$\definiteIntegral{a}{b}\defFunction{x}dx$.
@@ -523,35 +529,39 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
   其中$a$为积分区域上限,$b$为积分区域下限.
 }%定义结尾
 
-\subsubsection{性质}{
+\subsection{性质}{
   定积分有以下性质:
   \begin{enumerate}
     \item $\definiteIntegral{a}{b}\defFunction{x}dx = -\definiteIntegral{b}{a}\defFunction{x}dx$即:交换上下限积分结果正负改变.
-    \item $a < b < c; \definiteIntegral{b}{a}\defFunction{x}dx = \definiteIntegral{b}{a}\defFunction{x}dx + \definiteIntegral{c}{b}\defFunction{x}dx$,且$\definiteIntegral{b}{a}\defFunction{x}dx = \definiteIntegral{c}{a}\defFunction{x}dx - \definiteIntegral{c}{b}\defFunction{x}dx = \definiteIntegral{c}{a}\defFunction{x}dx + \definiteIntegral{b}{c}\defFunction{x}dx$
-    \item $\defFunction{x} \leq g(x); \definiteIntegral{b}{a}\defFunction{x}dx \leq \definiteIntegral{b}{a}g(x)dx$
+    \item $a < b < c; \definiteIntegral{b}{a}\defFunction{x}dx = \definiteIntegral{b}{a}\defFunction{x}dx + \definiteIntegral{c}{b}\defFunction{x}dx$,
+
+          且$\definiteIntegral{b}{a}\defFunction{x}dx = \definiteIntegral{c}{a}\defFunction{x}dx - \definiteIntegral{c}{b}\defFunction{x}dx = \definiteIntegral{c}{a}\defFunction{x}dx + \definiteIntegral{b}{c}\defFunction{x}dx$
+    \item $\defFunction{x} \leq g(x); \definiteIntegral{b}{a}\defFunction{x}dx \leq \definiteIntegral{b}{a}g(x)dx\ (a \leq b)$
     \item $|\definiteIntegral{b}{a}\defFunction{x}dx|\leq\definiteIntegral{b}{a}|\defFunction{x}|dx$
   \end{enumerate}
 }%性质结尾
 
-\subsubsection{定积分第一类换元积分法}{
-  设$\defFunction{x}$为可积函数,$g = g(x)$是连续可导函数,则有:
+\subsection{定积分换元法}{
+  \subsubsection{定积分第一类换元积分法}{
+    设$\defFunction{x}$为可积函数,$g = g(x)$是连续可导函数,则有:
 
-  $\definiteIntegral{\beta}{\alpha} \defFunction{g}g\derivative dx = \definiteIntegral{g(\beta)}{g(\alpha)} \defFunction{g}dg$
-}%定积分第一类换元积分法结尾
+    $\definiteIntegral{\beta}{\alpha} \defFunction{g}g\derivative dx = \definiteIntegral{g(\beta)}{g(\alpha)} \defFunction{g}dg$
+  }%定积分第一类换元积分法结尾
 
-\subsubsection{定积分第二类换元积分法}{
-  设$\defFunction{x}$为可积函数,$x = x(g)$为连续可导函数,则有:
+  \subsubsection{定积分第二类换元积分法}{
+    设$\defFunction{x}$为可积函数,$x = x(g)$为连续可导函数,则有:
 
-  $\definiteIntegral{\beta}{\alpha} \defFunction{x}dx = \definiteIntegral{x^{-1}(\beta)}{x^{-1}(\alpha)}\defFunction{x}x\derivative dx$
+    $\definiteIntegral{\beta}{\alpha} \defFunction{x}dx = \definiteIntegral{x^{-1}(\beta)}{x^{-1}(\alpha)}\defFunction{x}x\derivative dx$
 
-  简而言之:定积分的第二类换元积分法有两个要点
-  \begin{enumerate}
-    \item 引入换元函数
-    \item 上下限也要变(将原函数上下限代入换元函数)
-  \end{enumerate}
-}%定积分第二类换元积分法结尾.
+    简而言之:定积分的第二类换元积分法有两个要点
+    \begin{enumerate}
+      \item 引入换元函数
+      \item 上下限也要变(将原函数上下限代入换元函数)
+    \end{enumerate}
+  }%定积分第二类换元积分法结尾.
+}%定积分换元法结尾
 
-\subsubsection{积分上限函数(定积分求导公式)}{
+\subsection{积分上限函数(定积分求导公式)}{
   $I(x) = \definiteIntegral{x}{a}\defFunction{t}dt$
 
   如果$\defFunction{x}连续$,$I(x)$可导,则$I\prime(x) = \cfrac{d\definiteIntegral{x}{a}f(t)dt}{dx} = f(x)$
@@ -568,11 +578,11 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
 
 }%积分上限函数结尾
 
-\subsubsection{牛顿-莱布尼兹公式/微积分基本定理}{
+\subsection{牛顿-莱布尼兹公式/微积分基本定理}{
   $\definiteIntegral{b}{a}\defFunction{x}dx = F(x)|^b_a = F(b) - F(a)$
 }%牛顿-莱布尼兹公式/微积分基本定理结尾
 
-\subsubsection{积分介值定理}{
+\subsection{积分介值定理}{
 
   在区间$[a,b]$上$m$和$M$分别是$\defFunction{x}$的最小值和最大值.
 
@@ -580,7 +590,7 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
 
 }%积分介值定理结尾
 
-\subsubsection{区间再现公式}{
+\subsection{区间再现公式}{
   设$\defFunction{x} = \definiteIntegral{a}{b}g(x)dx$,令$x = a + b - t$,当$x = a$时,$t = b$,当$x = b$时,$t = a$,$dx$变成$-dt$.即:
 
   $\defFunction{x} = \definiteIntegral{a}{b}g(x)dx = -\definiteIntegral{b}{a}g(a+b-t)dt = \definiteIntegral{a}{b}g(a + b - t)dt$
@@ -590,7 +600,7 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
   $\defFunction{x} = \cfrac{1}{2}\definiteIntegral{a}{b}[g(x) + g(a + b - x)]dx$
 }%区间再现公式结尾
 
-\subsubsection{华里士公式(点火公式)}{
+\subsection{华里士公式(点火公式)}{
   $$
     \definiteIntegral{\cfrac{\pi}{2}}{0}\sin^nxdx = \definiteIntegral{\cfrac{\pi}{2}}{0}\cos^nxdx = \begin{cases}
       \cfrac{n - 1}{n} \cdot \cfrac{n - 3}{n - 2} \cdots \cfrac{2}{3}\ (n\mbox{为大于1的奇数}) \\
@@ -599,8 +609,9 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
   $$
 }%华里士公式(点火公式)结尾
 
+\subsection{积分中值定理}{
 \subsubsection{积分第一中值定理}{
-设$\fint:[a,b] \to \mathbf{R}$为一连续函数,$g:[a,b] \to \mathbf{R}$要求$g(x)$是可积函数且在积分区间不变号,那么存在一点$\xi\in[a,b]$使得:
+设$f:[a,b] \to \mathbf{R}$为一连续函数,$g:[a,b] \to \mathbf{R}$要求$g(x)$是可积函数且在积分区间不变号,那么存在一点$\xi\in[a,b]$使得:
 
 $\definiteIntegral{b}{a}\defFunction{x}g(x)dx = \defFunction{\xi}\definiteIntegral{b}{a}g(x)dx$
 他的几何意义为:
@@ -611,7 +622,7 @@ $\definiteIntegral{b}{a}\defFunction{x}g(x)dx = \defFunction{\xi}\definiteIntegr
 
 以下为证明:
 
-在不失去一般性的条件下,设对所有的$x$,有$g(x) \geq 0$;因为$\fint$是闭区间上的连续函数,$\fint$取得最大值$M$和最小值$m$.于是得出不等式:
+在不失去一般性的条件下,设对所有的$x$,有$g(x) \geq 0$;因为$f$是闭区间上的连续函数,$f$取得最大值$M$和最小值$m$.于是得出不等式:
 
 $mg(x) \leq \defFunction{x}g(x) \leq Mg(x)$
 
@@ -635,7 +646,7 @@ $\defFunction{\xi} = \cfrac{\definiteIntegral{b}{a}\defFunction{x}g(x)dx}{\defin
 
 在上式中令$g(x) = 1$,则可得出:
 
-设$\fint : [a,b] \to \mathbf{R}$为一连续函数,则$\exists\xi\in[a,b]$,使得
+设$f : [a,b] \to \mathbf{R}$为一连续函数,则$\exists\xi\in[a,b]$,使得
 
 $\defFunction{\xi} = \cfrac{\definiteIntegral{b}{a}\defFunction{x}dx}{b - a}$
 
@@ -666,8 +677,9 @@ $\definiteIntegral{\xi}{a}\defFunction{x}dx -\defFunction{a}(\xi - a) = \defFunc
 \end{center}
 
 }%积分第二中值定理结尾
+}%积分中值定理结尾
 
-\subsubsection{定积分求平面函数曲线弧长}{
+\subsection{定积分求平面函数曲线弧长}{
 
   $$
     \begin{cases}
@@ -696,8 +708,6 @@ $\definiteIntegral{\xi}{a}\defFunction{x}dx -\defFunction{a}(\xi - a) = \defFunc
 
   $S = \definiteIntegral{\beta}{\alpha}\sqrt{\rho^{\prime 2}(\theta) + \rho^2(\theta)d\theta}$\qquad(注意求导符号)
 }%定积分求平面函数曲线弧长
-
-}%定积分结尾
 
 \subsection{反常积分}{
 通常来说只需要极限存在,则此反常积分收敛.
@@ -763,39 +773,12 @@ $\varGamma(n+1) = n!$
 
 }%反常积分结尾
 
-\subsection{无穷级数}{
+}%定积分结尾
 
-\subsubsection{泰勒公式/泰勒级数/展开}{
-泰勒级数表示:当知道某点$x = a$的情况时,就能知道$a$点附近的函数是怎样的.
-
-$x$在$a$点附近,最为粗略的估计就是$\defFunction{x} \approx \defFunction{a}$
-
-然后才是修正项:$\fDerivative{a}(x - a)$,这是斜率乘以距离,最终得到的就是高度.相当于沿切线前进.
-
-还有一项表示弯曲:$\cfrac{1}{2}\fint\doubleDerivative(a)(x - a)^2$,他是斜率的斜率,变化率的变化率.
-
-但后面还有更多项,直接写出通项公式如何?
-
-泰勒级数通项公式:$\defFunction{x} = \upDownSum{\infty}{n = 1}\cfrac{1}{n!}\fint\aLotDerivative{n - 1}(x - a)^{n - 1}$,0阶导指的是原函数,a是x附近的点.
-
-还有泰勒公式:表示的不是一个函数的幂级数形式而是对于某个函数的近似,形式与泰勒级数通项公式类似.
-
-泰勒公式:$\defFunction{x} = \defFunction{a} + \fDerivative{a}(x - a) + \cfrac{1}{2!}\fint\doubleDerivative(a)(x - a)^2 + ... + \cfrac{1}{n!}\fint\aLotDerivative{n}(x - a)^n + R_n(x)$.
-
-$R_n(x)$是余项,表示误差,是$(x - a)^n$的高阶无穷小$O((x - a)^n)$.根据中值定理可得$R_n(x) = \cfrac{1}{(n + 1)!}\fint\aLotDerivative{n + 1}(\xi)(x - a)^{n+1}$,其中$a \leq \xi \leq x$,意思是$\xi$介于$a$和$x$之间.
-
-当泰勒公式在$a = 0$处展开时就称为麦克劳林公式.
-
-麦克劳林公式:当$a = 0, \defFunction{x} = \defFunction{0} + \cfrac{1}{1!}\fDerivative{0}x + \cfrac{1}{2!}\fint\doubleDerivative(0)x^2 + ... + \cfrac{1}{(n + 1)!}\fint\aLotDerivative{n + 1}(\theta x)x^{n+1}$,其中$0 < \theta < 1$
-
-}%泰勒公式/泰勒级数/展开结尾
-
-}%无穷级数结尾
-
-\subsection{微分方程}{
+\section{微分方程}{
 微分方程是一种描述世界的好手段,当描述某个东西随时间的微小变化比起描述这个物体整体的变化更方便的时候就会使用微分方程.
 
-\subsubsection{一阶线性微分方程}{
+\subsection{一阶线性微分方程}{
   形式$\cfrac{dy}{dx} + p(x)y = Q(x)$
 
   有以下几种情况:
@@ -826,7 +809,7 @@ $R_n(x)$是余项,表示误差,是$(x - a)^n$的高阶无穷小$O((x - a)^n)$.�
 
 }%一阶线性微分方程结尾
 
-\subsubsection{伯努利方程}{
+\subsection{伯努利方程}{
   $$
     \cfrac{dy}{dx} + p(x)y = Q(x)y^n
   $$
@@ -856,7 +839,7 @@ $R_n(x)$是余项,表示误差,是$(x - a)^n$的高阶无穷小$O((x - a)^n)$.�
   再套用非齐次线性微分方程的公式,再把$y$求出来就行.
 }%伯努利方程结尾
 
-\subsubsection{可降阶高阶微分方程}{
+\subsection{可降阶高阶微分方程}{
   有以下几种情况:
 
   \begin{enumerate}
@@ -867,7 +850,7 @@ $R_n(x)$是余项,表示误差,是$(x - a)^n$的高阶无穷小$O((x - a)^n)$.�
 
 }%可降阶高阶微分方程结尾
 
-\subsubsection{常系数齐次线性微分方程}{
+\subsection{常系数齐次线性微分方程}{
   例:$y\doubleDerivative + py\derivative + qy = 0$
 
   先找出特征方程:$r^2 + pr + q = 0$,即:设$r = p\derivative,r^2 = \doubleDerivative$.
@@ -888,7 +871,7 @@ $R_n(x)$是余项,表示误差,是$(x - a)^n$的高阶无穷小$O((x - a)^n)$.�
 
 }%常系数其次线性微分方程结尾
 
-\subsubsection{关于运动的微分方程/线性常系数微分方程}{
+\subsection{关于运动的微分方程/线性常系数微分方程}{
 开门见山,先提出此公式再进行分析.
 
 $m\cfrac{d^2y}{dt^2} + 2r\cfrac{dy}{dt} + ky = 0$
@@ -976,7 +959,7 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
 所以结论就是:线性常系数微分方程只要通过$e^{\lambda t}$就能解决.
 }%关于运动的微分方程结尾
 
-\subsubsection{关于增长的微分方程/非线性微分方程/偏微分方程剧透}{
+\subsection{关于增长的微分方程/非线性微分方程/偏微分方程剧透}{
   从线性的开始.
 
   最简单的:$\cfrac{dy}{dt} = cy$, 给予了初始条件$y(0)$
@@ -1054,13 +1037,13 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
 
 }%微积分结尾
 
-\section{多元微积分}{
+\chapter{多元微积分}{
 注:如果忘了什么是偏导数就去上一章回顾.
 %# TODO: 重新学一遍
 
-\subsection{多元函数的极值与最值}{
+\section{多元函数的极值与最值}{
 
-  \subsubsection{多元函数的极值}{
+  \subsection{多元函数的极值}{
     \begin{itemize}
       \item {
             极值存在的必要条件 :
@@ -1092,7 +1075,7 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
     \end{itemize}
   }%多元函数的极值结尾
 
-  \subsubsection{多元函数的最值}{
+  \subsection{多元函数的最值}{
     多元函数的最值一般出现在三种情况中 :
 
     \begin{enumerate}
@@ -1102,7 +1085,7 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
     \end{enumerate}
   }%多元函数的最值结尾
 
-  \subsubsection{条件极值与拉格朗日乘数法}{
+  \subsection{条件极值与拉格朗日乘数法}{
     设目标函数为$z = \defFunction{x,y}$,条件为$\varphi(x,y) = 0$
 
     假设$y$也是$x$的函数$\psi$,则 :
@@ -1182,19 +1165,19 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
     $$
   }%条件极值与拉格朗日乘数法结尾
 
-}%多元函数的极值与最值结尾
+ }%多元函数的极值与最值结尾
 
-\subsection{隐函数}{
+\section{隐函数}{
 
-  \subsubsection{隐函数存在定理/隐函数定理(二元)}{
+  \subsection{隐函数存在定理/隐函数定理(二元)}{
     %# TODO 填坑
   }%隐函数存在定理/隐函数定理(二元)结尾
 
-}%隐函数结尾
+ }%隐函数结尾
 
-\subsection{重积分}{
+\section{重积分}{
 
-  \subsubsection{二重积分}{
+  \subsection{二重积分}{
     定义 : $\limNormal{\lambda \to 0}\upDownSum{n}{i = 1}\Delta\sigma_i\defFunction{\xi_i,\eta_i} = \doubleIntegralOnZone{D}\defFunction{x,y}d\sigma$
 
     解释 : $\defFunction{x,y}$是区域$D$上的有界函数,将区域$D$任意分成$n$个区域$\Delta\sigma_1\dots\Delta\sigma_n$,在每个$\Delta\sigma_i$上任取一点,$(\xi_i,\varUpsilon_i)\cdot\Delta\sigma_i$,当$\lambda \to 0$时,如果上述极限存在,则称为$f(x,y)$的二重积分.其中$d\sigma$称为面积元素,可写作$dxdy$
@@ -1207,7 +1190,7 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
     \end{itemize}
   }%二重积分结尾
 
-  \subsubsection{二重积分的性质}{
+  \subsection{二重积分的性质}{
     \begin{itemize}
       \item $\doubleIntegralOnZone{D}\left[\alpha\defFunction{x,y} + \beta g(x,y)\right]d\sigma = \alpha\doubleIntegralOnZone{D}\defFunction{x,y}d\sigma + \beta\doubleIntegralOnZone{D}g(x,y)d\sigma$
       \item $D$分为$D_1,D_2$,$\doubleIntegralOnZone{D}\defFunction{x,y}d\sigma = \doubleIntegralOnZone{D_1}\defFunction{x,y}d\sigma + \doubleIntegralOnZone{D_2}\defFunction{x,y}d\sigma$
@@ -1219,7 +1202,7 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
     \end{itemize}
   }%二重积分的性质结尾
 
-  \subsubsection{直角坐标系下的二重积分计算}{
+  \subsection{直角坐标系下的二重积分计算}{
     \begin{center}
       \begin{tikzpicture}
         \begin{axis}[view = {120}{30},axis lines = center,axis on top,xmin = 0,xmax =5,ymin = 0,ymax = 5,zmin = 0,zmax = 5]
@@ -1262,7 +1245,7 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
     \end{itemize}
   }%直角坐标系下的二重积分的计算结尾
 
-  \subsubsection{直角坐标系下二重积分的特殊情况}{
+  \subsection{直角坐标系下二重积分的特殊情况}{
     有两种特殊情况可以简化二重积分的运算 :
 
     \begin{enumerate}
@@ -1293,7 +1276,7 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
 
   }%直角坐标系下二重积分的特殊情况结尾
 
-  \subsubsection{极坐标下的二重积分计算}{
+  \subsection{极坐标下的二重积分计算}{
     \begin{center}
       \begin{tikzpicture}
         \draw (0,0) -- (0,5);
@@ -1347,7 +1330,7 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
 
   }%极坐标下的二重积分计算
 
-  \subsubsection{极坐标下的特殊情况}{
+  \subsection{极坐标下的特殊情况}{
     \begin{itemize}
       \item $-x^2 -y^2 = -(\rho^2\cos^2\theta + \rho^2\sin^2\theta) = \rho^2$
       \item $\cfrac{x}{y} = \tan\theta$
@@ -1355,7 +1338,7 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
     \end{itemize}
   }%极坐标下的特殊情况结尾
 
-  \subsubsection{二重积分换元法}{
+  \subsection{二重积分换元法}{
     设$\defFunction{x,y}$在$B$区域连续,$x = x(u,v),y = y(u,v)$,且$x,y$积分区域为$D$,用$u,v$换元后为$D\derivative$\\
 
     当 :
@@ -1404,7 +1387,7 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
     \end{itemize}
   }%二重积分换元法结尾
 
-  \subsubsection{三重积分}{
+  \subsection{三重积分}{
     设$v = \defFunction{x,y,z}$,从空间中任取一点$\Delta V_i : \defFunction{\xi_i,\eta_i,\zeta_i}$
 
     定义为 :
@@ -1461,13 +1444,13 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
     值得注意的是在二重积分情况下的特殊情况(5.3.4)在三重积分下也适用.
   }%三重积分结尾
 
-  \subsubsection{三重积分(柱面坐标)}{
+  \subsection{三重积分(柱面坐标)}{
     由于柱面坐标只是单纯的加了个$z$轴,因此只是单纯的在外面套了一层对$z$轴的积分而已.
 
     即 : $dv = \rho d\rho d\theta dz$
   }%三重积分(柱面坐标结尾)
 
-  \subsubsection{三重积分(球面坐标)}{
+  \subsection{三重积分(球面坐标)}{
     公式为 :
     $$
       dv = dxdydz = r^2\sin\varphi drd\varphi d\theta
@@ -1476,7 +1459,7 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
     多出来的$r^2\sin\varphi$也可以由雅可比行列式推出.
   }%三重积分(球面坐标)结尾
 
-  \subsubsection{重积分应用(求曲面面积)}{
+  \subsection{重积分应用(求曲面面积)}{
     设$z = \defFunction{x,y}$;将曲面划分称一个个长为$a$宽为$b$的小方格:
 
     图示如下 :
@@ -1503,14 +1486,14 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
 
   %# TODO 重积分应用(求质心,转动惯量,引力)
 
-}%重积分结尾
+ }%重积分结尾
 
-\subsection{曲线积分与曲面积分}{
+\section{曲线积分与曲面积分}{
   在数学中,曲线积分或路径积分(或contour integral[留数定理])是积分的一种.积分函数的取值沿的不是区间,而是特定的曲线,称为积分路径.曲线积分有很多种类,当积分路径为闭合曲线时,称为环路积分或围道积分.
 
   在曲线积分中,被积的函数可以是标量函数或向量函数.当被积函数是标量函数时,积分的值是积分路径各点上的函数值乘上该点切向量的长度.在被积分函数是向量函数时,积分值是积分向量函数与曲线切向量的内积.在函数是标量函数的情形下,可以把切向量的绝对值(长度)看成此曲线把该点附近定义域的极小区间,在到达域内拉长了切向量绝对值的长度,这也是曲线积分与一般区间上的积分的主要不同点.
 
-  \subsubsection{第一类曲线积分(对弧长的曲线积分)}{
+  \subsection{第一类曲线积分(对弧长的曲线积分)}{
     设曲线的密度为$M(x,y)$,求质量$m$:
 
     \begin{center}
@@ -1542,7 +1525,7 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
     \end{itemize}
   }%第一类曲线积分(对弧长的曲线积分)结尾
 
-  \subsubsection{第一类曲线积分的计算}{
+  \subsection{第一类曲线积分的计算}{
     定理 : 设曲线$L$ :
     \begin{center}
       $$
@@ -1596,7 +1579,7 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
     \end{enumerate}
   }%第一类曲线积分的计算结尾
 
-  \subsubsection{第二类曲线积分(对坐标的曲线积分)}{
+  \subsection{第二类曲线积分(对坐标的曲线积分)}{
     引出 : 设$F$是一变力,求他沿着曲线做的功$\omega$ :
 
     \begin{center}
@@ -1642,7 +1625,7 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
     \end{itemize}
     }%对坐标的曲线积分结尾
 
-    \subsubsection{第二类曲线积分(对坐标的曲线积分)计算}{
+    \subsection{第二类曲线积分(对坐标的曲线积分)计算}{
       设参数方程 :
       \begin{center}
         $$
@@ -1672,7 +1655,7 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
       \end{itemize}
     }%第二类曲线积分(对坐标的曲线积分)计算结尾
 
-    \subsubsection{第二类曲线积分计算例题}{
+    \subsection{第二类曲线积分计算例题}{
       \begin{enumerate}
         \item {
               设$F(x,y) = xy$,从$A$到$B$沿$y^2 = x$积分:
@@ -1740,7 +1723,7 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
       \end{enumerate}
     }%第二类曲线积分计算例题
 
-    \subsubsection{两类曲线积分之间的联系}{
+    \subsection{两类曲线积分之间的联系}{
       先列出两类曲线积分的定义 :
       \begin{center}
         \begin{tabular}{c|c}
@@ -1799,7 +1782,7 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
       \end{math}
     }%两类曲线积分之间的联系
 
-    \subsubsection{格林公式}{
+    \subsection{格林公式}{
       在物理学与数学中,格林公式给出了沿封闭曲线$C$的线积分与以$C$为边界的平面区域$D$上的双重积分的联系.格林公式是斯托克斯公式的二维特例 :
 
       设闭区域D由分段光滑的简单曲线$L$围成,函数$P(x,y)$及$Q(x,y)$在$D$上有一阶连续偏导数(即:没有洞的区域),则有 :
@@ -1810,7 +1793,7 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
       其中$L^+$是$D$的取正向的边界曲线,$\oint$表示闭合路线上的曲线积分.
     }%格林公式结尾
 
-    \subsubsection{当$D$为一个简单区域时格林公式的证明}{
+    \subsection{当$D$为一个简单区域时格林公式的证明}{
       设一个比较简单的区域D,无论是沿着Y还是X都最多只有两个垂边,即 :
       \begin{center}
         \begin{tikzpicture}
@@ -1869,7 +1852,7 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
       \end{enumerate}
     }%当D时一个简单区域时格林公式的证明
 
-    \subsubsection{格林公式的计算}{
+    \subsection{格林公式的计算}{
       $$
         \doubleIntegralOnZone{D}\mediumBigCase{\partialDerivativeFrac{Q}{x} - \partialDerivativeFrac{P}{y}}dxdy = \curveIntegralOnLine{L}Pdx + Qdy
       $$
@@ -1981,12 +1964,12 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
 
   }%曲线积分与曲面积分结尾
 
-  \subsection{雅可比矩阵与雅可比行列式}{
+  \section{雅可比矩阵与雅可比行列式}{
     在向量分析(多元微积分)中,雅可比矩阵是函数的一阶偏导数以一定方式排列成的矩阵.
 
     其重要性在于,如果函数 $f:\mathRealNumberCollection^n \to \mathRealNumberCollection^m$在点$x$可微的话,在点$x$的雅可比矩阵即为该函数在该点的最佳线性逼近,也代表雅可比矩阵是单变数实数函数的微分在向量值多变数函数的推广,在这种情况下,雅可比矩阵也被称作函数$f$在点$x$的微分或者导数.
 
-    \subsubsection{雅可比矩阵}{
+    \subsection{雅可比矩阵}{
       假设某函数从$f : \mathRealNumberCollection^n \to \mathRealNumberCollection^M$,从$x\in\mathRealNumberCollection^n$映射到$\defFunction{x}\in\mathRealNumberCollection^m$,其雅可比矩阵就是一个$m \times n$的矩阵.换句话讲也就是从$\mathRealNumberCollection^n$到$\mathRealNumberCollection^m$的线性映射,其重要意义在于它表现了一个多变量向量函数的最佳线性逼近.因此,雅可比矩阵类似于单变数函数的导数.
 
       此函数$f$的雅可比矩阵$J$为$m \times n$的矩阵,一般由以下方式定义 :
@@ -2027,7 +2010,7 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
       其中,$o$表示高阶无穷小,$\doubleAbsoluteValue{x - p}$为$x$与$p$之间的距离
     }%雅可比矩阵结尾
 
-    \subsubsection{雅可比行列式}{
+    \subsection{雅可比行列式}{
       当雅可比矩阵为方阵时,其行列式称为雅可比行列式.
 
       如果$m = n$,那么$f$是从$\mathRealNumberCollection^n$映射到$\mathRealNumberCollection^m$的函数,且他的雅可比矩阵是一个方阵.因此可以取他的行列式,称为雅可比行列式.
@@ -2035,7 +2018,7 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
       在某个给定点的雅可比行列式提供了$f$在接近该点时的表现的重要资讯.例如:如果连续可微函数$f$在$p$点的雅可比行列式不等于0,那么他在该点附近有$f$的反函数,这成为反函数定理.更进一步,如果$p$点的雅可比行列式是正数,则$f$在$p$点保持定向.如果是负数,则逆转定向.而从雅可比行列式的绝对值,就可以知道函数$f$在$p$点附近时放大或缩小体积;这就是他出现在换元积分法中的原因.
     }%雅可比行列式结尾
 
-    \subsubsection{举例}{
+    \subsection{举例}{
       \begin{enumerate}
         \item {
               球坐标系到直角坐标系的转化由$F : R^+\times[0,\pi]\times[0,2\pi) \to R^3$给出,其分量为 :
@@ -2098,11 +2081,11 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
       \end{enumerate}
     }%举例结尾
 
-  }%雅可比矩阵与雅可比行列式结尾
+   }%雅可比矩阵与雅可比行列式结尾
 
-}%多元微积分结尾
+ }%多元微积分结尾
 
-\section{无穷级数}{
+\chapter{无穷级数}{
 在数学中,一个有穷或无穷的序列$u_{1},u_{2},u_{3},u_{4}\ldots$的和$S=u_{1}+u_{2}+u_{3}+\ldots$称为级数.如果序列是有穷序列,其和称为有穷级数;反之,称为无穷级数(一般简称为级数).序列{$u_{0},u_{1},u_{2},\ldots$中的项称作级数的通项(或一般项).级数的通项可以是实数,矩阵或向量等常量,也可以是关于其他变量的函数,不一定是一个数.一般的,如果级数的通项是常量,则称之为常数项级数,如果级数的通项是函数,则称之为函数项级数.
 
 有穷数列的级数一般通过初等代数的方法就可以求得.无穷级数有发散和收敛的区别,称为无穷级数的敛散性.判断无穷级数的敛散性是无穷级数研究中的主要工作.无穷级数在收敛时才会有一个和;发散的无穷级数在一般意义上没有和,但可以用一些别的方式来定义.
@@ -2120,7 +2103,7 @@ $$
 
 设$S$是所有项的和,$S_n$是前$n$项的和,那么$R_n = S - S_n = u_{n+1} + u_{n + 2} + \dots$就被称为余项.
 
-\subsection{无穷级数的性质}{
+\section{无穷级数的性质}{
   无穷级数有以下性质 :
   \begin{itemize}
     \item $\sumSeries u_n$收敛于$s$则$\sumSeries ku_n$收敛于$ks$(即 : 级数的每一项乘以$k$不会改变敛散性.和也会乘以$k$)
@@ -2138,12 +2121,12 @@ $$
     \item $\sumSeries u_n$收敛,任意加括号后得到的级数也收敛,并且和不变.(加括号后收敛,原级数不一定收敛)
     \item 级数$\sumSeries u_n$收敛的必要条件是$u_n$(即通项趋于0).(注意,是必要条件而非充分条件,即 : $u_n$趋于0,级数未必收敛,$u_n$不趋于0,级数一定发散)
   \end{itemize}
-}%无穷级数的性质结尾
+ }%无穷级数的性质结尾
 
-\subsection{常数项无穷级数审敛法}{
+\section{常数项无穷级数审敛法}{
   常数项级数,即每一项都是常数的级数.
 
-  \subsubsection{正项级数}{
+  \subsection{正项级数}{
     若通项为实数的无穷级数$\sum u_n$每一项$u_n$都大于等于零,则称$\sum u_n$是一正项级数.
 
     正项级数的部分和$S_n$是一个单调递增数列.由数列极限的判别准则:单调有界数列必有极限.因此,要么部分和数列$S_n$有界,这时$\sum u_n$收敛,$\myLimToInf S_n = s$,要么部分和数列趋于正无穷,这时级数发散.
@@ -2232,7 +2215,7 @@ $$
     \end{itemize}
   }%正项级数结尾
 
-  \subsubsection{交错级数}{
+  \subsection{交错级数}{
     具有以下形式的级数 :
     $$
       \sumSeries (-1)^na_n\ (a_n >= 0)
@@ -2274,7 +2257,7 @@ $$
     \end{itemize}
   }%交错级数结尾
 
-  \subsubsection{任意项级数}{
+  \subsection{任意项级数}{
 
     \begin{itemize}
       \item {
@@ -2294,7 +2277,7 @@ $$
     黎曼级数定理说明,如果一个无穷级数$\sum u_n$条件收敛,那么对于任意的实数$x$,存在一个正整数到正整数的双射$\sigma$,使得级数$\sum u_{\sigma(n)}$收敛到$x$,对于正负无穷大,上述双射也存在.
   }%任意项级数结尾
 
-  \subsubsection{常见常数项无穷级数}{
+  \subsection{常见常数项无穷级数}{
 
     \begin{itemize}
       \item {
@@ -2349,16 +2332,16 @@ $$
 
   }%常见常数项无穷级数结尾
 
-}%常数项无穷级数审敛法
+ }%常数项无穷级数审敛法
 
-\subsection{函数项无穷级数审敛法}{
+\section{函数项无穷级数审敛法}{
 设$(u_n(x))_{n \geq 0}$为定义在区间$I$上的函数列,则表达式$u_1(x) + u_2(x) + \dots + u_n(x) + \dots$称为函数项级数,记为$\sum u_n(x)$.对函数项级数的主要研究是 :
 \begin{enumerate}
   \item 确定对哪些$x,\sum u_n(x)$收敛
   \item $\sum u_n(x)$收敛的话,其和是什么,有什么性质?
 \end{enumerate}
 
-\subsubsection{一些定义(收敛点,收敛域,发散点,发散域,和函数与部分和还有余项)}{
+\subsection{一些定义(收敛点,收敛域,发散点,发散域,和函数与部分和还有余项)}{
   对于区间$I$上的每个点$x_0$,级数$\sum u_n(x_0)$是常数项级数.
   \begin{itemize}
     \item 收敛点 : 若$\sum u_n(x_0)$收敛,则称$x_0$是$\sum u_n(x)$的一个收敛点.
@@ -2371,7 +2354,7 @@ $$
   \end{itemize}
 }%收敛域结尾
 
-\subsubsection{阿贝尔定理}{
+\subsection{阿贝尔定理}{
   设$\defFunction{z} = \upDownSum{\ }{n \geq 0}a_nx^n$为一幂级数,其收敛半径为$R$,若对于收敛圆(模长为$R$的复数的集合)上的某个复数$z_0$,级数$\upDownSum{\ }{n \geq 0}a_nx^n_0$收敛,则有 : $\limNormal{t \to 1^-}\defFunction{tx_0} = \upDownSum{\ }{n \geq 0}a_nx^n_0$.
 
   用人话来说就是 : $\upDownSum{+\infty}{n = 0}a_nx^n$,如果$x = x_0$时此幂级数收敛,对于所有满足$\absoluteValue{x} \leq \absoluteValue{x_0}$的$x$,此幂级数绝对收敛.反之,如果$x = x_0$时发散,则对于所有满足$\absoluteValue{x} > \absoluteValue{x_0}$的$x$,此幂级数发散.
@@ -2387,7 +2370,7 @@ $$
   在判断端点(是否收敛)之前$(-R,R)$称为收敛区间,经过判断决定了是否保留端点后才称为收敛域.
 }
 
-\subsubsection{求幂级数的收敛域}{
+\subsection{求幂级数的收敛域}{
   设幂级数$\sum a_nx^n$满足$\limNormal{n \to +\infty}\cfrac{a_{n + 1}}{a_n} = \rho$,则 :
   \begin{itemize}
     \item $\rho$是正实数时,$R = \cfrac{1}{p}$.
@@ -2400,7 +2383,7 @@ $$
   注 : 如果只有偶数项则不能用此方法.
 }%求幂级数的收敛域结尾
 
-\subsubsection{幂级数的比值审敛法}{
+\subsection{幂级数的比值审敛法}{
 $$
   \limNormal{n \to +\infty}\absoluteValue{\cfrac{u_{n + 1}}{u_n}} = L
 $$
@@ -2413,7 +2396,7 @@ $$
 $$
 }
 
-\subsubsection{幂级数的运算}{
+\subsection{幂级数的运算}{
   \begin{itemize}
     \item {
           幂级数的加法与减法 : 将相应系数进行加减.
@@ -2460,7 +2443,7 @@ $$
   在各种运算后得到的幂级数的收敛半径为较小者.
 }%幂级数的运算结尾
 
-\subsubsection{幂级数和函数的性质}{
+\subsection{幂级数和函数的性质}{
   \begin{itemize}
     \item 幂级数$\upDownSum{\infty}{n = 0}a_nx^n$的和函数$s(x)$在其收敛域$I$上连续.
     \item {
@@ -2517,237 +2500,270 @@ $$
 
 }%函数项无穷级数审敛法
 
-\subsection{函数的幂级数展开(泰勒级数)}{
-  假设有函数$f(x)$,想要展开成$a_0 + a_1(x - x_0) + a_2(x - x_0)^2 + a_3(x - x_0)^3 + \dots  + a_n(x - x_0)^n + \dots$的形式,其中$x$是$x_0$的极限,即 : \\
-  \begin{math}
-    \defFunction{x} = a_0 + a_1(x - x_0)^1 + a_2(x - x_0)^2 + \dots + a_n(x - x_0)^n + \dots \\
-    \fDerivative{x} = 0 + a_1 + 2a_2(x - x_0) + 3a_3(x - x_0)^2 + \dots \\
-    f\doubleDerivative(x) = 0 + 0 + 2a_2 + 2 \times 3 a_3(x - x_0) + 3 \times 4 a_4(x - x_0)^2 + \dots \\
-    f\tripleDerivative(x) = 0 + 0 + 0 + 2 \times 3 a_3 + 3 \times 4 a_4(x - x_0) + \dots
-  \end{math}
+\section{函数的幂级数展开(泰勒级数)}{
 
-  将x取值成$x_0$,即$x = x_0$,代入 : \\
-  \begin{math}
-    \defFunction{x_0} = {\color{red}a_0} + 0 + 0 + 0 + 0 + \dots\ \to \ a_0 = \defFunction{x_0} \\
-    \fDerivative{x_0} = 0 + {\color{red}a_1} + 0 + 0 + 0 + 0 + \dots\ \to \ a_1 = \fDerivative{x_0} \\
-    f\doubleDerivative(x_0) = 0 + 0 + {\color{red}2a_2} + 0 + 0 + 0 + 0 + \dots\ \to \ a_2 = \cfrac{f\doubleDerivative(x_0)}{2!} \\
-    f\tripleDerivative(x_0) = 0 + 0 + 0 + {\color{red}2 \times 3 a_3} + 0 + 0 + 0 + 0 + \dots\ \to \ a_3 = \cfrac{f\tripleDerivative(x_0)}{3!} \\
-    \vdots
-  \end{math}
 
-  最后可以总结出公式 :
+\subsection{泰勒公式/泰勒级数/展开}{
+
+  泰勒级数表示:当知道某点$x = a$的情况时,就能知道$a$点附近的函数是怎样的.
+  假设有函数$f(x)$,想要展开成 : $$
+    \defFunction{x} = a_0 + a_1(x - x_0)^1 + a_2(x - x_0)^2 + \dots + a_n(x - x_0)^n + \dots
   $$
-    a_n = \cfrac{1}{n!}f\aLotDerivative{n}(x_0),\ \defFunction{x} = \upDownSum{\infty}{n = 0}\cfrac{1}{n!}f\aLotDerivative{n}(x_0)(x - x_0)^n
+  的形式,其中$x$是$x_0$的极限,即$x$在$x_0$点附近.
+
+  \begin{enumerate}
+    \item 此时最为粗略的估计就是$\defFunction{x} \approx \defFunction{x_0}$ : $$
+            \defFunction{x_0} = {\color{red}a_0} + 0 + 0 + 0 + 0 + \dots\ \to \ \defFunction{x_0} = a_0
+          $$
+    \item 然后才是修正项:$\fDerivative{x_0}(x - x_0)$,这是斜率乘以距离,最终得到的就是高度.相当于沿切线前进 : $$
+            \fDerivative{x} = 0 + a_1 + 2a_2(x - x_0) + 3a_3(x - x_0)^2 + \dots
+          $$代入$x_0$ : $$
+            \fDerivative{x_0} = 0 + {\color{red}a_1} + 0 + 0 + 0 + 0 + \dots\ \to \ \fDerivative{x_0} = a_1
+          $$
+    \item 还有一项表示弯曲:$\cfrac{1}{2}f\doubleDerivative(x_0)(x - x_0)^2$,他是斜率的斜率,变化率的变化率 :
+          $$
+            f\doubleDerivative(x) = 0 + 0 + 2a_2 + 2 \times 3 a_3(x - x_0) + 3 \times 4 a_4(x - x_0)^2 + \dots \\
+          $$代入$x_0$ : $$
+            f\doubleDerivative(x_0) = 0 + 0 + {\color{red}2a_2} + 0 + 0 + 0 + 0 + \dots\ \to \ \cfrac{f\doubleDerivative(x_0)}{2!} = a_2
+          $$
+    \item 这样一直持续下去 : $$
+            f\tripleDerivative(x) = 0 + 0 + 0 + 2 \times 3 a_3 + 3 \times 4 a_4(x - x_0) + \dots
+          $$代入$x_0$ : $$
+            f\tripleDerivative(x_0) = 0 + 0 + 0 + {\color{red}2 \times 3 a_3} + 0 + 0 + 0 + 0 + \dots\ \to \ \cfrac{f\tripleDerivative(x_0)}{3!} = a_3
+          $$
+    \item 后面还有更多项,直接写出通项公式如何?
+          $$
+            a_n = \cfrac{1}{n!}f\aLotDerivative{n}(x_0),\ \defFunction{x} = \upDownSum{\infty}{n = 0}\cfrac{1}{n!}f\aLotDerivative{n}(x_0)(x - x_0)^n
+          $$
+          0阶导指的是原函数,a是x附近的点.
+  \end{enumerate}
+
+}%泰勒级数结尾
+
+这种级数展开泰勒级数,此通项公式称为泰勒展开式.
+
+函数$f(x)$能展开成幂级数的充要条件就是 : 泰勒展开式成立,且收敛到$\defFunction{x}$.
+
+更确切的来说 :
+\subsection{泰勒展开式(泰勒公式)与马克劳林展开式}{
+\subsubsection{泰勒公式}{
+  泰勒公式:表示的不是一个函数的幂级数形式而是对于某个函数的近似,形式与泰勒级数通项公式类似.
+
+  泰勒展开式 :
+  $$
+    \defFunction{x} = \upDownSum{\infty}{n = 0}\cfrac{1}{n!}f\aLotDerivative{n}(x_0)(x - x_0)^n\qquad x\in U(x_0),\mbox{此公式在$x_0$的邻域内成立}
+  $$
+  多写几项 : $$
+    \defFunction{x} = \defFunction{a} + \fDerivative{a}(x - a) + \cfrac{1}{2!}f\doubleDerivative(a)(x - a)^2 + ... + \cfrac{1}{n!}f\aLotDerivative{n}(x - a)^n + R_n(x)
   $$
 
-  这种级数展开泰勒级数,此通项公式称为泰勒展开式.
+  $R_n(x)$是余项,表示误差,是$(x - a)^n$的高阶无穷小$O((x - a)^n)$.根据中值定理可得 : $$
+    R_n(x) = \cfrac{1}{(n + 1)!}f\aLotDerivative{n + 1}(\xi)(x - a)^{n+1}$$
+  其中$a \leq \xi \leq x$,意思是$\xi$介于$a$和$x$之间.
+}%泰勒公式结尾
 
-  函数$f(x)$能展开成幂级数的充要条件就是 : 泰勒展开式成立,且收敛到$\defFunction{x}$.
+\subsubsection{马克劳林公式}{
+当泰勒公式在$a = 0$处展开时就称为麦克劳林公式 : $$
+  \defFunction{x} = \upDownSum{\infty}{n = 0}\cfrac{1}{n!}f\aLotDerivative{n}(0)x^n\qquad x\in I_{f},\mbox{麦克劳林的定义更加清晰:此公式在收敛域内成立}.
+$$
+多写几项 : $$
+  a = 0, \defFunction{x} = \defFunction{0} + \cfrac{1}{1!}\fDerivative{0}x + \cfrac{1}{2!}f\doubleDerivative(0)x^2 + ... + \cfrac{1}{(n + 1)!}f\aLotDerivative{n + 1}(\theta x)x^{n+1},\ (0 < \theta < 1)
+$$
+}%马克劳林公式结尾
 
-  更确切的来说 :
-  \subsubsection{泰勒展开式与马克劳林展开式}{
-    泰勒展开式 :
-    $$
-      \defFunction{x} = \upDownSum{\infty}{n = 0}\cfrac{1}{n!}f\aLotDerivative{n}(x_0)(x - x_0)^n\qquad x\in U(x_0),\mbox{此公式在$x_0$的邻域内成立}
-    $$
+\subsection{基础函数展开公式表推导}{
+  注 : 此处全部使用马克劳林展开
+  \begin{enumerate}
+    \item {
+          $\defFunction{x} = e^x$ :
 
-    当$x_0$取$0$,在$0$处展开,就称为马克劳林公式 :
-    $$
-      \defFunction{x} = \upDownSum{\infty}{n = 0}\cfrac{1}{n!}f\aLotDerivative{n}(0)x^n\qquad x\in I_{f},\mbox{麦克劳林的定义更加清晰:此公式在收敛域内成立}.
-    $$
-  }%泰勒展开式结尾
+          由于$f\aLotDerivative{n}(0) = 1$,而且$f\derivative = e$,因此展开项为 :
+          $$
+            e^x = 1 + x + \cfrac{x^2}{2!} + \dots + \cfrac{x^n}{n!} + \dots
+          $$
+          }
+    \item {
+          $\defFunction{x} = \sin(x),g(x) = \cos(x)$ :
 
-  \subsubsection{基础函数展开公式表推导}{
-    注 : 此处全部使用马克劳林展开
-    \begin{enumerate}
-      \item {
-            $\defFunction{x} = e^x$ :
+          \begin{center}
+            \begin{tabular}{c c}
+              $\fDerivative{x} = \cos(x)$        & $\fDerivative{0} = 1$        \\
+              $f\doubleDerivative(x) = -\sin(x)$ & $f\doubleDerivative(0) = 0$  \\
+              $f\tripleDerivative(x) = \cos(x)$  & $f\tripleDerivative(0) = -1$ \\
+              $f\aLotDerivative{4}(x) = \sin(x)$ & $f\aLotDerivative{4}(0) = 0$
+            \end{tabular}
+          \end{center}
 
-            由于$f\aLotDerivative{n}(0) = 1$,而且$f\derivative = e$,因此展开项为 :
-            $$
-              e^x = 1 + x + \cfrac{x^2}{2!} + \dots + \cfrac{x^n}{n!} + \dots
-            $$
-            }
-      \item {
-            $\defFunction{x} = \sin(x),g(x) = \cos(x)$ :
+          总结规律,可知 : 展开式只有奇数次项,并且正负会交替出现 :
+          $$
+            \sin(x) = x - \cfrac{x^3}{3!} + \cfrac{x^5}{5!} - \cfrac{x^7}{7!} + \dots + (-1)^n\cfrac{x^{2n + 1}}{(2n + 1)!} + \dots
+          $$
 
-            \begin{center}
-              \begin{tabular}{c c}
-                $\fDerivative{x} = \cos(x)$        & $\fDerivative{0} = 1$        \\
-                $f\doubleDerivative(x) = -\sin(x)$ & $f\doubleDerivative(0) = 0$  \\
-                $f\tripleDerivative(x) = \cos(x)$  & $f\tripleDerivative(0) = -1$ \\
-                $f\aLotDerivative{4}(x) = \sin(x)$ & $f\aLotDerivative{4}(0) = 0$
-              \end{tabular}
-            \end{center}
+          由$\fDerivative{x} = g(x)$,对上式求导就会得到$\cos$的展开式 :
+          $$
+            \cos(x) = 1 - \cfrac{x^2}{2!} + \cfrac{x^4}{4!} - \cfrac{x^6}{6!} + \dots + (-1)^n\cfrac{x^{2n}}{(2n)!} + \dots
+          $$
 
-            总结规律,可知 : 展开式只有奇数次项,并且正负会交替出现 :
-            $$
-              \sin(x) = x - \cfrac{x^3}{3!} + \cfrac{x^5}{5!} - \cfrac{x^7}{7!} + \dots + (-1)^n\cfrac{x^{2n + 1}}{(2n + 1)!} + \dots
-            $$
+          特点是只有偶次项.
+          }
+    \item {
+          $\defFunction{x} = \cfrac{1}{1 - x}$ :
 
-            由$\fDerivative{x} = g(x)$,对上式求导就会得到$\cos$的展开式 :
-            $$
-              \cos(x) = 1 - \cfrac{x^2}{2!} + \cfrac{x^4}{4!} - \cfrac{x^6}{6!} + \dots + (-1)^n\cfrac{x^{2n}}{(2n)!} + \dots
-            $$
+          很容易看出这是等比(几何)级数的通项公式 :
+          $$
+            \cfrac{1}{1 - x} =1 + x + x^2 + x^3 + \dots + x^n + \dots
+          $$
 
-            特点是只有偶次项.
-            }
-      \item {
-            $\defFunction{x} = \cfrac{1}{1 - x}$ :
+          将$x$换成$-x$ :
+          $$
+            \cfrac{1}{1 + x} = 1 - x + x^2 - x^3 + x^4 + \dots + (-1)^nx^n + \dots
+          $$
 
-            很容易看出这是等比(几何)级数的通项公式 :
-            $$
-              \cfrac{1}{1 - x} =1 + x + x^2 + x^3 + \dots + x^n + \dots
-            $$
+          上述两个公式在$\absoluteValue{x} < 1$时成立
+          }
+    \item{
+          公式3从$0$到$x$求定积分 : $\definiteIntegral{x}{0}\cfrac{1}{1 - x}dx = \ln(1 - x),\definiteIntegral{x}{0}\cfrac{1}{1 + x}dx = \ln(1 + x)$ :
 
-            将$x$换成$-x$ :
-            $$
-              \cfrac{1}{1 + x} = 1 - x + x^2 - x^3 + x^4 + \dots + (-1)^nx^n + \dots
-            $$
+          $$
+            \ln(1 - x) = -x - \cfrac{x^2}{2} - \cfrac{x^3}{3} - \dots - \cfrac{x^n}{n} - \dots
+          $$
 
-            上述两个公式在$\absoluteValue{x} < 1$时成立
-            }
-      \item{
-            公式3从$0$到$x$求定积分 : $\definiteIntegral{x}{0}\cfrac{1}{1 - x}dx = \ln(1 - x),\definiteIntegral{x}{0}\cfrac{1}{1 + x}dx = \ln(1 + x)$ :
+          $$
+            \ln(1 + x) = x + \cfrac{x^2}{2} + \cfrac{x^3}{3} + \dots + \cfrac{x^n}{n} + \dots
+          $$
 
-            $$
-              \ln(1 - x) = -x - \cfrac{x^2}{2} - \cfrac{x^3}{3} - \dots - \cfrac{x^n}{n} - \dots
-            $$
+          上述两个公式对于在区间$\left(-1,1\right]$内的所有x都成立.
+          }
+    \item {
+          将公式1中的$x$换成$x\ln a$ : $e^{x\ln a} = a^x$ :
 
-            $$
-              \ln(1 + x) = x + \cfrac{x^2}{2} + \cfrac{x^3}{3} + \dots + \cfrac{x^n}{n} + \dots
-            $$
+          $$
+            a^x = 1 + x\ln a + \cfrac{x^2(\ln a)^2}{2!} + \cfrac{x^3(\ln a)^3}{3!} + \dots + \cfrac{x^n(\ln a)^n}{n!} + \dots
+          $$
+          }
+    \item{
+          将公式3中$\cfrac{1}{1 + x}$中的$x$换成$x^2$ : $\cfrac{1}{1 + x^2}$ :
 
-            上述两个公式对于在区间$\left(-1,1\right]$内的所有x都成立.
-            }
-      \item {
-            将公式1中的$x$换成$x\ln a$ : $e^{x\ln a} = a^x$ :
+          $$
+            \cfrac{1}{1 + x^2} = 1 - x^2 + x^4 - x^6 + x^8 + \dots + (-1)^nx^{2n} + \dots
+          $$
 
-            $$
-              a^x = 1 + x\ln a + \cfrac{x^2(\ln a)^2}{2!} + \cfrac{x^3(\ln a)^3}{3!} + \dots + \cfrac{x^n(\ln a)^n}{n!} + \dots
-            $$
-            }
-      \item{
-            将公式3中$\cfrac{1}{1 + x}$中的$x$换成$x^2$ : $\cfrac{1}{1 + x^2}$ :
+          同样的,对于在区间$\left(-1,1\right]$中的所有$x$成立.
+          }
+    \item {
+          对公式7在$0$到$x$求定积分 : $\definiteIntegral{x}{0}\cfrac{1}{1 + x^2}dx = \arctan(x)$  :
 
-            $$
-              \cfrac{1}{1 + x^2} = 1 - x^2 + x^4 - x^6 + x^8 + \dots + (-1)^nx^{2n} + \dots
-            $$
+          $$
+            \arctan(x) = x - \cfrac{x^3}{3} + \cfrac{x^5}{5} - \cfrac{x^7}{7} + \dots + (-1)^n\cfrac{x^{2n + 1}}{2n + 1} + \dots
+          $$
 
-            同样的,对于在区间$\left(-1,1\right]$中的所有$x$成立.
-            }
-      \item {
-            对公式7在$0$到$x$求定积分 : $\definiteIntegral{x}{0}\cfrac{1}{1 + x^2}dx = \arctan(x)$  :
+          对于所有$\absoluteValue{x} < 1$成立.
+          }
+  \end{enumerate}
+}%基础函数展开公式表推导
 
-            $$
-              \arctan(x) = x - \cfrac{x^3}{3} + \cfrac{x^5}{5} - \cfrac{x^7}{7} + \dots + (-1)^n\cfrac{x^{2n + 1}}{2n + 1} + \dots
-            $$
+\subsection{基础函数展开公式表}{
+  \begin{itemize}
+    \item $e^x = 1 + x + \cfrac{x^2}{2!} + \dots + \cfrac{x^n}{n!} + \dots,(-\infty < x < +\infty)$
+    \item $\sin(x) = x - \cfrac{x^3}{3!} + \cfrac{x^5}{5!} - \cfrac{x^7}{7!} + \dots + (-1)^n\cfrac{x^{2n + 1}}{(2n + 1)!} + \dots,(-\infty < x < +\infty)$
+    \item $\cos(x) = 1 - \cfrac{x^2}{2!} + \cfrac{x^4}{4!} - \cfrac{x^6}{6!} + \dots + (-1)^n\cfrac{x^{2n}}{(2n)!} + \dots,(-\infty < x < +\infty)$
+    \item $\cfrac{1}{1 - x} = 1 + x + x^2 + x^3 + \dots + x^n + \dots,(-1 < x < 1)$
+    \item $\cfrac{1}{1 + x} = 1 - x + x^2 - x^3 + x^4 + \dots + (-1)^nx^n + \dots,(-1 < x < 1)$
+    \item $\ln(1 - x) = -x - \cfrac{x^2}{2} - \cfrac{x^3}{3} - \dots - \cfrac{x^n}{n} - \dots,(-1 < x \leq 1)$
+    \item $\ln(1 + x) = x + \cfrac{x^2}{2} + \cfrac{x^3}{3} + \dots + \cfrac{x^n}{n} + \dots,(-1 < x \leq 1)$
+    \item $a^x = 1 + x\ln a + \cfrac{x^2(\ln a)^2}{2!} + \cfrac{x^3(\ln a)^3}{3!} + \dots + \cfrac{x^n(\ln a)^n}{n!} + \dots,(-\infty < x < +\infty)$
+    \item $\cfrac{1}{1 + x^2} = 1 - x^2 + x^4 - x^6 + x^8 + \dots + (-1)^nx^{2n} + \dots,(-1 < x \leq 1)$
+    \item $\arctan(x) = x - \cfrac{x^3}{3} + \cfrac{x^5}{5} - \cfrac{x^7}{7} + \dots + (-1)^n\cfrac{x^{2n + 1}}{2n + 1} + \dots,(-1 < x < 1)$
+  \end{itemize}
+}%基础函数展开公式表结尾
 
-            对于所有$\absoluteValue{x} < 1$成立.
-            }
-    \end{enumerate}
-  }%基础函数展开公式表推导
+\subsection{运算示例}{
+  \begin{enumerate}
+    \item {
+          将$e^{\cfrac{x}{2}}$展开 :
 
-  \subsubsection{基础函数展开公式表}{
-    \begin{itemize}
-      \item $e^x = 1 + x + \cfrac{x^2}{2!} + \dots + \cfrac{x^n}{n!} + \dots,(-\infty < x < +\infty)$
-      \item $\sin(x) = x - \cfrac{x^3}{3!} + \cfrac{x^5}{5!} - \cfrac{x^7}{7!} + \dots + (-1)^n\cfrac{x^{2n + 1}}{(2n + 1)!} + \dots,(-\infty < x < +\infty)$
-      \item $\cos(x) = 1 - \cfrac{x^2}{2!} + \cfrac{x^4}{4!} - \cfrac{x^6}{6!} + \dots + (-1)^n\cfrac{x^{2n}}{(2n)!} + \dots,(-\infty < x < +\infty)$
-      \item $\cfrac{1}{1 - x} = 1 + x + x^2 + x^3 + \dots + x^n + \dots,(-1 < x < 1)$
-      \item $\cfrac{1}{1 + x} = 1 - x + x^2 - x^3 + x^4 + \dots + (-1)^nx^n + \dots,(-1 < x < 1)$
-      \item $\ln(1 - x) = -x - \cfrac{x^2}{2} - \cfrac{x^3}{3} - \dots - \cfrac{x^n}{n} - \dots,(-1 < x \leq 1)$
-      \item $\ln(1 + x) = x + \cfrac{x^2}{2} + \cfrac{x^3}{3} + \dots + \cfrac{x^n}{n} + \dots,(-1 < x \leq 1)$
-      \item $a^x = 1 + x\ln a + \cfrac{x^2(\ln a)^2}{2!} + \cfrac{x^3(\ln a)^3}{3!} + \dots + \cfrac{x^n(\ln a)^n}{n!} + \dots,(-\infty < x < +\infty)$
-      \item $\cfrac{1}{1 + x^2} = 1 - x^2 + x^4 - x^6 + x^8 + \dots + (-1)^nx^{2n} + \dots,(-1 < x \leq 1)$
-      \item $\arctan(x) = x - \cfrac{x^3}{3} + \cfrac{x^5}{5} - \cfrac{x^7}{7} + \dots + (-1)^n\cfrac{x^{2n + 1}}{2n + 1} + \dots,(-1 < x < 1)$
-    \end{itemize}
-  }%基础函数展开公式表结尾
+          将$x$换成$\cfrac{x}{2}$,即 :
+          $$
+            e^{\cfrac{x}{2}} = 1 + \cfrac{x}{2} + \cfrac{x^2}{2!2^2} + \cfrac{x^3}{3!3^2} + \dots + \cfrac{x^n}{n!n^2}
+          $$
+          }
+    \item {
+          将$\defFunction{x} = (1 - x)\ln(1 + x)$展成$x$的幂级数 :
+          $$
+            \ln(1 + x) = x - \cfrac{x^2}{2} + \cfrac{x^3}{3} - \cfrac{x^4}{4} + \dots
+          $$
 
-  \subsubsection{运算示例}{
-    \begin{enumerate}
-      \item {
-            将$e^{\cfrac{x}{2}}$展开 :
+          \begin{math}
+            (1 - x)\ln(1 + x) \\
+            = (1 - x)(x - \cfrac{x^2}{2} + \cfrac{x^3}{3} - \cfrac{x^4}{4} + \dots) \\
+            = x + (-\cfrac{1}{2} - 1)x^2 + (\cfrac{1}{3} + \cfrac{1}{2})x^3 + (-\cfrac{1}{4} - \cfrac{1}{3})x^4 + \dots \\
+            = x + \upDownSum{\infty}{n = 2}(-1)^{n - 1}\cfrac{(2n - 1)x^n}{n(n - 1)} \ (-1 < x \leq 1)
+          \end{math}
+          }
+    \item {
+          将$\sin x$展成$x - \cfrac{\pi}{4}$的幂级数.
 
-            将$x$换成$\cfrac{x}{2}$,即 :
-            $$
-              e^{\cfrac{x}{2}} = 1 + \cfrac{x}{2} + \cfrac{x^2}{2!2^2} + \cfrac{x^3}{3!3^2} + \dots + \cfrac{x^n}{n!n^2}
-            $$
-            }
-      \item {
-            将$\defFunction{x} = (1 - x)\ln(1 + x)$展成$x$的幂级数 :
-            $$
-              \ln(1 + x) = x - \cfrac{x^2}{2} + \cfrac{x^3}{3} - \cfrac{x^4}{4} + \dots
-            $$
+          (泰勒级数在$\cfrac{\pi}{4}$处展开,也可以用马克劳林),使用马克劳林 :
 
-            \begin{math}
-              (1 - x)\ln(1 + x) \\
-              = (1 - x)(x - \cfrac{x^2}{2} + \cfrac{x^3}{3} - \cfrac{x^4}{4} + \dots) \\
-              = x + (-\cfrac{1}{2} - 1)x^2 + (\cfrac{1}{3} + \cfrac{1}{2})x^3 + (-\cfrac{1}{4} - \cfrac{1}{3})x^4 + \dots \\
-              = x + \upDownSum{\infty}{n = 2}(-1)^{n - 1}\cfrac{(2n - 1)x^n}{n(n - 1)} \ (-1 < x \leq 1)
-            \end{math}
-            }
-      \item {
-            将$\sin x$展成$x - \cfrac{\pi}{4}$的幂级数.
+          \begin{math}
+            \sin x \xrightarrow{x \to x - \cfrac{\pi}{4}} \sin(\cfrac{\pi}{4} + x - \cfrac{\pi}{4}) \\
+            = \sin\cfrac{\pi}{4}\cos(x - \cfrac{\pi}{4}) + \cos\cfrac{\pi}{4}\sin(x - \cfrac{\pi}{4}) \\
+            = \cfrac{\sqrt{2}}{2}(\cos(x - \cfrac{\pi}{4}) + \sin(x - \cfrac{\pi}{4})) \\
+            =\dots
+          \end{math}
+          }
+    \item {
+          将$\defFunction{x} = \cfrac{1}{x^2 + 4x + 3}$展成$x - 1$的幂级数 :
+          $$
+            \defFunction{x} = \cfrac{1}{(x + 1)(x + 3)} = \cfrac{1}{2}\bigCase{\cfrac{1}{1 + x} - \cfrac{1}{3 + x}}
+          $$
 
-            (泰勒级数在$\cfrac{\pi}{4}$处展开,也可以用马克劳林),使用马克劳林 :
+          $$
+            \cfrac{1}{1 + x} = \cfrac{1}{2 + (x - 1)} = \cfrac{1}{2}\bigCase{\cfrac{1}{1 + \cfrac{x - 1}{2}}}(\mbox{先凑出形式})
+          $$
 
-            \begin{math}
-              \sin x \xrightarrow{x \to x - \cfrac{\pi}{4}} \sin(\cfrac{\pi}{4} + x - \cfrac{\pi}{4}) \\
-              = \sin\cfrac{\pi}{4}\cos(x - \cfrac{\pi}{4}) + \cos\cfrac{\pi}{4}\sin(x - \cfrac{\pi}{4}) \\
-              = \cfrac{\sqrt{2}}{2}(\cos(x - \cfrac{\pi}{4}) + \sin(x - \cfrac{\pi}{4})) \\
-              =\dots
-            \end{math}
-            }
-      \item {
-            将$\defFunction{x} = \cfrac{1}{x^2 + 4x + 3}$展成$x - 1$的幂级数 :
-            $$
-              \defFunction{x} = \cfrac{1}{(x + 1)(x + 3)} = \cfrac{1}{2}\bigCase{\cfrac{1}{1 + x} - \cfrac{1}{3 + x}}
-            $$
+          令$\cfrac{x - 1}{2} = t$,对$\cfrac{1}{2}\cfrac{1}{1 + t}$展开 : $\cfrac{1}{2}\bigCase{1 - \cfrac{x - 1}{2} + \cfrac{(x - 1)^2}{2^2} - \cfrac{(x - 1)^3}{2^3} + \dots}$
 
-            $$
-              \cfrac{1}{1 + x} = \cfrac{1}{2 + (x - 1)} = \cfrac{1}{2}\bigCase{\cfrac{1}{1 + \cfrac{x - 1}{2}}}(\mbox{先凑出形式})
-            $$
+          同理,$\cfrac{1}{3 + x}$经过变形 :
+          $$
+            \cfrac{1}{4}(\cfrac{1}{1 + \cfrac{x - 1}{4}}) = \cfrac{1}{4}\bigCase{1 - \cfrac{x - 1}{4} \cfrac{(x - 1)^2}{4^2} - \cfrac{(x - 1)^3}{4^3} + \dots}
+          $$
 
-            令$\cfrac{x - 1}{2} = t$,对$\cfrac{1}{2}\cfrac{1}{1 + t}$展开 : $\cfrac{1}{2}\bigCase{1 - \cfrac{x - 1}{2} + \cfrac{(x - 1)^2}{2^2} - \cfrac{(x - 1)^3}{2^3} + \dots}$
+          因此.$\defFunction{x} = \sumSeries(-1)^n\bigCase{2^{\cfrac{1}{n + 2}} - 2^{\cfrac{1}{2n + 3}}}(x - 1)^n$
 
-            同理,$\cfrac{1}{3 + x}$经过变形 :
-            $$
-              \cfrac{1}{4}(\cfrac{1}{1 + \cfrac{x - 1}{4}}) = \cfrac{1}{4}\bigCase{1 - \cfrac{x - 1}{4} \cfrac{(x - 1)^2}{4^2} - \cfrac{(x - 1)^3}{4^3} + \dots}
-            $$
+          还需要求出收敛域 :
 
-            因此.$\defFunction{x} = \sumSeries(-1)^n\bigCase{2^{\cfrac{1}{n + 2}} - 2^{\cfrac{1}{2n + 3}}}(x - 1)^n$
+          $-1 < \cfrac{x - 1}{4} < 1 \to -3 < x < 5$,收敛域为$(-3 < x < 5)$
 
-            还需要求出收敛域 :
+          $-1 < \cfrac{x - 1}{2} < 1 \to -1 < x < 3$,收敛域为$(-1 < x < 3)$
 
-            $-1 < \cfrac{x - 1}{4} < 1 \to -3 < x < 5$,收敛域为$(-3 < x < 5)$
+          两者相加减,收敛域取交集 : $(-3 < x < 5) \intersectionSet (-1 < x < 3) = (-1 < x < 3)$
 
-            $-1 < \cfrac{x - 1}{2} < 1 \to -1 < x < 3$,收敛域为$(-1 < x < 3)$
+          即 : $\defFunction{x}$收敛域为$(-1 < x < 3)$
+          }
+  \end{enumerate}
+}%运算示例结尾
 
-            两者相加减,收敛域取交集 : $(-3 < x < 5) \intersectionSet (-1 < x < 3) = (-1 < x < 3)$
-
-            即 : $\defFunction{x}$收敛域为$(-1 < x < 3)$
-            }
-    \end{enumerate}
-  }%运算示例结尾
+}%泰勒展开式与马克劳林展开式结尾
 
 }%函数的幂级数展开结尾
 
 }%无穷级数结尾
 
-\section{场论(含有多元微积分向量分析部分)}{
+\chapter{场论(含有多元微积分向量分析部分)}{
 
-  \subsection{场论基本内容}{
+  \section{场论基本内容}{
     注:矢量 = 向量,有时候会混着用,一般是那个顺口用哪个.
 
-    \subsubsection{矢量函数/向量函数}{
+    \subsection{矢量函数/向量函数}{
       向量值函数,有时也称为向量函数,是一个单变量或多变量的,值域是多维向量或者无穷维向量的集合的函数.向量值函数的输入可以是一个标量或者一个向量(定义域的维度可以是1或大于1);定义域的维度不取决于值域的维度.
 
-      即:设有数性变量t和变矢量$\vec{A}$.若对于t在某个范围内的每一个数值,$\vec{A}$都有一个确定的矢量和它对应,则称$\vec{A}$为数性变量t的矢量函数.记为:$\vec{A} = A(t)$,也可以写作$\vec{A} = A_x(t)i + A_y(t)j + A_z(t)k$
+      即:设有数性变量t和变矢量$\vec{A}$.若对于t在某个范围内的每一个数值,$\vec{A}$都有一个确定的���量和它对应,则称$\vec{A}$为数性变量t的矢量函数.记为:$\vec{A} = A(t)$,也可以写作$\vec{A} = A_x(t)i + A_y(t)j + A_z(t)k$
 
       矢量函数$A(t)$的起点取在坐标原点,其终点随变量t变化描绘出了一条曲线,该曲线叫做$A(t)$的矢端曲线.也就是$A(t)$的图像.
     }%矢量函数/向量函数结尾
 
-    \subsubsection{矢量向量函数的极限}{
+    \subsection{矢量向量函数的极限}{
       用$\delta-\epsilon$语言来说:
 
       设矢量函数$A(t)$在点$t_0$的某个邻域内有定义(在$t_0$点可以没有),$\vec{A}_0$为常矢量.若对于任意给定$\epsilon > 0$,都存在一个$\delta > 0$,当$0 < |t - t_0| < \delta$时,就有$|A(t) - \vec{A}_0|$成立,则称当$t \to t_0$时,$A(t)$有极限$\vec{A}_0$,记作:
@@ -2767,7 +2783,7 @@ $$
       其中$\vec{A}_0 = A_{0x}\vec{i} + A_{0y}\vec{j} + A_{0z}\vec{k}$
     }%矢量函数的极限结尾
 
-    \subsubsection{矢量函数的连续}{
+    \subsection{矢量函数的连续}{
       设$A(t)$在$t_0$的某领域内有定义,且 :
 
       \begin{center}
@@ -2785,7 +2801,7 @@ $$
       就称$A(t)$在$t_0$点连续.
     }%矢量函数的连续结尾
 
-    \subsubsection{矢量函数的导数}{
+    \subsection{矢量函数的导数}{
       设矢量函数$A(t)$在点t处有增量$\Delta \vec{A} = A(t + \Delta t) - A(t)$
 
       当$\Delta t \to 0$时,$\cfrac{\Delta \vec{A}}{\Delta t} = \cfrac{A(t + \Delta t) - A(t)}{\Delta t}$的极限存在,则称此极限值为$A(t)$在点t处的导向量/导矢.即 :
@@ -2814,7 +2830,7 @@ $$
       即 : 矢径长度随时间的变化率
     }%矢量函数的导数
 
-    \subsubsection{矢量函数的微分}{
+    \subsection{矢量函数的微分}{
       称$dA(t) = A\derivative(t)dt\ (\Delta t = dt)$为$A(t)$在$t$处的微分.在直角坐标系中有:
 
       $\cfrac{d\vec{A}}{dt} = A\derivative_x(t)\vec{i} + A\derivative_y(t)\vec{j} + A\derivative_z(t)\vec{k}$
@@ -2824,7 +2840,7 @@ $$
       $d\vec{A} = dA_x(t)\vec{i} + dA_y(t)\vec{j} + dA_z(t)\vec{k} = (A\derivative_x(t)\vec{i} + A\derivative_y(t)\vec{j} + A\derivative_z(t)\vec{k})dt$
     }%矢量函数的微分结尾
 
-    \subsubsection{矢量函数的不定积分}{
+    \subsection{矢量函数的不定积分}{
       若$A\derivative(t) = a(t)$,则称$A(t)$是$a(t)$的原函数.$a(t)$的原函数的一般形式叫做$a(t)$的不定积分,记作 :
 
       $\int a(t)dt$
@@ -2834,7 +2850,7 @@ $$
       $\int a(t)dt = A(t) + \vec{\mathConstant}$\qquad ($\vec{\mathConstant}$为任意常矢)
     }
 
-    \subsubsection{矢量函数的定积分}{
+    \subsection{矢量函数的定积分}{
       类似于数性函数,$a(t)$在$[t_1,t_2]$上的定积分的定义为($A(t)\mbox{是}a(t)$的原函数) :
 
       $\definiteIntegral{t_2}{t_1}a(t)dt = \limNormal{n \to \infty}\limNormal{\lambda \to 0}\upDownSum{n}{i = 1}a(\xi_i)\Delta t_i$
@@ -2854,15 +2870,15 @@ $$
       \item 矢量分解与坐标选取有关.在不同的坐标系中,有不同的表现形式,有的可能复杂的多.这里主要讨论直角坐标系的分解问题,多数问题还是会用分量表示.
     \end{itemize}
 
-  }%场论基本内容结尾
+   }%场论基本内容结尾
 
-  \subsection{场的分类与表示法}{
+  \section{场的分类与表示法}{
 
-    \subsubsection{场的概念}{
+    \subsection{场的概念}{
       某一物理量在空间的分布就称为"场".在这个空间发生了物理现象,也就有物理量在这个空间分布.
     }%场的概念结尾
 
-    \subsubsection{场的分类与表示}{
+    \subsection{场的分类与表示}{
       场中每一点$M:(x,y,z)$都对应着一个物理量,即某个函数$\defFunction{M}$,如果这个函数是数量值函数,这种场就叫做数量场.如果是向量值函数,那么这种场就叫做矢量场.
 
       场中的物理量往往与点的位置有关,而且还将随时间变化.会随时间变化的场就叫做不稳定场(或不定常场),表示为 :
@@ -2891,7 +2907,7 @@ $$
       在不稳定场中,美以固定时刻也就是稳定场.在场论中,讨论稳定场是基础.对于不稳定场,可以在讨论不稳定场的基础上再讨论对时间的变化.因此接下来一大段着重讨论稳定场的规律.
     }%场的分类与表示
 
-    \subsubsection{场的直观表示}{
+    \subsection{场的直观表示}{
       在数量场中,物理量是点的坐标$(x,y,z)$的函数 :
       $$
         u = \defFunction{x,y,z}
@@ -2916,11 +2932,11 @@ $$
       \end{itemize}
     }%场的直观表示结尾
 
-  }%场的分类与表示法结尾
+   }%场的分类与表示法结尾
 
-  \subsection{方向导数与梯度}{
+  \section{方向导数与梯度}{
 
-    \subsubsection{方向导数的定义}{
+    \subsection{方向导数的定义}{
       \includegraphics{resources/directionDerivative1.png}
 
       从数量场$u= u(M)$中任一点$M_0$出发引一条有向射线$\vec{l}$,在$\vec{l}$上任取一点$M$,记$\vec{M_0M} = \rho$,当沿$\vec{l}$,$M \to M_0$时,此式的极限存在 :
@@ -2957,7 +2973,7 @@ $$
       \end{itemize}
     }%方向导数的定义结尾
 
-    \subsubsection{方向导数的计算公式}{
+    \subsection{方向导数的计算公式}{
       设$u= u(x,y,z)$在$M_0(x_0,y_0,z_0)$处可微,$\vec{l}$的方向余弦是$\cos\alpha,\cos\beta,\cos\gamma$,则u在点$M_0$沿$\vec{l}$的方向导数为 :
       $$
         \directionDerivative{u}{l}{M_0} = \directionDerivative{u}{x}{M_0}\cos\alpha + \directionDerivative{u}{y}{M_0}\cos\beta + \directionDerivative{u}{z}{M_0}\cos\gamma
@@ -2968,7 +2984,7 @@ $$
       $$
     }%方向导数的计算公式结尾    
 
-    \subsubsection{梯度}{
+    \subsection{梯度}{
       设数量场$u = u(M)$,如果在场中任一点$M$处,存在非零矢量$\vec{G}$,其方向为函数$u(M)$在$M$点处方向导数的最大的方向,其模$|\vec{G}|$这个最大的方向导数值,则称矢量$\vec{G}$为数量场$u$在点$M$处的梯度,记为 :
       $$
         \gradText u = \vec{G}
@@ -2991,7 +3007,7 @@ $$
       \end{itemize}
     }%梯度结尾
 
-    \subsubsection{梯度的运算公式}{
+    \subsection{梯度的运算公式}{
       \begin{itemize}
         \item $\gradText \mathConstant = 0$
         \item $\gradText (\mathConstant u) = \mathConstant \triangledown u$
@@ -3003,12 +3019,12 @@ $$
       \end{itemize}
     }%梯度的运算公式
 
-  }%方向导数与梯度结尾
+   }%方向导数与梯度结尾
 
-  \subsection{通量与散度,高斯公式}{
+  \section{通量与散度,高斯公式}{
     对于一个矢量场,主要讨论他的两个基本性质 : 其一是有没有源,其二是有没有旋
 
-    \subsubsection{通量}{
+    \subsection{通量}{
       定义 : 设矢量场$A(M)$,将沿着场中某一有向曲面$S$的曲面积分 :
       $$
         \varPhi = \doubleIntegralOnZone{S} A_n dS = \doubleIntegralOnZone{s} A \cdot d\mathbf{S}
@@ -3047,7 +3063,7 @@ $$
       \end{itemize}
     }%通量结尾
 
-    \subsubsection{散度}{
+    \subsection{散度}{
       通量描述了一固定区域上向量场的流通倾向,而散度在某点的的值则是这个性质在这点的局部描述,也就是说,从散度在一点的值,就可以看出向量场在这点附近到底是倾向于发散还是收敛.
 
       设向量场$A(M)$,在场中作包围点$M$的闭曲面$S$,$S$包围的趋于称为$\Omega$,$\Omega$的体积为$\Delta V$.当$\Omega$收缩到极限$M$时,如果极限 :
@@ -3084,7 +3100,7 @@ $$
       \end{itemize}
     }%散度
 
-    \subsubsection{散度在常见坐标系中的计算公式}{
+    \subsection{散度在常见坐标系中的计算公式}{
       在不同的坐标系下,向量场的散度有不同的表达方. :
       \begin{itemize}
         \item {
@@ -3129,7 +3145,7 @@ $$
       \end{itemize}
     }%散度在常见坐标系中的计算公式
 
-    \subsubsection{高斯散度定理/高斯公式/高斯-奥斯特洛格拉特斯基公式}{
+    \subsection{高斯散度定理/高斯公式/高斯-奥斯特洛格拉特斯基公式}{
       既然向量场某一处的散度是向量场在该处附近通量的体密度,那么对某一个体积内的散度进行积分,就应该得到这个体积内的总通量.事实上可以证明这个推论是正确的,称为高斯散度定理.高斯定理说明,如果在体积V内的向量场A拥有散度,那么散度的体积分等于向量场在V的表面S的面积分
 
       设矢量场$A = P\vec{i} + Q\vec{j} + R\vec{k}$的各分量$P,Q,R$再闭曲面所围区域$\Omega$内有一阶连续偏导数,则有 :
@@ -3152,7 +3168,7 @@ $$
       \end{itemize}
     }%高斯散度定理/高斯公式/高斯-奥斯特洛格拉特斯基公式结尾
 
-    \subsubsection{散度的运算性质}{
+    \subsection{散度的运算性质}{
       \begin{itemize}
         \item {
               由于散度是线性算符,所以 :
@@ -3184,10 +3200,10 @@ $$
       \end{itemize}
     }%散度的运算性质
 
-  }%通量与旋度,高斯公式
+   }%通量与旋度,高斯公式
 
-  \subsection{环量,旋度,斯托克斯公式}{
-    \subsubsection{环量}{
+  \section{环量,旋度,斯托克斯公式}{
+    \subsection{环量}{
       设矢量场$A(M)$,将沿着场中某一有向封闭曲线$l$的曲线积分 : $$
         \Gamma = \curveIntegralOnLine{l}A \cdot dl
       $$
@@ -3202,7 +3218,7 @@ $$
       %#TODO wiki
     }%环量结尾
 
-    \subsubsection{环量面密度}{
+    \subsection{环量面密度}{
       设$M$是矢量场中的一点,在$M$点取一矢量$\vec{n}$,并且在$M$点附近取回路$l$,作以$l$为边界,$\vec{n}$为法线且过$M$的曲面$\Delta S$,并取$l$的正向与$n$构成右手系.令$l$沿着$\Delta S$以任意方式收缩到$M$点,如果极限$$
         \limNormal{l \to M(\mbox{沿着}\Delta S)}\cfrac{\curveIntegralOnLine{l}A \cdot dl}{\Delta S}
       $$
@@ -3216,7 +3232,7 @@ $$
       \end{itemize}
     }%环量面密度结尾
 
-    \subsubsection{旋度}{
+    \subsection{旋度}{
       若在向量场$A$中的一点$M$处存在矢量$\vec{R}$,他的方向是$A$在该点环量面密度最大的方向,他的模就是这个最大的环量面密度.矢量$\vec{R}$称为向量场$A$在点$M$的旋度,记为$\curlRotText A$或者$\curlText A$
 
       说明 :
@@ -3231,7 +3247,7 @@ $$
       \end{itemize}
     }%旋度结尾
 
-    \subsubsection{旋度在直角坐标系中的运算公式}{
+    \subsection{旋度在直角坐标系中的运算公式}{
       设矢量场$A$ : $$
         A = P(x,y,z)\vec{i} + Q(x,y,z)\vec{j} + R(x,y,z)\vec{k}
       $$
@@ -3247,7 +3263,7 @@ $$
       $$
     }%旋度在直角坐标系中的运算公式结尾
 
-    \subsubsection{旋度的运算性质}{
+    \subsection{旋度的运算性质}{
       \begin{itemize}
         \item $\curlRotText (\vec{A} \pm \vec{B}) = \curlRotText \vec{A} \pm \curlRotText \vec{B}$
         \item $\curlRotText (\varphi \vec{A}) = \varphi \curlRotText \vec{A} + \gradText \varphi \times \vec{A}$($\varphi$是数性函数)
@@ -3256,7 +3272,7 @@ $$
       \end{itemize}
     }%旋度的运算性质结尾
 
-    \subsubsection{斯托克斯公式}{
+    \subsection{斯托克斯公式}{
       设矢量场$A = P\vec{i} + Q\vec{j} + R\vec{k}$的分量$P,Q,R$在包围曲面$S$的空间区域中有一阶连续偏导数,$l$为曲面$S$的边界,则 : $$
         \curveIntegralOnLine{l}A \cdot dl = \surfaceIntegralOnSurface{S}\curlRotText A\cdot dS
       $$
@@ -3275,11 +3291,11 @@ $$
       当$A$为平面向量场是,斯托克斯公式会变成格林公式,斯托克斯公式可以看作是格林公式的推广.
     }%斯托克斯公式
 
-  }%环量,旋度,斯托克斯公式结尾
+   }%环量,旋度,斯托克斯公式结尾
 
-  \subsection{几个特殊的向量场}{
+  \section{几个特殊的向量场}{
 
-    \subsubsection{管形场}{
+    \subsection{管形场}{
       在向量场$A$中,如果$\divergenceText A = 0$,则称$A$为管形场,又称无源场.
 
       管形场的判别法 : A为管形场$\Leftrightarrow \divergenceText A = 0$.
@@ -3287,7 +3303,7 @@ $$
       管形场的一条重要性质就是 : 场中任一矢量管(由矢量线所组成的管型曲面)的所有横截面的通量都相等.
     }%管形场结尾
 
-    \subsubsection{有势场}{
+    \subsection{有势场}{
       在矢量场$A(M)$中,如果存在函数$u(M)$使得$A = \gradText u$,则称$A$为有势场.称$v = -u$为矢量场$A$的势函数.
 
       有以下等价定义 :
@@ -3326,7 +3342,7 @@ $$
       \end{enumerate}
     }%有势场结尾
 
-    \subsubsection{调和场}{
+    \subsection{调和场}{
       矢量场$A$中,若$\divergenceText A = 0$且$\curlRotText A = 0$,则称$A$是调和场.也叫做无源无旋场.
 
       说明 :
@@ -3343,11 +3359,11 @@ $$
       \end{itemize}
     }%调和场结尾
 
-  }%几个特殊的向量场结尾
+   }%几个特殊的向量场结尾
 
-  \subsection{nabla算子(哈密尔顿算子)}{
+  \section{nabla算子(哈密尔顿算子)}{
 
-    \subsubsection{定义}{
+    \subsection{定义}{
       $$
         \nabla = \vec{i}\partialDerivativeFrac{\ }{x} + \vec{j}\partialDerivativeFrac{\ }{y} + \vec{k}\partialDerivativeFrac{\ }{z} = \begin{Bmatrix}
           \partialDerivativeFrac{\ }{x} & \partialDerivativeFrac{\ }{y} & \partialDerivativeFrac{\ }{z}
@@ -3356,7 +3372,7 @@ $$
       称为哈密尔顿算子(nabla算子).它是一个向量形式的微分算子,兼有微分运算和向量运算的双重作用.它本身既不是一个函数也不是某个物理量.他表示的是一种运算,以一定方式作用于函数式向量后才能表示一个量.
     }%nabla算子定义结尾
 
-    \subsubsection{运算规则}{
+    \subsection{运算规则}{
       \begin{itemize}
         \item $\nabla u = \bigCase{\vec{i}\partialDerivativeFrac{\ }{x} + \vec{j}\partialDerivativeFrac{\ }{y} + \vec{k}\partialDerivativeFrac{\ }{z}}u = \partialDerivativeFrac{u}{x}\vec{i} + \partialDerivativeFrac{u}{y}\vec{j} + \partialDerivativeFrac{u}{z}\vec{k} = \begin{bmatrix}
                   \partialDerivativeFrac{u}{x} & \partialDerivativeFrac{u}{y} & \partialDerivativeFrac{u}{z}
@@ -3391,7 +3407,7 @@ $$
       \end{itemize}
     }%运算规则结尾
 
-    \subsubsection{梯度散度旋度以及高斯公式和斯托克斯公式的算子表示法}{
+    \subsection{梯度散度旋度以及高斯公式和斯托克斯公式的算子表示法}{
       梯度 : $\nabla u = \gradText u$
 
       散度 : $\divergenceSymbol A = \divergenceText A$
@@ -3403,7 +3419,7 @@ $$
       斯托克斯公式 : $\curveIntegralOnLine{l} A \cdot dl = \surfaceIntegralOnSurface{S}\curlSymbol A \cdot ds$
     }%梯度散度旋度以及高斯公式和斯托克斯公式的算子表示法
 
-    \subsubsection{常用公式}{
+    \subsection{常用公式}{
       \begin{itemize}
         \item $\nabla(\mathConstant u) = \mathConstant \nabla u$
         \item $\divergenceSymbol(\mathConstant\vec{A}) = \mathConstant \divergenceSymbol \vec{A}$
@@ -3429,7 +3445,7 @@ $$
       $$
     }%常用公式结尾
 
-  }%nabla算子结尾
+   }%nabla算子结尾
 
   %#TODO 梯度,散度,旋度在不同坐标系中的表达式,整理,将A和B改写成\vec{f},\vec{g}此类形式,合并至多元微积分.
 

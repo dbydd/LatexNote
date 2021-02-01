@@ -1,12 +1,12 @@
-\section{解析几何}{
+\chapter{解析几何}{
   不容小觑且难以理解的部分,加油.
 
-  \subsection{关于向量}{
+  \section{关于向量}{
     在空间解析几何部分不会引入过多有关线性代数的知识(比如向量空间).定理与定义将会互相交织.
 
     注:本章中的向量默认为三维向量.
 
-    \subsubsection{关于向量的基本概念}{
+    \subsection{关于向量的基本概念}{
       有以下概念:
       \begin{itemize}
         \item 数乘:$\lambda \vec{\alpha}$,即$\lambda$倍长度的$\vec{\alpha}$,当$\lambda > 0$时,方向与原向量相同.当$\lambda < 0$时,方向相反.数乘前后向量的起点一致.
@@ -31,7 +31,7 @@
       \end{itemize}
     }%关于向量的基本概念结尾
 
-    \subsubsection{方向角与方向余弦}{
+    \subsection{方向角与方向余弦}{
       \begin{center}
         \includegraphics[scale = 0.5]{resources/directionAngle.png}
       \end{center}
@@ -56,7 +56,7 @@
 
     }%方向角与方向余弦结尾
 
-    \subsubsection{向量投影}{
+    \subsection{向量投影}{
       \begin{center}
         \includegraphics{resources/vector_axis_projection.png}
       \end{center}
@@ -72,7 +72,7 @@
 
     }%向量投影结尾
 
-    \subsubsection{数量积/点乘}{
+    \subsection{数量积/点乘}{
       点乘算出来的是数
 
       $\vec{a} \cdot \vec{b} = |a|\cdot|b|\cdot\cos\theta = |a|\cdot\projection{a}b = |b|\cdot\projection{b}a$
@@ -92,7 +92,7 @@
 
     }%数量积/点乘结尾
 
-    \subsubsection{向量积/叉乘}{
+    \subsection{向量积/叉乘}{
       叉乘算出来的是向量,这个向量垂直于其他两个向量.右手法则:食指为$\vec{a}$,中指为$\vec{b}$,拇指为$\vec{c}$
 
       $\vec{a}\times\vec{b} = \vec{c}$
@@ -154,9 +154,9 @@
 
   }%关于向量结尾
 
-  \subsection{关于圆}{
+  \section{关于圆}{
 
-    \subsubsection{圆的方程}{
+    \subsection{圆的方程}{
       \begin{center}
         \begin{tikzpicture}
           \draw[-latex] (0,0) node[below left]{$o$} -- (4,0) node[below right]{$x$};
@@ -202,7 +202,7 @@
       \end{itemize}
     }%圆的方程结尾
 
-    \subsubsection{圆的切线方程}{
+    \subsection{圆的切线方程}{
       已知$M(x_0,y_0)$为圆$x^2 + y^2 = r^2$上的一点,求过点$M$的圆$C$的切线$l$的方程 :
 
       因为$M$是$l$与圆$C$的切点,所以过$M$的半径$OM$与$l$垂直,即$\vec{OM}=\begin{bmatrix}
@@ -220,9 +220,9 @@
 
   }%关于圆结尾
 
-  \subsection{关于椭圆}{
+  \section{关于椭圆}{
 
-    \subsubsection{椭圆的一般方程}{
+    \subsection{椭圆的一般方程}{
       \begin{center}
         \begin{tikzpicture}
           \draw[-latex] (-3,0) -- node[below left]{$O$} (3,0)node [below]{$x$};
@@ -275,9 +275,9 @@
 
   }%关于椭圆结尾
 
-  \subsection{关于空间平面}{
+  \section{关于空间平面}{
 
-    \subsubsection{空间平面公式}{
+    \subsection{空间平面公式}{
       法线向量与平面垂直.\\
 
       \indent空间平面有以下表示方法:
@@ -321,7 +321,7 @@
       \end{itemize}
     }%关于空间平面结尾
 
-    \subsubsection{求两平面夹角}{
+    \subsection{求两平面夹角}{
       其实是求两平面法线的夹角(取锐角)
 
       因此只要设两平面法线向量为$n_1(A_1,B_1,C_1),n_2(A_2,B_2,C_2)$,然后套向量夹角公式就行了.
@@ -331,13 +331,13 @@
       其中当向量平行时意味着平面重合(因为取的是锐角)、
     }%求两平面夹角结尾
 
-    \subsubsection{点到平面距离公式}{
+    \subsection{点到平面距离公式}{
       设点$P_0(x_0,y_0,z_0),Ax + By + Cz + D = 0$
 
       $d = \cfrac{|Ax_0 + By_0 + Cz_0 + D|}{\sqrt{A^2 + B^2 + C^2}}$
     }%点到平面距离公式结尾
 
-    \subsubsection{直线与平面夹角}{
+    \subsection{直线与平面夹角}{
       指的是直线与法线的夹角
 
       设与直线同方向的向量$L_1(M,N,P)$,夹角为$\theta$
@@ -353,9 +353,9 @@
 
   }%空间平面及其方程结尾
 
-  \subsection{关于空间直线}{
+  \section{关于空间直线}{
 
-    \subsubsection{空间直线及其方程}{
+    \subsection{空间直线及其方程}{
       有以下三种形式:
 
       \begin{enumerate}
@@ -390,7 +390,7 @@
       \end{enumerate}
     }%空间直线及其方程结尾
 
-    \subsubsection{平面束}{
+    \subsection{平面束}{
       平面束即形成一条直线的所有面
 
       $$
@@ -405,9 +405,9 @@
 
   }%关于空间直线结尾
 
-  \subsection{关于空间曲线}{
+  \section{关于空间曲线}{
 
-    \subsubsection{空间曲线及其方程}{
+    \subsection{空间曲线及其方程}{
       有以下两种形式：
 
       \begin{enumerate}
@@ -435,7 +435,7 @@
       \end{enumerate}
     }%空间曲线及其方程结尾
 
-    \subsubsection{参数方程与一般方程的互化}{
+    \subsection{参数方程与一般方程的互化}{
       这两者之间的互化往往会用到一些特殊的技巧,比如诱导公式.
 
       举例 : 设一个圆的参数方程为 : $$
@@ -476,7 +476,7 @@
       关键在于如何利用一般情况下的公式的结构,而且需要明确参数和角度的区别(因为往往$\theta$是被看作参数而非角度).
     }%参数方程与一般方程的互化结尾
 
-    \subsubsection{常见参数方程}{
+    \subsection{常见参数方程}{
       以下都是二维参数方程.
 
       \begin{itemize}
@@ -522,7 +522,7 @@
       注 : 上文中的$a,b,c,h,k,l,m,p,r,x_0,y_0,u,v$为已知数,$t$都是参数,$x,y$为一般方程下的变量.
     }%常见参数方程结尾
 
-    \subsubsection{空间曲线在坐标系面上的投影}{
+    \subsection{空间曲线在坐标系面上的投影}{
 
       设空间曲线c的一般方程为:
 
@@ -543,7 +543,7 @@
       $$
     }%空间曲线在坐标系面上的投影结尾
 
-    \subsubsection{空间曲线的切线及法平面}{
+    \subsection{空间曲线的切线及法平面}{
       先写出空间曲线的切线方程 :
 
       $$
@@ -565,7 +565,7 @@
       则法平面的点法式方程为 : $\varphi\derivative(t_0)(x - x_0) + \Phi\derivative(t_0)(y - y_0) + \omega\derivative(z - z_0) = 0$
     }%空间曲线的切线及法平面
 
-    \subsubsection{空间曲线的切平面及法线}{
+    \subsection{空间曲线的切平面及法线}{
       有两种情况 :
 
       \begin{enumerate}
@@ -586,9 +586,9 @@
 
   }%关于空间曲线结尾
 
-  \subsection{关于空间曲面}{
+  \section{关于空间曲面}{
 
-    \subsubsection{空间曲面及其方程}{
+    \subsection{空间曲面及其方程}{
       有非常多种曲面,都给他列出来:
 
       \begin{itemize}
@@ -747,7 +747,7 @@
       \end{itemize}
     }%空间曲面及其方程结尾
 
-    \subsubsection{伸缩法}{
+    \subsection{伸缩法}{
       注:伸缩法不是放缩法!
 
       举例:有$x^2 + y^2 = 1$,沿着y轴伸缩两倍,则伸缩后的方程为:$x^2 + \cfrac{y^2}{4} = 1$.

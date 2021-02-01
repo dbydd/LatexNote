@@ -1,10 +1,10 @@
-\section{基本概念}{
+\chapter{基本概念}{
 
-\subsection{六大基本初等函数}{
+\section{六大基本初等函数}{
     常数函数,幂函数,指数函数,对数函数,三角函数
 }%六大基本初等函数结尾
 
-\subsection{介值定理}{
+\section{介值定理}{
 
 在数学分析中,介值定理(英语:intermediate value theorem,又称中间值定理)描述了连续函数在两点之间的连续性:
 
@@ -31,10 +31,10 @@ $\fint(I)\supseteq[\fint(b), \fint(a)]$.
 \end{center}
 }%介值定理结尾
 
-\subsection{二项式定理}{
+\section{二项式定理}{
     $(x + y)^n = x^n + \mathCombination{n - 1}{n}(x^{n-1} y) + \mathCombination{n - 2}{n}(x^{n-2} y^2) + \dots + y^n$
 
-    \subsubsection{二项式系数与帕斯卡三角形(杨辉三角)}{
+    \subsection{二项式系数与帕斯卡三角形(杨辉三角)}{
 
         二项式系数是二项式定理中各项的系数.一般而言,二项式系数由两个非负整数$n$和$k$作为参数来决定,写作$\begin{pmatrix}
                 n \\
@@ -55,30 +55,30 @@ $\fint(I)\supseteq[\fint(b), \fint(a)]$.
 
 }%二项式定理结尾
 
-\subsection{排列组合}{
+\section{排列组合}{
 
     排列:$\mathPermutation{m}{n} = \cfrac{m!}{(m-n)!}$
 
     组合:$\mathCombination{m}{n} = \cfrac{\mathPermutation{m}{n}}{m!} = \cfrac{n!}{m!(n-m)!}$
 }%排列组合结尾
 
-\subsection{立方差公式}{
+\section{立方差公式}{
     \begin{itemize}
         \item $a^3 + b^3 = (a + b)(a^2 - ab + b^2)$
         \item $a^3 - b^3 = (a - b)(a^2 + ab + b^3)$
     \end{itemize}
 }%立方差公式结尾
 
-\subsection{等幂求和公式}{
+\section{等幂求和公式}{
 
 }%等幂求和公式
 
-\subsection{圆幂定理}{
+\section{圆幂定理}{
     给定一个圆$r$及一点p,由p引出两条割线,分别于$r$相交于$A,B$及$C,D$,则有$PA \cdot PB = PC \cdot PD$
 
     事实上此定理包含三条定理 :
 
-    \subsubsection{割线定理}{
+    \subsection{割线定理}{
         \begin{tikzpicture}
             \node (o) at (0.25,0.25){O};
             \draw [fill = black] (0,0) circle (1pt);
@@ -102,7 +102,7 @@ $\fint(I)\supseteq[\fint(b), \fint(a)]$.
         $PA \cdot PB = PC \cdot PD$
     }%割线定理结尾
 
-    \subsubsection{交弦定理}{
+    \subsection{交弦定理}{
         \begin{tikzpicture}
             \node (o) at (0.25,0.25){O};
             \draw [fill = black] (0,0) circle (1pt);
@@ -124,7 +124,7 @@ $\fint(I)\supseteq[\fint(b), \fint(a)]$.
         $EA \cdot EB = EC \cdot ED$
     }%交弦定理结尾
 
-    \subsubsection{切割线定理}{
+    \subsection{切割线定理}{
         \begin{tikzpicture}
             \node (o) at (0.25,0.25){O};
             \draw [fill = black] (0,0) circle (1pt);
@@ -149,7 +149,7 @@ $\fint(I)\supseteq[\fint(b), \fint(a)]$.
 
 }%圆幂定理结尾
 
-\subsection{圆周角定理}{
+\section{圆周角定理}{
     一条弧所对的圆周角$\alpha$等于所对圆心角的一半.
 
     \begin{tikzpicture}
@@ -169,8 +169,8 @@ $\fint(I)\supseteq[\fint(b), \fint(a)]$.
 
 }%圆周角定理结尾
 
-\subsection{韦达定理}{
-\subsubsection{韦达定理的普遍情况}{
+\section{韦达定理}{
+\subsection{韦达定理的普遍情况}{
 设$P(x) = a_nx^n + a_{n-1}x^{n-1} + \dotsm + a_1x + a_0$是一个一元n次实(或复)系数多项式,首项系数$a_n \neq 0$,令P的n个根为$x_1,x_2,\dots,x_n$,则根$\{x_i\}$和系数$\{a_j\}$之间满足关系式 :
 
 $$
@@ -191,7 +191,7 @@ $\sum\limits_{1 \leq i_1 < i_2 < \dotsm < i_k \leq n}x_{i_{1}}x_{i_{2}} \dotsm x
 (等号的左边被称作是初等对称多项式)
 }%韦达定理的普遍情况结尾
 
-\subsubsection{n = 2的情况(二次)}{
+\subsection{n = 2的情况(二次)}{
     设$x_1,x_2$是一元二次多项式$ax^2 + bx + c$的两根,则由$ax^2 +bx + c = a(x - x_1)(x - x_2) = ax^2 - a(x_1 + x_2)x + ax_1x_2$有 :
 
     $x_1 + x_2 = -\cfrac{b}{a},\qquad x_1x_2 = \cfrac{c}{a}$
@@ -199,7 +199,7 @@ $\sum\limits_{1 \leq i_1 < i_2 < \dotsm < i_k \leq n}x_{i_{1}}x_{i_{2}} \dotsm x
     在这个情况下，韦达定理的逆定理同样成立 : 给定一个一元二次多项式$ax^2 + bx + c$,如果有两个数$x_1,x_2$,满足$x_1 + x_2 = -\cfrac{b}{a}$和$x_1x_2 = \cfrac{c}{a}$,则$x_1,x_2$就是多项式$ax^2 + bx + c$的两根.
 }%n = 2的情况(二次)结尾
 
-\subsubsection{n = 3的情况(三次)}{
+\subsection{n = 3的情况(三次)}{
     设$x_1,x_2,x_3$是一元三次多项式$ax^3 + bx^2 + cx + d$的三根，则
 
     $x_1 + x_2 + x_3 = -\cfrac{b}{a}, x_1x_2 + x_1x_3 + x_2x_3 = \cfrac{c}{a},x_1x_2x_3 = -\cfrac{d}{a}$
@@ -207,12 +207,12 @@ $\sum\limits_{1 \leq i_1 < i_2 < \dotsm < i_k \leq n}x_{i_{1}}x_{i_{2}} \dotsm x
 
 }%韦达定理结尾
 
-\subsection{极坐标}{
+\section{极坐标}{
 极坐标是不同于笛卡尔坐标系(直角坐标系)的另一种函数图像平面.
 
 极坐标不同于笛卡尔坐标系,他没有x和y轴,而是用基准轴和角度表示一个点.
 
-\subsubsection{极坐标系下的面积}{
+\subsection{极坐标系下的面积}{
     \begin{center}
         \includegraphics{resources/polar_coordness.png}
     \end{center}
@@ -222,7 +222,7 @@ $\sum\limits_{1 \leq i_1 < i_2 < \dotsm < i_k \leq n}x_{i_{1}}x_{i_{2}} \dotsm x
     p是形成曲线的函数.
     }%极坐标下的面积结尾
 
-    \subsubsection{转换公式}{
+    \subsection{转换公式}{
         从直角坐标系到极坐标有一套转换公式.
 
         $$
@@ -233,7 +233,7 @@ $\sum\limits_{1 \leq i_1 < i_2 < \dotsm < i_k \leq n}x_{i_{1}}x_{i_{2}} \dotsm x
         $$
     }%转换公式结尾
 
-    \subsubsection{极坐标表示线}{
+    \subsection{极坐标表示线}{
         \begin{center}
             \begin{tikzpicture}
                 \draw (0,0) -- (0,5);
@@ -254,11 +254,11 @@ $\sum\limits_{1 \leq i_1 < i_2 < \dotsm < i_k \leq n}x_{i_{1}}x_{i_{2}} \dotsm x
         $$
     }%极坐标表示线结尾
 
-    \subsubsection{极坐标表示面}{
+    \subsection{极坐标表示面}{
         所谓"线动成面",想要用极坐标表示面,只需要加上$\rho$的取值条件就行(即 : $a \leq \rho \leq b$,此处的$a,b$也可以是关于其他变量的公式).
     }%极坐标表示面结尾
 
-    \subsubsection{柱面坐标}{
+    \subsection{柱面坐标}{
         柱面坐标是一种将极坐标扩展到三维的方法,其实就是加了个z轴.因此转换公式为 :
 
         $$
@@ -270,7 +270,7 @@ $\sum\limits_{1 \leq i_1 < i_2 < \dotsm < i_k \leq n}x_{i_{1}}x_{i_{2}} \dotsm x
         $$
     }%柱面坐标结尾
 
-    \subsubsection{球面坐标}{
+    \subsection{球面坐标}{
         球面坐标又是不同与柱面坐标的另一种形式,他引入了另一个表示角度的变量$\varphi$
 
         球面坐标由三个变量组成,如果将某一个点用向量$\vec{v}$表示,那么三个变量分别是 :
@@ -292,9 +292,9 @@ $\sum\limits_{1 \leq i_1 < i_2 < \dotsm < i_k \leq n}x_{i_{1}}x_{i_{2}} \dotsm x
 
 }%极坐标结尾
 
-\subsection{不等式}{
+\section{不等式}{
 
-\subsubsection{基本不等式}{
+\subsection{基本不等式}{
     $\cfrac{a + b}{2} \geq \sqrt{ab}$
 
     注:当且仅当$a = b$时取等号
@@ -311,7 +311,7 @@ $\sum\limits_{1 \leq i_1 < i_2 < \dotsm < i_k \leq n}x_{i_{1}}x_{i_{2}} \dotsm x
 }%基本不等式结尾
 
 
-\subsubsection{柯西不等式}{
+\subsection{柯西不等式}{
     柯西不等式有很多种形式:
     \begin{itemize}
         \item {
@@ -373,7 +373,7 @@ $\sum\limits_{1 \leq i_1 < i_2 < \dotsm < i_k \leq n}x_{i_{1}}x_{i_{2}} \dotsm x
     \end{itemize}
 }\label{triangle_inequality}%柯西不等式结尾
 
-\subsubsection{三角不等式}{
+\subsection{三角不等式}{
     叙述为 : 对于任意实数$a,b$,有 :
     $$
         \absoluteValue{\absoluteValue{a} - \absoluteValue{b}} \leq \absoluteValue{a + b} \leq \absoluteValue{a} - \absoluteValue{b}
@@ -394,7 +394,7 @@ $\sum\limits_{1 \leq i_1 < i_2 < \dotsm < i_k \leq n}x_{i_{1}}x_{i_{2}} \dotsm x
     (三角不等式的向量形式其实也有出现在柯西不等式中,见{\ref{triangle_inequality}})
 }
 
-\subsubsection{均值不等式}{
+\subsection{均值不等式}{
 平均数不等式,或称平均值不等式、均值不等式,是数学上的一组不等式,也是基本不等式的推广.它是说:
 
 如果$x_{1},x_{2},\dotsm,x_{n}$是正数,则:
@@ -421,7 +421,7 @@ $$
 可简记为:“{\bfseries 算几调方}”
 }%均值不等式结尾  
 
-\subsubsection{算术-几何均值不等式}{
+\subsection{算术-几何均值不等式}{
     算术-几何平均值不等式,简称算几不等式,是一个常见而基本的不等式,表现算术平均数和几何平均数之间恒定的不等关系.设$x_1,x_2,\dots,x_n$为$n$个正实数,他们的算数平均数是$\mathbf{A}_n = \cfrac{x_1 + x_2 + \dotsm + x_n}{n}$,他们的几何平均数是$\mathbf{G}_n = \sqrt[n]{x_1\cdot x_2 \dotsm x_n}$.算术-几何平均值不等式表明,对任意的正实数$x_1,\dotsm,x_n$,总有:
 
     \begin{center}
@@ -459,7 +459,7 @@ $$
     \qed
 }%算术-几何均值不等式结尾
 
-\subsubsection{常用不等式}{
+\subsection{常用不等式}{
     \begin{itemize}
         \item $a^2 + b^2 \geq \cfrac{1}{2}(a + b)^2$
         \item $a^2 + b^2 \geq 2ab$
@@ -472,9 +472,9 @@ $$
 
 }%不等式结尾
 
-\subsection{可微,可导,连续的关系}{
+\section{可微,可导,连续的关系}{
 
-    \subsubsection{一元情况下的关系}{
+    \subsection{一元情况下的关系}{
         \begin{itemize}
             \item 可微是可导的充要条件,即:可微$\Leftrightarrow$可导
             \item 可微和可导都是连续的充分条件,即:可微$\rightarrow$连续、可导$\rightarrow$连续
@@ -492,7 +492,7 @@ $$
         \end{center}
     }%一元情况下的关系结尾
 
-    \subsubsection{多元情况下的关系}{
+    \subsection{多元情况下的关系}{
         \begin{itemize}
             \item 可微(全微分)是可导和连续的充分条件,即:可微$\Rightarrow$可导、可微$\Rightarrow$连续.
             \item 可导$\nRightarrow$连续.
@@ -512,14 +512,14 @@ $$
 
 }%可微,可导,连续的关系结尾
 
-\subsection{零散的定义}{
+\section{零散的定义}{
     \begin{enumerate}
         \item 有界:$\exists\epsilon,f(x) < \epsilon\quad(-\infty < x < \infty )$
         \item 什么时候函数能复合 : 内层值域$\in$外层定义域
     \end{enumerate}
 }%零散的定义结尾
 
-\subsection{零散的思想}{
+\section{零散的思想}{
     \begin{enumerate}
         \item 正变换是数学的重要工具,三角变换是只变其形不变其质的.三角变换常常先寻找式子所包含的各个角之间的联系,并以此为依据选择可以联系它们的适当公式,通过换元法把三角恒等变换问题转化为代数恒等变换问题.
     \end{enumerate}

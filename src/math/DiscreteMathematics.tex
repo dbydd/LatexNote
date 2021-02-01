@@ -1,10 +1,10 @@
-\section{离散数学}{
+\chapter{离散数学}{
 
-\subsection{前置知识}
+\section{前置知识}
 
-\subsection{集合论}{
+\section{集合论}{
 
-\subsubsection{集合论的主要内容}{
+\subsection{集合论的主要内容}{
   \begin{itemize}
     \item 研究对象 : 集合,关系,函数,自然数,基数
     \item 研究思想 : 以逻辑为基础,以集合为工具,表示和构造各种数学对象
@@ -18,7 +18,7 @@
   \end{itemize}
 }%集合论的主要内容结尾
 
-\subsubsection{集合论中的问题}{
+\subsection{集合论中的问题}{
   \begin{itemize}
     \item 如何给集合下定义?
     \item 如何用集合去定义关系,函数,自然数?
@@ -28,7 +28,7 @@
   \end{itemize}
 }%集合论中的问题结尾
 
-\subsubsection{集合的表示}{
+\subsection{集合的表示}{
   \begin{itemize}
     \item {
           列举法 :
@@ -43,7 +43,7 @@
   \end{itemize}
 }%集合的表示结尾
 
-\subsubsection{描述集合的注意事项}{
+\subsection{描述集合的注意事项}{
   \begin{enumerate}
     \item 集合中的元素是各不相同的.
     \item 集合中的元素不规定顺序.
@@ -53,7 +53,7 @@
   \end{enumerate}
 }%描述集合的注意事项结尾
 
-\subsubsection{常用的集合}{
+\subsection{常用的集合}{
   \begin{itemize}
     \item $\mathNatureNumberCollection$: 自然数集合 $\mathNatureNumberCollection = {0,1,2,3,\dots}$
     \item $\mathIntegerCollection$: 整数集合 $\mathIntegerCollection = {0, \pm 1, \pm 2, \dots} = {\dots, -2, -1, 0, 1, 2, \dots}$
@@ -62,6 +62,8 @@
     \item $\mathComplexNumberCollection$: 复数集合
   \end{itemize}
 }%常用的集合结尾
+
+\subsection{集合之间的关系}{
 
 \subsubsection{子集}{
   设$A,B$为二集合,若$B$中的元素都是$A$中的元素,则称$B$是$A$的子集,也称$A$包含$B$,或者$B$包含于$A$,记作$B \subseteq A$,其符号化形式为 : $$
@@ -197,129 +199,135 @@
   集合可以看作重复度均$\leq 1$的多重集.
 }%多重集结尾
 
-\subsubsection{并集}{
-  设$A,B$为二集合,称由$A$和$B$的所有元素组成的集合为$A$与$B$的并集,记作$A \unionSet B$,称$\unionSet$为并元算符.
+}%集合之间的关系结尾
 
-  $A \unionSet B$得到的集合,用描述法可以表示为 : $$
-    A \unionSet B = \{x | x \in A \lor x \in B\}
-  $$
-  集合的并运算可以推广到有限个或可数个集合(初级并).
+\subsection{集合的运算}{
 
-  设$A_1,A_2,\dots,A_n$为$n$个集合,$A_1,A_2,\dots,A_n,\dots$为可数个集合,则 : $$
-    A_1 \unionSet A_2 \unionSet \dots \unionSet A_n = \{x | \exists i (1 \leq i \leq n \land x \in A_i)\}
-  $$
+  \subsubsection{并集}{
+    设$A,B$为二集合,称由$A$和$B$的所有元素组成的集合为$A$与$B$的并集,记作$A \unionSet B$,称$\unionSet$为并元算符.
 
-  并集也可以写作类似求和的形式 : $$
-    \updownUnion{n}{i = 1}A_i = A_1 \unionSet A_2 \unionSet \dots \unionSet A_n
-  $$
+    $A \unionSet B$得到的集合,用描述法可以表示为 : $$
+      A \unionSet B = \{x | x \in A \lor x \in B\}
+    $$
+    集合的并运算可以推广到有限个或可数个集合(初级并).
 
-}%并集结尾
+    设$A_1,A_2,\dots,A_n$为$n$个集合,$A_1,A_2,\dots,A_n,\dots$为可数个集合,则 : $$
+      A_1 \unionSet A_2 \unionSet \dots \unionSet A_n = \{x | \exists i (1 \leq i \leq n \land x \in A_i)\}
+    $$
 
-\subsubsection{交集}{
-  设$A,B$为二集合,称由$A$和$B$的公共元素组成的集合为$A$与$B$的交集,记作$A \intersectionSet B$,称$\intersectionSet$为并元算符.
+    并集也可以写作类似求和的形式 : $$
+      \updownUnion{n}{i = 1}A_i = A_1 \unionSet A_2 \unionSet \dots \unionSet A_n
+    $$
 
-  $A \intersectionSet B$的描述法表示为$$
-    A \intersectionSet B = \{x | x \in A \land x \in B\}
-  $$
-  集合的交运算可以推广到有限个或可数个集合(初级交).
+  }%并集结尾
 
-  设$A_1,A_2,\dots,A_n,\dots$为可数个集合,则 : $$
-    A_1 \intersectionSet A_2 \intersectionSet \dots \intersectionSet A_n = \{x | \forall i (1 \leq i \leq n \to x \in A_i)\}
-  $$
+  \subsubsection{交集}{
+    设$A,B$为二集合,称由$A$和$B$的公共元素组成的集合为$A$与$B$的交集,记作$A \intersectionSet B$,称$\intersectionSet$为并元算符.
 
-  同样的,也有这种简化形式 : $$
-    \bigcap\limits_{i = 1}^{n}A_i = A_1 \intersectionSet A_2 \intersectionSet \dots \intersectionSet A_n
-  $$
-}%交集结尾
+    $A \intersectionSet B$的描述法表示为$$
+      A \intersectionSet B = \{x | x \in A \land x \in B\}
+    $$
+    集合的交运算可以推广到有限个或可数个集合(初级交).
 
-\subsubsection{不相交}{
-  设$A,B$为二集合,若$A \intersectionSet B = \emptyset$,则称$A$和$B$是不交的.设$A_1,A_2,\dots$是可数个集合秒如果对于任意的$i \neq j$,都有$A_i \intersectionSet A_j = \neq$,则称$A_1,A_2,\dots$是互不相交的.
+    设$A_1,A_2,\dots,A_n,\dots$为可数个集合,则 : $$
+      A_1 \intersectionSet A_2 \intersectionSet \dots \intersectionSet A_n = \{x | \forall i (1 \leq i \leq n \to x \in A_i)\}
+    $$
 
-  设$A_n = \{x \in R | n - 1 < x < n\},n = 1,2,\dots$,则$A_1,A_2,\dots$是互不相交的.
-}%不相交结尾
+    同样的,也有这种简化形式 : $$
+      \bigcap\limits_{i = 1}^{n}A_i = A_1 \intersectionSet A_2 \intersectionSet \dots \intersectionSet A_n
+    $$
+  }%交集结尾
 
-\subsubsection{相对补集}{
-  设$A,B$为二集合,称属于$A$而不属于$B$的全体元素组成的集合为$B$对$A$的相对补集,记作$A - B$或$\complement_A B$.$A - B$的描述法表示为 : $$
-    A - B = \{x | x \in A \land x \notin B\}
-  $$
-}%相对补集
+  \subsubsection{不相交}{
+    设$A,B$为二集合,若$A \intersectionSet B = \emptyset$,则称$A$和$B$是不交的.设$A_1,A_2,\dots$是可数个集合秒如果对于任意的$i \neq j$,都有$A_i \intersectionSet A_j = \neq$,则称$A_1,A_2,\dots$是互不相交的.
 
-\subsubsection{对称差}{
-  设$A,B$为二集合,称属于$A$而不属于$B$,或属于$B$而不属于$A$的全体元素组成的集合为$A$与$B$的对称差,记作$A \oplus B$.
+    设$A_n = \{x \in R | n - 1 < x < n\},n = 1,2,\dots$,则$A_1,A_2,\dots$是互不相交的.
+  }%不相交结尾
 
-  $A \oplus B$的描述法表示为 : $$
-    A \oplus B = \{x | (x \in A \land x \notin B) \lor (x \notin A \land x \in B)\}
-  $$
-  容易看出 : $$
-    A \oplus B = (A - B) \unionSet (B - A) = (A \unionSet B) - (A \intersectionSet B)
-  $$
-}%对称差结尾
+  \subsubsection{相对补集}{
+    设$A,B$为二集合,称属于$A$而不属于$B$的全体元素组成的集合为$B$对$A$的相对补集,记作$A - B$或$\complement_A B$.$A - B$的描述法表示为 : $$
+      A - B = \{x | x \in A \land x \notin B\}
+    $$
+  }%相对补集
 
-\subsubsection{绝对补集}{
-  设$\mathEverythingCollection$为全集,$A \subseteq \mathEverythingCollection$, 称$A$对$\mathEverythingCollection$的相对补集为$A$的绝对补集,记作$A\absoluteCompletementSet$或${~}^\sim A$或$\complement_{\mathEverythingCollection} A$.
+  \subsubsection{对称差}{
+    设$A,B$为二集合,称属于$A$而不属于$B$,或属于$B$而不属于$A$的全体元素组成的集合为$A$与$B$的对称差,记作$A \oplus B$.
 
-  $A\absoluteCompletementSet$的描述法表示为 : $$
-    A\absoluteCompletementSet = \{x | x \in \mathEverythingCollection \land x \notin A\}
-  $$
-  因为$\mathEverythingCollection$是全集,所以$x \in \mathEverythingCollection$是真命题,于是 : $$
-    A\absoluteCompletementSet = \{x | x \notin A\}
-  $$
-}%绝对补集结尾
+    $A \oplus B$的描述法表示为 : $$
+      A \oplus B = \{x | (x \in A \land x \notin B) \lor (x \notin A \land x \in B)\}
+    $$
+    容易看出 : $$
+      A \oplus B = (A - B) \unionSet (B - A) = (A \unionSet B) - (A \intersectionSet B)
+    $$
+  }%对称差结尾
 
-\subsubsection{广义并集}{
-  设$\mathcal{A}$为一个集族,称由$\mathcal{A}$中全体元素的元素组成的集合为$\mathcal{A}$的广义并,记作$\bigcup \mathcal{A}$("大并$\mathcal{A}$").
+  \subsubsection{绝对补集}{
+    设$\mathEverythingCollection$为全集,$A \subseteq \mathEverythingCollection$, 称$A$对$\mathEverythingCollection$的相对补集为$A$的绝对补集,记作$A\absoluteCompletementSet$或${~}^\sim A$或$\complement_{\mathEverythingCollection} A$.
 
-  $\bigcup \mathcal{A}$的描述法表示为 : $$
-    \bigcup\mathcal{A} = \{x | \exists z (x \in z \land z \in \mathcal{A})\}
-  $$
+    $A\absoluteCompletementSet$的描述法表示为 : $$
+      A\absoluteCompletementSet = \{x | x \in \mathEverythingCollection \land x \notin A\}
+    $$
+    因为$\mathEverythingCollection$是全集,所以$x \in \mathEverythingCollection$是真命题,于是 : $$
+      A\absoluteCompletementSet = \{x | x \notin A\}
+    $$
+  }%绝对补集结尾
 
-  设$\mathcal{A} = \{\{a,b\},\{c,d\},\{d,e,f\}\}$,则$\bigcup \mathcal{A} = \{a,b,c,d,e,f\}$.
+  \subsubsection{广义并集}{
+    设$\mathcal{A}$为一个集族,称由$\mathcal{A}$中全体元素的元素组成的集合为$\mathcal{A}$的广义并,记作$\bigcup \mathcal{A}$("大并$\mathcal{A}$").
 
-  当$\mathcal{A}$是以$S$为指标集的集族时 : $$
-    \bigcup\mathcal{A} = \bigcup\{A_\alpha | \alpha \in S\} = \bigcup_{\alpha \in S}A_\alpha
-  $$
-}%广义并集结尾
+    $\bigcup \mathcal{A}$的描述法表示为 : $$
+      \bigcup\mathcal{A} = \{x | \exists z (x \in z \land z \in \mathcal{A})\}
+    $$
 
-\subsubsection{广义交}{
-  设$\mathcal{A}$为一个集族,称由$\mathcal{A}$中全体元素的元素组成的集合为$\mathcal{A}$的广义并,记作$\bigcap \mathcal{A}$("大并$\mathcal{A}$").
+    设$\mathcal{A} = \{\{a,b\},\{c,d\},\{d,e,f\}\}$,则$\bigcup \mathcal{A} = \{a,b,c,d,e,f\}$.
 
-  $\bigcap \mathcal{A}$的描述法表示为 : $$
-    \bigcap\mathcal{A} = \{x | \exists z (x \in z \land z \in \mathcal{A})\}
-  $$
+    当$\mathcal{A}$是以$S$为指标集的集族时 : $$
+      \bigcup\mathcal{A} = \bigcup\{A_\alpha | \alpha \in S\} = \bigcup_{\alpha \in S}A_\alpha
+    $$
+  }%广义并集结尾
 
-  设$\mathcal{A} = \{\{1,2,3\},\{1,a,b\},\{1,6,7\}\}$,则$\bigcap \mathcal{A} = \{1\}$.
+  \subsubsection{广义交}{
+    设$\mathcal{A}$为一个集族,称由$\mathcal{A}$中全体元素的元素组成的集合为$\mathcal{A}$的广义并,记作$\bigcap \mathcal{A}$("大并$\mathcal{A}$").
 
-  当$\mathcal{A}$是以$S$为指标集的集族时 : $$
-    \bigcap\mathcal{A} = \bigcap\{A_\alpha | \alpha \in S\} = \bigcap_{\alpha \in S}\mathcal{A}_\alpha
-  $$
+    $\bigcap \mathcal{A}$的描述法表示为 : $$
+      \bigcap\mathcal{A} = \{x | \exists z (x \in z \land z \in \mathcal{A})\}
+    $$
 
-  注意 : 当$A = \emptyset$时,$\intersectionSet \emptyset$无意义.
-}%广义交结尾
+    设$\mathcal{A} = \{\{1,2,3\},\{1,a,b\},\{1,6,7\}\}$,则$\bigcap \mathcal{A} = \{1\}$.
 
-\subsubsection{集合运算的优先级}{
-  有以下几类 :
+    当$\mathcal{A}$是以$S$为指标集的集族时 : $$
+      \bigcap\mathcal{A} = \bigcap\{A_\alpha | \alpha \in S\} = \bigcap_{\alpha \in S}\mathcal{A}_\alpha
+    $$
 
-  \begin{itemize}
-    \item 第一类运算(此类运算按照从左向右的顺序进行) : 绝对补,幂集,广义交,广义并等.
-    \item 第二类运算(此类运算按照括号决定的顺序运算,多个括号并排或没有括号的部分按照从左向右的顺序运算) : 初级并,初级交,相对补,对称差等.
-  \end{itemize}
-}%集合运算的优先级结尾
+    注意 : 当$A = \emptyset$时,$\intersectionSet \emptyset$无意义.
+  }%广义交结尾
 
-\subsubsection{文氏图}{
-  文氏图就是将集合与集合之间的关系以及一些运算的结果用图像进行表示.在文氏图中,用矩形代表全集,用元或者其他闭曲线的内部代表$\mathEverythingCollection$的子集,并将运算结果得到的集合用阴影部分表示.
+  \subsubsection{集合运算的优先级}{
+    有以下几类 :
 
-  \begin{center}
-    \includegraphics{resources/Venn's_diagram.png}
-  \end{center}
-}%文氏图结尾
+    \begin{itemize}
+      \item 第一类运算(此类运算按照从左向右的顺序进行) : 绝对补,幂集,广义交,广义并等.
+      \item 第二类运算(此类运算按照括号决定的顺序运算,多个括号并排或没有括号的部分按照从左向右的顺序运算) : 初级并,初级交,相对补,对称差等.
+    \end{itemize}
+  }%集合运算的优先级结尾
 
-\subsubsection{容斥原理(排斥原理)}{
-  设$A_1,A_2,\dots,A_n$为$n$个集合,则 : $$
-    \absoluteValue{\updownUnion{n}{i = 1}A_i} = \upDownSum{n}{i = 1}\absoluteValue{A_i} - \upDownSum{\ }{i < j}\absoluteValue{A_i \intersectionSet A_j} + \upDownSum{\ }{i < j < k}\absoluteValue{A_i \unionSet A_j \unionSet A_k} - \dots + (-1)^{n - 1}\absoluteValue{A_1 \unionSet A_2 \unionSet \dots \unionSet A_n}
-  $$
-}
+  \subsubsection{文氏图}{
+    文氏图就是将集合与集合之间的关系以及一些运算的结果用图像进行表示.在文氏图中,用矩形代表全集,用元或者其他闭曲线的内部代表$\mathEverythingCollection$的子集,并将运算结果得到的集合用阴影部分表示.
 
-\subsubsection{基本集合恒等式}{
+    \begin{center}
+      \includegraphics{resources/Venn's_diagram.png}
+    \end{center}
+  }%文氏图结尾
+
+  \subsubsection{容斥原理(排斥原理)}{
+    设$A_1,A_2,\dots,A_n$为$n$个集合,则 : $$
+      \absoluteValue{\updownUnion{n}{i = 1}A_i} = \upDownSum{n}{i = 1}\absoluteValue{A_i} - \upDownSum{\ }{i < j}\absoluteValue{A_i \intersectionSet A_j} + \upDownSum{\ }{i < j < k}\absoluteValue{A_i \unionSet A_j \unionSet A_k} - \dots + (-1)^{n - 1}\absoluteValue{A_1 \unionSet A_2 \unionSet \dots \unionSet A_n}
+    $$
+  }%容斥原理结尾
+
+}%集合之间的运算结尾
+
+\subsection{基本集合恒等式}{
   设$\mathEverythingCollection$,$A,B,C$为$\mathEverythingCollection$的任意子集:
 
   \begin{enumerate}
@@ -342,7 +350,7 @@
   \end{enumerate}
 }%基本集合恒等式结尾
 
-\subsubsection{集合恒等式推广到集族的情况}{
+\subsection{集合恒等式推广到集族的情况}{
 设$\{A_\alpha\}_{\alpha \in S}$为集族,$B$为一集合 :
 
 \begin{itemize}
@@ -360,520 +368,532 @@
 \end{itemize}
 }%集合恒等式推广到集族的情况结尾
 
-\subsubsection{集合幂集运算的性质}{
+\subsection{集合幂集运算的性质}{
   \begin{enumerate}
     \item $A \subseteq B$当且仅当$\powerSetOf{A} \subseteq \powerSetOf{B}$
     \item $\powerSetOf{A - B} \subseteq (\powerSetOf{A} - \powerSetOf{B}) \unionSet \{\emptyset\}$
   \end{enumerate}
 }%集合幂集运算的性质结尾
 
-\subsubsection{有序对(有序二元组)}{
-  有序对又称有序二元组 : $$
-    <a,b> = \{\{a\},\{a,b\}\}
-  $$
+\subsection{有序对与卡氏积}{
 
-  其中$a$是第一元素,$b$是第二元素.
+  \subsubsection{有序对(有序二元组)}{
+    有序对又称有序二元组 : $$
+      <a,b> = \{\{a\},\{a,b\}\}
+    $$
 
-  $<a,b>$也记作$(a,b)$.
+    其中$a$是第一元素,$b$是第二元素.
 
-  由于集合没有顺序,因此${a,b}$和${b,a}$是一样的.又称无序对,在公理集合论中有一条定义无序对的公理,称为无序对公理 : $$
-    \mbox{如果$a,b$是集合,则\{a,b\}依然是集合}
-  $$
+    $<a,b>$也记作$(a,b)$.
 
-  而在$<a,b>$中,$a$在每一个子集合中,而$b$只出现在其中一个子集合中,因此他们的地位不相等,所以在有序对中$a$是第一元素,$n$是第二元素.
+    由于集合没有顺序,因此${a,b}$和${b,a}$是一样的.又称无序对,在公理集合论中有一条定义无序对的公理,称为无序对公理 : $$
+      \mbox{如果$a,b$是集合,则\{a,b\}依然是集合}
+    $$
 
-  实际上是定义了一个数组,用这种方法来保证元素的顺序.
+    而在$<a,b>$中,$a$在每一个子集合中,而$b$只出现在其中一个子集合中,因此他们的地位不相等,所以在有序对中$a$是第一元素,$n$是第二元素.
 
-  接下来一章严格证明有序对的性质.
-}%有序对结尾
+    实际上是定义了一个数组,用这种方法来保证元素的顺序.
 
-\subsubsection{有序对性质的证明}{
-  \begin{itemize}
-    \item {
-          引理1 : $\{x,a\} = \{x,b\} \Leftrightarrow a = b$
+    接下来一章严格证明有序对的性质.
+  }%有序对结尾
 
-          叙述为 : 当集合$\{x,a\}$等于$\{x,b\}$当且仅当$a = b$.
+  \subsubsection{有序对性质的证明}{
+    \begin{itemize}
+      \item {
+            引理1 : $\{x,a\} = \{x,b\} \Leftrightarrow a = b$
 
-          证明 : \begin{itemize}
-            \item 充分性($\Leftarrow$) 是显然的,因此不证.
-            \item 必要性($\Rightarrow$) 分两种情况 : \begin{enumerate}
-                    \item $x = a.\ \{x,a\} = \{x,b\} \Rightarrow \{a,a\} = \{a,b\} \Rightarrow \{a\} = \{a,b\} \Rightarrow a = b$
-                    \item $x \neq a.\ a \in \{x,a\} = \{x,b\} \Rightarrow a = b$.
-                  \end{enumerate}
-          \end{itemize}
+            叙述为 : 当集合$\{x,a\}$等于$\{x,b\}$当且仅当$a = b$.
 
-          \qed
-          }
-    \item {
-          引理2 : 若$\mathcal{A} = \mathcal{B} \neq \emptyset$.则 : \begin{enumerate}
-            \item $\updownUnion{~}{~}\mathcal{A} = \updownUnion{~}{~}\mathcal{B}$
-            \item $\updownIntersection{~}{~}\mathcal{A} = \updownIntersection{~}{~}\mathcal{B}$
-          \end{enumerate}
+            证明 : \begin{itemize}
+              \item 充分性($\Leftarrow$) 是显然的,因此不证.
+              \item 必要性($\Rightarrow$) 分两种情况 : \begin{enumerate}
+                      \item $x = a.\ \{x,a\} = \{x,b\} \Rightarrow \{a,a\} = \{a,b\} \Rightarrow \{a\} = \{a,b\} \Rightarrow a = b$
+                      \item $x \neq a.\ a \in \{x,a\} = \{x,b\} \Rightarrow a = b$.
+                    \end{enumerate}
+            \end{itemize}
 
-          证明 : \begin{enumerate}
-            \item $\forall x,x \in \updownUnion{~}{~}\mathcal{A} \Leftrightarrow \exists z(z \in \mathcal{A} \land x \in z) \Leftrightarrow \exists z(z \in \mathcal{B} \land x \in z) \Leftrightarrow x \in \updownUnion{~}{~}\mathcal{B}$
-            \item $\forall x,x \in \updownIntersection{~}{~}\mathcal{A} \Leftrightarrow \forall z(z \in \mathcal{A} \land x \in z) \Leftrightarrow \forall z(z \in \mathcal{B} \land x \in z) \Leftrightarrow x \in \updownIntersection{~}{~}\mathcal{B}$
-          \end{enumerate}
+            \qed
+            }
+      \item {
+            引理2 : 若$\mathcal{A} = \mathcal{B} \neq \emptyset$.则 : \begin{enumerate}
+              \item $\updownUnion{~}{~}\mathcal{A} = \updownUnion{~}{~}\mathcal{B}$
+              \item $\updownIntersection{~}{~}\mathcal{A} = \updownIntersection{~}{~}\mathcal{B}$
+            \end{enumerate}
 
-          \qed
-          }
-    \item {
-          定理(性质1)--两个有序对相对,当且仅当他们的第一个元素和第二个元素分别相等 : $<a,b> = <c,d> \Leftrightarrow a = c \land b = d$
+            证明 : \begin{enumerate}
+              \item $\forall x,x \in \updownUnion{~}{~}\mathcal{A} \Leftrightarrow \exists z(z \in \mathcal{A} \land x \in z) \Leftrightarrow \exists z(z \in \mathcal{B} \land x \in z) \Leftrightarrow x \in \updownUnion{~}{~}\mathcal{B}$
+              \item $\forall x,x \in \updownIntersection{~}{~}\mathcal{A} \Leftrightarrow \forall z(z \in \mathcal{A} \land x \in z) \Leftrightarrow \forall z(z \in \mathcal{B} \land x \in z) \Leftrightarrow x \in \updownIntersection{~}{~}\mathcal{B}$
+            \end{enumerate}
 
-          证明 : \begin{itemize}
-            \item ($\Leftarrow$) 显然,不证.
-            \item{
-                  ($\Rightarrow$) :
+            \qed
+            }
+      \item {
+            定理(性质1)--两个有序对相对,当且仅当他们的第一个元素和第二个元素分别相等 : $<a,b> = <c,d> \Leftrightarrow a = c \land b = d$
 
-                  由引理2,$\set{\set{a},\set{a,b}} = \set{\set{c},\set{c,d}} \Rightarrow \updownIntersection{~}{~}\set{\set{a},\set{a,b}} = \updownIntersection{~}{~}\set{\set{c},\set{c,d}} \Rightarrow \set{a} = \set{c} \Leftrightarrow a = c$
+            证明 : \begin{itemize}
+              \item ($\Leftarrow$) 显然,不证.
+              \item{
+                    ($\Rightarrow$) :
 
-                  又因为$<a,b> = <c,d> \Leftrightarrow \set{\set{a},\set{a,b}} = \set{\set{c},\set{c,d}} \Rightarrow \updownUnion{~}{~}\set{\set{a},\set{a,b}} = \updownUnion{~}{~}\set{\set{c},\set{c,d}} \Rightarrow \set{a,b} = \set{c,d}$
+                    由引理2,$\set{\set{a},\set{a,b}} = \set{\set{c},\set{c,d}} \Rightarrow \updownIntersection{~}{~}\set{\set{a},\set{a,b}} = \updownIntersection{~}{~}\set{\set{c},\set{c,d}} \Rightarrow \set{a} = \set{c} \Leftrightarrow a = c$
 
-                  再由引理1,得出$b = d$.
+                    又因为$<a,b> = <c,d> \Leftrightarrow \set{\set{a},\set{a,b}} = \set{\set{c},\set{c,d}} \Rightarrow \updownUnion{~}{~}\set{\set{a},\set{a,b}} = \updownUnion{~}{~}\set{\set{c},\set{c,d}} \Rightarrow \set{a,b} = \set{c,d}$
 
-                  \qed
-                  }
-          \end{itemize}
-          }
-    \item {
-          推论 : $a \neq b \Rightarrow <a,b> \neq <b,a>$
+                    再由引理1,得出$b = d$.
 
-          证明(反证) : $$
-            <a,b> = <b,a> \Leftrightarrow a = b
-          $$
-          与$a \neq b$矛盾.
+                    \qed
+                    }
+            \end{itemize}
+            }
+      \item {
+            推论 : $a \neq b \Rightarrow <a,b> \neq <b,a>$
 
-          \qed
-          }
-  \end{itemize}
-}%有序对性质的证明结尾
+            证明(反证) : $$
+              <a,b> = <b,a> \Leftrightarrow a = b
+            $$
+            与$a \neq b$矛盾.
 
-\subsubsection{有序n元组}{
-  \begin{itemize}
-    \item {
-          有序三元组 : $$
-            <a,b,c> = <<a,b>,c>
-          $$
-          }
-    \item {
-          有序n($n > 2$)元组 : $$
-            <a_1,a_2,\dots,a_n> = <<a_1,a_2,\dots,a_{n - 1}>,a_n>
-          $$
-          }
-  \end{itemize}
+            \qed
+            }
+    \end{itemize}
+  }%有序对性质的证明结尾
 
-  有以下定理 : $$
-    <a_1,a_2,\dots,a_n> = <b_1,b_2,\dots,b_n> \Leftrightarrow a_i = b_i,i = 1,2,\dots,n
-  $$
-}%有序n元组结尾
+  \subsubsection{有序n元组}{
+    \begin{itemize}
+      \item {
+            有序三元组 : $$
+              <a,b,c> = <<a,b>,c>
+            $$
+            }
+      \item {
+            有序n($n > 2$)元组 : $$
+              <a_1,a_2,\dots,a_n> = <<a_1,a_2,\dots,a_{n - 1}>,a_n>
+            $$
+            }
+    \end{itemize}
 
-\subsubsection{笛卡尔乘积集合(卡氏积)}{
-  设$A,B$为两个集合,取$x \in A,y \in B$,构造有序对集合$\{(x,y)| x \in A \land y \in B\}$(属于$A$的$x$在前面,属于$B$的$y$在后面),将这样的集合记为笛卡尔乘积集合(又称为卡氏积) : $$
-    A \times B = \set{<x,y>|x \in A \land y \in B}
-  $$
+    有以下定理 : $$
+      <a_1,a_2,\dots,a_n> = <b_1,b_2,\dots,b_n> \Leftrightarrow a_i = b_i,i = 1,2,\dots,n
+    $$
+  }%有序n元组结尾
 
-  这种集合可以用来表示两个集合中元素的排列组合.
+  \subsubsection{笛卡尔乘积集合(卡氏积)}{
+    设$A,B$为两个集合,取$x \in A,y \in B$,构造有序对集合$\{(x,y)| x \in A \land y \in B\}$(属于$A$的$x$在前面,属于$B$的$y$在后面),将这样的集合记为笛卡尔乘积集合(又称为卡氏积) : $$
+      A \times B = \set{<x,y>|x \in A \land y \in B}
+    $$
 
-  举例,设$A = \set{\emptyset,a},B = \set{1,2,3}$,则 :
+    这种集合可以用来表示两个集合中元素的排列组合.
 
-  \begin{itemize}
-    \item $A \times B = \set{<\emptyset,1>,<\emptyset,2>,<\emptyset,3>,<a,1>,<a,2>,<a,3>}$
-    \item $B \times A = \set{<1,\emptyset>,<1,a>,<2,\emptyset>,<2,a>,<3,\emptyset>,<3,a>}$
-    \item $A \times A = \set{<\emptyset,\emptyset>,<\emptyset,a>,<a,\emptyset>,<a,a>}$
-    \item \dots
-  \end{itemize}
-}%笛卡尔乘积集合结尾
+    举例,设$A = \set{\emptyset,a},B = \set{1,2,3}$,则 :
 
-\subsubsection{卡氏积的性质}{
-  \begin{itemize}
-    \item {
-          卡氏积非交换性 : $A \times B \neq B \times A$(除非$A = B \lor A = \emptyset \lor B = \emptyset$)
+    \begin{itemize}
+      \item $A \times B = \set{<\emptyset,1>,<\emptyset,2>,<\emptyset,3>,<a,1>,<a,2>,<a,3>}$
+      \item $B \times A = \set{<1,\emptyset>,<1,a>,<2,\emptyset>,<2,a>,<3,\emptyset>,<3,a>}$
+      \item $A \times A = \set{<\emptyset,\emptyset>,<\emptyset,a>,<a,\emptyset>,<a,a>}$
+      \item \dots
+    \end{itemize}
+  }%笛卡尔乘积集合结尾
 
-          反证法反例 : 设$A = \set{1},B = \set{2}$ : $$
-            A \times B = \set{<1,2>} \neq \set{<2,1>} = B \times A
-          $$
+  \subsubsection{卡氏积的性质}{
+    \begin{itemize}
+      \item {
+            卡氏积非交换性 : $A \times B \neq B \times A$(除非$A = B \lor A = \emptyset \lor B = \emptyset$)
 
-          \qed
-          }
-    \item {
-          卡氏积非结合性 : $(A \times B) \times C \neq A \times (B \times C)$(除非$A = \emptyset \lor B = \emptyset \lor C = \emptyset$)
+            反证法反例 : 设$A = \set{1},B = \set{2}$ : $$
+              A \times B = \set{<1,2>} \neq \set{<2,1>} = B \times A
+            $$
 
-          反证法反例 : $A = B = C = \set{1}$ : $$
-            (A \times B) \times C = \set{<<1,1>,1>} \neq \set{<1,<1,1>>} = A \times (B \times C)
-          $$
+            \qed
+            }
+      \item {
+            卡氏积非结合性 : $(A \times B) \times C \neq A \times (B \times C)$(除非$A = \emptyset \lor B = \emptyset \lor C = \emptyset$)
 
-          \qed
-          }
-    \item {
-          卡氏积分配律 :
+            反证法反例 : $A = B = C = \set{1}$ : $$
+              (A \times B) \times C = \set{<<1,1>,1>} \neq \set{<1,<1,1>>} = A \times (B \times C)
+            $$
 
-          \begin{enumerate}
-            \item $A \times (B \unionSet C) = (A \times B) \unionSet (A \times C)$
-            \item $A \times (B \intersectionSet C) = (A \times B) \intersectionSet (A \times C)$
-            \item $(B \unionSet C) \times A = (B \times A) \unionSet (C \unionSet A)$
-            \item $(B \intersectionSet C) \times A = (B \times A) \intersectionSet (C \times A)$
-          \end{enumerate}
+            \qed
+            }
+      \item {
+            卡氏积分配律 :
 
-          其中选一个证明 : $A \times (B \unionSet C) = (A \times B) \unionSet (A \times C)$.
+            \begin{enumerate}
+              \item $A \times (B \unionSet C) = (A \times B) \unionSet (A \times C)$
+              \item $A \times (B \intersectionSet C) = (A \times B) \intersectionSet (A \times C)$
+              \item $(B \unionSet C) \times A = (B \times A) \unionSet (C \unionSet A)$
+              \item $(B \intersectionSet C) \times A = (B \times A) \intersectionSet (C \times A)$
+            \end{enumerate}
 
-          证明 : \begin{math}
-            \forall <x,y>,<x,y> \in A \times (B \unionSet C) \\
-            \Leftrightarrow x \in A \land y \in (B \unionSet C) \Leftrightarrow x \in A \land (y \in B \lor y \in C) \\
-            \Leftrightarrow (x \in A \lor y \in B) \lor (x \in A \land y \in C) \\
-            \Leftrightarrow (<x,y> \in A \times B) \lor (<x,y> \in A \times C) \\
-            \Leftrightarrow <x,y> \in (A \times B) \unionSet (A \times C)
-          \end{math}
+            其中选一个证明 : $A \times (B \unionSet C) = (A \times B) \unionSet (A \times C)$.
 
-          \qed
-          }
-  \end{itemize}
-}%卡氏积的性质结尾
+            证明 : \begin{math}
+              \forall <x,y>,<x,y> \in A \times (B \unionSet C) \\
+              \Leftrightarrow x \in A \land y \in (B \unionSet C) \Leftrightarrow x \in A \land (y \in B \lor y \in C) \\
+              \Leftrightarrow (x \in A \lor y \in B) \lor (x \in A \land y \in C) \\
+              \Leftrightarrow (<x,y> \in A \times B) \lor (<x,y> \in A \times C) \\
+              \Leftrightarrow <x,y> \in (A \times B) \unionSet (A \times C)
+            \end{math}
 
-\subsubsection{卡氏积的图示}{
-  放张图就一目了然了 :
+            \qed
+            }
+    \end{itemize}
+  }%卡氏积的性质结尾
 
-  \begin{center}
-    \includegraphics{resources/Set_DicarelProduct.png}
-  \end{center}
+  \subsubsection{卡氏积的图示}{
+    放张图就一目了然了 :
 
-  特别的 : $A = B = \mathRealNumberCollection$,则$A \times B = \mathRealNumberCollection \times \mathRealNumberCollection = \mathRealNumberCollection^2$,也就是笛卡尔平面直角坐标系.
+    \begin{center}
+      \includegraphics{resources/Set_DicarelProduct.png}
+    \end{center}
 
-  同样的,也有$R^3,R^n$
+    特别的 : $A = B = \mathRealNumberCollection$,则$A \times B = \mathRealNumberCollection \times \mathRealNumberCollection = \mathRealNumberCollection^2$,也就是笛卡尔平面直角坐标系.
+
+    同样的,也有$R^3,R^n$
 
 
-  $$
-    A = \{x | x \in \mathRealNumberCollection \land a \leq x \leq b\}
-  $$
-  $$
-    B = \{y | y \in \mathRealNumberCollection \land c \leq y \leq d\}
-  $$
-  $$
-    C = \{z | z \in \mathRealNumberCollection \land e \leq z \leq f\}
-  $$
-  那么$A \times B$的图像表示就是 :
-  \begin{center}
-    \begin{tikzpicture}
-      \draw[-latex] (0,0) -- (4,0) node[below right]{x};
-      \draw[-latex] (0,0) -- (0,3) node[above right]{y};
-      \draw[fill = gray] (1,1) rectangle (3,2);
-      \draw[dashed] (1,1) -- (1,0) node[below]{a};
-      \draw[dashed] (3,1) -- (3,0) node[below]{b};
-      \draw[dashed] (1,2) -- (0,2) node[left]{c};
-      \draw[dashed] (1,1) -- (0,1) node[left]{d};
-    \end{tikzpicture}
-  \end{center}
+    $$
+      A = \{x | x \in \mathRealNumberCollection \land a \leq x \leq b\}
+    $$
+    $$
+      B = \{y | y \in \mathRealNumberCollection \land c \leq y \leq d\}
+    $$
+    $$
+      C = \{z | z \in \mathRealNumberCollection \land e \leq z \leq f\}
+    $$
+    那么$A \times B$的图像表示就是 :
+    \begin{center}
+      \begin{tikzpicture}
+        \draw[-latex] (0,0) -- (4,0) node[below right]{x};
+        \draw[-latex] (0,0) -- (0,3) node[above right]{y};
+        \draw[fill = gray] (1,1) rectangle (3,2);
+        \draw[dashed] (1,1) -- (1,0) node[below]{a};
+        \draw[dashed] (3,1) -- (3,0) node[below]{b};
+        \draw[dashed] (1,2) -- (0,2) node[left]{c};
+        \draw[dashed] (1,1) -- (0,1) node[left]{d};
+      \end{tikzpicture}
+    \end{center}
 
-  同样的,$A \times B \times C$表示的是空间中的一个立方体,这里就不画了(邪恶的tikz).
-}%卡氏积的图示结尾
+    同样的,$A \times B \times C$表示的是空间中的一个立方体,这里就不画了(邪恶的tikz).
+  }%卡氏积的图示结尾
 
-\subsubsection{n维卡氏积}{
-  \begin{itemize}
-    \item n维卡氏积 : $$
-            A_1 \times A_2 \times \dots \times A_n = \set{<x_1,x_2,\dots,x_n> | x_1 \in A_1 \land x_2 \in A_2 \land \dots \land x_n \in A_n}
-          $$
-    \item $A^n = A \times A \times \dots \times A$
-    \item $\absoluteValue{A_i} = n_i,i = 1,2,\dots,n \Rightarrow \absoluteValue{A_1 \times A_2 \times \dots \times A_n} = n_1 \times n_2 \times \dots \times n_n$.
-    \item n维卡氏积性质于2维卡氏积类似.
-  \end{itemize}
-}%n维卡氏积结尾
+  \subsubsection{n维卡氏积}{
+    \begin{itemize}
+      \item n维卡氏积 : $$
+              A_1 \times A_2 \times \dots \times A_n = \set{<x_1,x_2,\dots,x_n> | x_1 \in A_1 \land x_2 \in A_2 \land \dots \land x_n \in A_n}
+            $$
+      \item $A^n = A \times A \times \dots \times A$
+      \item $\absoluteValue{A_i} = n_i,i = 1,2,\dots,n \Rightarrow \absoluteValue{A_1 \times A_2 \times \dots \times A_n} = n_1 \times n_2 \times \dots \times n_n$.
+      \item n维卡氏积性质于2维卡氏积类似.
+    \end{itemize}
+  }%n维卡氏积结尾
 
-\subsubsection{n维卡氏积的性质}{
-  \begin{itemize}
-    \item 非交换 : $A \times B \times C \neq B \times C \times A$\ (要求$A,B,C$均非空,且互不相等)
-    \item 非结合 : (非二元运算)
-    \item 分配律 : 例如 : $A \times B \times (C \unionSet D) = (A \times B \times C) \unionSet (A \times B \times D)$
-    \item 其他 : 比如$A \times B \times C = \emptyset \Leftrightarrow A = \emptyset \lor B = \emptyset \lor C = \emptyset$.
-  \end{itemize}
-}%n维卡氏积的性质结尾
+  \subsubsection{n维卡氏积的性质}{
+    \begin{itemize}
+      \item 非交换 : $A \times B \times C \neq B \times C \times A$\ (要求$A,B,C$均非空,且互不相等)
+      \item 非结合 : (非二元运算)
+      \item 分配律 : 例如 : $A \times B \times (C \unionSet D) = (A \times B \times C) \unionSet (A \times B \times D)$
+      \item 其他 : 比如$A \times B \times C = \emptyset \Leftrightarrow A = \emptyset \lor B = \emptyset \lor C = \emptyset$.
+    \end{itemize}
+  }%n维卡氏积的性质结尾
 
-\subsubsection{n元关系}{
-  \begin{itemize}
-    \item n元关系 : 其元素全是有序n元组的集合.
-    \item 例1 : $F_1 = \set{<a,b,c,d>,<1,2,3,4>,<\alpha,\beta,\gamma,\delta>}$---$F_1$是3元关系.
-    \item 例2 : $F_2 = \set{<a,b,c>,<\alpha,\beta,\gamma>,<A,B,C>}$---$F_2$是3元关系
-  \end{itemize}
-}%n元关系结尾
+}%有序对与卡氏积结尾
 
-\subsubsection{二元关系}{
-  \begin{itemize}
-    \item 2元关系(关系) : 元素全是有序对的集合.
-    \item 比如$A = \set{<A,B>,<1,2,3>,a,\alpha,1}$---如果$a,\alpha,1$不是有序对,那么$A$不是关系.
-  \end{itemize}
+\subsection{二元关系}{
+
+  \subsubsection{n元关系}{
+    \begin{itemize}
+      \item n元关系 : 其元素全是有序n元组的集合.
+      \item 例1 : $F_1 = \set{<a,b,c,d>,<1,2,3,4>,<\alpha,\beta,\gamma,\delta>}$---$F_1$是3元关系.
+      \item 例2 : $F_2 = \set{<a,b,c>,<\alpha,\beta,\gamma>,<A,B,C>}$---$F_2$是3元关系
+    \end{itemize}
+  }%n元关系结尾
+
+  \subsubsection{二元关系}{
+    \begin{itemize}
+      \item 2元关系(关系) : 元素全是有序对的集合.
+      \item 比如$A = \set{<A,B>,<1,2,3>,a,\alpha,1}$---如果$a,\alpha,1$不是有序对,那么$A$不是关系.
+    \end{itemize}
+  }%二元关系结尾
+
+  \subsubsection{二元关系的记号}{
+    \begin{itemize}
+      \item{
+            设$F$是二元关系,那么有三种记法 :
+
+            \begin{itemize}
+              \item 中缀(infix)记号 : $xFy$
+              \item 前缀(prefix)记号 : $F(x,t),Fxy$
+              \item 后缀(suffix)记号 : $\dependent{,xy} \in F,xyF$
+            \end{itemize}
+            }
+      \item 例如 : $2 < 15 \Leftrightarrow <(2,15) \Leftrightarrow \dependent{2,15} \in <$
+    \end{itemize}
+  }%二元关系的记号结尾
+
+  \subsubsection{A到B的二元关系}{
+    \begin{itemize}
+      \item {
+            A到B的二元关系 : 是$A \times B$的任意子集.
+
+            $R$是$A$到$B$的二元关系$\Leftrightarrow R \subseteq A \times B \Leftrightarrow R \in \powerSetOf{A \times B}$
+            }
+      \item 如果$\absoluteValue{A} = m,\absoluteValue{B} = n$,则$\absoluteValue{A \times B} = mn$,所以$\absoluteValue{P(A \times B)} = 2^{mn}$,也就是说$A$到$B$不同的二元关系共有$2^{mn}$个.
+    \end{itemize}
+  }%A到B的二元关系结尾
+
+  \subsubsection{A到B的二元关系举例}{
+    设$A = \set{a_1,a_2},B = \set{b_1,b_2}$,则$A$到$B$的二元关系共有4个 : $$
+      R_1 = \emptyset,R_2 = \set{\dependent{a_1,b}},R_3 = \set{\dependent{a_2,b}},R_4 = \set{\dependent{a_1,b},\dependent{a_2,b}}
+    $$
+
+    反过来,$B$到$A$的二元关系也有4个 : $$
+      R_5 = \emptyset.R_6 = \set{\dependent{b,a_1}},R_7 = \set{\dependent{b,a_2}},R_8 = \set{\dependent{b,a_1},\dependent{b,a_2}}
+    $$
+  }%A到B的二元关系举例结尾
+
+  \subsubsection{A上的二元关系}{
+    \begin{itemize}
+      \item {
+            $A$上的二元关系 : 是$A \times A$的任意子集.
+
+            $R$是$A$上的二元关系 $\Leftrightarrow R \subseteq A \times A \Leftrightarrow R \in P(A \times A)$
+            }
+      \item {
+            如果$\absoluteValue{A} = m$,则$\absoluteValue{A \times A} = m^2$,所以 : $$
+              \absoluteValue{P(A \times A)} = 2^{m^2}
+            $$
+
+            即$A$上不同的二元关系共有$2^{m^2}$个
+            }
+    \end{itemize}
+  }%A上的二元关系
+
+  \subsubsection{一些特殊关系}{
+    \begin{itemize}
+      \item {
+            设$A$是任意集合,则可以定义$A$上的 :
+
+            \begin{itemize}
+              \item 空关系 : $\emptyset$
+              \item 恒等关系 : $I_A = \set{\dependent{x,x}| x \in A}$
+              \item 全域关系 : $E_A = A \times A = \set{\dependent{x,y} | x \in A \land y \in A}$
+              \item 包含关系 : $\subseteq_A = \set{\dependent{x,y}|x \subseteq \land y \subseteq A \land x \subseteq y}$
+              \item 真包含关系 : $\subset_A = \set{\dependent{x,y} | x \subseteq A \land y \subseteq A \land x \subset y}$
+            \end{itemize}
+            }
+      \item {
+            设$A \subseteq Z$,则可以定义$A$上的 :
+
+            \begin{itemize}
+              \item 整除关系 : $D_A = \set{\dependent{x,y} | x \in A \land y \in A \land x|y}$
+              \item {
+                    例 : $A = \set{1,2,3,4}$,则 : $$
+                      D_A = \set{\dependent{1,1},\dependent{1,2},\dependent{1,3},\dependent{1,4},\dependent{2,2},\dependent{2,4},\dependent{3,3},\dependent{4,4}}
+                    $$
+                    }
+            \end{itemize}
+            }
+      \item {
+            设$A \subset R$,则可以定义$A$上的 :
+
+            \begin{itemize}
+              \item 小于等于(less than or equal to)关系 : $LE_A = \set{\dependent{x,y}|x \in A \land y \in A \land x \leq y}$
+              \item 小于(less than)关系 : $L_A = \set{\dependent{x,y}| x \in A \land y \in A \land x < y}$
+              \item 大于等于(greater than or equal to)关系
+              \item 大于(greater than)关系,\dots
+            \end{itemize}
+            }
+    \end{itemize}
+  }%一些特殊关系结尾
+
+  \subsubsection{与二元关系有关的概念}{
+    \begin{itemize}
+      \item {
+            对任意集合$R$,可以定义 :
+
+            \begin{itemize}
+              \item 定义域(domain) : $dom\ R = \set{x | \exists y(x R y)}$
+              \item 值域(range) : $ran\ R = \set{y | \exists x(x R y)}$
+              \item 域(field) : $fld\ R = dom\ R \unionSet ran\ R$
+            \end{itemize}
+
+            例 : \begin{itemize}
+              \item $R_1 = \set{a,b}$
+              \item $R_2 = \set{a,b,\dependent{c,d},\dependent{e,f}}$
+              \item $R_3 = \set{\dependent{1,2}, \dependent{3,4}, \dependent{5,6}}$
+            \end{itemize}
+
+            当$a,b$不是有序对时,$R_1$和$R_2$不是关系.
+            \begin{itemize}
+              \item $dom\ R_1 = \emptyset,ran\ R_1 = \emptyset,fld\ R_1 = \emptyset$
+              \item $dom\ R_2 = \set{c,e}, ran\ R_2 = \set{d,f},fld\ R_2 = \set{c,d,e,f}$
+              \item $dom\ R_3 = \set{1,3,5}, ran\ R_3 = \set{2,4,6}, fld\ R_3 \set{1,2,3,4,5,6}$
+            \end{itemize}
+            }
+      \item {
+            对任意集合$F,G$,可以定义 :
+
+            \begin{itemize}
+              \item {
+                    逆(inverse) : $F\inverse = \set{\dependent{x,y} | yFx}$
+
+                    定理 : 设$F,G$为二集合,则$(F \circ G)\inverse = G\inverse \circ F\inverse$
+
+                    这个可以用矩阵的逆来理解.
+
+                    证明 : \begin{math}
+                      \forall \dependent{x,y},\dependent{x,y} \in (F \circ G)\inverse \\
+                      \Leftrightarrow \dependent{y,x} \in (F \circ G) \\
+                      \Leftrightarrow \exists z (yGz \land zFx) \\
+                      \Leftrightarrow \exists z (z G\inverse y \land x F\inverse z) \\
+                      \Leftrightarrow \exists z (x F\inverse z \land z G\inverse y) \Leftrightarrow \dependent{x,y} \in G\inverse \circ F\inverse
+                    \end{math}
+
+                    \qed
+                    }
+              \item {
+                    合成(复合)(composite) : $F \circ G = \set{\dependent{x,y} | \exists z(xGz \land zFy)}$
+
+                    \begin{center}
+                      \begin{tikzpicture}
+                        \draw (-4,0) ellipse [x radius = 1,y radius = 1.5];
+                        \draw (0,0) ellipse [x radius = 1,y radius = 1.5];
+                        \draw (4,0) ellipse [x radius = 1,y radius = 1.5];
+                        \foreach \xOffset in {-4,0,4}{
+                            \foreach \yOffset in {0.5,0,-0.5}{
+                                \tikzPlaceDot{(\xOffset,\yOffset)};
+                              }
+                          }
+                        \draw[->] (-4,0.5) -- (-0.1,0.5);
+                        \draw[->] (-4,0) node[left]{$x$} --node[below]{$G$} (-0.1,0);
+                        \draw[->] (0,0) --node[above]{$F$} (3.9,0) node[right]{$y$};
+                        \draw[->] (0,-0.5) -- (3.9,-0.5);
+                      \end{tikzpicture}
+                    \end{center}
+
+                    关于合成,还分为 :
+
+                    \begin{itemize}
+                      \item 顺序合成(右合成) : $F \circ G = \set{\dependent{x,y} | \exists z (xFz \land zGy)}$
+                      \item 逆序合成(左合成) : $F \circ G = \set{\dependent{x,y} | \exists z (xGz \land zFy)}$
+                    \end{itemize}
+
+                    合成运算有结合律 :
+
+                    \begin{itemize}
+                      \item 设$R_1,R_2,R_3$为集合,则 : $$
+                              (R_1 \circ R_2) \circ R_3 = R_1 \circ (R_2 \circ R_3)
+                            $$
+                    \end{itemize}
+
+                    证明 : \begin{math}
+                      \forall\dependent{x,y}, \dependent{x,y} \in (R_1 \circ R_2) \circ R_3 \\
+                      \Leftrightarrow \exists z (x R_3 z \land z(R_1 \circ R_2)y) \\
+                      \Leftrightarrow \exists z (x R_3 z \land \exists t(z R_2 t \land t R_1 y)) \\
+                      \Leftrightarrow \exists z \exists t(x R_3 z \land (z R_2 t \land t R_1 y)) \\
+                      \Leftrightarrow \exists t \exists z(x R_3 z \land z R_2 t \land t R_1 y) \\
+                      \Leftrightarrow \exists t \exists z (x R_3 z \land z R_2 t \land t R_1 y) \\
+                      \Leftrightarrow \exists t(\exists z(x R_3 z \land z R_2 t) \land t R_1 y) \\
+                      \Leftrightarrow \exists t(x(R_2 \circ R_3)t \land t R_1 y) \\
+                      \Leftrightarrow x R_1 \circ (R_2 \circ R_3) y \\
+                      \Leftrightarrow \dependent{x,y} \in R_1 \circ (R_2 \circ R_3) \\
+                      \therefore (R_1 \circ R_2) \circ R_3 = R_1 \circ (R_2 \circ R_3)
+                    \end{math}
+
+                    \qed
+                    }
+            \end{itemize}
+            }
+      \item {
+            对任意集合$F,A$,可以定义 :
+
+            \begin{itemize}
+              \item 限制(restriction) : $F \upharpoonright  A = \set{\dependent{x,y} | xFy \land x \in A}$
+              \item 象(image) : $F[A] = ran(F \upharpoonright A),F[A] = \set{y | \exists x (x \in A \land xFy)}$
+            \end{itemize}
+            }
+      \item {
+            对任意集合$F$,可以定义 :
+
+            \begin{itemize}
+              \item {
+                    单根(single rooted) : 一个$y$对应唯一的一个$x$就是单根.
+
+                    $F$是单根的 $\Leftrightarrow \forall y(y \in ran\ F \to \exists! x(x \in dom\ F \land xFy)) \Leftrightarrow (\forall y \in ran\ F)(\exists! x \in dom\ F)(xFy)$
+
+                    \begin{itemize}
+                      \item $\exists!$表示"存在唯一的"
+                      \item $\forall x (x \in A \to B(x))$缩写为$(\forall x \in A)B(x)$
+                      \item $\exists x (x \in A \land B(x))$缩写为$(\exists x \in A)B(x)$
+                    \end{itemize}
+                    }
+              \item {
+                    单值(single valued) : 一个$x$对应一个唯一的$y$就是单值.
+                    $$
+                      \mbox{$F$是单值的} \Leftrightarrow \forall x(x \in dom\ F \to \exists! y (y \in \rangle F \land xFy)) \Leftrightarrow (\forall x \in dom\ F)(\exists! y \in ran\ F)(xFy)
+                    $$
+                    }
+            \end{itemize}
+            }
+    \end{itemize}
+  }%与二元关系有关的概念结尾
+
 }%二元关系结尾
 
-\subsubsection{二元关系的记号}{
-  \begin{itemize}
-    \item{
-          设$F$是二元关系,那么有三种记法 :
+\subsection{关系的表示与性质}{
 
-          \begin{itemize}
-            \item 中缀(infix)记号 : $xFy$
-            \item 前缀(prefix)记号 : $F(x,t),Fxy$
-            \item 后缀(suffix)记号 : $\dependent{,xy} \in F,xyF$
-          \end{itemize}
-          }
-    \item 例如 : $2 < 15 \Leftrightarrow <(2,15) \Leftrightarrow \dependent{2,15} \in <$
-  \end{itemize}
-}%二元关系的记号结尾
+  \subsubsection{关系矩阵}{
+    设$A = \set{a_1,a_2,...,a_n},R \subseteq A \times A$
 
-\subsubsection{A到B的二元关系}{
-  \begin{itemize}
-    \item {
-          A到B的二元关系 : 是$A \times B$的任意子集.
+    $R$的关系矩阵为一个$n \times n$的方阵$M(R) = (r_{ij})_{n \times n}$ : $$
+      M(R)(i,j) = r_{ij} = \begin{cases}
+        1,\ a_iRa_j \\
+        0,\ \mbox{否则}
+      \end{cases}
+    $$
 
-          $R$是$A$到$B$的二元关系$\Leftrightarrow R \subseteq A \times B \Leftrightarrow R \in \powerSetOf{A \times B}$
-          }
-    \item 如果$\absoluteValue{A} = m,\absoluteValue{B} = n$,则$\absoluteValue{A \times B} = mn$,所以$\absoluteValue{P(A \times B)} = 2^{mn}$,也就是说$A$到$B$不同的二元关系共有$2^{mn}$个.
-  \end{itemize}
-}%A到B的二元关系结尾
+    举个例子 : \begin{itemize}
+      \item $A = \set{a,b,c}$
+      \item $R_1 = \set{\dependent{a,a},\dependent{a,b},\dependent{b,a},\dependent{b,c}}$
+      \item $R_2 = \set{\dependent{a,b},\dependent{a,c},\dependent{b,c}}$
+    \end{itemize}
 
-\subsubsection{A到B的二元关系举例}{
-  设$A = \set{a_1,a_2},B = \set{b_1,b_2}$,则$A$到$B$的二元关系共有4个 : $$
-    R_1 = \emptyset,R_2 = \set{\dependent{a_1,b}},R_3 = \set{\dependent{a_2,b}},R_4 = \set{\dependent{a_1,b},\dependent{a_2,b}}
-  $$
+    $$
+      M(R_1) = \begin{bmatrix}
+        1 & 1 & 0 \\
+        1 & 0 & 1 \\
+        0 & 0 & 0
+      \end{bmatrix}
+      \qquad
+      M(R_2) = \begin{bmatrix}
+        0 & 1 & 1 \\
+        0 & 0 & 1 \\
+        0 & 0 & 0
+      \end{bmatrix}
+    $$
 
-  反过来,$B$到$A$的二元关系也有4个 : $$
-    R_5 = \emptyset.R_6 = \set{\dependent{b,a_1}},R_7 = \set{\dependent{b,a_2}},R_8 = \set{\dependent{b,a_1},\dependent{b,a_2}}
-  $$
-}%A到B的二元关系举例结尾
+    注 : 默认从左到右,从上到下按$a,b,c$的顺序排列.
+  }%关系矩阵结尾
 
-\subsubsection{A上的二元关系}{
-  \begin{itemize}
-    \item {
-          $A$上的二元关系 : 是$A \times A$的任意子集.
+  \subsubsection{关系矩阵的性质}{
+    \begin{itemize}
+      \item 集合表达式与关系矩阵可以唯一互相确定
+      \item $M(R\inverse) = (M(R))\transpose$\begin{itemize}
+              \item $~\transpose$表示矩阵转置
+            \end{itemize}
+      \item $M(R_1 \circ R_2) = M(R_2) \cdot M(R_1)$\begin{itemize}
+              \item $\cdot$表示矩阵的"逻辑乘",加法用$\vee$,乘法用$\wedge$
+            \end{itemize}
+    \end{itemize}
+  }%关系矩阵的性质结尾
 
-          $R$是$A$上的二元关系 $\Leftrightarrow R \subseteq A \times A \Leftrightarrow R \in P(A \times A)$
-          }
-    \item {
-          如果$\absoluteValue{A} = m$,则$\absoluteValue{A \times A} = m^2$,所以 : $$
-            \absoluteValue{P(A \times A)} = 2^{m^2}
-          $$
-
-          即$A$上不同的二元关系共有$2^{m^2}$个
-          }
-  \end{itemize}
-}%A上的二元关系
-
-\subsubsection{一些特殊关系}{
-  \begin{itemize}
-    \item {
-          设$A$是任意集合,则可以定义$A$上的 :
-
-          \begin{itemize}
-            \item 空关系 : $\emptyset$
-            \item 恒等关系 : $I_A = \set{\dependent{x,x}| x \in A}$
-            \item 全域关系 : $E_A = A \times A = \set{\dependent{x,y} | x \in A \land y \in A}$
-            \item 包含关系 : $\subseteq_A = \set{\dependent{x,y}|x \subseteq \land y \subseteq A \land x \subseteq y}$
-            \item 真包含关系 : $\subset_A = \set{\dependent{x,y} | x \subseteq A \land y \subseteq A \land x \subset y}$
-          \end{itemize}
-          }
-    \item {
-          设$A \subseteq Z$,则可以定义$A$上的 :
-
-          \begin{itemize}
-            \item 整除关系 : $D_A = \set{\dependent{x,y} | x \in A \land y \in A \land x|y}$
-            \item {
-                  例 : $A = \set{1,2,3,4}$,则 : $$
-                    D_A = \set{\dependent{1,1},\dependent{1,2},\dependent{1,3},\dependent{1,4},\dependent{2,2},\dependent{2,4},\dependent{3,3},\dependent{4,4}}
-                  $$
-                  }
-          \end{itemize}
-          }
-    \item {
-          设$A \subset R$,则可以定义$A$上的 :
-
-          \begin{itemize}
-            \item 小于等于(less than or equal to)关系 : $LE_A = \set{\dependent{x,y}|x \in A \land y \in A \land x \leq y}$
-            \item 小于(less than)关系 : $L_A = \set{\dependent{x,y}| x \in A \land y \in A \land x < y}$
-            \item 大于等于(greater than or equal to)关系
-            \item 大于(greater than)关系,\dots
-          \end{itemize}
-          }
-  \end{itemize}
-}%一些特殊关系结尾
-
-\subsubsection{与二元关系有关的概念}{
-  \begin{itemize}
-    \item {
-          对任意集合$R$,可以定义 :
-
-          \begin{itemize}
-            \item 定义域(domain) : $dom\ R = \set{x | \exists y(x R y)}$
-            \item 值域(range) : $ran\ R = \set{y | \exists x(x R y)}$
-            \item 域(field) : $fld\ R = dom\ R \unionSet ran\ R$
-          \end{itemize}
-
-          例 : \begin{itemize}
-            \item $R_1 = \set{a,b}$
-            \item $R_2 = \set{a,b,\dependent{c,d},\dependent{e,f}}$
-            \item $R_3 = \set{\dependent{1,2}, \dependent{3,4}, \dependent{5,6}}$
-          \end{itemize}
-
-          当$a,b$不是有序对时,$R_1$和$R_2$不是关系.
-          \begin{itemize}
-            \item $dom\ R_1 = \emptyset,ran\ R_1 = \emptyset,fld\ R_1 = \emptyset$
-            \item $dom\ R_2 = \set{c,e}, ran\ R_2 = \set{d,f},fld\ R_2 = \set{c,d,e,f}$
-            \item $dom\ R_3 = \set{1,3,5}, ran\ R_3 = \set{2,4,6}, fld\ R_3 \set{1,2,3,4,5,6}$
-          \end{itemize}
-          }
-    \item {
-          对任意集合$F,G$,可以定义 :
-
-          \begin{itemize}
-            \item {
-                  逆(inverse) : $F\inverse = \set{\dependent{x,y} | yFx}$
-
-                  定理 : 设$F,G$为二集合,则$(F \circ G)\inverse = G\inverse \circ F\inverse$
-
-                  这个可以用矩阵的逆来理解.
-
-                  证明 : \begin{math}
-                    \forall \dependent{x,y},\dependent{x,y} \in (F \circ G)\inverse \\
-                    \Leftrightarrow \dependent{y,x} \in (F \circ G) \\
-                    \Leftrightarrow \exists z (yGz \land zFx) \\
-                    \Leftrightarrow \exists z (z G\inverse y \land x F\inverse z) \\
-                    \Leftrightarrow \exists z (x F\inverse z \land z G\inverse y) \Leftrightarrow \dependent{x,y} \in G\inverse \circ F\inverse
-                  \end{math}
-
-                  \qed
-                  }
-            \item {
-                  合成(复合)(composite) : $F \circ G = \set{\dependent{x,y} | \exists z(xGz \land zFy)}$
-
-                  \begin{center}
-                    \begin{tikzpicture}
-                      \draw (-4,0) ellipse [x radius = 1,y radius = 1.5];
-                      \draw (0,0) ellipse [x radius = 1,y radius = 1.5];
-                      \draw (4,0) ellipse [x radius = 1,y radius = 1.5];
-                      \foreach \xOffset in {-4,0,4}{
-                          \foreach \yOffset in {0.5,0,-0.5}{
-                              \tikzPlaceDot{(\xOffset,\yOffset)};
-                            }
-                        }
-                      \draw[->] (-4,0.5) -- (-0.1,0.5);
-                      \draw[->] (-4,0) node[left]{$x$} --node[below]{$G$} (-0.1,0);
-                      \draw[->] (0,0) --node[above]{$F$} (3.9,0) node[right]{$y$};
-                      \draw[->] (0,-0.5) -- (3.9,-0.5);
-                    \end{tikzpicture}
-                  \end{center}
-
-                  关于合成,还分为 :
-
-                  \begin{itemize}
-                    \item 顺序合成(右合成) : $F \circ G = \set{\dependent{x,y} | \exists z (xFz \land zGy)}$
-                    \item 逆序合成(左合成) : $F \circ G = \set{\dependent{x,y} | \exists z (xGz \land zFy)}$
-                  \end{itemize}
-
-                  合成运算有结合律 :
-
-                  \begin{itemize}
-                    \item 设$R_1,R_2,R_3$为集合,则 : $$
-                            (R_1 \circ R_2) \circ R_3 = R_1 \circ (R_2 \circ R_3)
-                          $$
-                  \end{itemize}
-
-                  证明 : \begin{math}
-                    \forall\dependent{x,y}, \dependent{x,y} \in (R_1 \circ R_2) \circ R_3 \\
-                    \Leftrightarrow \exists z (x R_3 z \land z(R_1 \circ R_2)y) \\
-                    \Leftrightarrow \exists z (x R_3 z \land \exists t(z R_2 t \land t R_1 y)) \\
-                    \Leftrightarrow \exists z \exists t(x R_3 z \land (z R_2 t \land t R_1 y)) \\
-                    \Leftrightarrow \exists t \exists z(x R_3 z \land z R_2 t \land t R_1 y) \\
-                    \Leftrightarrow \exists t \exists z (x R_3 z \land z R_2 t \land t R_1 y) \\
-                    \Leftrightarrow \exists t(\exists z(x R_3 z \land z R_2 t) \land t R_1 y) \\
-                    \Leftrightarrow \exists t(x(R_2 \circ R_3)t \land t R_1 y) \\
-                    \Leftrightarrow x R_1 \circ (R_2 \circ R_3) y \\
-                    \Leftrightarrow \dependent{x,y} \in R_1 \circ (R_2 \circ R_3) \\
-                    \therefore (R_1 \circ R_2) \circ R_3 = R_1 \circ (R_2 \circ R_3)
-                  \end{math}
-
-                  \qed
-                  }
-          \end{itemize}
-          }
-    \item {
-          对任意集合$F,A$,可以定义 :
-
-          \begin{itemize}
-            \item 限制(restriction) : $F \upharpoonright  A = \set{\dependent{x,y} | xFy \land x \in A}$
-            \item 象(image) : $F[A] = ran(F \upharpoonright A),F[A] = \set{y | \exists x (x \in A \land xFy)}$
-          \end{itemize}
-          }
-    \item {
-          对任意集合$F$,可以定义 :
-
-          \begin{itemize}
-            \item {
-                  单根(single rooted) : 一个$y$对应唯一的一个$x$就是单根.
-
-                  $F$是单根的 $\Leftrightarrow \forall y(y \in ran\ F \to \exists! x(x \in dom\ F \land xFy)) \Leftrightarrow (\forall y \in ran\ F)(\exists! x \in dom\ F)(xFy)$
-
-                  \begin{itemize}
-                    \item $\exists!$表示"存在唯一的"
-                    \item $\forall x (x \in A \to B(x))$缩写为$(\forall x \in A)B(x)$
-                    \item $\exists x (x \in A \land B(x))$缩写为$(\exists x \in A)B(x)$
-                  \end{itemize}
-                  }
-            \item {
-                  单值(single valued) : 一个$x$对应一个唯一的$y$就是单值.
-                  $$
-                    \mbox{$F$是单值的} \Leftrightarrow \forall x(x \in dom\ F \to \exists! y (y \in \rangle F \land xFy)) \Leftrightarrow (\forall x \in dom\ F)(\exists! y \in ran\ F)(xFy)
-                  $$
-                  }
-          \end{itemize}
-          }
-  \end{itemize}
-}%与二元关系有关的概念结尾
-
-\subsubsection{关系矩阵}{
-  设$A = \set{a_1,a_2,...,a_n},R \subseteq A \times A$
-
-  $R$的关系矩阵为一个$n \times n$的方阵$M(R) = (r_{ij})_{n \times n}$ : $$
-    M(R)(i,j) = r_{ij} = \begin{cases}
-      1,\ a_iRa_j \\
-      0,\ \mbox{否则}
-    \end{cases}
-  $$
-
-  举个例子 : \begin{itemize}
-    \item $A = \set{a,b,c}$
-    \item $R_1 = \set{\dependent{a,a},\dependent{a,b},\dependent{b,a},\dependent{b,c}}$
-    \item $R_2 = \set{\dependent{a,b},\dependent{a,c},\dependent{b,c}}$
-  \end{itemize}
-
-  $$
-    M(R_1) = \begin{bmatrix}
-      1 & 1 & 0 \\
-      1 & 0 & 1 \\
-      0 & 0 & 0
-    \end{bmatrix}
-    \qquad
-    M(R_2) = \begin{bmatrix}
-      0 & 1 & 1 \\
-      0 & 0 & 1 \\
-      0 & 0 & 0
-    \end{bmatrix}
-  $$
-
-  注 : 默认从左到右,从上到下按$a,b,c$的顺序排列.
-}%关系矩阵结尾
-
-\subsubsection{关系矩阵的性质}{
-  \begin{itemize}
-    \item 集合表达式与关系矩阵可以唯一互相确定
-    \item $M(R\inverse) = (M(R))\transpose$\begin{itemize}
-            \item $~\transpose$表示矩阵转置
-          \end{itemize}
-    \item $M(R_1 \circ R_2) = M(R_2) \cdot M(R_1)$\begin{itemize}
-            \item $\cdot$表示矩阵的"逻辑乘",加法用$\vee$,乘法用$\wedge$
-          \end{itemize}
-  \end{itemize}
-}%关系矩阵的性质结尾
+}%关系的表示与性质结尾
 
 }%集合论结尾
 
-\subsection{图论}{
+\section{图论}{
 
-  \subsubsection{图论的主要内容}{
+  \subsection{图论的主要内容}{
     \begin{itemize}
       \item 研究对象 : 由顶点和边构成的图
       \item 研究思想 : 以集合论为基础,以图为工具,为各种二元关系建立模型
@@ -888,7 +908,7 @@
     \end{itemize}
   }%图论的主要内容结尾
 
-  \subsubsection{图论中的问题}{
+  \subsection{图论中的问题}{
     \begin{itemize}
       \item 什么是图?有哪些图?图有什么性质?
       \item 什么是欧拉图?什么是哈密顿图?
@@ -899,6 +919,6 @@
     \end{itemize}
   }%图论中的问题结尾
 
-}%图论结尾
+ }%图论结尾
 
 }%离散数学结尾

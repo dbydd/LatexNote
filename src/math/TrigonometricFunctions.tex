@@ -1,10 +1,11 @@
-\section{三角函数}{
+\chapter{三角函数}{
 三角函数一般由单位圆引出,如下:
 
 \begin{center}
   \includegraphics{resources/UnitCircle.png}
 \end{center}
 
+\section{正反三角函数}{
 \subsection{正三角函数}{
   \begin{tabular}{|c|c|c|c|}
     \hline
@@ -44,8 +45,9 @@
     \hline
   \end{tabular}
 }%反三角函数结尾
+}%正反三角函数结尾
 
-\subsection{和差化积}{
+\section{和差化积}{
   $\sin{\alpha}+\sin{\beta} = 2\sin{\cfrac{\alpha + \beta}{2}}\cos{\cfrac{\alpha - \beta}{2}}$
 
   $\cos{\alpha}+\cos{\beta} = 2\cos{\cfrac{\alpha + \beta}{2}\cos{\cfrac{\alpha-\beta}{2}}}$
@@ -57,7 +59,7 @@
   $\tan\alpha - \tan\beta = \tan(\alpha - \beta) \cdot (1 + \tan\alpha\tan\beta)$
 }%和差化积结尾
 
-\subsection{积化和差}{
+\section{积化和差}{
   $\cos(\alpha + \beta) = \cos{\alpha}\cos{\beta} - \sin{\alpha}\sin{\beta}$
 
   $\cos(\alpha - \beta) = \cos{\alpha}\cos{\beta} + \sin{\alpha}\sin{\beta}$
@@ -75,9 +77,9 @@
   $\sin{\alpha}\sin{\beta} = -\cfrac{1}{2}[\cos{(\alpha + \beta)} - \cos{(\alpha - \beta)}]$
 }%积化和差结尾
 
-\subsection{诱导公式}{
+\section{诱导公式}{
   \indent 奇变偶不变,符号看象限.
-  \subsubsection{第一组诱导公式}{
+  \subsection{第一组诱导公式}{
     $\sin{(2k\pi + \alpha)} = \sin{\alpha}$
 
     $\cos{(2k\pi + \alpha)} = \cos{\alpha}$
@@ -87,7 +89,7 @@
     $\cot(2k\pi + \alpha) = \cot\alpha$
   }%第一组诱导公式结尾
 
-  \subsubsection{第二组诱导公式}{
+  \subsection{第二组诱导公式}{
     $\sin(-\alpha) = -\sin\alpha$
 
     $\cos(-\alpha) = \cos\alpha$
@@ -97,7 +99,7 @@
     $\cot(-\alpha) = -\cot\alpha$
   }%第二组诱导公式结尾
 
-  \subsubsection{第三组诱导公式}{
+  \subsection{第三组诱导公式}{
     $\sin(\pi + \alpha) = -\sin\alpha$
 
     $\cos(\pi + \alpha) = -\cos\alpha$
@@ -107,7 +109,7 @@
     $\cot(\pi + \alpha) = \cot\alpha$
   }%第三组诱导公式结尾
 
-  \subsubsection{第四组诱导公式}{
+  \subsection{第四组诱导公式}{
     $\sin(\pi - \alpha) = \sin\alpha$
 
     $\cos(\pi - \alpha) = -\cos\alpha$
@@ -117,7 +119,7 @@
     $\cot(\pi - \alpha) = -\cot\alpha$
   }%第四组诱导公式结尾
 
-  \subsubsection{第五组诱导公式}{
+  \subsection{第五组诱导公式}{
     $\sin(\cfrac{\pi}{2} - \alpha) = \cos\alpha$
 
     $\cos(\cfrac{\pi}{2} - \alpha) = \sin\alpha$
@@ -127,7 +129,7 @@
     $\cot(\cfrac{\pi}{2} - \alpha) = \tan\alpha$
   }%第五组诱导公式结尾
 
-  \subsubsection{第六组诱导公式}{
+  \subsection{第六组诱导公式}{
     $\sin(\cfrac{\pi}{2} + \alpha) = \cos\alpha$
 
     $\cos(\cfrac{\pi}{2} + \alpha) = -\sin\alpha$
@@ -139,9 +141,9 @@
 
 }%诱导公式结尾
 
-\subsection{倍角公式}{
+\section{倍角公式}{
 
-  \subsubsection{二倍角公式}{
+  \subsection{二倍角公式}{
     二倍角公式:由两角和公式推出
 
     $\sin2\alpha = 2\sin\alpha\cos\alpha$
@@ -151,7 +153,7 @@
     $\tan2\alpha = \cfrac{2\tan\alpha}{1 - \tan^2\alpha}$
   }%二倍角公式结尾
 
-  \subsubsection{半倍角公式}{
+  \subsection{半倍角公式}{
     半倍角公式:将二倍角公式中的角$2\alpha$看作整体$\beta$,经过变形推出:
 
     $\sin\cfrac{\alpha}{2} = \pm\sqrt{\cfrac{1 - \cos\alpha}{2}}$
@@ -167,13 +169,13 @@
     $\csc\cfrac{\alpha}{2} = \cfrac{\pm\sqrt{\cfrac{\sec\alpha - 1}{2\sec\alpha}}2\sec\alpha}{\sec\alpha - 1} = \cfrac{\pm\sqrt{\cfrac{3\sec^3\alpha - \sec^2\alpha}{2\sec\alpha}}}{\sec\alpha - 1}$
   }%半倍角公式结尾
 
-  \subsubsection{n倍角公式}{
+  \subsection{n倍角公式}{
     $\cos{n\theta} = \upDownSum{\cfrac{n}{2}}{i = 0}[(-1)^i\mathCombination{2i + 1}{n}\cos^{n - 2i}\theta\sin^{2i}\theta]$
 
     $\sin{n\theta} = \upDownSum{\cfrac{n}{2}}{i = 0}[(-1)^i\mathCombination{2i + 1}{n}\cos^{n - 2i - 1}\theta\sin^{2i+1}\theta]$
   }%n倍角公式结尾
 
-  \subsubsection{万能替换公式}{
+  \subsection{万能替换公式}{
     万能替换公式:尝试将正常的三角函数用半角公式表示时经过变形推出:
 
     角$\alpha(\alpha \neq 2k\pi + \pi ,k \in \mathbf{z})$的所有三角比都可以用 $\tan\cfrac{\alpha}{2}$表示.这组公式叫做万能替换公式
@@ -185,7 +187,7 @@
     $\tan\alpha \cfrac{2\tan\cfrac{\alpha}{2}}{1 - \tan^2\cfrac{\alpha}{2}}$
   }%万能替换公式结尾
 
-  \subsubsection{降幂公式}{
+  \subsection{降幂公式}{
     三角函数中的降幂公式可降低三角函数指数幂.多项式各项的先后按照某一个字母的指数逐渐减少的顺序排列,叫做这一字母的降幂.直接运用二倍角公式就是升幂,将公式$\cos 2 \alpha$变形后可得到降幂公式.
 
     $\sin^2\alpha = \cfrac{1 - \cos2\alpha}{2}$
@@ -197,36 +199,40 @@
 
 }%倍角公式结尾
 
-\subsection{三角恒等式}{
+\section{三角恒等式}{
 
-  倒数关系 :
+  \subsection{倒数关系}{
   \begin{itemize}
     \item $\sin\alpha \cdot \csc\alpha = 1$
     \item $\cos\alpha \cdot \sec\alpha = 1$
     \item $\tan\alpha \cdot \cot\alpha = 1$
   \end{itemize}
+  }%倒数关系结尾
 
-  商数关系 :
+  \subsection{商数关系}{
   \begin{itemize}
     \item $\tan\alpha = \cfrac{\sin\alpha}{\cos\alpha}$
     \item $\cot\alpha = \cfrac{\cos x}{\sin x}$
   \end{itemize}
+  }%商数关系结尾
 
-  平方关系 :
+  \subsection{平方关系}{
   \begin{itemize}
     \item $\sin^2\alpha + \cos^2\alpha = 1$
     \item $1 + \tan^2\alpha = \sec^2\alpha$
     \item $1 + \cot^2\alpha = \csc^2\alpha$
   \end{itemize}
+  }%平方关系结尾
 
-  余角关系 :
+  \subsection{余角关系}{
   \begin{itemize}
     \item $\arcsin\alpha + \arccos\alpha = \cfrac{\pi}{2}$
     \item $\arctan\alpha + \arccot\alpha = \cfrac{\pi}{2}$
     \item $\arcsec\alpha + \arccsc\alpha = \cfrac{\pi}{2}$
   \end{itemize}
+  }%余角关系结尾
 
-  负数关系 :
+  \subsection{负数关系}{
   \begin{itemize}
     \item $\arcsin-\alpha = -\arcsin\alpha$
     \item $\arccos-\alpha = \pi - \arccos\alpha$
@@ -235,7 +241,7 @@
     \item $\arcsec-\alpha = \pi - \arcsec\alpha$
     \item $\arccsc-\alpha = -\arccsc\alpha$
   \end{itemize}
-
+  }%负数关系结尾
 
   \subsection{其他恒等式}{
     \begin{enumerate}
@@ -266,7 +272,7 @@
 
 }%三角恒等式结尾
 
-\subsection{解斜三角形}{
+\section{解斜三角形}{
 三角形的边角、面积、和外接圆半径之间有着密切的联系
 
 设三角形$\triangle ABC$,角A、B、C的对边为abc,以A为原点$O$建系,总有以下公式:
@@ -277,7 +283,7 @@ $\mathbf{S}\triangle_{ABC} = \cfrac{1}{2}AB \cdot CD = \cfrac{1}{2}cb\sin A$,即
 
 这就是说,三角形的面积等于任意两边与他们夹角正弦值的一半.
 
-\subsubsection{正弦定理}
+\subsection{正弦定理}
 将$\cfrac{1}{2}bc\sin A = \cfrac{1}{2}ac\sin B = \cfrac{1}{2}ab\sin C$三个公式同除$\cfrac{1}{2}abc$,得:
 
 $\cfrac{\sin A}{a} = \cfrac{\sin B}{b} = \cfrac{\sin C}{c}$, 也可表示为:$\cfrac{a}{\sin A} = \cfrac{b}{\sin B} = \cfrac{c}{\sin C}$
@@ -309,7 +315,7 @@ $\sin C = \cfrac{c}{2R},\sin B = \cfrac{b}{2R},\sin A = \cfrac{a}{2R}$
 $a^2\sin2B + b^2\sin2A = 2ab\sin C$
 }%解斜三角形结尾
 
-\subsubsection{余弦定理}{
+\subsection{余弦定理}{
   由两点间距离公式,得$a = |BC| = \sqrt{(b\cos A - c)^2 + (b\sin A - 0)^2}$
 
   两边平方并化简得:
