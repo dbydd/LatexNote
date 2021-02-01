@@ -824,6 +824,51 @@
   \end{itemize}
 }%与二元关系有关的概念结尾
 
+\subsubsection{关系矩阵}{
+  设$A = \set{a_1,a_2,...,a_n},R \subseteq A \times A$
+
+  $R$的关系矩阵为一个$n \times n$的方阵$M(R) = (r_{ij})_{n \times n}$ : $$
+    M(R)(i,j) = r_{ij} = \begin{cases}
+      1,\ a_iRa_j \\
+      0,\ \mbox{否则}
+    \end{cases}
+  $$
+
+  举个例子 : \begin{itemize}
+    \item $A = \set{a,b,c}$
+    \item $R_1 = \set{\dependent{a,a},\dependent{a,b},\dependent{b,a},\dependent{b,c}}$
+    \item $R_2 = \set{\dependent{a,b},\dependent{a,c},\dependent{b,c}}$
+  \end{itemize}
+
+  $$
+    M(R_1) = \begin{bmatrix}
+      1 & 1 & 0 \\
+      1 & 0 & 1 \\
+      0 & 0 & 0
+    \end{bmatrix}
+    \qquad
+    M(R_2) = \begin{bmatrix}
+      0 & 1 & 1 \\
+      0 & 0 & 1 \\
+      0 & 0 & 0
+    \end{bmatrix}
+  $$
+
+  注 : 默认从左到右,从上到下按$a,b,c$的顺序排列.
+}%关系矩阵结尾
+
+\subsubsection{关系矩阵的性质}{
+  \begin{itemize}
+    \item 集合表达式与关系矩阵可以唯一互相确定
+    \item $M(R\inverse) = (M(R))\transpose$\begin{itemize}
+            \item $~\transpose$表示矩阵转置
+          \end{itemize}
+    \item $M(R_1 \circ R_2) = M(R_2) \cdot M(R_1)$\begin{itemize}
+            \item $\cdot$表示矩阵的"逻辑乘",加法用$\vee$,乘法用$\wedge$
+          \end{itemize}
+  \end{itemize}
+}%关系矩阵的性质结尾
+
 }%集合论结尾
 
 \subsection{图论}{
