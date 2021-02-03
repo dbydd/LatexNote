@@ -344,4 +344,156 @@ $$
 
 }%映射与函数结尾
 
+\section{数列极限}{
+
+  \subsection{实数系的连续性}{
+
+      \subsubsection{引入}{
+          一切都得从实数系的诞生说起 :
+
+          命题 : $\sqrt{2}$不是有理数.
+
+          \begin{center}
+              \begin{tikzpicture}
+                  \draw (0,0) -- (0,2) --node[above]{$1$} (2,2) -- node[right]{$1$} (2,0) -- cycle;
+                  \draw[red] (0,0) --node[right]{$\sqrt{2}$} (2,2);
+              \end{tikzpicture}
+          \end{center}
+
+          使用反证法
+
+          如果$\sqrt{2}$不是有理数,设其为有理数,即 : $$
+              \sqrt{2} = \cfrac{n}{m}
+          $$
+
+          其中$n,m \in \mathNatureNumberCollection^+$且互质.
+
+          那么$2 = \cfrac{n^2}{m^2}$,即$n^2 = 2m^2$
+
+          则$n$是偶数.令$n = 2k$,则$m^2 = 2k^2$,因此$m$也是偶数,矛盾,得证.
+
+          \qed
+
+          换句话来说,在有理数上开根号不封闭,因此需要扩展数系.
+
+          从几何上看是这样的 :
+
+          \begin{center}
+              \begin{tikzpicture}% table%\begin{}[]%\addplot table[] {};%\end{}%\end{}
+                  \draw[-latex] (0,0) -- (6,0) node[right]{$x$};
+                  \foreach \i in {-3,...,2}{
+                          \draw (\i + 3,-0.1) node[below]{$\i$} -- (\i + 3,0.1);
+                      }
+              \end{tikzpicture}
+          \end{center}
+
+          \begin{itemize}
+              \item {
+                    $\mathIntegerCollection$ :
+
+                    整数集上每一个数都对应其上的一个点,每两个点之间总有距离,点与点之间距离至少为1.称这一性质为\textcolor{red}{离散性}.
+
+                    因此可以说 : 整数集合具有集散性.
+                    }
+              \item {
+                    $\mathRationalNumberCollection$ :
+
+                    有理数集合种每一个元素都可以在数轴上找到一个点与他对应,而且有理数很多,多到无法找到一个小区间,使得这个小区间内没有有理数.将这种性质称为\textcolor{red}{稠密性}.
+
+                    因此可以说 : 有理数集合具有稠密性.
+                    }
+              \item {
+                    $\mathRealNumberCollection$
+
+                    长期以来人们一直只认识有理数,直到公元200年前的古希腊 :
+
+                    \begin{center}
+                        \begin{tikzpicture}
+                            \draw[-latex] (0,0) -- (6,0) node[right]{$x$};
+                            \foreach \i in {-3,...,2}{
+                                    \draw (\i + 3,-0.1) node[below]{$\i$} -- (\i + 3,0.1);
+                                }
+                            \draw (3,0) rectangle (4,1);
+                            \draw[dashed,red] (3,0) -- (4,1);
+                            \draw[dashed,green] (4,1) arc (45:0:{sqrt(2)});
+                        \end{tikzpicture}
+                    \end{center}
+
+                    就这样,人们发现了一个在数轴上的点,对应的不是有理数.
+
+                    换句话说,尽管有理数集合在数轴上有稠密性,但是有空隙.
+
+                    于是又扩展了数系,将无限不循环小数(即无理数)加进了有理数系,就这样出现了实数集合$\mathRealNumberCollection$,自此运算又封闭了.
+
+                    因此实数是有理数集合和有理数集合的并,即 : $$
+                        \mathRealNumberCollection = \set{x | x \in \mathRationalNumberCollection \lor x\mbox{是无理数}}
+                    $$
+
+                    引入的无理数填满了数轴上的空隙,现在数轴上每一个点都与实数集合中的一个元素对应,换句话来说: 实数集合布满了整个数轴,不留任何空隙.称这一性质为\textcolor{red}{连续性}.
+
+                    即 : 实数的连续性.
+
+                    实数集合有时候又被称为实数连续统.
+                    }
+          \end{itemize}
+      }%引入结尾
+
+      \subsubsection{最大数与最小数}{
+          首先提出以下概念 : 最大数与最小数.
+
+          $S \subset \mathRealNumberCollection,\ S \neq \emptyset$,如果$S$是有限集,则$S$必有最大数和最小数.
+
+          但是如果$S$是无限集,则$S$不一定有最大数与最小数.
+
+          \begin{itemize}
+              \item 如果$\exists \xi \in S$,使得$\forall x \in S$,有$x \leq \xi$,则称$\xi$是$S$中的最大数,记为$\xi = \max S$
+              \item 如果$\exists \eta \in S$,使得$\forall x \in S$,有$x \geq \eta$,则称$\eta$是$S$中的最小数,记为$\eta = \min S$
+              \item 显然,有限数集合一定有最大数和最小数.
+              \item 但是无限数集合则不一定.
+          \end{itemize}
+      }%最大数与最小数结尾
+
+      \subsubsection{上确界与下确界}{
+          \begin{itemize}
+              \item {
+                    上界 :
+
+                    \begin{itemize}
+                        \item 设$S \subset \mathRealNumberCollection,\ S \neq \emptyset$,如果$\exists M \in \mathRealNumberCollection$,使得$\forall x \in S$,有$x \leq M$,则称$M$是$S$的一个上界,或称$S$有上界.
+                        \item 设$U$是$S$上界的集合,则$U$没有最大数,但$U$必定有最小数.
+                        \item $U$中的最小数记为$\beta = sup S$,称为$S$的上确界(supremum).
+                        \item {
+                              \(
+                              \beta : \begin{cases}
+                                  \beta\mbox{是上界,即 : }\forall x \in S(x \leq \beta) \\
+                                  \beta\mbox{是最小上界,即 : }\forall \epsilon > 0 \exists x \in S (x > \beta - \epsilon)
+                              \end{cases}
+                              \)
+                              }
+                    \end{itemize}
+                    }
+              \item {
+                    下界 :
+
+                    \begin{itemize}
+                        \item 设$S \subset \mathRealNumberCollection,\ S \neq \emptyset$,如果$\exists m \in \mathRealNumberCollection$,使得$\forall x \in S$,有$x \geq m$,则称$m$是$S$的一个下界,或称$S$有上界.
+                        \item 设$L$是$S$下界的集合,则$L$没有最小数,但$L$必定有最大数.
+                        \item $L$中的最大数记为$\alpha = inf S$,称为$S$的下确界(infimum).
+                        \item {
+                              \(
+                              \alpha : \begin{cases}
+                                  \alpha\mbox{是下界,即 : }\forall x \in S(x \geq \alpha) \\
+                                  \alpha\mbox{是最大下界,即 : }\forall \epsilon > 0 \exists x \in S (x < \alpha + \epsilon)
+                              \end{cases}
+                              \)
+                              }
+                    \end{itemize}
+                    }
+          \end{itemize}
+      }%上确界与下确界结尾
+
+  }%实数系的连续性
+
+ }%数列极限结尾
+
 }%数学分析结尾

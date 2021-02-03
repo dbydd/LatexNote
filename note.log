@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7 Portable) (preloaded format=pdflatex 2020.8.12)  1 FEB 2021 17:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7 Portable) (preloaded format=pdflatex 2020.8.12)  3 FEB 2021 19:36
 entering extended mode
 **c:/Users/19920/Desktop/LatexNote/note.tex
 (c:/Users/19920/Desktop/LatexNote/note.tex
@@ -862,7 +862,7 @@ File: UTF8.bdg 2015/04/18 4.8.4
 File: UTF8.enc 2015/04/18 4.8.4
 ) (C:\Users\19920\scoop\apps\latex\current\texmfs\install\tex/latex/cjk/UTF8\UTF8.chr
 File: UTF8.chr 2015/04/18 4.8.4
-) (note.aux (src/ChapterPhilosophy.aux))
+) (note.aux (src/ChapterMath.aux))
 \openout1 = `note.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 183.
@@ -1051,9 +1051,7 @@ File: ctex-zhmap-windows.tex 2020/06/06 v2.5.3 Windows font map loader for pdfTe
 {C:/Users/19920/scoop/apps/latex/current/texmfs/data/pdftex/config/pdftex.map}{UGBK.sfd}{Unicode.sfd}) [1
 
 
-] [2] (note.toc [3
-
-])
+] [2] (note.toc)
 \tf@toc=\write8
 \openout8 = `note.toc'.
 
@@ -1061,7 +1059,9 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
 <to be read again> 
                    \relax 
 l.205 \include{src/ChapterMath}
-                                [1]
+                                [1
+
+]
 \openout2 = `src/ChapterMath.aux'.
 
  (src/ChapterMath.texpdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
@@ -1071,97 +1071,57 @@ l.1 \part
          {æ•°å­¦}{ [2
 
 
-]pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1 \part{æ•°å­¦}
-                 { [3] [4]) [5]
+] [3] [4] (src/math/MathematicalAnalysis_2.tex [5] [6
+
+]
+ç¬¬ä¸€ç« 
+[7] [8] [9] [10]
+Overfull \hbox (7.37584pt too wide) in paragraph at lines 190--192
+[]\C70/rm/m/n/12/8f Ù \C70/rm/m/n/12/4e * \C70/rm/m/n/12/65 ¹ \C70/rm/m/n/12/7a  \C70/rm/m/n/12/63 Ï \C70/rm/m/n/12/8f ð \C70/rm/m/n/12/4e † \C70/rm/m/n/12/88 L \C70/rm/m/n/12/66  \C70/rm/m/n/12/7e Õ \C70/rm/m/n/12/59 * \C70/rm/m/n/12/96 3 \C70/rm/m/n/12/8f Ð \C70/rm/m/n/12/88 L \C70/rm/m/n/12/76 „ \C70/rm/m/n/12/8f h ù \C70/rm/m/n/12/76 „ \C70/rm/m/n/12/89 Ä \C70/rm/m/n/12/5f ‹\OT1/cmr/m/n/12 ,\C70/rm/m/n/12/8f h ù \C70/rm/m/n/12/66 / \C70/rm/m/n/12/4e * \C70/rm/m/n/12/69 - \C70/rm/m/n/12/57 \OT1/cmr/m/n/12 .\C70/rm/m/n/12/51 v \C70/rm/m/n/12/4e -$\OML/cmm/m/it/12 "$\C70/rm/m/n/12/66 / \C70/rm/m/n/12/8f Ù \C70/rm/m/n/12/4e * \C70/rm/m/n/12/69 - \C70/rm/m/n/12/57  \C70/rm/m/n/12/76 „ \C70/rm/m/n/12/79 » \C70/rm/m/n/12/5f Ã\OT1/cmr/m/n/12 ,$\OML/cmm/m/it/12 x$\C70/rm/m/n/12/4e  \C70/rm/m/n/12/65 ö \C70/rm/m/n/12/95 ô \C70/rm/m/n/12/67 	 \C70/rm/m/n/12/51 s\OT1/cmr/m/n/12 ,$\OML/cmm/m/it/12 y$\C70/rm/m/n/12/4e 
+ []
+
+[11] [12]
+<resources/Signum_function.png, id=361, 248.93pt x 199.74625pt>
+File: resources/Signum_function.png Graphic file (type png)
+<use resources/Signum_function.png>
+Package pdftex.def Info: resources/Signum_function.png  used on input line 279.
+(pdftex.def)             Requested size: 124.46469pt x 99.87288pt.
+<resources/Floor_function.png, id=362, 331.2375pt x 331.2375pt>
+File: resources/Floor_function.png Graphic file (type png)
+<use resources/Floor_function.png>
+Package pdftex.def Info: resources/Floor_function.png  used on input line 300.
+(pdftex.def)             Requested size: 165.61833pt x 165.61833pt.
+ [13 <./resources/Signum_function.png>]
+<resources/DecimalPartFunction.png, id=372, 220.825pt x 197.73875pt>
+File: resources/DecimalPartFunction.png Graphic file (type png)
+<use resources/DecimalPartFunction.png>
+Package pdftex.def Info: resources/DecimalPartFunction.png  used on input line 317.
+(pdftex.def)             Requested size: 220.82445pt x 197.73827pt.
+
+Underfull \vbox (badness 4060) has occurred while \output is active []
+
+ [14 <./resources/Floor_function.png>] [15 <./resources/DecimalPartFunction.png>] [16] [17])) [18]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 220.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 220.
  (note.aux (src/ChapterMath.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 220.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 220.
-
-
-Package rerunfilecheck Warning: File `note.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `note.out':
-(rerunfilecheck)             Before: B797146AD3D5551EE1637A742A810874;3073
-(rerunfilecheck)             After:  8092C108099F8BAF2E0396F318E1AD49;97.
+Package rerunfilecheck Info: File `note.out' has not changed.
+(rerunfilecheck)             Checksum: 7B7004CFD609CB9E6A528B77618164C5;2115.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 220.
  ) 
 Here is how much of TeX's memory you used:
- 40866 strings out of 481212
- 924147 string characters out of 2901265
- 1390618 words of memory out of 3000000
- 55484 multiletter control sequences out of 15000+200000
- 568621 words of font info for 159 fonts, out of 3000000 for 9000
+ 41752 strings out of 481212
+ 937815 string characters out of 2901265
+ 1394618 words of memory out of 3000000
+ 56235 multiletter control sequences out of 15000+200000
+ 586498 words of font info for 224 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 63i,7n,98p,943b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{subsection.2.5.3} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.2.5.2} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.2.5.1} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.2.5} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.2.4.10} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.2.4.9} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.2.4.8} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.2.4.7} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.2.4.6} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.2.4.5} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.2.4.4} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.2.4.3} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.2.4.2} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.2.4.1} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.2.4} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.2.3.3} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.2.3.2} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.2.3.1} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.2.3} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.2.2.3} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.2.2.2} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.2.2.1} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.2.2} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.2.1.3} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.2.1.2} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.2.1.1} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.2.1} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{chapter.2} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{chapter.1} has been referenced but does not exist, replaced by a fixed one
-
-<C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on note.pdf (8 pages, 391254 bytes).
+ 63i,9n,98p,943b,1045s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc> <C:\Users\19920\scoop\apps\latex\current\texmfs/data\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/19920/scoop/apps/latex/current/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on note.pdf (20 pages, 747194 bytes).
 PDF statistics:
- 545 PDF objects out of 1000 (max. 8388607)
- 42 named destinations out of 1000 (max. 500000)
- 469 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 791 PDF objects out of 1000 (max. 8388607)
+ 57 named destinations out of 1000 (max. 500000)
+ 460 words of extra memory for PDF output out of 10000 (max. 10000000)
 

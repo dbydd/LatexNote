@@ -500,10 +500,12 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
     }%不定积分第一类换元积分法结尾
 
     \subsubsection{不定积分第二类换元积分法}{
-      设$\defFunction{x}$为可积函数,$x = x(g)$为连续可导函数,则有:
-
-      $\int \defFunction{x}dx = \int \defFunction{x(g)x\derivative dx}$
-
+      设$\defFunction{x}$为可积函数,$x = g(t)$为连续可导函数,则有:$$
+        \int \defFunction{x}dx = \int \defFunction{g(t)}g\derivative dt
+      $$
+      注 : $g(t)$的值域需要在$f(x)$的定义域$\mediumBigCase{\alpha,\beta}$内,并且函数本身要求在此区间内可导,即 : $$
+        \alpha \leq x = g(t) \leq \beta
+      $$
     }%不定积分第一类换元积分法结尾.
   }%不定积分换元法结尾
 
@@ -512,7 +514,7 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
 
     $\int udv = uv - \int v du$
 
-    推荐按以下顺序考虑优先代入:
+    推荐按以下顺序考虑作为$v$:
 
     指数函数,三角函数,幂函数,对数函数,反函数
   }%分部积分法结尾
@@ -1788,6 +1790,15 @@ $e^{(x \pm ki)t} = e^{xt}\cdot(\cos(t\cdot n) \pm i\sin(t\cdot n))$
       设闭区域D由分段光滑的简单曲线$L$围成,函数$P(x,y)$及$Q(x,y)$在$D$上有一阶连续偏导数(即:没有洞的区域),则有 :
       $$
         \doubleIntegralOnZone{D}(\partialDerivativeFrac{Q}{x} - \partialDerivativeFrac{P}{y})dxdy = \curveIntegralOnLine{L^+}(Pdx + Qdy)
+      $$
+      其实也可以用行列式帮助记忆 : $$
+        \doubleIntegralOnZone{D}\begin{vmatrix}
+          \partialDerivativeFrac{~}{x} & \partialDerivativeFrac{~}{y} \\
+          P                            & Q
+        \end{vmatrix}
+        dxdy
+        =
+        \curveIntegralOnLine{L^+}(Pdx + Qdy)
       $$
 
       其中$L^+$是$D$的取正向的边界曲线,$\oint$表示闭合路线上的曲线积分.
@@ -3288,7 +3299,7 @@ $$
         \item 注意 : 高斯公式把闭曲面的曲面积分华为三重积分,斯托克斯则把曲线积分华为以$l$为边界的曲面积分,如果不能化为闭曲面的曲面积分,也就不能化成三重积分.
       \end{itemize}
 
-      当$A$为平面向量场是,斯托克斯公式会变成格林公式,斯托克斯公式可以看作是格林公式的推广.
+      当$A$为平面向量场时,斯托克斯公式会变成格林公式,斯托克斯公式可以看作是格林公式的推广.
     }%斯托克斯公式
 
    }%环量,旋度,斯托克斯公式结尾

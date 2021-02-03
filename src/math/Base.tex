@@ -1,8 +1,8 @@
 \chapter{基本概念}{
 
 \section{六大基本初等函数}{
-    常数函数,幂函数,指数函数,对数函数,三角函数
-}%六大基本初等函数结尾
+  常数函数,幂函数,指数函数,对数函数,三角函数
+ }%六大基本初等函数结尾
 
 \section{介值定理}{
 
@@ -32,142 +32,142 @@ $\fint(I)\supseteq[\fint(b), \fint(a)]$.
 }%介值定理结尾
 
 \section{二项式定理}{
-    $(x + y)^n = x^n + \mathCombination{n - 1}{n}(x^{n-1} y) + \mathCombination{n - 2}{n}(x^{n-2} y^2) + \dots + y^n$
+  $(x + y)^n = x^n + \mathCombination{n - 1}{n}(x^{n-1} y) + \mathCombination{n - 2}{n}(x^{n-2} y^2) + \dots + y^n$
 
-    \subsection{二项式系数与帕斯卡三角形(杨辉三角)}{
+  \subsection{二项式系数与帕斯卡三角形(杨辉三角)}{
 
-        二项式系数是二项式定理中各项的系数.一般而言,二项式系数由两个非负整数$n$和$k$作为参数来决定,写作$\begin{pmatrix}
-                n \\
-                k
-            \end{pmatrix}$,定义为$(1 + x)^n$的多项式展开式中$x^k$项的系数,因此一定是非负整数.
+      二项式系数是二项式定理中各项的系数.一般而言,二项式系数由两个非负整数$n$和$k$作为参数来决定,写作$\begin{pmatrix}
+              n \\
+              k
+          \end{pmatrix}$,定义为$(1 + x)^n$的多项式展开式中$x^k$项的系数,因此一定是非负整数.
 
-        如果将二项式系数$\binom{n}{0},\binom{n}{1},\dots,\binom{n}{n}$写成一行,再依照$n = 0,1,2,3,...$顺序由上往下排列,则构成帕斯卡三角形(杨辉三角) :
-        \begin{center}
-            \includegraphics[scale=0.5]{resources/Pascal's_triangle_5.svg.png}
-        \end{center}
+      如果将二项式系数$\binom{n}{0},\binom{n}{1},\dots,\binom{n}{n}$写成一行,再依照$n = 0,1,2,3,...$顺序由上往下排列,则构成帕斯卡三角形(杨辉三角) :
+      \begin{center}
+          \includegraphics[scale=0.5]{resources/Pascal's_triangle_5.svg.png}
+      \end{center}
 
-        事实上,二项式系数就是排列组合中的组合 : ($\mathCombination{m}{n} \Longleftrightarrow \binom{m}{n}$)
+      事实上,二项式系数就是排列组合中的组合 : ($\mathCombination{m}{n} \Longleftrightarrow \binom{m}{n}$)
 
-        此外也有不同的表达方式 : $C(n,k),~_nC_k,~^nC_k,C^k_n,C^n_k\dots$
+      此外也有不同的表达方式 : $C(n,k),~_nC_k,~^nC_k,C^k_n,C^n_k\dots$
 
-        %# TODO 看看Wiki : https://zh.wikipedia.org/wiki/%E4%BA%8C%E9%A0%85%E5%BC%8F%E4%BF%82%E6%95%B8
-    }%二项式系数结尾
+      %# TODO 看看Wiki : https://zh.wikipedia.org/wiki/%E4%BA%8C%E9%A0%85%E5%BC%8F%E4%BF%82%E6%95%B8
+  }%二项式系数结尾
 
-}%二项式定理结尾
+ }%二项式定理结尾
 
 \section{排列组合}{
 
-    排列:$\mathPermutation{m}{n} = \cfrac{m!}{(m-n)!}$
+  排列:$\mathPermutation{m}{n} = \cfrac{m!}{(m-n)!}$
 
-    组合:$\mathCombination{m}{n} = \cfrac{\mathPermutation{m}{n}}{m!} = \cfrac{n!}{m!(n-m)!}$
-}%排列组合结尾
+  组合:$\mathCombination{m}{n} = \cfrac{\mathPermutation{m}{n}}{m!} = \cfrac{n!}{m!(n-m)!}$
+ }%排列组合结尾
 
 \section{立方差公式}{
-    \begin{itemize}
-        \item $a^3 + b^3 = (a + b)(a^2 - ab + b^2)$
-        \item $a^3 - b^3 = (a - b)(a^2 + ab + b^3)$
-    \end{itemize}
-}%立方差公式结尾
+  \begin{itemize}
+      \item $a^3 + b^3 = (a + b)(a^2 - ab + b^2)$
+      \item $a^3 - b^3 = (a - b)(a^2 + ab + b^3)$
+  \end{itemize}
+ }%立方差公式结尾
 
 \section{等幂求和公式}{
 
-}%等幂求和公式
+ }%等幂求和公式
 
 \section{圆幂定理}{
-    给定一个圆$r$及一点p,由p引出两条割线,分别于$r$相交于$A,B$及$C,D$,则有$PA \cdot PB = PC \cdot PD$
+  给定一个圆$r$及一点p,由p引出两条割线,分别于$r$相交于$A,B$及$C,D$,则有$PA \cdot PB = PC \cdot PD$
 
-    事实上此定理包含三条定理 :
+  事实上此定理包含三条定理 :
 
-    \subsection{割线定理}{
-        \begin{tikzpicture}
-            \node (o) at (0.25,0.25){O};
-            \draw [fill = black] (0,0) circle (1pt);
-            \path[name path= c,draw] (0,0) circle (2);
-            \node (B) at (-{sqrt(3)},1) {};
-            \node (D) at (-{sqrt(3)},-1) {};
-            \node (P) at (3,0){};
-            \draw [fill = black] (P) circle (1pt);
-            \draw [fill = black] (B) circle (1pt);
-            \draw [fill = black] (D) circle (1pt);
+  \subsection{割线定理}{
+      \begin{tikzpicture}
+          \node (o) at (0.25,0.25){O};
+          \draw [fill = black] (0,0) circle (1pt);
+          \path[name path= c,draw] (0,0) circle (2);
+          \node (B) at (-{sqrt(3)},1) {};
+          \node (D) at (-{sqrt(3)},-1) {};
+          \node (P) at (3,0){};
+          \draw [fill = black] (P) circle (1pt);
+          \draw [fill = black] (B) circle (1pt);
+          \draw [fill = black] (D) circle (1pt);
 
-            \path[name path = l1,draw] (B) node[above left]{$B$} -- (P) node [above right]{$P$};
-            \path[name path = l2,draw] (D) node[below left]{$D$} -- (P);
+          \path[name path = l1,draw] (B) node[above left]{$B$} -- (P) node [above right]{$P$};
+          \path[name path = l2,draw] (D) node[below left]{$D$} -- (P);
 
-            \node[name intersections = {of = c and l1,by=x}] (A) at (x){};
-            \node[name intersections = {of = c and l2,by=x}] (C) at (x){};
+          \node[name intersections = {of = c and l1,by=x}] (A) at (x){};
+          \node[name intersections = {of = c and l2,by=x}] (C) at (x){};
 
-            \draw [fill = black] (A) circle (1pt) node[above right]{$A$};
-            \draw [fill = black] (C) circle (1pt) node[below right]{$C$};
-        \end{tikzpicture}
-        $PA \cdot PB = PC \cdot PD$
-    }%割线定理结尾
+          \draw [fill = black] (A) circle (1pt) node[above right]{$A$};
+          \draw [fill = black] (C) circle (1pt) node[below right]{$C$};
+      \end{tikzpicture}
+      $PA \cdot PB = PC \cdot PD$
+  }%割线定理结尾
 
-    \subsection{交弦定理}{
-        \begin{tikzpicture}
-            \node (o) at (0.25,0.25){O};
-            \draw [fill = black] (0,0) circle (1pt);
-            \path[draw] (0,0) circle (2);
-            \node (A) at (1,{sqrt(3)}){};
-            \node (C) at ({-sqrt(3)},-1){};
-            \node (D) at (2,0){};
-            \node (B) at (0,-2){};
-            \path[draw,name path = l1] (A) -- (B);
-            \path[draw,name path = l2] (D) -- (C);
-            \node[name intersections = {of = l1 and l2,by = x}] (E) at (x){};
+  \subsection{交弦定理}{
+      \begin{tikzpicture}
+          \node (o) at (0.25,0.25){O};
+          \draw [fill = black] (0,0) circle (1pt);
+          \path[draw] (0,0) circle (2);
+          \node (A) at (1,{sqrt(3)}){};
+          \node (C) at ({-sqrt(3)},-1){};
+          \node (D) at (2,0){};
+          \node (B) at (0,-2){};
+          \path[draw,name path = l1] (A) -- (B);
+          \path[draw,name path = l2] (D) -- (C);
+          \node[name intersections = {of = l1 and l2,by = x}] (E) at (x){};
 
-            \draw [fill = black] (A) circle (1pt) node[above right]{$A$};
-            \draw [fill = black] (B) circle (1pt) node[below]{$B$};
-            \draw [fill = black] (C) circle (1pt) node[left]{$C$};
-            \draw [fill = black] (D) circle (1pt) node[right]{$D$};
-            \draw [fill = black] (E) circle (1pt) node[below right]{$E$};
-        \end{tikzpicture}
-        $EA \cdot EB = EC \cdot ED$
-    }%交弦定理结尾
+          \draw [fill = black] (A) circle (1pt) node[above right]{$A$};
+          \draw [fill = black] (B) circle (1pt) node[below]{$B$};
+          \draw [fill = black] (C) circle (1pt) node[left]{$C$};
+          \draw [fill = black] (D) circle (1pt) node[right]{$D$};
+          \draw [fill = black] (E) circle (1pt) node[below right]{$E$};
+      \end{tikzpicture}
+      $EA \cdot EB = EC \cdot ED$
+  }%交弦定理结尾
 
-    \subsection{切割线定理}{
-        \begin{tikzpicture}
-            \node (o) at (0.25,0.25){O};
-            \draw [fill = black] (0,0) circle (1pt);
-            \path[name path= c,draw] (0,0) circle (2);
+  \subsection{切割线定理}{
+      \begin{tikzpicture}
+          \node (o) at (0.25,0.25){O};
+          \draw [fill = black] (0,0) circle (1pt);
+          \path[name path= c,draw] (0,0) circle (2);
 
-            \node (T) at (0,2){};
-            \node (B) at ({-sqrt(3)},-1){};
-            \node (P) at (5,2){};
+          \node (T) at (0,2){};
+          \node (B) at ({-sqrt(3)},-1){};
+          \node (P) at (5,2){};
 
-            \draw (T) -- (P);
-            \path[draw,name path = l1] (B) -- (P);
+          \draw (T) -- (P);
+          \path[draw,name path = l1] (B) -- (P);
 
-            \node[name intersections = {of = c and l1,by = x}] (A) at (x){};
+          \node[name intersections = {of = c and l1,by = x}] (A) at (x){};
 
-            \draw [fill = black] (A) circle (1pt) node[above right]{$A$};
-            \draw [fill = black] (B) circle (1pt) node[above left]{$B$};
-            \draw [fill = black] (T) circle (1pt) node[above]{$T$};
-            \draw [fill = black] (P) circle (1pt) node[right]{$P$};
-        \end{tikzpicture}
-        $PT^2 = PA \cdot PB$
-    }%切割线定理结尾
+          \draw [fill = black] (A) circle (1pt) node[above right]{$A$};
+          \draw [fill = black] (B) circle (1pt) node[above left]{$B$};
+          \draw [fill = black] (T) circle (1pt) node[above]{$T$};
+          \draw [fill = black] (P) circle (1pt) node[right]{$P$};
+      \end{tikzpicture}
+      $PT^2 = PA \cdot PB$
+  }%切割线定理结尾
 
-}%圆幂定理结尾
+ }%圆幂定理结尾
 
 \section{圆周角定理}{
-    一条弧所对的圆周角$\alpha$等于所对圆心角的一半.
+  一条弧所对的圆周角$\alpha$等于所对圆心角的一半.
 
-    \begin{tikzpicture}
-        \node (o) at (0.25,0.25){O};
-        \draw [fill = black] (0,0) circle (1pt);
-        \path[name path= c,draw] (0,0) circle (2);
-        \node (P1) at (-{sqrt(3)},1) {};
-        \node (P2) at (-{sqrt(3)},-1) {};
+  \begin{tikzpicture}
+      \node (o) at (0.25,0.25){O};
+      \draw [fill = black] (0,0) circle (1pt);
+      \path[name path= c,draw] (0,0) circle (2);
+      \node (P1) at (-{sqrt(3)},1) {};
+      \node (P2) at (-{sqrt(3)},-1) {};
 
-        \draw (P1) -- (2,0) node[left]{$\alpha$} -- (P2);
-        \draw (P1) -- (0,0) node[left]{$\beta$} -- (P2);
+      \draw (P1) -- (2,0) node[left]{$\alpha$} -- (P2);
+      \draw (P1) -- (0,0) node[left]{$\beta$} -- (P2);
 
-        \tikzPlaceDot{(P1)};
-        \tikzPlaceDot{(P2)};
-        \tikzPlaceDot{(2,0)};
-    \end{tikzpicture}
+      \tikzPlaceDot{(P1)};
+      \tikzPlaceDot{(P2)};
+      \tikzPlaceDot{(2,0)};
+  \end{tikzpicture}
 
-}%圆周角定理结尾
+ }%圆周角定理结尾
 
 \section{韦达定理}{
 \subsection{韦达定理的普遍情况}{
@@ -467,6 +467,8 @@ $$
         \item $ab \leq (\cfrac{a + b}{2})^2$
         \item $a + b \geq 2\sqrt{ab}$
         \item $a + b \leq \sqrt{2(a^2 + b^2)}$
+        \item $\sin x < x < \tan x,\ x \in (0,\frac{\pi}{2})$
+        \item $\cfrac{x}{1 + x} < \ln(1 + x) < x,\ x \in (0, +\infty)$
     \end{itemize}
 }%常用不等式结尾
 
@@ -474,55 +476,55 @@ $$
 
 \section{可微,可导,连续的关系}{
 
-    \subsection{一元情况下的关系}{
-        \begin{itemize}
-            \item 可微是可导的充要条件,即:可微$\Leftrightarrow$可导
-            \item 可微和可导都是连续的充分条件,即:可微$\rightarrow$连续、可导$\rightarrow$连续
-        \end{itemize}
+  \subsection{一元情况下的关系}{
+      \begin{itemize}
+          \item 可微是可导的充要条件,即:可微$\Leftrightarrow$可导
+          \item 可微和可导都是连续的充分条件,即:可微$\rightarrow$连续、可导$\rightarrow$连续
+      \end{itemize}
 
-        \begin{center}
-            \begin{tikzpicture}
-                \node(a) at (0,1.5) {可微};
-                \node(b) at (3,1.5) {可导};
-                \node(c) at (1.5,0) {连续};
-                \draw[<->] (a) -- (b);
-                \draw[->] (a) -- (c);
-                \draw[->] (b) -- (c);
-            \end{tikzpicture}
-        \end{center}
-    }%一元情况下的关系结尾
+      \begin{center}
+          \begin{tikzpicture}
+              \node(a) at (0,1.5) {可微};
+              \node(b) at (3,1.5) {可导};
+              \node(c) at (1.5,0) {连续};
+              \draw[<->] (a) -- (b);
+              \draw[->] (a) -- (c);
+              \draw[->] (b) -- (c);
+          \end{tikzpicture}
+      \end{center}
+  }%一元情况下的关系结尾
 
-    \subsection{多元情况下的关系}{
-        \begin{itemize}
-            \item 可微(全微分)是可导和连续的充分条件,即:可微$\Rightarrow$可导、可微$\Rightarrow$连续.
-            \item 可导$\nRightarrow$连续.
-        \end{itemize}
+  \subsection{多元情况下的关系}{
+      \begin{itemize}
+          \item 可微(全微分)是可导和连续的充分条件,即:可微$\Rightarrow$可导、可微$\Rightarrow$连续.
+          \item 可导$\nRightarrow$连续.
+      \end{itemize}
 
-        \begin{center}
-            一元 :
-            \begin{tikzpicture}
-                \node(a) at (0,1.5) {可微};
-                \node(b) at (3,1.5) {可导};
-                \node(c) at (1.5,0) {连续};
-                \draw[->] (a) -- (b);
-                \draw[->] (a) -- (c);
-            \end{tikzpicture}
-        \end{center}
-    }%多元情况下的关系结尾
+      \begin{center}
+          一元 :
+          \begin{tikzpicture}
+              \node(a) at (0,1.5) {可微};
+              \node(b) at (3,1.5) {可导};
+              \node(c) at (1.5,0) {连续};
+              \draw[->] (a) -- (b);
+              \draw[->] (a) -- (c);
+          \end{tikzpicture}
+      \end{center}
+  }%多元情况下的关系结尾
 
-}%可微,可导,连续的关系结尾
+ }%可微,可导,连续的关系结尾
 
 \section{零散的定义}{
-    \begin{enumerate}
-        \item 有界:$\exists\epsilon,f(x) < \epsilon\quad(-\infty < x < \infty )$
-        \item 什么时候函数能复合 : 内层值域$\in$外层定义域
-    \end{enumerate}
-}%零散的定义结尾
+  \begin{enumerate}
+      \item 有界:$\exists\epsilon,f(x) < \epsilon\quad(-\infty < x < \infty )$
+      \item 什么时候函数能复合 : 内层值域$\in$外层定义域
+  \end{enumerate}
+ }%零散的定义结尾
 
 \section{零散的思想}{
-    \begin{enumerate}
-        \item 正变换是数学的重要工具,三角变换是只变其形不变其质的.三角变换常常先寻找式子所包含的各个角之间的联系,并以此为依据选择可以联系它们的适当公式,通过换元法把三角恒等变换问题转化为代数恒等变换问题.
-    \end{enumerate}
-}%零散的思想结尾
+  \begin{enumerate}
+      \item 正变换是数学的重要工具,三角变换是只变其形不变其质的.三角变换常常先寻找式子所包含的各个角之间的联系,并以此为依据选择可以联系它们的适当公式,通过换元法把三角恒等变换问题转化为代数恒等变换问题.
+  \end{enumerate}
+ }%零散的思想结尾
 
 }%基本概念结尾
