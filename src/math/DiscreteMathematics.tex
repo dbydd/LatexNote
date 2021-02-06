@@ -882,10 +882,248 @@
               \item $~\transpose$表示矩阵转置
             \end{itemize}
       \item $M(R_1 \circ R_2) = M(R_2) \cdot M(R_1)$\begin{itemize}
-              \item $\cdot$表示矩阵的"逻辑乘",加法用$\vee$,乘法用$\wedge$
+              \item $\cdot$表示矩阵的"逻辑乘"(即分量相加或数乘换成逻辑操作),加法用$\lor$,乘法用$\land$
             \end{itemize}
     \end{itemize}
   }%关系矩阵的性质结尾
+
+  \subsubsection{关系矩阵举例}{
+    \begin{itemize}
+      \item $A = \set{a,b,v}$
+      \item $R_1 = \set{\dependent{a,a},\dependent{a,b},\dependent{b,a},\dependent{b,c}}$
+      \item $R_2 = \set{\dependent{a,b},\dependent{a,c},\dependent{b,c}}$
+      \item 用$M(R_1),M(R_2)$确定$M(R_1\inverse),M(R_2\inverse),M(R_1 \circ R_1),M(R_1 \circ R_2)$,从而求出他们的集合表达式.
+    \end{itemize}
+
+    解 : $$
+      M(R_1) = \begin{bmatrix}
+        1 & 1 & 0 \\
+        1 & 0 & 1 \\
+        0 & 0 & 0
+      \end{bmatrix},\qquad
+      M(R_2) = \begin{bmatrix}
+        0 & 1 & 1 \\
+        0 & 0 & 1 \\
+        0 & 0 & 0
+      \end{bmatrix},\qquad
+      M(R_1\inverse) = \begin{bmatrix}
+        1 & 1 & 0 \\
+        1 & 0 & 0 \\
+        0 & 1 & 0
+      \end{bmatrix},\qquad
+      M(R_2\inverse) = \begin{bmatrix}
+        0 & 0 & 0 \\
+        1 & 0 & 0 \\
+        1 & 1 & 0
+      \end{bmatrix}
+    $$
+    \begin{itemize}
+      \item $R_1\inverse = \set{\dependent{a,a},\dependent{a,b},\dependent{b,a},\dependent{c,b}}$
+      \item $R_2\inverse = \set{\dependent{b,a},\dependent{c,a},\dependent{c,b}}$
+    \end{itemize}
+    $$
+      M(R_1 \circ R_1) = \begin{bmatrix}
+        1 & 1 & 0 \\
+        1 & 0 & 1 \\
+        0 & 0 & 0
+      \end{bmatrix}
+      \cdot
+      \begin{bmatrix}
+        1 & 1 & 0 \\
+        1 & 0 & 1 \\
+        0 & 0 & 0
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+        1 & 1 & 1 \\
+        1 & 1 & 0 \\
+        0 & 0 & 0
+      \end{bmatrix}
+    $$
+    \begin{itemize}
+      \item $R_1 \circ R_1 = \set{\dependent{a,a},\dependent{a,b},\dependent{a,c},\dependent{b,a},\dependent{b,b}}$
+    \end{itemize}
+    $$
+      M(R_1 \circ R_2) = \begin{bmatrix}
+        0 & 1 & 1 \\
+        0 & 0 & 1 \\
+        0 & 0 & 0
+      \end{bmatrix}
+      \cdot
+      \begin{bmatrix}
+        1 & 1 & 0 \\
+        1 & 0 & 1 \\
+        0 & 0 & 0
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+        1 & 0 & 1 \\
+        0 & 0 & 0 \\
+        0 & 0 & 0
+      \end{bmatrix}
+    $$
+    \begin{itemize}
+      \item $R_1 \circ R_2 = \set{\dependent{a,a},\dependent{a,c}}$
+    \end{itemize}
+  }%关系矩阵举例结尾
+
+  \subsubsection{关系图}{
+    \begin{itemize}
+      \item $A = \set{a_1,a_2,\dots,a_n},R \subseteq A \times A$
+      \item {
+            $R$的关系图$G(R)$ : \begin{itemize}
+              \item 以"$o$"表示$A$中元素(称为顶点), 以"$\rightarrow$"表示$R$中元素(称为有向边)
+              \item 若$a_iRa_j$,则从顶点$a_i$向顶点$a_j$引有向边$\dependent{a_i,a_j}$
+            \end{itemize}
+            }
+    \end{itemize}
+  }%关系图结尾
+
+  \subsubsection{关系图举例}{
+    \begin{itemize}
+      \item $A = \set{a,b,c}$
+      \item $R_1 = \set{\dependent{a,a},\dependent{a,b},\dependent{b,a},\dependent{b,c}}$
+      \item $R_2 = \set{\dependent{a,b},\dependent{a,c},\dependent{b,c}}$
+      \item $R_1\inverse = \set{\dependent{a,a},\dependent{a,b},\dependent{b,a},\dependent{c,b}}$
+      \item $R_2\inverse = \set{\dependent{b,a},\dependent{c,a},\dependent{c,b}}$
+      \item $R_1 \circ R_1 = \set{\dependent{a,a},\dependent{a,b},\dependent{a,c},\dependent{b,a},\dependent{b,b}}$
+      \item $R_1 \circ R_1 = \set{\dependent{a,a},\dependent{a,c}}$
+      \item $R_2 \circ R_1 = \set{\dependent{a,b},\dependent{a,c},\dependent{b,b},\dependent{b,c}}$
+    \end{itemize}
+    \begin{center}
+      \includegraphics[scale=0.5]{resources/dependGraphic_1.png}
+
+      去他妈的tikz!
+    \end{center}
+  }%关系图举例
+
+  \subsubsection{讨论}{
+    \begin{itemize}
+      \item 当$A$中元素标定次序后,对于$R \subseteq A \times A$ : \begin{itemize}
+              \item $G(R)$与$R$的集合表达式可唯一互相确定.
+              \item $R$的集合表达式,关系矩阵,关系图三者均可唯一互相确定.
+            \end{itemize}
+      \item 对于$R \subseteq A \times B$ : \begin{itemize}
+              \item $\absoluteValue{A} = n,\absoluteValue{B} = m$,关系矩阵$M(R)$时$n \times m$阶.
+              \item $G(R)$中边都是从$A$中元素指向$B$中元素.
+            \end{itemize}
+    \end{itemize}
+  }%讨论结尾
+
+  \subsubsection{关系的性质}{
+    \begin{itemize}
+      \item {
+            自反性(reflexivity) : \begin{itemize}
+              \item $R \subseteq A \times A$
+              \item $R$是自反的$\Leftrightarrow \forall x(x \in A \to xRx) \Leftrightarrow (\forall x \in A)xRx$
+              \item $R$是非自反的$\Leftrightarrow \exists x (x \in A \land \lnot xRx)$
+            \end{itemize}
+
+            \begin{center}
+              \includegraphics{resources/reflexivity.png}
+            \end{center}
+
+            定理 : 以下描述等价
+            \begin{itemize}
+              \item $R$是自反的
+              \item $I_A \subseteq R$
+              \item $R\inverse$是自反的
+              \item $M(R)$主对角线上的元素全为$1$
+              \item $G(R)$的每个顶点处均有环.
+            \end{itemize}
+            }
+      \item {
+            反自反性(irreflexivity) : \begin{itemize}
+              \item $R \subseteq A \times A$
+              \item $R$是反自反的$\Leftrightarrow \forall x(x \in A \to \lnot xRx) \Leftrightarrow (\forall x \in A)\lnot xRx$
+              \item $R$是非反自反的$\Leftrightarrow \exists x(x \in A \land xRx)$
+            \end{itemize}
+
+            \begin{center}
+              \includegraphics{resources/irreflexivity.png}
+            \end{center}
+
+            定理 : 以下描述等价
+            \begin{itemize}
+              \item $R$是反自反的
+              \item $I_A \intersectionSet R = \emptyset$
+              \item $R\inverse$是反自反的
+              \item $M(R)$主对角线上的元素全为0
+              \item $G(R)$的每个顶点处均无环.
+            \end{itemize}
+
+            自反且反自反 : $\emptyset$上的空关系
+            }
+      \item {
+            对称性(symmetry) : \begin{itemize}
+              \item $R \subseteq A \times A$
+              \item $R$是对称的$\Leftrightarrow \forall x \forall y (x \in A \land y \in A \land xRy \to yRx) \Leftrightarrow (\forall x \in A)(\forall y \in A)[xRy \to yRx]$
+              \item $R$是非对称的$\Leftrightarrow \exists x \exists y(x \in A \land y \in A \land xRy \land \lnot yRx)$
+            \end{itemize}
+
+            \begin{center}
+              \includegraphics{resources/symmetry.png}
+            \end{center}
+
+            定理 : 以下描述等价
+            \begin{itemize}
+              \item $R$是对称的
+              \item $R\inverse = R$
+              \item $R\inverse$是对称的
+              \item $G(R)$的任何两个顶点之间若有边,则必有两条方向相反的有向边.
+            \end{itemize}
+            }
+      \item {
+            反对称性(antisymmetry) : \begin{itemize}
+              \item $R \subseteq A \times A$
+              \item $R$是反对称的$\Leftrightarrow \forall x \forall y(x \in A \land y \in A \land xRy \land yRx \to x = y) \Leftrightarrow (\forall x \in A)(\forall y \in A)[xRy \land yRx \to x = y]$
+              \item $R$非反对称$\Leftrightarrow \exists x \exists y (x \in A \land y \in A \land xRy \land yRx \land x \neq y)$
+            \end{itemize}
+
+            \begin{center}
+              \includegraphics{resources/antisymmetry.png}
+            \end{center}
+
+            定理 : 以下叙述等价
+            \begin{itemize}
+              \item $R$是反对称的
+              \item $R\inverse \intersectionSet R \subseteq I_A$
+              \item $R\inverse$是反对称的
+              \item 在$M(R)$中,$\forall i \forall j(i \neq j \land r_{ij} = 1 \to r_{ji} = 0)$
+              \item 在$G(R)$中,$\forall a_i \forall a_j (i \neq j)$,若有有向边$\dependent{a_i,a_j}$,则必没有$\dependent{a_j,a_i}$.
+            \end{itemize}
+            }
+      \item {
+            传递性(transivity) : \begin{itemize}
+              \item $R \subseteq A \times A$
+              \item $R$是传递的$\Leftrightarrow \forall x \forall y \forall z (x \in A \land y \in A \land z \in A \land xRy \land yRz \to xRz)\Leftrightarrow(\forall x \in A)(\forall y \in A)(\forall z \in A)[xRy \land yRz \to xRz]$
+              \item $R$非传递$\Leftrightarrow \exists x \exists y \exists z (x \in A \land y \in A \land z \in A \land xRy \land yRz \land \lnot xRz)$
+            \end{itemize}
+
+            \begin{center}
+              \includegraphics{resources/transivity.png}
+            \end{center}
+
+            定理 : 以下叙述等价
+            \begin{itemize}
+              \item $R$是传递的
+              \item $R \circ R \subseteq R \Leftrightarrow R\inverse$是传递的
+              \item $\forall i \forall j,M(R \circ R)(i,j) \leq M(R)(i,j)$
+              \item 在$G(R)$中,$\forall a_i \forall a_j \forall a_k$,若有有向边$\dependent{a_i,a_j}$和$\dependent{a_j,a_k}$,则必有有向边$\dependent{a_i,a_k}$
+            \end{itemize}
+            }
+    \end{itemize}
+
+    在$\mathNatureNumberCollection = \set{0,1,2,...}$上 : \begin{itemize}
+      \item $\leq = \set{\dependent{x,y} | x \in \mathNatureNumberCollection \land y \in \mathNatureNumberCollection \land x \leq y}$自反,反对称,传递
+      \item $\geq = \set{\dependent{x,y} | x \in \mathNatureNumberCollection \land y \in \mathNatureNumberCollection \land x \geq y}$自反,反对称,传递
+      \item $< = \set{\dependent{x,y} | x \in \mathNatureNumberCollection \land y \in \mathNatureNumberCollection \land x < y}$反自反,反对称,传递
+      \item $> = \set{\dependent{x,y} | x \in \mathNatureNumberCollection \land y \in \mathNatureNumberCollection \land x > y}$反自反,反对称,传递
+      \item $| = \set{\dependent{x,y} | x \in \mathNatureNumberCollection \land y \in \mathNatureNumberCollection \land x | y}$反对称,传递($\lnot 0 | 0$)
+      \item $I_N = \set{\dependent{x,y} | x \in \mathNatureNumberCollection \land y \in \mathNatureNumberCollection \land x = y}$自反,对称,反对称,传递
+      \item $E_N = \set{\dependent{x,y} | x \in \mathNatureNumberCollection \land y \in \mathNatureNumberCollection} = \mathNatureNumberCollection \times \mathNatureNumberCollection$自反,对称,传递
+    \end{itemize}
+  }%关系的性质结尾
 
 }%关系的表示与性质结尾
 

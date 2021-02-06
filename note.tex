@@ -22,6 +22,25 @@
 \usetikzlibrary{svg.path}
 \usetikzlibrary{positioning}
 \usetikzlibrary{intersections}
+\tikzset{strike through/.pic={\draw (-135:.5) -- (45:.5);},
+        shorten/.style={shorten <=#1, shorten >=#1},
+        every double arrows/.style={-latex, shorten=2mm},
+        double arrows split/.style={bend angle=#1},
+        double arrows split/.default={10},
+        double arrows/.style args={#1-#2}{%
+                        insert path={(#1) edge[bend right,draw=none] coordinate[at start](#1-b) coordinate[at end](#2-b) (#2)%
+                                          edge[bend left,draw=none] coordinate[at start](#1-t) coordinate[at end](#2-t) (#2)
+                                    }
+        },
+        pics/double arrows/.style args={#1-#2}{%
+                        code={%
+                              \begin{scope}[double arrows split]
+                              \draw[double arrows={#1-#2}, every double arrows] (#1-t) -- (#2-t);%
+                              \draw[every double arrows] (#2-b) -- (#1-b);%
+                              \end{scope}
+                              }
+        }%
+}
 
 \geometry{left=1cm,right=1cm,top=3cm,bottom=3cm}
 \title{db的日常笔记}
@@ -156,6 +175,11 @@
       }
     
       \newcommand{\tikzPlaceDot}[1]{\draw[fill = black] #1 circle (1pt)}
+      \newcommand{\tikzPlaceNode}[3]{\node[draw,circle] (#1) at #2 {#3}}
+        \newcommand{\tikzPlaceShiftLeftRightArrow}[2]{
+          \draw[>=latex,->] ([yshift= 5pt] #1.east) -- ([yshift= 5pt] #2.west);
+          \draw[>=latex,<-] ([yshift=-5pt] #1.east) -- ([yshift=-5pt] #2.west);
+        }
       
       \DeclareMathOperator{\arccot}{arccot}
       \DeclareMathOperator{\arcsec}{arcsec}

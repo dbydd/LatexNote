@@ -535,13 +535,43 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
   定积分有以下性质:
   \begin{enumerate}
     \item $\definiteIntegral{a}{b}\defFunction{x}dx = -\definiteIntegral{b}{a}\defFunction{x}dx$即:交换上下限积分结果正负改变.
-    \item $a < b < c; \definiteIntegral{b}{a}\defFunction{x}dx = \definiteIntegral{b}{a}\defFunction{x}dx + \definiteIntegral{c}{b}\defFunction{x}dx$,
+    \item {
+          $a < b < c; \definiteIntegral{b}{a}\defFunction{x}dx = \definiteIntegral{b}{a}\defFunction{x}dx + \definiteIntegral{c}{b}\defFunction{x}dx$,
 
           且$\definiteIntegral{b}{a}\defFunction{x}dx = \definiteIntegral{c}{a}\defFunction{x}dx - \definiteIntegral{c}{b}\defFunction{x}dx = \definiteIntegral{c}{a}\defFunction{x}dx + \definiteIntegral{b}{c}\defFunction{x}dx$
+          }
     \item $\defFunction{x} \leq g(x); \definiteIntegral{b}{a}\defFunction{x}dx \leq \definiteIntegral{b}{a}g(x)dx\ (a \leq b)$
     \item $|\definiteIntegral{b}{a}\defFunction{x}dx|\leq\definiteIntegral{b}{a}|\defFunction{x}|dx$
+    \item {
+          当被积函数是奇函数,且积分区间关于原点对称时,积分值为0,即 : $$
+            \forall_{f(x) = -f(-x)}\bigCase{\definiteIntegral{a}{-a}f(x)dx = 0}
+          $$
+          }
+    \item {
+          当被积函数是偶函数,且积分区间关于原点对称时 : $$
+            \forall_{f(x) = f(-x)}\bigCase{\definiteIntegral{a}{-a}f(x)dx = 2\definiteIntegral{a}{0}f(x)dx}
+          $$
+          }
   \end{enumerate}
 }%性质结尾
+
+\subsection{现成公式}{
+  \begin{enumerate}
+    \item {
+          $\definiteIntegral{a}{0}\sqrt{a^2 - x^2}dx = \cfrac{\pi}{4}a^2$
+
+          此公式来源于定积分的几何意义,积分中的公式可以写成圆的方程 : $$
+            x^2 + y^2 < a^2
+          $$
+
+          当$a = 1$时,$\definiteIntegral{1}{0}\sqrt{1 -x^2}dx$,所求得的就是单位圆在第一象限的面积,即$\cfrac{\pi}{4}$
+
+          同理,$\definiteIntegral{a}{0}\sqrt{2ax - x^2}dx = \cfrac{\pi}{4}a^2$
+
+          此被积函数可化为一个偏心圆.
+          }
+  \end{enumerate}
+}%现成公式结尾
 
 \subsection{定积分换元法}{
   \subsubsection{定积分第一类换元积分法}{
@@ -2633,10 +2663,10 @@ $$
           上述两个公式在$\absoluteValue{x} < 1$时成立
           }
     \item{
-          公式3从$0$到$x$求定积分 : $\definiteIntegral{x}{0}\cfrac{1}{1 - x}dx = \ln(1 - x),\definiteIntegral{x}{0}\cfrac{1}{1 + x}dx = \ln(1 + x)$ :
+          公式3从$0$到$x$求定积分 : $\definiteIntegral{x}{0}\cfrac{1}{1 - x}dx = -\ln(1 - x),\definiteIntegral{x}{0}\cfrac{1}{1 + x}dx = \ln(1 + x)$ :
 
           $$
-            \ln(1 - x) = -x - \cfrac{x^2}{2} - \cfrac{x^3}{3} - \dots - \cfrac{x^n}{n} - \dots
+            -\ln(1 - x) = -x - \cfrac{x^2}{2} - \cfrac{x^3}{3} - \dots - \cfrac{x^n}{n} - \dots
           $$
 
           $$
@@ -2691,11 +2721,11 @@ $$
 \subsection{运算示例}{
   \begin{enumerate}
     \item {
-          将$e^{\cfrac{x}{2}}$展开 :
+          将$e^{\frac{x}{2}}$展开 :
 
           将$x$换成$\cfrac{x}{2}$,即 :
           $$
-            e^{\cfrac{x}{2}} = 1 + \cfrac{x}{2} + \cfrac{x^2}{2!2^2} + \cfrac{x^3}{3!3^2} + \dots + \cfrac{x^n}{n!n^2}
+            e^{\frac{x}{2}} = 1 + \cfrac{x}{2} + \cfrac{x^2}{2!2^2} + \cfrac{x^3}{3!3^2} + \dots + \cfrac{x^n}{n!n^2}
           $$
           }
     \item {

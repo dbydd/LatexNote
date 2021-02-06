@@ -346,154 +346,222 @@ $$
 
 \section{数列极限}{
 
-  \subsection{实数系的连续性}{
+\subsection{实数系的连续性}{
 
-      \subsubsection{引入}{
-          一切都得从实数系的诞生说起 :
+\subsubsection{引入}{
+    一切都得从实数系的诞生说起 :
 
-          命题 : $\sqrt{2}$不是有理数.
+    命题 : $\sqrt{2}$不是有理数.
 
-          \begin{center}
-              \begin{tikzpicture}
-                  \draw (0,0) -- (0,2) --node[above]{$1$} (2,2) -- node[right]{$1$} (2,0) -- cycle;
-                  \draw[red] (0,0) --node[right]{$\sqrt{2}$} (2,2);
-              \end{tikzpicture}
-          \end{center}
+    \begin{center}
+        \begin{tikzpicture}
+            \draw (0,0) -- (0,2) --node[above]{$1$} (2,2) -- node[right]{$1$} (2,0) -- cycle;
+            \draw[red] (0,0) --node[right]{$\sqrt{2}$} (2,2);
+        \end{tikzpicture}
+    \end{center}
 
-          使用反证法
+    使用反证法
 
-          如果$\sqrt{2}$不是有理数,设其为有理数,即 : $$
-              \sqrt{2} = \cfrac{n}{m}
-          $$
+    如果$\sqrt{2}$不是有理数,设其为有理数,即 : $$
+        \sqrt{2} = \cfrac{n}{m}
+    $$
 
-          其中$n,m \in \mathNatureNumberCollection^+$且互质.
+    其中$n,m \in \mathNatureNumberCollection^+$且互质.
 
-          那么$2 = \cfrac{n^2}{m^2}$,即$n^2 = 2m^2$
+    那么$2 = \cfrac{n^2}{m^2}$,即$n^2 = 2m^2$
 
-          则$n$是偶数.令$n = 2k$,则$m^2 = 2k^2$,因此$m$也是偶数,矛盾,得证.
+    则$n$是偶数.令$n = 2k$,则$m^2 = 2k^2$,因此$m$也是偶数,矛盾,得证.
 
-          \qed
+    \qed
 
-          换句话来说,在有理数上开根号不封闭,因此需要扩展数系.
+    换句话来说,在有理数上开根号不封闭,因此需要扩展数系.
 
-          从几何上看是这样的 :
+    从几何上看是这样的 :
 
-          \begin{center}
-              \begin{tikzpicture}% table%\begin{}[]%\addplot table[] {};%\end{}%\end{}
-                  \draw[-latex] (0,0) -- (6,0) node[right]{$x$};
-                  \foreach \i in {-3,...,2}{
-                          \draw (\i + 3,-0.1) node[below]{$\i$} -- (\i + 3,0.1);
-                      }
-              \end{tikzpicture}
-          \end{center}
+    \begin{center}
+        \begin{tikzpicture}% table%\begin{}[]%\addplot table[] {};%\end{}%\end{}
+            \draw[-latex] (0,0) -- (6,0) node[right]{$x$};
+            \foreach \i in {-3,...,2}{
+                    \draw (\i + 3,-0.1) node[below]{$\i$} -- (\i + 3,0.1);
+                }
+        \end{tikzpicture}
+    \end{center}
 
-          \begin{itemize}
-              \item {
-                    $\mathIntegerCollection$ :
+    \begin{itemize}
+        \item {
+              $\mathIntegerCollection$ :
 
-                    整数集上每一个数都对应其上的一个点,每两个点之间总有距离,点与点之间距离至少为1.称这一性质为\textcolor{red}{离散性}.
+              整数集上每一个数都对应其上的一个点,每两个点之间总有距离,点与点之间距离至少为1.称这一性质为\textcolor{red}{离散性}.
 
-                    因此可以说 : 整数集合具有集散性.
-                    }
-              \item {
-                    $\mathRationalNumberCollection$ :
+              因此可以说 : 整数集合具有集散性.
+              }
+        \item {
+              $\mathRationalNumberCollection$ :
 
-                    有理数集合种每一个元素都可以在数轴上找到一个点与他对应,而且有理数很多,多到无法找到一个小区间,使得这个小区间内没有有理数.将这种性质称为\textcolor{red}{稠密性}.
+              有理数集合种每一个元素都可以在数轴上找到一个点与他对应,而且有理数很多,多到无法找到一个小区间,使得这个小区间内没有有理数.将这种性质称为\textcolor{red}{稠密性}.
 
-                    因此可以说 : 有理数集合具有稠密性.
-                    }
-              \item {
-                    $\mathRealNumberCollection$
+              因此可以说 : 有理数集合具有稠密性.
+              }
+        \item {
+              $\mathRealNumberCollection$
 
-                    长期以来人们一直只认识有理数,直到公元200年前的古希腊 :
+              长期以来人们一直只认识有理数,直到公元200年前的古希腊 :
 
-                    \begin{center}
-                        \begin{tikzpicture}
-                            \draw[-latex] (0,0) -- (6,0) node[right]{$x$};
-                            \foreach \i in {-3,...,2}{
-                                    \draw (\i + 3,-0.1) node[below]{$\i$} -- (\i + 3,0.1);
-                                }
-                            \draw (3,0) rectangle (4,1);
-                            \draw[dashed,red] (3,0) -- (4,1);
-                            \draw[dashed,green] (4,1) arc (45:0:{sqrt(2)});
-                        \end{tikzpicture}
-                    \end{center}
+              \begin{center}
+                  \begin{tikzpicture}
+                      \draw[-latex] (0,0) -- (6,0) node[right]{$x$};
+                      \foreach \i in {-3,...,2}{
+                              \draw (\i + 3,-0.1) node[below]{$\i$} -- (\i + 3,0.1);
+                          }
+                      \draw (3,0) rectangle (4,1);
+                      \draw[dashed,red] (3,0) -- (4,1);
+                      \draw[dashed,green] (4,1) arc (45:0:{sqrt(2)});
+                  \end{tikzpicture}
+              \end{center}
 
-                    就这样,人们发现了一个在数轴上的点,对应的不是有理数.
+              就这样,人们发现了一个在数轴上的点,对应的不是有理数.
 
-                    换句话说,尽管有理数集合在数轴上有稠密性,但是有空隙.
+              换句话说,尽管有理数集合在数轴上有稠密性,但是有空隙.
 
-                    于是又扩展了数系,将无限不循环小数(即无理数)加进了有理数系,就这样出现了实数集合$\mathRealNumberCollection$,自此运算又封闭了.
+              于是又扩展了数系,将无限不循环小数(即无理数)加进了有理数系,就这样出现了实数集合$\mathRealNumberCollection$,自此运算又封闭了.
 
-                    因此实数是有理数集合和有理数集合的并,即 : $$
-                        \mathRealNumberCollection = \set{x | x \in \mathRationalNumberCollection \lor x\mbox{是无理数}}
-                    $$
+              因此实数是有理数集合和有理数集合的并,即 : $$
+                  \mathRealNumberCollection = \set{x | x \in \mathRationalNumberCollection \lor x\mbox{是无理数}}
+              $$
 
-                    引入的无理数填满了数轴上的空隙,现在数轴上每一个点都与实数集合中的一个元素对应,换句话来说: 实数集合布满了整个数轴,不留任何空隙.称这一性质为\textcolor{red}{连续性}.
+              引入的无理数填满了数轴上的空隙,现在数轴上每一个点都与实数集合中的一个元素对应,换句话来说: 实数集合布满了整个数轴,不留任何空隙.称这一性质为\textcolor{red}{连续性}.
 
-                    即 : 实数的连续性.
+              即 : 实数的连续性.
 
-                    实数集合有时候又被称为实数连续统.
-                    }
-          \end{itemize}
-      }%引入结尾
+              实数集合有时候又被称为实数连续统.
+              }
+    \end{itemize}
+}%引入结尾
 
-      \subsubsection{最大数与最小数}{
-          首先提出以下概念 : 最大数与最小数.
+\subsubsection{最大数与最小数}{
+    首先提出以下概念 : 最大数与最小数.
 
-          $S \subset \mathRealNumberCollection,\ S \neq \emptyset$,如果$S$是有限集,则$S$必有最大数和最小数.
+    $S \subset \mathRealNumberCollection,\ S \neq \emptyset$,如果$S$是有限集,则$S$必有最大数和最小数.
 
-          但是如果$S$是无限集,则$S$不一定有最大数与最小数.
+    但是如果$S$是无限集,则$S$不一定有最大数与最小数.
 
-          \begin{itemize}
-              \item 如果$\exists \xi \in S$,使得$\forall x \in S$,有$x \leq \xi$,则称$\xi$是$S$中的最大数,记为$\xi = \max S$
-              \item 如果$\exists \eta \in S$,使得$\forall x \in S$,有$x \geq \eta$,则称$\eta$是$S$中的最小数,记为$\eta = \min S$
-              \item 显然,有限数集合一定有最大数和最小数.
-              \item 但是无限数集合则不一定.
-          \end{itemize}
-      }%最大数与最小数结尾
+    \begin{itemize}
+        \item 如果$\exists \xi \in S$,使得$\forall x \in S$,有$x \leq \xi$,则称$\xi$是$S$中的最大数,记为$\xi = \max S$
+        \item 如果$\exists \eta \in S$,使得$\forall x \in S$,有$x \geq \eta$,则称$\eta$是$S$中的最小数,记为$\eta = \min S$
+        \item 显然,有限数集合一定有最大数和最小数.
+        \item 但是无限数集合则不一定.
+    \end{itemize}
+}%最大数与最小数结尾
 
-      \subsubsection{上确界与下确界}{
-          \begin{itemize}
-              \item {
-                    上界 :
+\subsubsection{上确界与下确界}{
+    \begin{itemize}
+        \item {
+              上界 :
 
-                    \begin{itemize}
-                        \item 设$S \subset \mathRealNumberCollection,\ S \neq \emptyset$,如果$\exists M \in \mathRealNumberCollection$,使得$\forall x \in S$,有$x \leq M$,则称$M$是$S$的一个上界,或称$S$有上界.
-                        \item 设$U$是$S$上界的集合,则$U$没有最大数,但$U$必定有最小数.
-                        \item $U$中的最小数记为$\beta = sup S$,称为$S$的上确界(supremum).
-                        \item {
-                              \(
-                              \beta : \begin{cases}
-                                  \beta\mbox{是上界,即 : }\forall x \in S(x \leq \beta) \\
-                                  \beta\mbox{是最小上界,即 : }\forall \epsilon > 0 \exists x \in S (x > \beta - \epsilon)
-                              \end{cases}
-                              \)
-                              }
-                    \end{itemize}
-                    }
-              \item {
-                    下界 :
+              \begin{itemize}
+                  \item 设$S \subset \mathRealNumberCollection,\ S \neq \emptyset$,如果$\exists M \in \mathRealNumberCollection$,使得$\forall x \in S$,有$x \leq M$,则称$M$是$S$的一个上界,或称$S$有上界.
+                  \item 设$U$是$S$上界的集合,则$U$没有最大数,但$U$必定有最小数.
+                  \item $U$中的最小数记为$\beta = sup S$,称为$S$的上确界(supremum).
+                  \item {
+                        \(
+                        \beta : \begin{cases}
+                            \beta\mbox{是上界,即 : }\forall x \in S(x \leq \beta) \\
+                            \beta\mbox{是最小上界,即 : }\forall \epsilon > 0 \exists x \in S (x > \beta - \epsilon)
+                        \end{cases}
+                        \)
+                        }
+              \end{itemize}
+              }
+        \item {
+              下界 :
 
-                    \begin{itemize}
-                        \item 设$S \subset \mathRealNumberCollection,\ S \neq \emptyset$,如果$\exists m \in \mathRealNumberCollection$,使得$\forall x \in S$,有$x \geq m$,则称$m$是$S$的一个下界,或称$S$有上界.
-                        \item 设$L$是$S$下界的集合,则$L$没有最小数,但$L$必定有最大数.
-                        \item $L$中的最大数记为$\alpha = inf S$,称为$S$的下确界(infimum).
-                        \item {
-                              \(
-                              \alpha : \begin{cases}
-                                  \alpha\mbox{是下界,即 : }\forall x \in S(x \geq \alpha) \\
-                                  \alpha\mbox{是最大下界,即 : }\forall \epsilon > 0 \exists x \in S (x < \alpha + \epsilon)
-                              \end{cases}
-                              \)
-                              }
-                    \end{itemize}
-                    }
-          \end{itemize}
-      }%上确界与下确界结尾
+              \begin{itemize}
+                  \item 设$S \subset \mathRealNumberCollection,\ S \neq \emptyset$,如果$\exists m \in \mathRealNumberCollection$,使得$\forall x \in S$,有$x \geq m$,则称$m$是$S$的一个下界,或称$S$有上界.
+                  \item 设$L$是$S$下界的集合,则$L$没有最小数,但$L$必定有最大数.
+                  \item $L$中的最大数记为$\alpha = inf S$,称为$S$的下确界(infimum).
+                  \item {
+                        \(
+                        \alpha : \begin{cases}
+                            \alpha\mbox{是下界,即 : }\forall x \in S(x \geq \alpha) \\
+                            \alpha\mbox{是最大下界,即 : }\forall \epsilon > 0 \exists x \in S (x < \alpha + \epsilon)
+                        \end{cases}
+                        \)
+                        }
+              \end{itemize}
+              }
+    \end{itemize}
+}%上确界与下确界结尾
 
-  }%实数系的连续性
+\subsubsection{确界存在定理(实数系连续性定理)}{
+\begin{itemize}
+    \item 非空有上界的数集必有上确界.
+    \item 非空有下界的子集必有下确界.
+\end{itemize}
 
- }%数列极限结尾
+证明 : $$
+    \forall_{x \in \mathRealNumberCollection} (x = [x] + (x))
+$$
+
+$$
+    (x) = 0.a_1 a_2 \dots a_n \dots
+$$
+说明 :
+\begin{itemize}
+    \item 将$(x)$写成无限小数表示
+    \item 如果是有限小数,那么后面加一列0.
+    \item $0.a_1a_2 \dots a_p 000\dots\ (a_p \neq 0)$可以写成$0.a_1a_2 \dots (a_p-1)999\dots$,这两者等价$(1 = 0.99999\dots)$,但是一般使用前者的形式表示
+\end{itemize}
+
+设$S \subset \mathRealNumberCollection,S \neq \emptyset,$有上界,$S$可以表示成为 : $$
+    S = \set{a_0 + a_1a_2 \dots a_n \dots | a_0 = [x],0.a_1a_2 \dots a_n \dots = (x),x \in S}
+$$
+\begin{enumerate}
+    \item $S$有上界,取$S$中所有$a_0$的最大值,记为$\alpha_0$
+    \item 作$S_0 = \set{x | x \in S \land [x] = \alpha_0}$,则$x \in S \land x \notin S \Rightarrow x < \alpha_0$
+    \item 取$S_0$中$x$的小数表示中第1位小数的最大者为$\alpha_1$.
+    \item 作$S_1 = \set{x | x \in S_1 \land x\mbox{的第一位小数为}\alpha_1}$,则$x \in S \land x \notin S_1 \Rightarrow x < \alpha_0 + 0.\alpha_1$
+    \item 一般的,取$S_{n - 1}$中$x$的小数表示中第$n$位的最大者为$\alpha_n$
+    \item 那么$S_n = \set{x | x \in S_{n - 1} \land x\mbox{的小数第$n$位为}\alpha_n}$,则$x \in S \land x \notin S_n \Rightarrow x < \alpha_0 + 0.\alpha_1\alpha_2 \dots \alpha_n \dots$
+    \item \begin{enumerate}
+              \item 得到了一串集合$S \supset S_0 \supset S_1 \supset S_2 \supset \dots \supset S_N \supset \dots$
+              \item $\alpha_0 \in \mathIntegerCollection,\alpha_n(\alpha_1,\alpha_2,\dots,\alpha_n,\dots) \in \set{0,1,2,\dots,9}$
+          \end{enumerate}
+    \item 令$\beta = a_0 + 0.\alpha_1\alpha_2 \dots \alpha_n \dots$
+    \item {
+          \begin{proof}
+              $\beta$是$S$的上确界 :
+
+              \begin{enumerate}
+                  \item $\beta$是$S$的上界 : \begin{enumerate}
+                            \item $\forall x \in S$,或者$\exists n_0(x \notin S_{n_0})$,或者$\forall_{n \in \mathNatureNumberCollection}(x \in S_n)$
+                            \item 若为前一种情况,则$x < \alpha_0 + 0.\alpha_1\alpha_2 \dots \alpha_n \leq \beta$
+                            \item 若为后一种情况,则考虑$[x]$与$(x)$的每一位小数.发现$x = \beta$
+                            \item 因此$\beta$是$S$的上界.
+                        \end{enumerate}
+                  \item $\beta$是最小上界,换句话来说 : $\forall \epsilon > 0,\beta - \epsilon$不是上界. : \begin{enumerate}
+                            \item 可取$n_0 \in \mathIntegerCollection$,使$\cfrac{1}{10^{n_0}} < \epsilon$
+                            \item 取$x \in S_{n_0}$,$[x] = \alpha_0$,前$n_0$位小数为$\alpha_1,\alpha_2,\alpha_{n_0}$
+                            \item $\beta - x \leq \cfrac{1}{10^{n_0}} < \epsilon \Rightarrow x > \beta - \epsilon$
+                            \item 因此$\beta$是$S$的上确界.下确界同理.
+                        \end{enumerate}
+              \end{enumerate}
+          \end{proof}
+          }
+\end{enumerate}
+
+此定理反映了实数系的连续性 :
+
+假设数轴上存在一点为空隙,这一点既不是有理数也不是无理数,那么这个空隙左边的实数没有上确界,右边的实数没有下确界.
+
+因此被称为实数系连续性存在定理.
+
+$$
+    \cfrac{n^2}{m^2} + \cfrac{2nr}{m} + r^2 - 2 = \cfrac{2n}{m} + r^2 - t < 0
+$$
+}%确界存在定理结尾
+
+}%实数系的连续性
+
+}%数列极限结尾
 
 }%数学分析结尾
