@@ -73,63 +73,63 @@
     \end{itemize}
   }%渐近线结尾
 
-  \subsection{数列极限相关}{
+  % \subsection{数列极限相关}{
 
-    注:本章内容可用于级数.
+  %   注:本章内容可用于级数.
 
-    注:数列不是级数,级数需要求和数列不用.
+  %   注:数列不是级数,级数需要求和数列不用.
 
-    \subsubsection{数列}{
-      若函数$f$的定义域为全体正整数集合$\mathNatureNumberCollection^n$,则称
-      $$
-        f : \mathNatureNumberCollection^+ \to \mathRealNumberCollection,\defFunction{n} \ (n \in \mathNatureNumberCollection^+)
-      $$
+  %   \subsubsection{数列}{
+  %     若函数$f$的定义域为全体正整数集合$\mathNatureNumberCollection^n$,则称
+  %     $$
+  %       f : \mathNatureNumberCollection^+ \to \mathRealNumberCollection,\defFunction{n} \ (n \in \mathNatureNumberCollection^+)
+  %     $$
 
-      为数列.因正整数集$\mathNatureNumberCollection^+$的元素可按由小到大的顺序排列,所以数列$\defFunction{n}$也可以写作 :
-      $$
-        a_1,a_2,a_3,\dots,a_n,\dots,
-      $$
+  %     为数列.因正整数集$\mathNatureNumberCollection^+$的元素可按由小到大的顺序排列,所以数列$\defFunction{n}$也可以写作 :
+  %     $$
+  %       a_1,a_2,a_3,\dots,a_n,\dots,
+  %     $$
 
-      或者可以简记为${a_n}$,其中$a_n$称为该数列的通项.
-    }%数列结尾
+  %     或者可以简记为${a_n}$,其中$a_n$称为该数列的通项.
+  %   }%数列结尾
 
-    \subsubsection{数列极限}{
-      设数列${a_n}$,存在$a_0$,若对于任意给定的正数$\epsilon$,总存在正整数$N$,使得当$n > N$时由
-      $$
-        \absoluteValue{a_n - a} < \epsilon
-      $$
+  %   \subsubsection{数列极限}{
+  %     设数列${a_n}$,存在$a_0$,若对于任意给定的正数$\epsilon$,总存在正整数$N$,使得当$n > N$时由
+  %     $$
+  %       \absoluteValue{a_n - a} < \epsilon
+  %     $$
 
-      则称数列${a_n}$收敛于$a,a$称为数列$a_n$的极限,记作
-      $$
-        \limNormal{n \to \infty}a_n = a
-      $$
+  %     则称数列${a_n}$收敛于$a,a$称为数列$a_n$的极限,记作
+  %     $$
+  %       \limNormal{n \to \infty}a_n = a
+  %     $$
 
-      若数列${a_n}$没有极限,则称${a_n}$不收敛,或者称${a_n}$发散.
+  %     若数列${a_n}$没有极限,则称${a_n}$不收敛,或者称${a_n}$发散.
 
-      此定义等价于 : 任给$\epsilon > 0$,若在$(a - \epsilon,a + \epsilon)$之外数列${a_n}$中的项至多只有有限个,则称数列${a_n}$收敛域极限$a$.
-    }%数列极限结尾
+  %     此定义等价于 : 任给$\epsilon > 0$,若在$(a - \epsilon,a + \epsilon)$之外数列${a_n}$中的项至多只有有限个,则称数列${a_n}$收敛域极限$a$.
+  %   }%数列极限结尾
 
-    \subsubsection{O'Stolz(stolz)定理}{
-      设$(a_n)_{n > 1}$和$(b_n)_{n > 1}$为两个实数数列.若$b_n$为从某项开始严格单调的无界正数数列,且有穷极限
-      $$
-        \limNormal{n \to \infty}\cfrac{a_{n + 1} - a_n}{b_{n + 1} - b_n} = L
-      $$
+  %   \subsubsection{O'Stolz(stolz)定理}{
+  %     设$(a_n)_{n > 1}$和$(b_n)_{n > 1}$为两个实数数列.若$b_n$为从某项开始严格单调的无界正数数列,且有穷极限
+  %     $$
+  %       \limNormal{n \to \infty}\cfrac{a_{n + 1} - a_n}{b_{n + 1} - b_n} = L
+  %     $$
 
-      存在,则 :
-      $$
-        \limNormal{n \to \infty}\cfrac{a_n}{b_n} = L
-      $$
+  %     存在,则 :
+  %     $$
+  %       \limNormal{n \to \infty}\cfrac{a_n}{b_n} = L
+  %     $$
 
-      其中$L$可以为有限实数或正/负无穷.
+  %     其中$L$可以为有限实数或正/负无穷.
 
-      该定理虽然主要被用于处理数列不定型极限,但该定理再没有$\limNormal{n \to \infty}a_n = \infty$这一条件时也是成立的.虽然该定理通常是以分布$b_n$为正数数列的情形加以叙述的,但注意到该定理对分子$a_n$的正负没有限制,所以原则上把对数列$b_n$的限制条i按替换为"严格单调递减且趋于负无穷大"也是没问题的.
+  %     该定理虽然主要被用于处理数列不定型极限,但该定理再没有$\limNormal{n \to \infty}a_n = \infty$这一条件时也是成立的.虽然该定理通常是以分布$b_n$为正数数列的情形加以叙述的,但注意到该定理对分子$a_n$的正负没有限制,所以原则上把对数列$b_n$的限制条i按替换为"严格单调递减且趋于负无穷大"也是没问题的.
 
-      与洛必达的迭代用法类似,在尝试使用此定理考察数列极限时,如果发现两个数列差分的商任然是不定型,那么可以继续用.
+  %     与洛必达的迭代用法类似,在尝试使用此定理考察数列极限时,如果发现两个数列差分的商任然是不定型,那么可以继续用.
 
-      注意 : 与洛必达类似,判定条件不存在不能认定极限本身不存在.
-    }%O'Stolz(stolz)定理结尾
+  %     注意 : 与洛必达类似,判定条件不存在不能认定极限本身不存在.
+  %   }%O'Stolz(stolz)定理结尾
 
-  }%数列极限相关结尾
+  % }%数列极限相关结尾
 
  }%极限结尾
 

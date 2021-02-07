@@ -560,7 +560,203 @@ $$
 $$
 }%确界存在定理结尾
 
+\subsubsection{Dedekind切割定理}{
+    \begin{itemize}
+        \item 事实上实数连续性有多种等价的叙述方式,其中之一就是从有理数集的稠密性出发,使用Dedekind切割定理.
+        \item 此定理是以有理数集$Q$的切割为基础导出无理数定义,进而定义整个实数系的.
+    \end{itemize}
+
+    \begin{itemize}
+        \item {
+              定义1 : 设两个非空有理数集合$A$和$B$满足以下条件 : $Q$ = $A \unionSet B$.且对任意的$a \in A$与$b \in B$,成立$a < b$,则称$A$和$B$构成$Q$的一个切割,记为$A/B$.
+
+              从逻辑上讲,对有理数集合$Q$的任何切割$A/B$,下述情况有且仅有一种出现 : \begin{enumerate}
+                  \item 集合$A$有最大数$a_0$,集合$B$没有最小数.
+                  \item 集合$A$没有最大数,集合$B$有最小数$b_0$
+                  \item 集合$A$没有最大数,集合$B$没有最小数.
+                  \item 集合$A$有最大数,集合$B$有最小数.
+              \end{enumerate}
+
+              但情况$4$是不可能发生的.因为根据切割的定理,可知$a_0 < b_0$.而$\cfrac{a_0 + b_0}{2}$显然也是$Q$中的有理数,由$a_0 < \cfrac{a_0 +b_0}{2} < b_0$,即得到$\cfrac{a_0 + b_0}{2}$既不属于$A$也不属于$B$,这就与$Q = A \unionSet B$产生矛盾.
+
+              对于情况$1$,称切割$A/B$确定了有理数$a_0$,对于情况$2$,称切割$A/B$确定了有理数$b_0$,而对情况$3$,由于$A/B$没有确定任何有理数,即$A$与$B$之间存在一个空隙,因此有必要引进一个新的数(即无理数)作为这一切割的确定对象,并且构成了实数集$\mathRealNumberCollection$.
+
+              引入了后就可以保证对实数集的任意切割都不会出现空隙了.
+              }
+    \end{itemize}
+
+    \paragraph{Dedekind切割定理的证明}{
+        Dedekind切割定理 : 设$\hat{A} / \hat{B}$是$\mathRealNumberCollection$的一个切割,$\hat{A},\hat{B}$在这里意思是非空,则或者$\hat{A}$有最大数,或者$\hat{B}$有最小数.
+
+        \begin{proof}
+            设$A$是$\hat{A}$中所有有理数所构成的集合,$B$是$\hat{B}$中所有有理数构成的集合,则$A/B$是有理数集合$Q$的一个切割.由前面所述,对于切割$A/B$,下述三种情况有且仅有一种出现 :
+            \begin{enumerate}
+                \item 集合$A$有最大数$a_0$,集合$B$没有最小数.
+                \item 集合$A$没有最大数,集合$B$有最小数$b_0$
+                \item 集合$A$没有最大数,集合$B$没有最小数.
+            \end{enumerate}
+
+            对情况1,可以证明此时$a_0$是集合$\hat{a}$的最大数,而集合$\hat{B}$没有最小数 :
+
+            用反证法.若有$\hat{a} \in \hat{A}$,成立$a_0 < \hat{a}$,则由有理数的稠密性,在区间$(a_0,\hat{a})$中必存在有理数$a_0$.由$a < \hat{a}$,可知$a \in A$,但$a > a_0$,与$a_0$就是$A$的最大数矛盾,说明$a_0$就是集合$\hat{A}$的最大数.
+
+            对于任意的$\hat{b} \in \hat{B}$,因为$a_0 < \hat{b}$,于是在区间$(a_0,\hat{b})$中必存在有理数$b$.由$a_0 < b$,可知$b \in \hat{B}$,但是$b < \hat{b}$,这说明$\hat{B}$没有最小数.
+
+            对于情况2,可类似证明此时$b_0$也是集合$\hat{b}$的最小数,而集合$\hat{A}$没有最大数.
+
+            对于情况3,切割$A/B$确定一个无理数,将该无理数记为$c$,则对任意$a \in A$与任意$b \in B$,成立$a < c < b$.
+
+            因为无理数$c \in \mathRealNumberCollection = \hat{A} \unionSet \hat{B}$,所以只有两种可能 : 或者$c \in \hat{A}$,或者$c \in \hat{B}$.若$c \in \hat{A}$,则$c$必是$\hat{A}$的最大数.若不是则存在$\hat{a} \in \hat{A}$,成立$c < \hat{A}$,在区间$(c,\hat{a})$中取有理数$a$,由$a < \hat{a}$,可知$a \in A$,但由$c < a$,又可知$a \in B$,这就产生矛盾.
+
+            同理.若$c \in \hat{B}$,则$c$必是$\hat{B}$的最小数.
+
+            综合情况$123$,可知Dedekind定理成立.
+
+        \end{proof}
+    }%Dedekind切割定理的证明结尾
+
+}%Dedekind切割定理
+
 }%实数系的连续性
+
+\subsection{数列极限}{
+
+    注:本章内容可用于级数.
+
+    注:数列不是级数,级数需要求和数列不用.
+
+    \subsubsection{数列}{
+        若函数$f$的定义域为全体正整数集合$\mathNatureNumberCollection^n$,则称
+        $$
+            f : \mathNatureNumberCollection^+ \to \mathRealNumberCollection,\defFunction{n} \ (n \in \mathNatureNumberCollection^+)
+        $$
+
+        为数列.因正整数集$\mathNatureNumberCollection^+$的元素可按由小到大的顺序排列,所以数列$\defFunction{n}$也可以写作 :
+        $$
+            a_1,a_2,a_3,\dots,a_n,\dots,
+        $$
+
+        或者可以简记为${a_n}$,其中$a_n$称为该数列的通项.
+
+        以下为一些例子 : \begin{itemize}
+            \item $\set{\cfrac{1}{x}} : \cfrac{1}{1},\cfrac{1}{2},\cfrac{1}{3},\dots,\cfrac{1}{n},\dots$
+            \item $\set{\cfrac{n}{n + 3}} : \cfrac{1}{4},\cfrac{2}{5},\cfrac{3}{6},\dots,\cfrac{n}{n + 3},\dots$
+            \item $\set{n^2} : 1,4,9,\dots,n^2,\dots$
+            \item $\set{(-1)^n} : -1,1,-1,1,\dots,(-1)^n,\dots$
+        \end{itemize}
+
+        简而言之,所谓数列就是按照正整数编号的一串数
+
+        注意 : 与集合不同,数列允许重复,而且有顺序.
+    }%数列结尾
+
+    \subsubsection{邻域}{
+        $a$点的$\epsilon$邻域$O(a,\epsilon) = (a - \epsilon, a + \epsilon)$,用集合的写法可表示为 : $$
+            \set{x | x - \epsilon < x < x + \epsilon}
+        $$
+    }%邻域结尾
+
+    \subsubsection{数列极限的定义}{
+        设数列${x_n}$,存在$x_0$,若对于任意给定的$\epsilon > 0$,可以找到正整数$N$,使得当$n > N$时,有 : $$
+            \absoluteValue{x_n - a} < \epsilon (\mbox{或者等价的说,} x \in O(a,\epsilon))
+        $$
+
+        则称数列${x_n}$收敛于$a,a$称为数列$x_n$的极限,记作
+        $$
+            \limNormal{n \to \infty}x_n = a
+        $$
+
+        若不存在$a$,即数列${x_n}$没有极限,则称${x_n}$不收敛,或者称${x_n}$发散.
+
+        \begin{itemize}
+            \item 此定义等价于 : 任给$\epsilon > 0$,若在$O(a,\epsilon)$之外数列${x_n}$中的项至多只有有限个,则称数列${x_n}$收敛域极限$a$.
+            \item 由此定义可知,一个数列收敛的话,收敛于那个数,这与数列的前有限项无关,因此数列改动有限项不影响数列的收敛性和极限.
+            \item {
+                  $\cfrac{1}{n} : 1,\cfrac{1}{2},\dots$此数列以$0$为极限
+
+                  以零为极限的变量(此处的变量是数列)通常称为\textcolor{red}{无穷小量}.
+
+                  $$
+                      \limNormal{n \to \infty}x_n = a \Rightarrow \set{x_n - a}\mbox{是无穷小量}
+                  $$
+                  }
+        \end{itemize}
+    }%数列极限的定义结尾
+
+    \subsubsection{一些例题}{
+        \begin{enumerate}
+            \item {
+                  用定义证明$\set{\cfrac{n}{n + 3}}$的极限为1.
+
+                  \begin{proof}
+                      对任意给定的$\epsilon > 0$ : $$
+                          \absoluteValue{\cfrac{n}{n + 3} - 1} = \cfrac{3}{n + 3} < \epsilon \Leftrightarrow n > \cfrac{3}{\epsilon} - 3
+                      $$
+
+                      取$N = \mediumBigCase{\cfrac{3}{\epsilon}} + 1$,当$n > N$时,必定满足$$
+                          \absoluteValue{\cfrac{n}{n + 3} - 1} < \epsilon
+                      $$因此成立.
+
+                  \end{proof}
+                  }
+            \item {
+                  \begin{itemize}
+                      \item $\set{n^2} : 1,4,9,16,\dots$
+                      \item $\set{(-1)^n} : -1,1,-1,1,\dots$
+                  \end{itemize}
+
+                  根据定义,以上数列都是发散的.
+                  }
+            \item {
+                  $0 < \absoluteValue{q} < 1$,证明$\set{q^n}$是无穷小量.
+
+                  \begin{proof}
+                      对任意的$\epsilon > 0$ : $$
+                          \absoluteValue{q^n - 0} = \absoluteValue{q^n} < \epsilon
+                      $$
+                      $$
+                          \Leftrightarrow n\lg\absoluteValue{q} < \lg\epsilon \Leftrightarrow n > \cfrac{\lg \epsilon}{\lg\absoluteValue{q}}
+                      $$
+
+                      于是$N$只要取任意大于这玩意的正整数即可,取$N = max\bigCase{\mediumBigCase{\cfrac{\lg \epsilon}{\lg \absoluteValue{q}}},1}$当$n > N$时,$\absoluteValue{q^n - 0} = \absoluteValue{q^n} < \epsilon$
+
+                  \end{proof}
+
+                  注 : 根据对数列极限的定义的讨论,$N$取的太大没啥意义,可以只考虑绝对值很小的$\epsilon > 0$,不妨考虑任意给定的$0 < \epsilon < \absoluteValue{q}$.则$N$可取为$\mediumBigCase{\cfrac{\lg \epsilon}{\lg \absoluteValue{q}}}$,即$\mediumBigCase{\log_{\absoluteValue{q}}\epsilon}$,当$n > N$时,成立$\absoluteValue{q^n - 0} < \epsilon$
+                  }
+        \end{enumerate}
+
+        根据数列极限的定义来证明某一数列收敛,其关键是对任意给定的$\epsilon > 0$寻找正整数$N$.在上面的立体中,$N$都是通过解不等式$\absoluteValue{x_n - a} < \epsilon$来得出的.但在大多数情况下,这个不等式并不容易解.实际上,数列极限的定义并不要求取到最好的$N$,所以在证明中常常对$\absoluteValue{x_n - a}$适度的做一些放大处理,这是种常用的技巧.以下是一些例子,描述了怎么使用这个技巧 :
+        \begin{enumerate}
+            \item {
+                  证明$\limNormal{n \to \infty}\sqrt[n]{a} = 1,\ (a > 1)$
+
+                  % #TODO p10
+                  }
+        \end{enumerate}
+    }%一些例题结尾
+
+    \subsubsection{O'Stolz(stolz)定理}{
+        设$(a_n)(n > 1)$和$(b_n)(n > 1)$为两个实数数列.若$b_n$为从某项开始严格单调的无界正数数列,且有穷极限
+        $$
+            \limNormal{n \to \infty}\cfrac{a_{n + 1} - a_n}{b_{n + 1} - b_n} = L
+        $$
+
+        存在,则 :
+        $$
+            \limNormal{n \to \infty}\cfrac{a_n}{b_n} = L
+        $$
+
+        其中$L$可以为有限实数或正/负无穷.
+
+        该定理虽然主要被用于处理数列不定型极限,但该定理在没有$\limNormal{n \to \infty}a_n = \infty$这一条件时也是成立的.虽然该定理通常是以分布$b_n$为正数数列的情形加以叙述的,但注意到该定理对分子$a_n$的正负没有限制,所以原则上把对数列$b_n$的限制条件按替换为"严格单调递减且趋于负无穷大"也是没问题的.
+
+        与洛必达的迭代用法类似,在尝试使用此定理考察数列极限时,如果发现两个数列差分的商任然是不定型,那么可以继续用.
+
+        注意 : 与洛必达类似,判定条件不存在不能认定极限本身不存在.
+    }%O'Stolz(stolz)定理结尾
+
+}%数列极限结尾
 
 }%数列极限结尾
 
