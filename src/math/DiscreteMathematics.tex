@@ -1127,6 +1127,357 @@
 
 }%关系的表示与性质结尾
 
+\subsection{关系的幂运算和闭包}{
+
+  \subsubsection{关系的n次幂}{
+    \begin{itemize}
+      \item {
+            $R \subseteq A \times A,n \in \mathNatureNumberCollection$
+
+            $$
+              \begin{cases}
+                R^0 = I_A \\
+                R^{n + 1} = R^n \circ R\ (n \geq 0)
+              \end{cases}
+            $$
+            }
+      \item {
+            显然$R^n \subseteq A \times A,n \in \mathNatureNumberCollection$
+            }
+    \end{itemize}
+
+    $$
+      R^n = R \circ R \circ \dots \circ R\qquad(n\mbox{个}R)
+    $$
+
+  }%关系的n次幂结尾
+
+  \subsubsection{关系的幂运算的一些定理}{
+    设$R \subseteq A \times A,m,n \in \mathNatureNumberCollection$,则 : \begin{enumerate}
+      \item $R^m \circ R^n = R^{m + n}$
+      \item $(R^m)^n = R^{mn}$
+    \end{enumerate}
+
+    \begin{proof}
+      \begin{enumerate}
+        \item {
+              给定$m$,对$n$归纳 : $n = 0$时 : $$
+                R^m \circ R^n = R^m \circ R^0 = R^m \circ I_A = R^m = R^{m + 0}
+              $$
+
+              假设$R^m \circ R^n = R^{m + n}$,则 :
+              \begin{math}
+                R^m \circ R^{n + 1} \\
+                = R^m \circ (R^n \circ R^1) \\
+                = (R^m \circ R^n) \circ R^1 \\
+                = R^{m + n} \circ R \\
+                = R^{(m + n) + 1} \\
+                = R^{m + (n + 1)}
+              \end{math}
+              }
+        \item 可类似证明.
+      \end{enumerate}
+    \end{proof}
+
+    一言以蔽之,指数律对关系的幂运算也成立.
+  }%关系的幂运算的一些定理结尾
+
+  \subsubsection{幂运算举例}{
+    尚未参透tikz怎么玩,就先拿ppt糊一下.
+
+    \begin{center}
+      \includegraphics{resources/depend_power_example_1.png}
+      \includegraphics{resources/depend_power_example.png}
+    \end{center}
+  }
+
+  思考:这好像和隔壁教线代的GS老爷子的骚操作有点关系...
+}%关系的幂运算和闭包结尾
+
+\subsubsection{关系的闭包}{
+  在数学上,闭包的定义一般指的是这个意思 : 包含给定的一些元素,并且具有某种指定性质的最小集合称为 : 某些元素具有某性质的闭包.
+
+  所以闭包一般有三个性质 : \begin{enumerate}
+    \item 包含给定的元素
+    \item 具有给定的性质
+    \item 是最小的二元关系
+  \end{enumerate}
+
+  其中关系的闭包主要有以下三种 :
+
+  \begin{itemize}
+    \item 自反闭包$r(R)$ : 包含$R$,向$R$中加一些元素,使$R$自反.
+    \item 对称闭包$s(R)$ : 包含$R$,并且使$R$对称.
+    \item 传递闭包$t(R)$ : 包含$R$,并且使$R$构成传递的二元关系.
+  \end{itemize}
+}%关系的闭包
+
+\subsubsection{自反闭包}{
+  自反闭包$r(R)$有以下性质(定义也如下) : \begin{enumerate}
+    \item $R \subseteq r(R)$
+    \item $r(R)$是自反的
+    \item $\forall s ((R \subseteq S \land S\mbox{自反}) \to r(R) \subseteq S)$ 注 : 此条是所谓"最小的"的其中一种定义.
+  \end{enumerate}
+
+  \begin{center}
+    \includegraphics{resources/Reflexive_closure.png}
+  \end{center}
+}%自反闭包结尾
+
+\subsubsection{对称闭包}{
+  对称闭包有以下性质(定义也如下) : \begin{enumerate}
+    \item $R \subseteq s(R)$
+    \item $s(R)$是对称的
+    \item $\forall S ((R \subseteq S \land S\mbox{对称}) \to s(R) \subseteq S)$ 注 : 此条是所谓"最小的"的其中一种定义.
+  \end{enumerate}
+
+  \begin{center}
+    \includegraphics{resources/Symmetric_closure.png}
+  \end{center}
+}%对称闭包结尾
+
+\subsubsection{传递闭包}{
+  传递闭包有以下性质(定义也如下) : \begin{enumerate}
+    \item $R \subseteq t(R)$
+    \item $t(R)$是传递的
+    \item $\forall S ((R \subseteq S \land S\mbox{传递}) \to t(R) \subseteq S)$ 注 : 此条是所谓"最小的"的其中一种定义.
+  \end{enumerate}
+
+  \begin{center}
+    \includegraphics{resources/transivity_closure.png}
+  \end{center}
+}%传递闭包结尾
+
+\subsubsection{关于闭包的一些定理}{
+  \begin{enumerate}
+    \item {
+          设$R \subseteq A \times A$且$A \neq \emptyset$,则 : \begin{enumerate}
+            \item $R$自反$\Leftrightarrow r(R) = R$
+            \item $R$对称$\Leftrightarrow s(R) = R$
+            \item $R$传递$\Leftrightarrow t(R) = R$
+          \end{enumerate}
+          }
+    \item {
+          设$R_1 \subseteq R_2 \subseteq A \times A$且$A \neq \emptyset$,则 : \begin{enumerate}
+            \item $r(R_1) \subseteq r(R_2)$
+            \item $s(R_1) \subseteq s(R_2)$
+            \item $t(R_1) \subseteq t(R_2)$
+          \end{enumerate}
+          }
+    \item {
+          设$R_1,R_2\subseteq A \times A$且$A \neq \emptyset$,则 : \begin{enumerate}
+            \item $r(R_1 \unionSet R_2) = r(R_1) \unionSet r(R_2)$
+            \item $s(R_1 \unionSet R_2) = s(R_1) \unionSet s(R_2)$
+            \item $t(R_1 \unionSet R_2) \supseteq t(R_1) \unionSet t(R_2)$
+          \end{enumerate}
+          \begin{proof}
+            如下 :
+
+            \begin{enumerate}
+              \item {
+                    $R_1 \unionSet R_2 \subseteq r(R_1) \unionSet r(R_2) \subseteq r(R_1 \unionSet R_2)$
+
+                    又由$r(R_1) \unionSet r(R_2)$自反,所以$r(R_1 \unionSet R_2) \subseteq r(R_1) \unionSet r(R_2)$
+                    }
+              \item 可类似证明
+              \item $t(R_1) \unionSet t(R_2) \subseteq t(R_1 \unionSet R_2)$
+            \end{enumerate}
+          \end{proof}
+          注 : $t(R_1) \unionSet t(R_2)$不一定传递,反例如下 :
+
+          \begin{center}
+            \includegraphics{resources/transivity_closure_2.png}
+          \end{center}
+          }
+  \end{enumerate}
+}%关于闭包的一些定理结尾
+
+\subsubsection{闭包的求法}{
+  \begin{itemize}
+    \item 设$R \subseteq A \times A$且$A \neq \emptyset$,则 : \begin{itemize}
+            \item $r(R) = R \unionSet I_A$(图形表示就是给每个点加上环)
+            \item $s(R) = R \unionSet R\inverse$(图形表示就是给每个边加上反向的边)
+            \item $t(R) = R \unionSet R^2 \unionSet R^3 \unionSet \dots$(传递闭包)
+          \end{itemize}
+    \item 对比 : \begin{itemize}
+            \item $R$自反$\Leftrightarrow I_A \subseteq R$
+            \item $R$对称$\Leftrightarrow R = R\inverse$
+            \item $R$传递$\Leftrightarrow R^2 \subseteq R$
+          \end{itemize}
+  \end{itemize}
+
+  \begin{proof}
+    设$R \subseteq A \times A$且$A \neq \emptyset$,则 : \begin{itemize}
+      \item {
+            $r(R) = R \unionSet I_A$
+
+            证明如下 :\begin{enumerate}
+              \item $R \subseteq R \unionSet I_A$
+              \item $I_A \subseteq R \unionSet I_A \Leftrightarrow R \unionSet I_A$自反$\Rightarrow r(R) \subseteq R \unionSet I_A$
+              \item $R \subseteq r(R) \land r(R)$自反$\Rightarrow R \subseteq r(R) \land I_A \subseteq r(R) \Rightarrow R \unionSet I_A \subseteq r(R)$
+            \end{enumerate}
+            }
+      \item {
+            $s(R) = R \unionSet R\inverse$
+
+            证明如下 : \begin{enumerate}
+              \item $R \subseteq R \unionSet R\inverse$
+              \item $(R \unionSet R\inverse)\inverse = R \unionSet R\inverse \Leftarrow R \unionSet R\inverse$对称$\Rightarrow s(R) \subseteq R \unionSet R\inverse$
+              \item $R \subseteq s(R) \land R\inverse \subseteq s(R) \Rightarrow R \unionSet R\inverse \subseteq s(R)$
+            \end{enumerate}
+            }
+      \item {
+            $t(R) = R \unionSet R^2 \unionSet R^3 \unionSet \dots$
+
+            证明如下 : \begin{enumerate}
+              \item $R \subseteq R \unionSet R^2 \unionSet R^3 \unionSet \dots$
+              \item {
+                    \begin{itemize}
+                      \item[] $(R \unionSet R^2 \unionSet R^3 \unionSet \dots)^2$
+                      \item[$=$] $R^2 \unionSet R^3 \unionSet \dots \subseteq R \unionSet R^2 \unionSet R^3 \unionSet \dots$
+                      \item[$\Leftrightarrow$]这玩意传递
+                      \item[$\Rightarrow$] $t(R) \subseteq R \unionSet R^2 \unionSet R^3 \unionSet \dots$
+                    \end{itemize}
+                    }
+              \item {
+                    \begin{itemize}
+                      \item[] $R \subseteq t(R) \land t(R)$传递
+                      \item[$\Rightarrow$] $R \subseteq t(R) \land R^2 \subseteq t(R) \land R^3 \subseteq t(R) \land \dots$
+                      \item[$\Rightarrow$] $R \unionSet R^2 \unionSet R^3 \unionSet \dots \unionSet \subseteq t(R)$
+                    \end{itemize}
+
+                    推论 : 设$R \subseteq A \times A$且$0 < \absoluteValue{A} < \absoluteValue{\infty}$,则$\exists I \in \mathNatureNumberCollection$,使得$t(R) = R \unionSet R^2 \unionSet R^3 \unionSet \dots \unionSet R^I$
+                    }
+            \end{enumerate}
+            }
+    \end{itemize}
+  \end{proof}
+}%闭包的求法结尾
+
+\subsubsection{闭包运算与关系性质}{
+  下表表示闭包运算后原本的关系的性质是否保持 :
+
+  \begin{center}
+    \begin{tabular}{|c|c|c|c|}
+      \hline
+      ~      & 自反性 & 对称性 & 传递性 \\
+      \hline
+      $r(R)$ & yes    & yes    & yes    \\
+      \hline
+      $s(R)$ & yes    & yes    & no     \\
+      \hline
+      $t(R)$ & yes    & yes    & yes    \\
+      \hline
+    \end{tabular}
+  \end{center}
+
+  以下为证明 :
+
+  \begin{enumerate}
+    \item {
+          \begin{proof}
+            $R$自反$\Rightarrow s(R)$和$t(R)$自反
+
+            \begin{itemize}
+              \item $I_A \subseteq R \unionSet R\inverse = s(R) \Rightarrow s(R)$自反
+              \item $I_A \subseteq R \unionSet R^2 \unionSet R^3 \unionSet \dots t(R) \Rightarrow t(R)$自反
+            \end{itemize}
+          \end{proof}
+          }
+    \item {
+          \begin{proof}
+            $R$对称$\Rightarrow r(R)$和$t(R)$对称
+
+            \begin{itemize}
+              \item $r(R)\inverse = (I_A \unionSet R)\inverse = I_A\inverse \unionSet R\inverse = I_A \unionSet R\inverse = I_A \unionSet R = r(R) \Rightarrow r(R)$对称.
+              \item {
+                    \begin{itemize}
+                      \item[] $t(R)\inverse = (R \unionSet R^2 \unionSet R^3 \unionSet \dots)\inverse$
+                      \item[$=$] $R\inverse \unionSet (R^2)\inverse \unionSet (R^3)\inverse \unionSet \dots$
+                      \item[$=$] $R\inverse \unionSet (R\inverse)^2 \unionSet (R\inverse)^3 \unionSet \dots$
+                      \item[$=$] $R \unionSet R^2 \unionSet R^3 \unionSet \dots$
+                      \item[$=$] $t(R)$
+                      \item[$\Rightarrow$] $t(R)$对称.
+                    \end{itemize}
+                    }
+            \end{itemize}
+          \end{proof}
+          }
+    \item {
+          \begin{proof}
+            $R$传递$\Rightarrow r(R)$传递
+
+            \begin{itemize}
+              \item[] $r(R) \circ r(R) = (I_A \unionSet R) \circ (I_A \unionSet R)$
+              \item[$=$] $(I_A \circ I_A) \unionSet (I_A \circ R) \unionSet (R \circ I_A) \unionSet (R \circ R)$
+              \item[$\subseteq$] $I_A \unionSet R \unionSet R \unionSet R = I_A \unionSet R = r(R)$
+              \item[$\Rightarrow$] $r(R)$传递.
+            \end{itemize}
+          \end{proof}
+
+          注 : $R$传递$ \nRightarrow s(R)$传递,反例 :
+          \begin{center}
+            \begin{tikzpicture}
+              \tikzPlaceNode{a}{(-1,0)}{~};
+              \tikzPlaceNode{b}{(1,0)}{~};
+              \draw[very thick,->] (a) -- (b);
+            \end{tikzpicture}
+            \begin{tikzpicture}
+              \tikzPlaceNode{a}{(-1,0)}{~};
+              \tikzPlaceNode{b}{(1,0)}{~};
+              \tikzPlaceShiftLeftRightArrow{a}{b}
+            \end{tikzpicture}
+
+            $H(R)$ \qquad $G(s(R))$
+          \end{center}
+          }
+  \end{enumerate}
+}%闭包运算与关系性质结尾
+
+\subsubsection{闭包运算与关系性质相关定理}{
+  \begin{itemize}
+    \item {
+          设$R \subseteq A \times A$且$A \neq \emptyset$,则 : \begin{enumerate}
+            \item $rs(R) = sr(R)$
+            \item $rt(R) = tr(R)$
+            \item $st(R) = ts(R)$
+          \end{enumerate}
+
+          注 : $rs(R) = r(s(R))$
+
+          证明 : \begin{enumerate}
+            \item {
+                  \begin{itemize}
+                    \item[] $rs(R) = r(s(R) = r(R \unionSet R\inverse)) = I_A \unionSet (R \unionSet R\inverse)$
+                    \item[$=$] $(I_A \unionSet R) \unionSet (I_A\inverse \unionSet R\inverse) = (I_A \unionSet r) \unionSet (I_A \unionSet R)\inverse$
+                    \item[$=$] $r(R) \unionSet r(R)\inverse = s(r(R)) = sr(R)$
+                  \end{itemize}
+                  }
+            \item {
+                  \begin{itemize}
+                    \item[] $rt(R) = r(t(R)) = r(R \unionSet R^2 \unionSet R^3 \unionSet \dots) = I_A \unionSet (R \unionSet R^2 \unionSet R^3 \unionSet \dots)$
+                    \item[$=$] $(I_A \unionSet R)\unionSet(I_A \unionSet R \unionSet R^2) \unionSet (I_A \unionSet R \unionSet R^2 \unionSet R^3) \unionSet \dots$
+                    \item[$=$] $(I_A \unionSet R) \unionSet (I_A \unionSet R)^2 \unionSet (I_A \unionSet R)^3 \unionSet \dots$
+                    \item[$=$] $r(R) \unionSet r(R)^2 \unionSet r(R)^3 \unionSet \dots$
+                    \item[$=$] $t(r(R)) = tr(R)$
+                  \end{itemize}
+                  }
+            \item {
+                  $st(R) \subseteq st(s(R)) = sts(R) = s(ts(R)) = ts(R)$
+
+                  ($ts(R)$对称)
+
+                  反例 : $st(R) \subset ts(R)$ :
+                  }
+          \end{enumerate}
+          }
+  \end{itemize}
+
+  \begin{center}
+    \includegraphics{resources/closure_properties_example_1.png}
+  \end{center}
+}%闭包运算与关系性质相关定理结尾
+
 }%集合论结尾
 
 \section{图论}{
