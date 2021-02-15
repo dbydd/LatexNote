@@ -723,18 +723,122 @@ $$
                   \end{proof}
 
                   注 : 根据对数列极限的定义的讨论,$N$取的太大没啥意义,可以只考虑绝对值很小的$\epsilon > 0$,不妨考虑任意给定的$0 < \epsilon < \absoluteValue{q}$.则$N$可取为$\mediumBigCase{\cfrac{\lg \epsilon}{\lg \absoluteValue{q}}}$,即$\mediumBigCase{\log_{\absoluteValue{q}}\epsilon}$,当$n > N$时,成立$\absoluteValue{q^n - 0} < \epsilon$
-                  }
-        \end{enumerate}
 
-        根据数列极限的定义来证明某一数列收敛,其关键是对任意给定的$\epsilon > 0$寻找正整数$N$.在上面的立体中,$N$都是通过解不等式$\absoluteValue{x_n - a} < \epsilon$来得出的.但在大多数情况下,这个不等式并不容易解.实际上,数列极限的定义并不要求取到最好的$N$,所以在证明中常常对$\absoluteValue{x_n - a}$适度的做一些放大处理,这是种常用的技巧.以下是一些例子,描述了怎么使用这个技巧 :
-        \begin{enumerate}
+                  根据数列极限的定义来证明某一数列收敛,其关键是对任意给定的$\epsilon > 0$寻找正整数$N$.在上面的立体中,$N$都是通过解不等式$\absoluteValue{x_n - a} < \epsilon$来得出的.但在大多数情况下,这个不等式并不容易解.实际上,数列极限的定义并不要求取到最好的$N$,所以在证明中常常对$\absoluteValue{x_n - a}$适度的做一些放大处理,这是种常用的技巧.以下是一些例子,描述了怎么使用这个技巧 :
+                  }
             \item {
                   证明$\limNormal{n \to \infty}\sqrt[n]{a} = 1,\ (a > 1)$
 
-                  % #TODO p10
+                  \begin{proof}
+                      对任意给定的$\epsilon > 0$,令$\absoluteValue{\sqrt[n]{a} - 1} < \epsilon$
+
+                      令$\sqrt[n]{a} - 1 = y_n,\ y_n > 0$,则$\sqrt[n]{a} = 1 + y_n,\ a = (1 + y_n)^n$,使用二项式定理展开后很明显 : $$
+                          a = 1 + ny_n + \mathCombination{n}{2}y^2_n +  \dots + y^n_n > 1 + ny_n \Rightarrow y_n < \cfrac{a - 1}{n}
+                      $$
+                      换而言之 : $$
+                          \sqrt[n]{a} - 1 = y_n < \cfrac{a - 1}{n} < \epsilon
+                      $$
+                      那么$n$只要取到$n > \cfrac{a - 1}{\epsilon}$即可,取$\mediumBigCase{\cfrac{a - 1}{\epsilon}} + 1$
+
+                      当$n > N$时,$\absoluteValue{\sqrt[n]{a} - 1} = y_n < \cfrac{a - 1}{n} < \epsilon$
+
+                  \end{proof}
+                  }
+            \item {
+                  证明$\limNormal{n \to \infty}\cfrac{n^2 + 1}{2n^2 - 7n} = \cfrac{1}{2}$
+
+                  \begin{proof}
+                      对任意给定的$\epsilon > 0$ : $$
+                          \absoluteValue{\cfrac{n^2 + 1}{2n^2 - 7n} - \cfrac{1}{2}} = \absoluteValue{\cfrac{7n + 2}{2n(2n - 7)}}\stackrel{n > 3}{=}\cfrac{7n + 2}{2n(2n - 7)} < \cfrac{8n}{4n^2} \cdot 2 = \cfrac{4}{n}
+                      $$
+                      注 : 此时要求这个不等式成立的话$n$要满足$n > 6$
+
+                      取$N = max\set{\mediumBigCase{\cfrac{4}{\epsilon}},6}$,当$n > N$,$\absoluteValue{\cfrac{n^2}{2n^2 - 7n} - \cfrac{1}{2}} = \absoluteValue{\cfrac{7n + 2}{2n(2n - 7)}} < \cfrac{4}{n} < \epsilon$
+
+                  \end{proof}
+                  }
+            \item {
+                  设$\limNormal{n \to \infty}a_n = a$,证明$\limNormal{n \to \infty}\cfrac{a_1 + a_2 + \dots + a_n}{n} = a$
+
+                  \begin{proof}
+                      分两步 :
+
+                      \begin{enumerate}
+                          \item {
+                                设$a = 0$,对于任意给定的$\epsilon > 0$,存在$N_1$,当$n > N_1$时,$\absoluteValue{a_n} < \cfrac{\epsilon}{2}$
+
+                                $$
+                                    \cfrac{a_1 + a_2 + ... + a_n}{n} = \cfrac{a_1 + a_2 + ... + a_{N_1}}{n} + \cfrac{a_{N_1 + 1} + a_{N_1 + 2} + \dots + a_n}{n}
+                                $$
+                                此时后一项的绝对值必定小于$\cfrac{\epsilon}{2}$
+
+                                回过头,此时第一项已经是个固定的数了,于是取$N > N_1$,使$n > N$时,$\absoluteValue{\cfrac{a_1 + a_2 + \dots + a_{N_1}}{n}} < \cfrac{\epsilon}{2}$
+
+                                于是由三角不等式 : $$
+                                    \absoluteValue{\cfrac{a_1 + a_2 + \dots + a_n}{n}} = \absoluteValue{\cfrac{a_1 + a_2 + ... + a_{N_1}}{n} + \cfrac{a_{N_1 + 1} + a_{N_1 + 2} + \dots + a_n}{n}}
+                                $$
+                                $$
+                                    \leq \absoluteValue{\cfrac{a_1 + a_2 + ... + a_{N_1}}{n}} + \absoluteValue{\cfrac{a_{N_1 + 1} + a_{N_1 + 2} + \dots + a_n}{n}} < \cfrac{\epsilon}{2} + \cfrac{\epsilon}{2} = \epsilon
+                                $$
+                                }
+                          \item {
+                                $a \neq 0$,$\set{a_n - a}$是无穷小量.
+
+                                $$
+                                    \limNormal{n \to \infty}\bigCase{\cfrac{a_1 + a_2 + \dots + a_n}{n} - a} = \limNormal{n \to \infty}\cfrac{(a_1 - a) + (a_2 - a) + \dots + (a_n - a)}{n} = 0
+                                $$
+                                }
+                      \end{enumerate}
+
+                  \end{proof}
                   }
         \end{enumerate}
     }%一些例题结尾
+
+    \subsubsection{数列极限的性质}{
+        \begin{enumerate}
+            \item {
+                  极限的唯一性 : 若$\limNormal{n \to \infty}x_n = a,\limNormal{n \to \infty}x_n = b$,则$a = b$.
+
+                  \begin{proof}
+                      $\forall \epsilon > 0$ : \begin{itemize}
+                          \item $\exists N_1,\forall n > N_1 : \absoluteValue{x_n - a} < \cfrac{\epsilon}{2}$
+                          \item $\exists N_2,\forall n > N_2 : \absoluteValue{x_n - b} < \cfrac{\epsilon}{2}$
+                      \end{itemize}
+                      取$N = max\set{N_1,N_2},\forall n > N$,由三角不等式 : $$
+                          \absoluteValue{a - b} = \absoluteValue{a - x_n + x_n - b} \leq \absoluteValue{x_n - a} + \absoluteValue{x_n - b} < \epsilon
+                      $$
+                      由$\epsilon$任意小可知,$a = b$.
+
+                  \end{proof}
+                  }
+            \item {
+                  数列的有界性(收敛数列必有界) :
+                  \begin{itemize}
+                      \item $\set{x_n}$,若$\exists M \in R,\forall n \in N^+$,成立$x_n \leq M$,则$M$是数列的一个上界,或称$\set{x_n}$有上界.
+                      \item $\set{x_n}$,若$\exists M \in R,\forall n \in N^+$,成立$x_n \geq M$,则$M$是数列的一个下界,或称$\set{x_n}$有下界.
+                  \end{itemize}
+
+                  若$\set{x_n}$即有上界又有下界,则称$\set{x_n}$有界.
+
+                  $\set{x_N}$有界的另一个定义 : $\exists X \in R,\forall n \in N^+$,成立$\absoluteValue{x_n} \leq X$
+
+                  \begin{proof}
+                      收敛数列必有界,设$\set{x_n}$收敛于$a$
+
+                      由极限的定义,取$\epsilon = 1,\exists N,\forall n > N : a - 1 < x_n < a + 1$
+
+                      取$M = max\set{x_1,x_2,\dots,x_N,a + 1},m = min\set{x_1,x_2,\dots,x_N,a - 1}$
+
+                      显然对于$\absoluteValue{x_n}$所有的项 : $$
+                          \forall n \in N^+,m \leq x_n \leq M
+                      $$
+                      因为n大于N以后,开始收敛,所以想找上界的值,就去找N之前的最大值,并且不排除邻域的边界.
+
+                  \end{proof}
+                  }
+        \end{enumerate}
+    }%数列极限的性质结尾
 
     \subsubsection{O'Stolz(stolz)定理}{
         设$(a_n)(n > 1)$和$(b_n)(n > 1)$为两个实数数列.若$b_n$为从某项开始严格单调的无界正数数列,且有穷极限
