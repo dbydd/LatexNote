@@ -3320,6 +3320,15 @@ $$
       或者写成 : $$
         \curveIntegralOnLine{l}Pdx + Qdy + Rdz = \surfaceIntegralOnSurface{S}\mediumBigCase{\bigCase{\partialDerivativeFrac{R}{y} - \partialDerivativeFrac{Q}{z}}dydz + \bigCase{\partialDerivativeFrac{P}{z} - \partialDerivativeFrac{R}{x}}dzdx + \bigCase{\partialDerivativeFrac{Q}{x} - \partialDerivativeFrac{P}{y}}dxdy}
       $$
+      事实上也可以用行列式简化 : $$
+      \surfaceIntegralOnSurface{S}\begin{vmatrix}
+        dydz & dzdx & dxdy \\
+        \partialDerivativeFrac{~}{x} & \partialDerivativeFrac{~}{y} & \partialDerivativeFrac{~}{z} \\
+        P & Q & R
+      \end{vmatrix}
+      =
+      \curveIntegralOnLine{l}Pdx + Qdy + Rdz
+      $$
 
       说明 :
       \begin{itemize}
