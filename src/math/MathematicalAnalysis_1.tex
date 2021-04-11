@@ -544,12 +544,12 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
     \item $|\definiteIntegral{b}{a}\defFunction{x}dx|\leq\definiteIntegral{b}{a}|\defFunction{x}|dx$
     \item {
           当被积函数是奇函数,且积分区间关于原点对称时,积分值为0,即 : $$
-            \forall_{f(x) = -f(-x)}\bigCase{\definiteIntegral{a}{-a}f(x)dx = 0}
+            \forall f(x) = -f(-x) : \definiteIntegral{a}{-a}f(x)dx = 0
           $$
           }
     \item {
           当被积函数是偶函数,且积分区间关于原点对称时 : $$
-            \forall_{f(x) = f(-x)}\bigCase{\definiteIntegral{a}{-a}f(x)dx = 2\definiteIntegral{a}{0}f(x)dx}
+            \forall f(x) = f(-x) : \definiteIntegral{a}{-a}f(x)dx = 2\definiteIntegral{a}{0}f(x)dx
           $$
           }
   \end{enumerate}
@@ -569,6 +569,13 @@ $\defFunction{2\pi} - \defFunction{0} = 0 \neq \fDerivative{c}(2\pi - 0)$
           同理,$\definiteIntegral{a}{0}\sqrt{2ax - x^2}dx = \cfrac{\pi}{4}a^2$
 
           此被积函数可化为一个偏心圆.
+          }
+          \item {
+            $\definiteIntegral{\pi}{0}x f(\sin x)dx = \cfrac{\pi}{2}\definiteIntegral{\pi}{0}f(\sin x)dx$
+
+            要证明只需要将$x$换元成$\pi - t$再分部积分即可.
+
+            注意 : 只有当$f(x)$的表达式可以写出来的时候才能用.
           }
   \end{enumerate}
 }%现成公式结尾
